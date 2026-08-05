@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 620,
-  "total_terms": 3245,
-  "total_definitions": 7005,
-  "tracks_with_definitions_article_parsed": 507,
+  "total_tracks_in_registry": 655,
+  "total_terms": 3316,
+  "total_definitions": 7155,
+  "tracks_with_definitions_article_parsed": 528,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -27,6 +27,10 @@
     {
       "track_id": "accounting_auditing_regulation",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "accounting_services_corrective_mechanism",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "accounting_services_rules",
@@ -42,6 +46,10 @@
     },
     {
       "track_id": "anti_bribery_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "anti_concealment_status_correction_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -137,8 +145,16 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "corruption_financial_settlements_rules",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "council_of_ministers_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "crime_disclosure_financial_rewards_rules",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
       "track_id": "criminal_procedure_law",
@@ -177,11 +193,19 @@
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
+      "track_id": "electricity_tariff_technical_controls",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "elitigation_guide_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "enforcement_implementing_regulation",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "estimated_assessment_zakat_rules",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -253,6 +277,10 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "heavy_equipment_regulation_center_statute",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "implementing_regulations_arabic_program_closure",
       "reason": "No records for this track in data/corpus_unified_index/corpus_unified_llm_index.jsonl (either genuinely absent from that index, or every candidate record belonged to an excluded tabular/form source layer) — nothing to scan."
     },
@@ -305,6 +333,10 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "licensed_realestate_developers_rules",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "marpol_regulation",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
@@ -325,6 +357,10 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "national_place_names_in_commercial_names_controls",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "nationality_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
@@ -337,6 +373,10 @@
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
+      "track_id": "official_travel_class_rules",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "personal_status_implementing_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
@@ -346,6 +386,10 @@
     },
     {
       "track_id": "prison_detention_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "private_healthcare_purchasing_mechanism",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -429,12 +473,20 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "state_realestate_nonprofit_allocation_controls",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "state_revenue_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "superyacht_chartering_controls",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "temporary_camel_auctions_controls",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "terrorism_implementing_regulation",
@@ -447,6 +499,10 @@
     {
       "track_id": "trustees_experts_fees_rules",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "uqn_staff_transfer_rules",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "vat_regulation",
@@ -552,6 +608,96 @@
         "definition_text": "مركز المعلومات الوطني، والمركز الوطني للذكاء الاصطناعي، ومكتب إدارة البيانات الوطنية.",
         "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "أحكام عامة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- تلتزم المنشأة التدريبية بتعيين موظف إداري واحد على الأقل. 2- تلتزم المنشأة التدريبية باعتماد أي موظف من المؤسسة قبل مباشرته العمل. 3- إشعار المؤسسة حال إنهاء خدمات أي من العاملين بالمنشأة التدريبية، مع تقديم بديل منه خلال شهر من تاريخ إنهاء الخدمات، ما لم تكن لأسباب تقبلها المؤسسة. 4- أن يكون حسن السيرة والسلوك، ولم يسبق أن صدر بحقه حكم بعقوبة في جريمة مخلة بالشرف أو الأمانة، ما لم يكن قد رد إليه اعتباره، وألا يكون سبق فصله تأديبيا من الخدمة العامة لأسباب تأديبية. 5- توفير حراسة أمنية لمنشآت التدريب وفقا لاشتراطات الجهات المختصة. 6- الالتزام بتسجيل الهيئة الإدارية في المؤسسة العامة للتأمينات الاجتماعية خلال فترة لا تتجاوز شهرين من تاريخ اعتماد المؤسسة. 7- ألا يزاول الموظف مهاما خلافا لما تم اعتماده إلا بموافقة المؤسسة. 8- سداد مبلغ (1000 ريال دراسة طلب الاعتماد) لغير السعوديين ومن في حكمهم. 9- العلاقة التعاقدية بين الهيئة الإدارية والمنشآت التدريبية الأهلية خاضعة لأحكام وتنظيمات وزارة الموارد البشرية والتنمية الاجتماعية.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- يلتزم مالك المنشأة التدريبية باعتماد أي مدرب من المؤسسة قبل مباشرته التدريب 2- يلتزم مالك المنشأة التدريبية بإشعار المؤسسة حال إنهاء خدمات أي من المدربين بالمنشأة، مع تقديم بديل منه خلال شهر من تاريخ إنهاء الخدمات، بما لا يخل بالعملية التدريبية، ما لم تكن لأسباب تقبلها المؤسسة. 3- يجب أن يكون المدرب حسن السيرة والسلوك، ولم يسبق أن صدر بحقه حكم بعقوبة في جريمة مخلة بالشرف أو الأمانة، ما لم يكن قد رد إليه اعتباره، وألا يكون سبق فصله تأديبيا من الخدمة العامة، أو أبعد عن مجال التعليم أو التدريب لأسباب تأديبية. 4- لمالك المنشأة التدريبية التعاون مع المدربين السعوديين حملة الشهادة الجامعية كحد أدنى، بعد موافقة جهة عملهم، واعتمادهم من المؤسسة، مع مراعاة ألا يزيد عدد المتعاونين في التخصص عن 50% من عدد المدربين لذات التخصص، ووجود عقد تعاون. 5- للمؤسسة السماح باعتماد المدرب مؤقتا لمدة ثلاثة أشهر؛ شرط تقديم أوراقه ومؤهلاته مكتملة وفق النماذج المعتمدة لذلك. 6- ألا يزاول المدرب أو المشرف مهاما خلافا لما تم اعتماده إلا بموافقة المؤسسة. 7- تزويد المؤسسة بنسخة من شهادة التسجيل في المؤسسة العامة للتأمينات الاجتماعية خلال فترة لا تتجاوز شهرين من تاريخ اعتماد الهيئة التدريبية. 8- يتم مراعاة ما نصت عليه المادة 155 من وثيقة سياسة التعليم عند التعاقد مع الهيئة التدريبية لتنفيذ البرامج التدريبية التي تنفذ داخل مقر المنشأة. 9- إمكانية التعاقد المؤقت بالاستفادة من تنظيم \"اجير\" لتيسير الوصول إلى القوى العاملة المتواجدة في المملكة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- يلتزم مالك المعهد العالي بتفعيل برنامج دبلوم أو برنامج تأهيلي واحد على الأقل خلال سنة من تاريخ صدور الرخصة، ومزاولة التدريب عليه خلال سنة من تاريخ التفعيل. 2- يلتزم مالك المعهد بتفعيل دورة تأهيلية واحدة على الأقل خلال سنة من تاريخ صدور الرخصة، ومزاولة التدريب عليها خلال سنة من تاريخ التفعيل. 3- يلتزم مالك المركز بتفعيل دورة واحدة على الأقل خلال سنة من صدور الرخصة، ومزاولة التدريب عليها خلال سنة من تاريخ التفعيل. 4- لا يجوز مزاولة أي نشاط تدريبي إلا بعد تفعيله. 5- يتم مراعاة ما نصت عليه المادة 155 من وثيقة سياسة التعليم عند القيام بأعمال القبول والتسجيل في المنشأة التدريبية.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- بقاء المنشأة التدريبية في مقرها المرخص مدة تجميد التفعيل. 2- ألا يتجاوز تاريخ مدة التجميد تاريخ الحد الأدنى لتاريخ طلب تجديد الرخصة. 3- يلتزم مالك المنشأة التدريبية بتقديم طلب إعادة التفعيل للبرنامج المجمد خلال أسبوعين من تاريخ انتهاء التجميد.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- عند إلغاء التفعيل الجزئي للمعهد العالي يلزم أن يبقى برنامج دبلوم، أو برنامج تأهيلي واحد على الأقل مفعلا. 2- عند إلغاء التفعيل الجزئي للمعهد يلزم أن تبقى دورة تأهيلية واحدة على الأقل مفعلة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- يقتصر التدريب خارج المقر على الدورات التطويرية النظرية، وللمؤسسة السماح متى ما وجدت مبررا لذلك. 2- أن تكون الرخصة سارية، وألا تكون موقفة مؤقتا. 3- للمؤسسة الموافقة على عقد دورات تأهيلية في مقر الجهة المستفيدة ولموظفيها فقط، على أن تتوفر المتطلبات الأساسية اللازمة لجودة التدريب، وألا يخل ذلك بالتجهيزات والهيئة الإدارية والتدريبية المعتمدة للمنشأة التدريبية، مع الالتزام بتعليمات التدريب.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- صدور تقرير فني من المؤسسة بشأن استيفاء اشتراطات المقر والتجهيزات وفق البرامج المفعلة. 2- يجب ألا تتجاوز فترة الانتقال للمقر الجديد أسبوعين من تاريخ الموافقة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- يلتزم المستثمر باستيفاء كافة متطلبات التجديد قبل انتهاء الرخصة. 2- تعد الرخصة لاغية بانتهائها وكافة الاعتمادات التي صدرت بموجبها. وللمؤسسة دراسة إمكانية السماح بمهلة لا تتجاوز ثلاثة أشهر للتجديد. 3- صدور تقرير فني من المؤسسة بشأن استيفاء اشتراطات التجديد والتفعيل.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "لا يحق للمستثمر طلب الحصول على رخصة تدريب جديدة إلا بعد مضي ثلاثة أشهر من تاريخ التزامه بقرار الإلغاء، ما لم يكن الإلغاء بناء على طلبه.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "للمؤسسة تحديد العقوبة المناسبة فيما لم يرد ذكره من مخالفات.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "أحكام عامة",
+        "definition_text": "1- للمؤسسة الموافقة للمنشأة التدريبية على عقد الاتفاقيات مع جهات أكاديمية محلية، أو دولية، وتجديدها. 2- لا تتجاوز مدة الاتفاقية خمس سنوات. 3- لتجديد الاتفاقية يلزم التقدم بطلب تجديد اعتمادها قبل تاريخ انتهائها بثلاثة أشهر على الأقل.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "أخذ عينات استدلالية": [
@@ -1009,6 +1155,14 @@
       }
     ],
     "أعمال مشاريع البنية التحتية": [
+      {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "أعمال مشاريع البنية التحتية",
+        "definition_text": "الأعمال المتعلقة بتنفيذ مشاريع البنية التحتية وتطويرها وتشغيلها وصيانتها.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "riyadh_infrastructure_projects_compliance_controls",
         "article_number": 1,
@@ -2138,6 +2292,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "إيقاف الخدمات": [
+      {
+        "track_id": "service_suspension_controls",
+        "article_number": 1,
+        "term_as_written": "إيقاف الخدمات",
+        "definition_text": "إجراء يترتب عليه امتناع جهة حكومية أو أكثر عن تقديم خدمة (أو أكثر) من خدماتها إلى شخص ذي صفة طبيعية أو اعتبارية (أفراد - أعمال).",
+        "source_record_id": "service-suspension-controls-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "ا له يئ ة المختصة": [
       {
         "track_id": "antiquities_inspection_violations_regulation",
@@ -2336,6 +2500,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "استئجار المركبات": [
+      {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "استئجار المركبات",
+        "definition_text": "الاستئجار التشغيلي للمركبة والذي يعني الحصول على المركبة كخدمة وليس كأصل.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "استثمار الغاز الطبيعي": [
       {
         "track_id": "income_tax_law",
@@ -2509,6 +2683,14 @@
         "term_as_written": "الآلية",
         "definition_text": "الآلية التفصيلية للائحة حقوق والتزامات مستخدمي وسائل النقل العام.",
         "source_record_id": "public-transport-users-rights-mechanism-llm-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "trade_agreements_governance_mechanism",
+        "article_number": 1,
+        "term_as_written": "الآلية",
+        "definition_text": "آلية عمل وحوكمة إبرام الاتفاقيات التجارية وذات الصلة بالتجارة.",
+        "source_record_id": "trade-agreements-governance-mechanism-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3091,6 +3273,16 @@
         "term_as_written": "الأسرة البديلة أو الحاضنة",
         "definition_text": "الأسرة التي يوكل إليها توفير الرعاية التربوية والاجتماعية والنفسية والصحية للطفل الذي حالت ظروفه دون تنشئته في أسرته الطبيعية.",
         "source_record_id": "child-protection-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأسطول الحكومي": [
+      {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "الأسطول الحكومي",
+        "definition_text": "مجموعة المركبات التي تمتلكها أو تستأجرها الجهة الحكومية، وتوفرها لموظفيها من أجل استخدامها في إطار ممارسة واجباتهم.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5522,6 +5714,14 @@
     ],
     "الإعلان العقاري": [
       {
+        "track_id": "real_estate_advertising_controls",
+        "article_number": 1,
+        "term_as_written": "الإعلان العقاري",
+        "definition_text": "الإعلان المرئي أو المقروء أو المسموع؛ لغرض التصرف في العقار بأي وسيلة كانت.",
+        "source_record_id": "real-estate-advertising-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_marketing_advertising_regulation",
         "article_number": 1,
         "term_as_written": "الإعلان العقاري",
@@ -5995,6 +6195,26 @@
         "term_as_written": "الاتفاقية الإطارية",
         "definition_text": "اتفاقية بين جهة أو أكثر من الجهات الحكومية وواحد أو أكثر من الموردين أو المقاولين أو المتعهدين، وتتضمن شروط وأحكام العقود التي ستتم ترسيتها أثناء مدة معينة.",
         "source_record_id": "gtpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاتفاقية التجارية": [
+      {
+        "track_id": "trade_agreements_governance_mechanism",
+        "article_number": 1,
+        "term_as_written": "الاتفاقية التجارية",
+        "definition_text": "الاتفاقية التي تحكم وتنظم التبادل التجاري الدولي.",
+        "source_record_id": "trade-agreements-governance-mechanism-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاتفاقية ذات الصلة بالتجارة": [
+      {
+        "track_id": "trade_agreements_governance_mechanism",
+        "article_number": 1,
+        "term_as_written": "الاتفاقية ذات الصلة بالتجارة",
+        "definition_text": "الاتفاقية المتضمنة معايير ومقاييس واشتراطات فنية تؤثر في التجارة البينية.",
+        "source_record_id": "trade-agreements-governance-mechanism-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7194,6 +7414,16 @@
         "definition_text": "الأمانة أو البلدية بحسب الأحوال.",
         "source_record_id": "tobacco-products-submission-fees-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "البند": [
+      {
+        "track_id": "distinguished_competencies_incentive_controls",
+        "article_number": 1,
+        "term_as_written": "البند",
+        "definition_text": "بند الكفاءات المتميزة المخصص لأغراض التحفيز.",
+        "source_record_id": "distinguished-competencies-incentive-controls-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "البنك": [
@@ -8652,6 +8882,62 @@
     ],
     "الترتيبات": [
       {
+        "track_id": "alahsa_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للهيئة.",
+        "source_record_id": "alahsa-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للمركز.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "development_authorities_support_center_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للمركز.",
+        "source_record_id": "development-authorities-support-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "esports_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للهيئة.",
+        "source_record_id": "esports-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "global_tourism_academy_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للأكاديمية.",
+        "source_record_id": "global-tourism-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "jeddah_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للهيئة.",
+        "source_record_id": "jeddah-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "mahd_sports_academy_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للأكاديمية.",
+        "source_record_id": "mahd-sports-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "national_curriculum_center_statute",
         "article_number": 1,
         "term_as_written": "الترتيبات",
@@ -8715,6 +9001,14 @@
         "term_as_written": "الترتيبات التنظيمية",
         "definition_text": "الترتيبات التنظيمية للهيئة.",
         "source_record_id": "food-security-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "investment_council_statute",
+        "article_number": 1,
+        "term_as_written": "الترتيبات التنظيمية",
+        "definition_text": "الترتيبات التنظيمية للمجلس.",
+        "source_record_id": "investment-council-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10412,6 +10706,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التعدي": [
+      {
+        "track_id": "state_realestate_monitoring_encroachment_rules",
+        "article_number": 1,
+        "term_as_written": "التعدي",
+        "definition_text": "وضع اليد على أي من عقارات الدولة أو التصرف فيها دون سند نظامي، أو منع الغير من دخوله، أو القيام بتغيير معالمه بأي صورة كانت، بما في ذلك: تخطيطه، أو زراعته، أو البناء عليه، أو تسويره، أو وضع حواجز عليه، أو ردمه، أو الاتفاق به، أو أخذ المواد الأولية منه، أو استغلاله –بشكل دائم أو مؤقت– لأغراض مخالفة للأنظمة والأوامر والقرارات والتعليمات ذات الصلة.",
+        "source_record_id": "state-realestate-monitoring-encroachment-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التعدي على الحقوق": [
       {
         "track_id": "copyright_law_implementing_regulation",
@@ -10479,6 +10783,16 @@
         "term_as_written": "التعرفة الجمركية",
         "definition_text": "الجدول المتضمن مسميات البضائع وفئات الضريبة \"الرسوم\" الجمركية\nالتي تخضع لها، والقواعد والملاحظات الواردة فيها لأنواع البضائع وأصنافها.",
         "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "التعريفات": [
+      {
+        "track_id": "service_suspension_controls",
+        "article_number": 1,
+        "term_as_written": "التعريفات",
+        "definition_text": "الخدمات: جميع الخدمات التي تقدمها الجهات الحكومية، عدا الخدمات المتعلقة بالعلاج والتعليم والعمل، والسجل التجاري، وتوثيق الوقائع المدنية والأوراق الثبوتية.",
+        "source_record_id": "service-suspension-controls-llm-001",
         "extraction_method": "entries_only_no_intro"
       }
     ],
@@ -11125,6 +11439,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم الهيئة.",
         "source_record_id": "architecture-design-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "board_committee_remuneration_controls",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "الوثيقة النظامية التي تشتمل على الأحكام المنظمة لعمل الجهاز واختصاصاته؛ أيا كان اسمها (تنظيم، أو ترتيبات تنظيمية، أو غيرها).",
+        "source_record_id": "board-committee-remuneration-controls-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12532,6 +12854,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "الجهات الحكومية",
+        "definition_text": "الوزارات والأجهزة الحكومية الأخرى.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gtpl_law",
         "article_number": 1,
         "term_as_written": "الجهات الحكومية",
@@ -12818,6 +13148,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجهات المشاركة": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "الجهات المشاركة",
+        "definition_text": "هي الجهات المشاركة في بناء سجل الأوامر من الفئات المحددة في البند (خامسا) من هذه التعليمات.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجهات المقبولة": [
       {
         "track_id": "conformity_models_general_regulation",
@@ -12992,6 +13332,14 @@
     ],
     "الجهاز": [
       {
+        "track_id": "board_committee_remuneration_controls",
+        "article_number": 1,
+        "term_as_written": "الجهاز",
+        "definition_text": "أي جهاز ينشأ بقرار من مجلس الوزراء -أو بأداة نظامية أعلى- أيا كانت صفته أو اسمه (هيئة، أو مؤسسة عامة، أو مركز، أو برنامج، أو لجنة وطنية، أو جهاز ذو نفع عام، أو غيرها)، ويكون متمتعا بالاستقلال المالي والإداري. ولا يشمل ذلك الأجهزة ذات الطبيعة المؤقتة.",
+        "source_record_id": "board-committee-remuneration-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "official_communications_records_regulation",
         "article_number": 1,
         "term_as_written": "الجهاز",
@@ -13151,6 +13499,14 @@
       }
     ],
     "الجهة": [
+      {
+        "track_id": "distinguished_competencies_incentive_controls",
+        "article_number": 1,
+        "term_as_written": "الجهة",
+        "definition_text": "الجهة العامة التي تمول ميزانيتها من الخزينة العامة للدولة.",
+        "source_record_id": "distinguished-competencies-incentive-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "enterprise_size_measurement_rules",
         "article_number": 1,
@@ -15372,6 +15728,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخط العربي": [
+      {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "الخط العربي",
+        "definition_text": "فن تجسيد الحروف العربية وفق قواعد وأصول محددة، مستندا إلى الأبجدية العربية التي تتكون من ثمانية وعشرين حرفا، لكل منها شكل مستقل وأشكال متصلة تتيح له الارتباط بالحروف المجاورة من اليمين إلى اليسار وفق موضعه في الكلمة. وتستخدم النقاط للتمييز بين الأحرف ذات البنية الشكلية المتشابهة. ويشمل الخط العربي عدة أنماط معترف بها، يتميز كل منها بتراكيب وزخارف خاصة وفق أسس فنية وتقنية محددة.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخطاب الإلكتروني": [
       {
         "track_id": "ecommerce_law",
@@ -16322,6 +16688,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس اللجنة الإشرافية.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "audiovisual_media_law",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -16418,6 +16792,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "development_authorities_support_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "development-authorities-support-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "digital_content_council_statute",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -16463,6 +16845,14 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس دائرة التنفيذ، أو قاضي دائرة التنفيذ، أو قاضي المحكمة الذي يختص بمهمات قاضي التنفيذ، وذلك بحسب الحال.",
         "source_record_id": "enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "esports_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "esports-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16586,6 +16976,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "investment_council_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "investment-council-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "investment_promotion_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "investment-promotion-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "jazan_strategic_office_statute",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -16655,6 +17061,14 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس الهيئة العامة للنقل.",
         "source_record_id": "light-goods-road-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "mahd_sports_academy_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "mahd-sports-academy-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16962,6 +17376,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "riyadh_nonprofit_foundation_statute",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -17228,11 +17650,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "development_authorities_support_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "development-authorities-support-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
         "term_as_written": "الرئيس التنفيذي",
         "definition_text": "الرئيس التنفيذي للمركز.",
         "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "esports_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "esports-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17300,11 +17738,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "investment_promotion_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "investment-promotion-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "jazan_strategic_office_statute",
         "article_number": 1,
         "term_as_written": "الرئيس التنفيذي",
         "definition_text": "الرئيس التنفيذي للمكتب.",
         "source_record_id": "jazan-strategic-office-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "jeddah_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "jeddah-development-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17497,6 +17951,14 @@
         "term_as_written": "الرئيس التنفيذي",
         "definition_text": "الرئيس التنفيذي للمؤسسة.",
         "source_record_id": "riyadh-biotechnology-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19224,6 +19686,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "distinguished_competencies_incentive_controls",
+        "article_number": 1,
+        "term_as_written": "السنة",
+        "definition_text": "السنة المالية للدولة.",
+        "source_record_id": "distinguished-competencies-incentive-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "domestic_labor_regulation",
         "article_number": 1,
         "term_as_written": "السنة",
@@ -19513,6 +19983,14 @@
         "term_as_written": "السياسة",
         "definition_text": "سياسة البرنامج الوطني الشامل للتبليغ عن حوادث وإصابات العمل والأمراض المهنية وتوثيق البلاغات ونتائج التحقيقات المتعلقة بها.",
         "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "secondary_data_use_general_rules",
+        "article_number": 1,
+        "term_as_written": "السياسة",
+        "definition_text": "سياسة مشاركة البيانات الصادرة من الهيئة السعودية للبيانات والذكاء الاصطناعي.",
+        "source_record_id": "secondary-data-use-general-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20228,6 +20706,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشركات الخليجية": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "الشركات الخليجية",
+        "definition_text": "هي الشركات التي تحمل جنسية إحدى دول مجلس التعاون لدول الخليج العربية وتكون مؤسسة طبقا لنظام الشركات في هذه الدولة، والمملوك غالبية رأس مالها لمواطنين من دول المجلس أو حكوماتها.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشركات الزراعية المحلية": [
       {
         "track_id": "wheat_seasonal_fodder_cultivation_controls",
@@ -20245,6 +20733,16 @@
         "term_as_written": "الشركات الكبرى",
         "definition_text": "الشركات السعودية المستهدفة وفق معايير التصنيف التي تعتمدها اللجنة.",
         "source_record_id": "shareek-program-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشركات المملوكة من الحكومة": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "الشركات المملوكة من الحكومة",
+        "definition_text": "الشركات المملوكة بالكامل للدولة أو لأي جهة حكومية.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20740,6 +21238,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الصناديق الخليجية": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "الصناديق الخليجية",
+        "definition_text": "هي الصناديق الاستثمارية ذات الشخصية الاعتبارية المؤسسة في إحدى دول مجلس التعاون لدول الخليج العربية والمطروحة وحداتها طرحا عاما أو طرحا خاصا على مستثمرين في تلك الدول وفقا للأنظمة المعمول بها هناك، والمملوك غالبية رأس مالها لمواطنين من دول المجلس أو حكوماتها.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الصناعات الزراعية التحويلية": [
       {
         "track_id": "agriculture_regulation",
@@ -20971,6 +21479,14 @@
         "term_as_written": "الصيانة",
         "definition_text": "كل إجراء يهدف إلى الكشف عن حالة السلعة واستمرار تحقيقها لأغراضها وإعادتها إلى وضعية قياسية محددة، كالفحص، والمعاينة، والاختبار، والضبط، والتغيير، والاستبدال، والإصلاح، والبرمجة، وإعادة البرمجة، وغير ذلك.",
         "source_record_id": "commercial-agencies-regulation-llm-art-001-annex",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "الصيانة",
+        "definition_text": "صيانة المركبة، بناء على إجراء مخطط أو غير مخطط أو كليهما، بما يضمن استمرار ملاءمة حالتها لأداء المهمات المطلوبة طوال دورة وجودها بالخدمة.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -21923,6 +22439,16 @@
         "term_as_written": "الطلب",
         "definition_text": "طلب تسوية الخلاف المقدم من المكلف أو وكيله أو ممثله النظامي، بما في ذلك طلب الهيئة التفاوض مع المكلف لتسوية الخلاف.",
         "source_record_id": "zakat-tax-dispute-settlement-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطلب الإلحاقي": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "الطلب الإلحاقي",
+        "definition_text": "الطلب المقدم للمستشار المالي للمصدر عند تغيير النطاق السعري، وفق ما هو منصوص عليه في الفقرة (ب) من البند (رابعا) من هذه التعليمات، وذلك في موعد أقصاه آخر يوم من مدة بناء سجل الأوامر، ويقدم من قبل الفئات المشاركة بهدف المشاركة في بناء سجل الأوامر أو من قبل الجهات المشاركة بهدف تغيير طلباتها المتعلقة بالنطاق السعري.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23616,6 +24142,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "الفئات المشاركة": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "الفئات المشاركة",
+        "definition_text": "هي الفئات التي يحق لها المشاركة في بناء سجل الأوامر وفقا للبند (خامسا) من هذه التعليمات.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الفاتورة": [
       {
         "track_id": "customs_procedures_controls",
@@ -24064,6 +24600,306 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القاعدة التاسعة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة التاسعة",
+        "definition_text": "التجميد الكلي أو الجزئي للبرامج التدريبية 1- التقدم بطلب التجميد الكلي أو الجزئي للبرامج التدريبية وفق النماذج المعتمدة لذلك. 2- استيفاء متطلبات التجميد الكلي أو الجزئي للبرامج التدريبية وفق النماذج المعتمدة لذلك. 3- تسوية أوضاع المتدربين في البرامج التدريبية المطلوب تجميدها.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة التاسعة عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة التاسعة عشرة",
+        "definition_text": "مزاولة نشاط التدريب لمن لديه رخصة تدريبية لبرامج غير مفعلة 1- يخاطب مالك المنشأة التدريبية بالتوقف فورا، وتسوية الوضع المخالف خلال مدة لا تزيد على شهر من تاريخ الخطاب، وتقديم ما يثبت التسوية رسميا للمؤسسة. 2- إذا لم يلتزم تلغى الرخصة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة التاسعة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة التاسعة والعشرون",
+        "definition_text": "تحويل متدربي المنشأة التدريبية المغلقة، أو الملغاة رخصتها للمؤسسة اتخاذ الإجراءات اللازمة حيال تحويل متدربي المنشأة التدريبية المغلقة، أو الملغاة رخصتها لمنشآت تدريبية تحددها المؤسسة، دون أدنى مسؤولية عليها.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثالثة عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثالثة عشرة",
+        "definition_text": "تغيير موقع مقر المنشأة التدريبية 1- أن تكون الرخصة سارية المفعول. 2- تقديم رخصة البلدية للمقر الجديد. 3- تقديم موافقة الدفاع المدني على صلاحية المقر ليكون منشأة تعليمية. 4- سداد المقابل المالي (2000 ريال دراسة طلب، و1000ريال لكل برنامج أو مجال تدريبي) و(1000 ريال لكل زيارة إضافية). 5- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثالثة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثالثة والثلاثون",
+        "definition_text": "نقل الملكية تنقل ملكية المنشأة التدريبية وفقا للأحكام المعمول بها في وزارة التجارة، بعد أخذ موافقة المؤسسة على نقل الملكية، وبعد التأكد من تحقق عدد من الاشتراطات؛",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثالثة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثالثة والعشرون",
+        "definition_text": "الاستعانة بالقطاع العام أو الخاص للمؤسسة الاستعانة بالقطاع العام أو الخاص لتنفيذ المهام الخاصة بالتدريب الأهلي، أو بعض منها.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثامنة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثامنة",
+        "definition_text": "تفعيل البرامج التدريبية المعتمدة 1- التقدم بطلب التفعيل بشرط ألا يكون هناك عقوبة تمنع التفعيل. 2- رخصة البلدية للمقر. 3- اعتماد التجهيزات اللازمة للتفعيل وفق متطلبات البرنامج التدريبي. 4- اعتماد الهيئة التدريبية اللازمة للتفعيل وفق متطلبات البرنامج التدريبي. 5- اعتماد الهيئة الإدارية اللازمة للتفعيل ما لم يكن سبق اعتمادها. 6- سداد المقابل المالي (5000 ريال دراسة الطلب والزيارة)، و(1000 ريال لكل برنامج أو مجال تدريبي) و(1000 ريال لكل زيارة إضافية). 7- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك. 8- موافقة الدفاع المدني ما لم يكن سبق تقديمها. 9- الحصول على شهادة المواءمة من وزارة الموارد البشرية والتنمية الاجتماعية (شهادة بيئة عمل مساندة لعمل الأشخاص ذوي الإعاقة) لمنشآت التدريب الأهلية.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثامنة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثامنة والعشرون",
+        "definition_text": "المنازعات الحقوقية المنازعات الحقوقية التي تنشأ بين المنشأة التدريبية وأي من منسوبيها، أو متدربيها تكون من اختصاص السلطات والمحاكم المختصة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثانية عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثانية عشرة",
+        "definition_text": "التدريب خارج النطاق الجغرافي لمقر المنشأة التدريبية 1- التقدم بطلب موافقة المؤسسة على التدريب خارج مقر المنشأة التدريبية قبل تاريخ عقد الدورة، وفق الشروط والنماذج المعتمدة لذلك. 2- توفير المتطلبات اللازمة لتحقيق جودة التدريب. 3- سداد المقابل المالي (1000 ريال لعقد الدورة لمرة واحدة). 4- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك. 5- الالتزام بمتطلبات وتعليمات الجهات المختصة الأخرى.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثانية والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثانية والثلاثون",
+        "definition_text": "اعتماد اتفاقية التدريب، أو تجديدها 1- تتقدم المنشأة التدريبية بطلب الموافقة على عقد الاتفاقية وفق النماذج المعتمدة لذلك. 2- سداد المقابل المالي (1000 ريال دراسة طلب)، (500 ريال دراسة طلب التجديد). 3- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثانية والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثانية والعشرون",
+        "definition_text": "الإيقاف المؤقت على المنشآت التدريبية الخاضعة لمالك واحد للمؤسسة إصدار إيقاف مؤقت على المنشآت التدريبية المملوكة لمالك واحد لم يلتزم بتسوية وضع مخالف بإحدى المنشآت العائدة له.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الثلاثون",
+        "definition_text": "إصدار الشهادات لمتدربي المنشأة التدريبية المغلقة، أو الملغاة رخصتها للمؤسسة اتخاذ الإجراءات اللازمة حيال إصدار الشهادات لمتدربي المنشأة التدريبية المغلقة، أو الملغاة رخصتها ممن اجتازوا الاختبار، دون أدنى مسؤولية عليها.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الحادية عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الحادية عشرة",
+        "definition_text": "إعادة التفعيل الكلي أو الجزئي للبرامج التدريبية المجمدة 1- التقدم بطلب إعادة تفعيل البرامج التدريبية؛ ما لم يكن هناك عقوبة تمنع ذلك. 2- سداد المقابل المالي (2000 ريال دراسة طلب، و1000ريال لكل برنامج أو مجال تدريبي) و(1000 ريال لكل زيارة إضافية). 3- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الخامسة عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الخامسة عشرة",
+        "definition_text": "تجديد الرخصة يلزم لتجديد الرخصة التالي: 1- التقدم بطلب التجديد قبل انتهاء الرخصة بثلاثة أشهر على الأقل، وبما لا يتجاوز ستة أشهر. 2- أن يكون السجل التجاري ساري المفعول. 3- أن تكون رخصة البلدية سارية المفعول. 4- أن تكون شهادة سلامة وصلاحية المنشأة التعليمية سارية المفعول، وصادرة من الدفاع المدني لمقر المنشأة التدريبية. 5- سداد المقابل المالي (5000 ريال لدراسة الطلب ومعاينة المقر والتجهيزات) و (1000 ريال لكل زيارة إضافية). 6- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الخامسة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الخامسة والثلاثون",
+        "definition_text": "بطاقة مدرب معتمد سداد المقابل المالي: 1- رسوم إصدار جديد أو تجديد (2000 ريال لدراسة الطلب). 2- رسوم إصدار بدل فاقد /تالف ( 500 ريال).",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الخامسة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الخامسة والعشرون",
+        "definition_text": "تصريف المنشآت التدريبية لشؤونها للمنشأة التدريبية تصريف شؤونها بما لا يتعارض مع أحكام اللائحة وقواعدها التنفيذية، وتحتفظ المنشأة بقواعد البيانات اللازمة لتنظيم العمل بها.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الرابعة عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الرابعة عشرة",
+        "definition_text": "تغيير اسم المنشأة التدريبية 1- أن تكون الرخصة سارية المفعول. 2- تقديم سجل تجاري باسم المنشأة التدريبية الجديد، مع مراعاة الضوابط المعتمدة من المؤسسة. 3- تقديم تعهد كتابي ينص على تحمل المالك كافة الالتزامات المترتبة على الاسم السابق للمنشأة التدريبية. 4- سداد المقابل المالي (500 ريال لدراسة الطلب وإصدار الرخصة). 5- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة لذلك.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الرابعة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الرابعة والثلاثون",
+        "definition_text": "وفاة مالك المنشأة التدريبية عند وفاة مالك المنشأة التدريبية تعامل الرخصة وفقا للأحكام المعمول بها في وزارة التجارة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الرابعة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الرابعة والعشرون",
+        "definition_text": "التزام المنشأة التدريبية بما يتم نشره على الموقع الإلكتروني للمؤسسة تلتزم المنشأة التدريبية بما يتم نشره على الموقع الإلكتروني للمؤسسة من تعاميم وتعليمات.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السابعة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السابعة",
+        "definition_text": "الهيئة التدريبية يلتزم مالك المنشأة التدريبية بتوفير هيئة تدريبية بناء على متطلبات البرامج التدريبية المعتمدة من المؤسسة وفق التالي: 1- أن يكون سعودي الجنسية، وفي حال عدم توفر مدرب سعودي فيمكن التعاقد مع غير السعوديين. 2- أن يكون حاصلا على شهادة جامعية في التخصص، وللمؤسسة قبول السعودي الحاصل على دبلوم معتمد مدته سنتان أو أكثر في التخصص بعد الثانوية لتدريب الدورات التأهيلية والتطويرية. 3- ألا يقل تقديره عن جيد، مع خبرة لا تقل عن ثلاث سنوات مدربا في مجال التخصص، وللمؤسسة إجراء مقابلة لمن هم أقل من ذلك، ويستثنى المدرب السعودي من شرطي: التقدير، والخبرة. 4- المدرب غير السعودي لا بد أن تكون لديه علاقة تعاقدية نظامية مع المنشأة التدريبية أو مالكها، وبمهنة مدرب وما في حكمها. 5- ألا يقل عمره عن خمسة وعشرين عاما، ولا يزيد عن خمسة وستين عاما، وللسعودي الحد الأدنى عشرون عاما. 6- اجتياز المقابلة الشخصية، واختبارات التقييم التي تقررها المؤسسة. 7- توفير مشرف لكل دبلوم أو برنامج تأهيلي، أو مجموعة من الدبلومات أو البرامج التأهيلية المتشابهة التي تندرج ضمن تخصص عام واحد، شريطة أن يكون حاصلا على شهادة الماجستير، أو البكالوريوس في التخصص، مع خبرة لا تقل عن ثلاث سنوات في التدريب؛ ويجوز تكليف أحد المدربين ممن تنطبق عليه الشروط أن يكون مشرفا على دبلوم، أو برنامج تأهيلي واحد، مع جدول مخفض لا يزيد عن (12) ساعة؛",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السابعة عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السابعة عشرة",
+        "definition_text": "القبول والتسجيل، والاختبارات تلتزم المنشأة التدريبية بشروط وإجراءات القبول والتسجيل، والاختبارات في منشآت التدريب الأهلية وفقا لدليل تعليمات التدريب لمنشآت التدريب الأهلية وبما يحقق معايير الجودة المطلوبة. المقابل المالي للاختبارات والشهادات القاعدة الثامنة عشرة: مزاولة نشاط التدريب بدون رخصة تدريبية، أو برخصة ملغاة 1- يخاطب المخالف بالتوقف فورا، وتسوية الوضع المخالف، وتقديم ما يثبت ذلك رسميا، خلال مدة لا تزيد على أسبوعين من تاريخ الخطاب. 2- إذا لم يلتزم المخالف تبلغ السلطات المختصة؛ لإيقافه عن النشاط المخالف، وأخذ تعهد عليه بأن لا يزاول نشاط التدريب قبل الحصول على رخصة تدريب من المؤسسة. 3- للمؤسسة في الحالات التي لا يتوفر فيها عنوان واضح للمخالف مخاطبة السلطات المختصة مباشرة؛ لتطبيق النظام.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السابعة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السابعة والثلاثون",
+        "definition_text": "استرداد المقابل المالي كل مقابل مالي نتج عنه تقديم خدمة فإنه لا يسترد.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السابعة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السابعة والعشرون",
+        "definition_text": "توضيح التكاليف المالية على المتدرب قبل تسجيله في البرنامج التدريبي يلتزم مالك المنشأة التدريبية بتوضيح أي تكاليف مالية على المتدرب قبل تسجيله في البرنامج التدريبي.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السادسة عشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السادسة عشرة",
+        "definition_text": "إلغاء الرخصة تلغى الرخصة في الحالات التالية: 1- طلب مالك المنشأة التدريبية. 2- تقديم أي معلومات أو مستندات غير صحيحة صدرت الرخصة بناء عليها. 3- إذا لم يتم تفعيل برنامج تدريبي خلال سنة من تاريخ صدور الرخصة. 4- إذا لم تبدأ المنشأة التدريبية التدريب خلال سنة من تاريخ تفعيل برامجها التدريبية، ما لم تحصل على موافقة المؤسسة. 5- إذا توقفت المنشأة التدريبية عن التدريب وفق رخصة التدريب لمدة سنة ما لم تحصل على موافقة المؤسسة. 6- عجز المالك عن الوفاء بمتطلبات تشغيل المنشأة التدريبية. 7- ارتكاب المنشأة التدريبية مخالفة تستوجب إلغاءها. 8- فقدان أي من الشروط التي صدرت بموجبها الرخصة دون تسوية الوضع المخالف. 9- قبول أو تسجيل متدربين جدد، أو الإعلان عن برامج تدريبية لرخصة موقفة مؤقتا. (المزيد…) 10- عند مضي المدة المحددة بالإيقاف المؤقت دون تسوية الوضع المخالف. 11- ارتكاب المنشأة التدريبية مخالفة تقتضي الإيقاف المؤقت وعليها ثلاثة خطابات إيقاف مؤقتة خلال سنة من ارتكابها المخالفة. يلتزم طالب الإلغاء أو مالك الرخصة الملغاة بالتالي: 1- إغلاق مقر المنشأة التدريبية، وإزالة اللوحات الخارجية. 2- يلتزم المالك بتسوية جميع التزامات المنشأة التدريبية تجاه الغير، وتقديم ما يفيد ذلك رسميا للمؤسسة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السادسة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السادسة والثلاثون",
+        "definition_text": "زيادة الطاقة الاستيعابية 1- التقدم بطلب زيادة الطاقة الاستيعابية وفق النماذج المعتمدة. 2- استيفاء كافة المعلومات والبيانات وفق النماذج المعتمدة. 3- سداد المقابل المالي (1000ريال دراسة الطلب) و(1000 ريال لمعاينة المقر والتجهيزات إذا تطلب الأمر ذلك) و (1000 ريال لكل زيارة إضافية). أحكام عامة صدور تقرير فني من المؤسسة بشأن استيفاء اشتراطات المقر والتجهيزات وفق البرامج المفعلة، وبما يحقق معايير جودة التدريب المطلوبة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة السادسة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة السادسة والعشرون",
+        "definition_text": "ضوابط الإعلانات 1- الإعلان بالاسم المرخص للمنشأة التدريبية. 2- إبراز اعتماد المنشأة التدريبية من المؤسسة (تحت إشراف المؤسسة العامة للتدريب التقني والمهني). 3- أن يكون الإعلان بالبرامج التدريبية المفعلة وبرقم الاعتماد للدورات التطويرية. 4- أن تحصل المنشأة التدريبية على الموافقات اللازمة لإقامة البرنامج التدريبي. 5- أن يكون الإعلان صادقا وخاليا من الإيهام، أو الغموض أو التغرير. 6- في حال ذكر اسم المدرب فيجب أن يكون معتمدا لإقامة البرنامج التدريبي المعلن عنه.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة العاشرة": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة العاشرة",
+        "definition_text": "إلغاء التفعيل الكلي أو الجزئي للبرامج التدريبية 1- التقدم بطلب إلغاء التفعيل وفق النماذج المعتمدة لذلك. 2- استيفاء متطلبات إلغاء التفعيل وفق النماذج المعتمدة لذلك. 3- تسوية أوضاع المتدربين والمدربين في البرامج التدريبية المطلوب إلغاء تفعيلها.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة العشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة العشرون",
+        "definition_text": "مزاولة التدريب في مقر لم تفعل له البرامج التدريبية 1- يخاطب مالك المنشأة التدريبية بالتوقف فورا، وتسوية الوضع المخالف، وإغلاق المقر المخالف خلال مدة لا تزيد على شهر من تاريخ الخطاب، وتقديم ما يثبت التسوية كتابيا للمؤسسة. 2- إذا لم يلتزم تلغى الرخصة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الواحدة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الواحدة والثلاثون",
+        "definition_text": "مزاولة بعض الأنشطة المتعلقة باللغات للمؤسسة السماح للمنشأة التدريبية بمزاولة بعض الأنشطة المتعلقة باللغات، على ألا يؤثر ذلك على الطاقة الاستيعابية.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "القاعدة الواحدة والعشرون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "القاعدة الواحدة والعشرون",
+        "definition_text": "مخالفات المنشأة التدريبية التي لديها برامج مفعلة أولا : مخالفات تقتضي إشعار المنشأة التدريبية بالمخالفة، ويلزم تسويتها خلال مدة لا تزيد على شهر من تاريخه، ويجب إفادة المؤسسة كتابيا بما يثبت التسوية قبل نهاية المدة المحددة في خطاب الإشعار، ومنها: 1- تدني مستوى التحصيل للمتدربين في المنشأة التدريبية من خلال نتائجهم. 2- إذا لم تحتفظ المنشأة التدريبية بقاعدة البيانات اللازمة لتنظيم العمل بالمنشأة. 3- النقص في ملفات الهيئة الإدارية والتدريبية والمتدربين. 4- وجود هيئة إدارية سعودية غير معتمدة. 5- انتهاء شهادة السلامة والصلاحية للمنشأة التعليمية الصادرة من الدفاع المدني لمقر المنشأة التدريبية. 6- خلو المنشأة التدريبية من الهيئة الإدارية أثناء الزيارة. 7- النقص في الهيئة الإدارية المعتمدة المطلوبة وفقا للشروط دون موافقة المؤسسة. 8- إغلاق مقر المنشأة التدريبية دون موافقة المؤسسة. 9- إذا لم تبدأ المنشأة التدريبية بتجديد رخصة التدريب قبل ثلاثة أشهر من انتهائها. 10- إزالة اللوحة الخارجية للمنشأة التدريبية. 11- إزالة اللوحة الداخلية الموضح فيها أوقات الدوام للمنشأة التدريبية.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "القبول": [
       {
         "track_id": "vehicle_periodic_inspection_statute",
@@ -24208,6 +25044,14 @@
     ],
     "القطاع": [
       {
+        "track_id": "esports_authority_statute",
+        "article_number": 1,
+        "term_as_written": "القطاع",
+        "definition_text": "قطاع الألعاب والرياضات الإلكترونية.",
+        "source_record_id": "esports-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "military_industries_rnd_regulation",
         "article_number": 1,
         "term_as_written": "القطاع",
@@ -24286,6 +25130,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القطاع السياحي": [
+      {
+        "track_id": "global_tourism_academy_statute",
+        "article_number": 1,
+        "term_as_written": "القطاع السياحي",
+        "definition_text": "القطاع الذي تشرف عليه الوزارة.",
+        "source_record_id": "global-tourism-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "القطاع المالي": [
       {
         "track_id": "financial_academy_statute",
@@ -24303,6 +25157,16 @@
         "term_as_written": "القطاع غير الربحي",
         "definition_text": "منظومة الأنشطة الأهلية والخدمات التطوعية والمنظمات غير الحكومية، التي لا تقصد الربح أساسا، وتهدف إلى تحقيق غرض من أغراض البر أو التكافل أو التعاون أو التنمية الاجتماعية أو غيرها من أغراض النفع العام أو المخصص.",
         "source_record_id": "nonprofit-sector-development-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "القطاعات": [
+      {
+        "track_id": "king_abdulaziz_quality_award_statute",
+        "article_number": 1,
+        "term_as_written": "القطاعات",
+        "definition_text": "الكيانات الحكومية، والخاصة، وغير الربحية، في المملكة.",
+        "source_record_id": "king-abdulaziz-quality-award-statute-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -26890,6 +27754,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللائحة الإدارية": [
+      {
+        "track_id": "alahsa_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "اللائحة الإدارية",
+        "definition_text": "اللائحة الإدارية لهيئات تطوير المناطق والمدن.",
+        "source_record_id": "alahsa-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللائحة التنظيمية": [
       {
         "track_id": "marina_design_operation_controls",
@@ -27132,6 +28006,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللائحة المالية": [
+      {
+        "track_id": "alahsa_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "اللائحة المالية",
+        "definition_text": "اللائحة المالية لهيئات تطوير المناطق والمدن.",
+        "source_record_id": "alahsa-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللائحتان": [
+      {
+        "track_id": "alahsa_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "اللائحتان",
+        "definition_text": "اللائحة الإدارية واللائحة المالية.",
+        "source_record_id": "alahsa-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللجان": [
       {
         "track_id": "electricity_violations_regulation",
@@ -27301,6 +28195,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "لجنة النظر في مخالفات أحكام نظام حقوق الأشخاص ذوي الإعاقة المنصوص عليها في المادة الثامنة والعشرين من النظام.",
         "source_record_id": "disability-rights-violations-committee-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "distinguished_competencies_incentive_controls",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "اللجنة المشكلة من وزارة الموارد البشرية والتنمية الاجتماعية، ووزارة المالية؛ بناء على البند (ثانيا) من قرار مجلس الوزراء رقم (59) وتاريخ 1444/1/18ه.",
+        "source_record_id": "distinguished-competencies-incentive-controls-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -27624,6 +28526,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "service_suspension_controls",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "اللجنة الإشرافية على المنصة الإلكترونية.",
+        "source_record_id": "service-suspension-controls-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "sez_companies_register_rules",
         "article_number": 1,
         "term_as_written": "اللجنة",
@@ -27737,6 +28647,14 @@
       }
     ],
     "اللجنة الإشرافية": [
+      {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "اللجنة الإشرافية",
+        "definition_text": "اللجنة الإشرافية للمركز.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "free_zone_employees_treatment_rules",
         "article_number": 1,
@@ -27885,6 +28803,16 @@
         "term_as_written": "اللجنة الداخلية",
         "definition_text": "اللجنة الداخلية المعنية في الهيئة لتسوية الخلافات التي تنشأ بينها وبين المكلفين في شأن قرارات الهيئة.",
         "source_record_id": "zakat-tax-customs-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللجنة الرئيسية": [
+      {
+        "track_id": "state_realestate_monitoring_encroachment_rules",
+        "article_number": 1,
+        "term_as_written": "اللجنة الرئيسية",
+        "definition_text": "هي اللجنة المعنية بمراقبة عقارات الدولة وإزالة التعديات، المشكلة في إمارة كل منطقة.",
+        "source_record_id": "state-realestate-monitoring-encroachment-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -28872,6 +29800,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المادة الثامنة والثلاثون": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "المادة الثامنة والثلاثون",
+        "definition_text": "إحلال القواعد تحل هذه القواعد محل القواعد التنفيذية للائحة التدريب في منشآت التدريب الأهلية المعتمدة من معالي المحافظ بتاريخ 1438/6/27ه، وتلغي ما يتعارض معها من أحكام، ويتم العمل بها بعد اعتمادها من معالي المحافظ.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المادة العشرون": [
       {
         "track_id": "labor_implementing_regulation",
@@ -29518,6 +30456,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتعدي": [
+      {
+        "track_id": "state_realestate_monitoring_encroachment_rules",
+        "article_number": 1,
+        "term_as_written": "المتعدي",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية خاصة، قام بأي من الأفعال أو التصرفات المشار إليها في الفقرة (3) من هذا البند.",
+        "source_record_id": "state-realestate-monitoring-encroachment-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتقدم": [
       {
         "track_id": "accredited_valuers_fellowship_rules",
@@ -29646,6 +30594,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "alahsa_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "alahsa-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "alimony_fund_regulation",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -29747,6 +30703,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "board_committee_remuneration_controls",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الجهاز؛ أيا كان اسمه (مجلس إدارة، أو لجنة إشرافية، أو هيئة إدارة، أو غيرها).",
+        "source_record_id": "board-committee-remuneration-controls-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -29902,6 +30866,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "development_authorities_support_center_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة المركز.",
+        "source_record_id": "development-authorities-support-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "digital_content_council_statute",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -29995,6 +30967,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "esports_authority_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "esports-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -30150,6 +31130,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "global_tourism_academy_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس أمناء الأكاديمية.",
+        "source_record_id": "global-tourism-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "government_resource_systems_center_statute",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -30275,6 +31263,30 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "international-bus-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "investment_council_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس الاستثمار.",
+        "source_record_id": "investment-council-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "investment_promotion_authority_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "investment-promotion-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "jeddah_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "jeddah-development-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -30411,6 +31423,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "literature-publishing-translation-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "mahd_sports_academy_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الأكاديمية.",
+        "source_record_id": "mahd-sports-academy-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -30907,6 +31927,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة المؤسسة.",
         "source_record_id": "riyadh-biotechnology-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة المركز.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -32934,6 +33962,14 @@
     ],
     "المدير العام": [
       {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "المدير العام",
+        "definition_text": "المدير العام للمركز.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "customs_law",
         "article_number": 2,
         "term_as_written": "المدير العام",
@@ -34464,6 +35500,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "مركز مشاريع البنية التحتية بمنطقة الرياض.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "riyadh_infrastructure_projects_compliance_controls",
         "article_number": 1,
         "term_as_written": "المركز",
@@ -34486,6 +35530,14 @@
         "definition_text": "مركز ذاكرة الثقافة السعودية.",
         "source_record_id": "saudi-culture-memory-center-statute-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "service_suspension_controls",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "مركز المعلومات الوطني.",
+        "source_record_id": "service-suspension-controls-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "shareek_program_center_statute",
@@ -36952,6 +38004,14 @@
     ],
     "المعلن": [
       {
+        "track_id": "real_estate_advertising_controls",
+        "article_number": 1,
+        "term_as_written": "المعلن",
+        "definition_text": "طالب نشر الإعلان العقاري سواء أكان الإعلان لنفسه أم لغيره بأي وسيلة كانت.",
+        "source_record_id": "real-estate-advertising-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_marketing_advertising_regulation",
         "article_number": 1,
         "term_as_written": "المعلن",
@@ -37637,6 +38697,16 @@
         "term_as_written": "المقيم المعتمد",
         "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية المرخص له بمزاولة مهنة التقييم.",
         "source_record_id": "real-estate-expropriation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المكاتب الاستراتيجية": [
+      {
+        "track_id": "development_authorities_support_center_statute",
+        "article_number": 1,
+        "term_as_written": "المكاتب الاستراتيجية",
+        "definition_text": "المكاتب الاستراتيجية لتطوير المناطق والمدن.",
+        "source_record_id": "development-authorities-support-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -39674,6 +40744,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "المنصة الإلكترونية",
+        "definition_text": "المنصة الموحدة لخدمات إدارة الأسطول الحكومي.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "job_seeker_allowance_statute",
         "article_number": 1,
         "term_as_written": "المنصة الإلكترونية",
@@ -39736,6 +40814,14 @@
         "definition_text": "هي المنصة المخصصة من قبل المديرية لتلقي البلاغات وطلبات نقل التسجيلات.",
         "source_record_id": "security-cameras-law-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "service_suspension_controls",
+        "article_number": 1,
+        "term_as_written": "المنصة الإلكترونية",
+        "definition_text": "المنصة الإلكترونية الموحدة لإيقاف الخدمات.",
+        "source_record_id": "service-suspension-controls-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "المنصة الإلكترونية للنظر في التظلمات": [
@@ -39763,6 +40849,16 @@
         "term_as_written": "المنصة البحرية",
         "definition_text": "منشأة بحرية تستخدم لاستخراج الزيت أو الغاز أو غيرهما من الثروات، وتعد في حكم السفينة.",
         "source_record_id": "maritime-commercial-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنصة العقارية الإلكترونية": [
+      {
+        "track_id": "real_estate_advertising_controls",
+        "article_number": 1,
+        "term_as_written": "المنصة العقارية الإلكترونية",
+        "definition_text": "التطبيق أو الموقع الإلكتروني ونحوهم المختصة بالتسويق للإعلان العقاري.",
+        "source_record_id": "real-estate-advertising-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -39827,6 +40923,14 @@
         "term_as_written": "المنطقة",
         "definition_text": "مدينة الرياض للتقنية الحيوية وتشمل الأرض التي تخصص للمؤسسة، وكذلك المناطق التابعة للجهات الأخرى التي ترتبط بالمؤسسة بمذكرة تفاهم تتعلق بتقديم خدمات الدعم لنشاطات البحث والتطوير للتقنية الحيوية في المملكة.",
         "source_record_id": "riyadh-biotechnology-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "المنطقة",
+        "definition_text": "الحدود الإدارية لمنطقة الرياض المحددة نظاما.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -40982,6 +42086,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المواهب الرياضية": [
+      {
+        "track_id": "mahd_sports_academy_statute",
+        "article_number": 1,
+        "term_as_written": "المواهب الرياضية",
+        "definition_text": "الأشخاص الطبيعيون من ذوي القدرات والإمكانات والأداء الحركي والفني المتميز من مختلف الفئات السنية وفي أي من المجالات الرياضية.",
+        "source_record_id": "mahd-sports-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الموثق": [
       {
         "track_id": "tawtheeq_law",
@@ -42058,6 +43172,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "النطاق الإشرافي": [
+      {
+        "track_id": "alahsa_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "النطاق الإشرافي",
+        "definition_text": "النطاق الجغرافي الذي تمارس فيه الهيئة صلاحياتها، ويشمل محافظة الأحساء، والمراكز التابعة لمحافظة الأحساء التي تضاف إلى هذا النطاق.",
+        "source_record_id": "alahsa-development-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "النطاق الجغرافي": [
       {
         "track_id": "alula_royal_commission_violations_committees_rules",
@@ -42073,6 +43197,14 @@
         "term_as_written": "النطاق الجغرافي",
         "definition_text": "البحر الإقليمي التابع للمملكة العربية السعودية في البحر الأحمر، الذي تمارس فيه الأنشطة الملاحية والأنشطة البحرية، والجزء من اليابسة المرتبط بممارسة تلك الأنشطة؛ عدا المناطق العسكرية والأمنية وغيرها فيهما.",
         "source_record_id": "coastal-tourism-craft-classification-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "jeddah_development_authority_statute",
+        "article_number": 1,
+        "term_as_written": "النطاق الجغرافي",
+        "definition_text": "النطاق الجغرافي الذي تمارس فيه الهيئة صلاحياتها، المتمثل في الحدود الإدارية لمحافظة جدة.",
+        "source_record_id": "jeddah-development-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -44612,6 +45744,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "investment_promotion_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية لتسويق الاستثمار.",
+        "source_record_id": "investment-promotion-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "jewellery_accessories_technical_regulation",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -44633,6 +45773,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة تنمية البحث والتطوير والابتكار.",
         "source_record_id": "kacst-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "king_abdulaziz_quality_award_statute",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "king-abdulaziz-quality-award-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -45081,6 +46229,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة الملكية لمدينة الرياض.",
         "source_record_id": "riyadh-biotechnology-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة الملكية لمدينة الرياض.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -45810,6 +46966,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الثقافة.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "architecture_design_authority_statute",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -46186,6 +47350,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "global_tourism_academy_statute",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "global-tourism-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "government_allocation_objections_committee_rules",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -46266,6 +47438,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "investment_council_statute",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الاستثمار.",
+        "source_record_id": "investment-council-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -46279,6 +47459,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الاستثمار.",
         "source_record_id": "inv-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "investment_promotion_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الاستثمار.",
+        "source_record_id": "investment-promotion-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -47008,6 +48196,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "arabic_calligraphy_center_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الثقافة.",
+        "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "architecture_design_authority_licensing_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -47544,6 +48740,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "global_tourism_academy_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "global-tourism-academy-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "government_resource_systems_center_statute",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -47632,11 +48836,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "investment_council_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الاستثمار.",
+        "source_record_id": "investment-council-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_law",
         "article_number": 1,
         "term_as_written": "الوزير",
         "definition_text": "وزير الاستثمار.",
         "source_record_id": "inv-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "investment_promotion_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الاستثمار.",
+        "source_record_id": "investment-promotion-authority-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -47733,6 +48953,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الثقافة.",
         "source_record_id": "literature-publishing-translation-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "mahd_sports_academy_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الرياضة.",
+        "source_record_id": "mahd-sports-academy-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -49552,6 +50780,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "بناء سجل الأوامر": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "بناء سجل الأوامر",
+        "definition_text": "العملية التي فيها تسجل طلبات الجهات المشاركة من قبل المستشار المالي وذلك لتحديد سعر الطرح.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "بنك": [
       {
         "track_id": "banking_control_law",
@@ -50284,6 +51522,14 @@
         "definition_text": "حدوث أو وجود مصلحة -مباشرة أو غير مباشرة، حقيقية أو مفترضة- لأي عضو، ويخشى منها التأثير على رأي العضو في القضية المنظورة.",
         "source_record_id": "disability-rights-violations-committee-rules-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "تعارض المصالح",
+        "definition_text": "يقصد بذلك تعارض المصالح بين المصدر وأي جهة من الجهات المشاركة في بناء سجل الأوامر، ويشمل ذلك على سبيل المثال لا الحصر الحالات الآتية: أ- أن يكون أحد أعضاء مجلس إدارة أي جهة من الجهات المشاركة أو أحد كبار تنفيذييها مساهما كبيرا في المصدر أو أي شركة مسيطرة على المصدر أو تابعة للمصدر أو العكس. ب- أن تكون إحدى الجهات المشاركة مساهما كبيرا في المصدر أو أي شركة تابعة له أو العكس. ج- إذا كان أي من الأشخاص المشار إليهم في الفقرتين (أ) و(ب) أعلاه عضوا في مجلس إدارة المصدر أو في مجلس إدارة أي من الشركات التابعة للمصدر.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "تعاريف": [
@@ -50618,6 +51864,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "ثالثا": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "ثالثا",
+        "definition_text": "مخالفات تقتضي الإيقاف المؤقت مباشرة على المنشأة التدريبية خلال مدة تحدد بقرار الإيقاف، ويلزم تسوية المخالفة خلال المدة المحددة، ويمنع خلال هذه المدة من قبول متدربين جدد، أو تسجيلهم، أو عقد برنامج تدريبي، أو الإعلان عن برنامج تدريبي، ويجب إفادة المؤسسة كتابيا بما يثبت التسوية قبل نهاية المدة المحددة في خطاب الإيقاف، وللمؤسسة تمديد فترة الإيقاف إلى مدة، أو مدد لا تزيد على أربعة أشهر من تاريخ صدور خطاب الإيقاف؛",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "ثانيا": [
       {
         "track_id": "aviation_passenger_rights_regulation",
@@ -50634,6 +51890,14 @@
         "definition_text": "أهداف اللائحة",
         "source_record_id": "official-communications-records-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "ثانيا",
+        "definition_text": "مخالفات تقتضي إنذار المنشأة التدريبية بالمخالفة، ويلزم تسويتها خلال مدة لا تزيد على شهر من تاريخه، ويجب إفادة المؤسسة كتابيا بما يثبت التسوية قبل نهاية المدة المحددة في خطاب الإنذار، ومنها: 1- إذا مضت المدة المحددة بالإشعار دون تسوية الوضع المخالف. 2- إذا ارتكبت المنشأة التدريبية مخالفة تقتضي الإشعار، وقد سبق أن صدر بحقها إشعاران خلال سنة سابقة لتاريخ هذه المخالفة. 3- استخدام مقر المنشأة التدريبية، أو جزء منها لغير ما رخص له من المؤسسة دون موافقة المؤسسة. 4- وجود هيئة إدارية أو فنية غير سعودية غير معتمدة. 5- وجود هيئة تدريبية غير معتمدة. 6- إذا لم تف المنشأة التدريبية بالتعهدات المقدمة للمؤسسة. 7- النقص في الهيئة التدريبية المعتمدة المطلوبة وفقا للشروط دون موافقة المؤسسة. 8- التعاون مع أي جهة أخرى دون موافقة المؤسسة. 9- إذا لم تمكن المنشأة التدريبية مشرف المؤسسة، أو من يمثلها من الاطلاع على سجلات المنشأة، وعلى سير العملية التدريبية بها. 10- إذا لم تحتفظ المنشأة التدريبية بالسجلات والبيانات الخاصة بالمتدربين. 11- الإخلال في تسجيل الحضور والغياب للمتدربين. 12- إذا لم تلتزم المنشأة التدريبية بالنسب المحددة من المؤسسة لغياب المتدربين. 13- إذا لم تتقيد المنشأة التدريبية بالخطط المعتمدة للبرامج التدريبية المرخصة للمنشأة. 14- نقص التجهيزات المعتمدة للتدريب. 15- تقاضي مبالغ إضافية من المتدربين خلاف المتفق عليه عند التسجيل في البرنامج. 16- الإخلال بشرط من شروط الإعلان. 17- إذا لم تلتزم المنشأة التدريبية بضوابط عقد الدورات التطويرية. 18- إذا لم تلتزم المنشأة التدريبية بالاسم المعتمد لها في الرخصة في لوحاتها، أو إعلاناتها، أو شهاداتها، وكافة تعاملاتها، ومطبوعاتها، ووثائقها الرسمية، وأختامها. 19- إذا لم تتقيد المنشأة التدريبية بأي من ضوابط وتعليمات التدريب، ماعدا المخالفات التي تقتضي الإيقاف المؤقت للرخصة. 20- إذا لم تلتزم المنشأة التدريبية بتوضيح أي تكاليف مالية على المتدرب قبل تسجيله في البرنامج التدريبي، وأخذ توقيعه بالعلم. 21- إذا لم تبلغ المنشأة التدريبية المؤسسة كتابيا بإنهاء خدمات أي من العاملين فيها خلال المدة المحددة. 22- إذا لم يلتزم مالك المعهد العالي بتفعيل برنامج دبلوم أو برنامج تأهيلي واحد على الأقل خلال سنة من تاريخ صدور الرخصة، ومزاولة التدريب عليه خلال سنة من تاريخ التفعيل. 23- إذا لم يلتزم مالك المعهد بتفعيل دورة تأهيلية واحدة على الأقل خلال سنة من تاريخ صدور الرخصة، ومزاولة التدريب عليها خلال سنة من تاريخ التفعيل. 24- إذا لم يلتزم مالك المركز بتفعيل دورة واحدة على الأقل خلال سنة من صدور الرخصة، ومزاولة التدريب عليها خلال سنة من تاريخ التفعيل.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "جباية الزكاة": [
@@ -52061,6 +53325,16 @@
         "term_as_written": "رئيس اتحاد الغرف",
         "definition_text": "رئيس مجلس إدارة اتحاد الغرف.",
         "source_record_id": "chambers-of-commerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "رئيس الأكاديمية": [
+      {
+        "track_id": "mahd_sports_academy_statute",
+        "article_number": 1,
+        "term_as_written": "رئيس الأكاديمية",
+        "definition_text": "الرئيس التنفيذي للأكاديمية.",
+        "source_record_id": "mahd-sports-academy-statute-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -53598,6 +54872,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "شراء المركبات": [
+      {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "شراء المركبات",
+        "definition_text": "امتلاك الجهة الحكومية المستفيدة للمركبة.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "شراء المقاعد": [
       {
         "track_id": "air_transport_services_economic_regulation",
@@ -54750,6 +56034,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "طلب المشاركة": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "طلب المشاركة",
+        "definition_text": "الطلب المقدم للمستشار المالي للمصدر من قبل الجهات المشاركة؛ بهدف المشاركة في بناء سجل الأوامر، ويقدم للمستشار المالي في موعد أقصاه آخر يوم من مدة بناء سجل الأوامر.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "طلب تقديم العروض": [
       {
         "track_id": "privatization_regulation",
@@ -54891,6 +56185,14 @@
         "term_as_written": "عقارات الدولة",
         "definition_text": "جميع الأراضي داخل المملكة المنفكة عن الملكية الخاصة -الثابتة بصك تملك- وجميع الأراضي والمباني المملوكة للدولة داخل المملكة وخارجها.",
         "source_record_id": "state-realestate-disposal-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_realestate_monitoring_encroachment_rules",
+        "article_number": 1,
+        "term_as_written": "عقارات الدولة",
+        "definition_text": "كل عقار واقع داخل إقليم المملكة العربية السعودية، منفك عن الملكية الخاصة؛ سواء أكان عليه صكوك للدولة أم لم يكن عليه صكوك.",
+        "source_record_id": "state-realestate-monitoring-encroachment-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -58230,6 +59532,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "مدة بناء سجل الأوامر": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "مدة بناء سجل الأوامر",
+        "definition_text": "فترة زمنية يحددها المستشار المالي بعد موافقة المصدر بما لا يخل بالفقرة (د) من البند (ثالثا) من هذه التعليمات، وتبدأ من تاريخ قيام المستشار المالي بعرض أسهم المصدر على الجهات المشاركة وفقا للفقرة (أ) من البند (ثالثا) من هذه التعليمات.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مدخلات الإنتاج": [
       {
         "track_id": "agriculture_law",
@@ -59130,6 +60442,14 @@
         "definition_text": "المشاريع والأعمال التي تهدف إلى إنشاء أو تطوير المرافق العامة بجميع قطاعاتها الاقتصادية والاجتماعية، وتشمل قطاع النقل البري والسككي والجوي والبحري، والمياه، والطاقة، والصناعة، والبلديات، والاتصالات، وتقنية المعلومات، والصحة، والتعليم، وما يحدده المجلس من قطاعات أخرى ذات صلة بتلك المشاريع والأعمال.",
         "source_record_id": "national-infrastructure-fund-law-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "riyadh_infrastructure_projects_center_statute",
+        "article_number": 1,
+        "term_as_written": "مشاريع البنية التحتية",
+        "definition_text": "المشاريع المتعلقة بخدمات الاتصالات، والطاقة، والمياه، والصرف الصحي، والطرق، ونحوها، ويشمل ذلك مشاريع الجهات الحكومية والخاصة، والمشروعات الكبرى، إذا كانت مرتبطة أو تتقاطع مع أعمال مشاريع البنية التحتية.",
+        "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مشتق": [
@@ -59877,6 +61197,14 @@
         "term_as_written": "مقدم الطلب",
         "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية. الاختصاص",
         "source_record_id": "property-ownership-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "secondary_data_use_general_rules",
+        "article_number": 1,
+        "term_as_written": "مقدم الطلب",
+        "definition_text": "الجهة التي تقدم طلب مشاركة البيانات إلى الجهة المطلوب منها مشاركة البيانات، سواء كانت جهة حكومية أو جهة خاصة؛ لأغراض الاستخدام الثانوي للبيانات.",
+        "source_record_id": "secondary-data-use-general-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -60944,6 +62272,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منها": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "منها",
+        "definition_text": "1- تقديم سجل تجاري ساري المفعول باسم المنشأة التدريبية للمالك الجديد من وزارة التجارة. 2- تقديم تعهد مكتوب من المشتري ينص على تحمله كافة الالتزامات تجاه المتدربين. 3- تقديم تعهد مكتوب من المشتري باستيفاء متطلبات نقل الملكية لدى السلطات المختصة الأخرى. 4- سداد المقابل المالي (2000 ريال لدراسة الطلب وإصدار الرخصة). 5- استيفاء متطلبات نقل الملكية وفق النماذج المعتمدة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "مواد التصوير الطبي": [
       {
         "track_id": "medical_devices_regulation",
@@ -60951,6 +62289,26 @@
         "term_as_written": "مواد التصوير الطبي",
         "definition_text": "كل ما يستخدم لتحسين التباين الذي يمكن الحصول عليه باستخدام تقنيات التصوير الطبي.",
         "source_record_id": "medical-devices-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مواطنو دول المجلس": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "مواطنو دول المجلس",
+        "definition_text": "الأشخاص الطبيعيون الذين يتمتعون بجنسية إحدى دول مجلس التعاون، والأشخاص الاعتبارية المملوك غالبية رأس مالها لمواطنين من دول المجلس أو حكوماتها وتتمتع بجنسية إحدى دول المجلس.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مواعيد الصيانة": [
+      {
+        "track_id": "government_vehicle_purchase_lease_controls",
+        "article_number": 1,
+        "term_as_written": "مواعيد الصيانة",
+        "definition_text": "هي الوحدة، سواء مسافة محددة بالكيلومتر أو مدة زمنية، تكملها المركبة بين الإصلاحات الرئيسة أو الأعمال الوقائية التي تحدد من الجهة المصنعة للمركبة.",
+        "source_record_id": "government-vehicle-purchase-lease-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -62224,6 +63582,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "هيئات التطوير": [
+      {
+        "track_id": "development_authorities_support_center_statute",
+        "article_number": 1,
+        "term_as_written": "هيئات التطوير",
+        "definition_text": "هيئات تطوير المناطق والمدن.",
+        "source_record_id": "development-authorities-support-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "هيئة البث": [
       {
         "track_id": "copyright_law_2026",
@@ -62580,6 +63948,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "وحدة تغير السعر": [
+      {
+        "track_id": "ipo_book_building_allocation_instructions",
+        "article_number": 2,
+        "term_as_written": "وحدة تغير السعر",
+        "definition_text": "الحد الأدنى المسموح به لارتفاع سعر السهم وانخفاضه حسب ما هو مطبق من قبل شركة تداول السعودية.",
+        "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "وحدة حقوق السحب الخاصة": [
       {
         "track_id": "aviation_passenger_rights_regulation",
@@ -62848,6 +64226,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "ومنها": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "ومنها",
+        "definition_text": "1- إذا مضت المدة المحددة بالإنذار دون تسوية الوضع المخالف. 2- إذا ارتكبت المنشأة التدريبية مخالفة تقتضي الإنذار، وقد سبق أن صدر بحقها إنذاران خلال سنة سابقة لتاريخ هذه المخالفة. 3- إذا لم توجد المنشأة التدريبية في المقر المرخص. 4- إصدار شهادات مخالفة لأي من أنظمة وتعليمات التدريب. 5- السماح لجهة أخرى بتنفيذ البرامج التدريبية المرخصة للمنشأة التدريبية دون أخذ موافقة المؤسسة. 6- التلاعب في مسوغات التسجيل، أو السجلات، أو الوثائق، أو النتائج الخاصة بالمتدربين. 7- إذا لم تتقيد المنشأة التدريبية بشروط القبول والتسجيل في البرامج التدريبية. 8- التغيير في البرامج التدريبية المفعلة في الاسم، أو المحتوى، أو المدد، أو عدد الساعات. 9- فصل المتدرب، أو حرمانه من استكمال التدريب، أو دخوله الاختبار بشكل يتعارض مع أنظمة وتعليمات التدريب. 10- مزاولة الموظف أو المدرب لمهام خلافا لما تم اعتماده. 11- قبول، أو تسجيل متدربين يزيد على الطاقة الاستيعابية للمنشأة التدريبية. 12- تقديم بيانات أو معلومات غير صحيحة للمؤسسة.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "وهي": [
       {
         "track_id": "building_code_regulation",
@@ -62856,6 +64244,16 @@
         "definition_text": "وزارة الشؤون البلدية والقروية والإسكان، ووزارة الداخلية (المديرية العامة للدفاع المدني)، ووزارة الطاقة، والهيئة السعودية للمواصفات والمقاييس والجودة.",
         "source_record_id": "building-code-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "ويستثنى السعوديون من شرطي": [
+      {
+        "track_id": "private_training_executive_rules",
+        "article_number": 5,
+        "term_as_written": "ويستثنى السعوديون من شرطي",
+        "definition_text": "التقدير، والخبرة. 8- سداد مبلغ (1000 ريال دراسة طلب)، ويستثنى من ذلك المدرب/المشرف السعودي المتفرغ كليا. 9- سداد مبلغ (500 ريال دراسة طلب تأشيرة زيارة). 10- التسجيل في المؤسسة العامة للتأمينات الاجتماعية. 11- للمؤسسة الاستثناء من شرطي المؤهل والتقدير لمدربي بعض المهن والحرف في مجال الدورات التطويرية.",
+        "source_record_id": "private-training-executive-rules-llm-005",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "ويشمل التصنيع": [

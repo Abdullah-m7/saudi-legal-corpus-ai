@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 23565,
-  "total_references_extracted": 5515,
-  "intra_law_count": 4366,
-  "inter_law_count": 1149,
+  "total_records_scanned": 23897,
+  "total_references_extracted": 5585,
+  "intra_law_count": 4391,
+  "inter_law_count": 1194,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4538,
-    "medium": 977
+    "high": 4585,
+    "medium": 1000
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -198,6 +198,28 @@
       "target_article_number": 12,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثانية عشرة) من اللائحة، اتخاذ أي من الإجر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accounting_services_corrective_mechanism",
+      "source_record_id": "accounting-services-corrective-mechanism-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "accounting_services_corrective_mechanism",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة من القواعد، وهي كما يلي: أ- أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accounting_services_corrective_mechanism",
+      "source_record_id": "accounting-services-corrective-mechanism-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "accounting_services_corrective_mechanism",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من القواعد، والالتزام بأحكام",
       "confidence": "high"
     },
     {
@@ -1125,6 +1147,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "alahsa_development_authority_statute",
+      "source_record_id": "alahsa-development-authority-statute-llm-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "alimony_fund_regulation",
       "source_record_id": "alimony-fund-regulation-llm-art-007",
       "source_article_number": 7,
@@ -1727,6 +1760,50 @@
       "target_article_number": 18,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثامنة عشرة) من النظام بعد تحقق الآتي: أ.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "anti_concealment_status_correction_regulation",
+      "source_record_id": "anti-concealment-status-correction-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "anti_concealment_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "مكافحة التستر",
+      "raw_citation_text": "المادة (الأولى) من نظام مكافحة التستر الصادر بالمرسوم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "anti_concealment_status_correction_regulation",
+      "source_record_id": "anti-concealment-status-correction-regulation-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "anti_concealment_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مكافحة التستر",
+      "raw_citation_text": "أحكام نظام مكافحة التستر الصادر بالمرسوم الملكي رقم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "anti_concealment_status_correction_regulation",
+      "source_record_id": "anti-concealment-status-correction-regulation-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإقامة المميزة",
+      "raw_citation_text": "أحكام نظام الإقامة المميزة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "anti_concealment_status_correction_regulation",
+      "source_record_id": "anti-concealment-status-correction-regulation-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "anti_concealment_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مكافحة التستر",
+      "raw_citation_text": "أحكام نظام مكافحة التستر الصادر بالمرسوم الملكي رقم",
       "confidence": "high"
     },
     {
@@ -2575,6 +2652,17 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الرابعة) من اللائحة بواحدة أو أكثر من",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "arabic_calligraphy_center_statute",
+      "source_record_id": "arabic-calligraphy-center-statute-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "وأصول محددة",
+      "raw_citation_text": "وفق قواعد وأصول محددة",
+      "confidence": "medium"
     },
     {
       "source_track_id": "arbitration_law",
@@ -13599,6 +13687,28 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "crime_disclosure_financial_rewards_rules",
+      "source_record_id": "crime-disclosure-financial-rewards-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "anti_concealment_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "مكافحة التستر",
+      "raw_citation_text": "المادة (الأولى) من نظام مكافحة التستر، الصادر بالمرسو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "crime_disclosure_financial_rewards_rules",
+      "source_record_id": "crime-disclosure-financial-rewards-rules-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "crime_disclosure_financial_rewards_rules",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من النظام، بما يسهم في تحفيزه",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "criminal_procedure_law",
       "source_record_id": "criminal-procedure-law-llm-art-062",
       "source_article_number": 62,
@@ -17911,6 +18021,270 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "electricity_tariff_technical_controls",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 48,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "المادة (48) من الاتفاقية الموحدة لضريبة القيمة المضافة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "المادة (الثالثة) من لائحة الفوترة الإلكترونية. 4- تشمل الفوا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 53,
+      "target_law_name_raw": "ضريبة القيمة المضافة",
+      "raw_citation_text": "المادة (الثالثة والخمسين) من اللائحة التنفيذية لنظام ضريبة القيمة المض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": "الفوترة الإلكترونية الحالات الواجب إصدار فواتير ضريبية عنها",
+      "raw_citation_text": "المادة (الثالثة) من لائحة الفوترة الإلكترونية الحالات الواجب إصدار فواتير ضريبية عنها والمنصوص عليها",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 53,
+      "target_law_name_raw": "ضريبة القيمة المضافة ما يلي",
+      "raw_citation_text": "المادة (الثالثة والخمسين) من اللائحة التنفيذية لنظام ضريبة القيمة المضافة ما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": "الفوترة الإلكترونية الحالات الواجب إصدار إشعارات ضريبية عنها",
+      "raw_citation_text": "المادة (الثالثة) من لائحة الفوترة الإلكترونية الحالات الواجب إصدار إشعارات ضريبية عنها وفقا لأحكامالل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": "الفوترة الإلكترونية الحالات التالية",
+      "raw_citation_text": "المادة (الثالثة) من لائحة الفوترة الإلكترونية الحالات التالية: أ. التوريدات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية والخاصة بكل مما يلي",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية والخاصة بكل مما يلي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الاحتساب العكسي",
+      "raw_citation_text": "وفقا لآلية الاحتساب العكسي",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 54,
+      "target_law_name_raw": "ضريبة القيمة المضافة",
+      "raw_citation_text": "المادة (الرابعة والخمسون) من اللائحة التنفيذية لنظام ضريبة القيمة المض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية مع الهيئة",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية مع الهيئة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "ومتطلبات التحقق المحددة",
+      "raw_citation_text": "حسب آلية ومتطلبات التحقق المحددة من قبل الهيئة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التحقق الواردة في البند رابعا",
+      "raw_citation_text": "حسب آلية التحقق الواردة في البند رابعا من هذا القرار",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية من حفظ الفواتير الإلكترونية والإشعارات ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 66,
+      "target_law_name_raw": "ضريبة القيمة المضافة",
+      "raw_citation_text": "المادة (السادسة والستين) من اللائحة التنفيذية لنظام ضريبة القيمة المض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية بتزويد الهيئة بأية سجلات",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية بتزويد الهيئة بأية سجلات أو فواتير إلكترو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "المادة (السادسة) من لائحة الفوترة الإلكترونية.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية مع أنظمة الهيئة وتقوم بإبلاغ الفئات المست",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية مع أنظمة الهيئة وتقوم بإبلاغ الفئات المست",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "electricity_tariff_technical_controls",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-007",
+      "source_article_number": 7,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "المادة (السابعة) من لائحة الفوترة الإلكترونية. الامتثال لجمي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-009",
+      "source_article_number": 9,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": "الفوترة الإلكترونية",
+      "raw_citation_text": "المادة (السابعة) من لائحة الفوترة الإلكترونية، مع مراعاة الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_tariff_technical_controls",
+      "source_record_id": "electricity-tariff-technical-controls-llm-009",
+      "source_article_number": 9,
+      "type": "inter_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "الفوترة الإلكترونية والقرارات المتعلقة بها والتي سوف يتم تنفي",
+      "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية والقرارات المتعلقة بها والتي سوف يتم تنفي",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "electricity_violations_regulation",
       "source_record_id": "electricity-violations-regulation-llm-001",
       "source_article_number": 1,
@@ -19372,6 +19746,105 @@
       "target_law_name_raw": "أمن الحدود ولائحته التنفيذية",
       "raw_citation_text": "بموجب نظام أمن الحدود ولائحته التنفيذية",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة) والمادة (الثامنة عشرة) المتعل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) المتعلقة بتقديم الإقرار والاح",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "estimated_assessment_zakat_rules",
+      "source_record_id": "estimated-assessment-zakat-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "estimated_assessment_zakat_rules",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الحادية عشرة من اللائحة.",
+      "confidence": "high"
     },
     {
       "source_track_id": "etec_law",
@@ -23455,6 +23928,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "global_tourism_academy_statute",
+      "source_record_id": "global-tourism-academy-statute-llm-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "government_allocation_objections_committee_rules",
       "source_record_id": "government-allocation-objections-committee-rules-llm-001",
       "source_article_number": 1,
@@ -23668,11 +24152,11 @@
       "source_record_id": "gtpl-law-llm-art-080",
       "source_article_number": 80,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "real_estate_advertising_controls",
       "target_article_number": null,
       "target_law_name_raw": "الإعلان عن المنافسات العامة",
       "raw_citation_text": "طبقاً لقواعد الإعلان عن المنافسات العامة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "gtpl_law",
@@ -27283,9 +27767,31 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "ipo_book_building_allocation_instructions",
+      "source_record_id": "ipo-book-building-allocation-instructions-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات في هذه الدولة",
+      "raw_citation_text": "طبقا لنظام الشركات في هذه الدولة",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "jazan_strategic_office_statute",
       "source_record_id": "jazan-strategic-office-statute-llm-011",
       "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "jeddah_development_authority_statute",
+      "source_record_id": "jeddah-development-authority-statute-llm-012",
+      "source_article_number": 12,
       "type": "inter_law",
       "target_track_id": "labor_law",
       "target_article_number": null,
@@ -30726,6 +31232,105 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "licensed_realestate_developers_rules",
+      "target_article_number": 30,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (30)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات",
+      "raw_citation_text": "بموجب نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "licensed_realestate_developers_rules",
+      "target_article_number": 70,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (70) سبعين من اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "licensed_realestate_developers_rules",
+      "target_article_number": 50,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (50)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "licensed_realestate_developers_rules",
+      "target_article_number": 51,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (51)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "licensed_realestate_developers_rules",
+      "target_article_number": 64,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (64) الرابعة والستين من اللائحة، و",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 70,
+      "target_law_name_raw": "ضريبة القيمة المضافة ومكملا لها",
+      "raw_citation_text": "المادة (70) السبعين من اللائحة التنفيذية لنظام ضريبة القيمة المضافة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "licensed_realestate_developers_rules",
+      "target_article_number": 70,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (70) السبعين من اللائحة، تقدم هذه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "licensed_realestate_developers_rules",
+      "source_record_id": "licensed-realestate-developers-rules-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "ضريبة القيمة المضافة ولائحته التنفيذية والقرارات والضوابط وال",
+      "raw_citation_text": "أحكام نظام ضريبة القيمة المضافة ولائحته التنفيذية والقرارات والضوابط وال",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "light_goods_road_transport_regulation",
       "source_record_id": "light-goods-road-transport-regulation-llm-002",
       "source_article_number": 2,
@@ -31169,6 +31774,17 @@
       "source_track_id": "literature_publishing_translation_authority_statute",
       "source_record_id": "literature-publishing-translation-authority-statute-llm-011",
       "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mahd_sports_academy_statute",
+      "source_record_id": "mahd-sports-academy-statute-llm-010",
+      "source_article_number": 10,
       "type": "inter_law",
       "target_track_id": "labor_law",
       "target_article_number": null,
@@ -35575,6 +36191,17 @@
       "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
       "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "national_place_names_in_commercial_names_controls",
+      "source_record_id": "national-place-names-in-commercial-names-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الأسماء التجارية ولائحته التنفيذية ووفق الضوابط الآتية",
+      "raw_citation_text": "وفق نظام الأسماء التجارية ولائحته التنفيذية ووفق الضوابط الآتية",
+      "confidence": "medium"
     },
     {
       "source_track_id": "national_risk_council_statute",
@@ -40395,6 +41022,50 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "private_healthcare_purchasing_mechanism",
+      "source_record_id": "private-healthcare-purchasing-mechanism-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "national_health_insurance_center_statute",
+      "target_article_number": 10,
+      "target_law_name_raw": "مركز التأمين الصحي الوطني",
+      "raw_citation_text": "المادة (العاشرة) من تنظيم مركز التأمين الصحي الوطني الصادر بقرار م",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "private_healthcare_purchasing_mechanism",
+      "source_record_id": "private-healthcare-purchasing-mechanism-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "private_healthcare_purchasing_mechanism",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الرابعة من التنظيم. شركة إدارة المطال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "private_healthcare_purchasing_mechanism",
+      "source_record_id": "private-healthcare-purchasing-mechanism-llm-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": 4,
+      "target_law_name_raw": "المركز والأنظمة واللوائح والتعليمات ذات الصلة",
+      "raw_citation_text": "المادة (الرابعة) من تنظيم المركز والأنظمة واللوائح والتعليمات ذات الصلة. 2- تعامل المر",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_healthcare_purchasing_mechanism",
+      "source_record_id": "private-healthcare-purchasing-mechanism-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "private_healthcare_purchasing_mechanism",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) من التنظيم، وله أن يفوض هذه ا",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "private_schools_regulation",
       "source_record_id": "private-schools-regulation-llm-art-008",
       "source_article_number": 8,
@@ -40414,6 +41085,50 @@
       "target_article_number": 4,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الرابعة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_training_executive_rules",
+      "source_record_id": "private-training-executive-rules-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "private_training_executive_rules",
+      "target_article_number": 155,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 155",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_training_executive_rules",
+      "source_record_id": "private-training-executive-rules-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "private_training_executive_rules",
+      "target_article_number": 155,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 155",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_training_executive_rules",
+      "source_record_id": "private-training-executive-rules-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "private_training_executive_rules",
+      "target_article_number": 38,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة والثلاثون",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_training_executive_rules",
+      "source_record_id": "private-training-executive-rules-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تعليمات التدريب لمنشآت التدريب الأهلية وبما يحقق معايير الجود",
+      "raw_citation_text": "وفقا لدليل تعليمات التدريب لمنشآت التدريب الأهلية وبما يحقق معايير الجود",
       "confidence": "medium"
     },
     {
@@ -44564,6 +45279,39 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "riyadh_infrastructure_projects_center_statute",
+      "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "توضع لهذا الغرض",
+      "raw_citation_text": "وفق ضوابط توضع لهذا الغرض",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "riyadh_infrastructure_projects_center_statute",
+      "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "توضع لهذا الغرض",
+      "raw_citation_text": "وفق ضوابط توضع لهذا الغرض",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "riyadh_infrastructure_projects_center_statute",
+      "source_record_id": "riyadh-infrastructure-projects-center-statute-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "riyadh_nonprofit_foundation_statute",
       "source_record_id": "riyadh-nonprofit-foundation-statute-llm-005",
       "source_article_number": 5,
@@ -45045,6 +45793,17 @@
       "target_article_number": null,
       "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
       "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "secondary_data_use_general_rules",
+      "source_record_id": "secondary-data-use-general-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية البيانات الشخصية وتعديلاته",
+      "raw_citation_text": "المادة الأولى من نظام حماية البيانات الشخصية وتعديلاته، ويقصد بالألفاظ",
       "confidence": "high"
     },
     {
@@ -54615,6 +55374,17 @@
       "target_article_number": 2,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (2) الثانية من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "temporary_camel_auctions_controls",
+      "source_record_id": "temporary-camel-auctions-controls-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "agriculture_regulation",
+      "target_article_number": 242,
+      "target_law_name_raw": "الزراعة ويتم حسب",
+      "raw_citation_text": "المادة (242) من اللائحة التنفيذية لنظام الزراعة ويتم",
       "confidence": "high"
     },
     {

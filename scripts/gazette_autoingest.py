@@ -40,11 +40,19 @@ GATES (a document must pass ALL of them)
       exactly that band, and rejecting it as a duplicate would keep superseded
       text; such a document is reported as G2-LATER-EDITION instead. >= GRAY_BAND
       is refused as a possible
-      version difference needing human adjudication; below that the document is
+      version difference needing human adjudication. The same GRAY_BAND applies
+      to DOCUMENT-level containment, which is the only measure that sees the
+      same instrument in an edited later edition (see document_overlap). And a
+      body's «الترتيبات التنظيمية» is refused when the corpus already holds that
+      same body's «تنظيم», which is its successor. Below all of that the document is
       distinct even if its title collides (Saudi practice issues legally
       distinct instruments under near-identical titles: an authority's «تنظيم»
       vs its «لائحة التراخيص»).
-  G3  segmentation yields >= MIN_ARTICLES articles
+  G3  segmentation yields >= MIN_ARTICLES articles, OR -- for the large family
+      of instruments drafted in ordinal bands («أولاً: ... ثانياً: ...») rather
+      than in «مادة» -- a COMPLETE band run of >= MIN_BANDS starting at «أولاً»
+      with no gap. A band is not an article and is never relabelled as one; the
+      form is carried on the spec as `numbering_form`.
   G4  no empty / near-empty article bodies
   G5  no site-navigation or masthead boilerplate leaked into any article
   G6  no chapter-heading leaked into the tail of any article
@@ -57,6 +65,9 @@ GATES (a document must pass ALL of them)
       proposes a triage slug (permanent identifiers are not machine-generated)
   G10 no article dwarfs the document's own median length, which would mean an
       unheaded annex/schedule block was absorbed into the preceding article
+  G11 batch-level (see screen_batch): the same instrument must not reach the
+      batch twice, and a document the batch's own text declares REPEALED must
+      not be built as if in force. Neither is visible to a per-document gate.
 
 Arabic governs throughout. Read-only over the corpus; the only writes are
 the emitted artifacts under sources/ and scripts/, plus the JSON report.
@@ -219,6 +230,88 @@ def page_text(path: str):
 def chapters(body: str):
     return [(m.start(), f"{m.group(1)} {m.group(2)}", strip_text(m.group(3)))
             for m in CH_RE.finditer(body)]
+
+
+# ---------------------------------------------------------------- ordinal bands
+# A large family of Saudi instruments is not drafted in «مادة» at all. Controls,
+# rules, executive mechanisms and many «ترتيبات تنظيمية» are drafted as ordinal
+# BANDS -- «أولاً: يقصد بالعبارات ...  ثانياً: يجب الالتزام ...» -- and the
+# article segmenter, which only knows «المادة», reads such a page as zero
+# articles and G3 rejects it as unparseable. 45 instruments the corpus does not
+# hold were being refused for this reason alone, among them «الترتيبات
+# التنظيمية لهيئة الصحة العامة»، «قواعد مراقبة عقارات الدولة وإزالة التعديات»
+# and «ضوابط الإعلانات العقارية». The text was on the page the whole time; the
+# pipeline simply had no name for its shape.
+#
+# A band is NOT an article, and the distinction is preserved rather than papered
+# over: the band's own label is carried verbatim, and the integer beside it is
+# positional, used for ordering and keying only.
+_BAND_WORDS = ["أول", "ثاني", "ثالث", "رابع", "خامس", "سادس", "سابع", "ثامن", "تاسع",
+               "عاشر", "حادي عشر", "ثاني عشر", "ثالث عشر", "رابع عشر", "خامس عشر",
+               "سادس عشر", "سابع عشر", "ثامن عشر", "تاسع عشر", "عشرون", "عشرين"]
+_BAND_NUM = {w: i for i, w in enumerate(_BAND_WORDS, 1)}
+_BAND_NUM["عشرين"] = 20
+def _tatweel_tolerant(word):
+    """The gazette stretches words with decorative tatweel — «ثالثـــاً» — and a
+    plain alternation misses exactly those headings, which is worse than missing
+    all of them: the run then has a hole in it and the whole document is refused
+    as unbanded. Allow tatweel between any two characters, and a run of spaces
+    where the word itself has one («حادي عشر»)."""
+    parts = [r"\s+" if ch == " " else re.escape(ch) for ch in word]
+    return r"\u0640*".join(parts)
+
+
+BAND_RE = re.compile(
+    r"(?:(?<=\s)|^)((?:%s)\u0640*(?:اً|ًا|ا|ً)?)\s*[:：]"
+    % "|".join(_tatweel_tolerant(w) for w in _BAND_WORDS))
+
+MIN_BANDS = 4
+
+
+def segment_bands(body: str):
+    """Ordinal-band headings in document order -> (bands, diagnostics).
+
+    Deliberately stricter than the article segmenter. An article list may
+    legitimately have gaps (a repealed article is simply absent) and the
+    article segmenter reconstructs the longest increasing run to survive stray
+    cross-references. A banded instrument has no such freedom: its bands are a
+    short, complete enumeration that starts at «أولاً» and runs without a gap.
+    Requiring exactly that is what stops an in-text «ثانياً:» inside a list from
+    being read as a structural heading -- if the run does not start at one and
+    close without gaps, this is not a banded instrument and nothing is
+    returned."""
+    hits = []
+    for m in BAND_RE.finditer(body):
+        base = m.group(1).replace("\u0640", "")
+        for suf in ("ًا", "اً", "ا", "ً"):
+            if base.endswith(suf):
+                base = base[: -len(suf)]
+                break
+        n = _BAND_NUM.get(re.sub(r"\s+", " ", base).strip())
+        if n:
+            hits.append((n, m.start(), m.end(), m.group(1)))
+
+    seen, ordered = set(), []
+    for h in hits:
+        if h[0] in seen:
+            continue
+        seen.add(h[0])
+        ordered.append(h)
+    if not ordered:
+        return [], {"count": 0, "max": 0, "missing": []}
+    nums = [h[0] for h in ordered]
+    if nums != list(range(1, len(nums) + 1)):
+        return [], {"count": 0, "max": 0, "missing": []}
+
+    bands = []
+    for i, (num, s, e, label) in enumerate(ordered):
+        nxt = ordered[i + 1][1] if i + 1 < len(ordered) else len(body)
+        # The tatweel in «ثالثـــاً» is typesetting, not orthography, and the
+        # pipeline already strips it from body text at G7. The label is stored
+        # the same way, so the band reads as the gazette wrote the WORD.
+        bands.append((num, label.replace("\u0640", ""), strip_text(body[e:nxt]),
+                      ("", "")))
+    return bands, {"count": len(bands), "max": len(bands), "missing": []}
 
 
 def segment(body: str):
@@ -408,6 +501,39 @@ def shingles(text):
                      for i in range(len(w) - SHINGLE_WORDS + 1))
 
 
+def document_overlap(article_texts, exclude=None):
+    """(fraction, track_id) — how much of this DOCUMENT'S shingle vocabulary a
+    single existing track already contains.
+
+    best_content_match() asks a per-ARTICLE question: how many of these articles
+    are ~verbatim copies of something on file. That catches a document re-ingested
+    unchanged, and it is blind to the case that matters just as much — the SAME
+    instrument in a later edition, where every article was edited. «اللائحة
+    التنفيذية لنظام البيئة لمقدمي الخدمات البيئية» is article-for-article the
+    regulation the corpus already held, but the two editions differ inside every
+    article: the highest per-article containment was 0.79, just under the 0.80
+    bar, so not one article counted and the document scored 0% — a clean pass as
+    a brand-new instrument. Measured across the whole document instead, the two
+    share half their vocabulary, which is squarely in the band that must be
+    adjudicated by a human rather than auto-built.
+
+    Both measures are needed. Neither subsumes the other: a short document quoting
+    a long one scores high here and low there, and a verbatim re-ingestion scores
+    high there and can score low here if the track is much larger."""
+    doc = frozenset().union(*[shingles(t) for t in article_texts if t]) \
+        if any(article_texts) else frozenset()
+    if not doc:
+        return 0.0, None
+    best = (0.0, None)
+    for tid, fp in track_fingerprints().items():
+        if tid == exclude or not fp:
+            continue
+        ov = len(doc & fp) / len(doc)
+        if ov > best[0]:
+            best = (ov, tid)
+    return best
+
+
 def track_fingerprints():
     """{track_id: {shingle, ...}} for every track already in the corpus.
 
@@ -508,6 +634,15 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
         reasons.append("G1: title marks an amendment/draft/repeal, not a standalone instrument")
 
     arts, diag = segment(body)
+    # A document drafted in ordinal bands rather than «مادة» reads as zero
+    # articles here. Falling back to the band segmenter is what lets that whole
+    # drafting family through; the form is recorded on the spec so a builder
+    # never labels a band «المادة».
+    numbering_form = "articles"
+    if diag["count"] < MIN_ARTICLES:
+        bands, bdiag = segment_bands(body)
+        if bdiag["count"] >= MIN_BANDS:
+            arts, diag, numbering_form = bands, bdiag, "ordinal_bands"
 
     # G2 — already covered?
     #
@@ -568,15 +703,58 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
                        "'%s' — substantial but not total overlap, so this is a possible "
                        "version difference or partial duplicate and must be adjudicated "
                        "by hand, not auto-built" % (overlap * 100, match))
-    elif title_hit:
+    else:
+        # The article-level measure found nothing. Ask the document-level question
+        # too, which is the only one that sees an edited re-edition.
+        dov, dmatch = document_overlap([a[2] for a in arts], exclude=exclude)
+        if dov >= GRAY_BAND:
+            reasons.append(
+                "G2-EDITION: only %.0f%% of this document's articles are verbatim matches, but "
+                "%.0f%% of its whole text already exists in track '%s' — that is the signature of "
+                "the SAME instrument in a different edition, with every article edited. Which "
+                "edition is in force cannot be settled from text overlap, so this is adjudicated "
+                "by hand, not auto-built" % (overlap * 100, dov * 100, dmatch))
+
+    # G2-PREDECESSOR. Saudi practice issues a body's founding «الترتيبات التنظيمية»
+    # and later replaces it with a «تنظيم» for the SAME body. Five such pairs turned
+    # up in one batch -- Public Health, Government Resource Systems, the Red Sea
+    # Authority, the Coral Reefs and Turtles Corporation, Environmental Service
+    # Providers -- and text overlap is an unreliable way to see them: the five
+    # scored 0.30 to 0.58 document containment, straddling the gray band in both
+    # directions, because the successor is a genuine rewrite. The body NAME is the
+    # reliable signal, and it is a fact about the two titles rather than a reading.
+    #
+    # This does not decide that the earlier instrument is repealed -- a successor
+    # that never says so leaves that unproven. It decides only that the corpus must
+    # not silently gain a predecessor alongside the successor it already holds, as
+    # if both stood. Which one is in force is a human question, and the document is
+    # handed over rather than built.
+    if title.startswith("الترتيبات التنظيمية"):
+        bt = _dedup_tokens(re.sub(r"^الترتيبات التنظيمية\s*(ل|لل)?", "", title))
+        for tid, dn in reg_names:
+            if tid == exclude or not dn.startswith("تنظيم"):
+                continue
+            ot = _dedup_tokens(re.sub(r"^تنظيم\s*(ل|لل)?", "", dn))
+            if bt and ot and len(bt & ot) / max(1, min(len(bt), len(ot))) >= 0.80:
+                reasons.append(
+                    "G2-PREDECESSOR: this is the «الترتيبات التنظيمية» of a body whose «تنظيم» "
+                    "the corpus already holds as track '%s' («%s»). The two name the same body, "
+                    "so this document is that track's predecessor. Whether it was repealed is "
+                    "not settled by either text, so it is adjudicated by hand rather than built "
+                    "alongside its own successor" % (tid, dn[:70]))
+                break
+
+    if title_hit and not any(r.startswith("G2") for r in reasons):
         notes.append("G2-NOTE: title resembles registry track '%s', but only %.0f%% "
                      "of its articles are already ingested (best content match: '%s') "
                      "— treated as a DISTINCT instrument, not a duplicate"
                      % (title_hit, overlap * 100, match or "none"))
 
     # G3 — enough structure to be a track
-    if diag["count"] < MIN_ARTICLES:
-        reasons.append(f"G3: only {diag['count']} article(s) segmented (min {MIN_ARTICLES})")
+    floor = MIN_BANDS if numbering_form == "ordinal_bands" else MIN_ARTICLES
+    if diag["count"] < floor:
+        reasons.append(f"G3: only {diag['count']} article(s) segmented (min {MIN_ARTICLES}), "
+                       f"and no complete ordinal-band run either (min {MIN_BANDS})")
 
     # G4..G7 — per-article integrity
     for num, _o, txt, _ch in arts:
@@ -649,6 +827,7 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
         return None, ["G1: could not read the gazette publication date from the masthead"]
 
     return {
+        "numbering_form": numbering_form,
         "track_id_proposed": propose_slug(title),
         "track_id": None,   # curated at emission time — see the automation-boundary note
         "title_ar": title,
@@ -662,6 +841,106 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
         "notes": notes,
         "articles": arts,
     }, []
+
+
+# ---------------------------------------------------------------- G11: batch screen
+# G1-G10 judge one document against the corpus. Two things they structurally
+# cannot see, because both need the BATCH:
+#
+#   (a) the same instrument reaching the batch twice. G2 compares a document
+#       against the registry, and a document absent from the registry passes it
+#       no matter how many of its siblings are the same text. The gazette does
+#       republish: «الترتيبات التنظيمية لمركز الأمير محمد بن سلمان العالمي للخط
+#       العربي» arrived twice on one day, and «قواعد تحديد درجات إركاب الموظفين»
+#       a week apart, all four identical.
+#
+#   (b) a document that SAYS it repeals another. A Saudi instrument routinely
+#       closes with «تحل هذه الضوابط محل ...». When what it names is an
+#       instrument the batch also carries, or one the corpus already holds, that
+#       predecessor is superseded — and the document said so itself, so no
+#       inference is involved. Building it as if in force would be asserting
+#       repealed law.
+#
+# Most replacement clauses name a NUMBERED COUNCIL DECISION rather than a titled
+# instrument. Those are left alone: the corpus does not hold decisions by number,
+# so there is nothing to withdraw and nothing to claim.
+SUPERSEDES_RE = re.compile(
+    r"(?:تحل|يحل)\s+(?:هذه|هذا|هذان)?\s*\S*\s*محل\s+([^\.،؛]{6,160})")
+
+
+def supersedes_titles(articles):
+    """Instrument titles this document declares it replaces, in its own words."""
+    out = []
+    for _num, _lab, txt, _ch in articles:
+        for m in SUPERSEDES_RE.finditer(txt):
+            cand = strip_text(m.group(1))
+            cand = re.split(r"\s+(?:الصادر|المعتمد|المُعتمد)", cand)[0].strip()
+            if cand and LEGAL_PREFIX.match(cand):
+                out.append(cand)
+    return out
+
+
+def screen_batch(specs, reg_names):
+    """(keep, dropped) — apply G11 across a whole batch.
+
+    Returns the specs safe to build and, for every one withheld, the reason in
+    the same shape as a gate rejection. Nothing is merged or edited; a document
+    is either kept whole or set aside whole."""
+    order = sorted(specs, key=lambda x: (x.get("gazette_gregorian") or "", x.get("uid") or ""))
+    fps = {id(x): set().union(*[shingles(a[2]) for a in x["articles"]]) if x["articles"]
+           else set() for x in order}
+    dropped, superseded = [], {}
+
+    # (b) first: a supersession claim is evidence about a NAMED instrument and
+    # does not depend on how the duplicate pass resolves.
+    for x in order:
+        for claimed in supersedes_titles(x["articles"]):
+            ct = _dedup_tokens(claimed)
+            if not ct:
+                continue
+            for y in order:
+                if y is x:
+                    continue
+                yt = _dedup_tokens(y["title_ar"])
+                if yt and len(ct & yt) / max(1, min(len(ct), len(yt))) >= 0.80:
+                    superseded[id(y)] = (
+                        "G11-SUPERSEDED: '%s' (%s) states in its own text that it replaces "
+                        "«%s», which is this document — it is repealed law and must not be "
+                        "built as if in force"
+                        % (x["title_ar"][:60], x.get("gazette_gregorian"), claimed[:80]))
+            for tid, dn in reg_names:
+                dt = _dedup_tokens(dn)
+                if dt and len(ct & dt) / max(1, min(len(ct), len(dt))) >= 0.80:
+                    x.setdefault("notes", []).append(
+                        "G11-NOTE: this document states it replaces «%s», which the corpus "
+                        "holds as track '%s' — that track is holding repealed text and must "
+                        "be refreshed or retired from this page" % (claimed[:80], tid))
+
+    keep = []
+    for x in order:
+        if id(x) in superseded:
+            dropped.append({"uid": x.get("uid"), "title_ar": x["title_ar"],
+                            "blocking_gates": [superseded[id(x)]]})
+            continue
+        dup = None
+        for k in keep:
+            a, b = fps[id(x)], fps[id(k)]
+            if a and b and len(a & b) / min(len(a), len(b)) >= DUPLICATE_OVERLAP:
+                dup = k
+                break
+        if dup is not None:
+            # `order` is by date, so the one already kept is the earlier edition.
+            # The later one supersedes it: swap, and withhold the earlier.
+            dropped.append({"uid": dup.get("uid"), "title_ar": dup["title_ar"],
+                            "blocking_gates": [
+                                "G11-DUPLICATE-IN-BATCH: identical text to '%s' (%s) in this "
+                                "same batch, which was published later — the later edition is "
+                                "built and this one is withheld"
+                                % (x["title_ar"][:60], x.get("gazette_gregorian"))]})
+            keep[keep.index(dup)] = x
+        else:
+            keep.append(x)
+    return keep, dropped
 
 
 def main():

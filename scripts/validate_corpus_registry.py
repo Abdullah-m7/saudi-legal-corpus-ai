@@ -486,6 +486,41 @@ REQUIRED_TRACK_IDS = [
     "waqf_owned_taxpayer_zakat_rules",
     "water_efficiency_center_statute",
     "water_electricity_regulatory_authority_statute",
+    "real_estate_advertising_controls",
+    "king_abdulaziz_quality_award_statute",
+    "estimated_assessment_zakat_rules",
+    "anti_concealment_status_correction_regulation",
+    "state_realestate_monitoring_encroachment_rules",
+    "heavy_equipment_regulation_center_statute",
+    "electricity_tariff_technical_controls",
+    "private_training_executive_rules",
+    "trade_agreements_governance_mechanism",
+    "crime_disclosure_financial_rewards_rules",
+    "global_tourism_academy_statute",
+    "development_authorities_support_center_statute",
+    "licensed_realestate_developers_rules",
+    "mahd_sports_academy_statute",
+    "investment_promotion_authority_statute",
+    "uqn_staff_transfer_rules",
+    "alahsa_development_authority_statute",
+    "ipo_book_building_allocation_instructions",
+    "service_suspension_controls",
+    "riyadh_infrastructure_projects_center_statute",
+    "accounting_services_corrective_mechanism",
+    "investment_council_statute",
+    "board_committee_remuneration_controls",
+    "jeddah_development_authority_statute",
+    "esports_authority_statute",
+    "national_place_names_in_commercial_names_controls",
+    "temporary_camel_auctions_controls",
+    "state_realestate_nonprofit_allocation_controls",
+    "corruption_financial_settlements_rules",
+    "government_vehicle_purchase_lease_controls",
+    "official_travel_class_rules",
+    "private_healthcare_purchasing_mechanism",
+    "distinguished_competencies_incentive_controls",
+    "secondary_data_use_general_rules",
+    "arabic_calligraphy_center_statute",
     "museums_authority_licensing_regulation",
     "heritage_authority_licensing_regulation",
     "literature_publishing_translation_authority_licensing_regulation",
@@ -714,7 +749,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 620 tracks present...", len(track_ids) == 620 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 655 tracks present...", len(track_ids) == 655 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3497,7 +3532,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 23565 records...", uix.get("total_records") == 23565,
+    check("[7g] unified retrieval index: 23897 records...", uix.get("total_records") == 23897,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3559,8 +3594,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 23734...",
-          registry.get("total_primary_arabic_governing_records") == 23734,
+    check("[19a] total_primary_arabic_governing_records == 24066...",
+          registry.get("total_primary_arabic_governing_records") == 24066,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3575,8 +3610,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 24629...",
-          registry.get("total_registry_counted_records") == 24629,
+    check("[19e] total_registry_counted_records == 24961...",
+          registry.get("total_registry_counted_records") == 24961,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3600,7 +3635,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"23734 + 614 + 281 = 24629")
+          f"24066 + 614 + 281 = 24961")
 
     # [21b] Every track's registry display name must be the official Arabic title
     # its own source artifact carries. Hand-abbreviated registry names had drifted
@@ -3638,7 +3673,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 620 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 655 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
