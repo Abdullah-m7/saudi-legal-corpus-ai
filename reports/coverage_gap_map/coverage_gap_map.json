@@ -871,11 +871,30 @@
   "what": "40 of the 66 built instruments are international agreements published in Umm Al-Qura. They are part of the Saudi legal order through publication and their ratifying instrument, and the corpus previously held none of them.",
   "how": "law_component is «treaty», and each such track carries a disclosure in its own source saying that its force, entry into force and scope differ from a نظام or a لائحة, that nothing is asserted about ratification status or entry-into-force date, and that what is established is the text as the gazette published it and the date it did so."
  },
- "pdf_extraction_letter_transposition_in_four_tracks": {
-  "found_by": "The ranking change surfaced it. The corpus holds one corporate-governance provision twice; a correctly-spelled query matched one copy in full and the other only in part, and reading the two side by side showed the second reads «محاية» for «حماية» and «لألسهم» for «للأسهم». Sweeping the whole index for that signature found it was not one track's problem.",
-  "extent": "120 records across four tracks: civil_service_regulation 54, cma_corporate_governance_regulation 34, payment_systems_regulation 27, healthcare_professions_regulation 5.",
-  "nature": "Arabic PDF text-extraction damage — transposed letters and broken lam-alef ligatures: «االسم» for «الاسم», «اإلدارية» for «الإدارية», «ال يمكن» for «لا يمكن», «الالئحة» for «اللائحة». The issuing bodies published these texts correctly; the damage is in the transcription.",
-  "what_was_done": "Each affected track now carries the reservation in its own known_unresolved_discrepancies, naming the count and saying plainly that the spelling of some words in those records does not match what the body published, so they must not be quoted verbatim without checking.",
-  "what_was_not_done": "No character was corrected. Mechanical repair is unsafe: «ال» is itself an Arabic word — both the negative particle and the definite article — so rewriting it to «لا» wherever it appears would corrupt sound text. Lifting the reservation means re-reading each text from its official source and replacing it verbatim."
+ "text_integrity_audit": {
+  "why": "Track validators check a track against itself; the currency audit checks whether the LAW moved on. Neither can see two properties of the STORED TEXT: that it carries encoding damage, and that the corpus holds one instrument twice.",
+  "A_encoding_damage": {
+   "extent": "323 records across 10 tracks",
+   "per_track": {
+    "civil_service_regulation": "156/261",
+    "payment_systems_regulation": "74/133",
+    "cma_corporate_governance_regulation": "64/95",
+    "healthcare_professions_regulation": "20/30",
+    "customs_law": "2/188",
+    "customs_regulation": "2/36",
+    "vat_regulation": "2/82",
+    "gcc_pesticides_regulation": "1/51",
+    "telecommunications_regulation": "1/108",
+    "zakat_law": "1/128"
+   },
+   "correction_of_an_earlier_figure": "The previous round disclosed this in four tracks with counts of 54/34/27/5. Those were produced by a narrower marker set and were too low: the real figures are 156/74/64/20, and six further tracks carry one or two damaged records each. The disclosures have been rewritten with the measured counts.",
+   "not_repaired": "No character was corrected. «ال» is itself an Arabic word — both the negative particle and the definite article — so rewriting it wherever it appears would corrupt sound text. Lifting a disclosure means re-reading that text from its official source."
+  },
+  "B_same_instrument_twice": {
+   "method": "Content overlap is the WRONG gate and the corpus proves it both ways: «نظام التأمينات الاجتماعية» exists twice sharing 8.6% of its wording, «لائحة حوكمة الشركات» twice sharing 49.8%, and the eleven cultural-authority licensing regulations are 99% identical while each licenses a different authority. The pair is therefore found by what the TITLES name — the same subject and the same instrument type — and overlap is measured beside it. Verdict A requires the subjects to be IDENTICAL: one differing content word is what separates «... وحكومة غانا» from «... ودولة قطر» and «قواعد سجل الشركات» from «قواعد الشركات», so anything short of identity is reported as a lead.",
+   "found": "Three pairs. social_insurance_law / social_insurance_legacy_law was already documented as concurrently valid. Two were NOT disclosed anywhere: cma_corporate_governance_regulation (1438H) beside corporate_governance_regulation (1444H), and pdpl_cross_border_transfer_regulation (1446H) beside personal_data_transfer_abroad_regulation (1445H). Both pairs now tell the reader about each other, with both dates and the measured overlap.",
+   "what_is_not_decided": "Which edition is in force. A later date is not proof the earlier one was repealed — the social-insurance pair exists precisely because both remain valid for different populations — so the disclosure names the pair and stops there."
+  },
+  "C_law_and_implementing_text_that_coincide": "Three law/regulation pairs overlap 81-98%: the Medical Devices Law and its Implementing Regulation share 47 of 49 articles near-verbatim. Both gazette pages were re-fetched and compared directly — the corpus reproduces what was published, nothing was copied between tracks. Disclosed in both because a reader opening the regulation for implementing detail will mostly find the law again."
  }
 }
