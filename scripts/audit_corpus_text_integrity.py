@@ -13,14 +13,21 @@ two things that are properties of the stored text itself:
      extraction has a characteristic failure: the lam-alef ligature comes out
      reversed and adjacent letters transpose. «حماية» is stored as «محاية»,
      «الاطلاع» as «االطلاع», «لا يجوز» as «ال يجوز», «اللائحة» as «الالئحة».
-     The issuing bodies published these texts correctly — the damage is in the
-     transcription — but the corpus is the thing asserting them, so it has to
-     know which of its records carry it.
+     Where the fault comes from is NOT assumed. An earlier version of this file
+     asserted that the bodies published the text correctly and the damage was in
+     transcription. scripts/verify_pdf_source_encoding.py tested that by
+     re-fetching each cited PDF and extracting it with poppler — a tool
+     independent of this corpus — and it is wrong: the damaged forms are in the
+     official PDFs' own text layers, 1,035 of them in the CMA regulation and 194
+     in the Ministry of Health one. No extractor can do better, and the stored
+     text is a faithful reading of the official file. The printed page looks
+     correct to a human eye; only the machine-readable layer carries the fault.
 
-     This is NOT repaired here, and repair by rule is not safe: «ال» is itself
-     an Arabic word, both the negative particle and the definite article, so
-     rewriting it wherever it appears would corrupt sound text. Lifting the
-     finding means re-reading the text from its official source.
+     It is therefore not repaired, and could not be by re-reading. Repair by rule
+     is separately unsafe, for a stronger reason than «ال» being a word: the fault
+     maps real Arabic words onto other real Arabic words, so no rule distinguishes
+     it from correct text. Correct text here would require human transcription
+     from the rendered page, which this corpus does not do.
 
   B. THE SAME TEXT UNDER TWO NAMES. A corpus that grows by ingestion can end up
      holding one instrument twice, and the two copies need not be equal: they

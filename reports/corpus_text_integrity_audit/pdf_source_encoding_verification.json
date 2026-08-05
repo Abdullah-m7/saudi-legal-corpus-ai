@@ -1,0 +1,131 @@
+{
+ "generated_note": "Settles whether the encoding damage recorded by audit_corpus_text_integrity.py originates in this corpus's reading or in the official PDF itself. Each track's own cited PDF is re-fetched and extracted with poppler's pdftotext in all three layout modes — a tool independent of anything used to build this corpus. Where the damaged forms appear in that output, they were published that way, no extractor can do better, and the corpus's stored text is a faithful reading of the official file. This corpus's first disclosure of the damage asserted the opposite — that the body had published the text correctly and the fault was in transcription. That assertion was made without this test and the test contradicts it.",
+ "checks": [
+  {
+   "track_id": "civil_service_regulation",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "payment_systems_regulation",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "cma_corporate_governance_regulation",
+   "pdf": "https://cma.gov.sa/RulesRegulations/Regulations/Documents/CorpGovReg.pdf",
+   "bytes": 922595,
+   "verdict": "damage_is_in_the_official_pdf",
+   "extraction_modes": {
+    "default": {
+     "chars": 101983,
+     "damage_hits": 1035,
+     "by_signature": {
+      "lam_alef_after_definite_article": 113,
+      "lam_alef_hamza_after_definite_article": 449,
+      "lam_alef_madda_after_definite_article": 12,
+      "lam_alef_inside_word": 45,
+      "detached_negative_particle": 3,
+      "adjacent_letter_transposition": 413
+     }
+    },
+    "-raw": {
+     "chars": 127297,
+     "damage_hits": 1024,
+     "by_signature": {
+      "lam_alef_after_definite_article": 112,
+      "lam_alef_hamza_after_definite_article": 447,
+      "lam_alef_madda_after_definite_article": 12,
+      "lam_alef_inside_word": 45,
+      "adjacent_letter_transposition": 408
+     }
+    },
+    "-layout": {
+     "chars": 155719,
+     "damage_hits": 1035,
+     "by_signature": {
+      "lam_alef_after_definite_article": 113,
+      "lam_alef_hamza_after_definite_article": 449,
+      "lam_alef_madda_after_definite_article": 12,
+      "lam_alef_inside_word": 45,
+      "detached_negative_particle": 3,
+      "adjacent_letter_transposition": 413
+     }
+    }
+   }
+  },
+  {
+   "track_id": "healthcare_professions_regulation",
+   "pdf": "https://www.moh.gov.sa/Ministry/Rules/Documents/Executive-Regulations-Health-Profession-1.pdf",
+   "bytes": 1119546,
+   "verdict": "damage_is_in_the_official_pdf",
+   "extraction_modes": {
+    "default": {
+     "chars": 62931,
+     "damage_hits": 194,
+     "by_signature": {
+      "lam_alef_after_definite_article": 48,
+      "lam_alef_hamza_after_definite_article": 52,
+      "lam_alef_madda_after_definite_article": 7,
+      "lam_alef_inside_word": 48,
+      "detached_negative_particle": 7,
+      "adjacent_letter_transposition": 32
+     }
+    },
+    "-raw": {
+     "chars": 102028,
+     "damage_hits": 187,
+     "by_signature": {
+      "lam_alef_after_definite_article": 48,
+      "lam_alef_hamza_after_definite_article": 52,
+      "lam_alef_madda_after_definite_article": 7,
+      "lam_alef_inside_word": 48,
+      "adjacent_letter_transposition": 32
+     }
+    },
+    "-layout": {
+     "chars": 93588,
+     "damage_hits": 194,
+     "by_signature": {
+      "lam_alef_after_definite_article": 48,
+      "lam_alef_hamza_after_definite_article": 52,
+      "lam_alef_madda_after_definite_article": 7,
+      "lam_alef_inside_word": 48,
+      "detached_negative_particle": 7,
+      "adjacent_letter_transposition": 32
+     }
+    }
+   }
+  },
+  {
+   "track_id": "customs_law",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "customs_regulation",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "zakat_law",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "vat_regulation",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "telecommunications_regulation",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  },
+  {
+   "track_id": "gcc_pesticides_regulation",
+   "verdict": "no_pdf_cited",
+   "note": "The track cites no PDF, so this test does not apply to it."
+  }
+ ]
+}
