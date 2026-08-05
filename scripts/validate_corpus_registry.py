@@ -521,6 +521,72 @@ REQUIRED_TRACK_IDS = [
     "distinguished_competencies_incentive_controls",
     "secondary_data_use_general_rules",
     "arabic_calligraphy_center_statute",
+    "treaty_brazil_visit_visas",
+    "treaty_aircraft_seizure_supplementary_protocol",
+    "treaty_unwto_cooperation",
+    "treaty_chad_general_cooperation",
+    "treaty_gcc_payment_systems_linkage",
+    "treaty_regional_technical_cooperation_protocol",
+    "treaty_bahrain_customs_cooperation",
+    "treaty_taipei_economic_cultural_office",
+    "treaty_iraq_double_taxation",
+    "treaty_rwanda_general_cooperation",
+    "treaty_iata_headquarters",
+    "treaty_gcc_wildlife_conservation",
+    "treaty_unwto_elearning_capacity",
+    "treaty_qatar_air_services",
+    "treaty_pakistan_transfer_of_sentenced_persons",
+    "treaty_unccd_secretariat_cooperation",
+    "treaty_cameroon_general_cooperation",
+    "treaty_azerbaijan_customs_assistance",
+    "treaty_south_sudan_general_cooperation",
+    "treaty_greece_maritime_transport",
+    "treaty_hungary_air_services",
+    "treaty_iraq_maritime_transport",
+    "treaty_albania_driving_licences",
+    "treaty_bangladesh_customs_assistance",
+    "treaty_iala_establishment",
+    "treaty_ghana_air_services",
+    "treaty_guyana_air_services",
+    "treaty_djibouti_maritime_transport",
+    "treaty_czechia_air_services",
+    "treaty_dco_headquarters",
+    "treaty_nepal_general_cooperation",
+    "treaty_arab_road_passenger_transport",
+    "treaty_uzbekistan_energy_cooperation",
+    "treaty_arab_anti_human_cloning",
+    "treaty_latvia_economic_cooperation",
+    "treaty_honduras_general_cooperation",
+    "treaty_estonia_general_cooperation",
+    "treaty_cyprus_general_cooperation",
+    "treaty_slovakia_general_cooperation",
+    "treaty_slovenia_general_cooperation",
+    "occupational_safety_health_national_policy",
+    "spending_efficiency_authority_statute",
+    "realestate_platform_licensing_criteria",
+    "administrative_violations_drafting_guide",
+    "fresh_produce_import_controls",
+    "direct_finance_investment_funds_instructions",
+    "public_transport_projects_framework",
+    "intracity_bus_transport_licensing",
+    "narcotics_schedules_general_provisions",
+    "listed_companies_accumulated_losses_instructions",
+    "charitable_donations_executive_instructions",
+    "railway_independent_consultant_guide",
+    "nazaha_military_personnel_statute",
+    "self_consumption_renewable_energy_framework",
+    "offplan_engineering_consultants_qualification",
+    "civil_aviation_economic_policy",
+    "aquaculture_national_policies_guide",
+    "gcc_financial_products_cross_registration_framework",
+    "animal_health_guide",
+    "abattoirs_meat_inspection_guide",
+    "rural_livestock_husbandry_guide",
+    "vehicle_damage_assessment_standards",
+    "public_entities_governance_guide",
+    "public_transport_users_rights_enforcement_guide",
+    "land_transport_training_centers_accreditation",
+    "arabic_language_national_policy",
     "museums_authority_licensing_regulation",
     "heritage_authority_licensing_regulation",
     "literature_publishing_translation_authority_licensing_regulation",
@@ -749,7 +815,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 655 tracks present...", len(track_ids) == 655 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 721 tracks present...", len(track_ids) == 721 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3532,7 +3598,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 23897 records...", uix.get("total_records") == 23897,
+    check("[7g] unified retrieval index: 25073 records...", uix.get("total_records") == 25073,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3594,8 +3660,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 24066...",
-          registry.get("total_primary_arabic_governing_records") == 24066,
+    check("[19a] total_primary_arabic_governing_records == 25242...",
+          registry.get("total_primary_arabic_governing_records") == 25242,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3610,8 +3676,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 24961...",
-          registry.get("total_registry_counted_records") == 24961,
+    check("[19e] total_registry_counted_records == 26137...",
+          registry.get("total_registry_counted_records") == 26137,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3635,7 +3701,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"24066 + 614 + 281 = 24961")
+          f"25242 + 614 + 281 = 26137")
 
     # [21b] Every track's registry display name must be the official Arabic title
     # its own source artifact carries. Hand-abbreviated registry names had drifted
@@ -3673,7 +3739,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 655 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 721 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

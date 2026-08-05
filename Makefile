@@ -585,6 +585,72 @@ export PYTHONPATH := src:$(PYTHONPATH)
         distinguished-competencies-incentive-controls-track-validate \
         secondary-data-use-general-rules-track-validate \
         arabic-calligraphy-center-statute-track-validate \
+        treaty-brazil-visit-visas-track-validate \
+        treaty-aircraft-seizure-supplementary-protocol-track-validate \
+        treaty-unwto-cooperation-track-validate \
+        treaty-chad-general-cooperation-track-validate \
+        treaty-gcc-payment-systems-linkage-track-validate \
+        treaty-regional-technical-cooperation-protocol-track-validate \
+        treaty-bahrain-customs-cooperation-track-validate \
+        treaty-taipei-economic-cultural-office-track-validate \
+        treaty-iraq-double-taxation-track-validate \
+        treaty-rwanda-general-cooperation-track-validate \
+        treaty-iata-headquarters-track-validate \
+        treaty-gcc-wildlife-conservation-track-validate \
+        treaty-unwto-elearning-capacity-track-validate \
+        treaty-qatar-air-services-track-validate \
+        treaty-pakistan-transfer-of-sentenced-persons-track-validate \
+        treaty-unccd-secretariat-cooperation-track-validate \
+        treaty-cameroon-general-cooperation-track-validate \
+        treaty-azerbaijan-customs-assistance-track-validate \
+        treaty-south-sudan-general-cooperation-track-validate \
+        treaty-greece-maritime-transport-track-validate \
+        treaty-hungary-air-services-track-validate \
+        treaty-iraq-maritime-transport-track-validate \
+        treaty-albania-driving-licences-track-validate \
+        treaty-bangladesh-customs-assistance-track-validate \
+        treaty-iala-establishment-track-validate \
+        treaty-ghana-air-services-track-validate \
+        treaty-guyana-air-services-track-validate \
+        treaty-djibouti-maritime-transport-track-validate \
+        treaty-czechia-air-services-track-validate \
+        treaty-dco-headquarters-track-validate \
+        treaty-nepal-general-cooperation-track-validate \
+        treaty-arab-road-passenger-transport-track-validate \
+        treaty-uzbekistan-energy-cooperation-track-validate \
+        treaty-arab-anti-human-cloning-track-validate \
+        treaty-latvia-economic-cooperation-track-validate \
+        treaty-honduras-general-cooperation-track-validate \
+        treaty-estonia-general-cooperation-track-validate \
+        treaty-cyprus-general-cooperation-track-validate \
+        treaty-slovakia-general-cooperation-track-validate \
+        treaty-slovenia-general-cooperation-track-validate \
+        occupational-safety-health-national-policy-track-validate \
+        spending-efficiency-authority-statute-track-validate \
+        realestate-platform-licensing-criteria-track-validate \
+        administrative-violations-drafting-guide-track-validate \
+        fresh-produce-import-controls-track-validate \
+        direct-finance-investment-funds-instructions-track-validate \
+        public-transport-projects-framework-track-validate \
+        intracity-bus-transport-licensing-track-validate \
+        narcotics-schedules-general-provisions-track-validate \
+        listed-companies-accumulated-losses-instructions-track-validate \
+        charitable-donations-executive-instructions-track-validate \
+        railway-independent-consultant-guide-track-validate \
+        nazaha-military-personnel-statute-track-validate \
+        self-consumption-renewable-energy-framework-track-validate \
+        offplan-engineering-consultants-qualification-track-validate \
+        civil-aviation-economic-policy-track-validate \
+        aquaculture-national-policies-guide-track-validate \
+        gcc-financial-products-cross-registration-framework-track-validate \
+        animal-health-guide-track-validate \
+        abattoirs-meat-inspection-guide-track-validate \
+        rural-livestock-husbandry-guide-track-validate \
+        vehicle-damage-assessment-standards-track-validate \
+        public-entities-governance-guide-track-validate \
+        public-transport-users-rights-enforcement-guide-track-validate \
+        land-transport-training-centers-accreditation-track-validate \
+        arabic-language-national-policy-track-validate \
         museums-authority-licensing-regulation-track-validate \
         heritage-authority-licensing-regulation-track-validate \
         literature-publishing-translation-authority-licensing-regulation-track-validate \
@@ -2948,6 +3014,204 @@ secondary-data-use-general-rules-track-validate:
 
 arabic-calligraphy-center-statute-track-validate:
 	$(PY) scripts/validate_arabic_calligraphy_center_statute_track.py
+
+treaty-brazil-visit-visas-track-validate:
+	$(PY) scripts/validate_treaty_brazil_visit_visas_track.py
+
+treaty-aircraft-seizure-supplementary-protocol-track-validate:
+	$(PY) scripts/validate_treaty_aircraft_seizure_supplementary_protocol_track.py
+
+treaty-unwto-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_unwto_cooperation_track.py
+
+treaty-chad-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_chad_general_cooperation_track.py
+
+treaty-gcc-payment-systems-linkage-track-validate:
+	$(PY) scripts/validate_treaty_gcc_payment_systems_linkage_track.py
+
+treaty-regional-technical-cooperation-protocol-track-validate:
+	$(PY) scripts/validate_treaty_regional_technical_cooperation_protocol_track.py
+
+treaty-bahrain-customs-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_bahrain_customs_cooperation_track.py
+
+treaty-taipei-economic-cultural-office-track-validate:
+	$(PY) scripts/validate_treaty_taipei_economic_cultural_office_track.py
+
+treaty-iraq-double-taxation-track-validate:
+	$(PY) scripts/validate_treaty_iraq_double_taxation_track.py
+
+treaty-rwanda-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_rwanda_general_cooperation_track.py
+
+treaty-iata-headquarters-track-validate:
+	$(PY) scripts/validate_treaty_iata_headquarters_track.py
+
+treaty-gcc-wildlife-conservation-track-validate:
+	$(PY) scripts/validate_treaty_gcc_wildlife_conservation_track.py
+
+treaty-unwto-elearning-capacity-track-validate:
+	$(PY) scripts/validate_treaty_unwto_elearning_capacity_track.py
+
+treaty-qatar-air-services-track-validate:
+	$(PY) scripts/validate_treaty_qatar_air_services_track.py
+
+treaty-pakistan-transfer-of-sentenced-persons-track-validate:
+	$(PY) scripts/validate_treaty_pakistan_transfer_of_sentenced_persons_track.py
+
+treaty-unccd-secretariat-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_unccd_secretariat_cooperation_track.py
+
+treaty-cameroon-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_cameroon_general_cooperation_track.py
+
+treaty-azerbaijan-customs-assistance-track-validate:
+	$(PY) scripts/validate_treaty_azerbaijan_customs_assistance_track.py
+
+treaty-south-sudan-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_south_sudan_general_cooperation_track.py
+
+treaty-greece-maritime-transport-track-validate:
+	$(PY) scripts/validate_treaty_greece_maritime_transport_track.py
+
+treaty-hungary-air-services-track-validate:
+	$(PY) scripts/validate_treaty_hungary_air_services_track.py
+
+treaty-iraq-maritime-transport-track-validate:
+	$(PY) scripts/validate_treaty_iraq_maritime_transport_track.py
+
+treaty-albania-driving-licences-track-validate:
+	$(PY) scripts/validate_treaty_albania_driving_licences_track.py
+
+treaty-bangladesh-customs-assistance-track-validate:
+	$(PY) scripts/validate_treaty_bangladesh_customs_assistance_track.py
+
+treaty-iala-establishment-track-validate:
+	$(PY) scripts/validate_treaty_iala_establishment_track.py
+
+treaty-ghana-air-services-track-validate:
+	$(PY) scripts/validate_treaty_ghana_air_services_track.py
+
+treaty-guyana-air-services-track-validate:
+	$(PY) scripts/validate_treaty_guyana_air_services_track.py
+
+treaty-djibouti-maritime-transport-track-validate:
+	$(PY) scripts/validate_treaty_djibouti_maritime_transport_track.py
+
+treaty-czechia-air-services-track-validate:
+	$(PY) scripts/validate_treaty_czechia_air_services_track.py
+
+treaty-dco-headquarters-track-validate:
+	$(PY) scripts/validate_treaty_dco_headquarters_track.py
+
+treaty-nepal-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_nepal_general_cooperation_track.py
+
+treaty-arab-road-passenger-transport-track-validate:
+	$(PY) scripts/validate_treaty_arab_road_passenger_transport_track.py
+
+treaty-uzbekistan-energy-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_uzbekistan_energy_cooperation_track.py
+
+treaty-arab-anti-human-cloning-track-validate:
+	$(PY) scripts/validate_treaty_arab_anti_human_cloning_track.py
+
+treaty-latvia-economic-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_latvia_economic_cooperation_track.py
+
+treaty-honduras-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_honduras_general_cooperation_track.py
+
+treaty-estonia-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_estonia_general_cooperation_track.py
+
+treaty-cyprus-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_cyprus_general_cooperation_track.py
+
+treaty-slovakia-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_slovakia_general_cooperation_track.py
+
+treaty-slovenia-general-cooperation-track-validate:
+	$(PY) scripts/validate_treaty_slovenia_general_cooperation_track.py
+
+occupational-safety-health-national-policy-track-validate:
+	$(PY) scripts/validate_occupational_safety_health_national_policy_track.py
+
+spending-efficiency-authority-statute-track-validate:
+	$(PY) scripts/validate_spending_efficiency_authority_statute_track.py
+
+realestate-platform-licensing-criteria-track-validate:
+	$(PY) scripts/validate_realestate_platform_licensing_criteria_track.py
+
+administrative-violations-drafting-guide-track-validate:
+	$(PY) scripts/validate_administrative_violations_drafting_guide_track.py
+
+fresh-produce-import-controls-track-validate:
+	$(PY) scripts/validate_fresh_produce_import_controls_track.py
+
+direct-finance-investment-funds-instructions-track-validate:
+	$(PY) scripts/validate_direct_finance_investment_funds_instructions_track.py
+
+public-transport-projects-framework-track-validate:
+	$(PY) scripts/validate_public_transport_projects_framework_track.py
+
+intracity-bus-transport-licensing-track-validate:
+	$(PY) scripts/validate_intracity_bus_transport_licensing_track.py
+
+narcotics-schedules-general-provisions-track-validate:
+	$(PY) scripts/validate_narcotics_schedules_general_provisions_track.py
+
+listed-companies-accumulated-losses-instructions-track-validate:
+	$(PY) scripts/validate_listed_companies_accumulated_losses_instructions_track.py
+
+charitable-donations-executive-instructions-track-validate:
+	$(PY) scripts/validate_charitable_donations_executive_instructions_track.py
+
+railway-independent-consultant-guide-track-validate:
+	$(PY) scripts/validate_railway_independent_consultant_guide_track.py
+
+nazaha-military-personnel-statute-track-validate:
+	$(PY) scripts/validate_nazaha_military_personnel_statute_track.py
+
+self-consumption-renewable-energy-framework-track-validate:
+	$(PY) scripts/validate_self_consumption_renewable_energy_framework_track.py
+
+offplan-engineering-consultants-qualification-track-validate:
+	$(PY) scripts/validate_offplan_engineering_consultants_qualification_track.py
+
+civil-aviation-economic-policy-track-validate:
+	$(PY) scripts/validate_civil_aviation_economic_policy_track.py
+
+aquaculture-national-policies-guide-track-validate:
+	$(PY) scripts/validate_aquaculture_national_policies_guide_track.py
+
+gcc-financial-products-cross-registration-framework-track-validate:
+	$(PY) scripts/validate_gcc_financial_products_cross_registration_framework_track.py
+
+animal-health-guide-track-validate:
+	$(PY) scripts/validate_animal_health_guide_track.py
+
+abattoirs-meat-inspection-guide-track-validate:
+	$(PY) scripts/validate_abattoirs_meat_inspection_guide_track.py
+
+rural-livestock-husbandry-guide-track-validate:
+	$(PY) scripts/validate_rural_livestock_husbandry_guide_track.py
+
+vehicle-damage-assessment-standards-track-validate:
+	$(PY) scripts/validate_vehicle_damage_assessment_standards_track.py
+
+public-entities-governance-guide-track-validate:
+	$(PY) scripts/validate_public_entities_governance_guide_track.py
+
+public-transport-users-rights-enforcement-guide-track-validate:
+	$(PY) scripts/validate_public_transport_users_rights_enforcement_guide_track.py
+
+land-transport-training-centers-accreditation-track-validate:
+	$(PY) scripts/validate_land_transport_training_centers_accreditation_track.py
+
+arabic-language-national-policy-track-validate:
+	$(PY) scripts/validate_arabic_language_national_policy_track.py
 
 museums-authority-licensing-regulation-track-validate:
 	$(PY) scripts/validate_museums_authority_licensing_regulation_track.py

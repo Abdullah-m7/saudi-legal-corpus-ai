@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 24066,
+  "total_primary_arabic_governing_records": 25242,
   "total_reference_records": 614,
-  "total_registry_counted_records": 24961,
-  "total_tracks": 655,
+  "total_registry_counted_records": 26137,
+  "total_tracks": 721,
   "tracks": [
     {
       "boundaries": {
@@ -26490,6 +26490,3306 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/treaty_brazil_visit_visas/official_source/treaty_brazil_visit_visas_official_source.json",
+        "sources/treaty_brazil_visit_visas/verified/treaty_brazil_visit_visas_verified_records.jsonl",
+        "data/treaty_brazil_visit_visas_arabic_legal_llm/treaty_brazil_visit_visas_legal_llm_001_013.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومة المملكة وحكومة جمهورية البرازيل بشأن تنظيم إجراءات منح مواطني البلدين تأشيرة زيارة",
+      "display_name_en": "Saudi Arabia–Brazil Agreement on Visit Visa Procedures",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_brazil_visit_visas_arabic_legal_llm/treaty_brazil_visit_visas_legal_llm_001_013.json",
+          "governing": true,
+          "record_count": 13,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Brazil Agreement on Visit Visa Procedures «اتفاقية بين حكومة المملكة وحكومة جمهورية البرازيل بشأن تنظيم إجراءات منح مواطني البلدين تأشيرة زيارة» — **13 articles. ALL 13 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1442H / 2021-01-08. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 13,
+        "legal_status_breakdown": {
+          "اصلية": 13,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 13
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Brazil Agreement on Visit Visa Procedures — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1442H (2021-01-08).",
+      "status": "complete",
+      "track_id": "treaty_brazil_visit_visas",
+      "validator_targets": [
+        "make treaty-brazil-visit-visas-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_aircraft_seizure_supplementary_protocol/official_source/treaty_aircraft_seizure_supplementary_protocol_official_source.json",
+        "sources/treaty_aircraft_seizure_supplementary_protocol/verified/treaty_aircraft_seizure_supplementary_protocol_verified_records.jsonl",
+        "data/treaty_aircraft_seizure_supplementary_protocol_arabic_legal_llm/treaty_aircraft_seizure_supplementary_protocol_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "البروتوكول المكمل لاتفاقية قمع الاستيلاء غير المشروع على الطائرات",
+      "display_name_en": "Supplementary Protocol to the Convention for the Suppression of Unlawful Seizure of Aircraft",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_aircraft_seizure_supplementary_protocol_arabic_legal_llm/treaty_aircraft_seizure_supplementary_protocol_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 24,
+          "status": "complete"
+        }
+      },
+      "notes": "Supplementary Protocol to the Convention for the Suppression of Unlawful Seizure of Aircraft «البروتوكول المكمل لاتفاقية قمع الاستيلاء غير المشروع على الطائرات» — **24 articles. ALL 24 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/8/1442H / 2021-04-02. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 24,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 24
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Supplementary Protocol to the Convention for the Suppression of Unlawful Seizure of Aircraft — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/8/1442H (2021-04-02).",
+      "status": "complete",
+      "track_id": "treaty_aircraft_seizure_supplementary_protocol",
+      "validator_targets": [
+        "make treaty-aircraft-seizure-supplementary-protocol-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_unwto_cooperation/official_source/treaty_unwto_cooperation_official_source.json",
+        "sources/treaty_unwto_cooperation/verified/treaty_unwto_cooperation_verified_records.jsonl",
+        "data/treaty_unwto_cooperation_arabic_legal_llm/treaty_unwto_cooperation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اتفاقية بين المملكة ومنظمة السياحة العالمية",
+      "display_name_en": "Agreement between Saudi Arabia and the World Tourism Organization",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_unwto_cooperation_arabic_legal_llm/treaty_unwto_cooperation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Agreement between Saudi Arabia and the World Tourism Organization «اتفاقية بين المملكة ومنظمة السياحة العالمية» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/8/1442H / 2021-04-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Agreement between Saudi Arabia and the World Tourism Organization — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/8/1442H (2021-04-09).",
+      "status": "complete",
+      "track_id": "treaty_unwto_cooperation",
+      "validator_targets": [
+        "make treaty-unwto-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_chad_general_cooperation/official_source/treaty_chad_general_cooperation_official_source.json",
+        "sources/treaty_chad_general_cooperation/verified/treaty_chad_general_cooperation_verified_records.jsonl",
+        "data/treaty_chad_general_cooperation_arabic_legal_llm/treaty_chad_general_cooperation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومة المملكة وحكومة تشاد",
+      "display_name_en": "Saudi Arabia–Chad General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_chad_general_cooperation_arabic_legal_llm/treaty_chad_general_cooperation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Chad General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومة المملكة وحكومة تشاد» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/12/1442H / 2021-07-23. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Chad General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/12/1442H (2021-07-23).",
+      "status": "complete",
+      "track_id": "treaty_chad_general_cooperation",
+      "validator_targets": [
+        "make treaty-chad-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_gcc_payment_systems_linkage/official_source/treaty_gcc_payment_systems_linkage_official_source.json",
+        "sources/treaty_gcc_payment_systems_linkage/verified/treaty_gcc_payment_systems_linkage_verified_records.jsonl",
+        "data/treaty_gcc_payment_systems_linkage_arabic_legal_llm/treaty_gcc_payment_systems_linkage_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "اتفاقية نظام ربط أنظمة المدفوعات بين دول مجلس التعاون لدول الخليج العربية",
+      "display_name_en": "GCC Payment Systems Linkage Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_gcc_payment_systems_linkage_arabic_legal_llm/treaty_gcc_payment_systems_linkage_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "GCC Payment Systems Linkage Agreement «اتفاقية نظام ربط أنظمة المدفوعات بين دول مجلس التعاون لدول الخليج العربية» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/12/1442H / 2021-07-23. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "GCC Payment Systems Linkage Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/12/1442H (2021-07-23).",
+      "status": "complete",
+      "track_id": "treaty_gcc_payment_systems_linkage",
+      "validator_targets": [
+        "make treaty-gcc-payment-systems-linkage-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_regional_technical_cooperation_protocol/official_source/treaty_regional_technical_cooperation_protocol_official_source.json",
+        "sources/treaty_regional_technical_cooperation_protocol/verified/treaty_regional_technical_cooperation_protocol_verified_records.jsonl",
+        "data/treaty_regional_technical_cooperation_protocol_arabic_legal_llm/treaty_regional_technical_cooperation_protocol_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "البروتوكول الإقليمي الخاص بالتعاون الفني لاستعارة ونقل الخبراء والفنيين والأجهزة والمعدات والمواد في الحالات الطارئة",
+      "display_name_en": "Regional Protocol on Technical Cooperation for Emergency Secondment and Transfer of Experts and Equipment",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_regional_technical_cooperation_protocol_arabic_legal_llm/treaty_regional_technical_cooperation_protocol_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Regional Protocol on Technical Cooperation for Emergency Secondment and Transfer of Experts and Equipment «البروتوكول الإقليمي الخاص بالتعاون الفني لاستعارة ونقل الخبراء والفنيين والأجهزة والمعدات والمواد في الحالات الطارئة» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/1/1443H / 2021-08-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Regional Protocol on Technical Cooperation for Emergency Secondment and Transfer of Experts and Equipment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/1/1443H (2021-08-13).",
+      "status": "complete",
+      "track_id": "treaty_regional_technical_cooperation_protocol",
+      "validator_targets": [
+        "make treaty-regional-technical-cooperation-protocol-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_bahrain_customs_cooperation/official_source/treaty_bahrain_customs_cooperation_official_source.json",
+        "sources/treaty_bahrain_customs_cooperation/verified/treaty_bahrain_customs_cooperation_verified_records.jsonl",
+        "data/treaty_bahrain_customs_cooperation_arabic_legal_llm/treaty_bahrain_customs_cooperation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "اتفاقية التعاون الجمركي المشترك بين هيئة الزكاة والضريبة والجمارك في المملكة وشؤون الجمارك بمملكة البحرين",
+      "display_name_en": "Saudi–Bahraini Joint Customs Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_bahrain_customs_cooperation_arabic_legal_llm/treaty_bahrain_customs_cooperation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi–Bahraini Joint Customs Cooperation Agreement «اتفاقية التعاون الجمركي المشترك بين هيئة الزكاة والضريبة والجمارك في المملكة وشؤون الجمارك بمملكة البحرين» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/1/1443H / 2021-08-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi–Bahraini Joint Customs Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/1/1443H (2021-08-13).",
+      "status": "complete",
+      "track_id": "treaty_bahrain_customs_cooperation",
+      "validator_targets": [
+        "make treaty-bahrain-customs-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_taipei_economic_cultural_office/official_source/treaty_taipei_economic_cultural_office_official_source.json",
+        "sources/treaty_taipei_economic_cultural_office/verified/treaty_taipei_economic_cultural_office_verified_records.jsonl",
+        "data/treaty_taipei_economic_cultural_office_arabic_legal_llm/treaty_taipei_economic_cultural_office_legal_llm_001_028.json"
+      ],
+      "display_name_ar": "اتفاقية بين مجلس الغرف التجارية الصناعية السعودية ومكتب الممثل الاقتصادي والثقافي لتايبيه في المملكة",
+      "display_name_en": "Agreement between the Federation of Saudi Chambers and the Taipei Economic and Cultural Office",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_taipei_economic_cultural_office_arabic_legal_llm/treaty_taipei_economic_cultural_office_legal_llm_001_028.json",
+          "governing": true,
+          "record_count": 27,
+          "status": "complete"
+        }
+      },
+      "notes": "Agreement between the Federation of Saudi Chambers and the Taipei Economic and Cultural Office «اتفاقية بين مجلس الغرف التجارية الصناعية السعودية ومكتب الممثل الاقتصادي والثقافي لتايبيه في المملكة» — **27 articles. ALL 27 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/1/1443H / 2021-09-03. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 27,
+        "legal_status_breakdown": {
+          "اصلية": 27,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 27
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Agreement between the Federation of Saudi Chambers and the Taipei Economic and Cultural Office — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/1/1443H (2021-09-03).",
+      "status": "complete",
+      "track_id": "treaty_taipei_economic_cultural_office",
+      "validator_targets": [
+        "make treaty-taipei-economic-cultural-office-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_iraq_double_taxation/official_source/treaty_iraq_double_taxation_official_source.json",
+        "sources/treaty_iraq_double_taxation/verified/treaty_iraq_double_taxation_verified_records.jsonl",
+        "data/treaty_iraq_double_taxation_arabic_legal_llm/treaty_iraq_double_taxation_legal_llm_001_031.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومة المملكة وحكومة جمهورية العراق لتجنب الازدواج الضريبي",
+      "display_name_en": "Saudi Arabia–Iraq Double Taxation Avoidance Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_iraq_double_taxation_arabic_legal_llm/treaty_iraq_double_taxation_legal_llm_001_031.json",
+          "governing": true,
+          "record_count": 31,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Iraq Double Taxation Avoidance Agreement «اتفاقية بين حكومة المملكة وحكومة جمهورية العراق لتجنب الازدواج الضريبي» — **31 articles. ALL 31 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/3/1443H / 2021-10-15. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 31,
+        "legal_status_breakdown": {
+          "اصلية": 31,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 31
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Iraq Double Taxation Avoidance Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/3/1443H (2021-10-15).",
+      "status": "complete",
+      "track_id": "treaty_iraq_double_taxation",
+      "validator_targets": [
+        "make treaty-iraq-double-taxation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_rwanda_general_cooperation/official_source/treaty_rwanda_general_cooperation_official_source.json",
+        "sources/treaty_rwanda_general_cooperation/verified/treaty_rwanda_general_cooperation_verified_records.jsonl",
+        "data/treaty_rwanda_general_cooperation_arabic_legal_llm/treaty_rwanda_general_cooperation_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين المملكة وجمهورية رواندا",
+      "display_name_en": "Saudi Arabia–Rwanda General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_rwanda_general_cooperation_arabic_legal_llm/treaty_rwanda_general_cooperation_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Rwanda General Cooperation Agreement «اتفاقية عامة للتعاون بين المملكة وجمهورية رواندا» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/4/1443H / 2021-12-03. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Rwanda General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/4/1443H (2021-12-03).",
+      "status": "complete",
+      "track_id": "treaty_rwanda_general_cooperation",
+      "validator_targets": [
+        "make treaty-rwanda-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_iata_headquarters/official_source/treaty_iata_headquarters_official_source.json",
+        "sources/treaty_iata_headquarters/verified/treaty_iata_headquarters_verified_records.jsonl",
+        "data/treaty_iata_headquarters_arabic_legal_llm/treaty_iata_headquarters_legal_llm_001_012.json"
+      ],
+      "display_name_ar": "اتفاقية مقر بين حكومة المملكة واتحاد النقل الجوي الدولي (إياتا)",
+      "display_name_en": "Headquarters Agreement between Saudi Arabia and IATA",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_iata_headquarters_arabic_legal_llm/treaty_iata_headquarters_legal_llm_001_012.json",
+          "governing": true,
+          "record_count": 12,
+          "status": "complete"
+        }
+      },
+      "notes": "Headquarters Agreement between Saudi Arabia and IATA «اتفاقية مقر بين حكومة المملكة واتحاد النقل الجوي الدولي (إياتا)» — **12 articles. ALL 12 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H / 2021-12-10. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 12,
+        "legal_status_breakdown": {
+          "اصلية": 12,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 12
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Headquarters Agreement between Saudi Arabia and IATA — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
+      "status": "complete",
+      "track_id": "treaty_iata_headquarters",
+      "validator_targets": [
+        "make treaty-iata-headquarters-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_gcc_wildlife_conservation/official_source/treaty_gcc_wildlife_conservation_official_source.json",
+        "sources/treaty_gcc_wildlife_conservation/verified/treaty_gcc_wildlife_conservation_verified_records.jsonl",
+        "data/treaty_gcc_wildlife_conservation_arabic_legal_llm/treaty_gcc_wildlife_conservation_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اتفاقية المحافظة على الحياة الفطرية ومواطنها الطبيعية في مجلس التعاون لدول الخليج العربية",
+      "display_name_en": "GCC Agreement on the Conservation of Wildlife and Its Natural Habitats",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_gcc_wildlife_conservation_arabic_legal_llm/treaty_gcc_wildlife_conservation_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "GCC Agreement on the Conservation of Wildlife and Its Natural Habitats «اتفاقية المحافظة على الحياة الفطرية ومواطنها الطبيعية في مجلس التعاون لدول الخليج العربية» — **18 articles. ALL 18 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H / 2021-12-10. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "GCC Agreement on the Conservation of Wildlife and Its Natural Habitats — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
+      "status": "complete",
+      "track_id": "treaty_gcc_wildlife_conservation",
+      "validator_targets": [
+        "make treaty-gcc-wildlife-conservation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_unwto_elearning_capacity/official_source/treaty_unwto_elearning_capacity_official_source.json",
+        "sources/treaty_unwto_elearning_capacity/verified/treaty_unwto_elearning_capacity_verified_records.jsonl",
+        "data/treaty_unwto_elearning_capacity_arabic_legal_llm/treaty_unwto_elearning_capacity_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "اتفاقية تعاون بين وزارة السياحة في المملكة ومنظمة السياحة العالمية لتنمية القدرات البشرية عن طريق التعليم الإلكتروني",
+      "display_name_en": "Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_unwto_elearning_capacity_arabic_legal_llm/treaty_unwto_elearning_capacity_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development «اتفاقية تعاون بين وزارة السياحة في المملكة ومنظمة السياحة العالمية لتنمية القدرات البشرية عن طريق التعليم الإلكتروني» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/7/1443H / 2022-02-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/7/1443H (2022-02-04).",
+      "status": "complete",
+      "track_id": "treaty_unwto_elearning_capacity",
+      "validator_targets": [
+        "make treaty-unwto-elearning-capacity-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_qatar_air_services/official_source/treaty_qatar_air_services_official_source.json",
+        "sources/treaty_qatar_air_services/verified/treaty_qatar_air_services_verified_records.jsonl",
+        "data/treaty_qatar_air_services_arabic_legal_llm/treaty_qatar_air_services_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة و قطر في مجال خدمات النقل الجوي",
+      "display_name_en": "Saudi Arabia–Qatar Air Services Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_qatar_air_services_arabic_legal_llm/treaty_qatar_air_services_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Qatar Air Services Agreement «اتفاقية بين حكومتي المملكة و قطر في مجال خدمات النقل الجوي» — **37 articles. ALL 37 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/7/1443H / 2022-02-25. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Qatar Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/7/1443H (2022-02-25).",
+      "status": "complete",
+      "track_id": "treaty_qatar_air_services",
+      "validator_targets": [
+        "make treaty-qatar-air-services-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_pakistan_transfer_of_sentenced_persons/official_source/treaty_pakistan_transfer_of_sentenced_persons_official_source.json",
+        "sources/treaty_pakistan_transfer_of_sentenced_persons/verified/treaty_pakistan_transfer_of_sentenced_persons_verified_records.jsonl",
+        "data/treaty_pakistan_transfer_of_sentenced_persons_arabic_legal_llm/treaty_pakistan_transfer_of_sentenced_persons_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وجمهورية باكستان الإسلامية لنقل المحكوم عليهم بعقوبات سالبة للحرية",
+      "display_name_en": "Saudi Arabia–Pakistan Agreement on the Transfer of Sentenced Persons",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_pakistan_transfer_of_sentenced_persons_arabic_legal_llm/treaty_pakistan_transfer_of_sentenced_persons_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Pakistan Agreement on the Transfer of Sentenced Persons «اتفاقية بين حكومتي المملكة وجمهورية باكستان الإسلامية لنقل المحكوم عليهم بعقوبات سالبة للحرية» — **17 articles. ALL 17 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/8/1443H / 2022-03-11. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Pakistan Agreement on the Transfer of Sentenced Persons — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/8/1443H (2022-03-11).",
+      "status": "complete",
+      "track_id": "treaty_pakistan_transfer_of_sentenced_persons",
+      "validator_targets": [
+        "make treaty-pakistan-transfer-of-sentenced-persons-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_unccd_secretariat_cooperation/official_source/treaty_unccd_secretariat_cooperation_official_source.json",
+        "sources/treaty_unccd_secretariat_cooperation/verified/treaty_unccd_secretariat_cooperation_verified_records.jsonl",
+        "data/treaty_unccd_secretariat_cooperation_arabic_legal_llm/treaty_unccd_secretariat_cooperation_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "اتفاقية للتعاون بين وزارة البيئة والمياه والزراعة في المملكة وأمانة اتفاقية الأمم المتحدة لمكافحة التصحر",
+      "display_name_en": "Cooperation Agreement between MEWA and the UNCCD Secretariat",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_unccd_secretariat_cooperation_arabic_legal_llm/treaty_unccd_secretariat_cooperation_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "Cooperation Agreement between MEWA and the UNCCD Secretariat «اتفاقية للتعاون بين وزارة البيئة والمياه والزراعة في المملكة وأمانة اتفاقية الأمم المتحدة لمكافحة التصحر» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/8/1443H / 2022-03-18. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Cooperation Agreement between MEWA and the UNCCD Secretariat — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/8/1443H (2022-03-18).",
+      "status": "complete",
+      "track_id": "treaty_unccd_secretariat_cooperation",
+      "validator_targets": [
+        "make treaty-unccd-secretariat-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_cameroon_general_cooperation/official_source/treaty_cameroon_general_cooperation_official_source.json",
+        "sources/treaty_cameroon_general_cooperation/verified/treaty_cameroon_general_cooperation_verified_records.jsonl",
+        "data/treaty_cameroon_general_cooperation_arabic_legal_llm/treaty_cameroon_general_cooperation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة والكاميرون",
+      "display_name_en": "Saudi Arabia–Cameroon General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_cameroon_general_cooperation_arabic_legal_llm/treaty_cameroon_general_cooperation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Cameroon General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومتي المملكة والكاميرون» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/9/1443H / 2022-04-15. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Cameroon General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/9/1443H (2022-04-15).",
+      "status": "complete",
+      "track_id": "treaty_cameroon_general_cooperation",
+      "validator_targets": [
+        "make treaty-cameroon-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_azerbaijan_customs_assistance/official_source/treaty_azerbaijan_customs_assistance_official_source.json",
+        "sources/treaty_azerbaijan_customs_assistance/verified/treaty_azerbaijan_customs_assistance_verified_records.jsonl",
+        "data/treaty_azerbaijan_customs_assistance_arabic_legal_llm/treaty_azerbaijan_customs_assistance_legal_llm_001_020.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وأذربيجان حول التعاون والمساعدة المتبادلة في المسائل الجمركية",
+      "display_name_en": "Saudi Arabia–Azerbaijan Agreement on Cooperation and Mutual Assistance in Customs Matters",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_azerbaijan_customs_assistance_arabic_legal_llm/treaty_azerbaijan_customs_assistance_legal_llm_001_020.json",
+          "governing": true,
+          "record_count": 20,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Azerbaijan Agreement on Cooperation and Mutual Assistance in Customs Matters «اتفاقية بين حكومتي المملكة وأذربيجان حول التعاون والمساعدة المتبادلة في المسائل الجمركية» — **20 articles. ALL 20 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/10/1443H / 2022-05-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 20,
+        "legal_status_breakdown": {
+          "اصلية": 20,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 20
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Azerbaijan Agreement on Cooperation and Mutual Assistance in Customs Matters — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/10/1443H (2022-05-13).",
+      "status": "complete",
+      "track_id": "treaty_azerbaijan_customs_assistance",
+      "validator_targets": [
+        "make treaty-azerbaijan-customs-assistance-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_south_sudan_general_cooperation/official_source/treaty_south_sudan_general_cooperation_official_source.json",
+        "sources/treaty_south_sudan_general_cooperation/verified/treaty_south_sudan_general_cooperation_verified_records.jsonl",
+        "data/treaty_south_sudan_general_cooperation_arabic_legal_llm/treaty_south_sudan_general_cooperation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية جنوب السودان",
+      "display_name_en": "Saudi Arabia–South Sudan General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_south_sudan_general_cooperation_arabic_legal_llm/treaty_south_sudan_general_cooperation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–South Sudan General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية جنوب السودان» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/10/1443H / 2022-05-27. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–South Sudan General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/10/1443H (2022-05-27).",
+      "status": "complete",
+      "track_id": "treaty_south_sudan_general_cooperation",
+      "validator_targets": [
+        "make treaty-south-sudan-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_greece_maritime_transport/official_source/treaty_greece_maritime_transport_official_source.json",
+        "sources/treaty_greece_maritime_transport/verified/treaty_greece_maritime_transport_verified_records.jsonl",
+        "data/treaty_greece_maritime_transport_arabic_legal_llm/treaty_greece_maritime_transport_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اتفاقية تعاون بين حكومتي المملكة واليونان في مجال النقل البحري",
+      "display_name_en": "Saudi Arabia–Greece Maritime Transport Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_greece_maritime_transport_arabic_legal_llm/treaty_greece_maritime_transport_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Greece Maritime Transport Cooperation Agreement «اتفاقية تعاون بين حكومتي المملكة واليونان في مجال النقل البحري» — **18 articles. ALL 18 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 2/12/1443H / 2022-07-01. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Greece Maritime Transport Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 2/12/1443H (2022-07-01).",
+      "status": "complete",
+      "track_id": "treaty_greece_maritime_transport",
+      "validator_targets": [
+        "make treaty-greece-maritime-transport-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_hungary_air_services/official_source/treaty_hungary_air_services_official_source.json",
+        "sources/treaty_hungary_air_services/verified/treaty_hungary_air_services_verified_records.jsonl",
+        "data/treaty_hungary_air_services_arabic_legal_llm/treaty_hungary_air_services_legal_llm_001_022.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وهنغاريا في مجال خدمات النقل الجوي",
+      "display_name_en": "Saudi Arabia–Hungary Air Services Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_hungary_air_services_arabic_legal_llm/treaty_hungary_air_services_legal_llm_001_022.json",
+          "governing": true,
+          "record_count": 22,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Hungary Air Services Agreement «اتفاقية بين حكومتي المملكة وهنغاريا في مجال خدمات النقل الجوي» — **22 articles. ALL 22 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/12/1443H / 2022-07-29. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 22,
+        "legal_status_breakdown": {
+          "اصلية": 22,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 22
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Hungary Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/12/1443H (2022-07-29).",
+      "status": "complete",
+      "track_id": "treaty_hungary_air_services",
+      "validator_targets": [
+        "make treaty-hungary-air-services-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_iraq_maritime_transport/official_source/treaty_iraq_maritime_transport_official_source.json",
+        "sources/treaty_iraq_maritime_transport/verified/treaty_iraq_maritime_transport_verified_records.jsonl",
+        "data/treaty_iraq_maritime_transport_arabic_legal_llm/treaty_iraq_maritime_transport_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "اتفاقية تعاون بين حكومتي المملكة والعراق في مجال النقل البحري",
+      "display_name_en": "Saudi Arabia–Iraq Maritime Transport Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_iraq_maritime_transport_arabic_legal_llm/treaty_iraq_maritime_transport_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Iraq Maritime Transport Cooperation Agreement «اتفاقية تعاون بين حكومتي المملكة والعراق في مجال النقل البحري» — **17 articles. ALL 17 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/1/1444H / 2022-08-05. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Iraq Maritime Transport Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/1/1444H (2022-08-05).",
+      "status": "complete",
+      "track_id": "treaty_iraq_maritime_transport",
+      "validator_targets": [
+        "make treaty-iraq-maritime-transport-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_albania_driving_licences/official_source/treaty_albania_driving_licences_official_source.json",
+        "sources/treaty_albania_driving_licences/verified/treaty_albania_driving_licences_verified_records.jsonl",
+        "data/treaty_albania_driving_licences_arabic_legal_llm/treaty_albania_driving_licences_legal_llm_001_012.json"
+      ],
+      "display_name_ar": "اتفاقية تعاون في مجال استعمال واستبدال رخص القيادة بين حكومتي المملكة وألبانيا",
+      "display_name_en": "Saudi Arabia–Albania Agreement on the Use and Exchange of Driving Licences",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_albania_driving_licences_arabic_legal_llm/treaty_albania_driving_licences_legal_llm_001_012.json",
+          "governing": true,
+          "record_count": 12,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Albania Agreement on the Use and Exchange of Driving Licences «اتفاقية تعاون في مجال استعمال واستبدال رخص القيادة بين حكومتي المملكة وألبانيا» — **12 articles. ALL 12 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/1/1444H / 2022-08-12. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 12,
+        "legal_status_breakdown": {
+          "اصلية": 12,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 12
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Albania Agreement on the Use and Exchange of Driving Licences — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/1/1444H (2022-08-12).",
+      "status": "complete",
+      "track_id": "treaty_albania_driving_licences",
+      "validator_targets": [
+        "make treaty-albania-driving-licences-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_bangladesh_customs_assistance/official_source/treaty_bangladesh_customs_assistance_official_source.json",
+        "sources/treaty_bangladesh_customs_assistance/verified/treaty_bangladesh_customs_assistance_verified_records.jsonl",
+        "data/treaty_bangladesh_customs_assistance_arabic_legal_llm/treaty_bangladesh_customs_assistance_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وبنغلاديش الشعبية حول التعاون والمساعدة المتبادلة في المسائل الجمركية",
+      "display_name_en": "Saudi Arabia–Bangladesh Agreement on Cooperation and Mutual Assistance in Customs Matters",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_bangladesh_customs_assistance_arabic_legal_llm/treaty_bangladesh_customs_assistance_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Bangladesh Agreement on Cooperation and Mutual Assistance in Customs Matters «اتفاقية بين حكومتي المملكة وبنغلاديش الشعبية حول التعاون والمساعدة المتبادلة في المسائل الجمركية» — **18 articles. ALL 18 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/2/1444H / 2022-09-02. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Bangladesh Agreement on Cooperation and Mutual Assistance in Customs Matters — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/2/1444H (2022-09-02).",
+      "status": "complete",
+      "track_id": "treaty_bangladesh_customs_assistance",
+      "validator_targets": [
+        "make treaty-bangladesh-customs-assistance-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_iala_establishment/official_source/treaty_iala_establishment_official_source.json",
+        "sources/treaty_iala_establishment/verified/treaty_iala_establishment_verified_records.jsonl",
+        "data/treaty_iala_establishment_arabic_legal_llm/treaty_iala_establishment_legal_llm_001_022.json"
+      ],
+      "display_name_ar": "اتفاقية بشأن إنشاء المنظمة الدولية للمساعدات الملاحية البحرية",
+      "display_name_en": "Convention on the Establishment of the International Organization for Marine Aids to Navigation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_iala_establishment_arabic_legal_llm/treaty_iala_establishment_legal_llm_001_022.json",
+          "governing": true,
+          "record_count": 22,
+          "status": "complete"
+        }
+      },
+      "notes": "Convention on the Establishment of the International Organization for Marine Aids to Navigation «اتفاقية بشأن إنشاء المنظمة الدولية للمساعدات الملاحية البحرية» — **22 articles. ALL 22 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H / 2022-09-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 22,
+        "legal_status_breakdown": {
+          "اصلية": 22,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 22
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Convention on the Establishment of the International Organization for Marine Aids to Navigation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H (2022-09-09).",
+      "status": "complete",
+      "track_id": "treaty_iala_establishment",
+      "validator_targets": [
+        "make treaty-iala-establishment-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_ghana_air_services/official_source/treaty_ghana_air_services_official_source.json",
+        "sources/treaty_ghana_air_services/verified/treaty_ghana_air_services_verified_records.jsonl",
+        "data/treaty_ghana_air_services_arabic_legal_llm/treaty_ghana_air_services_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وغانا في مجال خدمات النقل الجوي",
+      "display_name_en": "Saudi Arabia–Ghana Air Services Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_ghana_air_services_arabic_legal_llm/treaty_ghana_air_services_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Ghana Air Services Agreement «اتفاقية بين حكومتي المملكة وغانا في مجال خدمات النقل الجوي» — **37 articles. ALL 37 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/2/1444H / 2022-09-16. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Ghana Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/2/1444H (2022-09-16).",
+      "status": "complete",
+      "track_id": "treaty_ghana_air_services",
+      "validator_targets": [
+        "make treaty-ghana-air-services-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_guyana_air_services/official_source/treaty_guyana_air_services_official_source.json",
+        "sources/treaty_guyana_air_services/verified/treaty_guyana_air_services_verified_records.jsonl",
+        "data/treaty_guyana_air_services_arabic_legal_llm/treaty_guyana_air_services_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وغويانا التعاونية في مجال خدمات النقل الجوي",
+      "display_name_en": "Saudi Arabia–Guyana Air Services Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_guyana_air_services_arabic_legal_llm/treaty_guyana_air_services_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Guyana Air Services Agreement «اتفاقية بين حكومتي المملكة وغويانا التعاونية في مجال خدمات النقل الجوي» — **37 articles. ALL 37 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/5/1444H / 2022-12-02. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Guyana Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/5/1444H (2022-12-02).",
+      "status": "complete",
+      "track_id": "treaty_guyana_air_services",
+      "validator_targets": [
+        "make treaty-guyana-air-services-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_djibouti_maritime_transport/official_source/treaty_djibouti_maritime_transport_official_source.json",
+        "sources/treaty_djibouti_maritime_transport/verified/treaty_djibouti_maritime_transport_verified_records.jsonl",
+        "data/treaty_djibouti_maritime_transport_arabic_legal_llm/treaty_djibouti_maritime_transport_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اتفاقية تعاون بين حكومتي المملكة وجمهورية جيبوتي في مجال النقل البحري",
+      "display_name_en": "Saudi Arabia–Djibouti Maritime Transport Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_djibouti_maritime_transport_arabic_legal_llm/treaty_djibouti_maritime_transport_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Djibouti Maritime Transport Cooperation Agreement «اتفاقية تعاون بين حكومتي المملكة وجمهورية جيبوتي في مجال النقل البحري» — **18 articles. ALL 18 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H / 2023-01-06. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Djibouti Maritime Transport Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H (2023-01-06).",
+      "status": "complete",
+      "track_id": "treaty_djibouti_maritime_transport",
+      "validator_targets": [
+        "make treaty-djibouti-maritime-transport-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_czechia_air_services/official_source/treaty_czechia_air_services_official_source.json",
+        "sources/treaty_czechia_air_services/verified/treaty_czechia_air_services_verified_records.jsonl",
+        "data/treaty_czechia_air_services_arabic_legal_llm/treaty_czechia_air_services_legal_llm_001_024.json"
+      ],
+      "display_name_ar": "اتفاقية بين جمهورية التشيك والمملكة في مجال الخدمات الجوية",
+      "display_name_en": "Saudi Arabia–Czech Republic Air Services Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_czechia_air_services_arabic_legal_llm/treaty_czechia_air_services_legal_llm_001_024.json",
+          "governing": true,
+          "record_count": 24,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Czech Republic Air Services Agreement «اتفاقية بين جمهورية التشيك والمملكة في مجال الخدمات الجوية» — **24 articles. ALL 24 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H / 2023-01-06. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 24,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 24
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Czech Republic Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H (2023-01-06).",
+      "status": "complete",
+      "track_id": "treaty_czechia_air_services",
+      "validator_targets": [
+        "make treaty-czechia-air-services-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_dco_headquarters/official_source/treaty_dco_headquarters_official_source.json",
+        "sources/treaty_dco_headquarters/verified/treaty_dco_headquarters_verified_records.jsonl",
+        "data/treaty_dco_headquarters_arabic_legal_llm/treaty_dco_headquarters_legal_llm_001_021.json"
+      ],
+      "display_name_ar": "اتفاقية مقر بين حكومة المملكة ومنظمة التعاون الرقمي",
+      "display_name_en": "Headquarters Agreement between Saudi Arabia and the Digital Cooperation Organization",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_dco_headquarters_arabic_legal_llm/treaty_dco_headquarters_legal_llm_001_021.json",
+          "governing": true,
+          "record_count": 21,
+          "status": "complete"
+        }
+      },
+      "notes": "Headquarters Agreement between Saudi Arabia and the Digital Cooperation Organization «اتفاقية مقر بين حكومة المملكة ومنظمة التعاون الرقمي» — **21 articles. ALL 21 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/6/1444H / 2023-01-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 21,
+        "legal_status_breakdown": {
+          "اصلية": 21,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 21
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Headquarters Agreement between Saudi Arabia and the Digital Cooperation Organization — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/6/1444H (2023-01-13).",
+      "status": "complete",
+      "track_id": "treaty_dco_headquarters",
+      "validator_targets": [
+        "make treaty-dco-headquarters-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_nepal_general_cooperation/official_source/treaty_nepal_general_cooperation_official_source.json",
+        "sources/treaty_nepal_general_cooperation/verified/treaty_nepal_general_cooperation_verified_records.jsonl",
+        "data/treaty_nepal_general_cooperation_arabic_legal_llm/treaty_nepal_general_cooperation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية نيبال",
+      "display_name_en": "Saudi Arabia–Nepal General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_nepal_general_cooperation_arabic_legal_llm/treaty_nepal_general_cooperation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Nepal General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية نيبال» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/6/1444H / 2023-01-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Nepal General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/6/1444H (2023-01-13).",
+      "status": "complete",
+      "track_id": "treaty_nepal_general_cooperation",
+      "validator_targets": [
+        "make treaty-nepal-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_arab_road_passenger_transport/official_source/treaty_arab_road_passenger_transport_official_source.json",
+        "sources/treaty_arab_road_passenger_transport/verified/treaty_arab_road_passenger_transport_verified_records.jsonl",
+        "data/treaty_arab_road_passenger_transport_arabic_legal_llm/treaty_arab_road_passenger_transport_legal_llm_001_030.json"
+      ],
+      "display_name_ar": "الاتفاقية العربية لتنظيم نقل الركاب على الطرق بين الدول العربية وعبرها",
+      "display_name_en": "Arab Agreement Regulating Road Passenger Transport between and across Arab States",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_arab_road_passenger_transport_arabic_legal_llm/treaty_arab_road_passenger_transport_legal_llm_001_030.json",
+          "governing": true,
+          "record_count": 30,
+          "status": "complete"
+        }
+      },
+      "notes": "Arab Agreement Regulating Road Passenger Transport between and across Arab States «الاتفاقية العربية لتنظيم نقل الركاب على الطرق بين الدول العربية وعبرها» — **30 articles. ALL 30 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H / 2023-02-10. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 30,
+        "legal_status_breakdown": {
+          "اصلية": 30,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 30
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Arab Agreement Regulating Road Passenger Transport between and across Arab States — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H (2023-02-10).",
+      "status": "complete",
+      "track_id": "treaty_arab_road_passenger_transport",
+      "validator_targets": [
+        "make treaty-arab-road-passenger-transport-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_uzbekistan_energy_cooperation/official_source/treaty_uzbekistan_energy_cooperation_official_source.json",
+        "sources/treaty_uzbekistan_energy_cooperation/verified/treaty_uzbekistan_energy_cooperation_verified_records.jsonl",
+        "data/treaty_uzbekistan_energy_cooperation_arabic_legal_llm/treaty_uzbekistan_energy_cooperation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اتفاقية تعاون في مجال الطاقة بين المملكة وأوزبكستان",
+      "display_name_en": "Saudi Arabia–Uzbekistan Energy Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_uzbekistan_energy_cooperation_arabic_legal_llm/treaty_uzbekistan_energy_cooperation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Uzbekistan Energy Cooperation Agreement «اتفاقية تعاون في مجال الطاقة بين المملكة وأوزبكستان» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H / 2023-02-10. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Uzbekistan Energy Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H (2023-02-10).",
+      "status": "complete",
+      "track_id": "treaty_uzbekistan_energy_cooperation",
+      "validator_targets": [
+        "make treaty-uzbekistan-energy-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_arab_anti_human_cloning/official_source/treaty_arab_anti_human_cloning_official_source.json",
+        "sources/treaty_arab_anti_human_cloning/verified/treaty_arab_anti_human_cloning_verified_records.jsonl",
+        "data/treaty_arab_anti_human_cloning_arabic_legal_llm/treaty_arab_anti_human_cloning_legal_llm_001_036.json"
+      ],
+      "display_name_ar": "الاتفاقية العربية لمنع ومكافحة الاستنساخ البشري",
+      "display_name_en": "Arab Convention on the Prevention and Combating of Human Cloning",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_arab_anti_human_cloning_arabic_legal_llm/treaty_arab_anti_human_cloning_legal_llm_001_036.json",
+          "governing": true,
+          "record_count": 36,
+          "status": "complete"
+        }
+      },
+      "notes": "Arab Convention on the Prevention and Combating of Human Cloning «الاتفاقية العربية لمنع ومكافحة الاستنساخ البشري» — **36 articles. ALL 36 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/7/1445H / 2024-02-02. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 36,
+        "legal_status_breakdown": {
+          "اصلية": 36,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 36
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Arab Convention on the Prevention and Combating of Human Cloning — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/7/1445H (2024-02-02).",
+      "status": "complete",
+      "track_id": "treaty_arab_anti_human_cloning",
+      "validator_targets": [
+        "make treaty-arab-anti-human-cloning-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_latvia_economic_cooperation/official_source/treaty_latvia_economic_cooperation_official_source.json",
+        "sources/treaty_latvia_economic_cooperation/verified/treaty_latvia_economic_cooperation_verified_records.jsonl",
+        "data/treaty_latvia_economic_cooperation_arabic_legal_llm/treaty_latvia_economic_cooperation_legal_llm_001_008.json"
+      ],
+      "display_name_ar": "اتفاقية التعاون الاقتصادي بين حكومة المملكة العربية السعودية وحكومة جمهورية لاتفيا",
+      "display_name_en": "Saudi Arabia–Latvia Economic Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_latvia_economic_cooperation_arabic_legal_llm/treaty_latvia_economic_cooperation_legal_llm_001_008.json",
+          "governing": true,
+          "record_count": 8,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Latvia Economic Cooperation Agreement «اتفاقية التعاون الاقتصادي بين حكومة المملكة العربية السعودية وحكومة جمهورية لاتفيا» — **8 articles. ALL 8 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/7/1445H / 2024-02-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 8,
+        "legal_status_breakdown": {
+          "اصلية": 8,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 8
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Latvia Economic Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/7/1445H (2024-02-09).",
+      "status": "complete",
+      "track_id": "treaty_latvia_economic_cooperation",
+      "validator_targets": [
+        "make treaty-latvia-economic-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_honduras_general_cooperation/official_source/treaty_honduras_general_cooperation_official_source.json",
+        "sources/treaty_honduras_general_cooperation/verified/treaty_honduras_general_cooperation_verified_records.jsonl",
+        "data/treaty_honduras_general_cooperation_arabic_legal_llm/treaty_honduras_general_cooperation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومة المملكة وحكومة جمهورية هندوراس",
+      "display_name_en": "Saudi Arabia–Honduras General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_honduras_general_cooperation_arabic_legal_llm/treaty_honduras_general_cooperation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Honduras General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومة المملكة وحكومة جمهورية هندوراس» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/7/1446H / 2025-01-17. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Honduras General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/7/1446H (2025-01-17).",
+      "status": "complete",
+      "track_id": "treaty_honduras_general_cooperation",
+      "validator_targets": [
+        "make treaty-honduras-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_estonia_general_cooperation/official_source/treaty_estonia_general_cooperation_official_source.json",
+        "sources/treaty_estonia_general_cooperation/verified/treaty_estonia_general_cooperation_verified_records.jsonl",
+        "data/treaty_estonia_general_cooperation_arabic_legal_llm/treaty_estonia_general_cooperation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وإستونيا",
+      "display_name_en": "Saudi Arabia–Estonia General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_estonia_general_cooperation_arabic_legal_llm/treaty_estonia_general_cooperation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Estonia General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومتي المملكة وإستونيا» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H / 2026-02-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Estonia General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H (2026-02-13).",
+      "status": "complete",
+      "track_id": "treaty_estonia_general_cooperation",
+      "validator_targets": [
+        "make treaty-estonia-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_cyprus_general_cooperation/official_source/treaty_cyprus_general_cooperation_official_source.json",
+        "sources/treaty_cyprus_general_cooperation/verified/treaty_cyprus_general_cooperation_verified_records.jsonl",
+        "data/treaty_cyprus_general_cooperation_arabic_legal_llm/treaty_cyprus_general_cooperation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وقبرص",
+      "display_name_en": "Saudi Arabia–Cyprus General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_cyprus_general_cooperation_arabic_legal_llm/treaty_cyprus_general_cooperation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Cyprus General Cooperation Agreement «اتفاقية عامة للتعاون بين حكومتي المملكة وقبرص» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/9/1447H / 2026-02-20. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Cyprus General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/9/1447H (2026-02-20).",
+      "status": "complete",
+      "track_id": "treaty_cyprus_general_cooperation",
+      "validator_targets": [
+        "make treaty-cyprus-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_slovakia_general_cooperation/official_source/treaty_slovakia_general_cooperation_official_source.json",
+        "sources/treaty_slovakia_general_cooperation/verified/treaty_slovakia_general_cooperation_verified_records.jsonl",
+        "data/treaty_slovakia_general_cooperation_arabic_legal_llm/treaty_slovakia_general_cooperation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفاكيا",
+      "display_name_en": "Saudi Arabia–Slovakia General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_slovakia_general_cooperation_arabic_legal_llm/treaty_slovakia_general_cooperation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Slovakia General Cooperation Agreement «الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفاكيا» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1448H / 2026-07-17. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Slovakia General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1448H (2026-07-17).",
+      "status": "complete",
+      "track_id": "treaty_slovakia_general_cooperation",
+      "validator_targets": [
+        "make treaty-slovakia-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/treaty_slovenia_general_cooperation/official_source/treaty_slovenia_general_cooperation_official_source.json",
+        "sources/treaty_slovenia_general_cooperation/verified/treaty_slovenia_general_cooperation_verified_records.jsonl",
+        "data/treaty_slovenia_general_cooperation_arabic_legal_llm/treaty_slovenia_general_cooperation_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفينيا",
+      "display_name_en": "Saudi Arabia–Slovenia General Cooperation Agreement",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_slovenia_general_cooperation_arabic_legal_llm/treaty_slovenia_general_cooperation_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabia–Slovenia General Cooperation Agreement «الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفينيا» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1448H / 2026-07-17. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Saudi Arabia–Slovenia General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1448H (2026-07-17).",
+      "status": "complete",
+      "track_id": "treaty_slovenia_general_cooperation",
+      "validator_targets": [
+        "make treaty-slovenia-general-cooperation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/occupational_safety_health_national_policy/official_source/occupational_safety_health_national_policy_official_source.json",
+        "sources/occupational_safety_health_national_policy/verified/occupational_safety_health_national_policy_verified_records.jsonl",
+        "data/occupational_safety_health_national_policy_arabic_legal_llm/occupational_safety_health_national_policy_legal_llm_001_005.json"
+      ],
+      "display_name_ar": "السياسة الوطنية للسلامة والصحة المهنية",
+      "display_name_en": "National Policy for Occupational Safety and Health",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/occupational_safety_health_national_policy_arabic_legal_llm/occupational_safety_health_national_policy_legal_llm_001_005.json",
+          "governing": true,
+          "record_count": 5,
+          "status": "complete"
+        }
+      },
+      "notes": "National Policy for Occupational Safety and Health «السياسة الوطنية للسلامة والصحة المهنية» — **5 articles. ALL 5 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/6/1442H / 2021-02-05. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 5,
+        "legal_status_breakdown": {
+          "اصلية": 5,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 5
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "National Policy for Occupational Safety and Health — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/6/1442H (2021-02-05).",
+      "status": "complete",
+      "track_id": "occupational_safety_health_national_policy",
+      "validator_targets": [
+        "make occupational-safety-health-national-policy-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/spending_efficiency_authority_statute/official_source/spending_efficiency_authority_statute_official_source.json",
+        "sources/spending_efficiency_authority_statute/verified/spending_efficiency_authority_statute_verified_records.jsonl",
+        "data/spending_efficiency_authority_statute_arabic_legal_llm/spending_efficiency_authority_statute_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "تنظيم هيئة كفاءة الإنفاق والمشروعات الحكومية",
+      "display_name_en": "Spending Efficiency and Government Projects Authority — Statute",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/spending_efficiency_authority_statute_arabic_legal_llm/spending_efficiency_authority_statute_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "Spending Efficiency and Government Projects Authority — Statute «تنظيم هيئة كفاءة الإنفاق والمشروعات الحكومية» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/7/1442H / 2021-03-05. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Spending Efficiency and Government Projects Authority — Statute — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/7/1442H (2021-03-05).",
+      "status": "complete",
+      "track_id": "spending_efficiency_authority_statute",
+      "validator_targets": [
+        "make spending-efficiency-authority-statute-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/realestate_platform_licensing_criteria/official_source/realestate_platform_licensing_criteria_official_source.json",
+        "sources/realestate_platform_licensing_criteria/verified/realestate_platform_licensing_criteria_verified_records.jsonl",
+        "data/realestate_platform_licensing_criteria_arabic_legal_llm/realestate_platform_licensing_criteria_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "معايير ترخيص المنصات العقارية الإلكترونية وتصنيفها",
+      "display_name_en": "Licensing and Classification Criteria for Electronic Real Estate Platforms",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/realestate_platform_licensing_criteria_arabic_legal_llm/realestate_platform_licensing_criteria_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Licensing and Classification Criteria for Electronic Real Estate Platforms «معايير ترخيص المنصات العقارية الإلكترونية وتصنيفها» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/10/1442H / 2021-06-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Licensing and Classification Criteria for Electronic Real Estate Platforms — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/10/1442H (2021-06-04).",
+      "status": "complete",
+      "track_id": "realestate_platform_licensing_criteria",
+      "validator_targets": [
+        "make realestate-platform-licensing-criteria-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/administrative_violations_drafting_guide/official_source/administrative_violations_drafting_guide_official_source.json",
+        "sources/administrative_violations_drafting_guide/verified/administrative_violations_drafting_guide_verified_records.jsonl",
+        "data/administrative_violations_drafting_guide_arabic_legal_llm/administrative_violations_drafting_guide_legal_llm_001_006.json"
+      ],
+      "display_name_ar": "الدليل الاسترشادي لاقتراح سن أحكام المخالفة الإدارية وجزائها",
+      "display_name_en": "Guidance Manual for Proposing Administrative Violation Provisions and Their Penalties",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/administrative_violations_drafting_guide_arabic_legal_llm/administrative_violations_drafting_guide_legal_llm_001_006.json",
+          "governing": true,
+          "record_count": 6,
+          "status": "complete"
+        }
+      },
+      "notes": "Guidance Manual for Proposing Administrative Violation Provisions and Their Penalties «الدليل الاسترشادي لاقتراح سن أحكام المخالفة الإدارية وجزائها» — **6 articles. ALL 6 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/2/1443H / 2021-09-24. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 6,
+        "legal_status_breakdown": {
+          "اصلية": 6,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 6
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Guidance Manual for Proposing Administrative Violation Provisions and Their Penalties — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/2/1443H (2021-09-24).",
+      "status": "complete",
+      "track_id": "administrative_violations_drafting_guide",
+      "validator_targets": [
+        "make administrative-violations-drafting-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/fresh_produce_import_controls/official_source/fresh_produce_import_controls_official_source.json",
+        "sources/fresh_produce_import_controls/verified/fresh_produce_import_controls_verified_records.jsonl",
+        "data/fresh_produce_import_controls_arabic_legal_llm/fresh_produce_import_controls_legal_llm_001_007.json"
+      ],
+      "display_name_ar": "شروط وضوابط استيراد الخضار والفاكهة الطازجة للمملكة",
+      "display_name_en": "Conditions and Controls for Importing Fresh Vegetables and Fruit",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/fresh_produce_import_controls_arabic_legal_llm/fresh_produce_import_controls_legal_llm_001_007.json",
+          "governing": true,
+          "record_count": 7,
+          "status": "complete"
+        }
+      },
+      "notes": "Conditions and Controls for Importing Fresh Vegetables and Fruit «شروط وضوابط استيراد الخضار والفاكهة الطازجة للمملكة» — **7 articles. ALL 7 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H / 2021-12-10. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 7,
+        "legal_status_breakdown": {
+          "اصلية": 7,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 7
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Conditions and Controls for Importing Fresh Vegetables and Fruit — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
+      "status": "complete",
+      "track_id": "fresh_produce_import_controls",
+      "validator_targets": [
+        "make fresh-produce-import-controls-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/direct_finance_investment_funds_instructions/official_source/direct_finance_investment_funds_instructions_official_source.json",
+        "sources/direct_finance_investment_funds_instructions/verified/direct_finance_investment_funds_instructions_verified_records.jsonl",
+        "data/direct_finance_investment_funds_instructions_arabic_legal_llm/direct_finance_investment_funds_instructions_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "التعليمات الخاصة بصناديق استثمار التمويل المباشر",
+      "display_name_en": "Instructions for Direct Financing Investment Funds",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/direct_finance_investment_funds_instructions_arabic_legal_llm/direct_finance_investment_funds_instructions_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Instructions for Direct Financing Investment Funds «التعليمات الخاصة بصناديق استثمار التمويل المباشر» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/9/1443H / 2022-04-15. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Instructions for Direct Financing Investment Funds — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/9/1443H (2022-04-15).",
+      "status": "complete",
+      "track_id": "direct_finance_investment_funds_instructions",
+      "validator_targets": [
+        "make direct-finance-investment-funds-instructions-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/public_transport_projects_framework/official_source/public_transport_projects_framework_official_source.json",
+        "sources/public_transport_projects_framework/verified/public_transport_projects_framework_verified_records.jsonl",
+        "data/public_transport_projects_framework_arabic_legal_llm/public_transport_projects_framework_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "الإطار التنظيمي لمشاريع النقل العام",
+      "display_name_en": "Regulatory Framework for Public Transport Projects",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/public_transport_projects_framework_arabic_legal_llm/public_transport_projects_framework_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulatory Framework for Public Transport Projects «الإطار التنظيمي لمشاريع النقل العام» — **25 articles. ALL 25 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/12/1443H / 2022-07-22. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 25,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Regulatory Framework for Public Transport Projects — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/12/1443H (2022-07-22).",
+      "status": "complete",
+      "track_id": "public_transport_projects_framework",
+      "validator_targets": [
+        "make public-transport-projects-framework-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/intracity_bus_transport_licensing/official_source/intracity_bus_transport_licensing_official_source.json",
+        "sources/intracity_bus_transport_licensing/verified/intracity_bus_transport_licensing_verified_records.jsonl",
+        "data/intracity_bus_transport_licensing_arabic_legal_llm/intracity_bus_transport_licensing_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن",
+      "display_name_en": "Procedures and Conditions for Licensing Intra-City Public Bus Transport",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/intracity_bus_transport_licensing_arabic_legal_llm/intracity_bus_transport_licensing_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Procedures and Conditions for Licensing Intra-City Public Bus Transport «إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H / 2022-09-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Procedures and Conditions for Licensing Intra-City Public Bus Transport — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H (2022-09-09).",
+      "status": "complete",
+      "track_id": "intracity_bus_transport_licensing",
+      "validator_targets": [
+        "make intracity-bus-transport-licensing-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/narcotics_schedules_general_provisions/official_source/narcotics_schedules_general_provisions_official_source.json",
+        "sources/narcotics_schedules_general_provisions/verified/narcotics_schedules_general_provisions_verified_records.jsonl",
+        "data/narcotics_schedules_general_provisions_arabic_legal_llm/narcotics_schedules_general_provisions_legal_llm_001_008.json"
+      ],
+      "display_name_ar": "أحكام عامة على الجداول المرفقة بنظام مكافحة المخدرات والمؤثرات العقلية",
+      "display_name_en": "General Provisions on the Schedules Annexed to the Anti-Narcotics Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/narcotics_schedules_general_provisions_arabic_legal_llm/narcotics_schedules_general_provisions_legal_llm_001_008.json",
+          "governing": true,
+          "record_count": 8,
+          "status": "complete"
+        }
+      },
+      "notes": "General Provisions on the Schedules Annexed to the Anti-Narcotics Law «أحكام عامة على الجداول المرفقة بنظام مكافحة المخدرات والمؤثرات العقلية» — **8 articles. ALL 8 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/8/1444H / 2023-03-03. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 8,
+        "legal_status_breakdown": {
+          "اصلية": 8,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 8
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "General Provisions on the Schedules Annexed to the Anti-Narcotics Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/8/1444H (2023-03-03).",
+      "status": "complete",
+      "track_id": "narcotics_schedules_general_provisions",
+      "validator_targets": [
+        "make narcotics-schedules-general-provisions-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/listed_companies_accumulated_losses_instructions/official_source/listed_companies_accumulated_losses_instructions_official_source.json",
+        "sources/listed_companies_accumulated_losses_instructions/verified/listed_companies_accumulated_losses_instructions_verified_records.jsonl",
+        "data/listed_companies_accumulated_losses_instructions_arabic_legal_llm/listed_companies_accumulated_losses_instructions_legal_llm_001_006.json"
+      ],
+      "display_name_ar": "الإجراءات والتعليمات الخاصة بالشركات المدرجة أسهمها في السوق التي بلغت خسائرها المتراكمة 20% فأكثر من رأس مالها",
+      "display_name_en": "Procedures and Instructions for Listed Companies Whose Accumulated Losses Reach 20 Percent or More of Capital",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/listed_companies_accumulated_losses_instructions_arabic_legal_llm/listed_companies_accumulated_losses_instructions_legal_llm_001_006.json",
+          "governing": true,
+          "record_count": 6,
+          "status": "complete"
+        }
+      },
+      "notes": "Procedures and Instructions for Listed Companies Whose Accumulated Losses Reach 20 Percent or More of Capital «الإجراءات والتعليمات الخاصة بالشركات المدرجة أسهمها في السوق التي بلغت خسائرها المتراكمة 20% فأكثر من رأس مالها» — **6 articles. ALL 6 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/9/1444H / 2023-04-14. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 6,
+        "legal_status_breakdown": {
+          "اصلية": 6,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 6
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Procedures and Instructions for Listed Companies Whose Accumulated Losses Reach 20 Percent or More of Capital — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/9/1444H (2023-04-14).",
+      "status": "complete",
+      "track_id": "listed_companies_accumulated_losses_instructions",
+      "validator_targets": [
+        "make listed-companies-accumulated-losses-instructions-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/charitable_donations_executive_instructions/official_source/charitable_donations_executive_instructions_official_source.json",
+        "sources/charitable_donations_executive_instructions/verified/charitable_donations_executive_instructions_verified_records.jsonl",
+        "data/charitable_donations_executive_instructions_arabic_legal_llm/charitable_donations_executive_instructions_legal_llm_001_024.json"
+      ],
+      "display_name_ar": "التعليمات التنفيذية للائحة جمع التبرعات للوجوه الخيرية",
+      "display_name_en": "Executive Instructions for the Charitable Donations Collection Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/charitable_donations_executive_instructions_arabic_legal_llm/charitable_donations_executive_instructions_legal_llm_001_024.json",
+          "governing": true,
+          "record_count": 24,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Instructions for the Charitable Donations Collection Regulation «التعليمات التنفيذية للائحة جمع التبرعات للوجوه الخيرية» — **24 articles. ALL 24 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/10/1444H / 2023-04-28. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 24,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 24
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Executive Instructions for the Charitable Donations Collection Regulation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/10/1444H (2023-04-28).",
+      "status": "complete",
+      "track_id": "charitable_donations_executive_instructions",
+      "validator_targets": [
+        "make charitable-donations-executive-instructions-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/railway_independent_consultant_guide/official_source/railway_independent_consultant_guide_official_source.json",
+        "sources/railway_independent_consultant_guide/verified/railway_independent_consultant_guide_verified_records.jsonl",
+        "data/railway_independent_consultant_guide_arabic_legal_llm/railway_independent_consultant_guide_legal_llm_001_004.json"
+      ],
+      "display_name_ar": "دليل الخطوط الحديدية - تعيين استشاري مختص مستقل",
+      "display_name_en": "Railway Guide — Appointment of an Independent Competent Consultant",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/railway_independent_consultant_guide_arabic_legal_llm/railway_independent_consultant_guide_legal_llm_001_004.json",
+          "governing": true,
+          "record_count": 4,
+          "status": "complete"
+        }
+      },
+      "notes": "Railway Guide — Appointment of an Independent Competent Consultant «دليل الخطوط الحديدية - تعيين استشاري مختص مستقل» — **4 articles. ALL 4 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/11/1444H / 2023-06-16. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 4,
+        "legal_status_breakdown": {
+          "اصلية": 4,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 4
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Railway Guide — Appointment of an Independent Competent Consultant — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/11/1444H (2023-06-16).",
+      "status": "complete",
+      "track_id": "railway_independent_consultant_guide",
+      "validator_targets": [
+        "make railway-independent-consultant-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/nazaha_military_personnel_statute/official_source/nazaha_military_personnel_statute_official_source.json",
+        "sources/nazaha_military_personnel_statute/verified/nazaha_military_personnel_statute_verified_records.jsonl",
+        "data/nazaha_military_personnel_statute_arabic_legal_llm/nazaha_military_personnel_statute_legal_llm_001_012.json"
+      ],
+      "display_name_ar": "التنظيم الخاص بالعسكريين في هيئة الرقابة ومكافحة الفساد",
+      "display_name_en": "Provisions Governing Military Personnel at the Oversight and Anti-Corruption Authority",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/nazaha_military_personnel_statute_arabic_legal_llm/nazaha_military_personnel_statute_legal_llm_001_012.json",
+          "governing": true,
+          "record_count": 12,
+          "status": "complete"
+        }
+      },
+      "notes": "Provisions Governing Military Personnel at the Oversight and Anti-Corruption Authority «التنظيم الخاص بالعسكريين في هيئة الرقابة ومكافحة الفساد» — **12 articles. ALL 12 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/12/1444H / 2023-06-19. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 12,
+        "legal_status_breakdown": {
+          "اصلية": 12,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 12
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Provisions Governing Military Personnel at the Oversight and Anti-Corruption Authority — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/12/1444H (2023-06-19).",
+      "status": "complete",
+      "track_id": "nazaha_military_personnel_statute",
+      "validator_targets": [
+        "make nazaha-military-personnel-statute-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/self_consumption_renewable_energy_framework/official_source/self_consumption_renewable_energy_framework_official_source.json",
+        "sources/self_consumption_renewable_energy_framework/verified/self_consumption_renewable_energy_framework_verified_records.jsonl",
+        "data/self_consumption_renewable_energy_framework_arabic_legal_llm/self_consumption_renewable_energy_framework_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "الإطار التنظيمي للطاقة المتجددة للاستهلاك الذاتي",
+      "display_name_en": "Regulatory Framework for Self-Consumption Renewable Energy",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/self_consumption_renewable_energy_framework_arabic_legal_llm/self_consumption_renewable_energy_framework_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulatory Framework for Self-Consumption Renewable Energy «الإطار التنظيمي للطاقة المتجددة للاستهلاك الذاتي» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/1/1445H / 2023-07-21. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Regulatory Framework for Self-Consumption Renewable Energy — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/1/1445H (2023-07-21).",
+      "status": "complete",
+      "track_id": "self_consumption_renewable_energy_framework",
+      "validator_targets": [
+        "make self-consumption-renewable-energy-framework-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/offplan_engineering_consultants_qualification/official_source/offplan_engineering_consultants_qualification_official_source.json",
+        "sources/offplan_engineering_consultants_qualification/verified/offplan_engineering_consultants_qualification_verified_records.jsonl",
+        "data/offplan_engineering_consultants_qualification_arabic_legal_llm/offplan_engineering_consultants_qualification_legal_llm_001_006.json"
+      ],
+      "display_name_ar": "شروط ومتطلبات تأهيل الجهات الاستشارية الهندسية لمشاريع بيع أو تأجير الوحدات العقارية على الخارطة",
+      "display_name_en": "Qualification Conditions and Requirements for Engineering Consultancies on Off-Plan Projects",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/offplan_engineering_consultants_qualification_arabic_legal_llm/offplan_engineering_consultants_qualification_legal_llm_001_006.json",
+          "governing": true,
+          "record_count": 6,
+          "status": "complete"
+        }
+      },
+      "notes": "Qualification Conditions and Requirements for Engineering Consultancies on Off-Plan Projects «شروط ومتطلبات تأهيل الجهات الاستشارية الهندسية لمشاريع بيع أو تأجير الوحدات العقارية على الخارطة» — **6 articles. ALL 6 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/3/1445H / 2023-09-29. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 6,
+        "legal_status_breakdown": {
+          "اصلية": 6,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 6
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Qualification Conditions and Requirements for Engineering Consultancies on Off-Plan Projects — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/3/1445H (2023-09-29).",
+      "status": "complete",
+      "track_id": "offplan_engineering_consultants_qualification",
+      "validator_targets": [
+        "make offplan-engineering-consultants-qualification-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/civil_aviation_economic_policy/official_source/civil_aviation_economic_policy_official_source.json",
+        "sources/civil_aviation_economic_policy/verified/civil_aviation_economic_policy_verified_records.jsonl",
+        "data/civil_aviation_economic_policy_arabic_legal_llm/civil_aviation_economic_policy_legal_llm_001_004.json"
+      ],
+      "display_name_ar": "السياسة الاقتصادية للطيران المدني في المملكة العربية السعودية",
+      "display_name_en": "Economic Policy for Civil Aviation in Saudi Arabia",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/civil_aviation_economic_policy_arabic_legal_llm/civil_aviation_economic_policy_legal_llm_001_004.json",
+          "governing": true,
+          "record_count": 4,
+          "status": "complete"
+        }
+      },
+      "notes": "Economic Policy for Civil Aviation in Saudi Arabia «السياسة الاقتصادية للطيران المدني في المملكة العربية السعودية» — **4 articles. ALL 4 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/4/1445H / 2023-10-30. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 4,
+        "legal_status_breakdown": {
+          "اصلية": 4,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 4
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Economic Policy for Civil Aviation in Saudi Arabia — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/4/1445H (2023-10-30).",
+      "status": "complete",
+      "track_id": "civil_aviation_economic_policy",
+      "validator_targets": [
+        "make civil-aviation-economic-policy-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/aquaculture_national_policies_guide/official_source/aquaculture_national_policies_guide_official_source.json",
+        "sources/aquaculture_national_policies_guide/verified/aquaculture_national_policies_guide_verified_records.jsonl",
+        "data/aquaculture_national_policies_guide_arabic_legal_llm/aquaculture_national_policies_guide_legal_llm_001_031.json"
+      ],
+      "display_name_ar": "دليل السياسات والممارسات الوطنية للاستزراع المائي",
+      "display_name_en": "National Aquaculture Policies and Practices Guide",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/aquaculture_national_policies_guide_arabic_legal_llm/aquaculture_national_policies_guide_legal_llm_001_031.json",
+          "governing": true,
+          "record_count": 31,
+          "status": "complete"
+        }
+      },
+      "notes": "National Aquaculture Policies and Practices Guide «دليل السياسات والممارسات الوطنية للاستزراع المائي» — **31 articles. ALL 31 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/5/1445H / 2023-12-01. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 31,
+        "legal_status_breakdown": {
+          "اصلية": 31,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 31
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "National Aquaculture Policies and Practices Guide — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/5/1445H (2023-12-01).",
+      "status": "complete",
+      "track_id": "aquaculture_national_policies_guide",
+      "validator_targets": [
+        "make aquaculture-national-policies-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/gcc_financial_products_cross_registration_framework/official_source/gcc_financial_products_cross_registration_framework_official_source.json",
+        "sources/gcc_financial_products_cross_registration_framework/verified/gcc_financial_products_cross_registration_framework_verified_records.jsonl",
+        "data/gcc_financial_products_cross_registration_framework_arabic_legal_llm/gcc_financial_products_cross_registration_framework_legal_llm_001_021.json"
+      ],
+      "display_name_ar": "الإطار التنظيمي للتسجيل البيني للمنتجات المالية بين الجهات المنظمة للأسواق المالية بدول المجلس",
+      "display_name_en": "Regulatory Framework for Cross-Registration of Financial Products among GCC Market Regulators",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/gcc_financial_products_cross_registration_framework_arabic_legal_llm/gcc_financial_products_cross_registration_framework_legal_llm_001_021.json",
+          "governing": true,
+          "record_count": 21,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulatory Framework for Cross-Registration of Financial Products among GCC Market Regulators «الإطار التنظيمي للتسجيل البيني للمنتجات المالية بين الجهات المنظمة للأسواق المالية بدول المجلس» — **21 articles. ALL 21 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/7/1445H / 2024-01-26. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 21,
+        "legal_status_breakdown": {
+          "اصلية": 21,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 21
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Regulatory Framework for Cross-Registration of Financial Products among GCC Market Regulators — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/7/1445H (2024-01-26).",
+      "status": "complete",
+      "track_id": "gcc_financial_products_cross_registration_framework",
+      "validator_targets": [
+        "make gcc-financial-products-cross-registration-framework-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/animal_health_guide/official_source/animal_health_guide_official_source.json",
+        "sources/animal_health_guide/verified/animal_health_guide_verified_records.jsonl",
+        "data/animal_health_guide_arabic_legal_llm/animal_health_guide_legal_llm_001_083.json"
+      ],
+      "display_name_ar": "دليل الصحة الحيوانية",
+      "display_name_en": "Animal Health Guide",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/animal_health_guide_arabic_legal_llm/animal_health_guide_legal_llm_001_083.json",
+          "governing": true,
+          "record_count": 83,
+          "status": "complete"
+        }
+      },
+      "notes": "Animal Health Guide «دليل الصحة الحيوانية» — **83 articles. ALL 83 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/8/1445H / 2024-03-01. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 83,
+        "legal_status_breakdown": {
+          "اصلية": 83,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 83
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Animal Health Guide — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/8/1445H (2024-03-01).",
+      "status": "complete",
+      "track_id": "animal_health_guide",
+      "validator_targets": [
+        "make animal-health-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/abattoirs_meat_inspection_guide/official_source/abattoirs_meat_inspection_guide_official_source.json",
+        "sources/abattoirs_meat_inspection_guide/verified/abattoirs_meat_inspection_guide_verified_records.jsonl",
+        "data/abattoirs_meat_inspection_guide_arabic_legal_llm/abattoirs_meat_inspection_guide_legal_llm_001_070.json"
+      ],
+      "display_name_ar": "دليل المسالخ وفحص اللحوم ونقلها",
+      "display_name_en": "Guide to Abattoirs, Meat Inspection and Transport",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/abattoirs_meat_inspection_guide_arabic_legal_llm/abattoirs_meat_inspection_guide_legal_llm_001_070.json",
+          "governing": true,
+          "record_count": 70,
+          "status": "complete"
+        }
+      },
+      "notes": "Guide to Abattoirs, Meat Inspection and Transport «دليل المسالخ وفحص اللحوم ونقلها» — **70 articles. ALL 70 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/9/1445H / 2024-03-15. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 70,
+        "legal_status_breakdown": {
+          "اصلية": 70,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 70
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Guide to Abattoirs, Meat Inspection and Transport — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/9/1445H (2024-03-15).",
+      "status": "complete",
+      "track_id": "abattoirs_meat_inspection_guide",
+      "validator_targets": [
+        "make abattoirs-meat-inspection-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/rural_livestock_husbandry_guide/official_source/rural_livestock_husbandry_guide_official_source.json",
+        "sources/rural_livestock_husbandry_guide/verified/rural_livestock_husbandry_guide_verified_records.jsonl",
+        "data/rural_livestock_husbandry_guide_arabic_legal_llm/rural_livestock_husbandry_guide_legal_llm_001_075.json"
+      ],
+      "display_name_ar": "دليل التربية الريفية للثروة الحيوانية",
+      "display_name_en": "Guide to Rural Livestock Husbandry",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/rural_livestock_husbandry_guide_arabic_legal_llm/rural_livestock_husbandry_guide_legal_llm_001_075.json",
+          "governing": true,
+          "record_count": 75,
+          "status": "complete"
+        }
+      },
+      "notes": "Guide to Rural Livestock Husbandry «دليل التربية الريفية للثروة الحيوانية» — **75 articles. ALL 75 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/9/1445H / 2024-03-15. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 75,
+        "legal_status_breakdown": {
+          "اصلية": 75,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 75
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Guide to Rural Livestock Husbandry — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/9/1445H (2024-03-15).",
+      "status": "complete",
+      "track_id": "rural_livestock_husbandry_guide",
+      "validator_targets": [
+        "make rural-livestock-husbandry-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/vehicle_damage_assessment_standards/official_source/vehicle_damage_assessment_standards_official_source.json",
+        "sources/vehicle_damage_assessment_standards/verified/vehicle_damage_assessment_standards_verified_records.jsonl",
+        "data/vehicle_damage_assessment_standards_arabic_legal_llm/vehicle_damage_assessment_standards_legal_llm_001_004.json"
+      ],
+      "display_name_ar": "المعايير المهنية لتقييم أضرار المركبات",
+      "display_name_en": "Professional Standards for Vehicle Damage Assessment",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/vehicle_damage_assessment_standards_arabic_legal_llm/vehicle_damage_assessment_standards_legal_llm_001_004.json",
+          "governing": true,
+          "record_count": 4,
+          "status": "complete"
+        }
+      },
+      "notes": "Professional Standards for Vehicle Damage Assessment «المعايير المهنية لتقييم أضرار المركبات» — **4 articles. ALL 4 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/11/1445H / 2024-05-31. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 4,
+        "legal_status_breakdown": {
+          "اصلية": 4,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 4
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Professional Standards for Vehicle Damage Assessment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/11/1445H (2024-05-31).",
+      "status": "complete",
+      "track_id": "vehicle_damage_assessment_standards",
+      "validator_targets": [
+        "make vehicle-damage-assessment-standards-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/public_entities_governance_guide/official_source/public_entities_governance_guide_official_source.json",
+        "sources/public_entities_governance_guide/verified/public_entities_governance_guide_verified_records.jsonl",
+        "data/public_entities_governance_guide_arabic_legal_llm/public_entities_governance_guide_legal_llm_001_006.json"
+      ],
+      "display_name_ar": "الدليل الاسترشادي لحوكمة الجهات العامة",
+      "display_name_en": "Guidance Manual for the Governance of Public Entities",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/public_entities_governance_guide_arabic_legal_llm/public_entities_governance_guide_legal_llm_001_006.json",
+          "governing": true,
+          "record_count": 6,
+          "status": "complete"
+        }
+      },
+      "notes": "Guidance Manual for the Governance of Public Entities «الدليل الاسترشادي لحوكمة الجهات العامة» — **6 articles. ALL 6 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/2/1446H / 2024-08-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 6,
+        "legal_status_breakdown": {
+          "اصلية": 6,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 6
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Guidance Manual for the Governance of Public Entities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/2/1446H (2024-08-09).",
+      "status": "complete",
+      "track_id": "public_entities_governance_guide",
+      "validator_targets": [
+        "make public-entities-governance-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/public_transport_users_rights_enforcement_guide/official_source/public_transport_users_rights_enforcement_guide_official_source.json",
+        "sources/public_transport_users_rights_enforcement_guide/verified/public_transport_users_rights_enforcement_guide_verified_records.jsonl",
+        "data/public_transport_users_rights_enforcement_guide_arabic_legal_llm/public_transport_users_rights_enforcement_guide_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "دليل إجراءات ضبط مخالفات لائحة حقوق والتزامات مستخدمي وسائل النقل العام وآليتها التفصيلية",
+      "display_name_en": "Procedural Guide for Enforcing the Public Transport Users' Rights Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/public_transport_users_rights_enforcement_guide_arabic_legal_llm/public_transport_users_rights_enforcement_guide_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Procedural Guide for Enforcing the Public Transport Users' Rights Regulation «دليل إجراءات ضبط مخالفات لائحة حقوق والتزامات مستخدمي وسائل النقل العام وآليتها التفصيلية» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/2/1446H / 2024-08-16. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Procedural Guide for Enforcing the Public Transport Users' Rights Regulation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/2/1446H (2024-08-16).",
+      "status": "complete",
+      "track_id": "public_transport_users_rights_enforcement_guide",
+      "validator_targets": [
+        "make public-transport-users-rights-enforcement-guide-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/land_transport_training_centers_accreditation/official_source/land_transport_training_centers_accreditation_official_source.json",
+        "sources/land_transport_training_centers_accreditation/verified/land_transport_training_centers_accreditation_verified_records.jsonl",
+        "data/land_transport_training_centers_accreditation_arabic_legal_llm/land_transport_training_centers_accreditation_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "شروط وإجراءات تأهيل واعتماد مراكز التدريب ومراكز الاختبار لسائقي ومديري التشغيل في أنشطة النقل البري",
+      "display_name_en": "Conditions and Procedures for Qualifying and Accrediting Training and Testing Centres for Land Transport Drivers and Operations Managers",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/land_transport_training_centers_accreditation_arabic_legal_llm/land_transport_training_centers_accreditation_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "Conditions and Procedures for Qualifying and Accrediting Training and Testing Centres for Land Transport Drivers and Operations Managers «شروط وإجراءات تأهيل واعتماد مراكز التدريب ومراكز الاختبار لسائقي ومديري التشغيل في أنشطة النقل البري» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/4/1446H / 2024-10-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Conditions and Procedures for Qualifying and Accrediting Training and Testing Centres for Land Transport Drivers and Operations Managers — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/4/1446H (2024-10-04).",
+      "status": "complete",
+      "track_id": "land_transport_training_centers_accreditation",
+      "validator_targets": [
+        "make land-transport-training-centers-accreditation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/arabic_language_national_policy/official_source/arabic_language_national_policy_official_source.json",
+        "sources/arabic_language_national_policy/verified/arabic_language_national_policy_verified_records.jsonl",
+        "data/arabic_language_national_policy_arabic_legal_llm/arabic_language_national_policy_legal_llm_001_005.json"
+      ],
+      "display_name_ar": "السياسة الوطنية للغة العربية في السعودية",
+      "display_name_en": "National Policy for the Arabic Language in Saudi Arabia",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/arabic_language_national_policy_arabic_legal_llm/arabic_language_national_policy_legal_llm_001_005.json",
+          "governing": true,
+          "record_count": 5,
+          "status": "complete"
+        }
+      },
+      "notes": "National Policy for the Arabic Language in Saudi Arabia «السياسة الوطنية للغة العربية في السعودية» — **5 articles. ALL 5 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H / 2026-02-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 5,
+        "legal_status_breakdown": {
+          "اصلية": 5,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 5
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "National Policy for the Arabic Language in Saudi Arabia — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H (2026-02-13).",
+      "status": "complete",
+      "track_id": "arabic_language_national_policy",
+      "validator_targets": [
+        "make arabic-language-national-policy-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/museums_authority_licensing_regulation/official_source/museums_authority_licensing_regulation_official_source.json",
         "sources/museums_authority_licensing_regulation/verified/museums_authority_licensing_regulation_verified_records.jsonl",
         "data/museums_authority_licensing_regulation_arabic_legal_llm/museums_authority_licensing_regulation_legal_llm_001_023.json"
@@ -32176,6 +35476,7 @@
     "note": "Flat cross-law retrieval index projecting all Arabic LLM-ready layers. A projection of already-counted records; NOT added to registry totals to avoid double-counting.",
     "records_per_corpus": {
       "aawan": 35,
+      "abattoirs_meat_inspection_guide": 70,
       "accounting_auditing": 37,
       "accounting_services_corrective_mechanism": 7,
       "accounting_services_rules": 18,
@@ -32183,6 +35484,7 @@
       "accredited_valuers_fellowship_rules": 17,
       "accredited_valuers_implementing_regulation": 71,
       "administrative_judicial_council_bylaw": 16,
+      "administrative_violations_drafting_guide": 6,
       "agricultural_development_fund_law": 16,
       "agriculture": 308,
       "air_transport_services_economic_regulation": 25,
@@ -32192,6 +35494,7 @@
       "allegiance_commission": 43,
       "alula_royal_commission_violations_committees_rules": 25,
       "aml": 77,
+      "animal_health_guide": 83,
       "anti_begging_law": 10,
       "anti_bribery": 25,
       "anti_concealment": 38,
@@ -32207,8 +35510,10 @@
       "antiquities_heritage_regulation": 113,
       "antiquities_inspection_violations_regulation": 30,
       "antiquities_museums_fund_regulation": 22,
+      "aquaculture_national_policies_guide": 31,
       "arabian_horse_regulation": 9,
       "arabic_calligraphy_center_statute": 12,
+      "arabic_language_national_policy": 5,
       "arbitration": 77,
       "architecture_design_authority_licensing_regulation": 23,
       "architecture_design_authority_statute": 12,
@@ -32241,11 +35546,13 @@
       "capital_market_whistleblowing_regulation": 14,
       "chambers_commerce_committees_regulation": 42,
       "chambers_of_commerce": 129,
+      "charitable_donations_executive_instructions": 24,
       "charitable_societies_council_regulation": 65,
       "chemicals_management_regulation": 18,
       "child_protection": 51,
       "civil": 721,
       "civil_aviation": 180,
+      "civil_aviation_economic_policy": 4,
       "civil_defense": 57,
       "civil_service": 305,
       "civil_status": 96,
@@ -32292,6 +35599,7 @@
       "development_authorities_support_center_statute": 13,
       "digital_content_council_statute": 14,
       "digital_government_authority_statute": 18,
+      "direct_finance_investment_funds_instructions": 10,
       "disability_nongov_social_facilities_regulation": 30,
       "disability_rights": 78,
       "disability_rights_violations_committee_rules": 18,
@@ -32368,8 +35676,10 @@
       "free_zone_employees_treatment_rules": 28,
       "freight_broker_logistics_regulation": 31,
       "frequency_spectrum": 15,
+      "fresh_produce_import_controls": 7,
       "gaca": 15,
       "gcc_anti_dumping": 17,
+      "gcc_financial_products_cross_registration_framework": 21,
       "gcc_ownership": 6,
       "gcc_pesticides_regulation": 51,
       "gcc_registered_vehicles_stay_controls": 7,
@@ -32415,6 +35725,7 @@
       "insurance_control": 25,
       "insurance_disputes_committees_rules": 46,
       "international_bus_transport_regulation": 47,
+      "intracity_bus_transport_licensing": 10,
       "investment": 53,
       "investment_accounts_instructions": 17,
       "investment_council_statute": 8,
@@ -32450,6 +35761,7 @@
       "king_saud_university_statute": 22,
       "labor": 571,
       "land_customs_storage_fees_controls": 11,
+      "land_transport_training_centers_accreditation": 14,
       "landlord_tenant": 12,
       "law_practice": 146,
       "leather_products_technical_regulation": 12,
@@ -32458,6 +35770,7 @@
       "libraries_authority_statute": 12,
       "licensed_realestate_developers_rules": 10,
       "light_goods_road_transport_regulation": 27,
+      "listed_companies_accumulated_losses_instructions": 6,
       "listed_jsc_companies_regulation": 69,
       "literature_publishing_translation_authority_licensing_regulation": 23,
       "literature_publishing_translation_authority_statute": 12,
@@ -32501,6 +35814,7 @@
       "music_authority_licensing_regulation": 23,
       "music_authority_statute": 12,
       "muslaha": 29,
+      "narcotics_schedules_general_provisions": 8,
       "national_curriculum_center_statute": 15,
       "national_emergency_management_authority_statute": 19,
       "national_health_insurance_center_statute": 20,
@@ -32515,6 +35829,7 @@
       "navigation_licence_work_permit_regulation": 18,
       "nazaha": 24,
       "nazaha_criminal_procedure_powers_regulation": 21,
+      "nazaha_military_personnel_statute": 12,
       "nazara_works_regulation": 32,
       "nca_investigation_rules": 9,
       "nca_reporting_rules": 8,
@@ -32527,8 +35842,10 @@
       "northern_borders_strategic_office_statute": 13,
       "occupational_fitness_examinations_regulation": 21,
       "occupational_safety_health_council_statute": 13,
+      "occupational_safety_health_national_policy": 5,
       "official_communications_records_regulation": 87,
       "official_travel_class_rules": 5,
+      "offplan_engineering_consultants_qualification": 6,
       "offplan_sale": 30,
       "offplan_sale_regulation": 49,
       "organ_donation": 27,
@@ -32565,15 +35882,19 @@
       "protection_from_abuse": 31,
       "public_agencies_staff_provisions_rules": 12,
       "public_auction_sale_rules": 18,
+      "public_entities_governance_guide": 6,
       "public_facility_names_rules": 12,
       "public_health_authority_statute": 14,
       "public_prosecution": 30,
+      "public_transport_projects_framework": 25,
+      "public_transport_users_rights_enforcement_guide": 9,
       "public_transport_users_rights_mechanism": 76,
       "public_transport_users_rights_regulation": 21,
       "public_utility_market_facilities_controls": 15,
       "public_utility_markets_general_rules": 19,
       "qismah": 48,
       "railway": 50,
+      "railway_independent_consultant_guide": 4,
       "railway_regulation": 91,
       "railway_violations_committee_rules": 24,
       "rdi_authority_statute": 15,
@@ -32594,6 +35915,7 @@
       "real_estate_registration": 91,
       "real_estate_transaction_tax_regulation": 15,
       "real_estate_units": 74,
+      "realestate_platform_licensing_criteria": 10,
       "reconciliation_committees_regulation": 16,
       "red_crescent_emblem_law": 15,
       "red_sea_coral_turtles_authority_statute": 16,
@@ -32616,6 +35938,7 @@
       "riyadh_sez_center_statute": 20,
       "road_transport": 34,
       "royal_institute_traditional_arts_statute": 16,
+      "rural_livestock_husbandry_guide": 75,
       "safe_manning_regulation": 16,
       "sama": 27,
       "sarah_sudairi_womens_studies_center_statute": 12,
@@ -32636,6 +35959,7 @@
       "security_cameras_law_regulation": 20,
       "sedimentary_shelf_well_drilling_permits_controls": 8,
       "seized_confiscated_funds": 15,
+      "self_consumption_renewable_energy_framework": 11,
       "service_centers_fuel_stations_committee_rules": 10,
       "service_suspension_controls": 6,
       "sez_cloud_computing_regulation": 31,
@@ -32658,6 +35982,7 @@
       "social_security_regulation": 28,
       "special_purpose_entities_rules": 55,
       "special_use_vehicle_equipment_technical_regulation": 11,
+      "spending_efficiency_authority_statute": 14,
       "sports": 97,
       "standards_quality": 47,
       "state_funded_lawyer": 11,
@@ -32699,6 +36024,46 @@
       "trademark": 52,
       "traffic": 172,
       "travel_documents": 69,
+      "treaty_aircraft_seizure_supplementary_protocol": 24,
+      "treaty_albania_driving_licences": 12,
+      "treaty_arab_anti_human_cloning": 36,
+      "treaty_arab_road_passenger_transport": 30,
+      "treaty_azerbaijan_customs_assistance": 20,
+      "treaty_bahrain_customs_cooperation": 9,
+      "treaty_bangladesh_customs_assistance": 18,
+      "treaty_brazil_visit_visas": 13,
+      "treaty_cameroon_general_cooperation": 9,
+      "treaty_chad_general_cooperation": 9,
+      "treaty_cyprus_general_cooperation": 10,
+      "treaty_czechia_air_services": 24,
+      "treaty_dco_headquarters": 21,
+      "treaty_djibouti_maritime_transport": 18,
+      "treaty_estonia_general_cooperation": 9,
+      "treaty_gcc_payment_systems_linkage": 14,
+      "treaty_gcc_wildlife_conservation": 18,
+      "treaty_ghana_air_services": 37,
+      "treaty_greece_maritime_transport": 18,
+      "treaty_guyana_air_services": 37,
+      "treaty_honduras_general_cooperation": 10,
+      "treaty_hungary_air_services": 22,
+      "treaty_iala_establishment": 22,
+      "treaty_iata_headquarters": 12,
+      "treaty_iraq_double_taxation": 31,
+      "treaty_iraq_maritime_transport": 17,
+      "treaty_latvia_economic_cooperation": 8,
+      "treaty_nepal_general_cooperation": 10,
+      "treaty_pakistan_transfer_of_sentenced_persons": 17,
+      "treaty_qatar_air_services": 37,
+      "treaty_regional_technical_cooperation_protocol": 11,
+      "treaty_rwanda_general_cooperation": 11,
+      "treaty_slovakia_general_cooperation": 10,
+      "treaty_slovenia_general_cooperation": 11,
+      "treaty_south_sudan_general_cooperation": 9,
+      "treaty_taipei_economic_cultural_office": 27,
+      "treaty_unccd_secretariat_cooperation": 14,
+      "treaty_unwto_cooperation": 10,
+      "treaty_unwto_elearning_capacity": 11,
+      "treaty_uzbekistan_energy_cooperation": 10,
       "trustees_experts_fees_rules": 17,
       "tvtc": 13,
       "two_holy_mosques_authority_statute": 16,
@@ -32712,6 +36077,7 @@
       "vat": 135,
       "vegetation_cover_desertification_regulation": 11,
       "vehicle_damage_assessment_rules": 40,
+      "vehicle_damage_assessment_standards": 4,
       "vehicle_periodic_inspection_regulation": 45,
       "vehicle_periodic_inspection_statute": 15,
       "violations_penalties_regulation": 18,
@@ -32739,7 +36105,7 @@
       "zatca_statute": 16
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 23897,
+    "total_records": 25073,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

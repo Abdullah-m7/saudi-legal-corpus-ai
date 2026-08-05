@@ -68,6 +68,9 @@ GATES (a document must pass ALL of them)
   G11 batch-level (see screen_batch): the same instrument must not reach the
       batch twice, and a document the batch's own text declares REPEALED must
       not be built as if in force. Neither is visible to a per-document gate.
+  G12 the page is not a COUNCIL SESSION SUMMARY -- a list of unrelated decisions
+      that the CMS titles after one of its items.
+  G13 the records are prose provisions, not flattened reference TABLES.
 
 Arabic governs throughout. Read-only over the corpus; the only writes are
 the emitted artifacts under sources/ and scripts/, plus the JSON report.
@@ -84,6 +87,13 @@ import unicodedata
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MIN_ARTICLES = 5
+
+# See G12/G13 in evaluate(). Both thresholds sit in a measured gap, not at a guess.
+DECISION_OPENING_RE = re.compile(
+    r"^(الموافقة\s+على|تفويض|اعتماد|قيام|الإذن\s+ل|الترخيص\s+ل|إنشاء\s+(?:هيئة|مركز|مجلس))")
+SESSION_SUMMARY_RATIO = 0.60
+NON_ARABIC_TOKEN_RE = re.compile(r"[A-Za-z0-9\u0660-\u0669]")
+TABLE_DENSITY = 0.25
 SHORT_ARTICLE_CHARS = 15
 SENTENCE_FINAL = ".؟!:》”\"'）)"
 
@@ -464,9 +474,52 @@ def propose_slug(title: str) -> str:
 
 # ---------------------------------------------------------------- quality gates
 
-AMENDMENT_MARKERS = ("تعديل", "مشروع", "إلغاء")
+# The gazette's vocabulary for naming an instrument is wider than this filter used
+# to allow, and every word missing from it was a class of document the pipeline
+# never even looked at: «الأحكام النظامية الخاصة بضبط العلاقة بين المؤجر
+# والمستأجر»، «الإطار التنظيمي لمشاريع النقل العام»، «الكود السعودي لمصادر
+# المياه»، «المعايير المهنية لتقييم أضرار المركبات»، «الأدلة الإجرائية لنظام
+# الإثبات». 138 addressable pages sat outside discovery for no reason but the
+# absence of their first word from this list.
+#
+# Being generous here is safe in a way it would not have been before: G1 judges
+# only the SHAPE of a title. Whether the page carries a real instrument is settled
+# downstream by G3 (it must segment into articles or a complete band run), G2
+# (both the per-article and the whole-document duplicate measures) and G4-G10. A
+# cooperation MOU announced as «اتفاقية تعاون مع ...» reaches G3 and is refused
+# there for having no articles, which is the correct place to refuse it.
 LEGAL_PREFIX = re.compile(
-    r"^(نظام|النظام|اللائحة|لائحة|قواعد|القواعد|تنظيم|الترتيبات|ضوابط|الضوابط|تعليمات|الآلية|آلية)")
+    r"^(نظام|النظام|اللائحة|لائحة|اللوائح|قواعد|القواعد|تنظيم|التنظيم|الترتيبات|ضوابط|الضوابط"
+    r"|تعليمات|التعليمات|الآلية|آلية|الاشتراطات|اشتراطات|المعايير|معايير|الدليل|دليل|الأدلة"
+    r"|السياسة|الميثاق|الشروط|شروط|المتطلبات|متطلبات|الإطار|إطار|التعرفة|تعرفة|الكود"
+    r"|المواصفات|المواصفة|الإجراءات|إجراءات|الأحكام|أحكام|البروتوكول|الاتفاقية|اتفاقية|الأسس)")
+
+# «مشروع» marks a DRAFT, but only as the title's first word. As a bare substring it
+# also matches «المشروعات» and «مشروعات» — so «تنظيم هيئة كفاءة الإنفاق
+# والمشروعات الحكومية» and «نظام بيع وتأجير مشروعات عقارية على الخارطة» were both
+# discarded as drafts.
+DRAFT_RE = re.compile(r"^\s*مشروع\b")
+
+# «تعديل» / «إلغاء» mark an AMENDING instrument only when they are what the
+# instrument DOES — «نظام (قانون) بتعديل بعض أحكام نظام براءات الاختراع» — which in
+# Arabic shows as a ب/ل prefix or as the word sitting directly after the instrument
+# noun. As bare substrings they also matched titles where the word belongs to the
+# SUBJECT MATTER: «قواعد نظر دعاوى إلغاء القرارات المتعلقة بأوامر الطوارئ» is a
+# rules instrument about annulment actions, not a repeal, and «... وبروتوكولاتها
+# وتعديلاتها» merely says the convention has protocols and amendments.
+AMENDING_RE = re.compile(
+    r"^\s*(?:تعديل|تعديلات|إلغاء|الغاء|استبدال)\b"          # the title IS the amendment
+    r"|^[^\n]{0,24}?\s[بل](?:تعديل|إلغاء|الغاء)\b"          # «نظام (قانون) بتعديل ...»
+    r"|^\S+\s+(?:تعديل|إلغاء|الغاء)\b")                     # «لائحة تعديل ...»
+
+
+def is_amendment_shaped(title):
+    return bool(DRAFT_RE.search(title) or AMENDING_RE.search(title))
+
+
+# Kept for callers that still read the old tuple; the decision lives in
+# is_amendment_shaped(), which knows where in the title the word has to be.
+AMENDMENT_MARKERS = ("تعديل", "مشروع", "إلغاء")
 
 
 def registry_titles():
@@ -630,7 +683,7 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
     # G1 — shape of the document
     if not title or not LEGAL_PREFIX.match(title):
         reasons.append("G1: title is not legal-document shaped")
-    if any(k in title for k in AMENDMENT_MARKERS):
+    if is_amendment_shaped(title):
         reasons.append("G1: title marks an amendment/draft/repeal, not a standalone instrument")
 
     arts, diag = segment(body)
@@ -818,6 +871,46 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
                     "block (annexes/schedules) was probably absorbed into it"
                     % (num, len(txt), median))
 
+    # G12 — a COUNCIL SESSION SUMMARY is not an instrument. The archive publishes
+    # each Council of Ministers session as one page listing every decision taken:
+    # authorising a minister to negotiate, creating an authority, approving a law,
+    # approving promotions. The CMS titles the page after ONE of those items, so
+    # «دليل استرشادي لاقتراح سن أحكام المخالفات الإدارية» arrived as an eleven-band
+    # document whose bands were eleven unrelated decisions, only the ninth of which
+    # was the guide the title names. Building it would file eleven unrelated
+    # decisions under one instrument's name.
+    #
+    # The signal is that every record OPENS with a governmental decision verb.
+    # Measured over the 70-document batch that surfaced this: the session summary
+    # scored 1.00 and the next highest document scored 0.12, so the threshold sits
+    # in a gap five times wider than the margin it needs.
+    if arts:
+        dec = sum(1 for a in arts if DECISION_OPENING_RE.match((a[2] or "").strip()))
+        if dec / len(arts) >= SESSION_SUMMARY_RATIO:
+            reasons.append(
+                "G12: %d of %d records open with a governmental decision verb — this is a "
+                "council SESSION SUMMARY listing unrelated decisions, not an instrument, and "
+                "the page's title names only one of the items on it"
+                % (dec, len(arts)))
+
+    # G13 — a flattened TABLE is not a provision. Standards-adoption pages and some
+    # annexes are tables of reference numbers, and the segmenter renders a table as
+    # a run-on line of codes: «م رقم المواصفة ... 1 SASO 2986:2022 GB/T ...». Such a
+    # record carries no normative sentence to retrieve or cite. Measured on the same
+    # batch, the three table documents scored 0.26-0.48 mean non-Arabic-token
+    # density and the next document scored 0.08.
+    if arts:
+        dens = []
+        for a in arts:
+            w = (a[2] or "").split()
+            if w:
+                dens.append(sum(1 for k in w if NON_ARABIC_TOKEN_RE.search(k)) / len(w))
+        if dens and sum(dens) / len(dens) >= TABLE_DENSITY:
+            reasons.append(
+                "G13: %.0f%% of this document's words are reference codes rather than Arabic "
+                "prose — its records are flattened TABLES, not provisions, and carry no "
+                "normative sentence to cite" % (100 * sum(dens) / len(dens)))
+
     if reasons:
         return None, sorted(set(reasons))
 
@@ -925,7 +1018,26 @@ def screen_batch(specs, reg_names):
         dup = None
         for k in keep:
             a, b = fps[id(x)], fps[id(k)]
-            if a and b and len(a & b) / min(len(a), len(b)) >= DUPLICATE_OVERLAP:
+            if not a or not b:
+                continue
+            ov = len(a & b) / min(len(a), len(b))
+            # Across the CORPUS, only near-verbatim text may be called a duplicate:
+            # distinct instruments share long stretches of boilerplate. Within one
+            # BATCH the title is available as a second, independent signal, so a
+            # lower text bar is safe when the two also carry the same name. That is
+            # what separates «الاتفاقية العربية لمنع ومكافحة الاستنساخ البشري»
+            # published twice (0.93, identical title, identical article count) and
+            # the renewable-energy framework's two editions (0.75, identical title)
+            # from two documents that merely resemble each other.
+            # The two titles must be the SAME name, not a similar one. Token overlap
+            # is the wrong test here and fails loudly: «اتفاقية عامة للتعاون بين
+            # حكومتي المملكة وجمهورية نيبال» and «... وحكومة تشاد» differ in exactly
+            # one token, the country, and template treaties share 40-76% of their
+            # text — so an 85%-overlap rule discarded five distinct bilateral
+            # agreements as duplicates of each other. Equality after normalisation
+            # keeps the discriminating word discriminating.
+            same_name = norm_ar(x["title_ar"]) == norm_ar(k["title_ar"])
+            if ov >= DUPLICATE_OVERLAP or (ov >= GRAY_BAND and same_name):
                 dup = k
                 break
         if dup is not None:
@@ -933,10 +1045,10 @@ def screen_batch(specs, reg_names):
             # The later one supersedes it: swap, and withhold the earlier.
             dropped.append({"uid": dup.get("uid"), "title_ar": dup["title_ar"],
                             "blocking_gates": [
-                                "G11-DUPLICATE-IN-BATCH: identical text to '%s' (%s) in this "
-                                "same batch, which was published later — the later edition is "
-                                "built and this one is withheld"
-                                % (x["title_ar"][:60], x.get("gazette_gregorian"))]})
+                                "G11-DUPLICATE-IN-BATCH: %.0f%% the same text as '%s' (%s), "
+                                "which carries the same title and was published later in this "
+                                "same batch — the later edition is built and this one is withheld"
+                                % (ov * 100, x["title_ar"][:60], x.get("gazette_gregorian"))]})
             keep[keep.index(dup)] = x
         else:
             keep.append(x)

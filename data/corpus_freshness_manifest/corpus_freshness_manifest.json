@@ -10,7 +10,7 @@
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
   "published_amendment_methodology": "published_amendment_after_edition_on_file=true where scripts/audit_corpus_currency.py matched a DATED amendment notice in the Umm Al-Qura archive whose subject is this instrument and whose publication date is later than the edition anchor recorded in the track's own source artifact. This is a DIFFERENT claim from known_source_staleness_risk: staleness risk is about the portal we read having shown outdated text, this is about the law having been amended after a correct reading. Neither implies the other, and a track flagged here has NOT had any article altered on the notice's authority — an amendment notice is not the amended text, so applying it would be drafting rather than ingestion. Every flagged track also carries the same warning, with the full notice list, in its own known_unresolved_discrepancies.",
-  "total_tracks": 655,
+  "total_tracks": 721,
   "known_source_staleness_risk_count": 17,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -102,6 +102,25 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "abattoirs_meat_inspection_guide",
+      "display_name_en": "Guide to Abattoirs, Meat Inspection and Transport",
+      "display_name_ar": "دليل المسالخ وفحص اللحوم ونقلها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Guide to Abattoirs, Meat Inspection and Transport — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/9/1445H (2024-03-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/abattoirs_meat_inspection_guide/official_source/abattoirs_meat_inspection_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": false,
@@ -266,6 +285,25 @@
       "source_urls": [
         "https://www.uqn.gov.sa/details?p=24766"
       ],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "administrative_violations_drafting_guide",
+      "display_name_en": "Guidance Manual for Proposing Administrative Violation Provisions and Their Penalties",
+      "display_name_ar": "الدليل الاسترشادي لاقتراح سن أحكام المخالفة الإدارية وجزائها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Guidance Manual for Proposing Administrative Violation Provisions and Their Penalties — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/2/1443H (2021-09-24).",
+      "registry_source_url": null,
+      "official_source_file": "sources/administrative_violations_drafting_guide/official_source/administrative_violations_drafting_guide_official_source.json",
+      "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
       ],
@@ -531,6 +569,25 @@
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": true,
       "published_amendment_pointer": "edition on file 2026-05-26 (converted from Hijri); 2 amendment notice(s) published later in Umm Al-Qura, most recently 2026-06-26 — تحديث اللائحة التنفيذية لنظام مكافحة غسل الأموال (https://www.uqn.gov.sa/decisions-and-regulations/4001243). The notice is not the amended text: nothing here asserts what the amendment says, only that the stored text may no longer be current."
+    },
+    {
+      "track_id": "animal_health_guide",
+      "display_name_en": "Animal Health Guide",
+      "display_name_ar": "دليل الصحة الحيوانية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Animal Health Guide — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/8/1445H (2024-03-01).",
+      "registry_source_url": null,
+      "official_source_file": "sources/animal_health_guide/official_source/animal_health_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
     },
     {
       "track_id": "anti_begging_law",
@@ -968,6 +1025,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "aquaculture_national_policies_guide",
+      "display_name_en": "National Aquaculture Policies and Practices Guide",
+      "display_name_ar": "دليل السياسات والممارسات الوطنية للاستزراع المائي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "National Aquaculture Policies and Practices Guide — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/5/1445H (2023-12-01).",
+      "registry_source_url": null,
+      "official_source_file": "sources/aquaculture_national_policies_guide/official_source/aquaculture_national_policies_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "arabian_horse_regulation",
       "display_name_en": "Regulatory Rules for the Purebred Arabian Horse",
       "display_name_ar": "اللائحة التنظيمية للخيل العربية الأصيلة",
@@ -995,6 +1071,25 @@
       "registry_source_authority": "Prince Mohammed bin Salman Global Center for Arabic Calligraphy — Organisational Arrangements — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/9/1447H (2026-02-20).",
       "registry_source_url": null,
       "official_source_file": "sources/arabic_calligraphy_center_statute/official_source/arabic_calligraphy_center_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "arabic_language_national_policy",
+      "display_name_en": "National Policy for the Arabic Language in Saudi Arabia",
+      "display_name_ar": "السياسة الوطنية للغة العربية في السعودية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "National Policy for the Arabic Language in Saudi Arabia — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H (2026-02-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/arabic_language_national_policy/official_source/arabic_language_national_policy_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -1832,6 +1927,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "charitable_donations_executive_instructions",
+      "display_name_en": "Executive Instructions for the Charitable Donations Collection Regulation",
+      "display_name_ar": "التعليمات التنفيذية للائحة جمع التبرعات للوجوه الخيرية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Executive Instructions for the Charitable Donations Collection Regulation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/10/1444H (2023-04-28).",
+      "registry_source_url": null,
+      "official_source_file": "sources/charitable_donations_executive_instructions/official_source/charitable_donations_executive_instructions_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "charitable_societies_council_regulation",
       "display_name_en": "Regulation of the Council of Charitable Societies",
       "display_name_ar": "لائحة مجلس الجمعيات الأهلية",
@@ -1916,6 +2030,25 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "civil_aviation_economic_policy",
+      "display_name_en": "Economic Policy for Civil Aviation in Saudi Arabia",
+      "display_name_ar": "السياسة الاقتصادية للطيران المدني في المملكة العربية السعودية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Economic Policy for Civil Aviation in Saudi Arabia — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/4/1445H (2023-10-30).",
+      "registry_source_url": null,
+      "official_source_file": "sources/civil_aviation_economic_policy/official_source/civil_aviation_economic_policy_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": false,
@@ -3157,6 +3290,25 @@
       "registry_source_authority": "Statute of the Digital Government Authority — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/8/1442H (2021-03-19).",
       "registry_source_url": null,
       "official_source_file": "sources/digital_government_authority_statute/official_source/digital_government_authority_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "direct_finance_investment_funds_instructions",
+      "display_name_en": "Instructions for Direct Financing Investment Funds",
+      "display_name_ar": "التعليمات الخاصة بصناديق استثمار التمويل المباشر",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Instructions for Direct Financing Investment Funds — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/9/1443H (2022-04-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/direct_finance_investment_funds_instructions/official_source/direct_finance_investment_funds_instructions_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -5106,6 +5258,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "fresh_produce_import_controls",
+      "display_name_en": "Conditions and Controls for Importing Fresh Vegetables and Fruit",
+      "display_name_ar": "شروط وضوابط استيراد الخضار والفاكهة الطازجة للمملكة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Conditions and Controls for Importing Fresh Vegetables and Fruit — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/fresh_produce_import_controls/official_source/fresh_produce_import_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "gaca_organizational_statute",
       "display_name_en": "Organizational Statute of the General Authority of Civil Aviation (GACA)",
       "display_name_ar": "تنظيم الهيئة العامة للطيران المدني",
@@ -5156,6 +5327,25 @@
         "wipolex-res.wipo.int"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "gcc_financial_products_cross_registration_framework",
+      "display_name_en": "Regulatory Framework for Cross-Registration of Financial Products among GCC Market Regulators",
+      "display_name_ar": "الإطار التنظيمي للتسجيل البيني للمنتجات المالية بين الجهات المنظمة للأسواق المالية بدول المجلس",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Framework for Cross-Registration of Financial Products among GCC Market Regulators — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/7/1445H (2024-01-26).",
+      "registry_source_url": null,
+      "official_source_file": "sources/gcc_financial_products_cross_registration_framework/official_source/gcc_financial_products_cross_registration_framework_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": false,
@@ -6227,6 +6417,25 @@
       "published_amendment_pointer": "edition on file 2023-09-16 (converted from Hijri); 1 amendment notice(s) published later in Umm Al-Qura, most recently 2024-09-27 — تعديل المادة التاسعة والعشرين من اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات (https://www.uqn.gov.sa/details?p=26541). The notice is not the amended text: nothing here asserts what the amendment says, only that the stored text may no longer be current."
     },
     {
+      "track_id": "intracity_bus_transport_licensing",
+      "display_name_en": "Procedures and Conditions for Licensing Intra-City Public Bus Transport",
+      "display_name_ar": "إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Procedures and Conditions for Licensing Intra-City Public Bus Transport — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H (2022-09-09).",
+      "registry_source_url": null,
+      "official_source_file": "sources/intracity_bus_transport_licensing/official_source/intracity_bus_transport_licensing_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "investment_accounts_instructions",
       "display_name_en": "Investment Accounts Instructions",
       "display_name_ar": "تعليمات الحسابات الاستثمارية",
@@ -7082,6 +7291,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "land_transport_training_centers_accreditation",
+      "display_name_en": "Conditions and Procedures for Qualifying and Accrediting Training and Testing Centres for Land Transport Drivers and Operations Managers",
+      "display_name_ar": "شروط وإجراءات تأهيل واعتماد مراكز التدريب ومراكز الاختبار لسائقي ومديري التشغيل في أنشطة النقل البري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Conditions and Procedures for Qualifying and Accrediting Training and Testing Centres for Land Transport Drivers and Operations Managers — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/4/1446H (2024-10-04).",
+      "registry_source_url": null,
+      "official_source_file": "sources/land_transport_training_centers_accreditation/official_source/land_transport_training_centers_accreditation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "landlord_tenant_relationship_regulation",
       "display_name_en": "Statutory Provisions Regulating the Landlord-Tenant Relationship",
       "display_name_ar": "الأحكام النظامية الخاصة بضبط العلاقة بين المؤجر والمستأجر",
@@ -7249,6 +7477,25 @@
       "registry_source_authority": "Regulation Governing Light Goods Transport by Road — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/12/1442H (2021-07-30).",
       "registry_source_url": null,
       "official_source_file": "sources/light_goods_road_transport_regulation/official_source/light_goods_road_transport_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "listed_companies_accumulated_losses_instructions",
+      "display_name_en": "Procedures and Instructions for Listed Companies Whose Accumulated Losses Reach 20 Percent or More of Capital",
+      "display_name_ar": "الإجراءات والتعليمات الخاصة بالشركات المدرجة أسهمها في السوق التي بلغت خسائرها المتراكمة 20% فأكثر من رأس مالها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Procedures and Instructions for Listed Companies Whose Accumulated Losses Reach 20 Percent or More of Capital — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/9/1444H (2023-04-14).",
+      "registry_source_url": null,
+      "official_source_file": "sources/listed_companies_accumulated_losses_instructions/official_source/listed_companies_accumulated_losses_instructions_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -8160,6 +8407,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "narcotics_schedules_general_provisions",
+      "display_name_en": "General Provisions on the Schedules Annexed to the Anti-Narcotics Law",
+      "display_name_ar": "أحكام عامة على الجداول المرفقة بنظام مكافحة المخدرات والمؤثرات العقلية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "General Provisions on the Schedules Annexed to the Anti-Narcotics Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/8/1444H (2023-03-03).",
+      "registry_source_url": null,
+      "official_source_file": "sources/narcotics_schedules_general_provisions/official_source/narcotics_schedules_general_provisions_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "national_curriculum_center_statute",
       "display_name_en": "Organisational Arrangements of the National Center for Curricula",
       "display_name_ar": "الترتيبات التنظيمية للمركز الوطني للمناهج",
@@ -8459,6 +8725,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "nazaha_military_personnel_statute",
+      "display_name_en": "Provisions Governing Military Personnel at the Oversight and Anti-Corruption Authority",
+      "display_name_ar": "التنظيم الخاص بالعسكريين في هيئة الرقابة ومكافحة الفساد",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Provisions Governing Military Personnel at the Oversight and Anti-Corruption Authority — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/12/1444H (2023-06-19).",
+      "registry_source_url": null,
+      "official_source_file": "sources/nazaha_military_personnel_statute/official_source/nazaha_military_personnel_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "nazara_works_regulation",
       "display_name_en": "Regulation Governing Waqf Custodianship (Nazara) Works",
       "display_name_ar": "لائحة تنظيم أعمال النظارة",
@@ -8693,6 +8978,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "occupational_safety_health_national_policy",
+      "display_name_en": "National Policy for Occupational Safety and Health",
+      "display_name_ar": "السياسة الوطنية للسلامة والصحة المهنية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "National Policy for Occupational Safety and Health — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/6/1442H (2021-02-05).",
+      "registry_source_url": null,
+      "official_source_file": "sources/occupational_safety_health_national_policy/official_source/occupational_safety_health_national_policy_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "official_communications_records_regulation",
       "display_name_en": "Regulation on Official Communications and the Preservation of Records",
       "display_name_ar": "لائحة الاتصالات الرسمية والمحافظة على الوثائق ومعلوماتها",
@@ -8720,6 +9024,25 @@
       "registry_source_authority": "Rules Determining Travel Classes for Civil and Military Employees of Public Bodies — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/3/1447H (2025-09-19).",
       "registry_source_url": null,
       "official_source_file": "sources/official_travel_class_rules/official_source/official_travel_class_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "offplan_engineering_consultants_qualification",
+      "display_name_en": "Qualification Conditions and Requirements for Engineering Consultancies on Off-Plan Projects",
+      "display_name_ar": "شروط ومتطلبات تأهيل الجهات الاستشارية الهندسية لمشاريع بيع أو تأجير الوحدات العقارية على الخارطة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Qualification Conditions and Requirements for Engineering Consultancies on Off-Plan Projects — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/3/1445H (2023-09-29).",
+      "registry_source_url": null,
+      "official_source_file": "sources/offplan_engineering_consultants_qualification/official_source/offplan_engineering_consultants_qualification_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -9736,6 +10059,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "public_entities_governance_guide",
+      "display_name_en": "Guidance Manual for the Governance of Public Entities",
+      "display_name_ar": "الدليل الاسترشادي لحوكمة الجهات العامة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Guidance Manual for the Governance of Public Entities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/2/1446H (2024-08-09).",
+      "registry_source_url": null,
+      "official_source_file": "sources/public_entities_governance_guide/official_source/public_entities_governance_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "public_facility_names_rules",
       "display_name_en": "Rules and Standards for the Names of Public Facilities",
       "display_name_ar": "قواعد ومعايير أسماء المرافق العامة",
@@ -9793,6 +10135,44 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "public_transport_projects_framework",
+      "display_name_en": "Regulatory Framework for Public Transport Projects",
+      "display_name_ar": "الإطار التنظيمي لمشاريع النقل العام",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Framework for Public Transport Projects — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/12/1443H (2022-07-22).",
+      "registry_source_url": null,
+      "official_source_file": "sources/public_transport_projects_framework/official_source/public_transport_projects_framework_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "public_transport_users_rights_enforcement_guide",
+      "display_name_en": "Procedural Guide for Enforcing the Public Transport Users' Rights Regulation",
+      "display_name_ar": "دليل إجراءات ضبط مخالفات لائحة حقوق والتزامات مستخدمي وسائل النقل العام وآليتها التفصيلية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Procedural Guide for Enforcing the Public Transport Users' Rights Regulation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/2/1446H (2024-08-16).",
+      "registry_source_url": null,
+      "official_source_file": "sources/public_transport_users_rights_enforcement_guide/official_source/public_transport_users_rights_enforcement_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": false,
@@ -9888,6 +10268,25 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "railway_independent_consultant_guide",
+      "display_name_en": "Railway Guide — Appointment of an Independent Competent Consultant",
+      "display_name_ar": "دليل الخطوط الحديدية - تعيين استشاري مختص مستقل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Railway Guide — Appointment of an Independent Competent Consultant — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/11/1444H (2023-06-16).",
+      "registry_source_url": null,
+      "official_source_file": "sources/railway_independent_consultant_guide/official_source/railway_independent_consultant_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": false,
@@ -10407,6 +10806,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "realestate_platform_licensing_criteria",
+      "display_name_en": "Licensing and Classification Criteria for Electronic Real Estate Platforms",
+      "display_name_ar": "معايير ترخيص المنصات العقارية الإلكترونية وتصنيفها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Licensing and Classification Criteria for Electronic Real Estate Platforms — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/10/1442H (2021-06-04).",
+      "registry_source_url": null,
+      "official_source_file": "sources/realestate_platform_licensing_criteria/official_source/realestate_platform_licensing_criteria_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "reconciliation_committees_regulation",
       "display_name_en": "Regulatory Rules for the Reconciliation Committees in the Regional Emirates",
       "display_name_ar": "اللائحة التنظيمية للجان إصلاح ذات البين في إمارات المناطق",
@@ -10872,6 +11290,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "rural_livestock_husbandry_guide",
+      "display_name_en": "Guide to Rural Livestock Husbandry",
+      "display_name_ar": "دليل التربية الريفية للثروة الحيوانية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Guide to Rural Livestock Husbandry — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/9/1445H (2024-03-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/rural_livestock_husbandry_guide/official_source/rural_livestock_husbandry_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "safe_manning_regulation",
       "display_name_en": "Regulation on the Minimum Safe Manning of Ships",
       "display_name_ar": "لائحة الحد الأدنى للتطقيم الآمن للسفن",
@@ -11300,6 +11737,25 @@
         "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "self_consumption_renewable_energy_framework",
+      "display_name_en": "Regulatory Framework for Self-Consumption Renewable Energy",
+      "display_name_ar": "الإطار التنظيمي للطاقة المتجددة للاستهلاك الذاتي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Framework for Self-Consumption Renewable Energy — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/1/1445H (2023-07-21).",
+      "registry_source_url": null,
+      "official_source_file": "sources/self_consumption_renewable_energy_framework/official_source/self_consumption_renewable_energy_framework_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": "",
       "published_amendment_after_edition_on_file": false,
@@ -11828,6 +12284,25 @@
       "registry_source_authority": "Technical Regulation for Special-Use Vehicle Equipment and Fittings — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/2/1446H (2024-08-23).",
       "registry_source_url": null,
       "official_source_file": "sources/special_use_vehicle_equipment_technical_regulation/official_source/special_use_vehicle_equipment_technical_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "spending_efficiency_authority_statute",
+      "display_name_en": "Spending Efficiency and Government Projects Authority — Statute",
+      "display_name_ar": "تنظيم هيئة كفاءة الإنفاق والمشروعات الحكومية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Spending Efficiency and Government Projects Authority — Statute — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/7/1442H (2021-03-05).",
+      "registry_source_url": null,
+      "official_source_file": "sources/spending_efficiency_authority_statute/official_source/spending_efficiency_authority_statute_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -12864,6 +13339,766 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "treaty_aircraft_seizure_supplementary_protocol",
+      "display_name_en": "Supplementary Protocol to the Convention for the Suppression of Unlawful Seizure of Aircraft",
+      "display_name_ar": "البروتوكول المكمل لاتفاقية قمع الاستيلاء غير المشروع على الطائرات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Supplementary Protocol to the Convention for the Suppression of Unlawful Seizure of Aircraft — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/8/1442H (2021-04-02).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_aircraft_seizure_supplementary_protocol/official_source/treaty_aircraft_seizure_supplementary_protocol_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_albania_driving_licences",
+      "display_name_en": "Saudi Arabia–Albania Agreement on the Use and Exchange of Driving Licences",
+      "display_name_ar": "اتفاقية تعاون في مجال استعمال واستبدال رخص القيادة بين حكومتي المملكة وألبانيا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Albania Agreement on the Use and Exchange of Driving Licences — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/1/1444H (2022-08-12).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_albania_driving_licences/official_source/treaty_albania_driving_licences_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_arab_anti_human_cloning",
+      "display_name_en": "Arab Convention on the Prevention and Combating of Human Cloning",
+      "display_name_ar": "الاتفاقية العربية لمنع ومكافحة الاستنساخ البشري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Arab Convention on the Prevention and Combating of Human Cloning — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/7/1445H (2024-02-02).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_arab_anti_human_cloning/official_source/treaty_arab_anti_human_cloning_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_arab_road_passenger_transport",
+      "display_name_en": "Arab Agreement Regulating Road Passenger Transport between and across Arab States",
+      "display_name_ar": "الاتفاقية العربية لتنظيم نقل الركاب على الطرق بين الدول العربية وعبرها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Arab Agreement Regulating Road Passenger Transport between and across Arab States — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H (2023-02-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_arab_road_passenger_transport/official_source/treaty_arab_road_passenger_transport_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_azerbaijan_customs_assistance",
+      "display_name_en": "Saudi Arabia–Azerbaijan Agreement on Cooperation and Mutual Assistance in Customs Matters",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وأذربيجان حول التعاون والمساعدة المتبادلة في المسائل الجمركية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Azerbaijan Agreement on Cooperation and Mutual Assistance in Customs Matters — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/10/1443H (2022-05-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_azerbaijan_customs_assistance/official_source/treaty_azerbaijan_customs_assistance_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_bahrain_customs_cooperation",
+      "display_name_en": "Saudi–Bahraini Joint Customs Cooperation Agreement",
+      "display_name_ar": "اتفاقية التعاون الجمركي المشترك بين هيئة الزكاة والضريبة والجمارك في المملكة وشؤون الجمارك بمملكة البحرين",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi–Bahraini Joint Customs Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/1/1443H (2021-08-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_bahrain_customs_cooperation/official_source/treaty_bahrain_customs_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_bangladesh_customs_assistance",
+      "display_name_en": "Saudi Arabia–Bangladesh Agreement on Cooperation and Mutual Assistance in Customs Matters",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وبنغلاديش الشعبية حول التعاون والمساعدة المتبادلة في المسائل الجمركية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Bangladesh Agreement on Cooperation and Mutual Assistance in Customs Matters — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/2/1444H (2022-09-02).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_bangladesh_customs_assistance/official_source/treaty_bangladesh_customs_assistance_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_brazil_visit_visas",
+      "display_name_en": "Saudi Arabia–Brazil Agreement on Visit Visa Procedures",
+      "display_name_ar": "اتفاقية بين حكومة المملكة وحكومة جمهورية البرازيل بشأن تنظيم إجراءات منح مواطني البلدين تأشيرة زيارة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Brazil Agreement on Visit Visa Procedures — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1442H (2021-01-08).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_brazil_visit_visas/official_source/treaty_brazil_visit_visas_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_cameroon_general_cooperation",
+      "display_name_en": "Saudi Arabia–Cameroon General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة والكاميرون",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Cameroon General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/9/1443H (2022-04-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_cameroon_general_cooperation/official_source/treaty_cameroon_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_chad_general_cooperation",
+      "display_name_en": "Saudi Arabia–Chad General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومة المملكة وحكومة تشاد",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Chad General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/12/1442H (2021-07-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_chad_general_cooperation/official_source/treaty_chad_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_cyprus_general_cooperation",
+      "display_name_en": "Saudi Arabia–Cyprus General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وقبرص",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Cyprus General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/9/1447H (2026-02-20).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_cyprus_general_cooperation/official_source/treaty_cyprus_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_czechia_air_services",
+      "display_name_en": "Saudi Arabia–Czech Republic Air Services Agreement",
+      "display_name_ar": "اتفاقية بين جمهورية التشيك والمملكة في مجال الخدمات الجوية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Czech Republic Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H (2023-01-06).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_czechia_air_services/official_source/treaty_czechia_air_services_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_dco_headquarters",
+      "display_name_en": "Headquarters Agreement between Saudi Arabia and the Digital Cooperation Organization",
+      "display_name_ar": "اتفاقية مقر بين حكومة المملكة ومنظمة التعاون الرقمي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Headquarters Agreement between Saudi Arabia and the Digital Cooperation Organization — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/6/1444H (2023-01-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_dco_headquarters/official_source/treaty_dco_headquarters_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_djibouti_maritime_transport",
+      "display_name_en": "Saudi Arabia–Djibouti Maritime Transport Cooperation Agreement",
+      "display_name_ar": "اتفاقية تعاون بين حكومتي المملكة وجمهورية جيبوتي في مجال النقل البحري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Djibouti Maritime Transport Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H (2023-01-06).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_djibouti_maritime_transport/official_source/treaty_djibouti_maritime_transport_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_estonia_general_cooperation",
+      "display_name_en": "Saudi Arabia–Estonia General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وإستونيا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Estonia General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H (2026-02-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_estonia_general_cooperation/official_source/treaty_estonia_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_gcc_payment_systems_linkage",
+      "display_name_en": "GCC Payment Systems Linkage Agreement",
+      "display_name_ar": "اتفاقية نظام ربط أنظمة المدفوعات بين دول مجلس التعاون لدول الخليج العربية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "GCC Payment Systems Linkage Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/12/1442H (2021-07-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_gcc_payment_systems_linkage/official_source/treaty_gcc_payment_systems_linkage_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_gcc_wildlife_conservation",
+      "display_name_en": "GCC Agreement on the Conservation of Wildlife and Its Natural Habitats",
+      "display_name_ar": "اتفاقية المحافظة على الحياة الفطرية ومواطنها الطبيعية في مجلس التعاون لدول الخليج العربية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "GCC Agreement on the Conservation of Wildlife and Its Natural Habitats — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_gcc_wildlife_conservation/official_source/treaty_gcc_wildlife_conservation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_ghana_air_services",
+      "display_name_en": "Saudi Arabia–Ghana Air Services Agreement",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وغانا في مجال خدمات النقل الجوي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Ghana Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/2/1444H (2022-09-16).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_ghana_air_services/official_source/treaty_ghana_air_services_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_greece_maritime_transport",
+      "display_name_en": "Saudi Arabia–Greece Maritime Transport Cooperation Agreement",
+      "display_name_ar": "اتفاقية تعاون بين حكومتي المملكة واليونان في مجال النقل البحري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Greece Maritime Transport Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 2/12/1443H (2022-07-01).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_greece_maritime_transport/official_source/treaty_greece_maritime_transport_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_guyana_air_services",
+      "display_name_en": "Saudi Arabia–Guyana Air Services Agreement",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وغويانا التعاونية في مجال خدمات النقل الجوي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Guyana Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/5/1444H (2022-12-02).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_guyana_air_services/official_source/treaty_guyana_air_services_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_honduras_general_cooperation",
+      "display_name_en": "Saudi Arabia–Honduras General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومة المملكة وحكومة جمهورية هندوراس",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Honduras General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/7/1446H (2025-01-17).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_honduras_general_cooperation/official_source/treaty_honduras_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_hungary_air_services",
+      "display_name_en": "Saudi Arabia–Hungary Air Services Agreement",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وهنغاريا في مجال خدمات النقل الجوي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Hungary Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/12/1443H (2022-07-29).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_hungary_air_services/official_source/treaty_hungary_air_services_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_iala_establishment",
+      "display_name_en": "Convention on the Establishment of the International Organization for Marine Aids to Navigation",
+      "display_name_ar": "اتفاقية بشأن إنشاء المنظمة الدولية للمساعدات الملاحية البحرية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Convention on the Establishment of the International Organization for Marine Aids to Navigation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H (2022-09-09).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_iala_establishment/official_source/treaty_iala_establishment_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_iata_headquarters",
+      "display_name_en": "Headquarters Agreement between Saudi Arabia and IATA",
+      "display_name_ar": "اتفاقية مقر بين حكومة المملكة واتحاد النقل الجوي الدولي (إياتا)",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Headquarters Agreement between Saudi Arabia and IATA — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_iata_headquarters/official_source/treaty_iata_headquarters_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_iraq_double_taxation",
+      "display_name_en": "Saudi Arabia–Iraq Double Taxation Avoidance Agreement",
+      "display_name_ar": "اتفاقية بين حكومة المملكة وحكومة جمهورية العراق لتجنب الازدواج الضريبي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Iraq Double Taxation Avoidance Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/3/1443H (2021-10-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_iraq_double_taxation/official_source/treaty_iraq_double_taxation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_iraq_maritime_transport",
+      "display_name_en": "Saudi Arabia–Iraq Maritime Transport Cooperation Agreement",
+      "display_name_ar": "اتفاقية تعاون بين حكومتي المملكة والعراق في مجال النقل البحري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Iraq Maritime Transport Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/1/1444H (2022-08-05).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_iraq_maritime_transport/official_source/treaty_iraq_maritime_transport_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_latvia_economic_cooperation",
+      "display_name_en": "Saudi Arabia–Latvia Economic Cooperation Agreement",
+      "display_name_ar": "اتفاقية التعاون الاقتصادي بين حكومة المملكة العربية السعودية وحكومة جمهورية لاتفيا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Latvia Economic Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/7/1445H (2024-02-09).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_latvia_economic_cooperation/official_source/treaty_latvia_economic_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_nepal_general_cooperation",
+      "display_name_en": "Saudi Arabia–Nepal General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية نيبال",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Nepal General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/6/1444H (2023-01-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_nepal_general_cooperation/official_source/treaty_nepal_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_pakistan_transfer_of_sentenced_persons",
+      "display_name_en": "Saudi Arabia–Pakistan Agreement on the Transfer of Sentenced Persons",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة وجمهورية باكستان الإسلامية لنقل المحكوم عليهم بعقوبات سالبة للحرية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Pakistan Agreement on the Transfer of Sentenced Persons — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/8/1443H (2022-03-11).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_pakistan_transfer_of_sentenced_persons/official_source/treaty_pakistan_transfer_of_sentenced_persons_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_qatar_air_services",
+      "display_name_en": "Saudi Arabia–Qatar Air Services Agreement",
+      "display_name_ar": "اتفاقية بين حكومتي المملكة و قطر في مجال خدمات النقل الجوي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Qatar Air Services Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/7/1443H (2022-02-25).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_qatar_air_services/official_source/treaty_qatar_air_services_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_regional_technical_cooperation_protocol",
+      "display_name_en": "Regional Protocol on Technical Cooperation for Emergency Secondment and Transfer of Experts and Equipment",
+      "display_name_ar": "البروتوكول الإقليمي الخاص بالتعاون الفني لاستعارة ونقل الخبراء والفنيين والأجهزة والمعدات والمواد في الحالات الطارئة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regional Protocol on Technical Cooperation for Emergency Secondment and Transfer of Experts and Equipment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/1/1443H (2021-08-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_regional_technical_cooperation_protocol/official_source/treaty_regional_technical_cooperation_protocol_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_rwanda_general_cooperation",
+      "display_name_en": "Saudi Arabia–Rwanda General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين المملكة وجمهورية رواندا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Rwanda General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/4/1443H (2021-12-03).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_rwanda_general_cooperation/official_source/treaty_rwanda_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_slovakia_general_cooperation",
+      "display_name_en": "Saudi Arabia–Slovakia General Cooperation Agreement",
+      "display_name_ar": "الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفاكيا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Slovakia General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1448H (2026-07-17).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_slovakia_general_cooperation/official_source/treaty_slovakia_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_slovenia_general_cooperation",
+      "display_name_en": "Saudi Arabia–Slovenia General Cooperation Agreement",
+      "display_name_ar": "الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفينيا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Slovenia General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1448H (2026-07-17).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_slovenia_general_cooperation/official_source/treaty_slovenia_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_south_sudan_general_cooperation",
+      "display_name_en": "Saudi Arabia–South Sudan General Cooperation Agreement",
+      "display_name_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية جنوب السودان",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–South Sudan General Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/10/1443H (2022-05-27).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_south_sudan_general_cooperation/official_source/treaty_south_sudan_general_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_taipei_economic_cultural_office",
+      "display_name_en": "Agreement between the Federation of Saudi Chambers and the Taipei Economic and Cultural Office",
+      "display_name_ar": "اتفاقية بين مجلس الغرف التجارية الصناعية السعودية ومكتب الممثل الاقتصادي والثقافي لتايبيه في المملكة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Agreement between the Federation of Saudi Chambers and the Taipei Economic and Cultural Office — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/1/1443H (2021-09-03).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_taipei_economic_cultural_office/official_source/treaty_taipei_economic_cultural_office_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_unccd_secretariat_cooperation",
+      "display_name_en": "Cooperation Agreement between MEWA and the UNCCD Secretariat",
+      "display_name_ar": "اتفاقية للتعاون بين وزارة البيئة والمياه والزراعة في المملكة وأمانة اتفاقية الأمم المتحدة لمكافحة التصحر",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Cooperation Agreement between MEWA and the UNCCD Secretariat — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/8/1443H (2022-03-18).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_unccd_secretariat_cooperation/official_source/treaty_unccd_secretariat_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_unwto_cooperation",
+      "display_name_en": "Agreement between Saudi Arabia and the World Tourism Organization",
+      "display_name_ar": "اتفاقية بين المملكة ومنظمة السياحة العالمية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Agreement between Saudi Arabia and the World Tourism Organization — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/8/1442H (2021-04-09).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_unwto_cooperation/official_source/treaty_unwto_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_unwto_elearning_capacity",
+      "display_name_en": "Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development",
+      "display_name_ar": "اتفاقية تعاون بين وزارة السياحة في المملكة ومنظمة السياحة العالمية لتنمية القدرات البشرية عن طريق التعليم الإلكتروني",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/7/1443H (2022-02-04).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_unwto_elearning_capacity/official_source/treaty_unwto_elearning_capacity_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_uzbekistan_energy_cooperation",
+      "display_name_en": "Saudi Arabia–Uzbekistan Energy Cooperation Agreement",
+      "display_name_ar": "اتفاقية تعاون في مجال الطاقة بين المملكة وأوزبكستان",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Saudi Arabia–Uzbekistan Energy Cooperation Agreement — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H (2023-02-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_uzbekistan_energy_cooperation/official_source/treaty_uzbekistan_energy_cooperation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "trustees_experts_fees_rules",
       "display_name_en": "Rules on the Fees of Trustees and Experts",
       "display_name_ar": "قواعد أتعاب الأمناء والخبراء",
@@ -13134,6 +14369,25 @@
       "registry_source_authority": "Rules Governing the Vehicle Damage Assessment Branch — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/11/1445H (2024-05-17). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
       "registry_source_url": null,
       "official_source_file": "sources/vehicle_damage_assessment_rules/official_source/vehicle_damage_assessment_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "vehicle_damage_assessment_standards",
+      "display_name_en": "Professional Standards for Vehicle Damage Assessment",
+      "display_name_ar": "المعايير المهنية لتقييم أضرار المركبات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Professional Standards for Vehicle Damage Assessment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/11/1445H (2024-05-31).",
+      "registry_source_url": null,
+      "official_source_file": "sources/vehicle_damage_assessment_standards/official_source/vehicle_damage_assessment_standards_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"

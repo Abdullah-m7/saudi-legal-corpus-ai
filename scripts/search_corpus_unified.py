@@ -73,7 +73,21 @@ def search(query, top=10, corpus=None, index=None):
                     matched.add(qt)
         if score > 0:
             results.append((score, len(matched), rec))
-    results.sort(key=lambda x: (-x[0], -x[1], x[2]["corpus"],
+    # Rank by how many DISTINCT query tokens a record matched, and only then by the
+    # weighted field score. The reverse order — weighted score first, coverage as a
+    # tiebreak — let a record matching a handful of tokens in heavy fields beat one
+    # containing the entire query in its body: «في» scores 3 in search_queries_ar
+    # and 2 in the title, so a wildlife treaty matching 4 of a query's tokens (22)
+    # outranked the e-litigation provision matching 16 of them (20), and a treaty
+    # matching 11 outranked the Income Tax article matching 19.
+    #
+    # Measured over all 1,379 gold queries, swapping the two keys moves
+    # top-1 89.1% -> 94.3%, top-3 96.4% -> 97.7%, top-5 97.7% -> 98.8% and
+    # MRR@5 0.9263 -> 0.9607. Weighting each token by IDF as well was also measured
+    # and adds nothing over this (94.3% / 0.9609), so the simpler change is the one
+    # kept: the field weights still decide between records that cover the query
+    # equally well, which is what they are good at.
+    results.sort(key=lambda x: (-x[1], -x[0], x[2]["corpus"],
                                 x[2]["law_component"], x[2]["article_number"]))
     out = []
     for score, ncov, rec in results[:top]:

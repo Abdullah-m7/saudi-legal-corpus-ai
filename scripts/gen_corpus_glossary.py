@@ -544,14 +544,31 @@ def build_glossary():
                 key = normalize_term_for_grouping(pair["term_as_written"])
                 if not key:
                     continue
-                terms.setdefault(key, []).append({
+                entry = {
                     "track_id": track_id,
                     "article_number": r["article_number"],
                     "term_as_written": pair["term_as_written"],
                     "definition_text": pair["definition_text"],
                     "source_record_id": r["record_id"],
                     "extraction_method": method,
-                })
+                }
+                # A source may define the same term twice, identically, in one
+                # article — «دليل المسالخ وفحص اللحوم ونقلها» defines «المستحضرات
+                # البيطرية» twice in its definitions article, word for word. The
+                # ARTICLE keeps the repetition, because the article is the gazette's
+                # text and is stored verbatim. The GLOSSARY must not: it is an index,
+                # and listing one record's one definition twice under one term states
+                # nothing the first entry did not. Identical tuples collapse; anything
+                # that differs — a different wording, record, article or track — is a
+                # distinct entry and is kept, which is what makes divergent definitions
+                # across tracks visible.
+                bucket = terms.setdefault(key, [])
+                if not any(e["track_id"] == entry["track_id"]
+                           and e["article_number"] == entry["article_number"]
+                           and e["source_record_id"] == entry["source_record_id"]
+                           and e["definition_text"] == entry["definition_text"]
+                           for e in bucket):
+                    bucket.append(entry)
 
     # Deterministic ordering.
     for key in terms:
