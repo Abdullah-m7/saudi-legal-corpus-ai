@@ -117,6 +117,73 @@ def artifacts():
     return out
 
 
+# The sequence signatures above are certain but narrow: they only fire on «اال» / «اإل»
+# / «اآل» opening a word. The same extraction fault reverses a lam-alef ANYWHERE, and
+# «الالزمة» for «اللازمة» or «إعالن» for «إعلان» carry no opening signature at all.
+#
+# Widening it cannot be done by a rule, because THE FAULT MAPS REAL ARABIC WORDS ONTO
+# OTHER REAL ARABIC WORDS: «العالقة» (suspended, pending) is the swap of «العلاقة»
+# (relationship), «عالمة» (aware) of «علامة» (mark), «صالحية» (fitness) of «صلاحية»
+# (competence). A detector keyed on "this form is much rarer than its swap" flags all
+# of those, and they are correct text — «الشوائب العالقة ببدن السفينة» and «القضايا
+# العالقة لدى المحامين» say exactly what they mean.
+#
+# So the corpus is used as the evidence instead. The tracks with ZERO sequence
+# signatures are a seed of known-good text — established independently of this test,
+# so the reasoning is not circular. A form that appears NOWHERE in that seed, and
+# whose swap the corpus uses at least RARITY_RATIO times more often, is damage. A form
+# that does appear in the seed is a real word and is reported separately, unclassified,
+# because deciding it needs the sentence and not the spelling.
+RARITY_RATIO = 20
+MIN_FORM_LENGTH = 4
+ALEFS = "اأإآ"
+
+
+def _lam_alef_swaps(w):
+    """Every way of un-reversing one or more alef+lam pairs in a word."""
+    import itertools
+    pos = [i for i in range(len(w) - 1) if w[i] in ALEFS and w[i + 1] == "ل"]
+    out = set()
+    for k in range(1, len(pos) + 1):
+        for combo in itertools.combinations(pos, k):
+            s = list(w)
+            ok = True
+            for i in combo:
+                if s[i] in ALEFS and s[i + 1] == "ل":
+                    s[i], s[i + 1] = s[i + 1], s[i]
+                else:
+                    ok = False
+                    break
+            if ok:
+                out.add("".join(s))
+    return out
+
+
+def scan_reversed_lam_alef(tracks, seeded_clean):
+    """(damage_forms, real_word_collisions) — the wider fault, split by the seed test."""
+    import collections
+    everywhere = collections.Counter()
+    in_seed = collections.Counter()
+    for tid, (_d, _g, _h, texts, _p) in tracks.items():
+        for t in texts:
+            ws = re.findall(r"[ؠ-ي]+", t)
+            everywhere.update(ws)
+            if tid in seeded_clean:
+                in_seed.update(ws)
+    damage, collisions = {}, {}
+    for w, n in everywhere.items():
+        if len(w) < MIN_FORM_LENGTH:
+            continue
+        best = max(((everywhere.get(c, 0), c) for c in _lam_alef_swaps(w) if c != w),
+                   default=(0, None))
+        if best[0] < max(RARITY_RATIO * n, RARITY_RATIO):
+            continue
+        (collisions if in_seed[w] else damage)[w] = {
+            "occurrences": n, "swap": best[1], "swap_occurrences": best[0],
+            "occurrences_in_seed": in_seed[w]}
+    return damage, collisions
+
+
 def scan_damage(tracks):
     rows = []
     for tid, (doc, _g, _h, texts, path) in sorted(tracks.items()):
@@ -237,6 +304,31 @@ NOTE = (
 def main():
     tracks = artifacts()
     damage = scan_damage(tracks)
+    seeded_clean = set(tracks) - {r["track_id"] for r in damage}
+    wide, collisions = scan_reversed_lam_alef(tracks, seeded_clean)
+    # Re-scan every track for the wider forms and fold the result into the same rows,
+    # so a track's disclosed count is the whole of what was found in it.
+    per_track = {}
+    for tid, (_d, _g, _h, texts, path) in tracks.items():
+        n = sum(1 for t in texts if any(w in wide for w in re.findall(r"[ؠ-ي]+", t)))
+        occ = sum(sum(1 for w in re.findall(r"[ؠ-ي]+", t) if w in wide) for t in texts)
+        if n:
+            per_track[tid] = (n, occ, len(texts), path)
+    by_id = {r["track_id"]: r for r in damage}
+    for tid, (n, occ, total, path) in per_track.items():
+        row = by_id.get(tid)
+        if row is None:
+            row = {"track_id": tid, "title_ar": tracks[tid][0], "source_artifact": path,
+                   "records_affected": 0, "total_records": total, "signatures": {}}
+            damage.append(row)
+            by_id[tid] = row
+        row["reversed_lam_alef_records"] = n
+        row["reversed_lam_alef_occurrences"] = occ
+    for r in damage:
+        r.setdefault("reversed_lam_alef_records", 0)
+        r.setdefault("reversed_lam_alef_occurrences", 0)
+        r["records_affected"] = max(r["records_affected"], r["reversed_lam_alef_records"])
+    damage.sort(key=lambda r: -r["records_affected"])
     pairs = scan_pairs(tracks)
     by_verdict = {}
     for r in pairs:
@@ -245,10 +337,13 @@ def main():
     print("instruments scanned: %d" % len(tracks))
     print("\nA. encoding damage: %d tracks, %d records"
           % (len(damage), sum(r["records_affected"] for r in damage)))
+    print("   reversed lam-alef: %d damage-only forms (%d occurrences); "
+          "%d forms are real words the swap collides with and are NOT counted"
+          % (len(wide), sum(v["occurrences"] for v in wide.values()), len(collisions)))
     for r in damage:
-        print("   %-46s %4d/%-4d  %s"
+        print("   %-46s %4d/%-4d  sig=%d wide=%d"
               % (r["track_id"], r["records_affected"], r["total_records"],
-                 ", ".join(r["signatures"])[:60]))
+                 sum(r["signatures"].values()), r["reversed_lam_alef_occurrences"]))
     print("\nB. same instrument under two tracks, or same text under two names: %d pairs"
           % len(pairs))
     for k in sorted(by_verdict):
@@ -270,6 +365,19 @@ def main():
             "generated_note": NOTE,
             "instruments_scanned": len(tracks),
             "thresholds": {"content_floor": CONTENT_FLOOR, "subject_floor": SUBJECT_FLOOR},
+            "reversed_lam_alef_note": (
+                "The wider form of the same fault, found by the seed test rather than by a "
+                "rule: a word form that appears NOWHERE in the tracks with zero sequence "
+                "signatures, and whose lam-alef swap the corpus uses at least %d times more "
+                "often. `real_word_collisions` are the forms that FAILED that test — they do "
+                "appear in known-good text, because the fault maps real Arabic words onto "
+                "other real Arabic words («العالقة» the swap of «العلاقة», «عالمة» of "
+                "«علامة»). Those cannot be classified without reading the sentence, and are "
+                "listed rather than counted as damage." % RARITY_RATIO),
+            "reversed_lam_alef_forms": len(wide),
+            "reversed_lam_alef_occurrences": sum(v["occurrences"] for v in wide.values()),
+            "reversed_lam_alef_damage_forms": dict(sorted(wide.items())),
+            "real_word_collisions": dict(sorted(collisions.items())),
             "encoding_damage_tracks": len(damage),
             "encoding_damage_records": sum(r["records_affected"] for r in damage),
             "encoding_damage": damage,

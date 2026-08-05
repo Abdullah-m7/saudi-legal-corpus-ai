@@ -874,21 +874,32 @@
  "text_integrity_audit": {
   "why": "Track validators check a track against itself; the currency audit checks whether the LAW moved on. Neither can see two properties of the STORED TEXT: that it carries encoding damage, and that the corpus holds one instrument twice.",
   "A_encoding_damage": {
-   "extent": "323 records across 10 tracks",
+   "extent": "380 records across 10 tracks (revised up from 323 once the wider form of the fault was detected); 274 damage-only word forms, 1055 occurrences.",
    "per_track": {
     "civil_service_regulation": "156/261",
-    "payment_systems_regulation": "74/133",
-    "cma_corporate_governance_regulation": "64/95",
-    "healthcare_professions_regulation": "20/30",
-    "customs_law": "2/188",
-    "customs_regulation": "2/36",
+    "payment_systems_regulation": "104/133",
+    "cma_corporate_governance_regulation": "75/95",
+    "healthcare_professions_regulation": "22/30",
+    "customs_law": "10/188",
+    "customs_regulation": "5/36",
+    "zakat_law": "3/128",
     "vat_regulation": "2/82",
-    "gcc_pesticides_regulation": "1/51",
-    "telecommunications_regulation": "1/108",
-    "zakat_law": "1/128"
+    "telecommunications_regulation": "2/108",
+    "gcc_pesticides_regulation": "1/51"
    },
    "correction_of_an_earlier_figure": "The previous round disclosed this in four tracks with counts of 54/34/27/5. Those were produced by a narrower marker set and were too low: the real figures are 156/74/64/20, and six further tracks carry one or two damaged records each. The disclosures have been rewritten with the measured counts.",
-   "not_repaired": "No character was corrected. «ال» is itself an Arabic word — both the negative particle and the definite article — so rewriting it wherever it appears would corrupt sound text. Lifting a disclosure means re-reading that text from its official source."
+   "not_repaired": "A partial repair would be worse than disclosed damage: it would leave text that looks repaired, remove the signature that flags it, and make the disclosure's own count untrue. The text is left as published-and-damaged, and the disclosure now carries the reason.",
+   "how_the_wider_fault_is_found": "The sequence signatures only fire on «اال»/«اإل»/«اآل» opening a word, and the same fault reverses a lam-alef anywhere. Widening it by rule is impossible because the fault maps real Arabic words onto other real Arabic words. So the corpus is the evidence: the tracks with ZERO sequence signatures are a seed of known-good text, established independently, and a form absent from that seed whose swap the corpus uses 20x more often is damage. 274 forms pass; 16 fail and are listed as real-word collisions rather than counted.",
+   "rejected_repair": {
+    "attempt": "A repair was designed and measured before being rejected: un-reverse the lam-alef pairs in a damaged word, and accept the result only if it is attested in the corpus's known-good text. On the sequence-signature set it produced a unique attested repair for 658 of 696 word occurrences (95%) with zero ambiguous cases.",
+    "why_it_fails": [
+     "The extraction also SPLITS words. «خ اال المدة» is «خلال المدة» broken in two, and a whole-word repair turns it into «خ الا المدة» — still wrong, but now wrong in a way that no longer carries a damage signature.",
+     "The known-good reference is not perfectly clean. «الا» occurs nine times outside the flagged tracks and every one of those is itself damage, so attestation would have certified a wrong form as correct.",
+     "Decisively: the fault maps real Arabic words onto other real Arabic words. «العالقة» (suspended, pending) is the swap of «العلاقة» (relationship); «عالمة» (aware) of «علامة» (mark); «صالحية» (fitness) of «صلاحية» (competence). «الشوائب العالقة ببدن السفينة» and «القضايا العالقة لدى المحامين» are correct and say exactly what they mean. No mechanical rule separates damage from correct text in that class; the sentence does."
+    ],
+    "conclusion": "A partial repair would be worse than disclosed damage: it would leave text that looks repaired, remove the signature that flags it, and make the disclosure's own count untrue. The text is left as published-and-damaged, and the disclosure now carries the reason."
+   },
+   "stated_limit": "The count is a floor, not a total. The seed test classifies a form as damage only when it appears NOWHERE in the tracks with zero sequence signatures — so a damaged form that also leaked into one of those tracks is classified as a real-word collision and is not counted. «الالزمة» is exactly that case: it is damage for «اللازمة», and it occurs six times outside the flagged tracks, so the test cannot call it. Raising the count means reading those sentences, not lowering the threshold — lowering it would sweep in «العالقة» and «عالمة», which are correct Arabic."
   },
   "B_same_instrument_twice": {
    "method": "Content overlap is the WRONG gate and the corpus proves it both ways: «نظام التأمينات الاجتماعية» exists twice sharing 8.6% of its wording, «لائحة حوكمة الشركات» twice sharing 49.8%, and the eleven cultural-authority licensing regulations are 99% identical while each licenses a different authority. The pair is therefore found by what the TITLES name — the same subject and the same instrument type — and overlap is measured beside it. Verdict A requires the subjects to be IDENTICAL: one differing content word is what separates «... وحكومة غانا» from «... ودولة قطر» and «قواعد سجل الشركات» from «قواعد الشركات», so anything short of identity is reported as a lead.",
