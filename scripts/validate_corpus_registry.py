@@ -3062,14 +3062,12 @@ def main() -> int:
 
     telecommunications_regulation_var = tracks_by_id.get("telecommunications_regulation", {})
     telecommunications_regulation_var_counts = telecommunications_regulation_var.get("record_counts", {})
-    # 107, not the instrument's 108: article 45 is not held. The corpus stored
-    # article 46's text under both slots until the duplicated record was found.
-    check("[7g223] telecommunications_regulation: 107 Arabic records...",
-          telecommunications_regulation_var_counts.get("arabic_articles") == 107
+    check("[7g223] telecommunications_regulation: 108 Arabic records...",
+          telecommunications_regulation_var_counts.get("arabic_articles") == 108
           and telecommunications_regulation_var.get("official_text_status") == "TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CST_X_MCIT_CROSSVERIFIED_TEXT_LAYER_REMEDIATED_UQN_GAZETTE_LINKS_STALE_BOE_NOT_INDEXED",
           f"counts={telecommunications_regulation_var_counts}")
-    check("    telecommunications_regulation: status breakdown 107/0/0/0...",
-          telecommunications_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 107, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+    check("    telecommunications_regulation: status breakdown 108/0/0/0...",
+          telecommunications_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 108, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={telecommunications_regulation_var_counts.get('legal_status_breakdown')}")
 
     credit_information_regulation_var = tracks_by_id.get("credit_information_regulation", {})
@@ -3622,7 +3620,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 25453 records...", uix.get("total_records") == 25453,
+    check("[7g] unified retrieval index: 25454 records...", uix.get("total_records") == 25454,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3684,8 +3682,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 25622...",
-          registry.get("total_primary_arabic_governing_records") == 25622,
+    check("[19a] total_primary_arabic_governing_records == 25623...",
+          registry.get("total_primary_arabic_governing_records") == 25623,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3700,8 +3698,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 26517...",
-          registry.get("total_registry_counted_records") == 26517,
+    check("[19e] total_registry_counted_records == 26518...",
+          registry.get("total_registry_counted_records") == 26518,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3725,7 +3723,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"25622 + 614 + 281 = 26517")
+          f"25623 + 614 + 281 = 26518")
 
     # [21b] Every track's registry display name must be the official Arabic title
     # its own source artifact carries. Hand-abbreviated registry names had drifted

@@ -39,7 +39,7 @@ class TestRegistryStructure:
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 25622
+        assert registry["total_primary_arabic_governing_records"] == 25623
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 26517
+        assert registry["total_registry_counted_records"] == 26518
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -1675,13 +1675,11 @@ class TestTracks:
         assert t["official_text_status"] == "TIER_1_PRIMARY_MULTI_SOURCE_MOMAH_4X_HOSTED_PDF_EDITIONS_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSCHECK_UQN_GAZETTE_AND_WAYBACK_CONTENT_PATH_UNREACHABLE"
 
     def test_telecommunications_regulation_counts(self, registry):
-        # 107, not the instrument's 108: the corpus stored article 46's text under
-        # BOTH slot 45 and slot 46 until the duplicated record was found and removed,
-        # and article 45 itself is not held. The gap is declared in the track's
-        # missing_article_numbers and disclosed on the track.
+        # 108 again: article 45 was displaced by a duplicated record, and recovered
+        # from the gazette's own publication of the regulation (uqn p=21063).
         t = next(x for x in registry["tracks"] if x["track_id"] == "telecommunications_regulation")
-        assert t["record_counts"]["arabic_articles"] == 107
-        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 107, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["record_counts"]["arabic_articles"] == 108
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 108, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CST_X_MCIT_CROSSVERIFIED_TEXT_LAYER_REMEDIATED_UQN_GAZETTE_LINKS_STALE_BOE_NOT_INDEXED"
 
     def test_credit_information_regulation_counts(self, registry):

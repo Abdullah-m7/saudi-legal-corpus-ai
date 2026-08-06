@@ -30,14 +30,15 @@ named in this track's research brief did not resolve to their archived 2022
 content this pass (flagged, not blocking, since both primary PDFs independently
 confirm the same decision number/date/text). No confirmed amendment to this
 Implementing Regulation (post-dating its 14/5/1444H approval) was found; all
-107 articles are ingested as اصلية (original, unamended). Article 45 is not
-held — see the track's known_unresolved_discrepancies.
+108 articles are ingested as اصلية (original, unamended). Article 45 was
+recovered from the gazette (uqn p=21063) after a duplicated record had displaced
+it — see the track's known_unresolved_discrepancies.
 
 See sources/telecommunications_regulation/law/official_source/
 telecommunications_regulation_official_source.json for the full methodology
 note and documented unresolved discrepancies.
 
-107 articles, all اصلية, organized under 16 chapters with section_ar carrying
+108 articles, all اصلية, organized under 16 chapters with section_ar carrying
 each article's chapter heading. No مكرر articles.
 
 No legal text is altered. Arabic governs; no translation/paraphrase/
@@ -173,9 +174,9 @@ def main():
               open(SUMMARY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     json.dump({"layer_id": "sa-telecommunications-regulation-arabic-legal-llm-full",
                "law_id": LAW_ID, "law_component": "regulation",
-               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (107 سجلات؛ المادة (45) غير محفوظة)",
+               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (108 مادة؛ لائحة تنفيذية كاملة)",
                "title_en": "Implementing Regulation of the Telecommunications and IT "
-                           "Act — Arabic LLM-ready layer (107 records; article 45 not held)",
+                           "Act — Arabic LLM-ready layer (108 records)",
                "record_type": "verified_arabic_article", "language": "ar",
                "governing_text_language": "ar", "record_count": len(llm),
                "article_range": [1, 108], "text_status": STATUS,

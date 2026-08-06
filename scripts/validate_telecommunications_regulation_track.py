@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Read-only validator for the Implementing Regulation of the
-Telecommunications and IT Law track (107 records: all 107 اصلية).
+Telecommunications and IT Law track (108 records: all 108 اصلية).
 
-The official sources carry 108 articles. Article 45 is NOT held: the corpus
-stored article 46's text under both slots until that was found and the false
-record removed, and the provision itself was not written back because the only
-reachable official file encodes it damaged. See the track's own
-`known_unresolved_discrepancies` and reports/corpus_text_quality_audit/.
+Article 45 was missing for a time — the corpus held article 46's text under both
+slots — and was recovered from the gazette's own publication of the regulation
+(uqn.gov.sa/details?p=21063), which carries all 108 articles in clean Arabic.
+See the track's `known_unresolved_discrepancies`.
 
 See the generator's module docstring and sources/telecommunications_regulation/
 law/official_source/telecommunications_regulation_official_source.json's
@@ -32,10 +31,10 @@ RECORDS = os.path.join(ROOT, "sources", "telecommunications_regulation", "law",
                        "verified", "telecommunications_regulation_verified_records.jsonl")
 LLM = os.path.join(ROOT, "data", "telecommunications_regulation_arabic_legal_llm",
                    "telecommunications_regulation_legal_llm_001_108.json")
-N = 107
+N = 108
 KEY_RE = r"telecommunications_regulation_art_(\d{3})$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
-EXPECTED_COUNTS = {"اصلية": 107}
+EXPECTED_COUNTS = {"اصلية": 108}
 STATUS = "MCIT_CST_DUAL_PRIMARY_SOURCE_TEXT_LAYER_REMEDIATED"
 EXPECTED_CHAPTERS = 16
 AR = "ء-ي"
@@ -180,15 +179,15 @@ def main():
         for x in e[:30]:
             print("  - %s" % x)
         return 1
-    print("PASS: Telecommunications Regulation — 107 records (all 107 اصلية)")
+    print("PASS: Telecommunications Regulation — 108 records (all 108 اصلية)")
     print("  - DISTINCT TIER: dual official born-digital primary sources (cst.gov.sa +")
     print("    mcit.gov.sa), cross-verified against each other and against rendered")
     print("    page images for structural anomalies")
-    print("  - numbered 1..108 minus article 45 (not held), across 16 chapters")
+    print("  - numbered 1..108 across 16 chapters, article 45 from uqn p=21063")
     print("    chapter heading")
     print("  - IN-FORCE Ministerial Decision No. 13 (14/5/1444H); companion to the")
     print("    telecommunications_law base-law track")
-    print("  - no confirmed amendment found post-dating approval; all 107 اصلية")
+    print("  - no confirmed amendment found post-dating approval; all 108 اصلية")
     return 0
 
 
