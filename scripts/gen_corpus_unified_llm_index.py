@@ -352,6 +352,8 @@ LAYERS = [
      "visiting_private_yachts_regulation", "regulation"),
     ("data/cruise_ships_regulation_arabic_legal_llm/cruise_ships_regulation_legal_llm_001_011.json",
      "cruise_ships_regulation", "regulation"),
+    ("data/securities_offering_rules_arabic_legal_llm/securities_offering_rules_legal_llm_001_150.json",
+     "securities_offering_rules", "rules"),
     ("data/superyacht_chartering_regulation_arabic_legal_llm/superyacht_chartering_regulation_legal_llm_001_010.json",
      "superyacht_chartering_regulation", "regulation"),
     ("data/utility_benefit_loss_compensation_regulation_arabic_legal_llm/utility_benefit_loss_compensation_regulation_legal_llm_001_010.json",
@@ -1549,6 +1551,14 @@ def build():
                 "law_component": r.get("law_component", default_component),
                 "law_title_ar": law_title,
                 "article_number": r["article_number"],
+                # The unit as the SOURCE printed it. `article_number` alone is
+                # positional: 1,476 records in this index are appendices, tables,
+                # ordinal bands or numbered clauses rather than articles, and any
+                # reader that renders «مادة N» from the integer announces an
+                # appendix as an article — a false citation manufactured by the
+                # display, not present in the corpus.
+                "unit_label_ar": r.get("article_title_ar"),
+                "is_appendix": bool(r.get("is_appendix")),
                 "llm_title_ar": r.get("llm_title_ar"),
                 "retrieval_title_ar": r.get("retrieval_title_ar"),
                 "article_path": r.get("article_path"),
@@ -1584,7 +1594,8 @@ def main():
         "records_per_corpus": by_corpus,
         "layers": [os.path.basename(rel) for rel, _, _ in LAYERS],
         "fields": ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
-                   "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
+                   "article_number", "unit_label_ar", "is_appendix", "llm_title_ar",
+                   "retrieval_title_ar", "article_path",
                    "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"],
         "note": ("Flat retrieval index projected from the per-law LLM-ready enrichment layers. "
                  "No legal text altered, summarized, translated, or re-derived. Arabic governs."),

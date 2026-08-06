@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 25623,
+  "total_primary_arabic_governing_records": 25773,
   "total_reference_records": 614,
-  "total_registry_counted_records": 26518,
-  "total_tracks": 743,
+  "total_registry_counted_records": 26668,
+  "total_tracks": 744,
   "tracks": [
     {
       "boundaries": {
@@ -30740,6 +30740,57 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/securities_offering_rules/official_source/securities_offering_rules_official_source.json",
+        "sources/securities_offering_rules/verified/securities_offering_rules_verified_records.jsonl",
+        "data/securities_offering_rules_arabic_legal_llm/securities_offering_rules_legal_llm_001_150.json"
+      ],
+      "display_name_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+      "display_name_en": "Rules on the Offer of Securities and Continuing Obligations",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/securities_offering_rules_arabic_legal_llm/securities_offering_rules_legal_llm_001_150.json",
+          "governing": true,
+          "record_count": 150,
+          "status": "complete"
+        }
+      },
+      "notes": "Rules on the Offer of Securities and Continuing Obligations «قواعد طرح الأوراق المالية والالتزامات المستمرة» — **150 records: 112 articles and 38 APPENDICES. ALL 150 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/1/1448H / 2026-07-08, carrying CMA Board decision 3-6-2026 of 30/7/1447H. **DISCOVERED BY** matching the Capital Market Authority's own register of regulations in force (cma.org.sa/RulesRegulations/Regulations) against the corpus; one of seventeen instruments in force there the corpus did not hold. **PRODUCED BY** scripts/gazette_autoingest.py after it learned to cut a trailing annex block off the last article at the gazette's own «الملحق N:» marks — before that the whole 268,802-char annex block sat inside article 112 and G10 refused the document. 38 records are appendices, not articles, and say so; citing one as «المادة N» would be a false citation. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_AUTHORITY_REGISTER_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 150,
+        "legal_status_breakdown": {
+          "اصلية": 150,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 150
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/authority_register_sweep/authority_register_sweep.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Rules on the Offer of Securities and Continuing Obligations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/1/1448H (2026-07-08), carrying CMA Board decision 3-6-2026.",
+      "status": "complete",
+      "track_id": "securities_offering_rules",
+      "validator_targets": [
+        "make securities-offering-rules-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/superyacht_chartering_regulation/official_source/superyacht_chartering_regulation_official_source.json",
         "sources/superyacht_chartering_regulation/verified/superyacht_chartering_regulation_verified_records.jsonl",
         "data/superyacht_chartering_regulation_arabic_legal_llm/superyacht_chartering_regulation_legal_llm_001_010.json"
@@ -37074,6 +37125,7 @@
       "secondary_data_use_general_rules": 7,
       "securities_depository_markets_regulation": 60,
       "securities_disputes_rules": 84,
+      "securities_offering_rules": 150,
       "security_cameras_law": 18,
       "security_cameras_law_regulation": 20,
       "sedimentary_shelf_well_drilling_permits_controls": 8,
@@ -37227,7 +37279,7 @@
       "zatca_statute": 16
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 25454,
+    "total_records": 25604,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -126,6 +126,8 @@ def search(query, top=10, corpus=None, index=None):
             "law_title_ar": rec["law_title_ar"],
             "law_component": rec["law_component"],
             "article_number": rec["article_number"],
+            "unit_label_ar": rec.get("unit_label_ar"),
+            "is_appendix": bool(rec.get("is_appendix")),
             "retrieval_title_ar": rec["retrieval_title_ar"],
             "article_path": rec["article_path"],
         })
@@ -160,8 +162,12 @@ def main():
         return
     print("نتائج البحث عن: %s" % args.query)
     for i, h in enumerate(hits, 1):
-        print("%2d. [%s] %s — مادة %d  (score=%d)"
-              % (i, h["law_title_ar"], h["law_component"], h["article_number"], h["score"]))
+        # The unit is printed as the SOURCE printed it. Rendering «مادة N» from the
+        # positional integer would announce this corpus's 1,476 appendix/table/band
+        # records as articles — a false citation invented by the display.
+        unit = h.get("unit_label_ar") or "مادة %s" % h["article_number"]
+        print("%2d. [%s] %s — %s  (score=%d)"
+              % (i, h["law_title_ar"], h["law_component"], unit, h["score"]))
         print("    %s  |  %s" % (h["retrieval_title_ar"], h["article_path"]))
 
 

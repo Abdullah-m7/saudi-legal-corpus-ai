@@ -671,6 +671,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         experimental-activities-regulation-track-validate \
         visiting-private-yachts-regulation-track-validate \
         cruise-ships-regulation-track-validate \
+        securities-offering-rules-track-validate \
         superyacht-chartering-regulation-track-validate \
         utility-benefit-loss-compensation-regulation-track-validate \
         repair-cost-compensation-estimation-controls-track-validate \
@@ -3295,6 +3296,9 @@ visiting-private-yachts-regulation-track-validate:
 
 cruise-ships-regulation-track-validate:
 	$(PY) scripts/validate_cruise_ships_regulation_track.py
+
+securities-offering-rules-track-validate:
+	$(PY) scripts/validate_securities_offering_rules_track.py
 
 superyacht-chartering-regulation-track-validate:
 	$(PY) scripts/validate_superyacht_chartering_regulation_track.py

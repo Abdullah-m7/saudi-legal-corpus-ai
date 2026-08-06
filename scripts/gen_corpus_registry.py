@@ -594,6 +594,7 @@ REAL_ESTATE_DEVELOPMENT_FUND_IMPLEMENTING_REGULATION_LLM = os.path.join(ROOT, "d
 EXPERIMENTAL_ACTIVITIES_REGULATION_LLM = os.path.join(ROOT, "data", "experimental_activities_regulation_arabic_legal_llm", "experimental_activities_regulation_legal_llm_001_023.json")
 VISITING_PRIVATE_YACHTS_REGULATION_LLM = os.path.join(ROOT, "data", "visiting_private_yachts_regulation_arabic_legal_llm", "visiting_private_yachts_regulation_legal_llm_001_011.json")
 CRUISE_SHIPS_REGULATION_LLM = os.path.join(ROOT, "data", "cruise_ships_regulation_arabic_legal_llm", "cruise_ships_regulation_legal_llm_001_011.json")
+SECURITIES_OFFERING_RULES_LLM = os.path.join(ROOT, "data", "securities_offering_rules_arabic_legal_llm", "securities_offering_rules_legal_llm_001_150.json")
 SUPERYACHT_CHARTERING_REGULATION_LLM = os.path.join(ROOT, "data", "superyacht_chartering_regulation_arabic_legal_llm", "superyacht_chartering_regulation_legal_llm_001_010.json")
 UTILITY_BENEFIT_LOSS_COMPENSATION_REGULATION_LLM = os.path.join(ROOT, "data", "utility_benefit_loss_compensation_regulation_arabic_legal_llm", "utility_benefit_loss_compensation_regulation_legal_llm_001_010.json")
 REPAIR_COST_COMPENSATION_ESTIMATION_CONTROLS_LLM = os.path.join(ROOT, "data", "repair_cost_compensation_estimation_controls_arabic_legal_llm", "repair_cost_compensation_estimation_controls_legal_llm_001_007.json")
@@ -1368,6 +1369,7 @@ def main() -> int:
     experimental_activities_regulation_llm = _load_json(EXPERIMENTAL_ACTIVITIES_REGULATION_LLM)
     visiting_private_yachts_regulation_llm = _load_json(VISITING_PRIVATE_YACHTS_REGULATION_LLM)
     cruise_ships_regulation_llm = _load_json(CRUISE_SHIPS_REGULATION_LLM)
+    securities_offering_rules_llm = _load_json(SECURITIES_OFFERING_RULES_LLM)
     superyacht_chartering_regulation_llm = _load_json(SUPERYACHT_CHARTERING_REGULATION_LLM)
     utility_benefit_loss_compensation_regulation_llm = _load_json(UTILITY_BENEFIT_LOSS_COMPENSATION_REGULATION_LLM)
     repair_cost_compensation_estimation_controls_llm = _load_json(REPAIR_COST_COMPENSATION_ESTIMATION_CONTROLS_LLM)
@@ -1575,7 +1577,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 743,
+        "total_tracks": 744,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -2135,6 +2137,7 @@ def main() -> int:
             + experimental_activities_regulation_llm["record_count"]  # 23 Regulation of Experimental Activities (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + visiting_private_yachts_regulation_llm["record_count"]  # 11 Organisational Regulation for Visiting Private Yachts (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + cruise_ships_regulation_llm["record_count"]  # 11 Organisational Regulation for Cruise Ships (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + securities_offering_rules_llm["record_count"]  # 150 Rules on the Offer of Securities and Continuing Obligations (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced; 112 articles + 38 appendices)
             + superyacht_chartering_regulation_llm["record_count"]  # 10 Organisational Regulation for Superyacht Chartering (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + utility_benefit_loss_compensation_regulation_llm["record_count"]  # 10 Regulation of Controls for Determining Repair Costs and Estimating Compensation for Benefit Lost by the Utility (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + repair_cost_compensation_estimation_controls_llm["record_count"]  # 6 Controls for Determining Repair Costs and Estimating Compensation (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2872,6 +2875,7 @@ def main() -> int:
             + experimental_activities_regulation_llm["record_count"]
             + visiting_private_yachts_regulation_llm["record_count"]
             + cruise_ships_regulation_llm["record_count"]
+            + securities_offering_rules_llm["record_count"]
             + superyacht_chartering_regulation_llm["record_count"]
             + utility_benefit_loss_compensation_regulation_llm["record_count"]
             + repair_cost_compensation_estimation_controls_llm["record_count"]
@@ -21130,6 +21134,36 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Organisational Regulation for Cruise Ships «اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H / 2023-08-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "securities_offering_rules",
+                "display_name_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+                "display_name_en": "Rules on the Offer of Securities and Continuing Obligations",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_AUTHORITY_REGISTER_DISCOVERED",
+                "source_authority": "Rules on the Offer of Securities and Continuing Obligations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/1/1448H (2026-07-08), carrying CMA Board decision 3-6-2026.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": securities_offering_rules_llm["record_count"],
+                    "data_path": "data/securities_offering_rules_arabic_legal_llm/securities_offering_rules_legal_llm_001_150.json"}},
+                "record_counts": {"arabic_articles": securities_offering_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 150, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": securities_offering_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/securities_offering_rules/official_source/securities_offering_rules_official_source.json",
+                    "sources/securities_offering_rules/verified/securities_offering_rules_verified_records.jsonl",
+                    "data/securities_offering_rules_arabic_legal_llm/securities_offering_rules_legal_llm_001_150.json",
+                ],
+                "validator_targets": ["make securities-offering-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/authority_register_sweep/authority_register_sweep.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules on the Offer of Securities and Continuing Obligations «قواعد طرح الأوراق المالية والالتزامات المستمرة» — **150 records: 112 articles and 38 APPENDICES. ALL 150 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/1/1448H / 2026-07-08, carrying CMA Board decision 3-6-2026 of 30/7/1447H. **DISCOVERED BY** matching the Capital Market Authority's own register of regulations in force (cma.org.sa/RulesRegulations/Regulations) against the corpus; one of seventeen instruments in force there the corpus did not hold. **PRODUCED BY** scripts/gazette_autoingest.py after it learned to cut a trailing annex block off the last article at the gazette's own «الملحق N:» marks — before that the whole 268,802-char annex block sat inside article 112 and G10 refused the document. 38 records are appendices, not articles, and say so; citing one as «المادة N» would be a false citation. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "superyacht_chartering_regulation",

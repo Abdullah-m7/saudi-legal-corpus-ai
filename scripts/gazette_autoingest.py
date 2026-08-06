@@ -67,7 +67,10 @@ GATES (a document must pass ALL of them)
   G9  a curated track id must be supplied at emission time; the pipeline only
       proposes a triage slug (permanent identifiers are not machine-generated)
   G10 no article dwarfs the document's own median length, which would mean an
-      unheaded annex/schedule block was absorbed into the preceding article
+      unheaded annex/schedule block was absorbed into the preceding article.
+      Before this gate runs, split_appendices() tries to CUT such a block off
+      the last record at the gazette's own «الملحق N:» marks; G10 remains as
+      the safety net for every block that cut cannot prove safe to separate
   G11 batch-level (see screen_batch): the same instrument must not reach the
       batch twice, and a document the batch's own text declares REPEALED must
       not be built as if in force. Neither is visible to a per-document gate.
@@ -504,6 +507,125 @@ def segment_clauses(body: str):
         # digits stay Arabic-Indic — because the clause is cited by that mark.
         clauses.append((num, "%s-" % label, strip_text(body[e:nxt]), ("", "")))
     return clauses, {"count": len(clauses), "max": len(clauses), "missing": []}
+
+
+# ------------------------------------------------------------------- appendices
+# An instrument's ANNEX BLOCK carries no «المادة N:» heading, so the article
+# segmenter has nothing to end the last article on and the whole block — forms,
+# prospectus contents, declaration templates — is absorbed into it. G10 catches
+# the result and refuses the document, which is right as a safety net and wrong
+# as an outcome: the text is on the page, correctly, and only its boundary is
+# missing. Measured: the 2026 consolidation of «قواعد طرح الأوراق المالية
+# والالتزامات المستمرة» absorbed thirty annexes into article 112 — 268,802 chars
+# against a 667-char median — and was refused for that alone.
+#
+# The hard part is that the annex MARK is also the commonest cross-reference in
+# the same document — thirty-eight headings against some seventy references in
+# the CMA rules alone — and the two are not told apart by their punctuation.
+# «الملحق 1:» heads a block there while «الملحق (9)» cites one, but the technical
+# regulations invert it: «ملحق رقم (1): الشعار الوطني» heads a block in the
+# organic-farming guide and «كما ورد في ملحق (4)» cites one. Keying on the
+# parentheses would therefore read one family right and the other backwards.
+#
+# What does separate them, in every document measured, is the SENTENCE AROUND
+# the mark — the same lesson the chapter stripper above had to learn:
+#
+#     citation   «... متطلبات السلامة المنصوص عليها في الملحق (2) من هذه اللائحة»
+#     citation   «... يحدد الملحق (14) من هذه القواعد الحد الأدنى للمعلومات ...»
+#     heading    «... نافذة وفقا لقرار اعتمادها.  الملحق 1: محتويات مستند الطرح»
+#
+# A citation is either introduced by a preposition or closed by a back-reference
+# to the instrument itself («من هذه القواعد»، «من هذا الدليل»). Requiring a
+# candidate to survive BOTH tests is what makes the two families read alike;
+# neither test alone is sufficient, because «يحدد الملحق (14) من هذه القواعد»
+# opens on a verb and «كما ورد في ملحق (4).» closes on a full stop.
+#
+# Four further conditions hold the split to cases where no judgement is needed:
+#
+#   * only the LAST record is split. An annex heading anywhere else would mean
+#     the block is interleaved with provisions, and cutting there would move
+#     normative text out of its article;
+#   * the run is complete and gap-free from 1 (an incomplete run means some
+#     heading was not recognised, and a partial cut is worse than none);
+#   * at least MIN_APPENDICES of them, so a lone «الملحق 1:» inside prose cannot
+#     amputate an article;
+#   * the host record keeps substantive text of its own and ends sentence-final
+#     once its trailing chapter heading («الباب الثالث عشر الملاحق») is stripped.
+#     If the cut would leave the article empty or mid-sentence, the reading was
+#     wrong and nothing is split.
+APPENDIX_RE = re.compile(
+    r"(?:(?<=\s)|^)(?:ال)?ملحق\s*(?:رقم\s*)?"
+    r"(?:\(\s*(?P<pn>[0-9٠-٩]{1,3})\s*\)|(?P<n>[0-9٠-٩]{1,3}))"
+    r"\s*(?:\(\s*(?P<letter>[ء-ي])\s*\)\s*)?[:：]?")
+# A candidate introduced by one of these is a citation, not a heading.
+_APPENDIX_CITE_BEFORE = {"في", "من", "إلى", "الى", "على", "وفق", "وفقا", "وفقاً",
+                         "بموجب", "حسب", "بحسب", "ضمن", "بمقتضى", "لـ", "و"}
+# ... and so is one closed by a back-reference to the instrument itself, or by a
+# conjunction naming a second annex — «الملحق (3) أو الملحق (4) من هذه القواعد»
+# opens on the noun «متطلبات» and so passes the test above, and only the «أو»
+# that follows it says it is one item of a citation list rather than a heading.
+_APPENDIX_CITE_AFTER = re.compile(
+    r"\s*(?:(?:من|في|ل)\s*(?:هذه|هذا|قواعد|لائحة|دليل|نظام)|(?:أو|و)\s*(?:ال)?ملحق)")
+MIN_APPENDICES = 3
+MIN_HOST_TAIL = 40
+
+
+def _appendix_headings(text):
+    """Annex-heading matches only — citations of an annex are dropped."""
+    out = []
+    for m in APPENDIX_RE.finditer(text):
+        before = text[:m.start()].rstrip()
+        last = re.split(r"[\s،؛]", before)[-1] if before else ""
+        if last.strip("،()") in _APPENDIX_CITE_BEFORE:
+            continue
+        if _APPENDIX_CITE_AFTER.match(text[m.end():]):
+            continue
+        out.append(m)
+    return out
+
+
+def split_appendices(arts):
+    """Cut a trailing annex block off the last record.
+
+    Returns (arts, appendices). `appendices` is a list of
+    (index, label_ar, text, letter) in document order; it is empty — and `arts`
+    is returned untouched — whenever any condition above fails.
+    """
+    if not arts:
+        return arts, []
+    num, label, text, ch = arts[-1]
+    hits = [(m.start(), m.end(), m.group("pn") or m.group("n"), m.group("letter"))
+            for m in _appendix_headings(text or "")]
+    if len(hits) < MIN_APPENDICES:
+        return arts, []
+    try:
+        nums = [int(h[2].translate(_ARABIC_DIGITS)) for h in hits]
+    except ValueError:
+        return arts, []
+    if sorted(set(nums)) != list(range(1, max(nums) + 1)) or nums != sorted(nums):
+        return arts, []
+
+    # Any annex heading in an EARLIER record means the block is interleaved.
+    for a in arts[:-1]:
+        if _appendix_headings(a[2] or ""):
+            return arts, []
+
+    host = strip_text(text[:hits[0][0]])
+    m = trailing_chapter_heading(host)
+    if m:
+        host = strip_text(host[:m.start()])
+    if len(host) < MIN_HOST_TAIL or host.rstrip()[-1:] not in SENTENCE_FINAL:
+        return arts, []
+
+    appendices = []
+    for i, (s, e, digits, letter) in enumerate(hits):
+        nxt = hits[i + 1][0] if i + 1 < len(hits) else len(text)
+        # The label is stored as the gazette printed it, letter suffix and all,
+        # because «الملحق 9 (أ)» is cited by that mark and is not annex 9.
+        lab = "الملحق %s" % digits + (" (%s)" % letter if letter else "")
+        appendices.append((i + 1, lab, strip_text(text[e:nxt]), letter or ""))
+
+    return arts[:-1] + [(num, label, host, ch)], appendices
 
 
 def segment(body: str, pattern=None):
@@ -958,6 +1080,17 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
             if cdiag["count"] >= MIN_CLAUSES:
                 arts, diag, numbering_form = cls, cdiag, "numbered_clauses"
 
+    # Cut a trailing annex block off the last record before any gate reads the
+    # records. Done here rather than after the gates on purpose: G2's content
+    # overlap, G10's length sanity and G13's table density all measure the
+    # records, and a 268,000-char annex block sitting inside article 112 skews
+    # every one of them.
+    arts, appendices = split_appendices(arts)
+    if appendices:
+        notes.append("APPENDIX-SPLIT: %d annexes (%s … %s) were separated from the last "
+                     "record; the annex headings are the gazette's own «الملحق N:»"
+                     % (len(appendices), appendices[0][1], appendices[-1][1]))
+
     # G2 — already covered?
     #
     # Title similarity alone is NOT sufficient evidence of duplication, and
@@ -1240,6 +1373,7 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
         "missing_article_numbers": diag["missing"],
         "notes": notes,
         "articles": arts,
+        "appendices": appendices,
     }, []
 
 

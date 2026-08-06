@@ -713,6 +713,7 @@ def unified_index_record_schema():
         "type": "object",
         "required": [
             "record_id", "corpus", "law_id", "law_component", "law_title_ar", "article_number",
+            "unit_label_ar", "is_appendix",
             "llm_title_ar", "retrieval_title_ar", "article_path", "keywords_ar", "search_queries_ar",
             "text_ar", "text_status", "source_layer",
         ],
@@ -739,7 +740,20 @@ def unified_index_record_schema():
             "law_title_ar": {"type": "string",
                 "description": "Friendly Arabic law title, derived from the source envelope's title_ar "
                                 "(text before the em-dash, if present)."},
-            "article_number": {"type": "integer"},
+            "article_number": {"type": "integer",
+                "description": (
+                    "POSITIONAL index within the track, not a citation. 1,476 records in this index "
+                    "are appendices, tables, ordinal bands or numbered clauses rather than articles, "
+                    "and rendering «مادة N» from this integer would announce one of them as an "
+                    "article — a false citation invented by the reader. Cite `unit_label_ar`."
+                )},
+            "unit_label_ar": {"type": ["string", "null"],
+                "description": (
+                    "The unit as the SOURCE printed it — «المادة الأولى», «الملحق 9 (أ)», «أولاً», "
+                    "«جدول المقابل المالي». This is the citable mark."
+                )},
+            "is_appendix": {"type": "boolean",
+                "description": "True where the source itself files the record as an appendix/annex."},
             "llm_title_ar": {"type": ["string", "null"]},
             "retrieval_title_ar": {"type": ["string", "null"]},
             "article_path": {"type": ["string", "null"]},
