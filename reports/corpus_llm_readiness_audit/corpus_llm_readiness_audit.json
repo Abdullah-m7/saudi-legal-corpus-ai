@@ -108,9 +108,28 @@
   "mrr_at_5": 0.9586
  },
  "B_text_that_is_not_whole": {
-  "records_flagged": 540,
+  "records_without_sentence_final_punctuation": 540,
   "share_of_corpus": 0.0212,
-  "worst_corpora": [
+  "note": "Most of these are not defects — tables, fee schedules, technical guides and headings that the source does not punctuate. The subset below is the one that means something.",
+  "of_those_ending_on_a_preposition_or_conjunction": {
+   "count": 2,
+   "why_this_is_the_signal": "No drafter ends a provision on «في» or «و». A record that does was cut, and it reads and quotes as complete.",
+   "records": [
+    {
+     "record_id": "gcc-healthcare-waste-management-system-llm-007",
+     "corpus": "gcc_healthcare_waste_management_system",
+     "chars": 5959,
+     "ends_with": "زين مؤقت تنطبق عليها الاشتراطات الواردة في"
+    },
+    {
+     "record_id": "treaty-gcc-payment-systems-linkage-llm-013",
+     "corpus": "treaty_gcc_payment_systems_linkage",
+     "chars": 124,
+     "ends_with": "اذ التعديل لذات الإجراءات المنصوص عليها في"
+    }
+   ]
+  },
+  "worst_corpora_unpunctuated": [
    [
     "vat",
     56
@@ -190,29 +209,9 @@
    [
     "disability_social_programs_regulation",
     5
-   ],
-   [
-    "electricity",
-    5
-   ],
-   [
-    "financial_institutions_resolution_law",
-    5
-   ],
-   [
-    "property_ownership_committees_rules",
-    5
-   ],
-   [
-    "social_insurance_legacy",
-    5
-   ],
-   [
-    "trustees_experts_fees_rules",
-    5
    ]
   ],
-  "examples": [
+  "examples_unpunctuated": [
    {
     "record_id": "abattoirs-meat-inspection-guide-llm-009",
     "corpus": "abattoirs_meat_inspection_guide",
@@ -392,66 +391,6 @@
     "corpus": "aquaculture_national_policies_guide",
     "chars": 573,
     "ends_with": "صيد. القسم الثاني: سياسات الاستزراع المائي"
-   },
-   {
-    "record_id": "aquaculture-national-policies-guide-llm-031",
-    "corpus": "aquaculture_national_policies_guide",
-    "chars": 20095,
-    "ends_with": "s 1 Aflotoxine MRL not fixed MRL not fixed"
-   },
-   {
-    "record_id": "architecture-design-authority-licensing-regulation-llm-007",
-    "corpus": "architecture_design_authority_licensing_regulation",
-    "chars": 788,
-    "ends_with": " الصادرة من الهيئة. القسم الثاني: التراخيص"
-   },
-   {
-    "record_id": "architecture-design-authority-licensing-regulation-llm-015",
-    "corpus": "architecture_design_authority_licensing_regulation",
-    "chars": 236,
-    "ends_with": "قم الترخيص. القسم الثالث: الرقابة والإشراف"
-   },
-   {
-    "record_id": "architecture-design-authority-licensing-regulation-llm-017",
-    "corpus": "architecture_design_authority_licensing_regulation",
-    "chars": 273,
-    "ends_with": " الالتزام بأحكام اللائحة أو قواعد التراخيص"
-   },
-   {
-    "record_id": "architecture-design-authority-licensing-regulation-llm-019",
-    "corpus": "architecture_design_authority_licensing_regulation",
-    "chars": 550,
-    "ends_with": "غير قابل للطعن. القسم الخامس: أحكام ختامية"
-   },
-   {
-    "record_id": "architecture-design-authority-statute-llm-005",
-    "corpus": "architecture_design_authority_statute",
-    "chars": 286,
-    "ends_with": "لمدة (ثلاث) سنوات قابلة للتجديد لمرة واحدة"
-   },
-   {
-    "record_id": "associations-ngo-law-llm-art-007",
-    "corpus": "associations_ngo",
-    "chars": 581,
-    "ends_with": "مارها ، وآليات الرقابة وقواعد الحجب والمنع"
-   },
-   {
-    "record_id": "ballast-water-regulation-llm-031",
-    "corpus": "ballast_water_regulation",
-    "chars": 852,
-    "ends_with": " \"تتمة اللائحة مرفقة نسخة PDF\" تنزيل الملف"
-   },
-   {
-    "record_id": "banking-control-regulation-llm-art-004",
-    "corpus": "banking_control",
-    "chars": 124,
-    "ends_with": "بنوك في أنواع معينة من الأعمال مع عملائها،"
-   },
-   {
-    "record_id": "banking-control-regulation-llm-art-026",
-    "corpus": "banking_control",
-    "chars": 214,
-    "ends_with": "المنسوبة إلى البنك واتخاذ اللازم لإزالتها،"
    }
   ]
  },

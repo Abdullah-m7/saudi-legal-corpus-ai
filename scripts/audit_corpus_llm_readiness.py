@@ -35,9 +35,20 @@ report.
 
   B. TEXT A MODEL WOULD QUOTE AS LAW THAT IS NOT WHOLE.
      A record cut mid-sentence is worse than a missing record: it reads as
-     complete and quotes as complete. Flagged when an article's text ends
-     without sentence-final punctuation AND is long enough that the source is
-     unlikely to have ended it that way.
+     complete and quotes as complete.
+
+     Missing sentence-final punctuation alone does not mean cut: 540 records end
+     without it, and 538 of those are tables, fee schedules, technical guides and
+     headings that the source itself does not punctuate — «... أبقار 3.7 3.1
+     عجول 2.7 2.4», «Antimicrobials resistance». Reporting all 540 would be a
+     538-item false alarm.
+
+     What discriminates is the LAST WORD. A provision that ends on a preposition
+     or a conjunction — «... المنصوص عليها في» — was cut, because no drafter ends
+     a sentence there. Exactly 2 records do, and both are known and disclosed:
+     the segmenter split them at a cross-reference to another article, and the
+     fix for that was measured and rejected (see gazette_autoingest.segment).
+     Both classes are reported, separately, so neither hides the other.
 
   C. PROVISIONS WHOSE FORCE IS NOT ON THE RECORD.
      A repealed article that carries no repeal flag is the corpus's most
@@ -104,6 +115,14 @@ SENTENCE_FINAL = ".؟!»\"'）)]:؛"
 # Below this length an article may legitimately be a bare label or a cross-reference
 # and its ending tells us nothing; above it, an unterminated tail is a real signal.
 TRUNCATION_MIN_CHARS = 120
+# A provision never ends on one of these. Everything else that lacks a full stop
+# is a table row, a heading or a schedule, and saying otherwise is a false alarm.
+DANGLING_LAST_WORDS = {
+    "في", "من", "على", "إلى", "الى", "عن", "مع", "بين", "حتى", "منذ", "لدى", "نحو",
+    "وفق", "وفقا", "وفقاً", "بموجب", "حسب", "ضمن", "خلال", "عبر", "تحت", "فوق", "أمام",
+    "خلف", "بعد", "قبل", "دون", "سوى", "و", "أو", "او", "ثم", "بل", "لكن",
+    "التي", "الذي", "الذين", "ما", "أن", "إن", "كما", "هذه", "هذا",
+}
 
 # ---- E. non-article units --------------------------------------------------
 # What counts as an ARTICLE label, in every form the corpus stores one:
@@ -196,19 +215,32 @@ def term_form_retrieval(records, rng):
 
 
 def truncation(records):
-    flagged = []
+    flagged, cut = [], []
     for r in records:
         t = (r.get("text_ar") or "").strip()
-        if len(t) < TRUNCATION_MIN_CHARS:
+        if len(t) < TRUNCATION_MIN_CHARS or t[-1] in SENTENCE_FINAL:
             continue
-        if t[-1] not in SENTENCE_FINAL:
-            flagged.append({"record_id": r["record_id"], "corpus": r["corpus"],
-                            "chars": len(t), "ends_with": t[-42:]})
-    by_corpus = Counter(f["corpus"] for f in flagged)
-    return {"records_flagged": len(flagged),
-            "share_of_corpus": round(len(flagged) / len(records), 4),
-            "worst_corpora": by_corpus.most_common(25),
-            "examples": flagged[:40]}
+        last = re.split(r"[\s،؛]", t)[-1].strip("()[]«»\"'")
+        row = {"record_id": r["record_id"], "corpus": r["corpus"],
+               "chars": len(t), "ends_with": t[-42:]}
+        flagged.append(row)
+        if last in DANGLING_LAST_WORDS:
+            cut.append(row)
+    return {
+        "records_without_sentence_final_punctuation": len(flagged),
+        "share_of_corpus": round(len(flagged) / len(records), 4),
+        "note": ("Most of these are not defects — tables, fee schedules, technical guides and "
+                 "headings that the source does not punctuate. The subset below is the one that "
+                 "means something."),
+        "of_those_ending_on_a_preposition_or_conjunction": {
+            "count": len(cut),
+            "why_this_is_the_signal": ("No drafter ends a provision on «في» or «و». A record that "
+                                       "does was cut, and it reads and quotes as complete."),
+            "records": cut,
+        },
+        "worst_corpora_unpunctuated": Counter(f["corpus"] for f in flagged).most_common(20),
+        "examples_unpunctuated": flagged[:30],
+    }
 
 
 def force_on_the_record(records):
@@ -303,8 +335,10 @@ def main():
 
     print("B. checking for text that is not whole...", flush=True)
     b = truncation(records)
-    print("   %d records end without sentence-final punctuation (%.2f%%)"
-          % (b["records_flagged"], 100 * b["share_of_corpus"]))
+    print("   %d records lack sentence-final punctuation (%.2f%%); %d of those end on a "
+          "preposition and were CUT"
+          % (b["records_without_sentence_final_punctuation"], 100 * b["share_of_corpus"],
+             b["of_those_ending_on_a_preposition_or_conjunction"]["count"]))
 
     print("C. checking whether force is on the record...", flush=True)
     c = force_on_the_record(records)
