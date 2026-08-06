@@ -1087,5 +1087,29 @@
   "telecom_article_45_recovered": "«اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات» is published in full at uqn.gov.sa/details?p=21063 (1444-05-22H / 2022-12-16) — 108 articles, no gap, in clean Arabic. Article 45 was taken from there verbatim, and article 46 in the same source confirms the ministry-PDF reading on which the duplicated record's removal rested. Earlier the provision was located only in the ministry's PDF and deliberately NOT written back, because that file's text layer carries the lam-alef transposition and the extractor reorders parenthesised numbers — three judgment calls a transcription may not make. Setting it aside was right; the gazette page is the source that needed no judgment. 107 -> 108.",
   "anti_begging_law_settled_but_not_changed": "«نظام مكافحة التسول» is published twice: p=18341 (2021-09-24), from which the track was built and whose numbering runs 1-9 then 11, and p=18423 (2021-10-15), whose numbering runs 1-10. The nine comparable articles are word-for-word identical; the sole difference is that the later printing heads the last article «العاشرة» rather than «الحادية عشرة». The evidence says the law has ten articles and the first printing dropped a word. The stored text was NOT changed — it is what the publication this track cites printed — and the disclosure now names both publications, says which is continuous, and tells a reader looking for «المادة العاشرة» that it is here under 11.",
   "why_one_was_changed_and_the_other_was_not": "The telecom case had no competing reading: the corpus was missing a provision outright, and one official source supplies it. The anti-begging case has TWO official printings of the same law that disagree about a number, and choosing between them is an adjudication, not a transcription. So one was repaired and the other was documented — the difference is whether any judgment was needed."
+ },
+ "carrying_the_disclosures_to_where_the_text_is_read": {
+  "the_gap": "This repository discloses relentlessly — 2,778 disclosures across 709 tracks say which articles a human read off a page image, which texts carry the lam-alef damage that is in the official PDFs themselves, which units are tables rather than articles, which instruments have a later amendment notice, which source typo was kept verbatim. Every one lives in sources/<track>/official_source/*.json, and NOTHING that reads this corpus opens that file. The unified LLM index — the layer a model retrieves from — carried fourteen fields, not one of them a caveat.",
+  "what_that_meant": "A model quoting an article that rests on one person's eyes, or that its own track says may no longer be current, quoted it with exactly the confidence of an article verified twice over. A disclosure that is not visible where the text is used is decoration.",
+  "the_layer": "data/corpus_caveat_layer/ resolves every disclosure to the records it governs. 19,420 of 25,454 records carry a caveat; 7,551 carry a MATERIAL one. scripts/search_corpus_unified.py joins it onto every result, so the caveat now travels with the text.",
+  "two_classes_because_they_are_not_equal": "Presenting 2,778 notes as equals is as unhelpful as presenting none. MATERIAL changes how the text should be used or cited — visual_reading, encoding_damage, duplicate_text, source_defect_preserved, not_an_article, numbering_gap, currency_risk, treaty, article_specific. PROVENANCE says how the text was obtained — single_source, no_decision_number, secondary_source_unreachable, no_structural_headings, normalisation, title_resembles_another_track, companion_not_ingested, date_not_pinpointed. Anything matching neither is carried through as `other` WITH its key, so nothing is dropped for failing to fit a category.",
+  "counts": {
+   "currency_risk": 3588,
+   "source_defect_preserved": 2055,
+   "not_an_article": 1476,
+   "treaty": 756,
+   "duplicate_text": 707,
+   "numbering_gap": 690,
+   "encoding_damage": 560,
+   "visual_reading": 208,
+   "article_specific": 2
+  },
+  "attribution_was_the_hard_part_and_it_took_three_corrections": [
+   "Attaching every track-level disclosure to every record of the track marked 3,682 records «read by eye» when 213 were. Telling a reader that a machine-verified record rests on one person's eyes is a false statement about verification — worse than saying nothing. visual_reading and not_an_article are now resolved PER RECORD: the first from the record keys a track validator declares, the second from the record's own stored label.",
+   "Keying the artifact map by (track, article number) collapsed components: a corpus holding both a law and its implementing regulation has an article 28 in each, so a law-only adjudication marked the regulation's article too. Keyed by (source dir, component, number) instead.",
+   "Accepting an article_path's last segment as a key when it merely contained «_art_» rejected «..._appendix_001» — a real key — and fell back to a numeric lookup that resolved appendix 1 to ARTICLE 1, attaching one record's caveats to a different record. The segment is now accepted only when it IS a key of some artifact."
+  ],
+  "verified": "The validator checks attribution first: 0 records marked visual_reading that no validator declares, 0 marked not_an_article whose own label is an article's. 208 marked against 213 declared and 1,476 against 1,568 — under-attributing, which is the safe direction: the layer never tells a reader something false about how a record was verified.",
+  "what_it_looks_like_in_use": "A search for «تعريف غسل الأموال» now returns the AML provisions WITH «صدر تعديل منشور بعد الطبعة المحفوظة، ولم يثبت أن النصّ المخزَّن يستوعبه». A search for «جدول المقابل المالي» returns the fee schedule WITH «وحدات هذا المسار ليست كلها مواد — فلا تُستشهد بوصفها مواد»."
  }
 }

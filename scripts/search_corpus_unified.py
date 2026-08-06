@@ -54,6 +54,34 @@ def load_index(path=INDEX):
     return [json.loads(l) for l in open(path, encoding="utf-8") if l.strip()]
 
 
+# The caveat layer, loaded once and joined onto every result.
+#
+# A search result is where this corpus is READ, and until now it returned the
+# text with no indication that the record rests on one person's reading of a
+# page image, or that its own track says a later amendment has been published,
+# or that the «article» is a fee schedule. All of that was disclosed — in a
+# source file nothing that reads the corpus opens. Answering with the caveat
+# attached is the whole point of having written it.
+_CAVEATS = None
+
+
+def load_caveats(path=None):
+    """{record_id: {material, provenance, summary_ar, ref}} — empty if absent."""
+    global _CAVEATS
+    if _CAVEATS is None:
+        p = path or os.path.join(ROOT, "data", "corpus_caveat_layer",
+                                 "corpus_caveat_layer.jsonl")
+        rows = {}
+        if os.path.exists(p):
+            with open(p, encoding="utf-8") as fh:
+                for line in fh:
+                    if line.strip():
+                        r = json.loads(line)
+                        rows[r["record_id"]] = r
+        _CAVEATS = rows
+    return _CAVEATS
+
+
 def search(query, top=10, corpus=None, index=None):
     records = index if index is not None else load_index()
     qtokens = set(normalize(query))
@@ -101,6 +129,17 @@ def search(query, top=10, corpus=None, index=None):
             "retrieval_title_ar": rec["retrieval_title_ar"],
             "article_path": rec["article_path"],
         })
+    caveats = load_caveats()
+    for row in out:
+        c = caveats.get(row["record_id"])
+        if not c:
+            continue
+        if c["caveats_material"]:
+            row["caveats_material"] = c["caveats_material"]
+            row["caveat_summary_ar"] = c["caveat_summary_ar"]
+        if c["caveats_provenance"]:
+            row["caveats_provenance"] = c["caveats_provenance"]
+        row["disclosures_ref"] = c["disclosures_ref"]
     return out
 
 

@@ -236,6 +236,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-schema-manifest-validate \
         corpus-chunking-layer-validate \
         corpus-freshness-manifest-validate \
+        corpus-caveat-layer-validate \
         patent-law-track-validate \
         customs-law-track-validate \
         customs-regulation-track-validate \
@@ -1989,6 +1990,9 @@ corpus-chunking-layer-validate:
 
 corpus-freshness-manifest-validate:
 	$(PY) scripts/validate_corpus_freshness_manifest.py
+
+corpus-caveat-layer-validate:
+	$(PY) scripts/validate_corpus_caveat_layer.py
 
 patent-law-track-validate:
 	$(PY) scripts/validate_patent_law_track.py
