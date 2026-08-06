@@ -1127,5 +1127,21 @@
    "reports/authority_register_sweep/authority_register_sweep.json",
    "reports/authority_register_sweep/AUTHORITY_REGISTER_SWEEP_AR.md"
   ]
+ },
+ "measuring_whether_the_authorities_pdfs_can_be_read_at_all": {
+  "the_question": "The previous round recorded sixteen in-force CMA instruments as unbuildable because their PDFs extract damaged Arabic. That was a judgement about four files. The corpus's whole remaining growth question rests on it, so it was measured instead: forty official PDFs from three authorities (CMA 29, MOMAH 10, HRSD 1), one verdict per file, by scripts/probe_official_pdf.py.",
+  "the_answer": "BROKEN_CMAP 28, UNDECIDED 7, BROKEN_ORDER 2, IMAGE_SCAN 2, READABLE 1. One in forty is quotable verbatim, and it is a municipal building-requirements document rather than a law. The remaining coverage gap is not a shortfall of effort; it is a wall in the shape of the source. The gazette's clean server-rendered HTML is not a convenience — it is the only channel that meets this corpus's fidelity standard, and its archive is exhausted.",
+  "three_defects_kept_apart": "LAM-MEEM: «المادة» arrives as «املادة». LAM-ALEF: «لائحة» arrives as «الئحة». ORDER: both ligatures sound but the justified line's runs interleave, so every character is right and the sentence is not. A file can carry any combination, and a probe that measures one and reports readability is wrong.",
+  "three_measurement_mistakes": "Each would have produced a confident wrong answer, and each was caught by reading the extracted text rather than trusting a ratio. (1) The first check looked for «املادة» and pronounced six municipal files clean; they simply do not use the word «المادة» — they are drafted in «متطلبات», and their damage reads «املتطلبات». (2) The second stopped at the ligature maps. «لائحة الإبلاغ عن مخالفات نظام السوق المالية» is a regulation this corpus ALREADY holds verbatim from the gazette, so it can score a reading instead of arguing about one: its maps are sound, and its plain text layer still reproduces the corpus's own articles at median 0.62, position-sorted at 0.75, geometry-aware at 0.99. Sound maps are not readability. (3) The third added the order test and still passed two files reading «الئحة» for «لائحة» — the lam-alef ligature was transposed, and the lam-meem test cannot see it because both readings open on «ا».",
+  "a_test_that_cannot_decide_is_not_a_pass": "The probe used to skip the lam-alef test when a file had too few of either form, which silently passed the file. «تعليمات تصريح تجربة التقنية المالية» has nineteen lam-alef tokens — one below the floor — and twelve of them are transposed. Inability to judge now returns UNDECIDED, never READABLE.",
+  "reports": [
+   "reports/official_pdf_readability/official_pdf_readability.json",
+   "reports/official_pdf_readability/OFFICIAL_PDF_READABILITY_AR.md"
+  ]
+ },
+ "carrying_the_unit_label_into_the_rag_layer": {
+  "the_gap": "The search display was fixed last round to stop rendering «مادة N» from a positional integer. The chunking layer — the layer a retrieval application actually embeds — still carried `article_number` and no unit label at all, so the same false citation was one join away from every RAG consumer.",
+  "the_measurement": "2,096 of the index's 25,604 records carry a unit label that is not an article's: «البند» 512, «القاعدة» 47, «الملحق» 43, ordinal bands «ثالثاً:», tables «جدول المقابل المالي». That is 8.2% of the corpus that a reader deriving citations from the integer would misname.",
+  "the_fix": "The chunking layer now carries `unit_label_ar` and `is_appendix`, and its own field note says `article_number` is positional. The export layer was checked and is already safe — its non-article records carry a null article_number, and both retrieval packs guard on that."
  }
 }

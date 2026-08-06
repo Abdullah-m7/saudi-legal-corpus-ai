@@ -1,0 +1,422 @@
+{
+ "generated_note": "قياسٌ لكل ملف PDF رسمي جُلب من سجلات الجهات المُصدِرة، عن سؤال واحد: هل يمكن قراءة عربيته حرفياً؟ السؤال ليس رأياً ولا يتساوى بين الملفات، فقُيس لكل ملف على حدة بأداة scripts/probe_official_pdf.py. الغرض أن يُقال عن الفجوة الباقية في التغطية شيءٌ مُثبَت لا مُدَّعى: إن كان ما تنشره الجهات غير قابل للقراءة حرفياً، فالنقص ليس تقصيراً في الجهد بل جدارٌ في شكل المصدر.",
+ "probe": "scripts/probe_official_pdf.py",
+ "probe_date": "2026-08-06",
+ "verdict_counts": {
+  "BROKEN_CMAP": 28,
+  "UNDECIDED": 7,
+  "READABLE": 1,
+  "BROKEN_ORDER": 2,
+  "IMAGE_SCAN": 2
+ },
+ "headline": "واحد من أربعين ملفاً رسمياً قابل للاقتباس الحرفي — وهو وثيقة اشتراطات بلدية لا نظام.",
+ "what_each_verdict_means_ar": {
+  "READABLE": "الرباطان سليمان وترتيب الأسطر سليم؛ طبقة النص هي النص، ويجوز الاقتباس منها.",
+  "BROKEN_CMAP": "خرائط المحارف تقلب حروف الرباط: «المادة» تخرج «املادة»، أو «لائحة» تخرج «الئحة». الإصلاح الهندسي يستعيد معظمه، و«معظمه» هو المشكلة: قِيس على أربع لوائح يحملها المستودع أصلاً فوافق بوسيط 1.00 و1.00 و0.99 و0.95.",
+  "BROKEN_ORDER": "الرباطان سليمان لكن أسطر النص المُصفَّف تتداخل، فكل حرف صحيح والجملة ليست كذلك.",
+  "IMAGE_SCAN": "لا طبقة نص أصلاً؛ الصفحة صورة للوثيقة. لا يقرؤها إلا التعرّف الضوئي، وهو قراءة بصرية لا يقبلها المستودع إلا بإفصاح صريح لكل سجل.",
+  "UNDECIDED": "عربية الملف أقل من أن يُحكم عليها. **وهذا ليس نجاحاً**: نسخةٌ سابقة من الأداة كانت تتخطى الاختبار عند قلة الشواهد فتُمرِّر الملف، وقد كادت تُمرِّر «تعليمات تصريح تجربة التقنية المالية» وفيه اثنا عشر رباط لام-ألف مقلوباً من تسعة عشر."
+ },
+ "files": [
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات صناديق الاستثمار المبسطة",
+   "verdict": "BROKEN_CMAP",
+   "pages": 17,
+   "arabic_chars": 16881,
+   "lam_meem_transposed_ratio": 0.463,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 7,
+   "arabic_chars": 3894,
+   "lam_meem_transposed_ratio": 0.575,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات الحسابات الاستثمارية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 31,
+   "arabic_chars": 33952,
+   "lam_meem_transposed_ratio": 0.6,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات إصدار شهادات الإيداع خارج المملكة",
+   "verdict": "BROKEN_CMAP",
+   "pages": 9,
+   "arabic_chars": 10705,
+   "lam_meem_transposed_ratio": 0.685,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+   "verdict": "BROKEN_CMAP",
+   "pages": 42,
+   "arabic_chars": 45580,
+   "lam_meem_transposed_ratio": 0.509,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة التسجيل البيني لصناديق الاستثمار",
+   "verdict": "UNDECIDED",
+   "pages": 14,
+   "arabic_chars": 7696,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "دليل التسجيل البيني لصناديق الاستثمار لدى هيئة السوق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 9,
+   "arabic_chars": 7168,
+   "lam_meem_transposed_ratio": 0.134,
+   "lam_alef_transposed_ratio": 1.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "دليل إصدار أدوات الديـــن الخضراء والاجتماعيـــــــــــــــة والمستدامة والمرتبطة بالاستدامة",
+   "verdict": "UNDECIDED",
+   "pages": 16,
+   "arabic_chars": 4469,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات طرح شهادات المساهمات العقارية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 18,
+   "arabic_chars": 18415,
+   "lam_meem_transposed_ratio": 0.54,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة أسواق ومراكز إيداع الأوراق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 41,
+   "arabic_chars": 41996,
+   "lam_meem_transposed_ratio": 0.541,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات الحوكمة الشرعية في مؤسسات السوق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 15,
+   "arabic_chars": 12751,
+   "lam_meem_transposed_ratio": 0.415,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "التعليمات الخاصة بصناديق الاستثمار التمويلية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 14,
+   "arabic_chars": 11980,
+   "lam_meem_transposed_ratio": 0.433,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة الإبلاغ عن مخالفات نظام السوق المالية",
+   "verdict": "UNDECIDED",
+   "pages": 7,
+   "arabic_chars": 4898,
+   "lam_meem_transposed_ratio": 0.076,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة مراكز مقاصة الأوراق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 72,
+   "arabic_chars": 72583,
+   "lam_meem_transposed_ratio": 0.62,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "قواعد تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
+   "verdict": "BROKEN_CMAP",
+   "pages": 14,
+   "arabic_chars": 12837,
+   "lam_meem_transposed_ratio": 0.581,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "التعليمات الخاصة بتنظيم آلية الاستقرار السعري للطروحات الأولية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 6,
+   "arabic_chars": 5209,
+   "lam_meem_transposed_ratio": 0.493,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات تصريح تجربة التقنية المالية",
+   "verdict": "UNDECIDED",
+   "pages": 14,
+   "arabic_chars": 11396,
+   "lam_meem_transposed_ratio": 0.063,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "التعليمات الخاصة بإعلانات الصناديق الاستثمارية",
+   "verdict": "UNDECIDED",
+   "pages": 73,
+   "arabic_chars": 11504,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "القواعد المنظمة للمنشآت ذات الأغراض الخاصة",
+   "verdict": "BROKEN_CMAP",
+   "pages": 41,
+   "arabic_chars": 36821,
+   "lam_meem_transposed_ratio": 0.645,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة حوكمة الشركات",
+   "verdict": "BROKEN_CMAP",
+   "pages": 65,
+   "arabic_chars": 75072,
+   "lam_meem_transposed_ratio": 0.513,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "تعليمات بناء سجل الأوامر وتخصيص الأسهم في الاكتتابات الأولية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 9,
+   "arabic_chars": 8600,
+   "lam_meem_transposed_ratio": 0.593,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "الإجراءات والتعليمات الخاصة بالشركات المدرجة أسهمها في السوق التي بلغت خسائرها المتراكمة 20% فأكثر من رأس مالها",
+   "verdict": "BROKEN_CMAP",
+   "pages": 7,
+   "arabic_chars": 5451,
+   "lam_meem_transposed_ratio": 0.603,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "قواعد الكفاية المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 87,
+   "arabic_chars": 90886,
+   "lam_meem_transposed_ratio": 0.531,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة إجراءات الفصل في منازعات الأوراق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 48,
+   "arabic_chars": 38245,
+   "lam_meem_transposed_ratio": 0.475,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة الاندماج والاستحواذ",
+   "verdict": "BROKEN_CMAP",
+   "pages": 57,
+   "arabic_chars": 65423,
+   "lam_meem_transposed_ratio": 0.455,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "التعليمات الخاصة بإعلانات الشركات",
+   "verdict": "UNDECIDED",
+   "pages": 58,
+   "arabic_chars": 74172,
+   "lam_meem_transposed_ratio": 0.002,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة صناديق الاستثمار العقاري​",
+   "verdict": "BROKEN_CMAP",
+   "pages": 125,
+   "arabic_chars": 114332,
+   "lam_meem_transposed_ratio": 0.439,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة مؤسسات السوق المالية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 111,
+   "arabic_chars": 112144,
+   "lam_meem_transposed_ratio": 0.53,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "هيئة السوق المالية",
+   "title_ar": "لائحة سلوكيات السوق",
+   "verdict": "BROKEN_CMAP",
+   "pages": 24,
+   "arabic_chars": 12989,
+   "lam_meem_transposed_ratio": 0.418,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "اشتراطات إنشاء المباني السكنية",
+   "verdict": "READABLE",
+   "pages": 48,
+   "arabic_chars": 37278,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": 0.991
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "اشتراطات البقالات والتموينات والأسواق المركزية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 52,
+   "arabic_chars": 39476,
+   "lam_meem_transposed_ratio": 0.434,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "اشتراطات التخلص من نفايات البناء والهدم والترميم",
+   "verdict": "UNDECIDED",
+   "pages": 15,
+   "arabic_chars": 1795,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "اشتراطات مواقع الباعة الجائلين (التاجر المتنقل)",
+   "verdict": "BROKEN_CMAP",
+   "pages": 36,
+   "arabic_chars": 24588,
+   "lam_meem_transposed_ratio": 0.372,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "الدليل الاسترشادي لاجراءات الرقابة على السكن الجماعي للأفراد",
+   "verdict": "BROKEN_ORDER",
+   "pages": 32,
+   "arabic_chars": 24433,
+   "lam_meem_transposed_ratio": 0.026,
+   "lam_alef_transposed_ratio": 0.016,
+   "order_agreement": 0.0869
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "دليل دورات المياه العامة المتنقلة",
+   "verdict": "BROKEN_ORDER",
+   "pages": 49,
+   "arabic_chars": 33370,
+   "lam_meem_transposed_ratio": 0.004,
+   "lam_alef_transposed_ratio": 0.004,
+   "order_agreement": 0.005
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "آلية تصنيف الشركات والمكاتب الاستشارية الهندسية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 7,
+   "arabic_chars": 5753,
+   "lam_meem_transposed_ratio": 0.535,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "إدارة الترجمة الرسمية بهيئة الخبراء بمجلس الوزراء",
+   "verdict": "IMAGE_SCAN",
+   "pages": 6,
+   "arabic_chars": 0,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "إشتراطات التوصيل المنزلي",
+   "verdict": "BROKEN_CMAP",
+   "pages": 21,
+   "arabic_chars": 9951,
+   "lam_meem_transposed_ratio": 0.4,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الشؤون البلدية والقروية والإسكان",
+   "title_ar": "اشتراطات أنشطة مراكز الرعاية الطبية الصحية الأهلية",
+   "verdict": "BROKEN_CMAP",
+   "pages": 37,
+   "arabic_chars": 26944,
+   "lam_meem_transposed_ratio": 0.382,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  },
+  {
+   "authority_ar": "وزارة الموارد البشرية والتنمية الاجتماعية",
+   "title_ar": "قرار وزاري ضوابط الحماية من التعديات السلوكية في بيئة العمل 20912",
+   "verdict": "IMAGE_SCAN",
+   "pages": 13,
+   "arabic_chars": 0,
+   "lam_meem_transposed_ratio": 0.0,
+   "lam_alef_transposed_ratio": 0.0,
+   "order_agreement": null
+  }
+ ]
+}

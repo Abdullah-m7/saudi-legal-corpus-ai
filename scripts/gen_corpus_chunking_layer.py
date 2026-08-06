@@ -277,7 +277,15 @@ def build():
                 "law_id": r.get("law_id"),
                 "law_component": r.get("law_component"),
                 "law_title_ar": r.get("law_title_ar"),
+                # `article_number` is POSITIONAL. 2,096 of this corpus's 25,604
+                # records carry a unit label that is not an article's — «البند»,
+                # «القاعدة», «الملحق», «ثالثاً:», «جدول المقابل المالي» — so a
+                # retrieval application that renders «مادة N» from the integer
+                # manufactures a citation the source never made. The citable mark
+                # is `unit_label_ar`, carried here for exactly that reason.
                 "article_number": r.get("article_number"),
+                "unit_label_ar": r.get("unit_label_ar"),
+                "is_appendix": bool(r.get("is_appendix")),
                 "article_path": r.get("article_path"),
                 "llm_title_ar": r.get("llm_title_ar"),
                 "retrieval_title_ar": r.get("retrieval_title_ar"),
@@ -410,13 +418,14 @@ def main():
             "call of any kind is made here. This generator only performs text "
             "segmentation (chunking) so that a later, separate embeddings step "
             "has appropriately-sized, traceable input units. Each chunk carries "
-            "source_record_id, article_number, chunk_index and "
+            "source_record_id, article_number, unit_label_ar, chunk_index and "
             "total_chunks_for_this_article so any future vector hit can be "
             "traced back to its full source article."
         ),
         "fields": [
             "chunk_id", "source_record_id", "corpus", "law_id", "law_component",
-            "law_title_ar", "article_number", "article_path", "llm_title_ar",
+            "law_title_ar", "article_number", "unit_label_ar", "is_appendix",
+            "article_path", "llm_title_ar",
             "retrieval_title_ar", "keywords_ar", "search_queries_ar",
             "chunk_index", "total_chunks_for_this_article", "char_start",
             "char_end", "word_count", "overlap_words_with_previous",

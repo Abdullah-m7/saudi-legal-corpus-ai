@@ -121,7 +121,7 @@
       "word_count": 3943
     }
   ],
-  "embeddings_scope_note": "Out of scope for this layer: no embedding model or vector-database call of any kind is made here. This generator only performs text segmentation (chunking) so that a later, separate embeddings step has appropriately-sized, traceable input units. Each chunk carries source_record_id, article_number, chunk_index and total_chunks_for_this_article so any future vector hit can be traced back to its full source article.",
+  "embeddings_scope_note": "Out of scope for this layer: no embedding model or vector-database call of any kind is made here. This generator only performs text segmentation (chunking) so that a later, separate embeddings step has appropriately-sized, traceable input units. Each chunk carries source_record_id, article_number, unit_label_ar, chunk_index and total_chunks_for_this_article so any future vector hit can be traced back to its full source article.",
   "fields": [
     "chunk_id",
     "source_record_id",
@@ -130,6 +130,8 @@
     "law_component",
     "law_title_ar",
     "article_number",
+    "unit_label_ar",
+    "is_appendix",
     "article_path",
     "llm_title_ar",
     "retrieval_title_ar",
