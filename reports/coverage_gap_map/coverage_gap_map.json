@@ -1057,5 +1057,28 @@
   "what_the_37_does_and_does_not_mean": "NOT that 37 tracks are stale — that the corpus cannot show they are not. Each is a lead to check against the official source, not a verdict. 28 of the 37 record no amendment date anywhere: not in `amendment_history`, not in `consolidated_amended_law`, not in a sentence of the methodology note about amendments.",
   "a_schema_observation_worth_more_than_the_list": "10 of the 37 set `consolidated_amended_law: true` with an EMPTY `amendment_history` — «capital_market_law», «aml_law», «income_tax_law», «sama_law», «electronic_transactions_law» among them. Consolidated through WHAT? An undated consolidation claim cannot be checked, cannot expire, and cannot tell a reader how current the text is. The field should carry the decree or date it is consolidated through.",
   "the_reach_test_took_three_scopes_to_get_right": "Scanning the whole artifact picked up publication dates, verification dates and dates inside source URLs, and declared 48 of 50 consolidated — flattery, not measurement. Restricting to amendment FIELDS swung too far the other way: «نظام الاستثمار التعديني» records its coverage in prose («Royal Decree M/12 (8/1/1442)») and nowhere else, and was reported behind on the strength of a field it does not use. The scope that holds is the amendment fields plus the note's sentences ABOUT amendments — a date in such a sentence is a claim about coverage; a date elsewhere is when the document was published."
+ },
+ "the_gazette_backlog_is_saturated": {
+  "what_was_asked": "The pipeline has gained a great deal since the backlog was last judged: a third drafting form (numbered clauses), two number placements the strict pattern never admitted («المادة: (1)», «المادة 1:»), a corrected chapter stripper, and the G14 predecessor-edition gate. Does any of that unlock pages previously refused?",
+  "the_test": "All 371 refused pages re-fetched from the gazette and re-judged end to end.",
+  "the_answer": "NONE. Zero newly acceptable. Every page is still refused, for the same reasons, plus three now caught by G14 that earlier passed into the refused pile for other reasons.",
+  "what_remains_and_why": {
+   "already_covered_G2": 234,
+   "no_recognisable_structure_G3": 122,
+   "numbering_gap_not_provably_safe_G8": 35,
+   "navigation_or_table_or_session_summary": 11,
+   "predecessor_or_edition_of_a_held_track": 9
+  },
+  "reading": "The segmenter work is fully harvested. Coverage can no longer be expanded by teaching the pipeline to see more forms — the remaining refusals are substantive, and each needs either a source the corpus cannot reach or a human adjudication the pipeline is right to refuse to make. That is a better place to stop than a list of maybes.",
+  "coverage_now": {
+   "archive_pages": 8997,
+   "not_an_instrument": 7931,
+   "covered_by_a_cited_page": 486,
+   "amendment": 283,
+   "examined_and_refused": 221,
+   "covered_by_instrument_name": 39,
+   "unreached": 23,
+   "draft": 14
+  }
  }
 }

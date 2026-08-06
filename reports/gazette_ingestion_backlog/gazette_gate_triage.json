@@ -1,5 +1,5 @@
 {
- "generated_note": "Every Umm Al-Qura page the ingestion pipeline has examined, and what it decided. A refusal quotes the gate that refused it, verbatim, so an absence from the corpus can be argued with rather than merely noticed. Where a page was examined more than once — the pipeline was widened repeatedly, and a page refused under a narrower reading was sometimes accepted later — only the LAST verdict is recorded, because only it describes the corpus as it stands. Publishing this is what lets the coverage accounting tell a page that was judged apart from a page that was never looked at; without it, both read as 'unreached' and the corpus looks less diligent than it is while hiding the pages that genuinely need work.",
+ "generated_note": "Every Umm Al-Qura page the ingestion pipeline has examined, and what it decided. A refusal quotes the gate that refused it, verbatim, so an absence from the corpus can be argued with rather than merely noticed. Where a page was examined more than once — the pipeline was widened repeatedly, and a page refused under a narrower reading was sometimes accepted later — only the LAST verdict is recorded, because only it describes the corpus as it stands. Publishing this is what lets the coverage accounting tell a page that was judged apart from a page that was never looked at; without it, both read as 'unreached' and the corpus looks less diligent than it is while hiding the pages that genuinely need work. Re-run in full against the pipeline as it stands after the numbered-clause form, the two additional number placements («المادة: (1)», «المادة 1:»), the corrected chapter stripper and the G14 predecessor-edition gate: all 371 pages were re-fetched and re-judged, and NONE became acceptable. The segmenter work is fully harvested; what remains is refused for substantive reasons — 234 already covered, 122 with no recognisable structure, 35 with a numbering gap the pipeline cannot prove safe.",
  "pages_examined": 492,
  "accepted": 121,
  "refused": 371,
@@ -884,6 +884,7 @@
    "date": "2022-01-14",
    "verdict": "refused",
    "blocking_gates": [
+    "G14-LATER-EDITION-HELD: the corpus already holds this same instrument name as track 'continuing_professional_education_rules' («قواعد برامج التعليم المهني المستمر») published 2023-09-09, later than this document's 2022-01-14. Every differing word between the two titles is a spelling variant, not a different subject, so this is an EARLIER EDITION of a text already on file. Which edition is in force is not settled by either document, so it is adjudicated by hand rather than built alongside its own successor",
     "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
    ]
   },
@@ -904,6 +905,7 @@
    "date": "2022-02-18",
    "verdict": "refused",
    "blocking_gates": [
+    "G14-LATER-EDITION-HELD: the corpus already holds this same instrument name as track 'real_estate_transaction_tax_regulation' («اللائحة التنفيذية لضريبة التصرفات العقارية») published 2022-08-19, later than this document's 2022-02-18. Every differing word between the two titles is a spelling variant, not a different subject, so this is an EARLIER EDITION of a text already on file. Which edition is in force is not settled by either document, so it is adjudicated by hand rather than built alongside its own successor",
     "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
    ]
   },
@@ -1375,6 +1377,7 @@
    "date": "2022-11-25",
    "verdict": "refused",
    "blocking_gates": [
+    "G14-LATER-EDITION-HELD: the corpus already holds this same instrument name as track 'state_realestate_disposal_regulation' («لائحة التصرف في عقارات الدولة») published 2024-01-26, later than this document's 2022-11-25. Every differing word between the two titles is a spelling variant, not a different subject, so this is an EARLIER EDITION of a text already on file. Which edition is in force is not settled by either document, so it is adjudicated by hand rather than built alongside its own successor",
     "G2: already covered by registry track 'state_realestate_disposal_regulation' (97% of this document's articles are already ingested there)"
    ]
   },
@@ -2437,7 +2440,7 @@
    "date": "2024-03-21",
    "verdict": "refused",
    "blocking_gates": [
-    "G2: 51% of this document's articles already exist in track 'zakat' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    "G2: 52% of this document's articles already exist in track 'zakat' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
    ]
   },
   {
