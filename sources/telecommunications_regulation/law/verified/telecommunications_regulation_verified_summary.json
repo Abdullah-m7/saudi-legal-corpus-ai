@@ -1,7 +1,7 @@
 {
   "law_key": "telecommunications_regulation",
   "layer": "TELECOMMUNICATIONS_REGULATION_ARABIC_VERIFIED_TEXT",
-  "record_count": 108,
+  "record_count": 107,
   "official_text_status": "MCIT_CST_DUAL_PRIMARY_SOURCE_TEXT_LAYER_REMEDIATED",
   "status_counts": {
     "اصلية": 108,
@@ -112,6 +112,14 @@
     {
       "article_key": "telecommunications_regulation_base_law_currency_risk",
       "description": "The base law track (sources/telecommunications/) already flags an unresolved currency-risk concern regarding the base Telecommunications and IT Act itself (a 2024 proposed-amendment consultation whose enactment status is unconfirmed). That question is NOT re-litigated here per this track's scope; this track only verifies whether the FRESHNESS/enactment of the Implementing Regulation was confirmable, and it was -- no evidence of the Regulation itself having been amended was found."
+    },
+    {
+      "article_key": "telecommunications_regulation_pdf_extraction_letter_transposition",
+      "description": "**تحفُّظ على سلامة النص**: يحمل 2 سجلاً من 108 في هذا المسار أثر انقلاب رابطة لام-ألف في النص العربي — «االطلاع» موضع «الاطلاع»، و«اإلدارية» موضع «الإدارية»، و«إعالن» موضع «إعلان»، و«الالزمة» موضع «اللازمة».\n\n**ومنشأ الخلل لم يُختبر في هذا المسار**: لا يستشهد المسار بملف PDF بعينه يمكن إعادة جلبه واستخراجه، فلا يُقال هنا أهو في المصدر أم في القراءة. وقد ثبت في مسارين آخرين من مسارات هذا المستودع أن الطبقة النصية للملف الرسمي هي التي تحمله (scripts/verify_pdf_source_encoding.py)، وهي قرينة لا دليل على هذا المسار بعينه.\n\n**ولم يُصحَّح حرف واحد.** الانقلاب **يُحوِّل كلمات عربية صحيحة إلى كلمات عربية صحيحة أخرى**: «العالقة» (المُعلَّقة) قلبُ «العلاقة»، و«عالمة» (التي تعلم) قلبُ «علامة»، و«صالحية» قلبُ «صلاحية» — و«الشوائب **العالقة** ببدن السفينة» و«القضايا **العالقة** لدى المحامين» صوابٌ يقول ما يعنيه. فلا قاعدةَ آليةٌ تفصل العطب عن الصواب؛ الفصل يحتاج الجملة لا الرسم. وجُرِّب إصلاحٌ مشروطٌ بأن يكون الشكل المُصحَّح مشهوداً في نصوص المستودع السليمة فأخفق: الاستخراج يشطر الكلمة أيضاً («خ اال المدة» وأصلها «خلال المدة»)، وبعض «الشواهد» عطبٌ مماثل تسرَّب إلى مسارٍ آخر.\n\nالمُفصَح عنه أن **رسم بعض الكلمات في هذه السجلات لا يطابق الرسم الصحيح** وإن بقي المعنى مقروءاً، فلا يصح النسخ الحرفي منها قبل المقابلة بالصفحة المطبوعة. ورفعُ هذا التحفُّظ يكون بنسخٍ بشريٍّ من الصفحة المُصيَّرة، لا بقاعدة ولا بإعادة استخراج. (رصدَه scripts/audit_corpus_text_integrity.py)"
+    },
+    {
+      "article_key": "telecommunications_regulation_article_45_not_recovered",
+      "description": "**المادة الخامسة والأربعون غير محفوظة في هذا المسار.** كان المستودع يحمل نصّ المادة السادسة والأربعين مرتين — تحت المفتاحين (45) و(46) وبالعنوان نفسه «المادة الخامسة والأربعون» — فبدا العدد مكتملا (108 مادة) والترقيم بلا ثغرة، **وكان سؤالٌ عن المادة الخامسة والأربعين يُجاب بنصّ مادةٍ أخرى**. حُذف السجل الخاطئ وأُعلنت الثغرة.\n\nوالنصّ الرسمي للمادة الخامسة والأربعين موجودٌ ومحدَّد الموضع في ملف الوزارة المذكور أعلاه (الفصل الخامس: استخدام العقارات)، **ولم يُنقل إلى هنا**: طبقة النصّ في ذلك الملف تحمل خلل انقلاب لام-ألف الذي أثبت هذا المستودع أنه في ملفات الجهات الرسمية نفسها («االتصاالت» بدل «الاتصالات»)، ويضاف إليه أن المستخرج يعكس مواضع الأرقام بين قوسين ويفصل الفواصل عمّا قبلها. **وإخراجُ عربيةٍ مقروءة من ذلك يقتضي ترجيحاتٍ ثلاثة في كل جملة، والقراءة المُرجَّحة ليست النصّ الرسمي مهما بدت معقولة.** فتُرك الحكم لنظرٍ بشري، ولم يُخمَّن حرف."
     }
   ],
   "source_artifact": "sources/telecommunications_regulation/law/official_source/telecommunications_regulation_official_source.json"

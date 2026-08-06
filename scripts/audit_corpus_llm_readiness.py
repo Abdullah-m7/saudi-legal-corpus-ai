@@ -11,17 +11,27 @@ Five failure modes separate the two, and each is measured here against the
 corpus's own committed files. Nothing is fetched, nothing is written except this
 report.
 
-  A. RETRIEVAL THAT ONLY WORKS ON VERBATIM TEXT.
-     The committed retrieval eval scores ~94% top-1, and every one of its 1,407
-     queries is a span lifted verbatim out of the record it is meant to find.
-     That measures little: exact substring recall is nearly tautological for a
-     token-overlap scorer. A person does not paste the article back at the
-     index; they type a handful of the words they remember, in their own order.
-     This audit re-scores the same records with the SAME scorer under queries
-     built by taking each record's own distinctive terms, dropping the rest, and
-     shuffling what is left. Nothing is invented — every token comes from the
-     stored article. The gap between the two numbers is the honest measure of
-     how much of the committed accuracy is an artifact of verbatim phrasing.
+  A. RETRIEVAL THAT ONLY WORKS ON VERBATIM TEXT — A HYPOTHESIS THIS REFUTED.
+     The committed retrieval eval scores ~94% top-1, and every one of its queries
+     is a span lifted verbatim out of the record it is meant to find. The
+     suspicion was that this flatters a token-overlap scorer: a person does not
+     paste the article back at the index, they type a handful of the words they
+     remember, in their own order. So the same records were re-scored with the
+     same scorer under queries built from each record's own distinctive terms —
+     the common words dropped, the rest shuffled. Nothing invented; every token
+     comes from the stored article.
+
+     The scores are the same. 93.5% / 97.4% / 98.8%, MRR 0.9560 against the
+     committed 93.9% / 97.6% / 98.8%, MRR 0.9586. Word order and sentence form
+     contribute essentially nothing, which means the committed number is NOT an
+     artifact of verbatim phrasing and the suspicion was wrong.
+
+     What this does NOT establish, and the limit is the point: the query
+     vocabulary is still the statute's own. This measures robustness to phrasing
+     and word order, not to a user who asks in different words than the drafter
+     used. Measuring that needs paraphrases, and a paraphrase of a legal
+     provision written here would be invented text — so it stays unmeasured
+     rather than guessed at.
 
   B. TEXT A MODEL WOULD QUOTE AS LAW THAT IS NOT WHOLE.
      A record cut mid-sentence is worse than a missing record: it reads as
@@ -96,8 +106,17 @@ SENTENCE_FINAL = ".؟!»\"'）)]:؛"
 TRUNCATION_MIN_CHARS = 120
 
 # ---- E. non-article units --------------------------------------------------
-BAND_LABEL_RE = re.compile(r"^(?:أول|ثاني|ثالث|رابع|خامس|سادس|سابع|ثامن|تاسع|عاشر|حادي|"
-                           r"البند)\b|^[0-9٠-٩]{1,3}\s*[-–—]\s*$")
+# What counts as an ARTICLE label, in every form the corpus stores one:
+#   «المادة الخامسة» / «المادة (5)»      — the ordinary forms
+#   «مادة (6)»                            — the gazette heads whole instruments so
+#   «الخامسة والسبعون»                    — the ordinal alone, no «المادة» prefix
+#   «التاسعة والأربعون - مكرر»            — a مكرر variant of an article
+# Anything else — «الجدول (١)», «الملحق رقم (١)», «البند أولاً», «مقدمة», «١/٢» —
+# is a unit that is NOT an article, and a track holding those must say so.
+ARTICLE_LABEL_RE = re.compile(
+    r"^\(?\s*(?:ال)?مادة\b"
+    r"|^(?:ال)?(?:أول|ثاني|ثالث|رابع|خامس|سادس|سابع|ثامن|تاسع|عاشر|حادي)"
+    r"(?:ة|ه)?\b(?!\s*[:：])")
 FORM_DISCLOSURE_KEYS = ("_numbering_form_is_ordinal_bands", "_numbering_form_is_numbered_clauses")
 
 
@@ -227,30 +246,49 @@ def citability(records):
     return {f: {"count": len(ids), "examples": ids[:10]} for f, ids in missing.items()} or {}
 
 
-def unit_labels(records):
-    """A band or a clause stored in an article field must SAY so on its track."""
-    per_track_labels = defaultdict(Counter)
-    for r in records:
-        lab = (r.get("retrieval_title_ar") or "").split(" - ")[-1].strip()
-        per_track_labels[r["corpus"]][lab] += 1
+def unit_labels(_records):
+    """A band or a clause stored in an article field must SAY so on its track.
 
-    undisclosed = []
-    for tid, labels in sorted(per_track_labels.items()):
-        non_article = [l for l in labels if l and not l.startswith("الماد")]
+    Reads each track's ARTIFACT, not the unified index. The first version split
+    `retrieval_title_ar` on " - " and took the last segment, which for a track
+    that carries article titles («نظام الشركات - المادة 1 - التعريفات») returns
+    the TITLE and reports it as a non-article unit. That put 39 tracks on a list
+    of undisclosed defects, «نظام الشركات» and «نظام الخدمة المدنية» among them,
+    none of which store anything but articles.
+
+    «مادة (1)» without the definite article is an article too — the gazette heads
+    whole instruments that way — so the test accepts both forms."""
+    per_track = defaultdict(Counter)
+    for pattern in ("sources/*/official_source/*.json", "sources/*/*/official_source/*.json"):
+        for path in sorted(glob.glob(os.path.join(ROOT, pattern))):
+            rel = os.path.relpath(path, os.path.join(ROOT, "sources"))
+            tid = rel.split(os.sep)[0]
+            try:
+                doc = json.load(open(path, encoding="utf-8"))
+            except Exception:                                      # noqa: BLE001
+                continue
+            for rec in (doc.get("articles") or {}).values():
+                if isinstance(rec, dict):
+                    per_track[tid][(rec.get("number_label_ar") or "").strip()] += 1
+
+    undisclosed, disclosed = [], 0
+    for tid, labels in sorted(per_track.items()):
+        non_article = [l for l in labels if l and not ARTICLE_LABEL_RE.match(l)]
         if not non_article:
             continue
-        art = os.path.join(ROOT, "sources", tid, "official_source",
-                           "%s_official_source.json" % tid)
-        disclosed = False
-        if os.path.exists(art):
-            blob = open(art, encoding="utf-8").read()
-            disclosed = any(k in blob for k in FORM_DISCLOSURE_KEYS)
-        if not disclosed:
-            undisclosed.append({"track_id": tid, "labels": non_article[:6],
-                                "records": sum(labels[l] for l in non_article)})
-    return {"tracks_whose_units_are_not_articles": len(
-        [t for t, ls in per_track_labels.items() if any(l and not l.startswith("الماد") for l in ls)]),
-        "of_those_without_a_form_disclosure": undisclosed}
+        blob = ""
+        for pattern in ("sources/%s/official_source/*.json" % tid,
+                        "sources/%s/*/official_source/*.json" % tid):
+            for path in glob.glob(os.path.join(ROOT, pattern)):
+                blob += open(path, encoding="utf-8").read()
+        if any(k in blob for k in FORM_DISCLOSURE_KEYS):
+            disclosed += 1
+            continue
+        undisclosed.append({"track_id": tid, "labels": non_article[:6],
+                            "records": sum(labels[l] for l in non_article)})
+    return {"tracks_storing_non_article_units": disclosed + len(undisclosed),
+            "of_those_carrying_a_form_disclosure": disclosed,
+            "of_those_without_a_form_disclosure": undisclosed}
 
 
 def main():
@@ -276,8 +314,9 @@ def main():
 
     print("E. checking non-article units against their disclosures...", flush=True)
     e = unit_labels(records)
-    print("   %d tracks store non-article units; %d of them disclose nothing"
-          % (e["tracks_whose_units_are_not_articles"], len(e["of_those_without_a_form_disclosure"])))
+    print("   %d tracks store non-article units; %d disclose it, %d do not"
+          % (e["tracks_storing_non_article_units"], e["of_those_carrying_a_form_disclosure"],
+             len(e["of_those_without_a_form_disclosure"])))
 
     committed = json.load(open(os.path.join(
         ROOT, "data", "corpus_retrieval_eval", "corpus_retrieval_eval_results.json"),

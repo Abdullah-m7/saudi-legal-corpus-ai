@@ -1,56 +1,18 @@
 {
  "generated_note": "Asks the text questions that sit between 'the file parses' and 'the law is right'. Each finding is phrased as a defect a reader could point at: a chapter heading absorbed into a provision's tail, a declared numbering gap that the stored records contradict, one instrument carrying the same text twice, a `text_complete: true` over a fragment, a disclosure naming an article that does not exist. None of these is visible to a count-based validator, and all of them change what a model reading the corpus would say. Read-only; writes only this report.",
  "tracks_examined": 735,
- "records_examined": 24975,
+ "records_examined": 24974,
  "1_structure_leaked_into_a_provision": {
   "count": 0,
   "by_track": [],
   "entries": []
  },
  "2_declared_numbering_gaps_that_the_records_contradict": {
-  "count": 2,
-  "entries": [
-   {
-    "track_id": "aml/regulation",
-    "declared": [],
-    "derived_from_stored_records": [
-     3,
-     4,
-     6,
-     11,
-     12,
-     13,
-     18,
-     19,
-     21,
-     25,
-     26,
-     27,
-     28,
-     29,
-     30,
-     31,
-     32,
-     33,
-     34,
-     35,
-     44,
-     45,
-     46,
-     47
-    ]
-   },
-   {
-    "track_id": "health_system/regulation",
-    "declared": [],
-    "derived_from_stored_records": [
-     1
-    ]
-   }
-  ]
+  "count": 0,
+  "entries": []
  },
  "3_same_text_held_twice_in_one_instrument": {
-  "count": 9,
+  "count": 8,
   "by_track": [
    [
     "associations_ngo_regulation/law",
@@ -74,10 +36,6 @@
    ],
    [
     "bankruptcy/law",
-    1
-   ],
-   [
-    "telecommunications_regulation/law",
     1
    ]
   ],
@@ -153,15 +111,6 @@
     ],
     "chars": 77,
     "text_head": "تختص المحكمة العامة بنظر الدعوى المذكورة في هذه المادة مهما كان مضمون الورقة."
-   },
-   {
-    "track_id": "telecommunications_regulation/law",
-    "article_keys": [
-     "telecommunications_regulation_art_045",
-     "telecommunications_regulation_art_046"
-    ],
-    "chars": 234,
-    "text_head": "يلتزم مقدم الخدمة ذي البنية التحتية بالمحافظة على سرية بيانات البنية التحتية الحرجة التي يشكل الإفصاح عنها أو "
    }
   ]
  },
@@ -192,7 +141,46 @@
    }
   ]
  },
- "5_disclosures_naming_an_article_that_does_not_exist": {
+ "5_labels_that_contradict_their_own_position": {
+  "count": 3,
+  "tracks": 2,
+  "note": "Reported only for a track whose labels agree with its keys at least 10 times and disagree at most 3 — elsewhere a disagreement means the track simply numbers differently (two instruments in one track, annex tables, band-numbered instruments), not that it is wrong.",
+  "entries": [
+   {
+    "track_id": "arbitration/law",
+    "labels_agreeing": 57,
+    "labels_disagreeing": 1,
+    "records": [
+     {
+      "article_key": "arbitration_art_031",
+      "number_label_ar": "المادة الحادية والعشرون",
+      "position_says": 31,
+      "label_says": 21
+     }
+    ]
+   },
+   {
+    "track_id": "patent/law",
+    "labels_agreeing": 63,
+    "labels_disagreeing": 2,
+    "records": [
+     {
+      "article_key": "patent_art_005",
+      "number_label_ar": "المادة السادسة",
+      "position_says": 5,
+      "label_says": 6
+     },
+     {
+      "article_key": "patent_art_006",
+      "number_label_ar": "المادة الخامسة",
+      "position_says": 6,
+      "label_says": 5
+     }
+    ]
+   }
+  ]
+ },
+ "6_disclosures_naming_an_article_that_does_not_exist": {
   "count": 0,
   "entries": []
  }

@@ -29,7 +29,18 @@ is a defect a reader could point at rather than a statistic.
      handful of words, or ending mid-clause — is the corpus asserting something
      about itself that its own content refutes.
 
-  5. DISCLOSURES THAT POINT AT NOTHING.
+  5. A LABEL THAT CONTRADICTS ITS OWN POSITION.
+     `number_label_ar` is the string a citation is built from. Where it names a
+     different article than the record IS, every quotation of that record is
+     misattributed. Corpus-wide, 972 records disagree and almost all do so
+     legitimately — a track holding two instruments runs one key sequence while
+     each document keeps its own «المادة الأولى», annex tables are «الجدول (١)»,
+     «نظام مراقبة البنوك» is drafted in «ثانيا - 1» bands — so the raw count
+     measures the corpus's variety, not its errors. What is reported instead is
+     a track whose labels track its keys EVERYWHERE ELSE and disagree on one or
+     two records: there the track's own neighbours say which is wrong.
+
+  6. DISCLOSURES THAT POINT AT NOTHING.
      Every entry in `known_unresolved_discrepancies` names an `article_key`.
      Where that key is neither a real article of the track nor one of the
      track-level keys the corpus uses by convention, the disclosure cannot be
@@ -47,6 +58,9 @@ import os
 import re
 import sys
 from collections import Counter, defaultdict
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from gazette_autoingest import parse_ordinal  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "reports", "corpus_text_quality_audit")
@@ -88,6 +102,12 @@ MID_CLAUSE_END = re.compile(r"(?:\b(?:و|أو|في|من|على|إلى|عن|مع|
 # key is a track-level note by construction and cannot dangle.
 ARTICLE_BOUND_KEY = re.compile(r"_art_(\d{1,4})\b")
 
+# 5 — a track must agree with itself this many times before a stray disagreement
+# means anything, and disagree at most this many times before it is simply
+# numbered differently rather than wrong.
+LABEL_AGREE_FLOOR = 10
+LABEL_MAX_ANOMALIES = 3
+
 
 def norm(s):
     s = re.sub(r"[ً-ْـ]", "", s or "")
@@ -118,6 +138,43 @@ def tracks():
                 yield name, {"_unreadable": str(exc)}
 
 
+# An implementing regulation often numbers its provisions after the LAW articles
+# they implement, not in a sequence of its own: «اللائحة التنفيذية لنظام مكافحة
+# غسل الأموال» holds 25 provisions numbered 1, 2, 5, 7, 8, … 49, and «اللائحة
+# التنفيذية للنظام الصحي» starts at 2. Those are not gaps — the regulation simply
+# has nothing to say about the law articles in between, and both artifacts state
+# that outright («excluded_law_articles_not_recovered»). Deriving a gap list from
+# 1..max is meaningless for that family, and reporting it as drift accuses the
+# corpus of losing text it never had.
+#
+# The family is recognised STRUCTURALLY, by fields the artifacts already carry —
+# never by the track's name or a guess about its type.
+LAW_KEYED_FIELDS = ("base_law", "parent_law_key", "parent_law_article_range",
+                    "article_numbers_present", "confirmed_covered_law_articles")
+
+
+def law_keyed_numbering(src):
+    return any(src.get(f) for f in LAW_KEYED_FIELDS)
+
+
+def label_face_value(label):
+    """The article number a label NAMES, or None if it does not name one."""
+    if not label:
+        return None
+    m = re.search(r"\(?\s*([0-9\u0660-\u0669]{1,4})\s*\)?\s*$", label.strip())
+    if m:
+        try:
+            return int(m.group(1).translate(str.maketrans("\u0660\u0661\u0662\u0663\u0664"
+                                                          "\u0665\u0666\u0667\u0668\u0669",
+                                                          "0123456789")))
+        except ValueError:
+            pass
+    m = re.match(r"^\s*ا?لمادة\s*\(?\s*(.+?)\s*\)?\s*:?\s*$", label.strip())
+    if m:
+        return parse_ordinal(m.group(1))
+    return None
+
+
 def normalise_articles(arts):
     """Two artifacts map an article number straight to its text instead of to a
     record («gtpl», «gtpl_regulation»). Wrap those so every check below sees one
@@ -140,6 +197,7 @@ def normalise_articles(arts):
 
 def main():
     leaked, gap_drift, repeated, false_complete, dangling = [], [], [], [], []
+    mislabelled = []
     n_tracks = n_records = 0
 
     for tid, src in tracks():
@@ -170,11 +228,12 @@ def main():
         # 2 — declared gaps vs derived gaps
         nums = sorted(a.get("article_number") for a in arts.values()
                       if isinstance(a.get("article_number"), int))
-        derived = [n for n in range(1, (max(nums) if nums else 0) + 1) if n not in set(nums)]
-        declared = src.get("missing_article_numbers") or []
-        if sorted(declared) != derived:
-            gap_drift.append({"track_id": tid, "declared": sorted(declared),
-                              "derived_from_stored_records": derived})
+        if not law_keyed_numbering(src):
+            derived = [n for n in range(1, (max(nums) if nums else 0) + 1) if n not in set(nums)]
+            declared = src.get("missing_article_numbers") or []
+            if sorted(declared) != derived:
+                gap_drift.append({"track_id": tid, "declared": sorted(declared),
+                                  "derived_from_stored_records": derived})
 
         # 3 — the same text twice inside one instrument
         seen = defaultdict(list)
@@ -199,7 +258,28 @@ def main():
                 false_complete.append({"track_id": tid, "article_key": key,
                                        "words": words, "text": t[:120]})
 
-        # 5 — a disclosure naming an article the track does not have
+        # 5 — a label that names a different article than the record is
+        agree = disagree = 0
+        anomalies = []
+        for key, a in sorted(arts.items()):
+            m = re.search(r"_art_(\d{1,4})$", key)
+            if not m:
+                continue
+            face = label_face_value(a.get("number_label_ar"))
+            if face is None:
+                continue
+            if face == int(m.group(1)):
+                agree += 1
+            else:
+                disagree += 1
+                anomalies.append({"article_key": key,
+                                  "number_label_ar": a.get("number_label_ar"),
+                                  "position_says": int(m.group(1)), "label_says": face})
+        if agree >= LABEL_AGREE_FLOOR and 0 < disagree <= LABEL_MAX_ANOMALIES:
+            mislabelled.append({"track_id": tid, "labels_agreeing": agree,
+                                "labels_disagreeing": disagree, "records": anomalies})
+
+        # 6 — a disclosure naming an article the track does not have
         keys = set(arts)
         have = {n for n in nums}
         for d in src.get("known_unresolved_discrepancies", []) or []:
@@ -247,7 +327,17 @@ def main():
             "by_track": Counter(x["track_id"] for x in false_complete).most_common(20),
             "entries": false_complete[:120],
         },
-        "5_disclosures_naming_an_article_that_does_not_exist": {
+        "5_labels_that_contradict_their_own_position": {
+            "count": sum(len(m["records"]) for m in mislabelled),
+            "tracks": len(mislabelled),
+            "note": ("Reported only for a track whose labels agree with its keys at least "
+                     "%d times and disagree at most %d — elsewhere a disagreement means the "
+                     "track simply numbers differently (two instruments in one track, annex "
+                     "tables, band-numbered instruments), not that it is wrong."
+                     % (LABEL_AGREE_FLOOR, LABEL_MAX_ANOMALIES)),
+            "entries": mislabelled,
+        },
+        "6_disclosures_naming_an_article_that_does_not_exist": {
             "count": len(dangling), "entries": dangling[:120],
         },
     }
@@ -261,7 +351,9 @@ def main():
     print("  2 declared gaps contradicted by records  %d" % len(gap_drift))
     print("  3 same text twice in one instrument      %d" % len(repeated))
     print("  4 text_complete over a fragment          %d" % len(false_complete))
-    print("  5 disclosures naming no such article     %d" % len(dangling))
+    print("  5 label contradicts its own position    %d in %d track(s)"
+          % (sum(len(m["records"]) for m in mislabelled), len(mislabelled)))
+    print("  6 disclosures naming no such article     %d" % len(dangling))
     print("\nwrote reports/corpus_text_quality_audit/corpus_text_quality_audit.json")
     return 0
 

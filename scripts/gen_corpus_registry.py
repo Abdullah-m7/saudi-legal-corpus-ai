@@ -22926,7 +22926,10 @@ def main() -> int:
                     "record_count": telecommunications_regulation_llm["record_count"],
                     "data_path": "data/telecommunications_regulation_arabic_legal_llm/telecommunications_regulation_legal_llm_001_108.json"}},
                 "record_counts": {"arabic_articles": telecommunications_regulation_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 108, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  # 107, not the instrument's 108: article 45 is not held.
+                                  # The corpus stored article 46's text under both slots
+                                  # until that duplicated record was found and removed.
+                                  "legal_status_breakdown": {"اصلية": 107, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
                                   "total": telecommunications_regulation_llm["record_count"]},
                 "data_paths": [
                     "sources/telecommunications_regulation/law/official_source/telecommunications_regulation_official_source.json",

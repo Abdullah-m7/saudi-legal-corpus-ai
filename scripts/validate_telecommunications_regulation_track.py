@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Read-only validator for the Implementing Regulation of the
-Telecommunications and IT Law track (108 records: all 108 اصلية).
+Telecommunications and IT Law track (107 records: all 107 اصلية).
+
+The official sources carry 108 articles. Article 45 is NOT held: the corpus
+stored article 46's text under both slots until that was found and the false
+record removed, and the provision itself was not written back because the only
+reachable official file encodes it damaged. See the track's own
+`known_unresolved_discrepancies` and reports/corpus_text_quality_audit/.
 
 See the generator's module docstring and sources/telecommunications_regulation/
 law/official_source/telecommunications_regulation_official_source.json's
@@ -26,10 +32,10 @@ RECORDS = os.path.join(ROOT, "sources", "telecommunications_regulation", "law",
                        "verified", "telecommunications_regulation_verified_records.jsonl")
 LLM = os.path.join(ROOT, "data", "telecommunications_regulation_arabic_legal_llm",
                    "telecommunications_regulation_legal_llm_001_108.json")
-N = 108
+N = 107
 KEY_RE = r"telecommunications_regulation_art_(\d{3})$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
-EXPECTED_COUNTS = {"اصلية": 108}
+EXPECTED_COUNTS = {"اصلية": 107}
 STATUS = "MCIT_CST_DUAL_PRIMARY_SOURCE_TEXT_LAYER_REMEDIATED"
 EXPECTED_CHAPTERS = 16
 AR = "ء-ي"
@@ -95,9 +101,15 @@ def main():
     for ch in chapters:
         for n in range(ch["first_article"], ch["last_article"] + 1):
             covered.add(n)
-    if covered != set(range(1, N + 1)):
+    # The chapters describe the INSTRUMENT, which has 108 articles; the corpus holds
+    # 107 of them and declares the 108th slot in missing_article_numbers. So the
+    # coverage target is the source's own range — what is held, plus what is declared
+    # missing — not the count of records on file.
+    held = {int(k.rsplit("_", 1)[-1]) for k in arts}
+    target = held | set(src.get("missing_article_numbers") or [])
+    if covered != target:
         e.append("[1c] chapter_structure does not gaplessly cover articles 1..%d: missing %s"
-                 % (N, sorted(set(range(1, N + 1)) - covered)))
+                 % (max(target) if target else 0, sorted(target - covered)))
 
     sc = Counter()
     for k, a in arts.items():
@@ -168,15 +180,15 @@ def main():
         for x in e[:30]:
             print("  - %s" % x)
         return 1
-    print("PASS: Telecommunications Regulation — 108 records (all 108 اصلية)")
+    print("PASS: Telecommunications Regulation — 107 records (all 107 اصلية)")
     print("  - DISTINCT TIER: dual official born-digital primary sources (cst.gov.sa +")
     print("    mcit.gov.sa), cross-verified against each other and against rendered")
     print("    page images for structural anomalies")
-    print("  - numbered 1..108 across 16 chapters, section_ar carries each article's")
+    print("  - numbered 1..108 minus article 45 (not held), across 16 chapters")
     print("    chapter heading")
     print("  - IN-FORCE Ministerial Decision No. 13 (14/5/1444H); companion to the")
     print("    telecommunications_law base-law track")
-    print("  - no confirmed amendment found post-dating approval; all 108 اصلية")
+    print("  - no confirmed amendment found post-dating approval; all 107 اصلية")
     return 0
 
 

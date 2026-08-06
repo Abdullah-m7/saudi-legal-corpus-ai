@@ -1,0 +1,735 @@
+{
+ "generated_note": "Measures whether a language model reading this corpus would answer correctly, not whether the corpus is well-formed — every existing validator already answers the second question and they all pass. Section A is the load-bearing one: the committed retrieval evaluation scores its queries as verbatim spans of the very records they are meant to find, which is close to a tautology for a token-overlap scorer. Re-scoring the same index with the same scorer under queries made of each record's own distinctive terms, shuffled, gives the number that survives when the phrasing is not the article's own. Every query token is taken from the stored text; nothing is composed. Read-only; writes only this report.",
+ "index_records": 25454,
+ "A_retrieval_under_term_form_queries": {
+  "queries_scored": 1200,
+  "top_1": 0.935,
+  "top_3": 0.9742,
+  "top_5": 0.9875,
+  "mrr_at_5": 0.956,
+  "sample_misses": [
+   {
+    "record_id": "music-authority-licensing-regulation-llm-023",
+    "corpus": "music_authority_licensing_regulation",
+    "query_terms": "تسعين بأحكامها الوزارة، نشرها إقرار ويسري",
+    "top1": "architecture-design-authority-licensing-regulation-llm-023"
+   },
+   {
+    "record_id": "theater-performing-arts-authority-licensing-regulation-llm-023",
+    "corpus": "theater_performing_arts_authority_licensing_regulation",
+    "query_terms": "تسعين بأحكامها إقرار نشرها ويسري الوزارة،",
+    "top1": "architecture-design-authority-licensing-regulation-llm-023"
+   },
+   {
+    "record_id": "visual-arts-authority-licensing-regulation-llm-004",
+    "corpus": "visual_arts_authority_licensing_regulation",
+    "query_terms": "تجديد وقواعد إلغاء الثقافية التراخيص تراخيص",
+    "top1": "architecture-design-authority-licensing-regulation-llm-004"
+   },
+   {
+    "record_id": "falcon-center-statute-llm-012",
+    "corpus": "falcon_center_statute",
+    "query_terms": "يرفع الختامي حسابه الديوان ويزود للمحاسبة",
+    "top1": "baha-strategic-office-statute-llm-009"
+   },
+   {
+    "record_id": "real-estate-mortgage-law-llm-art-046",
+    "corpus": "real_estate_mortgage",
+    "query_terms": "يعمل نشره تسعين بهذا الرسمية الجريدة",
+    "top1": "anti-trafficking-law-llm-art-017"
+   },
+   {
+    "record_id": "literature-publishing-translation-authority-licensing-regulation-llm-007",
+    "corpus": "literature_publishing_translation_authority_licensing_regulation",
+    "query_terms": "والمشرفين الإساءة المراقبين الرمز مستنداته مستمر،",
+    "top1": "architecture-design-authority-licensing-regulation-llm-007"
+   },
+   {
+    "record_id": "visual-arts-authority-licensing-regulation-llm-002",
+    "corpus": "visual_arts_authority_licensing_regulation",
+    "query_terms": "الثقافية، والالتزامات الثقافية إجراءاتها، وتنظيم تراخيص",
+    "top1": "architecture-design-authority-licensing-regulation-llm-002"
+   },
+   {
+    "record_id": "music-authority-statute-llm-007",
+    "corpus": "music_authority_statute",
+    "query_terms": "المداولات يراهم إيضاحات خبراتهم اجتماعاته؛ بسبعة",
+    "top1": "architecture-design-authority-statute-llm-007"
+   },
+   {
+    "record_id": "zatca-statute-llm-011",
+    "corpus": "zatca_statute",
+    "query_terms": "الديوان الختامي حسابها للمحاسبة ترفع ويزود",
+    "top1": "alahsa-development-authority-statute-llm-011"
+   },
+   {
+    "record_id": "visual-arts-authority-licensing-regulation-llm-013",
+    "corpus": "visual_arts_authority_licensing_regulation",
+    "query_terms": "وقواعد لإصدار للمرخص والمتطلبات تتوافر التنازل",
+    "top1": "architecture-design-authority-licensing-regulation-llm-013"
+   },
+   {
+    "record_id": "libraries-authority-licensing-regulation-llm-004",
+    "corpus": "libraries_authority_licensing_regulation",
+    "query_terms": "إلغاء تراخيص التراخيص الثقافية وقواعد تجديد",
+    "top1": "architecture-design-authority-licensing-regulation-llm-004"
+   },
+   {
+    "record_id": "regional-headquarters-tax-rules-llm-012",
+    "corpus": "regional_headquarters_tax_rules",
+    "query_terms": "ensure transactions previously comply conducted amendments",
+    "top1": null
+   },
+   {
+    "record_id": "state-property-authority-statute-llm-012",
+    "corpus": "state_property_authority_statute",
+    "query_terms": "المنقضية صعوبات لتحسين إنجازات حققته واجهها",
+    "top1": "digital-government-authority-statute-llm-014"
+   },
+   {
+    "record_id": "ngo-council-regulation-llm-023",
+    "corpus": "ngo_council_regulation",
+    "query_terms": "تناسب عددها النصف وآخر تساوت الحضور،",
+    "top1": "associations-ngo-regulation-llm-art-080"
+   },
+   {
+    "record_id": "music-authority-licensing-regulation-llm-021",
+    "corpus": "music_authority_licensing_regulation",
+    "query_terms": "قواعد لإقرارها، التراخيص تسعين وترفعها للوزارة",
+    "top1": "architecture-design-authority-licensing-regulation-llm-021"
+   }
+  ]
+ },
+ "A_committed_verbatim_span_result_for_comparison": {
+  "total_queries": 1423,
+  "top1_accuracy": 0.9389,
+  "top3_accuracy": 0.9761,
+  "top5_accuracy": 0.9881,
+  "mrr_at_5": 0.9586
+ },
+ "B_text_that_is_not_whole": {
+  "records_flagged": 540,
+  "share_of_corpus": 0.0212,
+  "worst_corpora": [
+   [
+    "vat",
+    56
+   ],
+   [
+    "income_tax",
+    33
+   ],
+   [
+    "official_communications_records_regulation",
+    26
+   ],
+   [
+    "bankruptcy_information_documents_regulation",
+    17
+   ],
+   [
+    "bankruptcy_trustees_experts_rules",
+    16
+   ],
+   [
+    "regional_headquarters_tax_rules",
+    15
+   ],
+   [
+    "capital_adequacy_rules",
+    14
+   ],
+   [
+    "customs",
+    12
+   ],
+   [
+    "antiquities_heritage",
+    9
+   ],
+   [
+    "gtpl",
+    9
+   ],
+   [
+    "labor",
+    9
+   ],
+   [
+    "public_prosecution",
+    9
+   ],
+   [
+    "abattoirs_meat_inspection_guide",
+    7
+   ],
+   [
+    "foreign_law_firms_licensing_regulation",
+    7
+   ],
+   [
+    "state_property_lease_law",
+    7
+   ],
+   [
+    "rehabilitation_and_damage_compensation_rules",
+    6
+   ],
+   [
+    "telecommunications",
+    6
+   ],
+   [
+    "antifouling_systems_regulation",
+    5
+   ],
+   [
+    "civil",
+    5
+   ],
+   [
+    "disability_social_programs_regulation",
+    5
+   ],
+   [
+    "electricity",
+    5
+   ],
+   [
+    "financial_institutions_resolution_law",
+    5
+   ],
+   [
+    "property_ownership_committees_rules",
+    5
+   ],
+   [
+    "social_insurance_legacy",
+    5
+   ],
+   [
+    "trustees_experts_fees_rules",
+    5
+   ]
+  ],
+  "examples": [
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-009",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 1873,
+    "ends_with": "ر 3.7 3.1 عجول 2.7 2.4 أغنام وماعز 2.4 2.1"
+   },
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-030",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 413,
+    "ends_with": "حة ومكافحة الآفات والقوارض والطيور بالمسلخ"
+   },
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-054",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 25524,
+    "ends_with": "لمصحوب بتجبنات وهزال إزالة الأجزاء المصابة"
+   },
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-056",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 597,
+    "ends_with": "لأبقار والجمال (-1.5) – 0 90-95 3-5 أسابيع"
+   },
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-060",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 553,
+    "ends_with": "م 9 10-12 12 ذبائح الأغنام والماعز 9 12 24"
+   },
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-067",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 4120,
+    "ends_with": "ة مبكرة ب: بيولوجي/ ك: كيميائي/ ف: فيزيائي"
+   },
+   {
+    "record_id": "abattoirs-meat-inspection-guide-llm-070",
+    "corpus": "abattoirs_meat_inspection_guide",
+    "chars": 332,
+    "ends_with": "تاريخ 15\u0001d4ه. الملحقات بطاقة الكشف البيطري"
+   },
+   {
+    "record_id": "agriculture-law-llm-art-005",
+    "corpus": "agriculture",
+    "chars": 319,
+    "ends_with": "ت المشار إليها في الفقرة (1) من هذه المادة"
+   },
+   {
+    "record_id": "airports-economic-regulation-llm-034",
+    "corpus": "airports_economic_regulation",
+    "chars": 10115,
+    "ends_with": "منظمة الطيران المدني الدولية (إيكاو) 8 643"
+   },
+   {
+    "record_id": "animal-health-guide-llm-082",
+    "corpus": "animal_health_guide",
+    "chars": 181,
+    "ends_with": " ملحق الإبلاغ عن الأمراض المعدية والوبائية"
+   },
+   {
+    "record_id": "animal-health-guide-llm-083",
+    "corpus": "animal_health_guide",
+    "chars": 4846,
+    "ends_with": "ضادات الميكروبات Antimicrobials resistance"
+   },
+   {
+    "record_id": "antifouling-systems-regulation-llm-005",
+    "corpus": "antifouling_systems_regulation",
+    "chars": 765,
+    "ends_with": "اف في (1 يناير 2023) أو بعد ذلك التاريخ. ("
+   },
+   {
+    "record_id": "antifouling-systems-regulation-llm-011",
+    "corpus": "antifouling_systems_regulation",
+    "chars": 695,
+    "ends_with": "ات الواردة في المادة (5) من هذه اللائحة. ("
+   },
+   {
+    "record_id": "antifouling-systems-regulation-llm-014",
+    "corpus": "antifouling_systems_regulation",
+    "chars": 256,
+    "ends_with": "ل على مقترح أولي بالنظم ومتطلبات تشغيله. ("
+   },
+   {
+    "record_id": "antifouling-systems-regulation-llm-016",
+    "corpus": "antifouling_systems_regulation",
+    "chars": 316,
+    "ends_with": "وإيقاع العقوبات وفقا لأحكام هذه اللائحة. ("
+   },
+   {
+    "record_id": "antifouling-systems-regulation-llm-017",
+    "corpus": "antifouling_systems_regulation",
+    "chars": 1100,
+    "ends_with": "ن استخدام مادة مبيد الآفات (السيبوترين). 6"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-003",
+    "corpus": "antiquities_heritage",
+    "chars": 712,
+    "ends_with": " التكاليف، وتعد تلك المحررات سندات تنفيذية"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-065",
+    "corpus": "antiquities_heritage",
+    "chars": 250,
+    "ends_with": "ة والخارجية، وذلك وفقا للائحة المنظمة لذلك"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-071",
+    "corpus": "antiquities_heritage",
+    "chars": 209,
+    "ends_with": "بصورة غير مشروعة على أثر من ممتلكات الدولة"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-072",
+    "corpus": "antiquities_heritage",
+    "chars": 340,
+    "ends_with": "أو طمسه.\n2- مسح أو نقب عن الآثار دون ترخيص"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-073",
+    "corpus": "antiquities_heritage",
+    "chars": 391,
+    "ends_with": " انتشل -عمدا- أثرا غارقا، أو نقله عن مكانه"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-074",
+    "corpus": "antiquities_heritage",
+    "chars": 465,
+    "ends_with": "أو إلصاق الإعلانات عليه، أو بافتعال الحريق"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-075",
+    "corpus": "antiquities_heritage",
+    "chars": 164,
+    "ends_with": " بترميم المباني الأثرية والتراثية وأحكامها"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-076",
+    "corpus": "antiquities_heritage",
+    "chars": 374,
+    "ends_with": "الآثار والتراث العمراني دون موافقة الوزارة"
+   },
+   {
+    "record_id": "antiquities-heritage-law-llm-art-077",
+    "corpus": "antiquities_heritage",
+    "chars": 744,
+    "ends_with": "ق الوزارة في مواقع الآثار والتراث العمراني"
+   },
+   {
+    "record_id": "antiquities-heritage-regulation-llm-045",
+    "corpus": "antiquities_heritage_regulation",
+    "chars": 440,
+    "ends_with": "اب الثالث: المسح الأثري والتنقيب عن الآثار"
+   },
+   {
+    "record_id": "antiquities-heritage-regulation-llm-049",
+    "corpus": "antiquities_heritage_regulation",
+    "chars": 299,
+    "ends_with": "مترتبة على المسح الأثري والتنقيب عن الآثار"
+   },
+   {
+    "record_id": "antiquities-heritage-regulation-llm-091",
+    "corpus": "antiquities_heritage_regulation",
+    "chars": 218,
+    "ends_with": " خدمات الزوار في المواقع الأثرية والتراثية"
+   },
+   {
+    "record_id": "antiquities-heritage-regulation-llm-103",
+    "corpus": "antiquities_heritage_regulation",
+    "chars": 744,
+    "ends_with": " خدمات الزوار في المواقع الأثرية والتراثية"
+   },
+   {
+    "record_id": "aquaculture-national-policies-guide-llm-007",
+    "corpus": "aquaculture_national_policies_guide",
+    "chars": 573,
+    "ends_with": "صيد. القسم الثاني: سياسات الاستزراع المائي"
+   },
+   {
+    "record_id": "aquaculture-national-policies-guide-llm-031",
+    "corpus": "aquaculture_national_policies_guide",
+    "chars": 20095,
+    "ends_with": "s 1 Aflotoxine MRL not fixed MRL not fixed"
+   },
+   {
+    "record_id": "architecture-design-authority-licensing-regulation-llm-007",
+    "corpus": "architecture_design_authority_licensing_regulation",
+    "chars": 788,
+    "ends_with": " الصادرة من الهيئة. القسم الثاني: التراخيص"
+   },
+   {
+    "record_id": "architecture-design-authority-licensing-regulation-llm-015",
+    "corpus": "architecture_design_authority_licensing_regulation",
+    "chars": 236,
+    "ends_with": "قم الترخيص. القسم الثالث: الرقابة والإشراف"
+   },
+   {
+    "record_id": "architecture-design-authority-licensing-regulation-llm-017",
+    "corpus": "architecture_design_authority_licensing_regulation",
+    "chars": 273,
+    "ends_with": " الالتزام بأحكام اللائحة أو قواعد التراخيص"
+   },
+   {
+    "record_id": "architecture-design-authority-licensing-regulation-llm-019",
+    "corpus": "architecture_design_authority_licensing_regulation",
+    "chars": 550,
+    "ends_with": "غير قابل للطعن. القسم الخامس: أحكام ختامية"
+   },
+   {
+    "record_id": "architecture-design-authority-statute-llm-005",
+    "corpus": "architecture_design_authority_statute",
+    "chars": 286,
+    "ends_with": "لمدة (ثلاث) سنوات قابلة للتجديد لمرة واحدة"
+   },
+   {
+    "record_id": "associations-ngo-law-llm-art-007",
+    "corpus": "associations_ngo",
+    "chars": 581,
+    "ends_with": "مارها ، وآليات الرقابة وقواعد الحجب والمنع"
+   },
+   {
+    "record_id": "ballast-water-regulation-llm-031",
+    "corpus": "ballast_water_regulation",
+    "chars": 852,
+    "ends_with": " \"تتمة اللائحة مرفقة نسخة PDF\" تنزيل الملف"
+   },
+   {
+    "record_id": "banking-control-regulation-llm-art-004",
+    "corpus": "banking_control",
+    "chars": 124,
+    "ends_with": "بنوك في أنواع معينة من الأعمال مع عملائها،"
+   },
+   {
+    "record_id": "banking-control-regulation-llm-art-026",
+    "corpus": "banking_control",
+    "chars": 214,
+    "ends_with": "المنسوبة إلى البنك واتخاذ اللازم لإزالتها،"
+   }
+  ]
+ },
+ "C_force_on_the_record": {
+  "tracks_with_records_carrying_no_legal_status": [],
+  "supersession_edges": 102,
+  "tracks_named_as_fully_repealed_by_the_graph": []
+ },
+ "D_records_that_cannot_be_cited": {},
+ "E_units_that_are_not_articles": {
+  "tracks_storing_non_article_units": 81,
+  "of_those_carrying_a_form_disclosure": 54,
+  "of_those_without_a_form_disclosure": [
+   {
+    "track_id": "banking_control_regulation",
+    "labels": [
+     "أولا - 1",
+     "أولا - 2",
+     "أولا - 3",
+     "أولا - 4",
+     "أولا - 5",
+     "أولا - 6"
+    ],
+    "records": 31
+   },
+   {
+    "track_id": "bankruptcy_fees",
+    "labels": [
+     "الجدول رقم(١): شرائح الدائنين",
+     "الجدول رقم (٢): شرائح الديون",
+     "جدول رقم (٣): شرائح الأصول"
+    ],
+    "records": 3
+   },
+   {
+    "track_id": "cybersecurity_authority",
+    "labels": [
+     "البند أولاً",
+     "البند ثانياً",
+     "البند ثالثاً",
+     "البند رابعاً",
+     "البند خامساً",
+     "البند سادساً"
+    ],
+    "records": 7
+   },
+   {
+    "track_id": "elitigation_guide",
+    "labels": [
+     "مقدمة",
+     "أولاً: أحكام عامة",
+     "ثانياً: تحديد المواعيد وتبليغها",
+     "ثالثاً: إجراءات جلسات التقاضي الإلكتروني، ونظامها",
+     "رابعاً: المداولة وإصدار الأحكام"
+    ],
+    "records": 5
+   },
+   {
+    "track_id": "enforcement",
+    "labels": [
+     "١/٢",
+     "٢/٢",
+     "٣/٢",
+     "١/٣",
+     "٢/٣",
+     "٣/٣"
+    ],
+    "records": 273
+   },
+   {
+    "track_id": "environmental_emergency_response",
+    "labels": [
+     "الجدول (1) - المخالفات والعقوبات"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "environmental_inspection_audit",
+    "labels": [
+     "الجدول رقم (١)",
+     "الملحق رقم (١)"
+    ],
+    "records": 2
+   },
+   {
+    "track_id": "environmental_noise",
+    "labels": [
+     "الجدول (5) - المخالفات والعقوبات",
+     "الملحق (1) - اشتراطات رصد مستويات الضوضاء"
+    ],
+    "records": 2
+   },
+   {
+    "track_id": "environmental_protected_areas",
+    "labels": [
+     "الجدول (1) - المخالفات والعقوبات"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "environmental_service_providers",
+    "labels": [
+     "الجدول (١)"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "environmental_violations_penalties",
+    "labels": [
+     "الملحق (١)",
+     "الملحق (٢)"
+    ],
+    "records": 2
+   },
+   {
+    "track_id": "environmental_wildlife_hunting",
+    "labels": [
+     "الجدول (١)",
+     "الجدول (٢)",
+     "الملحق (١)"
+    ],
+    "records": 3
+   },
+   {
+    "track_id": "frequency_spectrum_regulation",
+    "labels": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "records": 15
+   },
+   {
+    "track_id": "hospitality_facility",
+    "labels": [
+     "جدول المقابل المالي"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "hospitality_mgmt",
+    "labels": [
+     "جدول المقابل المالي"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "judicial_training_center",
+    "labels": [
+     "أولاً",
+     "ثانياً",
+     "ثالثاً",
+     "رابعاً",
+     "خامساً",
+     "سادساً"
+    ],
+    "records": 17
+   },
+   {
+    "track_id": "judiciary_bog",
+    "labels": [
+     "أولاً: فيما يتصل بالمجلس الأعلى للقضاء",
+     "ثانياً: فيما يتصل بالمحكمة العليا",
+     "ثالثاً:",
+     "رابعاً: فيما يتصل بمحاكم الاستئناف",
+     "خامساً: فيما يتصل بمحاكم الأحوال الشخصية",
+     "سادساً: فيما يتصل بالمحاكم الجزائية"
+    ],
+    "records": 15
+   },
+   {
+    "track_id": "landlord_tenant_relationship_regulation",
+    "labels": [
+     "أولاً",
+     "ثانياً",
+     "ثالثاً",
+     "رابعاً",
+     "خامساً",
+     "سادساً"
+    ],
+    "records": 10
+   },
+   {
+    "track_id": "lessor_repossession",
+    "labels": [
+     "تمهيد",
+     "أولاً",
+     "ثانياً",
+     "ثالثاً",
+     "رابعاً",
+     "خامساً"
+    ],
+    "records": 7
+   },
+   {
+    "track_id": "sdaia_organizational_arrangements",
+    "labels": [
+     "البند أولاً",
+     "البند ثانياً",
+     "البند ثالثاً",
+     "البند رابعاً",
+     "البند خامساً",
+     "البند سادساً"
+    ],
+    "records": 16
+   },
+   {
+    "track_id": "sharia_procedure",
+    "labels": [
+     "المادية الحادية والستون",
+     "١/١",
+     "١/٣",
+     "٢/٣",
+     "٣/٣",
+     "٤/٣"
+    ],
+    "records": 638
+   },
+   {
+    "track_id": "state_funded_lawyer",
+    "labels": [
+     "أولاً",
+     "ثانياً",
+     "ثالثاً",
+     "رابعاً",
+     "خامساً",
+     "سادساً"
+    ],
+    "records": 10
+   },
+   {
+    "track_id": "sulook",
+    "labels": [
+     "القاعدة الأولى:",
+     "القاعدة الثانية:",
+     "القاعدة الثالثة:",
+     "القاعدة الرابعة:",
+     "القاعدة الخامسة:",
+     "القاعدة السادسة:"
+    ],
+    "records": 47
+   },
+   {
+    "track_id": "tawtheeq",
+    "labels": [
+     "جدول المقابل المالي"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "tourism_travel_services",
+    "labels": [
+     "جدول المقابل المالي"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "trade_names_regulation",
+    "labels": [
+     "مرفق (١)"
+    ],
+    "records": 1
+   },
+   {
+    "track_id": "weapons_ammunition_regulation",
+    "labels": [
+     "لائحة المادة الأولى",
+     "لائحة المادة الخامسة",
+     "لائحة المادة الثامنة",
+     "لائحة المادة التاسعة",
+     "لائحة المادة العاشرة",
+     "لائحة المادة الثانية عشرة"
+    ],
+    "records": 19
+   }
+  ]
+ }
+}

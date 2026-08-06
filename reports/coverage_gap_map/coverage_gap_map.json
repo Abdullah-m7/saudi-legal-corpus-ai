@@ -968,5 +968,59 @@
   "repair": "8 articles across 7 tracks, restored from each track's own cited gazette page. The repair rewrites an article only when the stored text is a strict PREFIX of the source's, which is what makes it incapable of substituting different words for words already on file; 93 other disagreements are reported untouched. Fragments: 11 -> 2.",
   "what_was_refused": "Extending the same preposition test to ARTICLE headings — «الاشتراطات الواردة في مادة (8) أو وحدة تجميد» is a citation whose tail is «أو», which the existing tail rule cannot see — was written, measured, and REJECTED. On the two records it was meant to repair it made both worse: «اتفاقية ربط أنظمة المدفوعات الخليجية» article 13 swallowed article 14 whole, and the GCC healthcare-waste article 7 came out shorter than it is stored. Its interaction with the longest-increasing-subsequence reconstruction is not understood well enough to ship, and a segmenter change that silently merges two articles is worse than the fragment it was fixing. Those two records stay as they are and are named in the audit report.",
   "and_443_validators_disagreed_with_the_repair": "Every generated track validator carries its own copy of the chapter check, and all 443 of them flagged the restored citations as leaked headings — the repair was refused by the corpus's own tests on text the gazette itself prints. Each was made preposition-aware with the same rule, expressed as separate fixed-width lookbehinds because Python cannot alternate widths inside one. The build template is one of those files, so future tracks inherit it."
+ },
+ "a_provision_stored_twice_means_a_provision_not_stored_at_all": {
+  "shape": "Nine pairs of articles in one instrument carry identical text. Most are the source repeating itself — a fact about the gazette, not a defect. But where BOTH members carry the same article LABEL, the instrument's own numbering says they are one provision, and a consecutive pair means the slot that should hold a different provision holds a copy instead.",
+  "why_nothing_catches_it": "Every count-based check passes. The article total is right, the numbering has no hole, all 743 track validators are green — and a question about the duplicated slot returns a confident answer belonging to a different article. For a corpus meant to be read by a model, that is the worst possible shape for a defect.",
+  "the_telecom_case": "«اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات» stored the critical-infrastructure confidentiality provision under BOTH article 45 and article 46, labelled «المادة الخامسة والأربعون» twice. The ministry's own published PDF settles it: that text is article FORTY-SIX. Article forty-five is a different provision, on sharing infrastructure sites between operators, and the corpus did not hold it. The regulation confirms the two are distinct in its own words — article fifty cites «الطلبات الواردة في المادتين (45) الخامسة والأربعين و(46) السادسة والأربعين».",
+  "what_was_done": "The false record was removed, article 45 declared in missing_article_numbers, and the gap disclosed on the track. 108 -> 107 records, with the count literals in the generator and validator updated in context — the generator's claim that the SOURCES carry 108 articles is still true and was left alone.",
+  "why_the_recovered_text_was_not_written_back": "Article 45 was located in full in the ministry PDF. That file's text layer carries the lam-alef transposition this corpus has already verified as originating in official PDFs («االتصاالت» for «الاتصالات»), and on top of it the extractor reorders parenthesised numbers («خالل ( )30ثالثين») and detaches commas from the words they follow. Reading it requires three judgment calls per sentence, and a reading arrived at by judgment is not the official text however plausible. The provision is set aside with its source named and its opening quoted verbatim-as-encoded, for a human to finish.",
+  "and_a_removal_the_corpus_refused": "The same script removed one of «الدعاوى التجارية استجواب خصمه» in sharia_procedure/regulation — same text, same label «٣/١٠٤» — and that track's own validator rejected it: it asserts an expected set of five duplicate labels, «٣/١٠٤» among them, because the official MOJ PDF carries the provision twice and two genuine portal redundancies had already been removed to match it. The removal was reverted. An identical-text pair is evidence of a question, never of an answer: the same shape meant a lost provision in one track and a faithful transcription in another, and only the official source could tell them apart.",
+  "chapter_coverage_check_generalised": "The telecom validator asserted that chapter_structure gaplessly covers 1..N where N is the RECORD COUNT. Once a track legitimately declares a missing article that is wrong — the chapters describe the instrument, not the corpus's holdings. The check now targets the source's own range: what is held, plus what is declared missing."
+ },
+ "quality_audit_findings_after_repair": {
+  "structure_leaked_into_a_provision": 0,
+  "declared_numbering_gaps_contradicted_by_records": 0,
+  "same_text_twice_in_one_instrument": 8,
+  "text_complete_asserted_over_a_fragment": 2,
+  "disclosures_naming_an_article_that_does_not_exist": 0,
+  "note": "From 344 / 2 / 9 / 11 / 1349 at the first run. Three of the five checks were themselves wrong and were fixed before publication; the two fragments that remain are named, and the eight repeated texts are the source repeating itself."
+ },
+ "a_label_that_contradicts_its_own_position": {
+  "question": "`number_label_ar` is the string a citation is built from. Does each record's label name the article that record actually IS? No check had ever asked.",
+  "why_the_raw_count_is_useless": "972 records disagree corpus-wide, and almost all legitimately: a track holding two instruments runs one key sequence while each document keeps its own «المادة الأولى»; annex tables are «الجدول (١)»; «نظام مراقبة البنوك» is drafted in «ثانيا - 1» bands. The count measures the corpus's variety, not its errors — reporting it as a defect total would have been a 972-finding false alarm.",
+  "the_signal": "A track whose labels track its keys EVERYWHERE ELSE and disagree on one or two records. There the handful is wrong and the track's own neighbours prove it. Four tracks look like that, out of 743.",
+  "repaired": {
+   "adillah_art_132": "«المادة الثانية والثلاثون» → «المادة الثانية والثلاثون بعد المائة». Sits between «الحادية والثلاثون بعد المائة» and «الثالثة والثلاثون بعد المائة»; the label had lost its «بعد المائة» and so named an article a hundred places away.",
+   "telecommunications_regulation_art_046": "«المادة الخامسة والأربعون» → «المادة السادسة والأربعون». Left over from the duplicated-record repair — the record always held article 46's text, headed «المادة السادسة والأربعون» in the ministry's PDF, but carried its neighbour's label."
+  },
+  "refused_by_the_corpus_itself": "arbitration_art_031 was corrected the same way and REVERTED: that track's validator carries EXPECTED_ANOMALIES = {31: {'official_label_ar': 'المادة الحادية والعشرون'}}. The misprint is the OFFICIAL text's own, recorded deliberately and named «official_label_ar». The corpus was transcribing faithfully.",
+  "left_open": "patent_art_005 / patent_art_006 carry each other's labels. Two readings fit the same evidence — the labels were swapped, or the texts were — and they differ in what the corpus would then be saying. laws.boe.gov.sa resets, its Wayback snapshots now return 429, saip.gov.sa's regulations index 404s, and no other track cites either article with disambiguating context. Disclosed on the track, unrepaired.",
+  "the_standing_lesson": "Twice in one sitting a repair was refused by an adjudication the corpus had already made and encoded in its own tests — the arbitration label, and the duplicate «٣/١٠٤» in sharia_procedure. Both times the defect and the faithful transcription had exactly the same signature. A pattern locates candidates; only the official source or a recorded adjudication says which way each one falls.",
+  "now_a_standing_check": "Folded into audit_corpus_text_quality.py as check 5, with the agree-floor and anomaly-ceiling that make it report errors instead of variety."
+ },
+ "llm_readiness_audit": {
+  "the_hypothesis_it_set_out_to_test": "The committed retrieval eval scores ~94% top-1, and every one of its queries is a span lifted verbatim out of the record it is meant to find. The suspicion: that flatters a token-overlap scorer, because a person does not paste the article back at the index — they type a handful of the words they remember, in their own order.",
+  "the_test": "The same records re-scored with the SAME scorer under queries built from each record's own distinctive terms: common words dropped, the rest shuffled. 1,200 records, seeded so the number is reproducible. Nothing invented — every token comes from the stored article.",
+  "the_result_refutes_it": {
+   "term_form": {
+    "top_1": 0.935,
+    "top_3": 0.9742,
+    "top_5": 0.9875,
+    "mrr_at_5": 0.956
+   },
+   "committed_verbatim": {
+    "top_1": 0.9389,
+    "top_3": 0.9761,
+    "top_5": 0.9881,
+    "mrr_at_5": 0.9586
+   },
+   "reading": "Word order and sentence form contribute essentially nothing. The committed number is NOT an artifact of verbatim phrasing, and the suspicion was wrong."
+  },
+  "what_it_does_not_establish": "The query vocabulary is still the statute's own. This measures robustness to phrasing and word order, not to a user who asks in different words than the drafter used. Measuring that needs paraphrases, and a paraphrase of a legal provision written here would be invented text — so it stays unmeasured rather than guessed at.",
+  "finding_E_units_that_are_not_articles": "81 tracks store at least one unit that is not an article — «الجدول (١)», «الملحق رقم (١)», «البند أولاً», «القاعدة الأولى:», «مقدمة», «١/٢». 54 disclose it. 27 do not, and in those a model citing a record would say «المادة» for something the source never called one.",
+  "check_E_was_wrong_twice_before_it_was_right": "The first version split `retrieval_title_ar` on ' - ' and took the last segment — which for a track carrying article titles («نظام الشركات - المادة 1 - التعريفات») returns the TITLE. It put 39 tracks on the undisclosed list, «نظام الشركات» and «نظام الخدمة المدنية» among them, neither of which stores anything but articles. Rewritten to read the artifacts' own `number_label_ar`, it still counted «مادة (6)» (no definite article), «الخامسة والسبعون» (ordinal alone) and «(المادة العاشرة مكرر)» (parenthesised) as non-articles. Only after all three forms were admitted does the list contain what it claims to.",
+  "finding_B": "540 records (2.12%) end without sentence-final punctuation — a wider net than the text-quality audit's fragment check, which additionally required `text_complete` and a mid-clause ending. Not all are defects; recorded for triage.",
+  "finding_D": "Every record in the index is citable: instrument name, unit label, article path and number are all present corpus-wide."
  }
 }

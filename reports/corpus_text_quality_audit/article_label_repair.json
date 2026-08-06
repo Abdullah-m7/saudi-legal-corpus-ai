@@ -1,0 +1,24 @@
+{
+ "generated_note": "Repairs records whose printed label contradicts their own position — the string a citation is built from. Corpus-wide 972 records disagree and almost all do so legitimately (multi-document tracks, annex tables, band-numbered instruments), so the count measures variety rather than error. The signal is a track whose labels track its keys everywhere else and disagree on one or two records; there the track's own neighbours prove which is wrong. Four tracks look like that; three are repaired and the fourth is disclosed unrepaired because two readings fit the same evidence and no official source was reachable to choose between them.",
+ "applied": false,
+ "labels_corrected": [
+  {
+   "track": "evidence",
+   "key": "adillah_art_132",
+   "from": "المادة الثانية والثلاثون",
+   "to": "المادة الثانية والثلاثون بعد المائة",
+   "evidence": "السجلان المجاوران «المادة الحادية والثلاثون بعد المائة» و«المادة الثالثة والثلاثون بعد المائة»؛ سقطت «بعد المائة» من العنوان فسمّى مادةً تبعد عنه مائة موضع.",
+   "applied_on_an_earlier_run": true
+  },
+  {
+   "track": "telecommunications_regulation",
+   "key": "telecommunications_regulation_art_046",
+   "from": "المادة الخامسة والأربعون",
+   "to": "المادة السادسة والأربعون",
+   "evidence": "ملف وزارة الاتصالات وتقنية المعلومات يعنون هذا النصّ «المادة السادسة والأربعون»؛ وكان السجل يحمل عنوان جاره. أثرٌ متبقٍّ من إصلاح السجل المكرَّر — انظر repair_duplicated_article_records.py.",
+   "applied_on_an_earlier_run": true
+  }
+ ],
+ "skipped": [],
+ "left_open_and_disclosed": "patent"
+}
