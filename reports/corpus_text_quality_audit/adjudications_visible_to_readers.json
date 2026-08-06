@@ -1,0 +1,407 @@
+{
+ "generated_note": "Asks, for every deliberate judgment a track validator encodes about its source — a named anomaly, a preserved typo, an article read off a page image — whether a reader of the CORPUS can see it, or only a reader of the TESTS. Three times in one sitting a repair was proposed for something the corpus had already decided and encoded in a validator; each time the validator refused it and named the reason, and each time nothing in the artifact would have told a reader. The matcher for 'is it disclosed' is deliberately generous, because the finding worth having is a track that discloses NOTHING. Read-only.",
+ "validators_encoding_a_judgment": 56,
+ "of_those_disclosing_it_to_readers": 23,
+ "of_those_disclosing_nothing": 33,
+ "findings": [
+  {
+   "track": "aawan_regulation",
+   "artifacts": [
+    "sources/aawan/regulation/official_source/aawan_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"aawan_art_009\", \"aawan_art_012\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "alimony_fund_regulation",
+   "artifacts": [
+    "sources/alimony_fund/regulation/official_source/alimony_fund_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"alimony_fund_art_%03d\" % n for n in (1, 4, 5, 7, 8, 9, 10, 11, 12, 15)}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "arbitration_law",
+   "artifacts": [
+    "sources/arbitration/law/official_source/arbitration_law_official_source.json"
+   ],
+   "judgments": {
+    "named_anomaly": [
+     "{31: {\"official_label_ar\": \"المادة الحادية والعشرون\", \"label_face_value\": 21}}"
+    ],
+    "preserved_source_defect": [
+     "[1b] documented numbering anomaly matches exactly"
+    ],
+    "visually_adjudicated": [
+     "{\"arbitration_art_042\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "arbitration_regulation",
+   "artifacts": [
+    "sources/arbitration/regulation/official_source/arbitration_regulation_official_source.json"
+   ],
+   "judgments": {
+    "preserved_source_defect": [
+     "[1b] documented numbering anomaly matches exactly"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "bankruptcy_law",
+   "artifacts": [
+    "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"bankruptcy_art_%03d\" % n for n in (39, 94, 145, 158, 196, 230)}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "commercial_courts_law",
+   "artifacts": [
+    "sources/commercial_courts/law/official_source/commercial_courts_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"commercial_courts_art_028\", \"commercial_courts_art_062\","
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "commercial_courts_regulation",
+   "artifacts": [
+    "sources/commercial_courts/regulation/official_source/commercial_courts_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"commercial_courts_reg_art_%03d\" % n for n in (3, 41, 55, 90, 144, 155, 255, 267)}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "enforcement_law",
+   "artifacts": [
+    "sources/enforcement/law/official_source/enforcement_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"tnf_law_art_098\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "enforcement_providers_regulation",
+   "artifacts": [
+    "sources/enforcement_providers/regulation/official_source/enforcement_providers_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"enforcement_providers_art_%03d\" % n for n in range(1, N + 1)}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "foreign_ownership_law",
+   "artifacts": [
+    "sources/foreign_ownership/law/official_source/foreign_ownership_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"foreign_ownership_art_002\", \"foreign_ownership_art_007\", \"foreign_ownership_art_012\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "judgment_objection_methods_regulation",
+   "artifacts": [
+    "sources/judgment_objection_methods/regulation/official_source/judgment_objection_methods_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"judgment_objection_methods_art_%03d\" % n for n in"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "judicial_costs_law",
+   "artifacts": [
+    "sources/judicial_costs/law/official_source/judicial_costs_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"judicial_costs_art_012\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "judicial_costs_regulation",
+   "artifacts": [
+    "sources/judicial_costs/regulation/official_source/judicial_costs_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"judicial_costs_reg_art_002\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "judicial_documents_regulation",
+   "artifacts": [
+    "sources/judicial_documents/regulation/official_source/judicial_documents_regulation_official_source.json"
+   ],
+   "judgments": {
+    "preserved_source_defect": [
+     "[2c] documented label-prefix anomaly (arts 13-19 missing المادة prefix)"
+    ],
+    "visually_adjudicated": [
+     "{\"judicial_documents_art_009\", \"judicial_documents_art_015\","
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "judicial_inspection_regulation",
+   "artifacts": [
+    "sources/judicial_inspection/regulation/official_source/judicial_inspection_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"tafteesh_art_006\", \"tafteesh_art_010\", \"tafteesh_art_012\", \"tafteesh_art_015\", \"tafteesh_art_019\", \"tafteesh_art_021\", \"tafteesh_art_024\", \"tafteesh_art_025\", \"tafteesh_art_027\", \"tafteesh_art_038\","
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "judiciary_law",
+   "artifacts": [
+    "sources/judiciary/law/official_source/judiciary_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"qada_law_art_009\", \"qada_law_art_071\", \"qada_law_art_085\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "juveniles_law",
+   "artifacts": [
+    "sources/juveniles/law/official_source/juveniles_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"juveniles_art_005\", \"juveniles_art_020\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "juveniles_regulation",
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"juveniles_reg_art_004\"}"
+    ]
+   },
+   "problem": "no artifact found for this validator's track id"
+  },
+  {
+   "track": "law_practice_law",
+   "artifacts": [
+    "sources/law_practice/law/official_source/law_practice_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"law_practice_art_041\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "law_practice_regulation",
+   "artifacts": [
+    "sources/law_practice/regulation/official_source/law_practice_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"law_practice_reg_art_001\", \"law_practice_reg_art_003\","
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "marriage_contract_hearing_regulation",
+   "artifacts": [
+    "sources/marriage_contract_hearing/regulation/official_source/marriage_contract_hearing_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"marriage_contract_hearing_art_005\", \"marriage_contract_hearing_art_010\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "marriage_non_saudi_regulation",
+   "artifacts": [
+    "sources/marriage_non_saudi/regulation/official_source/marriage_non_saudi_regulation_official_source.json"
+   ],
+   "judgments": {
+    "preserved_source_defect": [
+     "[2b] documented source anomaly in article 4 preserved verbatim"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "medical_reports_regulation",
+   "artifacts": [
+    "sources/medical_reports/regulation/official_source/medical_reports_regulation_official_source.json"
+   ],
+   "judgments": {
+    "preserved_source_defect": [
+     "[2b] documented source anomaly in article 2 preserved verbatim"
+    ],
+    "visually_adjudicated": [
+     "{\"medical_reports_art_%03d\" % n for n in (2, 6, 12, 13)}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "mosalaha_center_regulation",
+   "artifacts": [
+    "sources/mosalaha_center/regulation/official_source/mosalaha_center_regulation_official_source.json"
+   ],
+   "judgments": {
+    "preserved_source_defect": [
+     "[2b] documented source anomaly in article 1 item 2 preserved verbatim"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "municipal_realestate_regulation",
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"municipal_realestate_reg_art_006\", \"municipal_realestate_reg_art_013\","
+    ]
+   },
+   "problem": "no artifact found for this validator's track id"
+  },
+  {
+   "track": "muslaha_regulation",
+   "artifacts": [
+    "sources/muslaha/regulation/official_source/muslaha_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"muslaha_art_001\", \"muslaha_art_026\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "real_estate_expropriation_law",
+   "artifacts": [
+    "sources/real_estate_expropriation/law/official_source/real_estate_expropriation_law_official_source.json"
+   ],
+   "judgments": {
+    "preserved_source_defect": [
+     "[2b] documented source anomaly in art_039's ordinal heading preserved verbatim"
+    ],
+    "visually_adjudicated": [
+     "{\"real_estate_expropriation_art_022\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "real_estate_mortgage_law",
+   "artifacts": [
+    "sources/real_estate_mortgage/law/official_source/real_estate_mortgage_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"real_estate_mortgage_art_011\", \"real_estate_mortgage_art_014\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "real_estate_registration_regulation",
+   "artifacts": [
+    "sources/real_estate_registration/regulation/official_source/real_estate_registration_regulation_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"real_estate_registration_reg_art_%03d\" % n for n in (1, 6, 13, 42, 49)}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "real_estate_units_regulation",
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"real_estate_units_reg_art_027\"}"
+    ]
+   },
+   "problem": "no artifact found for this validator's track id"
+  },
+  {
+   "track": "terrorism_law",
+   "artifacts": [
+    "sources/terrorism/law/official_source/terrorism_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"terrorism_art_001\", \"terrorism_art_003\", \"terrorism_art_010\","
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  },
+  {
+   "track": "terrorism_regulation",
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"terrorism_reg_art_001\", \"terrorism_reg_art_004\"}"
+    ]
+   },
+   "problem": "no artifact found for this validator's track id"
+  },
+  {
+   "track": "whistleblower_law",
+   "artifacts": [
+    "sources/whistleblower/law/official_source/whistleblower_law_official_source.json"
+   ],
+   "judgments": {
+    "visually_adjudicated": [
+     "{\"whistleblower_art_026\"}"
+    ]
+   },
+   "problem": "the validator encodes a deliberate judgment about this track's source, and nothing in the artifact tells a reader about it"
+  }
+ ]
+}

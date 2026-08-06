@@ -265,6 +265,10 @@
     {
       "article_key": "judiciary_bog_units_that_are_not_articles",
       "description": "**ليست كل سجلات هذا المسار مواد.** منها **15 سجلاً من 15** وحداتٌ من نوع آخر — بنود — وهذا ما تسمّيه الأداة نفسها، مثل: «أولاً: فيما يتصل بالمجلس الأعلى للقضاء»، «ثانياً: فيما يتصل بالمحكمة العليا»، «ثالثاً:»، «رابعاً: فيما يتصل بمحاكم الاستئناف».\n\n**والحقول في هذا المستودع موحَّدة عمداً** (`article_number` و`article_key` و`number_label_ar`) لأن مخططاً واحداً عبر مئات المسارات أنفعُ من شكلٍ مطابقٍ لكل مسار على حدة؛ **غير أن هذه المقايضة لا تصحّ إلا بالإفصاح**. فقيمة `article_number` في هذه السجلات **موضعية** للترتيب والفهرسة، **ولا يُدَّعى بها أن الوحدة «مادة»**.\n\n**فلا يصح الاستشهاد بسجلٍ منها بوصفه «المادة (كذا)» من هذه الأداة**؛ الاستشهاد الصحيح **باللفظ المنشور** كما هو محفوظ في `number_label_ar`."
+    },
+    {
+      "article_key": "judiciary_bog_mechanism_articles_adjudicated_by_visual_reading",
+      "description": "**14 سجلاً من أصل 15 سجلاً في هذا المسار قوبلت بصرياً**: قرأها إنسانٌ من صورة الصفحة وطابقها بعينه، لأن قناة النصّ الآلية (OCR أو طبقة نصّ الـPDF) لم تكن متاحة أو لم تكن موثوقة لتلك المواد بعينها.\n\n**وهذا ليس تشكيكاً في النصّ بل إفصاحٌ عن سنده**: بقية سجلات المسار مؤكَّدة آلياً مقابل المصدر، وهذه مؤكَّدة بقراءةٍ بشرية. **ومن أراد الاعتماد على واحدةٍ منها في أمرٍ يُبنى عليه فليقابلها بالمصدر الرسمي بنفسه.** والسجلات هي: `judiciary_bog_mechanism_art_001`، `judiciary_bog_mechanism_art_002`، `judiciary_bog_mechanism_art_003`، `judiciary_bog_mechanism_art_004`، `judiciary_bog_mechanism_art_005`، `judiciary_bog_mechanism_art_006`، `judiciary_bog_mechanism_art_007`، `judiciary_bog_mechanism_art_008`، `judiciary_bog_mechanism_art_010`، `judiciary_bog_mechanism_art_011`، `judiciary_bog_mechanism_art_012`، `judiciary_bog_mechanism_art_013` … وبقيتها في `scripts/validate_*_track.py`."
     }
   ]
 }
