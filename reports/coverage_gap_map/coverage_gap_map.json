@@ -1045,5 +1045,17 @@
   "what_was_written": "49 tracks now carry one or both disclosures, generated from the validator's own declaration — no judgment is made by the applier. The visual-reading disclosure names the count, the share of the track, and the record keys, and says plainly that the rest of the track is machine-verified while these are human-verified. The preserved-defect disclosure quotes the validator's own comment as the evidence it is.",
   "a_measurement_error_caught_before_it_was_reported": "The first count came to 1,194 visually-adjudicated articles. «enforcement_providers_regulation» declares its set as range(1, N+1), and the stub N of 999 leaked straight into the total. Reading each validator's real N gives 205. A wrong number in a report is exactly the defect this whole audit exists to remove.",
   "the_standing_lesson": "An adjudication recorded only in a test is invisible to whoever reads the corpus — and a corpus meant to be read by a model has no one to run its tests."
+ },
+ "triaging_the_fifty_currency_warnings": {
+  "the_flag": "The freshness manifest flags 50 tracks with `published_amendment_after_edition_on_file`: the gazette carried an amendment notice naming this instrument, dated after the edition the corpus holds. The flag is deliberately weak — a notice is not the amended text, and nothing may be concluded from its existence alone.",
+  "why_weak_is_useless_to_a_reader": "Fifty warnings that cannot be told apart are read as fifty problems, or as none. Triaged against what each track says about ITSELF: does its own amendment record reach past the newest notice?",
+  "result": {
+   "already_consolidated_through_the_newest_notice": 11,
+   "cannot_be_shown_to_incorporate_it": 37,
+   "unexaminable": 2
+  },
+  "what_the_37_does_and_does_not_mean": "NOT that 37 tracks are stale — that the corpus cannot show they are not. Each is a lead to check against the official source, not a verdict. 28 of the 37 record no amendment date anywhere: not in `amendment_history`, not in `consolidated_amended_law`, not in a sentence of the methodology note about amendments.",
+  "a_schema_observation_worth_more_than_the_list": "10 of the 37 set `consolidated_amended_law: true` with an EMPTY `amendment_history` — «capital_market_law», «aml_law», «income_tax_law», «sama_law», «electronic_transactions_law» among them. Consolidated through WHAT? An undated consolidation claim cannot be checked, cannot expire, and cannot tell a reader how current the text is. The field should carry the decree or date it is consolidated through.",
+  "the_reach_test_took_three_scopes_to_get_right": "Scanning the whole artifact picked up publication dates, verification dates and dates inside source URLs, and declared 48 of 50 consolidated — flattery, not measurement. Restricting to amendment FIELDS swung too far the other way: «نظام الاستثمار التعديني» records its coverage in prose («Royal Decree M/12 (8/1/1442)») and nowhere else, and was reported behind on the strength of a field it does not use. The scope that holds is the amendment fields plus the note's sentences ABOUT amendments — a date in such a sentence is a claim about coverage; a date elsewhere is when the document was published."
  }
 }
