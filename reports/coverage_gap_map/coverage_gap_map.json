@@ -1022,5 +1022,20 @@
   "check_E_was_wrong_twice_before_it_was_right": "The first version split `retrieval_title_ar` on ' - ' and took the last segment — which for a track carrying article titles («نظام الشركات - المادة 1 - التعريفات») returns the TITLE. It put 39 tracks on the undisclosed list, «نظام الشركات» and «نظام الخدمة المدنية» among them, neither of which stores anything but articles. Rewritten to read the artifacts' own `number_label_ar`, it still counted «مادة (6)» (no definite article), «الخامسة والسبعون» (ordinal alone) and «(المادة العاشرة مكرر)» (parenthesised) as non-articles. Only after all three forms were admitted does the list contain what it claims to.",
   "finding_B": "540 records (2.12%) end without sentence-final punctuation — a wider net than the text-quality audit's fragment check, which additionally required `text_complete` and a mid-clause ending. Not all are defects; recorded for triage.",
   "finding_D": "Every record in the index is citable: instrument name, unit label, article path and number are all present corpus-wide."
+ },
+ "saying_so_when_a_record_is_not_an_article": {
+  "the_trade": "The corpus stores every unit of every instrument in fields named for articles — article_number, article_key, number_label_ar — because one schema across 743 tracks is worth more than a faithful shape per track. That is deliberate, and it is only honest while every track whose units are NOT articles says so: a reader who does not know cites «المادة (3)» for what the source calls «الجدول (3)» or «البند ثالثاً».",
+  "what_was_missing": "Gazette-built tracks write that disclosure at build time. The readiness audit asked the question of the whole corpus: 81 artifacts hold at least one non-article unit, 54 disclosed it, 28 did not — older hand-built tracks predating the convention.",
+  "what_the_units_are": {
+   "جداول وملاحق": "«الجدول (١)», «الملحق رقم (١)», «مرفق (١)», «جدول المقابل المالي» — 12 artifacts",
+   "بنود": "«أولاً», «البند ثانياً», «تمهيد», «مقدمة» — 9 artifacts",
+   "ترقيم خاص": "«١/٢», «أولا - 1», «1» — an implementing regulation numbering its provisions against the law article each implements — 3 artifacts",
+   "قواعد / لوائح مواد": "«القاعدة الأولى:», «لائحة المادة الأولى» — 2 artifacts",
+   "خطأ إملائي في المصدر": "1 artifact — see below"
+  },
+  "each_disclosure_is_generated_from_the_data": "Every one names the exact labels that artifact stores and how many of its records carry them. Nothing is generalised from one track to another, and nothing is asserted that the artifact does not already contain.",
+  "counted_per_artifact_not_per_track": "«sharia_procedure» holds a law whose single non-article label is a preserved source typo and an implementing regulation numbering 637 provisions «١/١». Summing them would have written «638 of 880 records are not articles» onto the LAW's artifact, which is false about that document.",
+  "the_one_that_needed_its_own_text": "«المادية الحادية والستون» in the Law of Sharia Procedure is «المادة» misspelt in the official MOJ PDF, preserved deliberately — the track's validator asserts the label verbatim, with the comment «art 61 source typo kept verbatim». The generic text would have told a reader that record is not an article, which is false. What IS worth disclosing is different and was not disclosed anywhere: a reader searching that track for «المادة الحادية والستون» will never match the stored label.",
+  "this_is_the_third_preserved_source_defect_found_this_way": "After the arbitration label anomaly and the sharia duplicate «٣/١٠٤». All three were asserted in a validator — the corpus knew — but only the first two were visible to a reader. The pattern worth keeping: an adjudication recorded ONLY in a test is invisible to whoever reads the corpus."
  }
 }
