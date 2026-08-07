@@ -10,7 +10,7 @@
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
   "published_amendment_methodology": "published_amendment_after_edition_on_file=true where scripts/audit_corpus_currency.py matched a DATED amendment notice in the Umm Al-Qura archive whose subject is this instrument and whose publication date is later than the edition anchor recorded in the track's own source artifact. This is a DIFFERENT claim from known_source_staleness_risk: staleness risk is about the portal we read having shown outdated text, this is about the law having been amended after a correct reading. Neither implies the other, and a track flagged here has NOT had any article altered on the notice's authority — an amendment notice is not the amended text, so applying it would be drafting rather than ingestion. Every flagged track also carries the same warning, with the full notice list, in its own known_unresolved_discrepancies.",
-  "total_tracks": 744,
+  "total_tracks": 745,
   "known_source_staleness_risk_count": 17,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -14184,6 +14184,25 @@
       "registry_source_authority": "Headquarters Agreement between Saudi Arabia and IATA — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H (2021-12-10).",
       "registry_source_url": null,
       "official_source_file": "sources/treaty_iata_headquarters/official_source/treaty_iata_headquarters_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
+      "track_id": "treaty_ifad_headquarters",
+      "display_name_en": "Agreement between the Government of Saudi Arabia and the International Fund for Agricultural Development",
+      "display_name_ar": "اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Agreement between Saudi Arabia and IFAD — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H (2021-04-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/treaty_ifad_headquarters/official_source/treaty_ifad_headquarters_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"

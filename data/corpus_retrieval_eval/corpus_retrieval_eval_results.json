@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 1425,
-  "top1_hits": 1337,
-  "top3_hits": 1391,
-  "top5_hits": 1408,
-  "top1_accuracy": 0.9382,
-  "top3_accuracy": 0.9761,
+  "total_queries": 1427,
+  "top1_hits": 1338,
+  "top3_hits": 1393,
+  "top5_hits": 1410,
+  "top1_accuracy": 0.9376,
+  "top3_accuracy": 0.9762,
   "top5_accuracy": 0.9881,
-  "mrr_at_5": 0.9583,
+  "mrr_at_5": 0.958,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -39330,14 +39330,14 @@
      "score": 27
     },
     {
-     "record_id": "treaty-dco-headquarters-llm-002",
+     "record_id": "treaty-ifad-headquarters-llm-002",
      "article_number": 2,
      "score": 22
     },
     {
-     "record_id": "architecture-design-authority-statute-llm-003",
-     "article_number": 3,
-     "score": 17
+     "record_id": "treaty-dco-headquarters-llm-002",
+     "article_number": 2,
+     "score": 22
     }
    ]
   },
@@ -39676,9 +39676,9 @@
      "score": 24
     },
     {
-     "record_id": "marina-bunkering-controls-llm-005",
-     "article_number": 5,
-     "score": 20
+     "record_id": "treaty-ifad-headquarters-llm-014",
+     "article_number": 14,
+     "score": 19
     }
    ]
   },
@@ -44205,6 +44205,68 @@
      "record_id": "securities-offering-rules-llm-133",
      "article_number": 21,
      "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-325670-1",
+   "query_ar": "يقصد بالمصطلحات والعبارات الآتية المعاني الموضحة أمامها، مالم يقتض السياق غير ذلك: 1- الحكومة: حكومة المملكة العربية السعودية. 2- الصندوق: الصندوق الدولي للتنمية الزراعية. 3- المكتب: مكتب العلاقات مع دول مجلس ا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "treaty_ifad_headquarters",
+    "law_component": "treaty",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "treaty-ifad-headquarters-llm-001",
+     "article_number": 1,
+     "score": 72
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-001",
+     "article_number": 1,
+     "score": 16
+    },
+    {
+     "record_id": "corporate-governance-regulation-llm-001",
+     "article_number": 1,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-325670-2",
+   "query_ar": "يكون مقر المكتب في مدينة الرياض.",
+   "category": "provision",
+   "gold": {
+    "corpus": "treaty_ifad_headquarters",
+    "law_component": "treaty",
+    "article_number": 2
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "treaty-iata-headquarters-llm-002",
+     "article_number": 2,
+     "score": 27
+    },
+    {
+     "record_id": "treaty-ifad-headquarters-llm-002",
+     "article_number": 2,
+     "score": 22
+    },
+    {
+     "record_id": "treaty-dco-headquarters-llm-002",
+     "article_number": 2,
+     "score": 22
     }
    ]
   }

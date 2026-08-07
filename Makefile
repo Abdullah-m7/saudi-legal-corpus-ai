@@ -597,6 +597,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         treaty-iraq-double-taxation-track-validate \
         treaty-rwanda-general-cooperation-track-validate \
         treaty-iata-headquarters-track-validate \
+        treaty-ifad-headquarters-track-validate \
         treaty-gcc-wildlife-conservation-track-validate \
         treaty-unwto-elearning-capacity-track-validate \
         treaty-qatar-air-services-track-validate \
@@ -3074,6 +3075,9 @@ treaty-rwanda-general-cooperation-track-validate:
 
 treaty-iata-headquarters-track-validate:
 	$(PY) scripts/validate_treaty_iata_headquarters_track.py
+
+treaty-ifad-headquarters-track-validate:
+	$(PY) scripts/validate_treaty_ifad_headquarters_track.py
 
 treaty-gcc-wildlife-conservation-track-validate:
 	$(PY) scripts/validate_treaty_gcc_wildlife_conservation_track.py

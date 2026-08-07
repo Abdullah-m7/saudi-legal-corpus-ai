@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 25773,
+  "total_primary_arabic_governing_records": 25790,
   "total_reference_records": 614,
-  "total_registry_counted_records": 26668,
-  "total_tracks": 744,
+  "total_registry_counted_records": 26685,
+  "total_tracks": 745,
   "tracks": [
     {
       "boundaries": {
@@ -27040,6 +27040,56 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/treaty_ifad_headquarters/official_source/treaty_ifad_headquarters_official_source.json",
+        "sources/treaty_ifad_headquarters/verified/treaty_ifad_headquarters_verified_records.jsonl",
+        "data/treaty_ifad_headquarters_arabic_legal_llm/treaty_ifad_headquarters_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية",
+      "display_name_en": "Agreement between the Government of Saudi Arabia and the International Fund for Agricultural Development",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/treaty_ifad_headquarters_arabic_legal_llm/treaty_ifad_headquarters_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Agreement between Saudi Arabia and IFAD «اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية» — **17 articles. ALL 17 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H / 2021-04-23. **RECOVERED BY** a fourth drafting form: this agreement heads its articles «المادة الأولى» with no colon and no dash, and every heading pattern in the pipeline required a terminator — the rule that keeps «المادة السابعة من نظام كذا» a citation rather than shattering a document at every cross-reference. Read only after the ordinals were matched from a named vocabulary, every candidate introduced by a preposition or citation word was dropped, and the surviving run proved complete 1..17. A ratified international agreement, not domestic legislation. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Agreement between Saudi Arabia and IFAD — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H (2021-04-23).",
+      "status": "complete",
+      "track_id": "treaty_ifad_headquarters",
+      "validator_targets": [
+        "make treaty-ifad-headquarters-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/treaty_gcc_wildlife_conservation/official_source/treaty_gcc_wildlife_conservation_official_source.json",
         "sources/treaty_gcc_wildlife_conservation/verified/treaty_gcc_wildlife_conservation_verified_records.jsonl",
         "data/treaty_gcc_wildlife_conservation_arabic_legal_llm/treaty_gcc_wildlife_conservation_legal_llm_001_018.json"
@@ -37220,6 +37270,7 @@
       "treaty_hungary_air_services": 22,
       "treaty_iala_establishment": 22,
       "treaty_iata_headquarters": 12,
+      "treaty_ifad_headquarters": 17,
       "treaty_iraq_double_taxation": 31,
       "treaty_iraq_maritime_transport": 17,
       "treaty_latvia_economic_cooperation": 8,
@@ -37279,7 +37330,7 @@
       "zatca_statute": 16
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 25604,
+    "total_records": 25621,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

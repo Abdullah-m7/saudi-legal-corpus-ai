@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 744,
-  "total_terms": 3544,
-  "total_definitions": 7680,
-  "tracks_with_definitions_article_parsed": 574,
+  "total_tracks_in_registry": 745,
+  "total_terms": 3545,
+  "total_definitions": 7684,
+  "tracks_with_definitions_article_parsed": 575,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -23112,6 +23112,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "treaty_ifad_headquarters",
+        "article_number": 1,
+        "term_as_written": "الصندوق",
+        "definition_text": "الصندوق الدولي للتنمية الزراعية.",
+        "source_record_id": "treaty-ifad-headquarters-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "wildlife_trade_regulation",
         "article_number": 1,
         "term_as_written": "الصندوق",
@@ -41596,6 +41604,14 @@
         "definition_text": "مكتب الاتحاد الذي يتخذ من الدولة المقر مقرا له.",
         "source_record_id": "treaty-iata-headquarters-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "treaty_ifad_headquarters",
+        "article_number": 1,
+        "term_as_written": "المكتب",
+        "definition_text": "مكتب العلاقات مع دول مجلس التعاون لدول الخليج العربية التابع للصندوق في المملكة.",
+        "source_record_id": "treaty-ifad-headquarters-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المكتب الاستشاري": [
@@ -42255,6 +42271,14 @@
         "term_as_written": "المملكة",
         "definition_text": "المملكة العربية السعودية.",
         "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "treaty_ifad_headquarters",
+        "article_number": 1,
+        "term_as_written": "المملكة",
+        "definition_text": "المملكة العربية السعودية.",
+        "source_record_id": "treaty-ifad-headquarters-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -67029,6 +67053,16 @@
         "term_as_written": "موظف المكتب",
         "definition_text": "شخص يقدم خدمات إلى الاتحاد بمقتضى عقد عمل في دولة المقر، سواء دائما أم مؤقتا.",
         "source_record_id": "treaty-iata-headquarters-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "موظفو الصندوق": [
+      {
+        "track_id": "treaty_ifad_headquarters",
+        "article_number": 1,
+        "term_as_written": "موظفو الصندوق",
+        "definition_text": "رئيس الصندوق، وممثل الصندوق الذي يعينه رئيس الصندوق، وجميع الموظفين الآخرين على النحو الذي يحدده الصندوق وفقا للبند (18) من المادة (السادسة) من الاتفاقية المتعلقة بامتيازات الوكالات المتخصصة وحصانتها.",
+        "source_record_id": "treaty-ifad-headquarters-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

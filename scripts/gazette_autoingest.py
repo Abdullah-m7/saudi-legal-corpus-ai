@@ -628,6 +628,102 @@ def split_appendices(arts):
     return arts[:-1] + [(num, label, host, ch)], appendices
 
 
+# --------------------------------------------------- the unterminated heading
+# A fourth drafting form, and the one the pipeline was structurally built to
+# refuse. Every pattern above requires a TERMINATOR after the article number —
+# a colon or a dash — and that requirement is what keeps «المادة السابعة من نظام
+# المنافسة» a citation instead of shattering the document at every cross
+# reference. It is the right rule and it has a cost: an instrument that heads its
+# articles «المادة الأولى الأشخاص الذين تشملهم الاتفاقية» — number, then the
+# article's own title, then its text, with no punctuation anywhere — reads as
+# zero articles and G3 refuses it.
+#
+# A structural census of all 122 pages G3 was still refusing found this is not a
+# rarity but a FAMILY: the international agreements. «اتفاقية بين المملكة ولاتفيا
+# لتجنب الازدواج الضريبي» (30 articles), «اتفاقية بين حكومة المملكة والصندوق
+# الدولي للتنمية الزراعية» (17), and two bilateral cooperation agreements (9
+# each) are all drafted this way, and the corpus already holds some forty treaty
+# tracks, so the family is squarely in scope.
+#
+# Admitting a bare «المادة» + ordinal is dangerous in exactly the way the
+# terminator rule was protecting against, so three conditions carry the weight,
+# and each was measured against a page that would be read wrongly without it:
+#
+#   * the ordinal is drawn from the VOCABULARY, never captured as free text. A
+#     free capture would match «المادة السابعة من نظام المنافسة» and then throw
+#     the number away for not parsing; naming the ordinals means a candidate is
+#     either a real ordinal or not a candidate.
+#   * a candidate introduced by a preposition or a citation word is dropped —
+#     the same test the chapter stripper and the annex split already use.
+#     «ضوابط استثناء الجهات الحكومية من تطبيق المادة السابعة» yields the numbers
+#     [7, 7, 11, 7, 11] before this test and nothing after it.
+#   * the surviving run must be COMPLETE and gap-free from 1, and at least
+#     MIN_UNTERMINATED long — set above MIN_ARTICLES for the same reason
+#     MIN_CLAUSES is, because a heading with no punctuation is weaker evidence
+#     than one with. «قائمة المصطلحات المستخدمة في لوائح هيئة السوق المالية»
+#     produces a single stray [5] and is refused; «السياسة الوطنية لمنع عمل
+#     الأطفال» produces [2, 10] and is refused.
+#
+# The ordinal vocabulary is matched tolerantly, because the gazette's own
+# typography varies: «اتفاقية للتعاون بين حكومة المملكة وحكومة جمهورية الكونغو»
+# prints «المادة الأولي» with a dotted ya. Without that tolerance its article 1
+# is missed, the run starts at 2, and the completeness rule — correctly, on the
+# evidence it had — refuses a document that is in fact whole.
+_UNTERMINATED_ORDINALS = None
+MIN_UNTERMINATED = 6
+_UNTERMINATED_CITE_BEFORE = {"من", "في", "على", "إلى", "الى", "وفق", "وفقا", "وفقاً",
+                             "بموجب", "حسب", "بحسب", "ضمن", "بمقتضى", "عليها",
+                             "المذكورة", "الواردة", "نص", "بنص", "لأحكام", "أحكام",
+                             "هذه", "و"}
+
+
+def _unterminated_re():
+    """«المادة» + a NAMED ordinal, with no terminator. Built once."""
+    global _UNTERMINATED_ORDINALS
+    if _UNTERMINATED_ORDINALS is None:
+        words = set()
+        for n in range(1, 300):
+            try:
+                words.add(ordinal(n))
+            except Exception:                                     # noqa: BLE001
+                break
+        def _flex(w):
+            return (re.escape(w).replace("ى", "[ىي]")
+                    .replace("أ", "[أا]").replace("ة", "[ةه]"))
+        alt = "|".join(_flex(w) for w in sorted(words, key=len, reverse=True))
+        _UNTERMINATED_ORDINALS = re.compile(
+            MADDA + r"\s+(?P<ord>" + alt + r")(?![ء-ي])")
+    return _UNTERMINATED_ORDINALS
+
+
+def segment_unterminated(body: str):
+    """Unterminated «المادة <ordinal>» headings -> (articles, diagnostics).
+
+    Returns nothing at all unless the run is a complete 1..N enumeration of at
+    least MIN_UNTERMINATED headings; see the note above for why each condition
+    is load-bearing."""
+    hits = []
+    for m in _unterminated_re().finditer(body):
+        before = body[:m.start()].rstrip()
+        last = re.split(r"[\s،؛]", before)[-1] if before else ""
+        if last.strip("،()") in _UNTERMINATED_CITE_BEFORE:
+            continue
+        word = m.group("ord")
+        n = parse_ordinal(word) or parse_ordinal(norm_ar(word))
+        if n:
+            hits.append((n, m.start(), m.end(), word))
+
+    nums = [h[0] for h in hits]
+    if len(nums) < MIN_UNTERMINATED or nums != list(range(1, len(nums) + 1)):
+        return [], {"count": 0, "max": 0, "missing": []}
+
+    arts = []
+    for i, (num, s, e, word) in enumerate(hits):
+        nxt = hits[i + 1][1] if i + 1 < len(hits) else len(body)
+        arts.append((num, word, strip_text(body[e:nxt]), ("", "")))
+    return arts, {"count": len(arts), "max": len(arts), "missing": []}
+
+
 def segment(body: str, pattern=None):
     """Article headings in document order -> (articles, diagnostics).
 
@@ -1079,6 +1175,18 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
             cls, cdiag = segment_clauses(body)
             if cdiag["count"] >= MIN_CLAUSES:
                 arts, diag, numbering_form = cls, cdiag, "numbered_clauses"
+            else:
+                # Last of the four, and tried last on purpose: an «المادة» with no
+                # terminator after it is the weakest mark in the family, because it
+                # is indistinguishable from a cross-reference except by the sentence
+                # around it and by the completeness of the run it belongs to.
+                unt, udiag = segment_unterminated(body)
+                if udiag["count"] >= MIN_UNTERMINATED:
+                    arts, diag, numbering_form = unt, udiag, "articles"
+                    notes.append(
+                        "UNTERMINATED-HEADINGS: the %d articles were read from bare "
+                        "«المادة <ordinal>» headings carrying no colon or dash; the run "
+                        "is complete 1..%d" % (udiag["count"], udiag["count"]))
 
     # Cut a trailing annex block off the last record before any gate reads the
     # records. Done here rather than after the gates on purpose: G2's content

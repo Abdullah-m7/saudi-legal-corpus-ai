@@ -520,6 +520,7 @@ TREATY_TAIPEI_ECONOMIC_CULTURAL_OFFICE_LLM = os.path.join(ROOT, "data", "treaty_
 TREATY_IRAQ_DOUBLE_TAXATION_LLM = os.path.join(ROOT, "data", "treaty_iraq_double_taxation_arabic_legal_llm", "treaty_iraq_double_taxation_legal_llm_001_031.json")
 TREATY_RWANDA_GENERAL_COOPERATION_LLM = os.path.join(ROOT, "data", "treaty_rwanda_general_cooperation_arabic_legal_llm", "treaty_rwanda_general_cooperation_legal_llm_001_011.json")
 TREATY_IATA_HEADQUARTERS_LLM = os.path.join(ROOT, "data", "treaty_iata_headquarters_arabic_legal_llm", "treaty_iata_headquarters_legal_llm_001_012.json")
+TREATY_IFAD_HEADQUARTERS_LLM = os.path.join(ROOT, "data", "treaty_ifad_headquarters_arabic_legal_llm", "treaty_ifad_headquarters_legal_llm_001_017.json")
 TREATY_GCC_WILDLIFE_CONSERVATION_LLM = os.path.join(ROOT, "data", "treaty_gcc_wildlife_conservation_arabic_legal_llm", "treaty_gcc_wildlife_conservation_legal_llm_001_018.json")
 TREATY_UNWTO_ELEARNING_CAPACITY_LLM = os.path.join(ROOT, "data", "treaty_unwto_elearning_capacity_arabic_legal_llm", "treaty_unwto_elearning_capacity_legal_llm_001_011.json")
 TREATY_QATAR_AIR_SERVICES_LLM = os.path.join(ROOT, "data", "treaty_qatar_air_services_arabic_legal_llm", "treaty_qatar_air_services_legal_llm_001_037.json")
@@ -1295,6 +1296,7 @@ def main() -> int:
     treaty_iraq_double_taxation_llm = _load_json(TREATY_IRAQ_DOUBLE_TAXATION_LLM)
     treaty_rwanda_general_cooperation_llm = _load_json(TREATY_RWANDA_GENERAL_COOPERATION_LLM)
     treaty_iata_headquarters_llm = _load_json(TREATY_IATA_HEADQUARTERS_LLM)
+    treaty_ifad_headquarters_llm = _load_json(TREATY_IFAD_HEADQUARTERS_LLM)
     treaty_gcc_wildlife_conservation_llm = _load_json(TREATY_GCC_WILDLIFE_CONSERVATION_LLM)
     treaty_unwto_elearning_capacity_llm = _load_json(TREATY_UNWTO_ELEARNING_CAPACITY_LLM)
     treaty_qatar_air_services_llm = _load_json(TREATY_QATAR_AIR_SERVICES_LLM)
@@ -1577,7 +1579,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 744,
+        "total_tracks": 745,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -2063,6 +2065,7 @@ def main() -> int:
             + treaty_iraq_double_taxation_llm["record_count"]  # 31 Saudi Arabia–Iraq Double Taxation Avoidance Agreement (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_rwanda_general_cooperation_llm["record_count"]  # 11 Saudi Arabia–Rwanda General Cooperation Agreement (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_iata_headquarters_llm["record_count"]  # 12 Headquarters Agreement between Saudi Arabia and IATA (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + treaty_ifad_headquarters_llm["record_count"]  # 17 Agreement between Saudi Arabia and IFAD (TIER_1, direct Umm Al-Qura Gazette fetch; headings carry no terminator)
             + treaty_gcc_wildlife_conservation_llm["record_count"]  # 18 GCC Agreement on the Conservation of Wildlife and Its Natural Habitats (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_unwto_elearning_capacity_llm["record_count"]  # 11 Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_qatar_air_services_llm["record_count"]  # 37 Saudi Arabia–Qatar Air Services Agreement (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2801,6 +2804,7 @@ def main() -> int:
             + treaty_iraq_double_taxation_llm["record_count"]
             + treaty_rwanda_general_cooperation_llm["record_count"]
             + treaty_iata_headquarters_llm["record_count"]
+            + treaty_ifad_headquarters_llm["record_count"]
             + treaty_gcc_wildlife_conservation_llm["record_count"]
             + treaty_unwto_elearning_capacity_llm["record_count"]
             + treaty_qatar_air_services_llm["record_count"]
@@ -18988,6 +18992,35 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Headquarters Agreement between Saudi Arabia and IATA «اتفاقية مقر بين حكومة المملكة واتحاد النقل الجوي الدولي (إياتا)» — **12 articles. ALL 12 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/5/1443H / 2021-12-10. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "treaty_ifad_headquarters",
+                "display_name_ar": "اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية",
+                "display_name_en": "Agreement between the Government of Saudi Arabia and the International Fund for Agricultural Development",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Agreement between Saudi Arabia and IFAD — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H (2021-04-23).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": treaty_ifad_headquarters_llm["record_count"],
+                    "data_path": "data/treaty_ifad_headquarters_arabic_legal_llm/treaty_ifad_headquarters_legal_llm_001_017.json"}},
+                "record_counts": {"arabic_articles": treaty_ifad_headquarters_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 17, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": treaty_ifad_headquarters_llm["record_count"]},
+                "data_paths": [
+                    "sources/treaty_ifad_headquarters/official_source/treaty_ifad_headquarters_official_source.json",
+                    "sources/treaty_ifad_headquarters/verified/treaty_ifad_headquarters_verified_records.jsonl",
+                    "data/treaty_ifad_headquarters_arabic_legal_llm/treaty_ifad_headquarters_legal_llm_001_017.json",
+                ],
+                "validator_targets": ["make treaty-ifad-headquarters-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Agreement between Saudi Arabia and IFAD «اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية» — **17 articles. ALL 17 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H / 2021-04-23. **RECOVERED BY** a fourth drafting form: this agreement heads its articles «المادة الأولى» with no colon and no dash, and every heading pattern in the pipeline required a terminator — the rule that keeps «المادة السابعة من نظام كذا» a citation rather than shattering a document at every cross-reference. Read only after the ordinals were matched from a named vocabulary, every candidate introduced by a preposition or citation word was dropped, and the surviving run proved complete 1..17. A ratified international agreement, not domestic legislation. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "treaty_gcc_wildlife_conservation",

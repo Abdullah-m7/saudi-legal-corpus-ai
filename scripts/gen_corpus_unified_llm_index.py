@@ -410,6 +410,8 @@ LAYERS = [
      "treaty_rwanda_general_cooperation", "treaty"),
     ("data/treaty_iata_headquarters_arabic_legal_llm/treaty_iata_headquarters_legal_llm_001_012.json",
      "treaty_iata_headquarters", "treaty"),
+    ("data/treaty_ifad_headquarters_arabic_legal_llm/treaty_ifad_headquarters_legal_llm_001_017.json",
+     "treaty_ifad_headquarters", "treaty"),
     ("data/treaty_gcc_wildlife_conservation_arabic_legal_llm/treaty_gcc_wildlife_conservation_legal_llm_001_018.json",
      "treaty_gcc_wildlife_conservation", "treaty"),
     ("data/treaty_unwto_elearning_capacity_arabic_legal_llm/treaty_unwto_elearning_capacity_legal_llm_001_011.json",

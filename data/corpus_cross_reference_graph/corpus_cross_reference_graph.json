@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 25604,
-  "total_references_extracted": 6035,
-  "intra_law_count": 4702,
+  "total_records_scanned": 25621,
+  "total_references_extracted": 6037,
+  "intra_law_count": 4704,
   "inter_law_count": 1333,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
     "high": 4730,
-    "medium": 1305
+    "medium": 1307
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -61831,6 +61831,28 @@
       "target_article_number": null,
       "target_law_name_raw": "العامة للرابطة الدولية لمعينات الملاحة البحرية وسلطات المنارا",
       "raw_citation_text": "وفقا للائحة العامة للرابطة الدولية لمعينات الملاحة البحرية وسلطات المنارا",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "treaty_ifad_headquarters",
+      "source_record_id": "treaty-ifad-headquarters-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "treaty_ifad_headquarters",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "treaty_ifad_headquarters",
+      "source_record_id": "treaty-ifad-headquarters-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "treaty_ifad_headquarters",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
       "confidence": "medium"
     },
     {
