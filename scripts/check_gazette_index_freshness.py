@@ -66,6 +66,8 @@ TITLE_INDEX = os.path.join(ROOT, "reports", "gazette_ingestion_backlog",
                            "gazette_title_index.json")
 OUT = os.path.join(ROOT, "reports", "gazette_index_freshness",
                    "gazette_index_freshness.json")
+TRIAGE = os.path.join(ROOT, "reports", "gazette_ingestion_backlog",
+                      "gazette_gate_triage.json")
 
 SITEMAP_INDEX = "https://www.uqn.gov.sa/sitemap_0.xml"
 USER_AGENT = ("Mozilla/5.0 (compatible; saudi-legal-corpus-ai freshness check; "
@@ -122,6 +124,20 @@ def ingested_ids():
     return out
 
 
+def judged_ids():
+    """Page ids the ingestion gates have already ruled on and REFUSED.
+
+    A page the gates read and turned down is not an unexamined page, and calling
+    it one would make this tool re-report the same approval decrees after every
+    run until somebody stopped believing it. The triage report exists precisely
+    so an absence from the corpus can be argued with rather than merely noticed."""
+    try:
+        d = json.load(open(TRIAGE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return {r["uid"] for r in d.get("rejected", []) if r.get("uid")}
+
+
 def section_and_id(url: str):
     m = _ID_RE.search(url)
     if not m:
@@ -143,9 +159,11 @@ def main() -> int:
 
     seen_ids, index_end_date, index_pages = corpus_index()
     built = ingested_ids()
+    refused = judged_ids()
     print("corpus gazette index: %s pages, newest recorded publication %s"
           % (index_pages, index_end_date))
     print("ingested as tracks:   %d gazette page ids" % len(built))
+    print("judged and refused:   %d gazette page ids" % len(refused))
 
     body, err = fetch(SITEMAP_INDEX, args.timeout)
     if body is None:
@@ -203,8 +221,12 @@ def main() -> int:
     # the index is stale (it should be re-harvested), and the CORPUS is missing
     # eleven pages, not fifteen. Conflating them would overstate the gap every
     # time an ingestion round outruns the index — which is every round.
-    actionable = {pid: v for pid, v in unseen_legislative.items() if pid not in built}
-    unseen_but_already_ingested = sorted(set(unseen_legislative) - set(actionable))
+    actionable = {pid: v for pid, v in unseen_legislative.items()
+                  if pid not in built and pid not in refused}
+    unseen_but_already_ingested = sorted(
+        pid for pid in unseen_legislative if pid in built)
+    unseen_but_already_refused = sorted(
+        pid for pid in unseen_legislative if pid not in built and pid in refused)
     # Seen by the index but never built. Not staleness — that's the ingestion
     # backlog's job — but reported so the two numbers are never confused.
     live_legislative = {pid for pid, v in live.items()
@@ -220,6 +242,8 @@ def main() -> int:
     print("  ...of those, legislative section:      %d" % len(unseen_legislative))
     print("  ...of those, already ingested anyway:  %d  (index stale, corpus is not)"
           % len(unseen_but_already_ingested))
+    print("  ...of those, judged and refused:       %d  (argued with, not missed)"
+          % len(unseen_but_already_refused))
     print("  NEVER EXAMINED BY THIS CORPUS:         %d" % len(actionable))
     print("  fetch failures:                        %d" % len(failures))
     print("\nVERDICT: %s" % verdict)
@@ -230,9 +254,9 @@ def main() -> int:
         for pid, v in sorted(actionable.items()):
             print("   %-10s %s" % (pid, v["url"]))
     elif unseen_legislative:
-        print("\nEvery unseen legislative page is already a track: the harvested index "
-              "lags the corpus,\nnot the other way round. Re-harvest it when convenient; "
-              "no content is missing.")
+        print("\nEvery unseen legislative page is already a track or already judged and "
+              "refused:\nthe harvested index lags the corpus, not the other way round. "
+              "Re-harvest it when\nconvenient; no content is missing.")
     else:
         print("\nNo legislative page in the fetched sitemaps is absent from the corpus index.")
     if failures:
@@ -263,12 +287,14 @@ def main() -> int:
         "unseen_by_corpus_index": len(unseen),
         "unseen_legislative": len(unseen_legislative),
         "unseen_legislative_already_ingested": unseen_but_already_ingested,
+        "unseen_legislative_already_judged_and_refused": unseen_but_already_refused,
         "never_examined_by_this_corpus": len(actionable),
         "verdict": verdict,
         "verdict_vocabulary": {
             "FRESH": "لا صفحة تشريعية في الخرائط المجلوبة غائبة عن فهرس المستودع.",
             "INDEX_STALE_ONLY": ("الفهرس المحصود متأخر عن المستودع: الصفحات غير المرئية "
-                                 "له مبنيةٌ مساراتٍ فعلاً. لا ينقص المستودع محتوى."),
+                                 "له إمّا مبنيةٌ مساراتٍ فعلاً وإمّا حكمت عليها البوابات "
+                                 "ورفضتها. لا ينقص المستودع محتوى."),
             "NEW_LEGISLATIVE_PAGES": ("الجريدة نشرت صفحاتٍ تشريعية لم يفحصها المستودع قط. "
                                       "تُمرَّر أرقامها على بوابات الإدخال، وهي — لا هذه "
                                       "الأداة — من يقرر قبولها."),

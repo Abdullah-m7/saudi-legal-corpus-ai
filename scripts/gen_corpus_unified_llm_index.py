@@ -418,6 +418,8 @@ LAYERS = [
      "motorcycle_freight_transport_regulation", "regulation"),
     ("data/gcc_jointly_owned_property_rules_arabic_legal_llm/gcc_jointly_owned_property_rules_legal_llm_001_014.json",
      "gcc_jointly_owned_property_rules", "rules"),
+    ("data/sez_economic_substance_regulation_arabic_legal_llm/sez_economic_substance_regulation_legal_llm_001_009.json",
+     "sez_economic_substance_regulation", "regulation"),
     ("data/real_estate_exchange_transfer_mechanism_arabic_legal_llm/real_estate_exchange_transfer_mechanism_legal_llm_001_008.json",
      "real_estate_exchange_transfer_mechanism", "mechanism"),
     ("data/treaty_gcc_wildlife_conservation_arabic_legal_llm/treaty_gcc_wildlife_conservation_legal_llm_001_018.json",

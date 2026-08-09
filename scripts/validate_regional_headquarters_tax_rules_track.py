@@ -32,7 +32,12 @@ N_ARTICLES = 16
 N_RECORDS = 16
 ART_RE = r"regional_headquarters_tax_rules_art_(\d{3})$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
-FLAGGED_DISCREPANCY_KEYS = {"regional_headquarters_tax_rules_no_decision_number_in_source", "regional_headquarters_tax_rules_source_is_gazette_html_only"}
+FLAGGED_DISCREPANCY_KEYS = {
+    "regional_headquarters_tax_rules_no_decision_number_in_source",
+    "regional_headquarters_tax_rules_source_is_gazette_html_only",
+    "regional_headquarters_tax_rules_text_is_the_arabic_column_of_a_bilingual_table",
+    "regional_headquarters_tax_rules_repaired_from_the_flattened_bilingual_read",
+}
 AR = "ء-ي"
 TASHKEEL = re.compile("[ً-ٰٟ]")  # excludes Arabic-Indic digits U+0660-0669
 

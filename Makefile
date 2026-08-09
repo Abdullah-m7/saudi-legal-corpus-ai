@@ -602,6 +602,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         motorcycle-freight-transport-regulation-track-validate \
         gcc-jointly-owned-property-rules-track-validate \
         real-estate-exchange-transfer-mechanism-track-validate \
+        sez-economic-substance-regulation-track-validate \
         treaty-gcc-wildlife-conservation-track-validate \
         treaty-unwto-elearning-capacity-track-validate \
         treaty-qatar-air-services-track-validate \
@@ -3109,6 +3110,9 @@ gcc-jointly-owned-property-rules-track-validate:
 
 real-estate-exchange-transfer-mechanism-track-validate:
 	$(PY) scripts/validate_real_estate_exchange_transfer_mechanism_track.py
+
+sez-economic-substance-regulation-track-validate:
+	$(PY) scripts/validate_sez_economic_substance_regulation_track.py
 
 treaty-gcc-wildlife-conservation-track-validate:
 	$(PY) scripts/validate_treaty_gcc_wildlife_conservation_track.py

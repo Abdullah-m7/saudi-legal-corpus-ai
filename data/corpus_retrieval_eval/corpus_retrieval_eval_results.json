@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 1435,
-  "top1_hits": 1346,
-  "top3_hits": 1401,
-  "top5_hits": 1418,
-  "top1_accuracy": 0.938,
+  "total_queries": 1437,
+  "top1_hits": 1347,
+  "top3_hits": 1403,
+  "top5_hits": 1420,
+  "top1_accuracy": 0.9374,
   "top3_accuracy": 0.9763,
   "top5_accuracy": 0.9882,
-  "mrr_at_5": 0.9583,
+  "mrr_at_5": 0.958,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -27609,7 +27609,7 @@
     {
      "record_id": "regional-headquarters-tax-rules-llm-012",
      "article_number": 12,
-     "score": 10
+     "score": 8
     },
     {
      "record_id": "corporate-governance-regulation-llm-024",
@@ -27632,25 +27632,25 @@
     "law_component": "rules",
     "article_number": 5
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "sez-economic-substance-regulation-llm-004",
+     "article_number": 4,
+     "score": 19
+    },
     {
      "record_id": "regional-headquarters-tax-rules-llm-005",
      "article_number": 5,
      "score": 12
     },
     {
-     "record_id": "ground-handling-air-cargo-economic-regulation-llm-005",
-     "article_number": 5,
-     "score": 16
-    },
-    {
-     "record_id": "air-transport-services-economic-regulation-llm-014",
-     "article_number": 14,
-     "score": 8
+     "record_id": "sez-economic-substance-regulation-llm-002",
+     "article_number": 2,
+     "score": 30
     }
    ]
   },
@@ -44515,6 +44515,68 @@
      "record_id": "real-estate-exchange-transfer-mechanism-llm-001",
      "article_number": 1,
      "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-404920-1",
+   "query_ar": "أن يكون لدى المنشأة المرخصة المكان المناسب والأصول المناسبة لممارسة الأنشطة المؤهلة في المنطقة، وأن يعمل لديها عدد كاف من الموظفين المتفرغين خلال السنة المالية المتواجدين فعليا في المنطقة",
+   "category": "provision",
+   "gold": {
+    "corpus": "sez_economic_substance_regulation",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-economic-substance-regulation-llm-004",
+     "article_number": 4,
+     "score": 46
+    },
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 19
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-025",
+     "article_number": 25,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-404920-2",
+   "query_ar": "على المنشأة المرخصة أن تقدم إقرارا سنويا باستخدام النموذج الذي تعده الهيئة وفقا للإجراءات المحددة من قبلها، وذلك للتحقق من استيفاء المتطلبات الاقتصادية الفعلية",
+   "category": "provision",
+   "gold": {
+    "corpus": "sez_economic_substance_regulation",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-economic-substance-regulation-llm-006",
+     "article_number": 6,
+     "score": 58
+    },
+    {
+     "record_id": "regional-headquarters-tax-rules-llm-007",
+     "article_number": 7,
+     "score": 19
+    },
+    {
+     "record_id": "vat-regulation-llm-art-073",
+     "article_number": 70,
+     "score": 17
     }
    ]
   }

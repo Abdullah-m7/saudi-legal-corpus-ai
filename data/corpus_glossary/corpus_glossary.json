@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 749,
-  "total_terms": 3552,
-  "total_definitions": 7725,
-  "tracks_with_definitions_article_parsed": 578,
+  "total_tracks_in_registry": 750,
+  "total_terms": 3553,
+  "total_definitions": 7735,
+  "tracks_with_definitions_article_parsed": 579,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1235,6 +1235,16 @@
         "term_as_written": "أصول الخطوط الحديدية",
         "definition_text": "الشبكات، والمحطات، والمركبات، ومرافق الصيانة للخطوط الحديدية والمركبات.",
         "source_record_id": "railway-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أصول الملكية الفكرية": [
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "أصول الملكية الفكرية",
+        "definition_text": "أي حقوق للملكية الفكرية وتشمل حق المؤلف والحقوق المجاورة وبراءات الاختراع والعلامات التجارية والنماذج الصناعية والأصناف النباتية والتصميمات التخطيطية للدارات المتكاملة.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5181,8 +5191,16 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الأنشطة المؤهلة",
-        "definition_text": "الأنشطة الرئيسية التي يقوم بها المقر الإقليمي المعني بها تعزيز صورة المجموعة في الإقليم وتقديم الإشراف الاستراتيجي والتوجيه الإداري ودعم الأعمال الداخلية للشركة وفروعها والشركات المرتبطة بها في الإقليم وفق التصنيف الوطني للأنشطة الاقتصادية رقم (701011). 7- Eligible Income: The income from the Eligible Activities derived by the Regional Headquarters.",
+        "definition_text": "الأنشطة الرئيسية التي يقوم بها المقر الإقليمي المعني بها تعزيز صورة المجموعة في الإقليم وتقديم الإشراف الاستراتيجي والتوجيه الإداري ودعم الأعمال الداخلية للشركة وفروعها والشركات المرتبطة بها في الإقليم وفق التصنيف الوطني للأنشطة الاقتصادية رقم (701011).",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "الأنشطة المؤهلة",
+        "definition_text": "الأنشطة المؤهلة للحصول على الإعفاءات والحوافز والاستثناءات المعتمدة للمنطقة.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5249,7 +5267,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الأنشطة غير المؤهلة",
-        "definition_text": "الأنشطة الأخرى غير الأنشطة المؤهلة التي يقوم بها المقر الإقليمي. 9- Related Companies or Related Persons: shall have the same meaning prescribed in the Transfer Pricing Bylaws issued by the Authority Board Resolution.",
+        "definition_text": "الأنشطة الأخرى غير الأنشطة المؤهلة التي يقوم بها المقر الإقليمي.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -5297,7 +5315,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الأنظمة الضريبية والزكوية",
-        "definition_text": "كافة التشريعات الضريبية والزكوية المعمول بها في المملكة. 12- Tax Year: is the Kingdom’s fiscal year, and shall have the meaning given to it in Article (18) of the Income Tax Law Implementing Regulations issued by Ministerial Resolution No. Decree No. (1535) dated 11/06/1425 H.",
+        "definition_text": "كافة التشريعات الضريبية والزكوية المعمول بها في المملكة.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -6205,6 +6223,14 @@
         "term_as_written": "الإعفاءات والحوافز",
         "definition_text": "الإعفاءات والحوافز الممنوحة للمنطقة بموجب قرار مجلس الوزراء رقم (233) وتاريخ 1444/3/29ه، وأي تعديلات تطرأ عليه أو ما يحل محله.",
         "source_record_id": "sez-cloud-computing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "الإعفاءات والحوافز",
+        "definition_text": "الإعفاءات والحوافز الضريبية والجمركية المقدمة للمنشأة المرخصة في المنطقة على النحو المشار إليه في التنظيم.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12954,6 +12980,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم الجهة المختصة، الصادر بموجب الأمر الملكي رقم (أ/19) وتاريخ 10/3/1431ه، وأي تعديلات تطرأ عليه.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sez_jazan_regulation",
         "article_number": 1,
         "term_as_written": "التنظيم",
@@ -15165,7 +15199,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
-        "definition_text": "وزارة الاستثمار. 4- The Authority: Zakat, Tax and Customs Authority.",
+        "definition_text": "وزارة الاستثمار.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
@@ -15199,6 +15233,14 @@
         "term_as_written": "الجهة المختصة",
         "definition_text": "الجهة الحكومية ذات الاختصاص، وذلك بحسب ما يقتضيه السياق في القواعد. المنطقة / المناطق: المنطقة الاقتصادية الخاصة ب(جازان، رأس الخير، مدينة الملك عبدالله الاقتصادية، الحوسبة السحابية والمعلوماتية) المنشأة بموجب قرار مجلس الوزراء رقم (233) وتاريخ 29 /3 /1444ه.",
         "source_record_id": "sez-companies-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "هيئة المدن والمناطق الاقتصادية الخاصة.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16483,7 +16525,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الحوافز الضريبية",
-        "definition_text": "يقصد بها الحوافز والإعفاءات الضريبية المقدمة للمقر الإقليمي على النحو المنصوص عليه في المرسوم الملكي. 11- Tax Laws : All tax legislation applicable in the Kingdom.",
+        "definition_text": "يقصد بها الحوافز والإعفاءات الضريبية المقدمة للمقر الإقليمي على النحو المنصوص عليه في المرسوم الملكي.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -17465,7 +17507,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الدخل المؤهل",
-        "definition_text": "الدخل من الأنشطة المؤهلة والمحققة من قبل المقر الإقليمي. 8- Non-eligible Activities: Activities other than the Eligible Activities carried on by the Regional Headquarters.",
+        "definition_text": "الدخل من الأنشطة المؤهلة والمحققة من قبل المقر الإقليمي.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -21501,12 +21543,20 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "السنة الضريبية",
-        "definition_text": "هي السنة المالية للمملكة، ويكون لها المعنى المحدد لها في المادة (18) من اللائحة التنفيذية لنظام ضريبة الدخل الصادرة بالقرار الوزاري رقم (1535) وتاريخ 11 /6/ 1425ه. 13- Economic Substance Requirements: the requirements that must be satisfied by the Regional Headquarters to ascertain the substance of the economic activities in the Kingdom, as prescribed in Article Five (5) of these Tax Rules.",
+        "definition_text": "هي السنة المالية للمملكة، ويكون لها المعنى المحدد لها في المادة (18) من اللائحة التنفيذية لنظام ضريبة الدخل الصادرة بالقرار الوزاري رقم (1535) وتاريخ 11 /6/ 1425ه.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
     "السنة المالية": [
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "السنة المالية",
+        "definition_text": "السنة الضريبية للمنشأة المرخصة. ب- فيما عدا ما نصت عليه الفقرة (أ) من هذه المادة، أي كلمة أو عبارة لم يرد لها تعريف محدد في هذه اللائحة يتم تعريفها وتفسيرها وفقا للمراجع الآتية وبحسب الترتيب الوارد ذكره: 1- التشريعات المعمول بها في المنطقة. 2- الأنظمة الزكوية والضريبية والجمركية المعمول بها في المملكة. 3- التشريعات المعمول بها في المملكة.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "state_revenue_law_1448",
         "article_number": 1,
@@ -22677,7 +22727,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الشركة المرتبطة أو الشخص المرتبط",
-        "definition_text": "يقصد بها المعنى المنصوص عليه في لوائح تسعير المعاملات الصادرة وفقا لقرار مجلس إدارة الهيئة. 10- Tax Incentives: means the tax benefits and exemptions available for Regional Headquarters, as prescribed in the Royal Decree.",
+        "definition_text": "يقصد بها المعنى المنصوص عليه في لوائح تسعير المعاملات الصادرة وفقا لقرار مجلس إدارة الهيئة.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -27559,7 +27609,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "القواعد الضريبية",
-        "definition_text": "القواعد الضريبية للمقرات الإقليمية. 3- The Governing Body: Ministry of Investment.",
+        "definition_text": "القواعد الضريبية للمقرات الإقليمية.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -29533,6 +29583,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنظيمية للمنطقة الاقتصادية الخاصة ب(جازان، رأس الخير، مدينة الملك عبدالله الاقتصادية، الحوسبة السحابية والمعلوماتية)، الصادرة بموجب قرار مجلس الوزراء رقم (468) وتاريخ 10 /7 /1447ه، وأي تعديلات تطرأ عليها.",
         "source_record_id": "sez-companies-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -32885,8 +32943,16 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "المتطلبات الاقتصادية الفعلية",
-        "definition_text": "المتطلبات التي يجب استيفاؤها من قبل المقر الإقليمي للتحقق من وجود أنشطة اقتصادية فعلية له في المملكة، والمنصوص عليها ضمن المادة الخامسة (5) من هذه القواعد الضريبية. 14- B. Notwithstanding Paragraph (A) of this Article, any term or expression used in these Tax Rules which is not defined in this Article shall have the same definition provided in the Royal Decree and in the relevant Tax Laws. فيما عدا ما نصت عليه الفقرة (أ) من هذه المادة، أي كلمة أو عبارة لم يرد لها تعريف محدد في هذه القواعد يتم تعريفها وتفسيرها وفقا للمرسوم الملكي والأنظمة الضريبية والزكوية ذات الصلة. ب- Article Two (2): Purpose of Tax Rules",
+        "definition_text": "المتطلبات التي يجب استيفاؤها من قبل المقر الإقليمي للتحقق من وجود أنشطة اقتصادية فعلية له في المملكة، والمنصوص عليها ضمن المادة الخامسة (5) من هذه القواعد الضريبية. ب- فيما عدا ما نصت عليه الفقرة (أ) من هذه المادة، أي كلمة أو عبارة لم يرد لها تعريف محدد في هذه القواعد يتم تعريفها وتفسيرها وفقا للمرسوم الملكي والأنظمة الضريبية والزكوية ذات الصلة.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "المتطلبات الاقتصادية الفعلية",
+        "definition_text": "المتطلبات التي يجب استيفاؤها من قبل المنشأة المرخصة للتحقق من ممارستها لأنشطة اقتصادية فعلية في المنطقة، والمنصوص عليها ضمن المادة الثالثة (3) من هذه اللائحة.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -37617,7 +37683,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "المرسوم الملكي",
-        "definition_text": "المرسوم الملكي رقم (م/62) الصادر بتاريخ 28 /4/ 1445ه، الموافق 12 /11/ 2023م. 2- Tax Rules: Regional Headquarters Tax Rules.",
+        "definition_text": "المرسوم الملكي رقم (م/62) الصادر بتاريخ 28 /4/ 1445ه، الموافق 12 /11/ 2023م.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -41489,7 +41555,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "المقرات الإقليمية",
-        "definition_text": "المقر الرئيسي الإقليمي أو الكيان القانوني لمجموعة شركات متعددة الجنسيات التي يتم تأسيسها وفقا للأنظمة المعمول بها في المملكة وينطبق عليها مفهوم نشاط المقرات الإقليمية للشركات العالمية وفق التصنيف الوطني للأنشطة الاقتصادية رقم (701011). 6- Eligible Activities : The main activities of the Regional Headquarters towards strengthening the group’s profile in the region and providing strategic supervision and administrative guidance and support for the internal business of the company, subsidiaries and other related companies according to the National Classification of Economic Activities No. (701011).",
+        "definition_text": "المقر الرئيسي الإقليمي أو الكيان القانوني لمجموعة شركات متعددة الجنسيات التي يتم تأسيسها وفقا للأنظمة المعمول بها في المملكة وينطبق عليها مفهوم نشاط المقرات الإقليمية للشركات العالمية وفق التصنيف الوطني للأنشطة الاقتصادية رقم (701011).",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -42449,14 +42515,6 @@
         "term_as_written": "المملكة",
         "definition_text": "المملكة العربية السعودية.",
         "source_record_id": "railway-law-implementing-regulation-llm-art-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "regional_headquarters_tax_rules",
-        "article_number": 1,
-        "term_as_written": "المملكة",
-        "definition_text": "المملكة العربية السعودية. 1- The Royal Decree: The Royal Decree No (M/62) issued on 28 / 04 / 1445H corresponding to 12 / 11 / 2023.",
-        "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -43700,6 +43758,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشأة المرخصة",
+        "definition_text": "أي منشأة يرخص لها بممارسة الأنشطة في المنطقة بموجب اللوائح التنظيمية للمناطق الاقتصادية الخاصة، الصادرة بموجب قرار مجلس الوزراء رقم (468) وتاريخ 10/7/1447ه.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sez_jazan_regulation",
         "article_number": 1,
         "term_as_written": "المنشأة المرخصة",
@@ -44073,6 +44139,14 @@
         "term_as_written": "المنطقة",
         "definition_text": "المنطقة الاقتصادية الخاصة بالحوسبة السحابية والمعلوماتية، والمنشأة بموجب قرار مجلس الوزراء رقم (233) وتاريخ 1444/3/29ه.",
         "source_record_id": "sez-cloud-computing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "المنطقة",
+        "definition_text": "المنطقة الاقتصادية الخاصة بمدينة الملك عبدالله الاقتصادية، والمنطقة الاقتصادية الخاصة برأس الخير، والمنطقة الاقتصادية الخاصة بجازان، والمنطقة الاقتصادية الخاصة للحوسبة السحابية والمعلوماتية المنشأة بموجب قرار مجلس الوزراء رقم (233) وتاريخ 29/3/1444ه.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -49843,7 +49917,7 @@
         "track_id": "regional_headquarters_tax_rules",
         "article_number": 1,
         "term_as_written": "الهيئة",
-        "definition_text": "هيئة الزكاة والضريبة والجمارك. 5- Regional Headquarters: The regional headquarters or a unit of a Multinational Group duly established under the laws of Saudi Arabia and the concept of regional headquarters activities of international companies applies according to the National Classification of Economic Activities No. (701011).",
+        "definition_text": "هيئة الزكاة والضريبة والجمارك.",
         "source_record_id": "regional-headquarters-tax-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
@@ -49957,6 +50031,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة المدن والمناطق الاقتصادية الخاصة.",
         "source_record_id": "sez-companies-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sez_economic_substance_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة الزكاة والضريبة والجمارك.",
+        "source_record_id": "sez-economic-substance-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {

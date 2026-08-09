@@ -330,11 +330,184 @@ HEADING_RE_LOOSE = re.compile(
 NAV_MARKERS = ("نسخة تجريبية", "الرئيسية القرارات", "تسجيل الدخول", "اشترك في نشرتنا")
 
 
-def page_text(path: str):
-    """Return (title, body) with scripts/styles/nav/footer removed."""
+# ------------------------------------------------ the bilingual side-by-side table
+# A FIFTH publication form, and the first one that is not a numbering convention.
+#
+# «لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة» is published as a
+# TABLE: English in the left cells, Arabic in the right cells, row by row, with the
+# item number repeated at both ends. Flattened by the tag stripper it becomes a
+# single stream in which the two languages alternate sentence by sentence — which is
+# why G13 read 58% of its words as reference codes and refused it. The refusal was
+# right; the reason was not.
+#
+# THE SPLIT IS STRUCTURAL, NOT STATISTICAL. The obvious fix — keep the runs whose
+# characters are mostly Arabic — is a guess dressed as a measurement, and it fails on
+# exactly the sentences that matter, the ones where an Arabic provision quotes a Latin
+# term. The gazette already marks the split in its own markup: each language sits in
+# its own <td>. Reading the Arabic COLUMN is reading the source, not inferring it.
+#
+# THE INVARIANT, AND THE DENOMINATOR IT IS MEASURED AGAINST. Every Arabic character
+# in the ARTICLE BLOCK — not merely inside the table — must survive into the output.
+# If a cell this code classifies as English turns out to hold Arabic, or if the
+# document's provisions live in prose OUTSIDE the table, the count drops and the
+# extraction refuses. A splitter that silently drops a provision is worse than no
+# splitter, because the loss is invisible downstream.
+#
+# THE DENOMINATOR IS THE WHOLE POINT, AND THE FIRST VERSION GOT IT WRONG. Measured
+# against the table alone, this code fired on «دليل الصحة الحيوانية» — an ALREADY-BUILT
+# 83-record track whose page carries a bilingual DISEASE-NAME LIST: 83 rows of Arabic
+# name against Latin name, which satisfies every test for "rows carrying both
+# languages". Only 3,146 of that page's 31,144 Arabic characters are inside its tables;
+# the guide's actual provisions are prose around them. Substituting the reconstruction
+# would have destroyed nine tenths of a built track, and the table-only invariant would
+# have reported a perfect score while doing it. A bilingual table is a PUBLICATION FORM
+# only when the table IS the document — hence TABLE_IS_THE_DOCUMENT below. A safety
+# check measured against the wrong denominator is not a weak check; it is a false one.
+#
+# The number cell is the one subtlety. It appears twice per row — «1-» at the English
+# end and «1-» at the Arabic end — and when the item is lettered the two differ («A-»
+# against «أ-»). A cell carrying Arabic letters is Arabic; a cell carrying Latin
+# letters is English; a cell of bare digits belongs to whichever end it sits at, and
+# in these tables the Arabic end is the last, so the last is the one kept.
+
+_TR_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S)
+_TD_RE = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.S)
+_ARTICLE_BLOCK_RE = re.compile(r'<article id="article-content">(.*?)</article>', re.S)
+_ARABIC_CH = re.compile(r"[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]")
+_LATIN_CH = re.compile(r"[A-Za-z]")
+_NUMBERING_CELL_RE = re.compile(r"^[\s(]*[0-9\u0660-\u0669A-Za-z\u0621-\u064A]{1,3}[\s)]*[-–—.)]?\s*$")
+
+MIN_BILINGUAL_ROWS = 8
+BILINGUAL_ROW_SHARE = 0.5
+TABLE_IS_THE_DOCUMENT = 0.9
+
+
+def _cell_text(html_fragment: str) -> str:
+    t = re.sub(r"<[^>]+>", " ", html_fragment).replace("&nbsp;", " ")
+    t = t.replace("\u200f", "").replace("\u200e", "").replace("\u00ad", "")
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _classify_cell(t: str) -> str:
+    ar, lat = len(_ARABIC_CH.findall(t)), len(_LATIN_CH.findall(t))
+    if not t:
+        return "empty"
+    if _NUMBERING_CELL_RE.match(t):
+        if ar:
+            return "num_ar"
+        if lat:
+            return "num_latin"
+        return "num_neutral"
+    if ar and lat:
+        return "mixed"
+    if ar:
+        return "text_ar"
+    if lat:
+        return "text_latin"
+    return "other"
+
+
+def bilingual_table_arabic(html: str):
+    """Read the Arabic column out of a bilingual side-by-side table.
+
+    Returns (arabic_text_or_None, stats). A None text means either that the page
+    is not this form at all (stats['is_bilingual_table'] False) or that it is and
+    the extraction REFUSED — stats['refusal'] then says why, and the caller must
+    not fall back to the flattened text, which is the very thing being avoided."""
+    stats = {"is_bilingual_table": False, "rows": 0, "bilingual_rows": 0,
+             "arabic_chars_in_block": 0, "arabic_chars_in_table": 0,
+             "arabic_chars_kept": 0, "latin_chars_kept": 0, "mixed_cells": 0,
+             "refusal": None}
+    m = _ARTICLE_BLOCK_RE.search(html)
+    if not m:
+        return None, stats
+    block = m.group(1)
+    rows = _TR_RE.findall(block)
+    stats["rows"] = len(rows)
+    if not rows:
+        return None, stats
+
+    parsed = []
+    for row in rows:
+        cells = [_cell_text(c) for c in _TD_RE.findall(row)]
+        kinds = [_classify_cell(c) for c in cells]
+        parsed.append(list(zip(cells, kinds)))
+
+    stats["bilingual_rows"] = sum(
+        1 for r in parsed
+        if any(k == "text_latin" for _, k in r) and any(k == "text_ar" for _, k in r))
+    rows_with_text = sum(1 for r in parsed if any(k.startswith("text") for _, k in r))
+    stats["arabic_chars_in_block"] = len(_ARABIC_CH.findall(_cell_text(block)))
+    stats["arabic_chars_in_table"] = sum(
+        len(_ARABIC_CH.findall(c)) for r in parsed for c, _ in r)
+    if (stats["bilingual_rows"] < MIN_BILINGUAL_ROWS
+            or not rows_with_text
+            or stats["bilingual_rows"] / rows_with_text < BILINGUAL_ROW_SHARE
+            or not stats["arabic_chars_in_block"]
+            or (stats["arabic_chars_in_table"] / stats["arabic_chars_in_block"]
+                < TABLE_IS_THE_DOCUMENT)):
+        # Not this publication form. A page that merely CONTAINS a bilingual table
+        # is read the ordinary way; only a page that IS one is split.
+        return None, stats
+    stats["is_bilingual_table"] = True
+
+    out_lines = []
+    for r in parsed:
+        text_cells = [c for c, k in r if k in ("text_ar", "mixed")]
+        stats["mixed_cells"] += sum(1 for _, k in r if k == "mixed")
+        num_ar = [c for c, k in r if k == "num_ar"]
+        neutral = [c for c, k in r if k == "num_neutral"]
+        prefix = num_ar[-1:] if num_ar else neutral[-1:]
+        line = " ".join(prefix + text_cells).strip()
+        if line:
+            out_lines.append(line)
+
+    text = "\n".join(out_lines)
+    stats["arabic_chars_kept"] = len(_ARABIC_CH.findall(text))
+    stats["latin_chars_kept"] = len(_LATIN_CH.findall(text))
+
+    if stats["arabic_chars_kept"] != stats["arabic_chars_in_block"]:
+        stats["refusal"] = (
+            "G15: the Arabic column of this bilingual table cannot be read without "
+            "loss — %d of the article block's %d Arabic characters survive the split, "
+            "so %d would be dropped silently"
+            % (stats["arabic_chars_kept"], stats["arabic_chars_in_block"],
+               stats["arabic_chars_in_block"] - stats["arabic_chars_kept"]))
+        return None, stats
+    return text, stats
+
+
+def page_text(path: str, notes=None):
+    """Return (title, body) with scripts/styles/nav/footer removed.
+
+    `notes`, when given a list, receives provenance lines for anything unusual
+    about HOW the text was read — currently only the bilingual-table split, whose
+    result must never be mistaken for ordinary flattened page text."""
     html = open(path, encoding="utf-8", errors="replace").read()
     m = re.search(r"<title>(.*?)</title>", html, re.S)
     title = strip_text(m.group(1)) if m else ""
+
+    # A bilingual side-by-side table is read from its Arabic column before the
+    # tag stripper runs, because the stripper is exactly what destroys the split.
+    ar_col, bt = bilingual_table_arabic(html)
+    if bt["is_bilingual_table"]:
+        if ar_col is None:
+            if notes is not None:
+                notes.append(bt["refusal"])
+            return title, ""
+        if notes is not None:
+            notes.append(
+                "BILINGUAL-TABLE: the text is the ARABIC COLUMN of a side-by-side "
+                "bilingual table — %d of %d rows carry both languages, and all %d "
+                "Arabic characters in the article block survive the split (%d Latin "
+                "characters remain, inside Arabic cells)"
+                % (bt["bilingual_rows"], bt["rows"], bt["arabic_chars_kept"],
+                   bt["latin_chars_kept"]))
+        # Substituted in place rather than returned on its own: the masthead that
+        # carries the publication date sits OUTSIDE the article block, and G1 reads
+        # it. Returning the column alone passed the split and lost the date.
+        html = _ARTICLE_BLOCK_RE.sub(lambda _m: "\n" + ar_col + "\n", html, count=1)
+
     html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.S)
     html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.S)
     t = re.sub(r"<[^>]+>", " ", html).replace("&nbsp;", " ")
@@ -1147,10 +1320,15 @@ def _dedup_tokens(s: str):
     return {w for w in norm_ar(s).split() if len(w) > 2 and w not in _DEDUP_STOP}
 
 
-def evaluate(title: str, body: str, reg_names, taken, exclude=None):
+def evaluate(title: str, body: str, reg_names, taken, exclude=None,
+             extraction_notes=None):
     """Run every gate. Returns (spec_or_None, reject_reasons)."""
     reasons = []
     notes = []
+    # How the text was READ is part of the record, not a detail of the reader:
+    # a track built from the Arabic column of a bilingual table must say so.
+    for n in (extraction_notes or []):
+        (reasons if n.startswith("G") else notes).append(n)
 
     # G1 — shape of the document
     if not title or not LEGAL_PREFIX.match(title):

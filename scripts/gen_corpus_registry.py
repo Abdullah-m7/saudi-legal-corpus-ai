@@ -524,6 +524,7 @@ TREATY_IFAD_HEADQUARTERS_LLM = os.path.join(ROOT, "data", "treaty_ifad_headquart
 STATE_REVENUE_LAW_1448_LLM = os.path.join(ROOT, "data", "state_revenue_law_1448_arabic_legal_llm", "state_revenue_law_1448_legal_llm_001_030.json")
 MOTORCYCLE_FREIGHT_TRANSPORT_REGULATION_LLM = os.path.join(ROOT, "data", "motorcycle_freight_transport_regulation_arabic_legal_llm", "motorcycle_freight_transport_regulation_legal_llm_001_029.json")
 GCC_JOINTLY_OWNED_PROPERTY_RULES_LLM = os.path.join(ROOT, "data", "gcc_jointly_owned_property_rules_arabic_legal_llm", "gcc_jointly_owned_property_rules_legal_llm_001_014.json")
+SEZ_ECONOMIC_SUBSTANCE_REGULATION_LLM = os.path.join(ROOT, "data", "sez_economic_substance_regulation_arabic_legal_llm", "sez_economic_substance_regulation_legal_llm_001_009.json")
 REAL_ESTATE_EXCHANGE_TRANSFER_MECHANISM_LLM = os.path.join(ROOT, "data", "real_estate_exchange_transfer_mechanism_arabic_legal_llm", "real_estate_exchange_transfer_mechanism_legal_llm_001_008.json")
 TREATY_GCC_WILDLIFE_CONSERVATION_LLM = os.path.join(ROOT, "data", "treaty_gcc_wildlife_conservation_arabic_legal_llm", "treaty_gcc_wildlife_conservation_legal_llm_001_018.json")
 TREATY_UNWTO_ELEARNING_CAPACITY_LLM = os.path.join(ROOT, "data", "treaty_unwto_elearning_capacity_arabic_legal_llm", "treaty_unwto_elearning_capacity_legal_llm_001_011.json")
@@ -1304,6 +1305,7 @@ def main() -> int:
     state_revenue_law_1448_llm = _load_json(STATE_REVENUE_LAW_1448_LLM)
     motorcycle_freight_transport_regulation_llm = _load_json(MOTORCYCLE_FREIGHT_TRANSPORT_REGULATION_LLM)
     gcc_jointly_owned_property_rules_llm = _load_json(GCC_JOINTLY_OWNED_PROPERTY_RULES_LLM)
+    sez_economic_substance_regulation_llm = _load_json(SEZ_ECONOMIC_SUBSTANCE_REGULATION_LLM)
     real_estate_exchange_transfer_mechanism_llm = _load_json(REAL_ESTATE_EXCHANGE_TRANSFER_MECHANISM_LLM)
     treaty_gcc_wildlife_conservation_llm = _load_json(TREATY_GCC_WILDLIFE_CONSERVATION_LLM)
     treaty_unwto_elearning_capacity_llm = _load_json(TREATY_UNWTO_ELEARNING_CAPACITY_LLM)
@@ -1587,7 +1589,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 749,
+        "total_tracks": 750,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -2077,6 +2079,7 @@ def main() -> int:
             + state_revenue_law_1448_llm["record_count"]  # 30 State Revenue Law (1448H) (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + motorcycle_freight_transport_regulation_llm["record_count"]  # 29 Implementing Regulation for Commercial Freight Transport by Motorcycle (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + gcc_jointly_owned_property_rules_llm["record_count"]  # 14 GCC Unified Rules for Owners of Jointly Owned Property (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
+            + sez_economic_substance_regulation_llm["record_count"]  # 9 Economic Substance Requirements Regulations of Special Economic Zones (TIER_1, direct Umm Al-Qura Gazette fetch; the Arabic column of a bilingual side-by-side table)
             + real_estate_exchange_transfer_mechanism_llm["record_count"]  # 8 Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + treaty_gcc_wildlife_conservation_llm["record_count"]  # 18 GCC Agreement on the Conservation of Wildlife and Its Natural Habitats (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_unwto_elearning_capacity_llm["record_count"]  # 11 Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2820,6 +2823,7 @@ def main() -> int:
             + state_revenue_law_1448_llm["record_count"]
             + motorcycle_freight_transport_regulation_llm["record_count"]
             + gcc_jointly_owned_property_rules_llm["record_count"]
+            + sez_economic_substance_regulation_llm["record_count"]
             + real_estate_exchange_transfer_mechanism_llm["record_count"]
             + treaty_gcc_wildlife_conservation_llm["record_count"]
             + treaty_unwto_elearning_capacity_llm["record_count"]
@@ -19124,6 +19128,35 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "GCC Unified Rules for Owners of Jointly Owned Property «القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون لدول الخليج العربية» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07. A GCC Supreme Council instrument, NOT Saudi domestic legislation; its force and scope differ and it must not be read as a Saudi regulation. **DISCOVERED BY** re-indexing the gazette sitemap. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "sez_economic_substance_regulation",
+                "display_name_ar": "لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة",
+                "display_name_en": "Economic Substance Requirements Regulations of Special Economic Zones",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_BILINGUAL_TABLE_ARABIC_COLUMN",
+                "source_authority": "Economic Substance Requirements Regulations of Special Economic Zones — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07). The page is a BILINGUAL SIDE-BY-SIDE TABLE and the stored text is its ARABIC COLUMN, read from the source's own markup.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": sez_economic_substance_regulation_llm["record_count"],
+                    "data_path": "data/sez_economic_substance_regulation_arabic_legal_llm/sez_economic_substance_regulation_legal_llm_001_009.json"}},
+                "record_counts": {"arabic_articles": sez_economic_substance_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": sez_economic_substance_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/sez_economic_substance_regulation/official_source/sez_economic_substance_regulation_official_source.json",
+                    "sources/sez_economic_substance_regulation/verified/sez_economic_substance_regulation_verified_records.jsonl",
+                    "data/sez_economic_substance_regulation_arabic_legal_llm/sez_economic_substance_regulation_legal_llm_001_009.json",
+                ],
+                "validator_targets": ["make sez-economic-substance-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Economic Substance Requirements Regulations of Special Economic Zones «لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة» — **9 articles in 4 chapters. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07. **PUBLISHED AS A BILINGUAL SIDE-BY-SIDE TABLE**: English and Arabic in adjacent cells, row by row. The stored text is the ARABIC COLUMN, read from the gazette's own table markup rather than inferred from character ratios, and every one of the 4,153 Arabic characters in the table survives the split. The English column is NOT stored — Arabic governs in this corpus and the English is an accompanying translation, not the original. **DISTINCT FROM** regional_headquarters_tax_rules: both use the term «المتطلبات الاقتصادية الفعلية», but this one binds licensed entities in the special economic zones and that one binds multinationals' regional headquarters; neither supersedes the other. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "real_estate_exchange_transfer_mechanism",

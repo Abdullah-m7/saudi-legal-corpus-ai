@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 25871,
+  "total_primary_arabic_governing_records": 25880,
   "total_reference_records": 614,
-  "total_registry_counted_records": 26766,
-  "total_tracks": 749,
+  "total_registry_counted_records": 26775,
+  "total_tracks": 750,
   "tracks": [
     {
       "boundaries": {
@@ -27240,6 +27240,56 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/sez_economic_substance_regulation/official_source/sez_economic_substance_regulation_official_source.json",
+        "sources/sez_economic_substance_regulation/verified/sez_economic_substance_regulation_verified_records.jsonl",
+        "data/sez_economic_substance_regulation_arabic_legal_llm/sez_economic_substance_regulation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة",
+      "display_name_en": "Economic Substance Requirements Regulations of Special Economic Zones",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/sez_economic_substance_regulation_arabic_legal_llm/sez_economic_substance_regulation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Economic Substance Requirements Regulations of Special Economic Zones «لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة» — **9 articles in 4 chapters. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07. **PUBLISHED AS A BILINGUAL SIDE-BY-SIDE TABLE**: English and Arabic in adjacent cells, row by row. The stored text is the ARABIC COLUMN, read from the gazette's own table markup rather than inferred from character ratios, and every one of the 4,153 Arabic characters in the table survives the split. The English column is NOT stored — Arabic governs in this corpus and the English is an accompanying translation, not the original. **DISTINCT FROM** regional_headquarters_tax_rules: both use the term «المتطلبات الاقتصادية الفعلية», but this one binds licensed entities in the special economic zones and that one binds multinationals' regional headquarters; neither supersedes the other. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_BILINGUAL_TABLE_ARABIC_COLUMN",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json",
+        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
+      ],
+      "source_authority": "Economic Substance Requirements Regulations of Special Economic Zones — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07). The page is a BILINGUAL SIDE-BY-SIDE TABLE and the stored text is its ARABIC COLUMN, read from the source's own markup.",
+      "status": "complete",
+      "track_id": "sez_economic_substance_regulation",
+      "validator_targets": [
+        "make sez-economic-substance-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/real_estate_exchange_transfer_mechanism/official_source/real_estate_exchange_transfer_mechanism_official_source.json",
         "sources/real_estate_exchange_transfer_mechanism/verified/real_estate_exchange_transfer_mechanism_verified_records.jsonl",
         "data/real_estate_exchange_transfer_mechanism_arabic_legal_llm/real_estate_exchange_transfer_mechanism_legal_llm_001_008.json"
@@ -37389,6 +37439,7 @@
       "sez_cloud_computing_regulation": 31,
       "sez_companies_register_rules": 32,
       "sez_companies_rules": 108,
+      "sez_economic_substance_regulation": 9,
       "sez_jazan_regulation": 34,
       "sez_kaec_regulation": 35,
       "sez_raskhair_regulation": 34,
@@ -37534,7 +37585,7 @@
       "zatca_statute": 16
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 25702,
+    "total_records": 25711,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

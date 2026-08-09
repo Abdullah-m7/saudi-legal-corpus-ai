@@ -4,7 +4,7 @@
  "selection_policy": "2 of 163 monthly sitemaps — those modified on/after the corpus index's own end date (2026-07-31), plus the two most recent",
  "corpus_index_pages": 8997,
  "corpus_index_end_date": "2026-07-31",
- "ingested_gazette_page_ids": 576,
+ "ingested_gazette_page_ids": 577,
  "monthly_sitemaps_available": 163,
  "monthly_sitemaps_fetched": 2,
  "fetch_failures": [],
@@ -14,86 +14,32 @@
  "unseen_legislative_already_ingested": [
   "4001545",
   "4001550",
+  "4001553",
   "4001558",
   "4001570"
  ],
- "never_examined_by_this_corpus": 11,
- "verdict": "NEW_LEGISLATIVE_PAGES",
+ "unseen_legislative_already_judged_and_refused": [
+  "4001357",
+  "4001540",
+  "4001541",
+  "4001544",
+  "4001548",
+  "4001555",
+  "4001561",
+  "4001563",
+  "4001565",
+  "4001567"
+ ],
+ "never_examined_by_this_corpus": 0,
+ "verdict": "INDEX_STALE_ONLY",
  "verdict_vocabulary": {
   "FRESH": "لا صفحة تشريعية في الخرائط المجلوبة غائبة عن فهرس المستودع.",
-  "INDEX_STALE_ONLY": "الفهرس المحصود متأخر عن المستودع: الصفحات غير المرئية له مبنيةٌ مساراتٍ فعلاً. لا ينقص المستودع محتوى.",
+  "INDEX_STALE_ONLY": "الفهرس المحصود متأخر عن المستودع: الصفحات غير المرئية له إمّا مبنيةٌ مساراتٍ فعلاً وإمّا حكمت عليها البوابات ورفضتها. لا ينقص المستودع محتوى.",
   "NEW_LEGISLATIVE_PAGES": "الجريدة نشرت صفحاتٍ تشريعية لم يفحصها المستودع قط. تُمرَّر أرقامها على بوابات الإدخال، وهي — لا هذه الأداة — من يقرر قبولها.",
   "FRESH_WITH_FETCH_FAILURES": "لا جديد فيما جُلب، وبعض الخرائط تعذّر جلبها فالنتيجة ناقصة.",
   "UNREACHABLE": "تعذّر الوصول إلى خريطة الموقع؛ نتيجة غير قاطعة، وليست دليلاً على عدم النشر."
  },
- "never_examined_pages": [
-  {
-   "page_id": "4001357",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/authorities/4001357",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-02"
-  },
-  {
-   "page_id": "4001540",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001540",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001541",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001541",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001544",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001544",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001548",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001548",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001553",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001553",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001555",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001555",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001561",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001561",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001563",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001563",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001565",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001565",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  },
-  {
-   "page_id": "4001567",
-   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001567",
-   "section": "decisions-and-regulations",
-   "month_lastmod": "2026-08-09"
-  }
- ],
+ "never_examined_pages": [],
  "unseen_legislative_pages": [
   {
    "page_id": "4001357",
@@ -649,7 +595,6 @@
   "4001541",
   "4001544",
   "4001548",
-  "4001553",
   "4001555",
   "4001561",
   "4001563",

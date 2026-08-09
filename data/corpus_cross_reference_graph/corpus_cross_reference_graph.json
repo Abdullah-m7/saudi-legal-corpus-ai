@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 25702,
-  "total_references_extracted": 6171,
-  "intra_law_count": 3260,
+  "total_records_scanned": 25711,
+  "total_references_extracted": 6172,
+  "intra_law_count": 3261,
   "inter_law_count": 1336,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4405,
+    "high": 4406,
     "medium": 1766
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -50589,6 +50589,17 @@
       "target_article_number": 16,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السادسة عشرة) من القواعد. 8 - كل من قبل الق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "sez_economic_substance_regulation",
+      "source_record_id": "sez-economic-substance-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "sez_economic_substance_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة (3) من هذه اللائحة. 11- أصول",
       "confidence": "high"
     },
     {
