@@ -21,7 +21,9 @@ Checks:
       (imported from scripts/validate_corpus_registry.py, not hand-copied).
   4.  Every reference's non-null target_track_id is a real track_id.
   5.  Every reference has a non-empty raw_citation_text.
-  6.  Every reference's `type` is one of intra_law/inter_law/ambiguous_scope.
+  6.  Every reference's `type` is one of the six the generator defines
+      (intra_law, inter_law, ambiguous_scope, parent_law,
+      parent_law_unresolved, intra_law_unresolved).
   7.  Every reference's `confidence` is high or medium (never invented
       finer-grained values, per the task's own schema).
   8.  intra_law references always carry target_track_id == source_track_id
@@ -63,7 +65,19 @@ INDEX_PATH = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_
 GEN_SCRIPT = os.path.join(ROOT, "scripts", "gen_corpus_cross_reference_graph.py")
 VALIDATE_REGISTRY_SCRIPT = os.path.join(ROOT, "scripts", "validate_corpus_registry.py")
 
-TYPES = {"intra_law", "inter_law", "ambiguous_scope"}
+# Three of these were added when the graph was checked against the corpus for
+# the first time and turned out to be asserting destinations that are not there.
+#   parent_law            — «من النظام» inside a subordinate instrument names the
+#                           PARENT law, not itself; 1,086 references were pointing
+#                           at the citing regulation and «resolving» to the wrong
+#                           instrument, which is worse than dangling.
+#   parent_law_unresolved — the same citation where this corpus cannot name the
+#                           parent. Recorded honestly rather than pointed at self.
+#   intra_law_unresolved  — a self-target at an article number the citing track
+#                           provably does not hold. A five-article instrument has
+#                           no article 155; that is arithmetic, not interpretation.
+TYPES = {"intra_law", "inter_law", "ambiguous_scope",
+         "parent_law", "parent_law_unresolved", "intra_law_unresolved"}
 CONFIDENCES = {"high", "medium"}
 
 REQUIRED_TOP_FIELDS = [
@@ -185,7 +199,7 @@ def main() -> int:
 
     # [6] type values
     bad_types = sorted({r.get("type") for r in references} - TYPES)
-    check("[6] Every reference.type is intra_law/inter_law/ambiguous_scope...", len(bad_types) == 0,
+    check("[6] Every reference.type is one the generator defines...", len(bad_types) == 0,
           f"Types used: {sorted({r.get('type') for r in references})}" if not bad_types
           else f"Unexpected: {bad_types}")
 
@@ -239,9 +253,24 @@ def main() -> int:
     check("    confidence_counts matches recount...",
           graph.get("confidence_counts") == conf_recount,
           f"stated={graph.get('confidence_counts')} actual={conf_recount}")
-    check("    intra + inter + ambiguous == total...",
-          len(intra) + len(inter) + len(ambiguous) == len(references),
-          f"{len(intra)}+{len(inter)}+{len(ambiguous)} vs {len(references)}")
+    parent = [r for r in references if r.get("type") == "parent_law"]
+    parent_unres = [r for r in references if r.get("type") == "parent_law_unresolved"]
+    intra_unres = [r for r in references if r.get("type") == "intra_law_unresolved"]
+    check("    every reference is counted in exactly one type bucket...",
+          (len(intra) + len(inter) + len(ambiguous) + len(parent)
+           + len(parent_unres) + len(intra_unres)) == len(references),
+          f"{len(intra)}+{len(inter)}+{len(ambiguous)}+{len(parent)}"
+          f"+{len(parent_unres)}+{len(intra_unres)} vs {len(references)}")
+    # An "unresolved" type that still carries a target would be a contradiction:
+    # it says the corpus cannot name the destination while naming one.
+    check("    unresolved references carry no target_track_id...",
+          all(r.get("target_track_id") is None for r in parent_unres + intra_unres),
+          f"{sum(1 for r in parent_unres + intra_unres if r.get('target_track_id'))} carry one")
+    # A parent_law reference must not point back at the citing instrument —
+    # that is precisely the defect this type was introduced to end.
+    check("    parent_law references never point at the citing track...",
+          all(r.get("target_track_id") != r.get("source_track_id") for r in parent),
+          f"{sum(1 for r in parent if r.get('target_track_id') == r.get('source_track_id'))} do")
 
     # [11] source_record_id / source_article_number consistency against the
     # unified index the generator itself reads.

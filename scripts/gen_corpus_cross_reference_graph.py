@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import difflib
 import importlib.util
+import glob
 import json
 import os
 import re
@@ -433,7 +434,7 @@ _SELF_NOUNS = r"(?:النظام|اللائحة|القانون|القواعد|ا�
 _INDEF_NOUNS = r"(?:نظام|لائحة|قانون|قواعد|دليل|آلية|تنظيم|ضوابط)"
 
 _SELF_RE = re.compile(
-    r"من\s+(?:هذا\s+|هذه\s+)?" + _SELF_NOUNS + r"\b"
+    r"من\s+(?P<dem>هذا\s+|هذه\s+)?(?P<noun>" + _SELF_NOUNS + r")\b"
     r"(?!\s+(?:التنفيذية\s+ل|الخاصة\s+ب))"
 )
 _INSTR_FRAGMENT = r"(?P<instr>اللائحة\s+التنفيذية\s+ل(?:نظام|لائحة)|ل?" + _INDEF_NOUNS + r")"
@@ -508,7 +509,15 @@ def detect_scope(lookahead: str):
                 and _looks_like_law_name(raw_name)):
             return {"kind": "named", "raw_name": raw_name, "instr": named.group("instr")}
     if self_m:
-        return {"kind": "self"}
+        # WHICH noun, and whether it was demonstrative, both matter downstream.
+        # «من هذا النظام» inside a law is that law. «من النظام» inside an
+        # IMPLEMENTING REGULATION is the parent law — a different instrument —
+        # and reading it as self is the difference between citing article 217 of
+        # the Bankruptcy Law and citing a 24-article set of case rules that has
+        # no article 217. See resolve_parent_law() below.
+        return {"kind": "self",
+                "noun": normalize_ar(self_m.group("noun")),
+                "demonstrative": bool(self_m.group("dem"))}
     if _AMBIGUOUS_BACKREF_RE.search(lookahead):
         return {"kind": "ambiguous"}
     return {"kind": "none"}
@@ -571,6 +580,84 @@ def _load_layer_to_track_id(registry: dict):
 
 
 # ---------------------------------------------------------------------------
+# «من النظام» inside a subordinate instrument is its PARENT LAW.
+# ---------------------------------------------------------------------------
+# This was the graph's largest single defect and it was invisible until the
+# targets were checked against the corpus. An implementing regulation that says
+# «المادة (٢١٧) من النظام» is citing article 217 of the LAW it implements. The
+# scope detector read «من النظام» as a self-marker and pointed the reference
+# back at the citing instrument, so:
+#
+#   * 224 references landed on an article number their own track does not have —
+#     visibly broken, e.g. «قواعد نظر دعاوى الإفلاس» (24 records) cited as having
+#     an article 217, or «لائحة طرق الاعتراض على الأحكام» (62) an article 185;
+#   * and 1,110 more «resolved» — TO THE WRONG INSTRUMENT. A model following the
+#     graph landed on a real article of the regulation when the citation meant an
+#     article of the law. That is worse than the dangling ones: a silent wrong
+#     answer does more damage than a visible missing one.
+#
+# The parent is read off the corpus's own structure, never guessed:
+#
+#   1. the citing track's own `base_law_track`, where its source artifact
+#      declares one — an explicit statement by the track about itself;
+#   2. otherwise the sibling track carrying the SAME corpus key with the
+#      component «law». The unified index's corpus key is exactly the grouping
+#      that pairs «arbitration_law» with «arbitration_implementing_regulation»;
+#   3. otherwise nothing. The reference is emitted with a null target and the
+#      type `parent_law_unresolved`, because a citation whose parent this corpus
+#      cannot name is not a citation to the citing instrument.
+#
+# Only the NON-demonstrative «من النظام» is retargeted. «من هذا النظام» says
+# THIS one, and where a drafter wrote that inside a regulation the reading is a
+# judgement rather than a fact, so it is left alone.
+_PARENT_NOUN = normalize_ar("النظام")
+LAW_COMPONENTS = ("law",)
+
+
+def _load_base_law_tracks():
+    """{track_id: base_law_track} for every source artifact that declares one."""
+    out = {}
+    for pattern in ("sources/*/official_source/*.json",
+                    "sources/*/*/official_source/*.json"):
+        for path in glob.glob(os.path.join(ROOT, pattern)):
+            try:
+                with open(path, encoding="utf-8") as f:
+                    doc = json.load(f)
+            except Exception:                                     # noqa: BLE001
+                continue
+            base = (doc.get("base_law_track") or "").strip()
+            if base:
+                key = os.path.relpath(path, os.path.join(ROOT, "sources")).split(os.sep)[0]
+                out.setdefault(key, base)
+    return out
+
+
+def build_parent_law_map(rows, layer_to_track):
+    """{track_id: parent_track_id or None} for every subordinate track."""
+    corpus_of, component_of = {}, {}
+    law_track_of_corpus = {}
+    for r in rows:
+        tid = layer_to_track.get(r.get("source_layer"))
+        if tid is None:
+            continue
+        corpus_of[tid] = r["corpus"]
+        component_of[tid] = r["law_component"]
+        if r["law_component"] in LAW_COMPONENTS:
+            law_track_of_corpus.setdefault(r["corpus"], tid)
+    declared = _load_base_law_tracks()
+    parent = {}
+    for tid, comp in component_of.items():
+        if comp in LAW_COMPONENTS:
+            continue                                   # a law's «النظام» is itself
+        base = declared.get(tid)
+        if base and base in component_of:
+            parent[tid] = base
+        else:
+            parent[tid] = law_track_of_corpus.get(corpus_of[tid])
+    return parent, component_of
+
+
+# ---------------------------------------------------------------------------
 # Main extraction.
 # ---------------------------------------------------------------------------
 
@@ -584,7 +671,10 @@ def load_registry():
         return json.load(f)
 
 
-def extract_references(rows, layer_to_track, track_cores):
+def extract_references(rows, layer_to_track, track_cores,
+                       parent_law=None, component_of=None):
+    parent_law = parent_law or {}
+    component_of = component_of or {}
     references = []
     for r in rows:
         track_id = layer_to_track.get(r.get("source_layer"))
@@ -626,6 +716,25 @@ def extract_references(rows, layer_to_track, track_cores):
                         "confidence": "high" if tgt_tid else "medium",
                     })
             elif scope["kind"] == "self":
+                # «من النظام» inside a subordinate instrument names its PARENT
+                # law, not itself. See build_parent_law_map above for why, and
+                # for the two facts the parent is read from.
+                retarget = (scope.get("noun") == _PARENT_NOUN
+                            and not scope.get("demonstrative")
+                            and component_of.get(track_id) not in LAW_COMPONENTS
+                            and track_id in parent_law)
+                if retarget:
+                    tgt = parent_law.get(track_id)
+                    references.append({
+                        "source_track_id": track_id, "source_record_id": record_id,
+                        "source_article_number": source_article,
+                        "type": "parent_law" if tgt else "parent_law_unresolved",
+                        "target_track_id": tgt, "target_article_number": num,
+                        "target_law_name_raw": "النظام",
+                        "raw_citation_text": _clip_citation(raw_span, lookahead, None),
+                        "confidence": "high" if tgt else "medium",
+                    })
+                    continue
                 if num == source_article:
                     continue
                 references.append({
@@ -682,13 +791,46 @@ def _clip_citation(raw_span: str, lookahead: str, raw_name):
     return combined[:160].strip()
 
 
+# A self-target the corpus provably cannot follow is not a self-target.
+#
+# Where no scope marker sits near a citation, this generator defaults it to the
+# citing instrument at 'medium' confidence — the dominant convention, and the
+# right default. It is still sometimes wrong, and when it is, the corpus can say
+# so without any judgement at all: a five-article instrument has no article 155.
+# That is arithmetic, not interpretation.
+#
+# So a reference that points at its own track at an article number that track
+# does not hold is re-typed `intra_law_unresolved` and its target cleared. The
+# citation is kept — the text really does say it — but the graph stops asserting
+# a destination that is not there. 72 references were asserting one.
+def mark_unfollowable_self_targets(references, rows, layer_to_track):
+    held = {}
+    for r in rows:
+        tid = layer_to_track.get(r.get("source_layer"))
+        if tid is not None:
+            held.setdefault(tid, set()).add(r["article_number"])
+    out = []
+    for ref in references:
+        tid = ref.get("target_track_id")
+        num = ref.get("target_article_number")
+        if (ref["type"] == "intra_law" and tid and tid == ref["source_track_id"]
+                and num is not None and num not in held.get(tid, set())):
+            ref = dict(ref, type="intra_law_unresolved", target_track_id=None,
+                       confidence="medium")
+        out.append(ref)
+    return out
+
+
 def build_graph():
     registry = load_registry()
     layer_to_track = _load_layer_to_track_id(registry)
     track_cores = _build_track_cores(registry)
     rows = load_index()
 
-    references = extract_references(rows, layer_to_track, track_cores)
+    parent_law, component_of = build_parent_law_map(rows, layer_to_track)
+    references = extract_references(rows, layer_to_track, track_cores,
+                                    parent_law, component_of)
+    references = mark_unfollowable_self_targets(references, rows, layer_to_track)
 
     intra = sum(1 for r in references if r["type"] == "intra_law")
     inter = sum(1 for r in references if r["type"] == "inter_law")

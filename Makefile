@@ -1981,6 +1981,9 @@ corpus-supersession-graph-validate:
 corpus-cross-reference-graph-validate:
 	$(PY) scripts/validate_corpus_cross_reference_graph.py
 
+cross-reference-resolution-audit:
+	$(PY) scripts/audit_cross_reference_resolution.py
+
 corpus-glossary-validate:
 	$(PY) scripts/validate_corpus_glossary.py
 
