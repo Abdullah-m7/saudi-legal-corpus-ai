@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 25621,
-  "total_references_extracted": 6145,
-  "intra_law_count": 3239,
-  "inter_law_count": 1333,
+  "total_records_scanned": 25702,
+  "total_references_extracted": 6171,
+  "intra_law_count": 3260,
+  "inter_law_count": 1336,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4401,
-    "medium": 1744
+    "high": 4405,
+    "medium": 1766
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -8697,11 +8697,11 @@
       "source_record_id": "charitable-donations-executive-instructions-llm-023",
       "source_article_number": 23,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة ولائحته التنفيذية",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة ولائحته التنفيذية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "charitable_donations_executive_instructions",
@@ -16452,11 +16452,11 @@
       "source_record_id": "cultural-development-fund-law-llm-013",
       "source_article_number": 13,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "customs_law",
@@ -24522,6 +24522,39 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "gcc_jointly_owned_property_rules",
+      "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "gcc_jointly_owned_property_rules",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة من هذه القواعد. 9 - الجمعية ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "gcc_jointly_owned_property_rules",
+      "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "gcc_jointly_owned_property_rules",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة من هذه القواعد. 10 - النظام ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "gcc_jointly_owned_property_rules",
+      "source_record_id": "gcc-jointly-owned-property-rules-llm-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "gcc_jointly_owned_property_rules",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "gcc_pesticides_regulation",
       "source_record_id": "gcc-pesticides-regulation-llm-004",
       "source_article_number": 4,
@@ -29476,11 +29509,11 @@
       "source_record_id": "international-bus-transport-regulation-llm-030",
       "source_article_number": 30,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة ولائحته التنفيذية",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة ولائحته التنفيذية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "international_bus_transport_regulation",
@@ -29564,11 +29597,11 @@
       "source_record_id": "intracity-bus-transport-licensing-llm-010",
       "source_article_number": 10,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة ولائحته التنفيذية",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة ولائحته التنفيذية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "investment_law",
@@ -37524,6 +37557,171 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من هذه اللائحة، يتم تجديد الت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-009",
+      "source_article_number": 9,
+      "type": "parent_law",
+      "target_track_id": "road_transport_law",
+      "target_article_number": 22,
+      "target_law_name_raw": "النظام",
+      "raw_citation_text": "المادة (الثانية والعشرين) من النظام، فيكون ترخيص ممارسة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-009",
+      "source_article_number": 9,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإفلاس",
+      "raw_citation_text": "وفقا لنظام الإفلاس",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور ولائحته التنفيذية",
+      "raw_citation_text": "وفقا لنظام المرور ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من هذه اللائحة، يجب على مقدم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-021",
+      "source_article_number": 21,
+      "type": "parent_law",
+      "target_track_id": "road_transport_law",
+      "target_article_number": 23,
+      "target_law_name_raw": "النظام",
+      "raw_citation_text": "المادة (الثالثة والعشرين) من النظام، وما لسلطات الضبط ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "motorcycle_freight_transport_regulation",
+      "target_article_number": 22,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والعشرون)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "motorcycle_freight_transport_regulation",
+      "source_record_id": "motorcycle-freight-transport-regulation-llm-023",
+      "source_article_number": 23,
+      "type": "inter_law",
+      "target_track_id": "disability_rights_violations_committee_rules",
+      "target_article_number": null,
+      "target_law_name_raw": "قواعد عمل لجنة النظر في مخالفات أحكام نظام النقل البري على ال",
+      "raw_citation_text": "وفق لائحة قواعد عمل لجنة النظر في مخالفات أحكام نظام النقل البري على ال",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "municipal_councils_law",
       "source_record_id": "municipal-councils-law-llm-art-001",
       "source_article_number": 1,
@@ -38276,11 +38474,11 @@
       "source_record_id": "national-infrastructure-fund-law-llm-013",
       "source_article_number": 13,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "national_inspection_control_center_statute",
@@ -40949,11 +41147,11 @@
       "source_record_id": "payment-systems-regulation-llm-art-121",
       "source_article_number": 121,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "أي دولة",
       "raw_citation_text": "بموجب نظام أي دولة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "payment_systems_regulation",
@@ -47747,33 +47945,33 @@
       "source_record_id": "revenue-sharing-rules-llm-015",
       "source_article_number": 15,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "أحكام نظام إيرادات الدولة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "revenue_sharing_rules",
       "source_record_id": "revenue-sharing-rules-llm-016",
       "source_article_number": 16,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "أحكام نظام إيرادات الدولة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "revenue_sharing_rules",
       "source_record_id": "revenue-sharing-rules-llm-016",
       "source_article_number": 16,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "بموجب نظام إيرادات الدولة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "riyadh_arts_university_statute",
@@ -58043,11 +58241,11 @@
       "source_record_id": "state-revenue-regulation-llm-art-047",
       "source_article_number": 47,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": 14,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "المادة (الرابعة عشرة) من نظام إيرادات الدولة - المحكمة المخت",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "state_revenue_regulation",
@@ -58069,6 +58267,94 @@
       "target_article_number": 57,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السابعة والخمسين) من هذه اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام. الدين: كل مال مستح",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) من النظام، فعلى الجهة التقدم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام. 3 - دون إخلال بما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من النظام، يجوز الإعفاء من ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام- اتخاذ جميع الإجراء",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_revenue_law_1448",
+      "source_record_id": "state-revenue-law-1448-llm-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law_1448",
+      "target_article_number": 22,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والعشرين) من النظام.",
       "confidence": "high"
     },
     {
@@ -58637,11 +58923,11 @@
       "source_record_id": "taxi-activity-regulation-llm-044",
       "source_article_number": 44,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة ولائحته التنفيذية",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة ولائحته التنفيذية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "taxi_activity_regulation",
@@ -63015,7 +63301,7 @@
       "source_record_id": "treaty-iraq-double-taxation-llm-004",
       "source_article_number": 4,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": "state_property_acquisition_controls",
       "target_article_number": null,
       "target_law_name_raw": "تلك الدولة",
       "raw_citation_text": "وفقا لنظام تلك الدولة",
@@ -65897,11 +66183,11 @@
       "source_record_id": "water-electricity-regulatory-authority-statute-llm-017",
       "source_article_number": 17,
       "type": "inter_law",
-      "target_track_id": "state_revenue_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "إيرادات الدولة",
       "raw_citation_text": "وفقا لنظام إيرادات الدولة أو ما تقتضيه شروط الرخص والتصاريح",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "weapons_ammunition_law",

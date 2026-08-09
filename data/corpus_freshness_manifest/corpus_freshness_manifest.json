@@ -10,7 +10,7 @@
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
   "published_amendment_methodology": "published_amendment_after_edition_on_file=true where scripts/audit_corpus_currency.py matched a DATED amendment notice in the Umm Al-Qura archive whose subject is this instrument and whose publication date is later than the edition anchor recorded in the track's own source artifact. This is a DIFFERENT claim from known_source_staleness_risk: staleness risk is about the portal we read having shown outdated text, this is about the law having been amended after a correct reading. Neither implies the other, and a track flagged here has NOT had any article altered on the notice's authority — an amendment notice is not the amended text, so applying it would be drafting rather than ingestion. Every flagged track also carries the same warning, with the full notice list, in its own known_unresolved_discrepancies.",
-  "total_tracks": 745,
+  "total_tracks": 749,
   "known_source_staleness_risk_count": 17,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -5542,6 +5542,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "gcc_jointly_owned_property_rules",
+      "display_name_en": "GCC Unified Rules for Owners of Jointly Owned Property",
+      "display_name_ar": "القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون لدول الخليج العربية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "GCC Unified Rules for Owners of Jointly Owned Property — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+      "registry_source_url": null,
+      "official_source_file": "sources/gcc_jointly_owned_property_rules/official_source/gcc_jointly_owned_property_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "gcc_ownership_law",
       "display_name_en": "GCC Citizens Real Estate Ownership Regulation",
       "display_name_ar": "تنظيم تملك مواطني دول المجلس للعقار في الدول الأعضاء بمجلس التعاون لغرض السكن والاستثمار",
@@ -8478,6 +8497,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "motorcycle_freight_transport_regulation",
+      "display_name_en": "Implementing Regulation for Commercial Freight Transport by Motorcycle",
+      "display_name_ar": "اللائحة التنفيذية لنشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation for Commercial Freight Transport by Motorcycle — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+      "registry_source_url": null,
+      "official_source_file": "sources/motorcycle_freight_transport_regulation/official_source/motorcycle_freight_transport_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "municipal_councils_law",
       "display_name_en": "Municipal Councils Law",
       "display_name_ar": "نظام المجالس البلدية",
@@ -10922,6 +10960,25 @@
       "published_amendment_pointer": ""
     },
     {
+      "track_id": "real_estate_exchange_transfer_mechanism",
+      "display_name_en": "Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority",
+      "display_name_ar": "آلية نقل أصول البورصة العقارية وموظفيها ومشاريعها ومبادراتها إلى الهيئة العامة للعقار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_exchange_transfer_mechanism/official_source/real_estate_exchange_transfer_mechanism_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
+    },
+    {
       "track_id": "real_estate_expropriation_law",
       "display_name_en": "Law on Expropriation of Real Estate for Public Interest and Temporary Seizure of Real Estate",
       "display_name_ar": "نظام نزع ملكية العقارات للمصلحة العامة ووضع اليد المؤقت على العقارات",
@@ -12963,6 +13020,25 @@
       "known_source_staleness_pointer": "state_revenue_art_025_boe_stale_main_body_vs_changelog: Confirmed instance of this corpus's well-documented BOE pattern: the portal's default/main-body text for Article 25 is STALE (pre-amendment), retaining the phrase 'أو تقسيط' ('or installment'), while BOE's own per-articl",
       "published_amendment_after_edition_on_file": true,
       "published_amendment_pointer": "edition on file 2010-10-26 (converted from Hijri); 1 amendment notice(s) published later in Umm Al-Qura, most recently 2022-05-13 — تعديل نظام إيرادات الدولة (https://www.uqn.gov.sa/details?p=19417). The notice is not the amended text: nothing here asserts what the amendment says, only that the stored text may no longer be current."
+    },
+    {
+      "track_id": "state_revenue_law_1448",
+      "display_name_en": "State Revenue Law (1448H)",
+      "display_name_ar": "نظام إيرادات الدولة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "State Revenue Law (1448H) — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+      "registry_source_url": null,
+      "official_source_file": "sources/state_revenue_law_1448/official_source/state_revenue_law_1448_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": "",
+      "published_amendment_after_edition_on_file": false,
+      "published_amendment_pointer": ""
     },
     {
       "track_id": "state_revenue_regulation",

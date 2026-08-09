@@ -1162,5 +1162,13 @@
   "reports": [
    "reports/cross_reference_resolution/cross_reference_resolution.json"
   ]
+ },
+ "the_archive_index_had_an_end_date_and_the_gazette_did_not": {
+  "the_gap": "Every coverage claim this corpus has made rests on an archive index of 8,997 pages. That index has an END DATE — 2026-07-31 — and the gazette does not stop publishing. Nothing had ever re-checked it, so 'the archive is exhausted' was true of a snapshot, not of the source.",
+  "what_the_re_index_found": "All 163 monthly sitemaps were re-fetched and diffed against the index. 45 addressable document pages are absent from it. 31 are older pages the index simply never listed, and ZERO of those pass the gates — the index was not missing instruments, it was missing non-instrument pages. 14 were published on 2026-08-07, the day this ran, and FOUR of them pass every gate.",
+  "built": "نظام إيرادات الدولة (30 articles) · اللائحة التنفيذية لنشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية (29) · القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون لدول الخليج العربية (14) · آلية نقل أصول البورصة العقارية إلى الهيئة العامة للعقار (8). The other ten are approval decrees carrying no article text, bare royal decrees, and one regulation refused at G13 as a flattened table.",
+  "a_new_law_that_is_not_yet_in_force": "«نظام إيرادات الدولة» is the find that matters, and it is more delicate than it looks. Its article 29 says verbatim: «يحل النظام محل نظام إيرادات الدولة، الصادر بالمرسوم الملكي رقم (م/68) وتاريخ 18/11/1431ه» — it replaces the law this corpus holds as track state_revenue_law. But its article 30 says: «ينشر النظام في الجريدة الرسمية، ويعمل به بعد (مائة وثمانين) يوما من تاريخ نشره». So the new law is PUBLISHED and NOT YET EFFECTIVE, and the 1431H law is the one in force today. Its legal_status_ar is «منشور ولم يبدأ العمل به بعد», not «ساري»; the old track is kept, not retired; and the track's own disclosure says citing the new provisions as effective today would be wrong. Supersession that has been enacted but not commenced is not supersession yet.",
+  "an_exclusion_that_lives_in_the_decision_not_the_law": "Clause two of Council of Ministers Decision 129 exempts the National Development Fund and its subsidiary funds and banks from ten named articles of the new law. The exemption is in the DECISION, not in the law's text, so nothing was written onto those articles. It is disclosed on the track instead, so their text is not read as unqualified.",
+  "the_lesson_for_the_coverage_claim": "'The archive is exhausted' is a statement with a timestamp on it. This corpus now knows that its own index is a snapshot, and that re-indexing costs one sitemap fetch. Four in-force instruments were sitting one diff away."
  }
 }

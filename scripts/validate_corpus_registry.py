@@ -608,6 +608,10 @@ REQUIRED_TRACK_IDS = [
     "cruise_ships_regulation",
     "securities_offering_rules",
     "treaty_ifad_headquarters",
+    "state_revenue_law_1448",
+    "motorcycle_freight_transport_regulation",
+    "gcc_jointly_owned_property_rules",
+    "real_estate_exchange_transfer_mechanism",
     "superyacht_chartering_regulation",
     "utility_benefit_loss_compensation_regulation",
     "repair_cost_compensation_estimation_controls",
@@ -839,7 +843,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 745 tracks present...", len(track_ids) == 745 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 749 tracks present...", len(track_ids) == 749 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3622,7 +3626,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 25621 records...", uix.get("total_records") == 25621,
+    check("[7g] unified retrieval index: 25702 records...", uix.get("total_records") == 25702,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3684,8 +3688,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 25790...",
-          registry.get("total_primary_arabic_governing_records") == 25790,
+    check("[19a] total_primary_arabic_governing_records == 25871...",
+          registry.get("total_primary_arabic_governing_records") == 25871,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3700,8 +3704,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 26685...",
-          registry.get("total_registry_counted_records") == 26685,
+    check("[19e] total_registry_counted_records == 26766...",
+          registry.get("total_registry_counted_records") == 26766,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3725,7 +3729,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"25790 + 614 + 281 = 26685")
+          f"25871 + 614 + 281 = 26766")
 
     # [21b] Every track's registry display name must be the official Arabic title
     # its own source artifact carries. Hand-abbreviated registry names had drifted
@@ -3763,7 +3767,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 745 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 749 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

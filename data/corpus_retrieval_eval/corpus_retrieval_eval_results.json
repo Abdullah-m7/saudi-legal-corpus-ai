@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 1427,
-  "top1_hits": 1338,
-  "top3_hits": 1393,
-  "top5_hits": 1410,
-  "top1_accuracy": 0.9376,
-  "top3_accuracy": 0.9762,
-  "top5_accuracy": 0.9881,
-  "mrr_at_5": 0.958,
+  "total_queries": 1435,
+  "top1_hits": 1346,
+  "top3_hits": 1401,
+  "top5_hits": 1418,
+  "top1_accuracy": 0.938,
+  "top3_accuracy": 0.9763,
+  "top5_accuracy": 0.9882,
+  "mrr_at_5": 0.9583,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -13042,14 +13042,14 @@
      "score": 36
     },
     {
-     "record_id": "social-insurance-legacy-regulation-llm-art-annuities_006",
-     "article_number": 6,
-     "score": 7
+     "record_id": "state-revenue-law-1448-llm-013",
+     "article_number": 13,
+     "score": 30
     },
     {
-     "record_id": "agriculture-regulation-llm-art-001",
+     "record_id": "state-revenue-law-1448-llm-001",
      "article_number": 1,
-     "score": 3
+     "score": 12
     }
    ]
   },
@@ -44267,6 +44267,254 @@
      "record_id": "treaty-dco-headquarters-llm-002",
      "article_number": 2,
      "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-215c40-1",
+   "query_ar": "يقصد بالعبارات والمصطلحات الآتية -أينما وردت في هذا النظام- المعاني المبينة أمام كل منها، ما لم يقتض السياق غير ذلك: الدولة: المملكة العربية السعودية. النظام: نظام إيرادات الدولة. اللائحة: اللائحة التنفيذية للن",
+   "category": "definitional",
+   "gold": {
+    "corpus": "state_revenue_law_1448",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-revenue-law-1448-llm-001",
+     "article_number": 1,
+     "score": 47
+    },
+    {
+     "record_id": "revenue-sharing-rules-llm-001",
+     "article_number": 1,
+     "score": 32
+    },
+    {
+     "record_id": "state-revenue-law-llm-art-001",
+     "article_number": 1,
+     "score": 44
+    }
+   ]
+  },
+  {
+   "query_id": "gz-215c40-2",
+   "query_ar": "تتكون الإيرادات من المصادر الآتية: 1 - الرسوم والضرائب. 2 - المقابلات المالية. 3 - المبيعات. 4 - الجزاءات والغرامات. 5 - بيع أملاك الدولة وتأجيرها. 6 - التعويضات. 7 - العوائد المالية الناتجة عن العقود أو الثروا",
+   "category": "provision",
+   "gold": {
+    "corpus": "state_revenue_law_1448",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-revenue-law-1448-llm-002",
+     "article_number": 2,
+     "score": 47
+    },
+    {
+     "record_id": "state-revenue-law-llm-art-002",
+     "article_number": 2,
+     "score": 26
+    },
+    {
+     "record_id": "customs-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "gz-142dcb-1",
+   "query_ar": "يقصد بالكلمات والعبارات الواردة في هذه اللائحة المعاني الموضحة لها في النظام وهذه اللائحة، ما لم يقض سياق النص بخلاف ذلك: 1 - النظام: نظام النقل البري على الطرق بالمملكة العربية السعودية، الصادر بالمرسوم الملكي",
+   "category": "definitional",
+   "gold": {
+    "corpus": "motorcycle_freight_transport_regulation",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "motorcycle-freight-transport-regulation-llm-001",
+     "article_number": 1,
+     "score": 35
+    },
+    {
+     "record_id": "listed-jsc-companies-regulation-llm-001",
+     "article_number": 1,
+     "score": 32
+    },
+    {
+     "record_id": "ipo-book-building-allocation-instructions-llm-002",
+     "article_number": 2,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-142dcb-2",
+   "query_ar": "تهدف اللائحة إلى تنظيم نشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية، وتطوير خدماته، وتشجيع الاستثمار فيه، بما يتفق مع أهداف التنمية الاقتصادية والاجتماعية في المملكة، مع مراعاة الجوانب البيئية ومتطلبات الأ",
+   "category": "provision",
+   "gold": {
+    "corpus": "motorcycle_freight_transport_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "motorcycle-freight-transport-regulation-llm-002",
+     "article_number": 2,
+     "score": 94
+    },
+    {
+     "record_id": "road-transport-law-llm-art-002",
+     "article_number": 2,
+     "score": 26
+    },
+    {
+     "record_id": "agriculture-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-a30cca-1",
+   "query_ar": "في تطبيق أحكام هذه القواعد تكون للكلمات والعبارات التالية المعاني المبينة أمام كل منها، ما لم يقتض سياق النص خلاف ذلك: 1 - دول المجلس: الدول الأعضاء بمجلس التعاون لدول الخليج العربية. 2 - الدولة: الدولة العضو ب",
+   "category": "definitional",
+   "gold": {
+    "corpus": "gcc_jointly_owned_property_rules",
+    "law_component": "rules",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-jointly-owned-property-rules-llm-001",
+     "article_number": 1,
+     "score": 61
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
+     "score": 65
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-001",
+     "article_number": 1,
+     "score": 63
+    }
+   ]
+  },
+  {
+   "query_id": "gz-a30cca-2",
+   "query_ar": "أ- تتخذ دول المجلس الإجراءات اللازمة لتنظيم المسائل الواردة في هذه القواعد في تشريعاتها الوطنية وفقا للإجراءات المتبعة في الدولة. ب- لا تخل هذه القواعد بأي تشريع وطني يتضمن أو يمكن أن يتضمن أحكاما ذات تطبيق أشم",
+   "category": "provision",
+   "gold": {
+    "corpus": "gcc_jointly_owned_property_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-jointly-owned-property-rules-llm-002",
+     "article_number": 2,
+     "score": 58
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
+     "score": 35
+    },
+    {
+     "record_id": "treaty-regional-technical-cooperation-protocol-llm-011",
+     "article_number": 11,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8d3746-1",
+   "query_ar": "نقل الخدمات الرقمية والتشغيلية ذات العلاقة المباشرة بعمليات التوثيق العقاري التي تعد جزءا أساسيا من المنظومة العقارية المتكاملة -بما فيها بنيتها التقنية وفرقها التشغيلية وبياناتها- إلى الهيئة العامة للعقار، وهي",
+   "category": "definitional",
+   "gold": {
+    "corpus": "real_estate_exchange_transfer_mechanism",
+    "law_component": "mechanism",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-exchange-transfer-mechanism-llm-001",
+     "article_number": 1,
+     "score": 72
+    },
+    {
+     "record_id": "rett-regulation-llm-art-011",
+     "article_number": 11,
+     "score": 26
+    },
+    {
+     "record_id": "food-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8d3746-2",
+   "query_ar": "نقل المباني المتعلقة بتشغيل الاختصاص العقاري إلى الهيئة العامة للعقار، وهي كل من: (كتابة عدل المروج بالرياض، كتابة عدل الفيحاء بالرياض، كتابة عدل السويدي بالرياض، كتابة عدل الخبر، كتابة عدل شرق المدينة المنورة،",
+   "category": "provision",
+   "gold": {
+    "corpus": "real_estate_exchange_transfer_mechanism",
+    "law_component": "mechanism",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-exchange-transfer-mechanism-llm-002",
+     "article_number": 2,
+     "score": 72
+    },
+    {
+     "record_id": "civil-aviation-law-llm-art-001",
+     "article_number": 1,
+     "score": 14
+    },
+    {
+     "record_id": "real-estate-exchange-transfer-mechanism-llm-001",
+     "article_number": 1,
+     "score": 38
     }
    ]
   }

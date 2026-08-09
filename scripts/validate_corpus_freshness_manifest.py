@@ -17,7 +17,7 @@ QA gate. See that script's own docstring.
 Checks:
   1.  Output JSON exists and parses.
   2.  Required top-level fields present.
-  3.  Exactly 745 track entries, one per REQUIRED_TRACK_IDS (imported from
+  3.  Exactly 749 track entries, one per REQUIRED_TRACK_IDS (imported from
       scripts/validate_corpus_registry.py), no missing / no unexpected extra ids.
   4.  Every entry carries the expected fields with the expected types.
   5.  `known_source_staleness_risk` is only ever true when a non-empty
@@ -42,7 +42,7 @@ Checks:
       byte-identical output twice in a row (deterministic, no network calls, no
       datetime.now() fabrication).
   9.  Read-only: this validator does not modify the registry, the verification-tiers file,
-      any of the 745 tracks' own files, or the committed output file itself.
+      any of the 749 tracks' own files, or the committed output file itself.
 
 Usage:
     python3 scripts/validate_corpus_freshness_manifest.py
@@ -132,7 +132,7 @@ def main() -> int:
 
     required_track_ids = _load_required_track_ids()
     check("[0] REQUIRED_TRACK_IDS imported from validate_corpus_registry.py...",
-          len(required_track_ids) == 745,
+          len(required_track_ids) == 749,
           f"count={len(required_track_ids)}")
 
     # [1] Output exists and parses
@@ -159,12 +159,12 @@ def main() -> int:
     tracks = out.get("tracks", [])
     by_id = {t.get("track_id"): t for t in tracks if isinstance(t, dict)}
 
-    # [3] Exactly 745 tracks, matching REQUIRED_TRACK_IDS exactly
+    # [3] Exactly 749 tracks, matching REQUIRED_TRACK_IDS exactly
     ids_present = set(by_id.keys())
     ids_required = set(required_track_ids)
     missing_ids = sorted(ids_required - ids_present)
     extra_ids = sorted(ids_present - ids_required)
-    check("[3a] Track count == 745...", len(tracks) == 745, f"count={len(tracks)}")
+    check("[3a] Track count == 749...", len(tracks) == 749, f"count={len(tracks)}")
     check("[3b] No missing track ids...", len(missing_ids) == 0,
           "None missing" if not missing_ids else f"Missing: {missing_ids}")
     check("[3c] No unexpected extra track ids...", len(extra_ids) == 0,
@@ -310,7 +310,7 @@ def main() -> int:
           declared_no_source == recount_no_source,
           f"declared={declared_no_source} recount={recount_no_source}")
 
-    check("[7d] total_tracks == 745...", out.get("total_tracks") == 745,
+    check("[7d] total_tracks == 749...", out.get("total_tracks") == 749,
           f"total_tracks={out.get('total_tracks')}")
 
     # [8] Generator idempotency: snapshot current on-disk output, re-run the generator twice

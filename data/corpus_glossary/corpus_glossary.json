@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 745,
-  "total_terms": 3545,
-  "total_definitions": 7684,
-  "tracks_with_definitions_article_parsed": 575,
+  "total_tracks_in_registry": 749,
+  "total_terms": 3552,
+  "total_definitions": 7725,
+  "tracks_with_definitions_article_parsed": 578,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -470,6 +470,10 @@
     },
     {
       "track_id": "railway_independent_consultant_guide",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "real_estate_exchange_transfer_mechanism",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -3246,6 +3250,14 @@
     ],
     "الأجزاء المشتركة": [
       {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "الأجزاء المشتركة",
+        "definition_text": "الأجزاء في العقار المشترك المعدة للاستعمال المشترك لمالكي وشاغلي الوحدات.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_units_law",
         "article_number": 1,
         "term_as_written": "الأجزاء المشتركة",
@@ -3278,6 +3290,16 @@
         "definition_text": "هي الآلات الإلكترونية، إلكتروميكانيكية، إلكتروكهربائية.",
         "source_record_id": "treaty-regional-technical-cooperation-protocol-llm-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "الأجهزة الرقابية": [
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الأجهزة الرقابية",
+        "definition_text": "الديوان العام للمحاسبة، وهيئة الرقابة ومكافحة الفساد، وأي جهة أخرى مختصة بالرقابة على المال العام.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الأجهزة الكبيرة الثابتة": [
@@ -7954,6 +7976,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "البضائع",
+        "definition_text": "المواد أو المعدات أو السلع أو الأطعمة أو غيرها مما ينقل بواسطة الدراجة الآلية.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "public_auction_sale_rules",
         "article_number": 1,
         "term_as_written": "البضائع",
@@ -10229,6 +10259,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "وثيقة يصدرها المركز للشخص لممارسة عمل أو نشاط يتعلق بالأرصاد الجوية.",
         "source_record_id": "meteorology-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة رسمية تصدرها الهيئة للمنشأة، يسمح لها بموجبها بمزاولة نشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13802,6 +13840,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "الجمعية العمومية",
+        "definition_text": "الجمعية المنصوص عليها في البند (ب) من المادة الثامنة من هذه القواعد.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ngo_council_regulation",
         "article_number": 1,
         "term_as_written": "الجمعية العمومية",
@@ -14650,6 +14696,14 @@
         "definition_text": "كل وزارة أو مصلحة أو مؤسسة عامة أو هيئة عامة.",
         "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الجهة",
+        "definition_text": "الوزارات والهيئات والمصالح والمؤسسات العامة وغيرها من الأجهزة الحكومية والأجهزة المستقلة.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجهة التنسيقية": [
@@ -14978,6 +15032,14 @@
         "definition_text": "هي جهاز البیئة أو أي جهة أخرى تحددها الدولة. 18- حرق النفایات: هي العملیة التي یتم بها التخلص من النفایات الصلبة والسائلة والغازیة القابلة للاحتراق في درجات حرارة عالیة لینتج عنها غازات أو مواد أو مركبات لا تؤثر على البیئة ونواتج لا تحتوي على مواد خطرة.",
         "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة أو الهيئة أو المؤسسة المختصة أو أي جهة عامة أخرى تعنى بتطبيق هذه القواعد بدول المجلس.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "high_risk_professions_regulation",
@@ -15746,6 +15808,14 @@
     ],
     "الحافظة": [
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "الحافظة",
+        "definition_text": "حقيبة خاصة بالتخزين لحفظ البضائع المنقولة وفق أحكام اللائحة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "official_communications_records_regulation",
         "article_number": 1,
         "term_as_written": "الحافظة",
@@ -15837,6 +15907,14 @@
         "term_as_written": "الحالة الطارئة",
         "definition_text": "حالة يكون فيها تحديد السلامة العامة أو الأمن العام أو الصحة العامة جديا وغير متوقع، أو يكون فيها إخلال ينذر بخسائر في الأرواح أو الممتلكات.",
         "source_record_id": "regional-headquarters-procurement-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الحالة الطارئة",
+        "definition_text": "حالة يكون فيها تهديد السلامة العامة أو الأمن العام أو الصحة العامة جديا وغير متوقع، أو يكون فيها ما ينذر بخسائر في الأرواح أو الممتلكات، ولا يمكن التعامل معها بالإجراءات المعتادة.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -17452,6 +17530,14 @@
     ],
     "الدراجة الآلية": [
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "الدراجة الآلية",
+        "definition_text": "مركبة تسير بقوة آلية، ذات عجلتين أو أكثر، وليست مصممة على شكل سيارة، ومعدة لنقل البضائع لأغراض تجارية.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "traffic_law",
         "article_number": 2,
         "term_as_written": "الدراجة الآلية",
@@ -17886,6 +17972,14 @@
     ],
     "الدولة": [
       {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "الدولة",
+        "definition_text": "الدولة العضو بمجلس التعاون لدول الخليج العربية.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gcc_road_transport_law",
         "article_number": 1,
         "term_as_written": "الدولة",
@@ -17965,6 +18059,14 @@
         "term_as_written": "الدين",
         "definition_text": "كل مال مستحق للدولة.",
         "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الدين",
+        "definition_text": "كل مال مستحق للدولة، ويشمل ذلك أي إيراد أصبح مستحق الأداء وفقا للأحكام المنظمة له ولم يتم تحصيله.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20374,6 +20476,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "السائق",
+        "definition_text": "كل من يقود الدراجة الآلية.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "road_transport_law",
         "article_number": 1,
         "term_as_written": "السائق",
@@ -21396,6 +21506,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السنة المالية": [
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "السنة المالية",
+        "definition_text": "السنة المالية للدولة.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السنة المرجعية": [
       {
         "track_id": "vacant_properties_fees_regulation",
@@ -21839,6 +21959,16 @@
         "term_as_written": "الشارة",
         "definition_text": "شارة الهلال الأحمر وما في حكمها من الشارات المعترف بها بناء على اتفاقيات دولية تكون المملكة طرفا فيها.",
         "source_record_id": "red-crescent-emblem-law-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشاغل": [
+      {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "الشاغل",
+        "definition_text": "كل من يستفيد من الوحدة وفقا لما أعدت له، ويشمل المالك والمستأجر والمنتفع وأي شخص يخوله المالك للاستفادة منها.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23492,6 +23622,14 @@
         "definition_text": "اقتطاع مالي إلزامي من دخل وثروة شخص ذي صفة طبيعية أو اعتبارية يدفع للدولة دون مقابل من أجل تحقيق نفع عام.",
         "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الضريبة",
+        "definition_text": "مال يقتطع من دخل وثروة شخص ذي صفة طبيعية أو اعتبارية، يدفع للدولة إلزاما دون مقابل، من أجل تحقيق نفع عام.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الضريبة \"الرسوم\" الجمركية": [
@@ -25056,6 +25194,14 @@
     ],
     "العقار المشترك": [
       {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "العقار المشترك",
+        "definition_text": "عقار مكون من وحدات عقارية مفرزة وأجزاء مشتركة.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_units_law",
         "article_number": 1,
         "term_as_written": "العقار المشترك",
@@ -25885,6 +26031,14 @@
         "term_as_written": "الغرامات المالية",
         "definition_text": "مبلغ مالي يترتب سداده جراء ارتكاب أي مخالفة لأحكام هذه اللائحة.",
         "source_record_id": "light-goods-road-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "الغرامات المالية",
+        "definition_text": "مبلغ مالي يلتزم المخالف بسداده للهيئة نتيجة مخالفته أيا من أحكام النظام أو جدول المخالفات والعقوبات.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -28974,6 +29128,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "municipal_councils_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -29459,6 +29621,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -30519,6 +30689,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "لجنة المتابعة والتنسيق المشكلة لكل برنامج من برامج البحث والتطوير العسكرية.",
         "source_record_id": "military-industries-rnd-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "اللجنة المشكلة بقرار من الرئيس وفق أحكام النظام.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -32133,6 +32311,14 @@
         "term_as_written": "المالك",
         "definition_text": "من يملك أيا من أدوات رأس المال، سواء كان شخصا طبيعيا أو اعتباريا. 2- تضمن اللوائح التنفيذية تعريفات للكلمات والعبارات الأخرى الواردة في النظام.",
         "source_record_id": "financial-institutions-resolution-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "المالك",
+        "definition_text": "الشخص الطبيعي أو الاعتباري الذي يمتلك وحدة أو أكثر من الوحدات العقارية. 8 - اتحاد/ جمعية الملاك: الاتحاد/ الجمعية المنصوص عليها في البند (أ) من المادة الثامنة من هذه القواعد.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -36470,6 +36656,14 @@
         "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية في ذمته مال للدولة.",
         "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "المدين",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية ترتب في ذمته دين للدولة.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المدين الصغير": [
@@ -38770,6 +38964,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "المستفيد",
+        "definition_text": "المرسل أو المرسل إليه.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "national_institute_educational_professional_development_statute",
         "article_number": 1,
         "term_as_written": "المستفيد",
@@ -40930,6 +41132,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "المفتش",
+        "definition_text": "الشخص المسند له صلاحية التفتيش والرقابة وضبط مخالفات النظام أو اللائحة، والصادر بتسميته قرار من الرئيس.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "nca_cybersecurity_violations_investigation_rules",
         "article_number": 1,
         "term_as_written": "المفتش",
@@ -41155,6 +41365,14 @@
         "term_as_written": "المقابل المالي",
         "definition_text": "ما يخصص للهيئة من موارد مالية نظير التراخيص أو بطاقات تشغيل مركبات النقل الخفيف أو بطاقات السائقين التي تصدرها أو الخدمات التي تقدمها.",
         "source_record_id": "light-goods-road-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "المقابل المالي",
+        "definition_text": "المبلغ الذي تحدده الهيئة نظير أي من التراخيص أو الوثائق والخدمات والأعمال التي تقدمها بموجب أحكام النظام أو اللائحة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -43255,6 +43473,14 @@
         "term_as_written": "المنشأة",
         "definition_text": "كيان نظامي يزاول نشاطا يتعلق بالأجهزة والمستلزمات الطبية.",
         "source_record_id": "medical-devices-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشأة",
+        "definition_text": "كل شخصية اعتبارية تتمتع بأهلية قانونية كاملة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -46062,6 +46288,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "نشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية، ويعد هذا النشاط أحد الأنشطة الفرعية لنشاط نقل البضائع لأغراض تجارية. 4 - نشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية: نقل المنشأة لبضائع الغير لأغراض تجارية عبر الدراجة الآلية وفق أحكام هذه اللائحة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "offplan_developer_technical_financial_qualification",
         "article_number": 1,
         "term_as_written": "النشاط",
@@ -46367,6 +46601,14 @@
         "term_as_written": "النطاق الجغرافي",
         "definition_text": "البحر الإقليمي التابع للمملكة في البحر الأحمر الذي تمارس فيه الأنشطة الملاحية والأنشطة البحرية، والجزء من اليابسة المرتبط بممارسة تلك الأنشطة عدا المناطق العسكرية والأمنية والمحميات وغيرها فيهما.",
         "source_record_id": "maritime-tourism-craft-classification-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "النطاق الجغرافي",
+        "definition_text": "نطاق عمل الدراجة الآلية في النشاط بما يشمل المناطق أو المدن أو المسافات أو الطرق أو أي مواقع تحددها الهيئة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -47688,6 +47930,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام إيرادات الدولة.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -47873,6 +48123,14 @@
         "term_as_written": "النظام الأساسي",
         "definition_text": "وثيقة معتمدة من الجامعة الأجنبية تحتوي على: اسم الفرع ومقره وتحديد الكيان النظامي والهيكل التنظيمي والقواعد والإجراءات والسياسات الإدارية والمالية والأكاديمية.",
         "source_record_id": "foreign-university-branches-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "النظام الأساسي",
+        "definition_text": "القواعد والأحكام المنظمة لاتحاد/ جمعية الملاك، والتي يتم وضعها واعتمادها وفقا للتشريع الوطني في كل دولة.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -50202,6 +50460,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "الوحدة",
+        "definition_text": "الجزء المحدد من العقار المشترك الذي يخول مالكه الانتفاع والتصرف به مستقلا عن الأجزاء الأخرى، ويشمل الشقة أو المحل أو الطابق أو البيت (الفيلا)، المتصل ببيت آخر أو المستقل، سواء كان للاستخدام السكني أو التجاري أو الصناعي أو أي نشاط آخر.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "nazaha_criminal_procedure_powers_regulation",
         "article_number": 1,
         "term_as_written": "الوحدة",
@@ -51315,6 +51581,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة المالية.",
         "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة المالية.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -52838,6 +53112,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير المالية.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -54262,6 +54544,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "بطاقة التشغيل",
+        "definition_text": "وثيقة تصدرها الهيئة للدراجة الآلية الخاصة بمقدم الخدمة وفق الشروط والمتطلبات المحددة في هذه اللائحة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "taxi_activity_regulation",
         "article_number": 1,
         "term_as_written": "بطاقة التشغيل",
@@ -54331,6 +54621,14 @@
         "term_as_written": "بطاقة سائق مهني",
         "definition_text": "وثيقة صادرة عن الهيئة أو أي جهة تخولها للسائق بعد اجتياز اختبار الكفاءة المهنية.",
         "source_record_id": "land-transport-training-centers-accreditation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "بطاقة سائق مهني",
+        "definition_text": "وثيقة تصدرها الهيئة للسائق وفق الشروط والمتطلبات المحددة في هذه اللائحة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -57230,6 +57528,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "رئيس الجهة": [
+      {
+        "track_id": "state_revenue_law_1448",
+        "article_number": 1,
+        "term_as_written": "رئيس الجهة",
+        "definition_text": "الوزير، أو مجلس الإدارة أو ما في حكمه، أو المسؤول الأول في الجهة التي ليس لها مجلس إدارة أو ما في حكمه.",
+        "source_record_id": "state-revenue-law-1448-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "رئيس الجهة الحكومية": [
       {
         "track_id": "government_foreign_property_lease_controls",
@@ -59805,6 +60113,16 @@
         "term_as_written": "صندوق التمويل",
         "definition_text": "صندوق استثماري يؤسس لغرض مزاولة نشاط التمويل المباشر أو غير المباشر، وفقا للأنظمة واللوائح ذات الصلة السارية في المملكة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "صندوق نقل البضاعة": [
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "صندوق نقل البضاعة",
+        "definition_text": "صندوق مثبت بشكل محكم وغير متحرك على الدراجة الآلية، وفق أحكام هذه اللائحة.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -64036,6 +64354,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مدير العقار": [
+      {
+        "track_id": "gcc_jointly_owned_property_rules",
+        "article_number": 1,
+        "term_as_written": "مدير العقار",
+        "definition_text": "الشخص الطبيعي أو الاعتباري الذي تعينه الجمعية العمومية لإدارة العقار المشترك.",
+        "source_record_id": "gcc-jointly-owned-property-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مدير المحفظة": [
       {
         "track_id": "waqf_investment_portfolios_regulation",
@@ -65596,6 +65924,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "المنشأة المزاولة لنشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "postal_law",
         "article_number": 1,
         "term_as_written": "مقدم الخدمة",
@@ -66761,6 +67097,16 @@
         "term_as_written": "منصة المجلس",
         "definition_text": "المنصة الإلكترونية للمجلس الوطني للسلامة والصحة المهنية.",
         "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "منصة الهيئة الإلكترونية": [
+      {
+        "track_id": "motorcycle_freight_transport_regulation",
+        "article_number": 1,
+        "term_as_written": "منصة الهيئة الإلكترونية",
+        "definition_text": "منصة إلكترونية معتمدة من الهيئة، والتي تتيح لها الوصول إلى بيانات مقدم الخدمة والدراجات الآلية والسائقين.",
+        "source_record_id": "motorcycle-freight-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

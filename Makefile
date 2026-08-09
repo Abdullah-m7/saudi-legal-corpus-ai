@@ -598,6 +598,10 @@ export PYTHONPATH := src:$(PYTHONPATH)
         treaty-rwanda-general-cooperation-track-validate \
         treaty-iata-headquarters-track-validate \
         treaty-ifad-headquarters-track-validate \
+        state-revenue-law-1448-track-validate \
+        motorcycle-freight-transport-regulation-track-validate \
+        gcc-jointly-owned-property-rules-track-validate \
+        real-estate-exchange-transfer-mechanism-track-validate \
         treaty-gcc-wildlife-conservation-track-validate \
         treaty-unwto-elearning-capacity-track-validate \
         treaty-qatar-air-services-track-validate \
@@ -3081,6 +3085,18 @@ treaty-iata-headquarters-track-validate:
 
 treaty-ifad-headquarters-track-validate:
 	$(PY) scripts/validate_treaty_ifad_headquarters_track.py
+
+state-revenue-law-1448-track-validate:
+	$(PY) scripts/validate_state_revenue_law_1448_track.py
+
+motorcycle-freight-transport-regulation-track-validate:
+	$(PY) scripts/validate_motorcycle_freight_transport_regulation_track.py
+
+gcc-jointly-owned-property-rules-track-validate:
+	$(PY) scripts/validate_gcc_jointly_owned_property_rules_track.py
+
+real-estate-exchange-transfer-mechanism-track-validate:
+	$(PY) scripts/validate_real_estate_exchange_transfer_mechanism_track.py
 
 treaty-gcc-wildlife-conservation-track-validate:
 	$(PY) scripts/validate_treaty_gcc_wildlife_conservation_track.py

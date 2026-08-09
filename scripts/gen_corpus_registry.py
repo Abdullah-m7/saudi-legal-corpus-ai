@@ -521,6 +521,10 @@ TREATY_IRAQ_DOUBLE_TAXATION_LLM = os.path.join(ROOT, "data", "treaty_iraq_double
 TREATY_RWANDA_GENERAL_COOPERATION_LLM = os.path.join(ROOT, "data", "treaty_rwanda_general_cooperation_arabic_legal_llm", "treaty_rwanda_general_cooperation_legal_llm_001_011.json")
 TREATY_IATA_HEADQUARTERS_LLM = os.path.join(ROOT, "data", "treaty_iata_headquarters_arabic_legal_llm", "treaty_iata_headquarters_legal_llm_001_012.json")
 TREATY_IFAD_HEADQUARTERS_LLM = os.path.join(ROOT, "data", "treaty_ifad_headquarters_arabic_legal_llm", "treaty_ifad_headquarters_legal_llm_001_017.json")
+STATE_REVENUE_LAW_1448_LLM = os.path.join(ROOT, "data", "state_revenue_law_1448_arabic_legal_llm", "state_revenue_law_1448_legal_llm_001_030.json")
+MOTORCYCLE_FREIGHT_TRANSPORT_REGULATION_LLM = os.path.join(ROOT, "data", "motorcycle_freight_transport_regulation_arabic_legal_llm", "motorcycle_freight_transport_regulation_legal_llm_001_029.json")
+GCC_JOINTLY_OWNED_PROPERTY_RULES_LLM = os.path.join(ROOT, "data", "gcc_jointly_owned_property_rules_arabic_legal_llm", "gcc_jointly_owned_property_rules_legal_llm_001_014.json")
+REAL_ESTATE_EXCHANGE_TRANSFER_MECHANISM_LLM = os.path.join(ROOT, "data", "real_estate_exchange_transfer_mechanism_arabic_legal_llm", "real_estate_exchange_transfer_mechanism_legal_llm_001_008.json")
 TREATY_GCC_WILDLIFE_CONSERVATION_LLM = os.path.join(ROOT, "data", "treaty_gcc_wildlife_conservation_arabic_legal_llm", "treaty_gcc_wildlife_conservation_legal_llm_001_018.json")
 TREATY_UNWTO_ELEARNING_CAPACITY_LLM = os.path.join(ROOT, "data", "treaty_unwto_elearning_capacity_arabic_legal_llm", "treaty_unwto_elearning_capacity_legal_llm_001_011.json")
 TREATY_QATAR_AIR_SERVICES_LLM = os.path.join(ROOT, "data", "treaty_qatar_air_services_arabic_legal_llm", "treaty_qatar_air_services_legal_llm_001_037.json")
@@ -1297,6 +1301,10 @@ def main() -> int:
     treaty_rwanda_general_cooperation_llm = _load_json(TREATY_RWANDA_GENERAL_COOPERATION_LLM)
     treaty_iata_headquarters_llm = _load_json(TREATY_IATA_HEADQUARTERS_LLM)
     treaty_ifad_headquarters_llm = _load_json(TREATY_IFAD_HEADQUARTERS_LLM)
+    state_revenue_law_1448_llm = _load_json(STATE_REVENUE_LAW_1448_LLM)
+    motorcycle_freight_transport_regulation_llm = _load_json(MOTORCYCLE_FREIGHT_TRANSPORT_REGULATION_LLM)
+    gcc_jointly_owned_property_rules_llm = _load_json(GCC_JOINTLY_OWNED_PROPERTY_RULES_LLM)
+    real_estate_exchange_transfer_mechanism_llm = _load_json(REAL_ESTATE_EXCHANGE_TRANSFER_MECHANISM_LLM)
     treaty_gcc_wildlife_conservation_llm = _load_json(TREATY_GCC_WILDLIFE_CONSERVATION_LLM)
     treaty_unwto_elearning_capacity_llm = _load_json(TREATY_UNWTO_ELEARNING_CAPACITY_LLM)
     treaty_qatar_air_services_llm = _load_json(TREATY_QATAR_AIR_SERVICES_LLM)
@@ -1579,7 +1587,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 745,
+        "total_tracks": 749,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -2066,6 +2074,10 @@ def main() -> int:
             + treaty_rwanda_general_cooperation_llm["record_count"]  # 11 Saudi Arabia–Rwanda General Cooperation Agreement (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_iata_headquarters_llm["record_count"]  # 12 Headquarters Agreement between Saudi Arabia and IATA (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_ifad_headquarters_llm["record_count"]  # 17 Agreement between Saudi Arabia and IFAD (TIER_1, direct Umm Al-Qura Gazette fetch; headings carry no terminator)
+            + state_revenue_law_1448_llm["record_count"]  # 30 State Revenue Law (1448H) (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
+            + motorcycle_freight_transport_regulation_llm["record_count"]  # 29 Implementing Regulation for Commercial Freight Transport by Motorcycle (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
+            + gcc_jointly_owned_property_rules_llm["record_count"]  # 14 GCC Unified Rules for Owners of Jointly Owned Property (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
+            + real_estate_exchange_transfer_mechanism_llm["record_count"]  # 8 Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + treaty_gcc_wildlife_conservation_llm["record_count"]  # 18 GCC Agreement on the Conservation of Wildlife and Its Natural Habitats (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_unwto_elearning_capacity_llm["record_count"]  # 11 Cooperation Agreement between the Ministry of Tourism and UNWTO on E-Learning Capacity Development (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + treaty_qatar_air_services_llm["record_count"]  # 37 Saudi Arabia–Qatar Air Services Agreement (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2805,6 +2817,10 @@ def main() -> int:
             + treaty_rwanda_general_cooperation_llm["record_count"]
             + treaty_iata_headquarters_llm["record_count"]
             + treaty_ifad_headquarters_llm["record_count"]
+            + state_revenue_law_1448_llm["record_count"]
+            + motorcycle_freight_transport_regulation_llm["record_count"]
+            + gcc_jointly_owned_property_rules_llm["record_count"]
+            + real_estate_exchange_transfer_mechanism_llm["record_count"]
             + treaty_gcc_wildlife_conservation_llm["record_count"]
             + treaty_unwto_elearning_capacity_llm["record_count"]
             + treaty_qatar_air_services_llm["record_count"]
@@ -19021,6 +19037,122 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Agreement between Saudi Arabia and IFAD «اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية» — **17 articles. ALL 17 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H / 2021-04-23. **RECOVERED BY** a fourth drafting form: this agreement heads its articles «المادة الأولى» with no colon and no dash, and every heading pattern in the pipeline required a terminator — the rule that keeps «المادة السابعة من نظام كذا» a citation rather than shattering a document at every cross-reference. Read only after the ordinals were matched from a named vocabulary, every candidate introduced by a preposition or citation word was dropped, and the surviving run proved complete 1..17. A ratified international agreement, not domestic legislation. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "state_revenue_law_1448",
+                "display_name_ar": "نظام إيرادات الدولة",
+                "display_name_en": "State Revenue Law (1448H)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "State Revenue Law (1448H) — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": state_revenue_law_1448_llm["record_count"],
+                    "data_path": "data/state_revenue_law_1448_arabic_legal_llm/state_revenue_law_1448_legal_llm_001_030.json"}},
+                "record_counts": {"arabic_articles": state_revenue_law_1448_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": state_revenue_law_1448_llm["record_count"]},
+                "data_paths": [
+                    "sources/state_revenue_law_1448/official_source/state_revenue_law_1448_official_source.json",
+                    "sources/state_revenue_law_1448/verified/state_revenue_law_1448_verified_records.jsonl",
+                    "data/state_revenue_law_1448_arabic_legal_llm/state_revenue_law_1448_legal_llm_001_030.json",
+                ],
+                "validator_targets": ["make state-revenue-law-1448-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "State Revenue Law (1448H) «نظام إيرادات الدولة» — **30 articles. ALL 30 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07, approving Council of Ministers Decision 129 of 29/1/1448H. **PUBLISHED BUT NOT YET IN FORCE**: its article 30 says the law is applied one hundred and eighty days after publication, so `legal_status_ar` is «منشور ولم يبدأ العمل به بعد» and NOT «ساري» — citing its provisions as effective today would be wrong. Its article 29 says verbatim that it REPLACES the State Revenue Law issued by Royal Decree M/68 of 18/11/1431H, which this corpus holds as track state_revenue_law; that track is kept and is the one in force today. **DISCOVERED BY** re-indexing the gazette sitemap against the corpus's own archive index, which ended at 2026-07-31. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "motorcycle_freight_transport_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية",
+                "display_name_en": "Implementing Regulation for Commercial Freight Transport by Motorcycle",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Implementing Regulation for Commercial Freight Transport by Motorcycle — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": motorcycle_freight_transport_regulation_llm["record_count"],
+                    "data_path": "data/motorcycle_freight_transport_regulation_arabic_legal_llm/motorcycle_freight_transport_regulation_legal_llm_001_029.json"}},
+                "record_counts": {"arabic_articles": motorcycle_freight_transport_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 29, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": motorcycle_freight_transport_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/motorcycle_freight_transport_regulation/official_source/motorcycle_freight_transport_regulation_official_source.json",
+                    "sources/motorcycle_freight_transport_regulation/verified/motorcycle_freight_transport_regulation_verified_records.jsonl",
+                    "data/motorcycle_freight_transport_regulation_arabic_legal_llm/motorcycle_freight_transport_regulation_legal_llm_001_029.json",
+                ],
+                "validator_targets": ["make motorcycle-freight-transport-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation for Commercial Freight Transport by Motorcycle «اللائحة التنفيذية لنشاط نقل البضائع عبر الدراجة الآلية لأغراض تجارية» — **29 articles. ALL 29 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07, issued under the Land Transport Law. **DISCOVERED BY** re-indexing the gazette sitemap against the corpus's own archive index. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "gcc_jointly_owned_property_rules",
+                "display_name_ar": "القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون لدول الخليج العربية",
+                "display_name_en": "GCC Unified Rules for Owners of Jointly Owned Property",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "GCC Unified Rules for Owners of Jointly Owned Property — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": gcc_jointly_owned_property_rules_llm["record_count"],
+                    "data_path": "data/gcc_jointly_owned_property_rules_arabic_legal_llm/gcc_jointly_owned_property_rules_legal_llm_001_014.json"}},
+                "record_counts": {"arabic_articles": gcc_jointly_owned_property_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 14, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": gcc_jointly_owned_property_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/gcc_jointly_owned_property_rules/official_source/gcc_jointly_owned_property_rules_official_source.json",
+                    "sources/gcc_jointly_owned_property_rules/verified/gcc_jointly_owned_property_rules_verified_records.jsonl",
+                    "data/gcc_jointly_owned_property_rules_arabic_legal_llm/gcc_jointly_owned_property_rules_legal_llm_001_014.json",
+                ],
+                "validator_targets": ["make gcc-jointly-owned-property-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "GCC Unified Rules for Owners of Jointly Owned Property «القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون لدول الخليج العربية» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07. A GCC Supreme Council instrument, NOT Saudi domestic legislation; its force and scope differ and it must not be read as a Saudi regulation. **DISCOVERED BY** re-indexing the gazette sitemap. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "real_estate_exchange_transfer_mechanism",
+                "display_name_ar": "آلية نقل أصول البورصة العقارية وموظفيها ومشاريعها ومبادراتها إلى الهيئة العامة للعقار",
+                "display_name_en": "Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/2/1448H (2026-08-07).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": real_estate_exchange_transfer_mechanism_llm["record_count"],
+                    "data_path": "data/real_estate_exchange_transfer_mechanism_arabic_legal_llm/real_estate_exchange_transfer_mechanism_legal_llm_001_008.json"}},
+                "record_counts": {"arabic_articles": real_estate_exchange_transfer_mechanism_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": real_estate_exchange_transfer_mechanism_llm["record_count"]},
+                "data_paths": [
+                    "sources/real_estate_exchange_transfer_mechanism/official_source/real_estate_exchange_transfer_mechanism_official_source.json",
+                    "sources/real_estate_exchange_transfer_mechanism/verified/real_estate_exchange_transfer_mechanism_verified_records.jsonl",
+                    "data/real_estate_exchange_transfer_mechanism_arabic_legal_llm/real_estate_exchange_transfer_mechanism_legal_llm_001_008.json",
+                ],
+                "validator_targets": ["make real-estate-exchange-transfer-mechanism-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority «آلية نقل أصول البورصة العقارية وموظفيها ومشاريعها ومبادراتها إلى الهيئة العامة للعقار» — **8 articles. ALL 8 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07, Council of Ministers Decision 176 of 14/2/1448H. **DISCOVERED BY** re-indexing the gazette sitemap. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "treaty_gcc_wildlife_conservation",
