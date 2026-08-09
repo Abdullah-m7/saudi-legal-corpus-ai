@@ -923,13 +923,17 @@ def supersession_edge_schema():
         "properties": {
             "from_track_id": {"type": "string", "description": "Must be a valid track_id in corpus_registry.json."},
             "relation": {"type": "string",
-                "enum": ["repeals_full", "repeals_partial", "superseded_by"],
+                "enum": ["repeals_full", "repeals_partial", "superseded_by",
+                         "repeals_full_deferred"],
                 "description": (
                     "repeals_full: from_track_id's decree explicitly/fully repeals a prior instrument "
                     "(which may or may not be a corpus track). repeals_partial: from_track_id's decree "
                     "repeals only specific articles of another currently-tracked law (or an untracked "
                     "predecessor). superseded_by: from_track_id is itself confirmed superseded by a "
-                    "future/newer instrument."
+                    "future/newer instrument. repeals_full_deferred: from_track_id's own text "
+                    "fully repeals a prior instrument but from_track_id has NOT COMMENCED yet "
+                    "(published, not in force), so the target is still the law in force today "
+                    "— see commencement_ar."
                 )},
             "target_track_id": {"type": ["string", "null"],
                 "description": "The corpus track_id being repealed/repealing, or null if the target "
@@ -945,6 +949,10 @@ def supersession_edge_schema():
             "source_ref": {"type": "string",
                 "description": "Path (optionally with a field pointer in parentheses) to the corpus file "
                                 "this edge's claim was read from — never inferred from decree age/topic alone."},
+            "commencement_ar": {"type": "string",
+                "description": "OPTIONAL — present ONLY on relation='repeals_full_deferred' edges. "
+                                "The successor's own commencement clause, quoted verbatim in Arabic, "
+                                "so a reader can see exactly when the repeal takes effect."},
             "successor_in_corpus": {"type": "boolean",
                 "description": "OPTIONAL — present ONLY on relation='superseded_by' edges. Whether the "
                                 "successor instrument is itself already an ingested corpus track."},

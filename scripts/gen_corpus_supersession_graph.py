@@ -35,6 +35,21 @@ an unresolved multi-decree repeal chain, and a topically-adjacent
 regulation the source itself says NOT to treat as superseded) are recorded
 under `ambiguous_or_excluded_cases` instead of being forced into an edge.
 
+KEEPING THE GRAPH FROM AGING SILENTLY. Hand classification is the right policy
+and it has one consequence: a hand-written graph cannot notice a supersession
+that arrives after it was written. scripts/audit_unrecorded_supersessions.py
+reads every track's own article text for the clause a Saudi instrument uses when
+it replaces another and reports what this file does not carry. It found 28 such
+tracks — one of them «نظام إيرادات الدولة» (1448H), whose article 29 replaces a
+law this corpus holds. The audit reports; the classification below is still done
+by hand, one clause at a time. Run it after every ingestion round.
+
+A FOURTH RELATION, BECAUSE A REPEAL CAN BE DATED IN THE FUTURE. state_revenue_law_1448
+fully replaces state_revenue_law in its own article 29 — and its article 30 delays
+its own commencement by 180 days from publication. Recording that as `repeals_full`
+would retire a law that is in force today, so it is `repeals_full_deferred`, which
+carries the verbatim commencement clause in `commencement_ar`.
+
 Read-only over inputs; deterministic and idempotent over its output.
 
 Usage:
@@ -938,20 +953,29 @@ EDGES = [
     {
         "from_track_id": "copyright_law",
         "relation": "superseded_by",
-        "target_track_id": None,
-        "target_description_ar": "نظام حماية حقوق المؤلف والحقوق المجاورة (الجديد)",
+        "target_track_id": "copyright_law_2026",
+        "target_description_ar": "نظام حقوق المؤلف (الجديد)",
         "target_decree": "Royal Decree M/169, 14/08/1447H (2 February 2026)",
-        "successor_in_corpus": False,
+        "successor_in_corpus": True,
         "note": "copyright_law's registry notes: 'THIS LAW IS CONFIRMED "
                 "SUPERSEDED EFFECTIVE 2026-08-01 by Royal Decree M/169 "
                 "(14/08/1447H / 2 February 2026), confirmed via multiple "
                 "independent Arabic news outlets and English law-firm client "
                 "alerts — but the new law's full Arabic primary text could "
                 "NOT be verified this research pass ... and is explicitly "
-                "NOT ingested here.' This track ingests the text in force as "
-                "of the corpus build date (2026-07-17); a follow-up "
-                "ingestion pass for M/169 is recommended once its primary "
-                "text becomes verifiable.",
+                "NOT ingested here.' THE SUCCESSOR IS NOW HELD: the "
+                "corpus ingested نظام حقوق المؤلف as copyright_law_2026 "
+                "(gazette 25/8/1447H), and the identification does not rest "
+                "on the decree number at all — copyright_law_2026's own "
+                "article 59 states verbatim «يحل النظام محل نظام حماية حقوق "
+                "المؤلف، الصادر بالمرسوم الملكي رقم (م/41) وتاريخ 1424/7/2ه», "
+                "which is this track by title, decree number and date "
+                "together. DISCLOSED: the successor's own gazette page does "
+                "NOT restate a decree number, so the 'M/169' label above "
+                "still comes from copyright_law's registry note and from "
+                "secondary reporting, not from the successor's primary text; "
+                "the SUPERSESSION RELATION is primary-sourced, the decree "
+                "LABEL is not.",
         "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law.notes)",
     },
     {
@@ -1661,6 +1685,524 @@ EDGES = [
                 "sourcing. Predecessor not separately ingested in this corpus.",
         "source_ref": "sources/hajj_umrah_external_pilgrims_law/law/official_source/hajj_umrah_external_pilgrims_law_official_source.json (supersedes_ar; enacting decree clause ثانيا/4, not an article)",
     },
+
+    # --- Added after scripts/audit_unrecorded_supersessions.py.
+    # ---
+    # --- The hand-classification policy above is right, and it has one
+    # --- consequence nobody had accounted for: a hand-written graph cannot
+    # --- notice a supersession that arrives after it was written, so it ages
+    # --- SILENTLY. It had aged. The audit reads every track's own article text
+    # --- for the clause a Saudi instrument uses when it replaces another, and
+    # --- reports what the graph does not carry; the classification below is
+    # --- still done by hand, from the quoted clause, one case at a time.
+    # ---
+    # --- TARGETS ARE IDENTIFIED BY TITLE **AND** DECREE, NEVER BY DECREE ALONE.
+    # --- The first attempt at this batch matched the bare «م/N» in each clause
+    # --- against every held track's decree field and produced nonsense —
+    # --- agricultural_development_fund_law→fisheries_law, aml_law→prison_detention,
+    # --- companies_law→waste_management_law — because Saudi decree numbers are
+    # --- reused across unrelated instruments after each numbering reset. Of the
+    # --- 29 predecessors named below, exactly two are held by this corpus, and
+    # --- both matched on title AND number AND date. The other 27 carry a null
+    # --- target with the instrument described, exactly as civil_service_law does.
+    {
+        "from_track_id": "agricultural_development_fund_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام صندوق التنمية الزراعية (السابق)",
+        "target_decree": "Royal Decree M/9, 1/2/1430H",
+        "note": "agricultural_development_fund_law's own المادة (السادسة عشرة) (article 16) "
+                "states verbatim: «1- يحل النظام محل نظام صندوق التنمية الزراعية، الصادر "
+                "بالمرسوم الملكي رقم (م/9) وتاريخ 1 /2 /1430ه. 2- ينشر النظام في الجريدة "
+                "الرسمية، ويعمل به بعد (تسعين) يوما من تاريخ نشره.». The named predecessor "
+                "is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/agricultural_development_fund_law_arabic_legal_llm/agricultural_development_fund_law_legal_llm_001_016.json "
+                      "(article 16)",
+    },
+    {
+        "from_track_id": "aml_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مكافحة غسل الأموال (السابق)",
+        "target_decree": "Royal Decree M/31, 11/5/1433H",
+        "note": "aml_law's own المادة الحادية والخمسون (article 51) states verbatim: «١- "
+                "يحل هذا النظام محل نظام مكافحة غسل الأموال، الصادر بالمرسوم الملكي رقم "
+                "(م/٣١) وتاريخ ١٤٣٣/٥/١١هـ. ٢-يلغي هذا النظام ما يتعارض معه من أحكام. ٣- "
+                "يُعمَل بهذا النظام من اليوم التالي لتاريخ نشره في الجريدة الرسمية.». The "
+                "named predecessor is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/aml_arabic_legal_llm/aml_law_legal_llm_001_052.json (article 51)",
+    },
+    {
+        "from_track_id": "anti_bribery_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مكافحة الرشوة (السابق) وما طرأ عليه من تعديلات",
+        "target_decree": "Royal Decree 15, 7/3/1382H",
+        "note": "anti_bribery_law's own المادة الثانية والعشرون (article 22) states "
+                "verbatim: «يحل هذا النظام محل نظام مكافحة الرشوة الصادر بالمرسوم الملكي "
+                "رقم 15 وتاريخ 1382/3/7هـ وما طرأ عليه من تعديلات ويلغي كل ما يتعارض معه من "
+                "أحكام.». The named predecessor is not itself ingested as a corpus track. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/anti_bribery_arabic_legal_llm/anti_bribery_law_legal_llm_001_023.json "
+                      "(article 22)",
+    },
+    {
+        "from_track_id": "arbitration_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام التحكيم (السابق)",
+        "target_decree": "Royal Decree M/46, 12/7/1403H",
+        "note": "arbitration_law's own المادة السابعة والخمسون (article 57) states "
+                "verbatim: «يحل هذا النظام محل نظام التحكيم، الصادر بالمرسوم الملكي رقم "
+                "(م/٤٦) وتاريخ ١٤٠٣/٧/١٢ هـ.». The named predecessor is not itself ingested "
+                "as a corpus track. Surfaced by scripts/audit_unrecorded_supersessions.py, "
+                "which found the graph carried no edge for this track, and classified by "
+                "hand from the clause itself.",
+        "source_ref": "data/arbitration_arabic_legal_llm/arbitration_law_legal_llm_001_058.json "
+                      "(article 57)",
+    },
+    {
+        "from_track_id": "chambers_of_commerce_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الغرف التجارية والصناعية (السابق)",
+        "target_decree": "Royal Decree M/6, 30/4/1400H",
+        "note": "chambers_of_commerce_law's own المادة الخامسة والستون (article 65) states "
+                "verbatim: «يحل النظام محل نظام الغرف التجارية والصناعية، الصادر بالمرسوم "
+                "الملكي رقم (م / 6) وتاريخ 30 / 4 / 1400هـ، ويُلغي جميع ما يتعارض معه من "
+                "أحكام.». The named predecessor is not itself ingested as a corpus track. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/chambers_of_commerce_arabic_legal_llm/chambers_of_commerce_law_legal_llm_001_066.json "
+                      "(article 65)",
+    },
+    {
+        "from_track_id": "companies_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الشركات (السابق)",
+        "target_decree": "Royal Decree M/3, 28/1/1437H",
+        "note": "companies_law's own إلغاء الأحكام المتعارضة (article 280) states verbatim: "
+                "«يحل النظام محل نظام الشركات الصادر بالمرسوم الملكي رقم (م / 3) وتاريخ 28 "
+                "/ 1 / 1437ه، ونظام الشركات المهنية الصادر بالمرسوم الملكي رقم (م / 17) "
+                "وتاريخ 26 / 1 / 1441ه، ويلغي كل ما يتعارض معه من أحكام.». The named "
+                "predecessor is not itself ingested as a corpus track. This clause names "
+                "more than one replaced instrument; each is recorded as its own edge. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json "
+                      "(article 280)",
+    },
+    {
+        "from_track_id": "companies_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الشركات المهنية",
+        "target_decree": "Royal Decree M/17, 26/1/1441H",
+        "note": "companies_law's own إلغاء الأحكام المتعارضة (article 280) states verbatim: "
+                "«يحل النظام محل نظام الشركات الصادر بالمرسوم الملكي رقم (م / 3) وتاريخ 28 "
+                "/ 1 / 1437ه، ونظام الشركات المهنية الصادر بالمرسوم الملكي رقم (م / 17) "
+                "وتاريخ 26 / 1 / 1441ه، ويلغي كل ما يتعارض معه من أحكام.». The named "
+                "predecessor is not itself ingested as a corpus track. This clause names "
+                "more than one replaced instrument; each is recorded as its own edge. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json "
+                      "(article 280)",
+    },
+    {
+        "from_track_id": "copyright_law_2026",
+        "relation": "repeals_full",
+        "target_track_id": "copyright_law",
+        "target_description_ar": "نظام حماية حقوق المؤلف",
+        "target_decree": "Royal Decree M/41, 2/7/1424H",
+        "note": "copyright_law_2026's own المادة (التاسعة والخمسون) (article 59) states "
+                "verbatim: «يحل النظام محل نظام حماية حقوق المؤلف، الصادر بالمرسوم الملكي "
+                "رقم (م/41) وتاريخ 1424/7/2ه، ويلغي كل ما يتعارض معه من أحكام.». The "
+                "predecessor IS a corpus track (copyright_law), identified by BOTH its "
+                "Arabic title and its decree number+date as they appear in the clause above "
+                "— never by a decree number alone, which collides across unrelated laws. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/copyright_law_2026_arabic_legal_llm/copyright_law_2026_legal_llm_001_061.json "
+                      "(article 59)",
+    },
+    {
+        "from_track_id": "falcon_center_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "الترتيبات التنظيمية لنادي الصقور",
+        "target_decree": "Council of Ministers Decision 214, 25/4/1440H",
+        "note": "falcon_center_statute's own المادة (السادسة عشرة) (article 16) states "
+                "verbatim: «يحل التنظيم محل الترتيبات التنظيمية لنادي الصقور الموافق عليها "
+                "بقرار مجلس الوزراء رقم (214) وتاريخ 1440/4/25ه.». The named predecessor is "
+                "not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/falcon_center_statute_arabic_legal_llm/falcon_center_statute_legal_llm_001_017.json "
+                      "(article 16)",
+    },
+    {
+        "from_track_id": "financial_academy_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "الترتيبات التنظيمية للأكاديمية المالية",
+        "target_decree": "Council of Ministers Decision, 21/8/1441H — the decision NUMBER is left "
+                          "blank in the gazette text itself («رقم ()»); it is not guessed here",
+        "note": "financial_academy_statute's own المادة (السادسة عشرة) (article 16) states "
+                "verbatim: «يحل التنظيم محل الترتيبات التنظيمية للأكاديمية المالية، الصادرة "
+                "بقرار مجلس الوزراء رقم () وتاريخ 21/8/1441ه.». The named predecessor is "
+                "not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/financial_academy_statute_arabic_legal_llm/financial_academy_statute_legal_llm_001_017.json "
+                      "(article 16)",
+    },
+    {
+        "from_track_id": "government_resource_systems_center_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "الترتيبات التنظيمية للمركز الوطني لنظم الموارد الحكومية",
+        "target_decree": "Council of Ministers Decision 682, 19/11/1442H",
+        "note": "government_resource_systems_center_statute's own المادة (الرابعة عشرة) "
+                "(article 14) states verbatim: «يحل التنظيم محل الترتيبات التنظيمية للمركز "
+                "الوطني لنظم الموارد الحكومية، الصادرة بقرار مجلس الوزراء رقم (682) وتاريخ "
+                "19 /11/ 1442ه.». The named predecessor is not itself ingested as a corpus "
+                "track. Surfaced by scripts/audit_unrecorded_supersessions.py, which found "
+                "the graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/government_resource_systems_center_statute_arabic_legal_llm/government_resource_systems_center_statute_legal_llm_001_015.json "
+                      "(article 14)",
+    },
+    {
+        "from_track_id": "job_seeker_allowance_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم إعانة البحث عن عمل (السابق)",
+        "target_decree": "Council of Ministers Decision 353, 25/12/1432H",
+        "note": "job_seeker_allowance_statute's own المادة (الثانية عشرة) (article 12) "
+                "states verbatim: «يحل التنظيم محل تنظيم إعانة البحث عن عمل الصادر بقرار "
+                "مجلس الوزراء رقم (353) وتاريخ 25 /12/ 1432ه، وتنظيم المخصص المالي لصعوبة "
+                "الحصول على عمل الصادر بقرار مجلس الوزراء رقم (44) وتاريخ 29 /1/ 1435ه، "
+                "ويلغي كل ما يتعارض معه من أحكام، ويعمل بالتنظيم بعد (تسعين) يوما من تاريخ "
+                "نشره في الجريدة الرسمية.». The named predecessor is not itself ingested as "
+                "a corpus track. This clause names more than one replaced instrument; each "
+                "is recorded as its own edge. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/job_seeker_allowance_statute_arabic_legal_llm/job_seeker_allowance_statute_legal_llm_001_013.json "
+                      "(article 12)",
+    },
+    {
+        "from_track_id": "job_seeker_allowance_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم المخصص المالي لصعوبة الحصول على عمل",
+        "target_decree": "Council of Ministers Decision 44, 29/1/1435H",
+        "note": "job_seeker_allowance_statute's own المادة (الثانية عشرة) (article 12) "
+                "states verbatim: «يحل التنظيم محل تنظيم إعانة البحث عن عمل الصادر بقرار "
+                "مجلس الوزراء رقم (353) وتاريخ 25 /12/ 1432ه، وتنظيم المخصص المالي لصعوبة "
+                "الحصول على عمل الصادر بقرار مجلس الوزراء رقم (44) وتاريخ 29 /1/ 1435ه، "
+                "ويلغي كل ما يتعارض معه من أحكام، ويعمل بالتنظيم بعد (تسعين) يوما من تاريخ "
+                "نشره في الجريدة الرسمية.». The named predecessor is not itself ingested as "
+                "a corpus track. This clause names more than one replaced instrument; each "
+                "is recorded as its own edge. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/job_seeker_allowance_statute_arabic_legal_llm/job_seeker_allowance_statute_legal_llm_001_013.json "
+                      "(article 12)",
+    },
+    {
+        "from_track_id": "king_abdullah_language_planning_center_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم مركز الملك عبدالله بن عبدالعزيز الدولي لخدمة اللغة العربية",
+        "target_decree": "Council of Ministers Decision 104, 6/4/1431H",
+        "note": "king_abdullah_language_planning_center_statute's own المادة (الرابعة عشرة) "
+                "(article 14) states verbatim: «يحل التنظيم محل تنظيم مركز الملك عبدالله بن "
+                "عبدالعزيز الدولي لخدمة اللغة العربية الموافق عليه بقرار مجلس الوزراء (104) "
+                "وتاريخ 6 /4/ 1431ه.». The named predecessor is not itself ingested as a "
+                "corpus track. Surfaced by scripts/audit_unrecorded_supersessions.py, which "
+                "found the graph carried no edge for this track, and classified by hand "
+                "from the clause itself.",
+        "source_ref": "data/king_abdullah_language_planning_center_statute_arabic_legal_llm/king_abdullah_language_planning_center_statute_legal_llm_001_015.json "
+                      "(article 14)",
+    },
+    {
+        "from_track_id": "king_faisal_specialist_hospital_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم مستشفى الملك فيصل التخصصي ومركز الأبحاث وتعديلاته",
+        "target_decree": "Council of Ministers Decision 265, 30/10/1422H",
+        "note": "king_faisal_specialist_hospital_statute's own المادة (العشرون) (article "
+                "20) states verbatim: «يحل النظام محل تنظيم مستشفى الملك فيصل التخصصي ومركز "
+                "الأبحاث، الصادر بقرار مجلس الوزراء رقم (265) وتاريخ 30 /10/ 1422ه، "
+                "وتعديلاته، ويلغي ما يتعارض معه من أحكام ذات صلة بالمستشفى.». The named "
+                "predecessor is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/king_faisal_specialist_hospital_statute_arabic_legal_llm/king_faisal_specialist_hospital_statute_legal_llm_001_021.json "
+                      "(article 20)",
+    },
+    {
+        "from_track_id": "labor_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام العمل والعمال",
+        "target_decree": "Royal Decree M/21, 6/9/1389H",
+        "note": "labor_law's own المادة الرابعة والأربعون بعد المائتين (article 244) states "
+                "verbatim: «يحل هذا النظام محل نظام العمل والعمال ، الصادر بالمرسوم ذي "
+                "الرقم ( م/21 ) والتاريخ 6/9/1389ه ، ويلغي كل ما يتعارض معه من أحكام ويستمر "
+                "العمل باللوائح والقرارات الصادرة قبل نفاذ هذا النظام إلى حين تعديلها .». "
+                "The named predecessor is not itself ingested as a corpus track. Surfaced "
+                "by scripts/audit_unrecorded_supersessions.py, which found the graph "
+                "carried no edge for this track, and classified by hand from the clause "
+                "itself.",
+        "source_ref": "data/labor_arabic_legal_llm/labor_law_legal_llm_001_245.json (article 244)",
+    },
+    {
+        "from_track_id": "ministry_of_investment_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم الهيئة العامة للاستثمار وتعديلاته",
+        "target_decree": "Council of Ministers Decision 2, 5/1/1421H",
+        "note": "ministry_of_investment_statute's own المادة (الرابعة) (article 4) states "
+                "verbatim: «يحل التنظيم محل تنظيم الهيئة العامة للاستثمار، الصادر بقرار "
+                "مجلس الوزراء رقم (2) وتاريخ 1421/1/5ه وتعديلاته.». The named predecessor "
+                "is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/ministry_of_investment_statute_arabic_legal_llm/ministry_of_investment_statute_legal_llm_001_005.json "
+                      "(article 4)",
+    },
+    {
+        "from_track_id": "national_institute_educational_professional_development_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم المعهد الوطني للتطوير المهني التعليمي",
+        "target_decree": "Council of Ministers Decision 197, 8/3/1441H",
+        "note": "national_institute_educational_professional_development_statute's own "
+                "المادة (السادسة عشرة) (article 16) states verbatim: «يحل هذا التنظيم محل "
+                "تنظيم المعهد الوطني للتطوير المهني التعليمي، الموافق عليه بقرار مجلس "
+                "الوزراء رقم (197) وتاريخ 8 /3/ 1441ه.». The named predecessor is not "
+                "itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/national_institute_educational_professional_development_statute_arabic_legal_llm/national_institute_educational_professional_development_statute_legal_llm_001_017.json "
+                      "(article 16)",
+    },
+    {
+        "from_track_id": "patent_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام براءات الاختراع (السابق)",
+        "target_decree": "Royal Decree M/38, 10/6/1409H",
+        "note": "patent_law's own المادة الرابعة والستون (article 64) states verbatim: «يحل "
+                "هذا النظام محل نظام براءات الاختراع الصادر بالمرسوم الملكي ذي الرقم (م/38) "
+                "والتاريخ 10 / 6 / 1409 هـ، وتسري أحكامه على طلبات براءات الاختراع، "
+                "والبراءات السارية المفعول، ويلغي كل ما يتعارض معه من أحكام.». The named "
+                "predecessor is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/patent_arabic_legal_llm/patent_law_legal_llm_001_066.json (article "
+                      "64)",
+    },
+    {
+        "from_track_id": "real_estate_development_fund_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام صندوق التنمية العقارية (السابق)",
+        "target_decree": "Royal Decree M/23, 11/6/1394H",
+        "note": "real_estate_development_fund_law's own المادة (الثامنة عشرة) (article 18) "
+                "states verbatim: «1- يحل هذا النظام محل نظام صندوق التنمية العقارية الصادر "
+                "بالمرسوم الملكي رقم (م/23) وتاريخ 11 /6/ 1394ه. 2- ينشر النظام في الجريدة "
+                "الرسمية، ويعمل به بعد (تسعين) يوما من تاريخ نشره.». The named predecessor "
+                "is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/real_estate_development_fund_law_arabic_legal_llm/real_estate_development_fund_law_legal_llm_001_018.json "
+                      "(article 18)",
+    },
+    {
+        "from_track_id": "saudi_press_agency_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم وكالة الأنباء السعودية (السابق)",
+        "target_decree": "Council of Ministers Decision 303, 11/9/1433H",
+        "note": "saudi_press_agency_statute's own المادة (السادسة عشرة) (article 16) states "
+                "verbatim: «ينشر التنظيم في الجريدة الرسمية، ويعمل به من تاريخ نشره، ويحل "
+                "محل تنظيم وكالة الأنباء السعودية الصادر بقرار مجلس الوزراء رقم (303) "
+                "وتاريخ 11 /9 /1433ه، ويلغي كل ما يتعارض معه من أحكام.». The named "
+                "predecessor is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/saudi_press_agency_statute_arabic_legal_llm/saudi_press_agency_statute_legal_llm_001_016.json "
+                      "(article 16)",
+    },
+    {
+        "from_track_id": "saudi_space_agency_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "الترتيبات التنظيمية للهيئة السعودية للفضاء",
+        "target_decree": "Council of Ministers Decision 209, 25/4/1440H",
+        "note": "saudi_space_agency_statute's own المادة (الثانية عشرة) (article 12) states "
+                "verbatim: «يحل التنظيم محل الترتيبات التنظيمية للهيئة السعودية للفضاء، "
+                "الصادرة بقرار مجلس الوزراء رقم (209) وتاريخ 25 /4 /1440ه.». The named "
+                "predecessor is not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/saudi_space_agency_statute_arabic_legal_llm/saudi_space_agency_statute_legal_llm_001_013.json "
+                      "(article 12)",
+    },
+    {
+        "from_track_id": "sharia_procedure_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المرافعات الشرعية (السابق)",
+        "target_decree": "Royal Decree M/21, 20/5/1421H",
+        "note": "sharia_procedure_law's own المادة الحادية والأربعون بعد المائتين (article "
+                "241) states verbatim: «يحل هذا النظام محل نظام المرافعات الشرعية، الصادر "
+                "بالمرسوم الملكي رقم (م/٢١) وتاريخ١٤٢١/٥/٢٠هـ، ويلغي ما يتعارض معه من "
+                "أحكام.». The named predecessor is not itself ingested as a corpus track. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/sharia_procedure_arabic_legal_llm/sharia_procedure_law_legal_llm_001_243.json "
+                      "(article 241)",
+    },
+    {
+        "from_track_id": "state_property_lease_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام استئجار الدولة للعقار وإخلائه",
+        "target_decree": "Royal Decree M/61, 18/9/1427H",
+        "note": "state_property_lease_law's own المادة (الثلاثون) (article 30) states "
+                "verbatim: «يحل النظام محل نظام استئجار الدولة للعقار وإخلائه، الصادر "
+                "بالمرسوم الملكي رقم (م/61) وتاريخ 18 /9/ 1427ه، ويلغي ما يتعارض معه من "
+                "أحكام.». The named predecessor is not itself ingested as a corpus track. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/state_property_lease_law_arabic_legal_llm/state_property_lease_law_legal_llm_001_031.json "
+                      "(article 30)",
+    },
+    {
+        "from_track_id": "state_revenue_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام جباية أموال الدولة",
+        "target_decree": "Royal Will 41/3/2, 12/4/1359H, communicated by High Order 5732, 4/5/1359H",
+        "note": "state_revenue_law's own المادة الثلاثون (article 30) states verbatim: «يحل "
+                "هذا النظام محل نظام جباية أموال الدولة، الصادر بالإرادة الملكية رقم "
+                "(41/3/2) وتاريخ 12/4/1359هـ، والمبلغ بالأمر السامي رقم (5732) في "
+                "4/5/1359هـ، ويلغي كل ما يتعارض معه من أحكام.». The named predecessor is "
+                "not itself ingested as a corpus track. Surfaced by "
+                "scripts/audit_unrecorded_supersessions.py, which found the graph carried "
+                "no edge for this track, and classified by hand from the clause itself.",
+        "source_ref": "data/state_revenue_arabic_legal_llm/state_revenue_law_legal_llm_001_032.json "
+                      "(article 30)",
+    },
+    {
+        "from_track_id": "state_revenue_law_1448",
+        "relation": "repeals_full_deferred",
+        "target_track_id": "state_revenue_law",
+        "target_description_ar": "نظام إيرادات الدولة",
+        "target_decree": "Royal Decree M/68, 18/11/1431H",
+        "note": "state_revenue_law_1448's own المادة (التاسعة والعشرون) (article 29) states "
+                "verbatim: «يحل النظام محل نظام إيرادات الدولة، الصادر بالمرسوم الملكي رقم "
+                "(م/68) وتاريخ 18/ 11 /1431ه، ويلغي كل ما يتعارض معه من أحكام.». The "
+                "predecessor IS a corpus track (state_revenue_law), identified by BOTH its "
+                "Arabic title and its decree number+date as they appear in the clause above "
+                "— never by a decree number alone, which collides across unrelated laws. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py, which found the "
+                "graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/state_revenue_law_1448_arabic_legal_llm/state_revenue_law_1448_legal_llm_001_030.json "
+                      "(article 29)",
+        "commencement_ar": "نص المادة الثلاثين من نظام إيرادات الدولة (1448هـ) حرفياً: «ينشر النظام في "
+                           "الجريدة الرسمية، ويعمل به بعد (مائة وثمانين) يوما من تاريخ نشره». والنشر "
+                           "في 24/2/1448هـ الموافق 2026-08-07م، فالنسخُ **مؤجَّل**: نظام إيرادات "
+                           "الدولة الصادر بالمرسوم الملكي (م/68) لا يزال **هو الساري اليوم**، "
+                           "والاستشهاد بالنظام الجديد بوصفه نافذاً الآن خطأ.",
+    },
+    {
+        "from_track_id": "statistics_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الإحصاءات العامة للدولة",
+        "target_decree": "Royal Decree 23, 7/12/1379H",
+        "note": "statistics_law's own المادة (الحادية والعشرون) (article 21) states "
+                "verbatim: «يحل النظام محل نظام الإحصاءات العامة للدولة، الصادر بالمرسوم "
+                "الملكي رقم (23) وتاريخ 7 /12 /1379ه، ونظام تعداد السكان العام، الصادر "
+                "بالمرسوم الملكي رقم (م/13) وتاريخ 23 /4 /1391ه، ويلغي كل ما يتعارض معه من "
+                "أحكام.». The named predecessor is not itself ingested as a corpus track. "
+                "This clause names more than one replaced instrument; each is recorded as "
+                "its own edge. Surfaced by scripts/audit_unrecorded_supersessions.py, which "
+                "found the graph carried no edge for this track, and classified by hand "
+                "from the clause itself.",
+        "source_ref": "data/statistics_law_arabic_legal_llm/statistics_law_legal_llm_001_022.json "
+                      "(article 21)",
+    },
+    {
+        "from_track_id": "statistics_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام تعداد السكان العام",
+        "target_decree": "Royal Decree M/13, 23/4/1391H",
+        "note": "statistics_law's own المادة (الحادية والعشرون) (article 21) states "
+                "verbatim: «يحل النظام محل نظام الإحصاءات العامة للدولة، الصادر بالمرسوم "
+                "الملكي رقم (23) وتاريخ 7 /12 /1379ه، ونظام تعداد السكان العام، الصادر "
+                "بالمرسوم الملكي رقم (م/13) وتاريخ 23 /4 /1391ه، ويلغي كل ما يتعارض معه من "
+                "أحكام.». The named predecessor is not itself ingested as a corpus track. "
+                "This clause names more than one replaced instrument; each is recorded as "
+                "its own edge. Surfaced by scripts/audit_unrecorded_supersessions.py, which "
+                "found the graph carried no edge for this track, and classified by hand "
+                "from the clause itself.",
+        "source_ref": "data/statistics_law_arabic_legal_llm/statistics_law_legal_llm_001_022.json "
+                      "(article 21)",
+    },
+    {
+        "from_track_id": "vehicle_periodic_inspection_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم الفحص الفني الدوري للمركبات (السابق)",
+        "target_decree": "Council of Ministers Decision 169, 19/5/1431H",
+        "note": "vehicle_periodic_inspection_statute's own المادة (الخامسة عشرة) (article "
+                "15) states verbatim: «يحل التنظيم محل تنظيم الفحص الفني الدوري للمركبات، "
+                "الصادر بقرار مجلس الوزراء رقم (169) وتاريخ 19 /5/ 1431ه، ويلغي كل ما "
+                "يتعارض معه من أحكام.». The named predecessor is not itself ingested as a "
+                "corpus track. Surfaced by scripts/audit_unrecorded_supersessions.py, which "
+                "found the graph carried no edge for this track, and classified by hand "
+                "from the clause itself.",
+        "source_ref": "data/vehicle_periodic_inspection_statute_arabic_legal_llm/vehicle_periodic_inspection_statute_legal_llm_001_016.json "
+                      "(article 15)",
+    },
+    {
+        "from_track_id": "water_electricity_regulatory_authority_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم هيئة تنظيم الكهرباء والإنتاج المزدوج وتعديلاته",
+        "target_decree": "Council of Ministers Decision 154, 4/5/1428H",
+        "note": "water_electricity_regulatory_authority_statute's own المادة (التاسعة عشرة) "
+                "(article 19) states verbatim: «يحل التنظيم محل تنظيم هيئة تنظيم الكهرباء "
+                "والإنتاج المزدوج، الصادر بقرار مجلس الوزراء رقم (154) وتاريخ 1428/5/4ه، "
+                "وتعديلاته.». The named predecessor is not itself ingested as a corpus "
+                "track. Surfaced by scripts/audit_unrecorded_supersessions.py, which found "
+                "the graph carried no edge for this track, and classified by hand from the "
+                "clause itself.",
+        "source_ref": "data/water_electricity_regulatory_authority_statute_arabic_legal_llm/water_electricity_regulatory_authority_statute_legal_llm_001_020.json "
+                      "(article 19)",
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -2138,6 +2680,26 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "Law-text-asserted repeal. No edge modeled.",
         "source_ref": "sources/privatization/law/official_source/privatization_law_official_source.json (issuing_authority_ar)",
     },
+    {
+        "tracks_involved": ["pharmaceutical_herbal_establishments_regulation",
+                            "pharmaceutical_establishments_law"],
+        "issue": "supersession clause belongs to the law, restated inside its regulation",
+        "note": "scripts/audit_unrecorded_supersessions.py flagged "
+                "pharmaceutical_herbal_establishments_regulation article 41 for the clause "
+                "«يحل النظام محل نظام المنشآت والمستحضرات الصيدلانية، الصادر بالمرسوم الملكي "
+                "رقم (م/31) وتاريخ 1 /6/ 1425ه، ويلغي كل ما يتعارض معه من أحكام.» — a "
+                "supersession clause that is NOT the regulation's own. It is the LAW's: "
+                "pharmaceutical_establishments_law article 41 carries the same sentence, and "
+                "that relationship is already an edge above. The regulation track's own "
+                "official_source discloses that its text overlaps its law by 89% with 37/42 "
+                "articles near-identical, which is why the law's final article appears inside "
+                "it. NOT modeled as an edge: an implementing regulation restating its parent "
+                "law's repeal clause does not itself repeal anything, and recording it would "
+                "double-count one repeal as two.",
+        "source_ref": "sources/pharmaceutical_herbal_establishments_regulation/official_source/"
+                       "pharmaceutical_herbal_establishments_regulation_official_source.json "
+                       "(known_unresolved_discrepancies: ..._implementing_text_restates_its_law)",
+    },
 ]
 
 
@@ -2199,6 +2761,8 @@ def build_graph(registry):
         }
         if e["relation"] == "superseded_by":
             edge["successor_in_corpus"] = e.get("successor_in_corpus")
+        if e["relation"] == "repeals_full_deferred":
+            edge["commencement_ar"] = e["commencement_ar"]
         edges_out.append(edge)
 
     graph = {
@@ -2218,6 +2782,15 @@ def build_graph(registry):
                                 "(or of an untracked predecessor).",
             "superseded_by": "track A is itself confirmed superseded by a "
                               "future/newer instrument.",
+            "repeals_full_deferred": "track A's own text fully repeals a "
+                                      "prior instrument, BUT track A has not "
+                                      "commenced yet — it is published and "
+                                      "not yet in force, so the target is "
+                                      "STILL THE LAW IN FORCE TODAY. Read "
+                                      "`commencement_ar` on the edge for the "
+                                      "verbatim commencement clause. Treating "
+                                      "such an edge as a completed repeal "
+                                      "would retire a live law.",
         },
         "edge_count": len(edges_out),
         "relation_counts": _relation_counts(),

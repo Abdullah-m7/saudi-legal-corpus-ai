@@ -13,7 +13,10 @@ Checks:
       from scripts/validate_corpus_registry.py, not hand-copied).
   4.  Every edge's non-null target_track_id exists in REQUIRED_TRACK_IDS.
   5.  Every edge has a non-empty note.
-  6.  Every edge's relation is one of the three documented relation types.
+  6.  Every edge's relation is one of the four documented relation types,
+      and every repeals_full_deferred edge carries a non-empty
+      commencement_ar — a repeal dated in the future must never be
+      readable as a completed one.
   7.  Every concurrent_title_collisions entry's track_ids all exist in
       REQUIRED_TRACK_IDS, and has a non-empty note.
   8.  Every ambiguous_or_excluded_cases entry's tracks_involved all exist
@@ -56,7 +59,8 @@ GRAPH_PATH = os.path.join(ROOT, "data", "corpus_supersession_graph", "corpus_sup
 GEN_SCRIPT = os.path.join(ROOT, "scripts", "gen_corpus_supersession_graph.py")
 VALIDATE_REGISTRY_SCRIPT = os.path.join(ROOT, "scripts", "validate_corpus_registry.py")
 
-RELATION_TYPES = {"repeals_full", "repeals_partial", "superseded_by"}
+RELATION_TYPES = {"repeals_full", "repeals_partial", "superseded_by",
+                  "repeals_full_deferred"}
 
 REQUIRED_COLLISIONS = [
     {"social_insurance_law", "social_insurance_legacy_law"},
@@ -67,10 +71,15 @@ SPOT_CHECKS = [
     # (from_track_id, relation, target_track_id_or_None)
     ("civil_service_law", "repeals_full", None),
     ("social_insurance_legacy_law", "repeals_full", None),
-    ("copyright_law", "superseded_by", None),
+    ("copyright_law", "superseded_by", "copyright_law_2026"),
     ("commercial_courts_law", "repeals_partial", "evidence_law"),
     ("bankruptcy_law", "repeals_full", None),
     ("bankruptcy_law", "repeals_partial", None),
+    # Added with the audit-driven batch: the two predecessors this corpus
+    # actually holds, plus one it deliberately does not resolve.
+    ("copyright_law_2026", "repeals_full", "copyright_law"),
+    ("state_revenue_law_1448", "repeals_full_deferred", "state_revenue_law"),
+    ("labor_law", "repeals_full", None),
 ]
 
 CHECKS: list[str] = []
@@ -161,6 +170,14 @@ def main() -> int:
           "All present" if not empty_notes else f"Empty at indices: {empty_notes}")
 
     # [6] Relation types
+    missing_commencement = [e.get("from_track_id") for e in edges
+                            if e.get("relation") == "repeals_full_deferred"
+                            and not (e.get("commencement_ar") or "").strip()]
+    check("[6b] repeals_full_deferred edges carry commencement_ar...",
+          not missing_commencement,
+          "A repeal whose commencement is in the future must say so verbatim"
+          if not missing_commencement else f"Missing on: {missing_commencement}")
+
     bad_relations = sorted({e.get("relation") for e in edges} - RELATION_TYPES)
     check("[6] Every edge.relation is a documented relation type...", len(bad_relations) == 0,
           f"Types used: {sorted({e.get('relation') for e in edges})}"

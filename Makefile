@@ -1988,6 +1988,18 @@ corpus-cross-reference-graph-validate:
 cross-reference-resolution-audit:
 	$(PY) scripts/audit_cross_reference_resolution.py
 
+# Reports which tracks say in their own text that they replace something the
+# hand-classified supersession graph carries no edge for. Reporting only —
+# adding the edge is still a human's job. Run after every ingestion round.
+unrecorded-supersessions-audit:
+	$(PY) scripts/audit_unrecorded_supersessions.py
+
+# LIVE NETWORK. Not part of the QA gate. Compares the gazette's declared
+# sitemaps against the archive index this corpus holds and reports pages it
+# has never examined. Run after every ingestion round.
+gazette-index-freshness:
+	$(PY) scripts/check_gazette_index_freshness.py
+
 corpus-glossary-validate:
 	$(PY) scripts/validate_corpus_glossary.py
 
