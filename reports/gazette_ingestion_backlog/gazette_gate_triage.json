@@ -1,8 +1,8 @@
 {
  "generated_note": "Every Umm Al-Qura page the ingestion pipeline has examined, and what it decided. A refusal quotes the gate that refused it, verbatim, so an absence from the corpus can be argued with rather than merely noticed. Where a page was examined more than once — the pipeline was widened repeatedly, and a page refused under a narrower reading was sometimes accepted later — only the LAST verdict is recorded, because only it describes the corpus as it stands. Publishing this is what lets the coverage accounting tell a page that was judged apart from a page that was never looked at; without it, both read as 'unreached' and the corpus looks less diligent than it is while hiding the pages that genuinely need work. Re-run in full against the pipeline as it stands after the numbered-clause form, the two additional number placements («المادة: (1)», «المادة 1:»), the corrected chapter stripper and the G14 predecessor-edition gate: all 371 pages were re-fetched and re-judged, and NONE became acceptable. The segmenter work is fully harvested; what remains is refused for substantive reasons — 234 already covered, 122 with no recognisable structure, 35 with a numbering gap the pipeline cannot prove safe. RE-RUN AGAIN after the pipeline learned to cut a trailing ANNEX BLOCK off the last record at the gazette's own «الملحق N:» marks: all seven pages G10 had refused were re-judged and one became acceptable — «قواعد طرح الأوراق المالية والالتزامات المستمرة» (uqn 4001355; 112 articles + 38 appendices), now built as track securities_offering_rules. It was found not by re-reading the archive but by matching the Capital Market Authority's own register of regulations in force against the corpus. The other six stay refused for substantive reasons: one has a single annex (below the floor of three); one is a source whose own printing skips «ملحق رقم (5)», so the run is incomplete and nothing is cut; two are earlier editions of the instrument just built; two are already covered. RE-RUN AGAIN after a FOURTH drafting form. A structural census of all 122 pages still refused at G3 found that the missing form is not a glossary but the UNTERMINATED heading — «المادة الأولى» followed straight by the article's own title and text, with no colon and no dash. Every heading pattern in the pipeline required a terminator, which is the rule that keeps «المادة السابعة من نظام كذا» a citation instead of shattering a document at every cross-reference; the cost of that rule is the international-agreement family, which is drafted exactly this way. Four pages yield a complete run under the new form and one passes every other gate: «اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية» (17 articles), now track treaty_ifad_headquarters. Three more — the Latvia double-taxation agreement (30 articles) and two bilateral cooperation agreements (9 each) — are refused at G2 because bilateral treaties of the same type run 64-89% identical by text; that refusal is recorded rather than overridden, because deciding it needs a judgement and the gray band exists to hand judgements to a human. RE-INDEXED. The corpus's archive index ends at 2026-07-31, so anything the gazette has published since was never examined. All 163 monthly sitemaps were re-fetched and diffed against it: 45 document pages are addressable and absent from the index. Of the 31 older ones, ZERO pass the gates — the index was not missing instruments, it was missing non-instrument pages. Of the 14 published on 2026-08-07, FOUR pass every gate and are built: نظام إيرادات الدولة (30 articles), اللائحة التنفيذية لنشاط نقل البضائع عبر الدراجة الآلية (29), القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون (14), and آلية نقل أصول البورصة العقارية (8). The other ten are approval decrees carrying no article text, royal decrees, and one regulation refused at G13 as a flattened table (58% reference codes). RE-RUN AGAIN after a FIFTH PUBLICATION FORM — the bilingual side-by-side table, the first form that is not a numbering convention. The gazette publishes some instruments as a table with English in the left cells and Arabic in the right; flattened, the two languages alternate sentence by sentence and every density measure reads that as noise. The split is now read from the gazette's own table markup, never from character ratios, under an invariant that every Arabic character in the article block must survive or the extraction refuses (G15). All 127 accepted pages and all 124 pages refused for having no recognisable structure were re-fetched and re-judged: exactly ONE built page changed behaviour (24606, the animal-health guide, whose page carries a bilingual DISEASE-NAME LIST rather than being one) — which is how a wrong denominator was caught before it could destroy nine tenths of a built track. NO refused page became acceptable: of the three bilingual tables among them two are catalogues of standard numbers and one is refused at G15 because its Arabic column cannot be read without loss. The form unlocked exactly one document, «لائحة المتطلبات الاقتصادية الفعلية للمناطق الاقتصادية الخاصة» (uqn 4001553, 9 articles), now track sez_economic_substance_regulation — and exposed one already-built track, regional_headquarters_tax_rules, that had been ingested from this same form flattened, now REPAIRED from its Arabic column. The eleven pages the freshness watcher surfaced are recorded here with their verbatim verdicts; ten are approval decisions for instruments the corpus already holds. RE-HARVESTED. The archive title index — the artifact every coverage claim rests on — was extended for the first time since it was built. A full sweep of all 163 monthly sitemaps (19 of which failed on connection reset until the fetch learned to retry; a partial sweep reads exactly like a complete one) found 479 addressable pages the index had never seen. They were not merely at its tail: they live under URL SUB-SECTIONS the original harvest never walked — /decisions-and-regulations/rules-and-regulations/, /authorities/, /the-royal-court/, /council-of-ministers-decisions/. The index had a SHAPE it never covered. 445 pages were merged (index 8,997 -> 9,442, end date 2026-07-31 -> 2026-08-09); 34 were skipped as /infographic/ pages, which carry a title and no publication date. The 61 newly-found legislative pages were put through the gates: 53 refused with their verbatim reasons, and EIGHT ACCEPTED — among them «نظام التنفيذ» (65 articles, published 2026-05-01), a NEW Enforcement Law whose article 65 replaces the M/53 (1433H) law this corpus holds and commences 180 days after publication, so it is published and NOT YET IN FORCE. The eight are accepted here and not yet built as tracks.",
- "pages_examined": 609,
+ "pages_examined": 615,
  "accepted": 136,
- "refused": 432,
+ "refused": 438,
  "rejected": [
   {
    "uid": "16942",
@@ -4422,6 +4422,72 @@
     "G1: title marks an amendment/draft/repeal, not a standalone instrument",
     "G2-EDITION: only 33% of this document's articles are verbatim matches, but 81% of its whole text already exists in track 'terrorism' — that is the signature of the SAME instrument in a different edition, with every article edited. Which edition is in force cannot be settled from text overlap, so this is adjudicated by hand, not auto-built"
    ]
+  },
+  {
+   "uid": "19160",
+   "url": "https://www.uqn.gov.sa/details?p=19160",
+   "title_ar": "خادم الحرمين الشريفين يهنئ رئيس ناميبيا بذكرى استقلال بلاده",
+   "date": "2022-03-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G1: title is not legal-document shaped",
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19606",
+   "url": "https://www.uqn.gov.sa/details?p=19606",
+   "title_ar": "خادم الحرمين الشريفين يهنئ رئيس سيشل",
+   "date": "2022-06-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G1: title is not legal-document shaped",
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "20730",
+   "url": "https://www.uqn.gov.sa/details?p=20730",
+   "title_ar": "اعتماد تحديث (128) مواصفة قياسية سعودية",
+   "date": "2022-10-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G1: title is not legal-document shaped",
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "20805",
+   "url": "https://www.uqn.gov.sa/details?p=20805",
+   "title_ar": "الإعلانات الحكومية لعدد 4955",
+   "date": "2022-11-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G1: title is not legal-document shaped",
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23472",
+   "url": "https://www.uqn.gov.sa/details?p=23472",
+   "title_ar": "ولي العهد يهنئ رئيس تشاد",
+   "date": "2023-08-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G1: title is not legal-document shaped",
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24116",
+   "url": "https://www.uqn.gov.sa/details?p=24116",
+   "title_ar": "خادم الحرمين الشريفين يهنئ رئيس مجلس رئاسة البوسنة والهرسك",
+   "date": "2023-11-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G1: title is not legal-document shaped",
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
   }
  ],
  "accepted_pages": [
@@ -5378,5 +5444,5 @@
    "verdict": "accepted"
   }
  ],
- "rejected_count": 432
+ "rejected_count": 438
 }

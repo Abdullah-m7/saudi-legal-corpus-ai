@@ -2009,6 +2009,17 @@ unrecorded-supersessions-audit:
 gazette-index-freshness:
 	$(PY) scripts/check_gazette_index_freshness.py
 
+# LIVE NETWORK. Not part of the QA gate. Maps the gazette id space the corpus
+# holds, counts the holes, and — with --probe N — asks the gazette whether the
+# missing ids open on anything. Measures the blindness instead of worrying about it.
+gazette-id-space-audit:
+	$(PY) scripts/audit_gazette_id_space.py
+
+# LIVE NETWORK. Merges into the archive title index every page the sitemaps
+# expose and the index has never seen, then gates the new legislative ones.
+gazette-index-refresh:
+	$(PY) scripts/refresh_gazette_title_index.py
+
 corpus-glossary-validate:
 	$(PY) scripts/validate_corpus_glossary.py
 

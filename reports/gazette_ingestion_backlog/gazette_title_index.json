@@ -1,6 +1,6 @@
 {
  "generated_note": "Title + publication date for every addressable URL in the Umm Al-Qura archive (9,028 of the sitemap 9,486; the rest are section landing pages with no document id). Harvested title-and-date only, so the whole archive index costs a few hundred KB instead of gigabytes of HTML. This is what makes the currency audit possible: the ingestion sweep keeps only legal-document-shaped titles, which correctly excludes ~1,900 amendment notices from being BUILT but also hid them from being USED as evidence that a track on file has since been amended.",
- "pages": 9442,
+ "pages": 9448,
  "index": {
   "12918": {
    "title": "المملكة تقرر استئناف عمل بعثتها الدبلوماسية في سوريا",
@@ -37769,6 +37769,30 @@
   "4001573": {
    "title": "طرح 25 مشروعًا عبر منصة \"استطلاع\" لأخذ مرئيات العموم والقطاعين الحكومي والخاص",
    "date": "2026-08-09"
+  },
+  "19160": {
+   "title": "خادم الحرمين الشريفين يهنئ رئيس ناميبيا بذكرى استقلال بلاده",
+   "date": "2022-03-20"
+  },
+  "19606": {
+   "title": "خادم الحرمين الشريفين يهنئ رئيس سيشل",
+   "date": "2022-06-17"
+  },
+  "20730": {
+   "title": "اعتماد تحديث (128) مواصفة قياسية سعودية",
+   "date": "2022-10-21"
+  },
+  "20805": {
+   "title": "الإعلانات الحكومية لعدد 4955",
+   "date": "2022-11-04"
+  },
+  "23472": {
+   "title": "ولي العهد يهنئ رئيس تشاد",
+   "date": "2023-08-11"
+  },
+  "24116": {
+   "title": "خادم الحرمين الشريفين يهنئ رئيس مجلس رئاسة البوسنة والهرسك",
+   "date": "2023-11-26"
   }
  },
  "title_recovery_note": "The archive's CMS truncates <title> at ~70 characters. 2,043 of the harvested titles ended in an ellipsis, and the cut falls on the instrument's name: an amendment notice reads «تعديل الفقرة (4) من المادة (الثانية) من لائحة ...», so the words that identify WHICH instrument is amended are exactly the ones the CMS drops. Those titles were re-fetched and the full text taken from the page's own <meta property=\"og:title\"> (falling back to <h1>); 2043 were recovered in full, 0 could not be and keep their truncated title. Nothing was completed by hand.",
@@ -37791,6 +37815,12 @@
    "incomplete_pages_not_merged": 0,
    "new_end_date": "2026-08-09",
    "note": "حصادٌ **تزايدي** لا إعادةَ بناء: لا يُعاد جلبُ صفحةٍ يحملها الفهرس ولا يُكتب فوقها — عناوينُه مرّت بجولة استعادةٍ للعناوين المبتورة، وإعادةُ جلب تسعة آلاف صفحة تُنفق ساعاتٍ لتؤكد ما لا يتغيّر. **والحدُّ المعروف**: لا يلاحظ هذا عنواناً عدّلته الجريدة بعد حصاده. **وخرائطُ الموقع ليست جرداً**: الـ163 خريطة تعرض 638 صفحة مقابل ما يقارب تسعة آلاف في الفهرس، فهذه الأداة **تُوسِّع الفهرس ولا تبنيه**."
+  },
+  {
+   "added_pages": 6,
+   "channel": "id-space probe (not the sitemaps)",
+   "new_end_date": "2026-08-09",
+   "note": "أُضيفت هذه الصفحات عبر **سبر فضاء المعرّفات** لا عبر خرائط الموقع: فجواتٌ صغيرة في المدى القديم سُبرت **استقصاءً لا عيّنة**، وما فُتح منها أُدرج. **وهذا قناةُ اكتشافٍ ثانية**، تكشف ما لا تعرضه الخرائط."
   }
  ]
 }
