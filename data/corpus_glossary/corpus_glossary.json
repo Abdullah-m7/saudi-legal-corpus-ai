@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 750,
-  "total_terms": 3553,
-  "total_definitions": 7735,
-  "tracks_with_definitions_article_parsed": 579,
+  "total_tracks_in_registry": 758,
+  "total_terms": 3569,
+  "total_definitions": 7782,
+  "tracks_with_definitions_article_parsed": 586,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -426,6 +426,10 @@
     },
     {
       "track_id": "open_field_vegetable_crops_export_conditions",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "overseas_saudi_contracting_rules",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -4130,6 +4134,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأعمال": [
+      {
+        "track_id": "saudi_competitiveness_business_center_statute",
+        "article_number": 1,
+        "term_as_written": "الأعمال",
+        "definition_text": "أي نشاط -عدا ما يستثنيه المجلس- تجوز مزاولته في المملكة وفقا لما هو مقرر نظاما، ويتضمن تقديم خدمات أو توفير سلع أو منتجات وغير ذلك نظير مقابل مالي.",
+        "source_record_id": "saudi-competitiveness-business-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأعمال التجارية": [
       {
         "track_id": "bankruptcy_law",
@@ -5759,6 +5773,14 @@
         "term_as_written": "الإدارة المختصة",
         "definition_text": "هي الجهة التي وقعت المخالفة ضمن نطاق مسؤوليتها.",
         "source_record_id": "electricity-violations-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "الإدارة المختصة",
+        "definition_text": "الوحدة الإدارية في الوزارة أو في المحكمة المعنية بمباشرة إجراء من إجراءات التنفيذ وفقا لما ورد في النظام واللائحة.",
+        "source_record_id": "enforcement-law-1447-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10328,6 +10350,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدر من الجهة المختصة تتيح لمقدم الطلب ممارسة الأنشطة المنصوص عليها في الفقرة (4) و(5) من هذه المادة.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "petroleum_petrochemical_materials_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -12488,6 +12518,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التنافسية": [
+      {
+        "track_id": "saudi_competitiveness_business_center_statute",
+        "article_number": 1,
+        "term_as_written": "التنافسية",
+        "definition_text": "قدرة الدولة على الاستغلال الأمثل لجميع مواردها، وسياساتها، ومؤسساتها، لرفع كفاية الخدمات المقدمة للأفراد وقطاع الأعمال وجودتها، بما يسهم في تحقيق التنمية المستدامة للدولة، وجعلها في مركز تنافسي متقدم.",
+        "source_record_id": "saudi-competitiveness-business-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التنسيق": [
       {
         "track_id": "excavation_permits_regulation",
@@ -12705,6 +12745,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم المدينة.",
         "source_record_id": "kacst-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "king_fahd_national_library_statute",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم المكتبة.",
+        "source_record_id": "king-fahd-national-library-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13081,6 +13129,16 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم الهيئة.",
         "source_record_id": "zatca-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التنفيذ المباشر": [
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "التنفيذ المباشر",
+        "definition_text": "تنفيذ السند التنفيذي متى كان محل الحق فيه أداء فعل أو امتناعا عن فعل.",
+        "source_record_id": "enforcement-law-1447-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14956,6 +15014,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الجهة العامة المختصة نظاما بأعمال ذات صلة بالتنفيذ.",
+        "source_record_id": "enforcement-law-1447-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_air_quality",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
@@ -15374,6 +15440,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "pdpl_accreditation_certificates_rules",
+        "article_number": 1,
+        "term_as_written": "الجهة المرخص لها",
+        "definition_text": "جهة حاصلة على ترخيص من قبل الجهة المختصة لممارسة أنشطة إصدار شهادات الاعتماد.",
+        "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "الجهة المرخص لها",
+        "definition_text": "جهة حاصلة على ترخيص من قبل الجهة المختصة لممارسة أنشطة إصدار شهادات الاعتماد أو أنشطة التدقيق والفحص، بناء على ما تقره الجهة المختصة حيال الطلبات المقدمة للحصول على الترخيص، ووفقا للمتطلبات المنصوص عليها في هذه القواعد.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vehicle_periodic_inspection_regulation",
         "article_number": 1,
         "term_as_written": "الجهة المرخص لها",
@@ -15513,6 +15595,16 @@
         "term_as_written": "الجهة المشرفة",
         "definition_text": "الجهة الحكومية المشرفة على وجهة سياحية أو مقوم سياحي.",
         "source_record_id": "tourist-destinations-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهة المشرفة على الأموال أو تسجيلها": [
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "الجهة المشرفة على الأموال أو تسجيلها",
+        "definition_text": "الجهة العامة المختصة نظاما بالإشراف على نوع من أنواع الأموال -سواء أكانت ثابتة أم منقولة- أو تسجيل ملكيتها، بما في ذلك الجهة العامة المختصة بالإشراف على المؤسسات المالية والجهة العامة المختصة بالإشراف على السوق المالية.",
+        "source_record_id": "enforcement-law-1447-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -18626,6 +18718,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "king_fahd_national_library_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "king-fahd-national-library-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "king_salman_arabic_language_academy_statute",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -18783,6 +18883,14 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس هيئة الرقابة ومكافحة الفساد.",
         "source_record_id": "nazaha-military-personnel-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "non_oil_revenue_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "non-oil-revenue-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19007,6 +19115,14 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس المجلس.",
         "source_record_id": "saudi-auditors-accountants-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "saudi_competitiveness_business_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "saudi-competitiveness-business-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19380,6 +19496,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "king_fahd_national_library_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمكتبة.",
+        "source_record_id": "king-fahd-national-library-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "king_faisal_specialist_hospital_statute",
         "article_number": 1,
         "term_as_written": "الرئيس التنفيذي",
@@ -19484,6 +19608,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "non_oil_revenue_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "non-oil-revenue-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "nonprofit_sector_development_center_statute",
         "article_number": 1,
         "term_as_written": "الرئيس التنفيذي",
@@ -19569,6 +19701,14 @@
         "term_as_written": "الرئيس التنفيذي",
         "definition_text": "الرئيس التنفيذي للمركز.",
         "source_record_id": "riyadh-sez-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "saudi_competitiveness_business_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "saudi-competitiveness-business-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -22634,6 +22774,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشركات المدرجة": [
+      {
+        "track_id": "listed_entities_property_ownership_controls",
+        "article_number": 1,
+        "term_as_written": "الشركات المدرجة",
+        "definition_text": "الشركة المدرجة في السوق المالية السعودية المؤسسة وفقا لأحكام نظام الشركات.",
+        "source_record_id": "listed-entities-property-ownership-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشركات المملوكة من الحكومة": [
       {
         "track_id": "ipo_book_building_allocation_instructions",
@@ -23143,6 +23293,16 @@
         "term_as_written": "الصكوك الاستثمارية الوقفية",
         "definition_text": "صكوك استثمارية تصدر لتمثل حصصا موقوفة -أو ستؤول إلى وقف-، في ملكية أصول أو منافع أو مشاريع أو حقوق.",
         "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصناديق الاستثمارية": [
+      {
+        "track_id": "listed_entities_property_ownership_controls",
+        "article_number": 1,
+        "term_as_written": "الصناديق الاستثمارية",
+        "definition_text": "برنامج استثمار مشترك يهدف إلى إتاحة الفرصة للمستثمرين فيه بالمشاركة جماعيا في أرباح البرنامج، ويديره مدير الصندوق مقابل رسوم محددة.",
+        "source_record_id": "listed-entities-property-ownership-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23859,6 +24019,14 @@
         "term_as_written": "الضوابط",
         "definition_text": "ضوابط رسوم تخزين البضائع بالمنافذ الجمركية البرية.",
         "source_record_id": "land-customs-storage-fees-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "listed_entities_property_ownership_controls",
+        "article_number": 1,
+        "term_as_written": "الضوابط",
+        "definition_text": "الضوابط الخاصة بتملك الشركات المدرجة والصناديق الاستثمارية والمنشآت ذات الأغراض الخاصة للعقار في المملكة -بما في ذلك مدينتا مكة المكرمة والمدينة المنورة- وفقا لما تضمنته المادة الرابعة من نظام تملك غير السعوديين للعقار.",
+        "source_record_id": "listed-entities-property-ownership-controls-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -27696,6 +27864,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القوة المختصة": [
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "القوة المختصة",
+        "definition_text": "الشرطة أو الجهة الأمنية المختصة لدعم التنفيذ باستعمال القوة الجبرية.",
+        "source_record_id": "enforcement-law-1447-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "القيد": [
       {
         "track_id": "commercial_register_regulation",
@@ -28615,6 +28793,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لهذا النظام.",
         "source_record_id": "enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "enforcement-law-1447-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -33534,6 +33720,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "المجلس الأعلى للقضاء.",
+        "source_record_id": "enforcement-law-1447-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "entertainment_activities_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -33926,6 +34120,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "king_fahd_national_library_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس أمناء المكتبة.",
+        "source_record_id": "king-fahd-national-library-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "king_faisal_specialist_hospital_statute",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -34171,6 +34373,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس المؤسسات الأهلية.",
         "source_record_id": "ngo-council-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "non_oil_revenue_center_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة المركز.",
+        "source_record_id": "non-oil-revenue-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -34571,6 +34781,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "saudi-auditors-accountants-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "saudi_competitiveness_business_center_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة المركز.",
+        "source_record_id": "saudi-competitiveness-business-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -35801,6 +36019,14 @@
         "term_as_written": "المحكمة",
         "definition_text": "المحكمة التجارية.",
         "source_record_id": "commercial-courts-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "المحكمة",
+        "definition_text": "محكمة التنفيذ.",
+        "source_record_id": "enforcement-law-1447-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -38138,6 +38364,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "non_oil_revenue_center_statute",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "مركز الإيرادات غير النفطية.",
+        "source_record_id": "non-oil-revenue-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "nonprofit_beneficial_owner_rules",
         "article_number": 1,
         "term_as_written": "المركز",
@@ -38231,6 +38465,14 @@
         "term_as_written": "المركز",
         "definition_text": "مركز المناطق الاقتصادية الخاصة بمدينة الرياض.",
         "source_record_id": "riyadh-sez-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "saudi_competitiveness_business_center_statute",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز السعودي للتنافسية والأعمال.",
+        "source_record_id": "saudi-competitiveness-business-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -38779,6 +39021,16 @@
         "term_as_written": "المستثمر الأجنبي",
         "definition_text": "منشأة مرخصة من وزارة الاستثمار في المملكة مملوكة لأشخاص غير سعوديين، ولديها خبرة سابقة في القوى العاملة وترخيصها ساري.",
         "source_record_id": "labor-annex4-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المستثمر الاستراتيجي الأجنبي": [
+      {
+        "track_id": "listed_entities_property_ownership_controls",
+        "article_number": 1,
+        "term_as_written": "المستثمر الاستراتيجي الأجنبي",
+        "definition_text": "يقصد به المستثمر الاستراتيجي الأجنبي وفقا للقواعد المنظمة للاستثمار الأجنبي في الأوراق المالية.",
+        "source_record_id": "listed-entities-property-ownership-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -44041,6 +44293,24 @@
         "term_as_written": "المنصة البحرية",
         "definition_text": "منشأة بحرية تستخدم لاستخراج الزيت أو الغاز أو غيرهما من الثروات، وتعد في حكم السفينة.",
         "source_record_id": "maritime-commercial-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنصة الخاصة بالجهة المختصة": [
+      {
+        "track_id": "pdpl_accreditation_certificates_rules",
+        "article_number": 1,
+        "term_as_written": "المنصة الخاصة بالجهة المختصة",
+        "definition_text": "منصة إلكترونية تابعة للجهة المختصة تهدف إلى تقديم الخدمات الداعمة لتطبيق أحكام النظام واللوائح.",
+        "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "المنصة الخاصة بالجهة المختصة",
+        "definition_text": "منصة إلكترونية تابعة للجهة المختصة تهدف إلى تقديم الخدمات الداعمة لتطبيق أحكام النظام واللوائح.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -49546,6 +49816,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "listed_entities_property_ownership_controls",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة السوق المالية.",
+        "source_record_id": "listed-entities-property-ownership-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "listed_jsc_companies_regulation",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -50978,6 +51256,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة العدل.",
+        "source_record_id": "enforcement-law-1447-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "enforcement_providers_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -52354,6 +52640,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير العدل.",
+        "source_record_id": "enforcement-law-1447-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "enforcement_providers_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -52959,6 +53253,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير النقل والخدمات اللوجستية.",
         "source_record_id": "national-transport-safety-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "non_oil_revenue_center_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير المالية.",
+        "source_record_id": "non-oil-revenue-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -55340,6 +55642,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "ترخيص نشاط إصدار شهادات الاعتماد": [
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "ترخيص نشاط إصدار شهادات الاعتماد",
+        "definition_text": "وثيقة صادرة من الجهة المختصة لشخص ذي صفة اعتبارية خاصة لممارسة نشاط إصدار شهادات الاعتماد لجهات التحكم والمعالجة.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "ترخيص نشاط التدقيق والفحص": [
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "ترخيص نشاط التدقيق والفحص",
+        "definition_text": "وثيقة صادرة من الجهة المختصة لشخص ذي صفة اعتبارية خاصة لممارسة نشاط التدقيق والفحص لأنشطة معالجة البيانات الشخصية لدى جهات التحكم والمعالجة.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "ترشيد المياه": [
       {
         "track_id": "water_efficiency_center_statute",
@@ -55700,6 +56022,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "تقرير التدقيق والفحص": [
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "تقرير التدقيق والفحص",
+        "definition_text": "تقرير يعد من الجهة المرخص لها بأعمال التدقيق والفحص ويتضمن نتائج تدقيق وفحص أنشطة معالجة البيانات الشخصية محل التدقيق والفحص في ضوء أحكام النظام واللوائح.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تقرير التقييم": [
       {
         "track_id": "accredited_valuers_implementing_regulation",
@@ -55725,6 +56057,24 @@
         "term_as_written": "تقرير الزيارة",
         "definition_text": "وثيقة -ورقية أو إلكترونية- تتضمن نتائج التفتيش.",
         "source_record_id": "tourism-violations-committee-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تقرير تقييم إصدار شهادات الاعتماد": [
+      {
+        "track_id": "pdpl_accreditation_certificates_rules",
+        "article_number": 1,
+        "term_as_written": "تقرير تقييم إصدار شهادات الاعتماد",
+        "definition_text": "تقرير يعد من الجهة المرخص لها بإصدار شهادات الاعتماد يتضمن نتائج تقييم الممارسات والإجراءات المتبعة عند معالجة البيانات الشخصية في ضوء أحكام النظام واللوائح، وفقا للآلية والمعايير التي تحددها الجهة المختصة.",
+        "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "تقرير تقييم إصدار شهادات الاعتماد",
+        "definition_text": "تقرير يعد من الجهة المرخص لها بإصدار شهادات الاعتماد ويتضمن نتائج تقييم الممارسات والإجراءات المتبعة عند معالجة البيانات الشخصية في ضوء أحكام النظام واللوائح، وفقا للآلية والمعايير التي تحددها الجهة المختصة.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -59598,6 +59948,22 @@
         "definition_text": "موافقة تصدرها الهيئة باعتماد المتقدم لممارسة الأنشطة المساندة.",
         "source_record_id": "entertainment-activities-law-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_certificates_rules",
+        "article_number": 1,
+        "term_as_written": "شهادة الاعتماد",
+        "definition_text": "شهادة تصدرها الجهة المرخص لها -بإصدار شهادات الاعتماد- لجهات التحكم أو جهات المعالجة، تتضمن التأكيد على أن الممارسات والإجراءات التي يتم اتباعها لدى جهة التحكم أو جهة المعالجة -عند معالجة البيانات الشخصية- متوافقة مع أحكام النظام واللوائح والمتطلبات المنصوص عليها في هذه القواعد.",
+        "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "شهادة الاعتماد",
+        "definition_text": "شهادة تصدرها الجهة المرخص لها -بإصدار شهادات الاعتماد- لجهات التحكم أو جهات المعالجة، تتضمن التأكيد على أن الممارسات والإجراءات التي يتم اتباعها لدى جهة التحكم أو جهة المعالجة -عند معالجة البيانات الشخصية- متوافقة مع أحكام النظام واللوائح والمتطلبات المنصوص عليها في القواعد المنظمة لإصدار شهادات الاعتماد لجهات التحكم وجهات المعالجة.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "شهادة الالتزام البيئي": [
@@ -63124,6 +63490,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مؤسسات السوق المالية": [
+      {
+        "track_id": "listed_entities_property_ownership_controls",
+        "article_number": 1,
+        "term_as_written": "مؤسسات السوق المالية",
+        "definition_text": "شخص مرخص له من الهيئة في ممارسة أعمال الأوراق المالية.",
+        "source_record_id": "listed-entities-property-ownership-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مؤسسة التعليم العالي": [
       {
         "track_id": "private_universities_regulation",
@@ -65522,6 +65898,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مصروفات التنفيذ": [
+      {
+        "track_id": "enforcement_law_1447",
+        "article_number": 1,
+        "term_as_written": "مصروفات التنفيذ",
+        "definition_text": "الالتزامات المالية المترتبة على إجراءات التنفيذ وفقا للأحكام المنظمة لذلك.",
+        "source_record_id": "enforcement-law-1447-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مصفاة التكرير": [
       {
         "track_id": "petroleum_petrochemical_materials_law",
@@ -66171,6 +66557,22 @@
         "term_as_written": "مقدم الطلب",
         "definition_text": "الشخص ذو الصفة االعتبارية - أو من ينوب عنه - الذي يقدم طلب ال ترخيص.",
         "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_certificates_rules",
+        "article_number": 1,
+        "term_as_written": "مقدم الطلب",
+        "definition_text": "جهة التحكم أو جهة المعالجة -سواء كانت تمارس نشاطها داخل أو خارج المملكة- التي تتقدم بطلب للحصول على شهادة اعتماد من قبل جهة مرخص لها.",
+        "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "مقدم الطلب",
+        "definition_text": "الجهة التي تتقدم بطلب الترخيص للجهة المختصة للقيام بأعمال التدقيق والفحص المرتبطة بأنشطة معالجة البيانات الشخصية أو بممارسة إصدار شهادات الاعتماد لجهات التحكم والمعالجة.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -67695,6 +68097,16 @@
         "term_as_written": "نشاط الاستثمار ذي الأثر الاجتماعي",
         "definition_text": "توجيه رأس المال بهدف معالجة تحد اجتماعي مع تحقيق عائد مالي وأثر إيجابي اجتماعي قابل للقياس.",
         "source_record_id": "social-impact-investment-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط التدقيق والفحص": [
+      {
+        "track_id": "pdpl_accreditation_licensing_rules",
+        "article_number": 1,
+        "term_as_written": "نشاط التدقيق والفحص",
+        "definition_text": "نشاط تقوم به الجهة المرخص لها للتحقق من شمولية أنشطة معالجة البيانات الشخصية لدى الجهة، وذلك من خلال إجراء عمليات التدقيق والفحص، وتحديد مدى فاعلية الضوابط والتدابير المتخذة لحماية البيانات الشخصية.",
+        "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

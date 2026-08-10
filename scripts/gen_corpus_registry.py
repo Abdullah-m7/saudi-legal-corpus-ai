@@ -524,6 +524,14 @@ TREATY_IFAD_HEADQUARTERS_LLM = os.path.join(ROOT, "data", "treaty_ifad_headquart
 STATE_REVENUE_LAW_1448_LLM = os.path.join(ROOT, "data", "state_revenue_law_1448_arabic_legal_llm", "state_revenue_law_1448_legal_llm_001_030.json")
 MOTORCYCLE_FREIGHT_TRANSPORT_REGULATION_LLM = os.path.join(ROOT, "data", "motorcycle_freight_transport_regulation_arabic_legal_llm", "motorcycle_freight_transport_regulation_legal_llm_001_029.json")
 GCC_JOINTLY_OWNED_PROPERTY_RULES_LLM = os.path.join(ROOT, "data", "gcc_jointly_owned_property_rules_arabic_legal_llm", "gcc_jointly_owned_property_rules_legal_llm_001_014.json")
+PDPL_ACCREDITATION_LICENSING_RULES_LLM = os.path.join(ROOT, "data", "pdpl_accreditation_licensing_rules_arabic_legal_llm", "pdpl_accreditation_licensing_rules_legal_llm_001_019.json")
+PDPL_ACCREDITATION_CERTIFICATES_RULES_LLM = os.path.join(ROOT, "data", "pdpl_accreditation_certificates_rules_arabic_legal_llm", "pdpl_accreditation_certificates_rules_legal_llm_001_015.json")
+SAUDI_COMPETITIVENESS_BUSINESS_CENTER_STATUTE_LLM = os.path.join(ROOT, "data", "saudi_competitiveness_business_center_statute_arabic_legal_llm", "saudi_competitiveness_business_center_statute_legal_llm_001_016.json")
+KING_FAHD_NATIONAL_LIBRARY_STATUTE_LLM = os.path.join(ROOT, "data", "king_fahd_national_library_statute_arabic_legal_llm", "king_fahd_national_library_statute_legal_llm_001_015.json")
+LISTED_ENTITIES_PROPERTY_OWNERSHIP_CONTROLS_LLM = os.path.join(ROOT, "data", "listed_entities_property_ownership_controls_arabic_legal_llm", "listed_entities_property_ownership_controls_legal_llm_001_004.json")
+NON_OIL_REVENUE_CENTER_STATUTE_LLM = os.path.join(ROOT, "data", "non_oil_revenue_center_statute_arabic_legal_llm", "non_oil_revenue_center_statute_legal_llm_001_016.json")
+ENFORCEMENT_LAW_1447_LLM = os.path.join(ROOT, "data", "enforcement_law_1447_arabic_legal_llm", "enforcement_law_1447_legal_llm_001_065.json")
+OVERSEAS_SAUDI_CONTRACTING_RULES_LLM = os.path.join(ROOT, "data", "overseas_saudi_contracting_rules_arabic_legal_llm", "overseas_saudi_contracting_rules_legal_llm_001_006.json")
 SEZ_ECONOMIC_SUBSTANCE_REGULATION_LLM = os.path.join(ROOT, "data", "sez_economic_substance_regulation_arabic_legal_llm", "sez_economic_substance_regulation_legal_llm_001_009.json")
 REAL_ESTATE_EXCHANGE_TRANSFER_MECHANISM_LLM = os.path.join(ROOT, "data", "real_estate_exchange_transfer_mechanism_arabic_legal_llm", "real_estate_exchange_transfer_mechanism_legal_llm_001_008.json")
 TREATY_GCC_WILDLIFE_CONSERVATION_LLM = os.path.join(ROOT, "data", "treaty_gcc_wildlife_conservation_arabic_legal_llm", "treaty_gcc_wildlife_conservation_legal_llm_001_018.json")
@@ -1305,6 +1313,14 @@ def main() -> int:
     state_revenue_law_1448_llm = _load_json(STATE_REVENUE_LAW_1448_LLM)
     motorcycle_freight_transport_regulation_llm = _load_json(MOTORCYCLE_FREIGHT_TRANSPORT_REGULATION_LLM)
     gcc_jointly_owned_property_rules_llm = _load_json(GCC_JOINTLY_OWNED_PROPERTY_RULES_LLM)
+    pdpl_accreditation_licensing_rules_llm = _load_json(PDPL_ACCREDITATION_LICENSING_RULES_LLM)
+    pdpl_accreditation_certificates_rules_llm = _load_json(PDPL_ACCREDITATION_CERTIFICATES_RULES_LLM)
+    saudi_competitiveness_business_center_statute_llm = _load_json(SAUDI_COMPETITIVENESS_BUSINESS_CENTER_STATUTE_LLM)
+    king_fahd_national_library_statute_llm = _load_json(KING_FAHD_NATIONAL_LIBRARY_STATUTE_LLM)
+    listed_entities_property_ownership_controls_llm = _load_json(LISTED_ENTITIES_PROPERTY_OWNERSHIP_CONTROLS_LLM)
+    non_oil_revenue_center_statute_llm = _load_json(NON_OIL_REVENUE_CENTER_STATUTE_LLM)
+    enforcement_law_1447_llm = _load_json(ENFORCEMENT_LAW_1447_LLM)
+    overseas_saudi_contracting_rules_llm = _load_json(OVERSEAS_SAUDI_CONTRACTING_RULES_LLM)
     sez_economic_substance_regulation_llm = _load_json(SEZ_ECONOMIC_SUBSTANCE_REGULATION_LLM)
     real_estate_exchange_transfer_mechanism_llm = _load_json(REAL_ESTATE_EXCHANGE_TRANSFER_MECHANISM_LLM)
     treaty_gcc_wildlife_conservation_llm = _load_json(TREATY_GCC_WILDLIFE_CONSERVATION_LLM)
@@ -1589,7 +1605,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 750,
+        "total_tracks": 758,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -2079,6 +2095,14 @@ def main() -> int:
             + state_revenue_law_1448_llm["record_count"]  # 30 State Revenue Law (1448H) (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + motorcycle_freight_transport_regulation_llm["record_count"]  # 29 Implementing Regulation for Commercial Freight Transport by Motorcycle (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + gcc_jointly_owned_property_rules_llm["record_count"]  # 14 GCC Unified Rules for Owners of Jointly Owned Property (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
+            + pdpl_accreditation_licensing_rules_llm["record_count"]  # 19 Rules for Licensing Accreditation-Certificate Issuance and Audit/Inspection Activities for Personal Data Processing (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + pdpl_accreditation_certificates_rules_llm["record_count"]  # 15 Rules for Issuing Accreditation Certificates to Controllers and Processors (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + saudi_competitiveness_business_center_statute_llm["record_count"]  # 16 Statute of the Saudi Center for Competitiveness and Business (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + king_fahd_national_library_statute_llm["record_count"]  # 15 Statute of the King Fahd National Library (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + listed_entities_property_ownership_controls_llm["record_count"]  # 4 Controls on Property Ownership by Listed Companies, Investment Funds and Special Purpose Entities (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + non_oil_revenue_center_statute_llm["record_count"]  # 16 Statute of the Non-Oil Revenue Center (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + enforcement_law_1447_llm["record_count"]  # 65 Enforcement Law (1447H) (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
+            + overseas_saudi_contracting_rules_llm["record_count"]  # 6 Rules for Contracting with Saudis Abroad and the Wage Scale (TIER_1, direct Umm Al-Qura Gazette fetch; found by re-harvesting the archive index)
             + sez_economic_substance_regulation_llm["record_count"]  # 9 Economic Substance Requirements Regulations of Special Economic Zones (TIER_1, direct Umm Al-Qura Gazette fetch; the Arabic column of a bilingual side-by-side table)
             + real_estate_exchange_transfer_mechanism_llm["record_count"]  # 8 Mechanism for Transferring the Real Estate Exchange to the Real Estate General Authority (TIER_1, direct Umm Al-Qura Gazette fetch; published 2026-08-07, found by re-indexing the sitemap)
             + treaty_gcc_wildlife_conservation_llm["record_count"]  # 18 GCC Agreement on the Conservation of Wildlife and Its Natural Habitats (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2823,6 +2847,14 @@ def main() -> int:
             + state_revenue_law_1448_llm["record_count"]
             + motorcycle_freight_transport_regulation_llm["record_count"]
             + gcc_jointly_owned_property_rules_llm["record_count"]
+            + pdpl_accreditation_licensing_rules_llm["record_count"]
+            + pdpl_accreditation_certificates_rules_llm["record_count"]
+            + saudi_competitiveness_business_center_statute_llm["record_count"]
+            + king_fahd_national_library_statute_llm["record_count"]
+            + listed_entities_property_ownership_controls_llm["record_count"]
+            + non_oil_revenue_center_statute_llm["record_count"]
+            + enforcement_law_1447_llm["record_count"]
+            + overseas_saudi_contracting_rules_llm["record_count"]
             + sez_economic_substance_regulation_llm["record_count"]
             + real_estate_exchange_transfer_mechanism_llm["record_count"]
             + treaty_gcc_wildlife_conservation_llm["record_count"]
@@ -19128,6 +19160,238 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "GCC Unified Rules for Owners of Jointly Owned Property «القواعد الموحدة لملاك العقارات المشتركة بدول مجلس التعاون لدول الخليج العربية» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/2/1448H / 2026-08-07. A GCC Supreme Council instrument, NOT Saudi domestic legislation; its force and scope differ and it must not be read as a Saudi regulation. **DISCOVERED BY** re-indexing the gazette sitemap. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "pdpl_accreditation_licensing_rules",
+                "display_name_ar": "القواعد المنظمة لتراخيص أنشطة إصدار شهادات الاعتماد لجهات التحكم والمعالجة وأنشطة التدقيق والفحص لمعالجة البيانات الشخصية",
+                "display_name_en": "Rules for Licensing Accreditation-Certificate Issuance and Audit/Inspection Activities for Personal Data Processing",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Rules for Licensing Accreditation-Certificate Issuance and Audit/Inspection Activities for Personal Data Processing — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/9/1447H (2026-03-06).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": pdpl_accreditation_licensing_rules_llm["record_count"],
+                    "data_path": "data/pdpl_accreditation_licensing_rules_arabic_legal_llm/pdpl_accreditation_licensing_rules_legal_llm_001_019.json"}},
+                "record_counts": {"arabic_articles": pdpl_accreditation_licensing_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": pdpl_accreditation_licensing_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/pdpl_accreditation_licensing_rules/official_source/pdpl_accreditation_licensing_rules_official_source.json",
+                    "sources/pdpl_accreditation_licensing_rules/verified/pdpl_accreditation_licensing_rules_verified_records.jsonl",
+                    "data/pdpl_accreditation_licensing_rules_arabic_legal_llm/pdpl_accreditation_licensing_rules_legal_llm_001_019.json",
+                ],
+                "validator_targets": ["make pdpl-accreditation-licensing-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules for Licensing Accreditation-Certificate Issuance and Audit/Inspection Activities for Personal Data Processing «القواعد المنظمة لتراخيص أنشطة إصدار شهادات الاعتماد لجهات التحكم والمعالجة وأنشطة التدقيق والفحص لمعالجة البيانات الشخصية» — **19 articles. ALL 19 اصلية**. Subordinate rules under the Personal Data Protection Law (M/19, 9/2/1443H). DISTINCT from pdpl_accreditation_certificates_rules, published the same day: sequence similarity between the two texts is 0.088 — this one licenses the ACTIVITIES of issuing accreditation certificates and of audit/inspection, that one governs ISSUING the certificates themselves. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 17/9/1447H / 2026-03-06. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "pdpl_accreditation_certificates_rules",
+                "display_name_ar": "القواعد المنظمة لإصدار شهادات الاعتماد لجهات التحكم وجهات المعالجة",
+                "display_name_en": "Rules for Issuing Accreditation Certificates to Controllers and Processors",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Rules for Issuing Accreditation Certificates to Controllers and Processors — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/9/1447H (2026-03-06).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": pdpl_accreditation_certificates_rules_llm["record_count"],
+                    "data_path": "data/pdpl_accreditation_certificates_rules_arabic_legal_llm/pdpl_accreditation_certificates_rules_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": pdpl_accreditation_certificates_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": pdpl_accreditation_certificates_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/pdpl_accreditation_certificates_rules/official_source/pdpl_accreditation_certificates_rules_official_source.json",
+                    "sources/pdpl_accreditation_certificates_rules/verified/pdpl_accreditation_certificates_rules_verified_records.jsonl",
+                    "data/pdpl_accreditation_certificates_rules_arabic_legal_llm/pdpl_accreditation_certificates_rules_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make pdpl-accreditation-certificates-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules for Issuing Accreditation Certificates to Controllers and Processors «القواعد المنظمة لإصدار شهادات الاعتماد لجهات التحكم وجهات المعالجة» — **15 articles. ALL 15 اصلية**. Subordinate rules under the Personal Data Protection Law (M/19, 9/2/1443H). DISTINCT from pdpl_accreditation_licensing_rules, published the same day; neither supersedes the other. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 17/9/1447H / 2026-03-06. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "saudi_competitiveness_business_center_statute",
+                "display_name_ar": "تنظيم المركز السعودي للتنافسية والأعمال",
+                "display_name_en": "Statute of the Saudi Center for Competitiveness and Business",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Statute of the Saudi Center for Competitiveness and Business — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/9/1447H (2026-03-13).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": saudi_competitiveness_business_center_statute_llm["record_count"],
+                    "data_path": "data/saudi_competitiveness_business_center_statute_arabic_legal_llm/saudi_competitiveness_business_center_statute_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": saudi_competitiveness_business_center_statute_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 16, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": saudi_competitiveness_business_center_statute_llm["record_count"]},
+                "data_paths": [
+                    "sources/saudi_competitiveness_business_center_statute/official_source/saudi_competitiveness_business_center_statute_official_source.json",
+                    "sources/saudi_competitiveness_business_center_statute/verified/saudi_competitiveness_business_center_statute_verified_records.jsonl",
+                    "data/saudi_competitiveness_business_center_statute_arabic_legal_llm/saudi_competitiveness_business_center_statute_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make saudi-competitiveness-business-center-statute-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Statute of the Saudi Center for Competitiveness and Business «تنظيم المركز السعودي للتنافسية والأعمال» — **16 articles. ALL 16 اصلية**. Constitutive statute of the centre. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 24/9/1447H / 2026-03-13. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "king_fahd_national_library_statute",
+                "display_name_ar": "تنظيم مكتبة الملك فهد الوطنية",
+                "display_name_en": "Statute of the King Fahd National Library",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Statute of the King Fahd National Library — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/10/1447H (2026-04-03).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": king_fahd_national_library_statute_llm["record_count"],
+                    "data_path": "data/king_fahd_national_library_statute_arabic_legal_llm/king_fahd_national_library_statute_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": king_fahd_national_library_statute_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": king_fahd_national_library_statute_llm["record_count"]},
+                "data_paths": [
+                    "sources/king_fahd_national_library_statute/official_source/king_fahd_national_library_statute_official_source.json",
+                    "sources/king_fahd_national_library_statute/verified/king_fahd_national_library_statute_verified_records.jsonl",
+                    "data/king_fahd_national_library_statute_arabic_legal_llm/king_fahd_national_library_statute_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make king-fahd-national-library-statute-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Statute of the King Fahd National Library «تنظيم مكتبة الملك فهد الوطنية» — **15 articles. ALL 15 اصلية**. Constitutive statute of the library. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 15/10/1447H / 2026-04-03. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "listed_entities_property_ownership_controls",
+                "display_name_ar": "ضوابط تملك الشركات المدرجة والصناديق الاستثمارية والمنشآت ذات الأغراض الخاصة للعقار في المملكة",
+                "display_name_en": "Controls on Property Ownership by Listed Companies, Investment Funds and Special Purpose Entities",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Controls on Property Ownership by Listed Companies, Investment Funds and Special Purpose Entities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/11/1447H (2026-04-24).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": listed_entities_property_ownership_controls_llm["record_count"],
+                    "data_path": "data/listed_entities_property_ownership_controls_arabic_legal_llm/listed_entities_property_ownership_controls_legal_llm_001_004.json"}},
+                "record_counts": {"arabic_articles": listed_entities_property_ownership_controls_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 4, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": listed_entities_property_ownership_controls_llm["record_count"]},
+                "data_paths": [
+                    "sources/listed_entities_property_ownership_controls/official_source/listed_entities_property_ownership_controls_official_source.json",
+                    "sources/listed_entities_property_ownership_controls/verified/listed_entities_property_ownership_controls_verified_records.jsonl",
+                    "data/listed_entities_property_ownership_controls_arabic_legal_llm/listed_entities_property_ownership_controls_legal_llm_001_004.json",
+                ],
+                "validator_targets": ["make listed-entities-property-ownership-controls-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Controls on Property Ownership by Listed Companies, Investment Funds and Special Purpose Entities «ضوابط تملك الشركات المدرجة والصناديق الاستثمارية والمنشآت ذات الأغراض الخاصة للعقار» — **4 articles. ALL 4 اصلية**. COMMENCEMENT IS NOT SELF-DATED: article 4 states these controls take effect «من تاريخ نفاذ نظام تملك غير السعوديين للعقار» (M/14, 19/1/1447H). legal_status_ar is recorded as ساري on the strength of THIS CORPUS's own foreign_ownership_law track, which records that law as ساري — not on a guessed commencement date. Article 2 permits ownership «بما في ذلك مدينتا مكة المكرمة والمدينة المنورة», an exception to be read as bounded by these controls. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 7/11/1447H / 2026-04-24. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "non_oil_revenue_center_statute",
+                "display_name_ar": "تنظيم مركز الإيرادات غير النفطية",
+                "display_name_en": "Statute of the Non-Oil Revenue Center",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Statute of the Non-Oil Revenue Center — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/11/1447H (2026-05-01).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": non_oil_revenue_center_statute_llm["record_count"],
+                    "data_path": "data/non_oil_revenue_center_statute_arabic_legal_llm/non_oil_revenue_center_statute_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": non_oil_revenue_center_statute_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 16, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": non_oil_revenue_center_statute_llm["record_count"]},
+                "data_paths": [
+                    "sources/non_oil_revenue_center_statute/official_source/non_oil_revenue_center_statute_official_source.json",
+                    "sources/non_oil_revenue_center_statute/verified/non_oil_revenue_center_statute_verified_records.jsonl",
+                    "data/non_oil_revenue_center_statute_arabic_legal_llm/non_oil_revenue_center_statute_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make non-oil-revenue-center-statute-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Statute of the Non-Oil Revenue Center «تنظيم مركز الإيرادات غير النفطية» — **16 articles. ALL 16 اصلية**. Constitutive statute of the centre. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 14/11/1447H / 2026-05-01. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "enforcement_law_1447",
+                "display_name_ar": "نظام التنفيذ",
+                "display_name_en": "Enforcement Law (1447H)",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Enforcement Law (1447H) — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 14/11/1447H (2026-05-01).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": enforcement_law_1447_llm["record_count"],
+                    "data_path": "data/enforcement_law_1447_arabic_legal_llm/enforcement_law_1447_legal_llm_001_065.json"}},
+                "record_counts": {"arabic_articles": enforcement_law_1447_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 65, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": enforcement_law_1447_llm["record_count"]},
+                "data_paths": [
+                    "sources/enforcement_law_1447/official_source/enforcement_law_1447_official_source.json",
+                    "sources/enforcement_law_1447/verified/enforcement_law_1447_verified_records.jsonl",
+                    "data/enforcement_law_1447_arabic_legal_llm/enforcement_law_1447_legal_llm_001_065.json",
+                ],
+                "validator_targets": ["make enforcement-law-1447-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Enforcement Law (1447H) «نظام التنفيذ» — **65 articles. ALL 65 اصلية.** **PUBLISHED AND NOT YET IN FORCE.** Article 65 states verbatim that it replaces «نظام التنفيذ، الصادر بالمرسوم الملكي رقم (م/53) وتاريخ 1433/8/13ه، وتعديلاته» — the enforcement_law track this corpus holds — AND that «يعمل بالنظام بعد مضي (مائة وثمانين) يوما من تاريخ نشره في الجريدة الرسمية». Published 14/11/1447H / 2026-05-01, so commencement falls 180 days later. **enforcement_law (M/53) is the law in force today and is NOT retired.** Citing this law's provisions as effective now is wrong. Its own implementing regulation has not been issued (article 64 gives the Minister 180 days); enforcement_implementing_regulation is the PREDECESSOR law's regulation. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 14/11/1447H / 2026-05-01. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "overseas_saudi_contracting_rules",
+                "display_name_ar": "القواعد المنظمة للتعاقد مع السعوديين في الخارج وسلم الأجور",
+                "display_name_en": "Rules for Contracting with Saudis Abroad and the Wage Scale",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED",
+                "source_authority": "Rules for Contracting with Saudis Abroad and the Wage Scale — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/11/1447H (2026-05-08).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": overseas_saudi_contracting_rules_llm["record_count"],
+                    "data_path": "data/overseas_saudi_contracting_rules_arabic_legal_llm/overseas_saudi_contracting_rules_legal_llm_001_006.json"}},
+                "record_counts": {"arabic_articles": overseas_saudi_contracting_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 6, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": overseas_saudi_contracting_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/overseas_saudi_contracting_rules/official_source/overseas_saudi_contracting_rules_official_source.json",
+                    "sources/overseas_saudi_contracting_rules/verified/overseas_saudi_contracting_rules_verified_records.jsonl",
+                    "data/overseas_saudi_contracting_rules_arabic_legal_llm/overseas_saudi_contracting_rules_legal_llm_001_006.json",
+                ],
+                "validator_targets": ["make overseas-saudi-contracting-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_index_freshness/gazette_index_refresh.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules for Contracting with Saudis Abroad and the Wage Scale «القواعد المنظمة للتعاقد مع السعوديين في الخارج وسلم الأجور» — **6 articles. ALL 6 اصلية**. The gazette prints a «سلم الأجور» wage table after the last article; it is stored verbatim inside that article in the source's own order, but COLUMN ALIGNMENT does not survive flattening — values read in sequence (grade, minimum, midpoint, maximum). Nothing was reordered or dropped. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette, published 21/11/1447H / 2026-05-08. **DISCOVERED BY** re-harvesting the archive title index: a full sweep of all 163 monthly sitemaps found 479 pages the index had never seen, most of them under URL sub-sections the original harvest never walked. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "sez_economic_substance_regulation",

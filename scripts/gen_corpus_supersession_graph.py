@@ -2203,6 +2203,26 @@ EDGES = [
         "source_ref": "data/water_electricity_regulatory_authority_statute_arabic_legal_llm/water_electricity_regulatory_authority_statute_legal_llm_001_020.json "
                       "(article 19)",
     },
+    {
+        "from_track_id": "enforcement_law_1447",
+        "relation": "repeals_full_deferred",
+        "target_track_id": "enforcement_law",
+        "target_description_ar": "نظام التنفيذ",
+        "target_decree": "Royal Decree M/53, 13/8/1433H",
+        "note": "enforcement_law_1447's own المادة (الخامسة والستون) (article 65) states "
+                "verbatim: \u00ab1- يحل النظام محل نظام التنفيذ، الصادر بالمرسوم الملكي رقم (م/53) وتاريخ 1433/8/13ه، وتعديلاته، ويلغي كل ما يتعارض معه من أحكام. 2- يعمل بالنظام بعد مضي (مائة وثمانين) يوما من تاريخ نشره في الجريدة الرسمية.\u00bb. The predecessor IS a corpus track "
+                "(enforcement_law), identified by title AND decree number AND date together. "
+                "This is the corpus's second deferred repeal and the largest: a foundational "
+                "procedural statute whose replacement is published and not yet in force. "
+                "Surfaced by scripts/audit_unrecorded_supersessions.py the same day the track "
+                "was built.",
+        "source_ref": "data/enforcement_law_1447_arabic_legal_llm/enforcement_law_1447_legal_llm_001_065.json (article 65)",
+        "commencement_ar": "\u0646\u0635 \u0627\u0644\u0645\u0627\u062f\u0629 (\u0627\u0644\u062e\u0627\u0645\u0633\u0629 \u0648\u0627\u0644\u0633\u062a\u064a\u0646) \u0645\u0646 \u0646\u0638\u0627\u0645 \u0627\u0644\u062a\u0646\u0641\u064a\u0630 (1447\u0647\u0640) \u062d\u0631\u0641\u064a\u0627\u064b: \u00ab1- يحل النظام محل نظام التنفيذ، الصادر بالمرسوم الملكي رقم (م/53) وتاريخ 1433/8/13ه، وتعديلاته، ويلغي كل ما يتعارض معه من أحكام. 2- يعمل بالنظام بعد مضي (مائة وثمانين) يوما من تاريخ نشره في الجريدة الرسمية.\u00bb. "
+                           "\u0648\u0627\u0644\u0646\u0634\u0631 \u0641\u064a 14/11/1447\u0647\u0640 \u0627\u0644\u0645\u0648\u0627\u0641\u0642 2026-05-01\u0645\u060c \u0641\u0627\u0644\u0646\u0633\u062e **\u0645\u0624\u062c\u0651\u064e\u0644**: \u0646\u0638\u0627\u0645 \u0627\u0644\u062a\u0646\u0641\u064a\u0630 \u0627\u0644\u0635\u0627\u062f\u0631 \u0628\u0627\u0644\u0645\u0631\u0633\u0648\u0645 (\u0645/53) "
+                           "\u0644\u0627 \u064a\u0632\u0627\u0644 **\u0647\u0648 \u0627\u0644\u0633\u0627\u0631\u064a \u0627\u0644\u064a\u0648\u0645**\u060c \u0648\u0644\u0627\u0626\u062d\u062a\u0647 \u0627\u0644\u062a\u0646\u0641\u064a\u0630\u064a\u0629 \u0647\u064a \u0627\u0644\u0645\u062d\u0645\u0648\u0644\u0629 \u0641\u064a \u0627\u0644\u0645\u0633\u062a\u0648\u062f\u0639. "
+                           "\u0648\u062a\u0646\u0635 \u0627\u0644\u0645\u0627\u062f\u0629 (\u0627\u0644\u0631\u0627\u0628\u0639\u0629 \u0648\u0627\u0644\u0633\u062a\u0648\u0646) \u062d\u0631\u0641\u064a\u0627\u064b: \u00abيصدر الوزير اللائحة خلال (مائة وثمانين) يوما من تاريخ صدور النظام، ويعمل بها من تاريخ العمل بالنظام.\u00bb \u2014 "
+                           "**\u0641\u0644\u0627\u0626\u062d\u0629 \u0627\u0644\u0646\u0638\u0627\u0645 \u0627\u0644\u062c\u062f\u064a\u062f \u0644\u0645 \u062a\u0635\u062f\u0631 \u0628\u0639\u062f**.",
+    },
 ]
 
 # ---------------------------------------------------------------------------

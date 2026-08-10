@@ -603,6 +603,14 @@ export PYTHONPATH := src:$(PYTHONPATH)
         gcc-jointly-owned-property-rules-track-validate \
         real-estate-exchange-transfer-mechanism-track-validate \
         sez-economic-substance-regulation-track-validate \
+        pdpl-accreditation-licensing-rules-track-validate \
+        pdpl-accreditation-certificates-rules-track-validate \
+        saudi-competitiveness-business-center-statute-track-validate \
+        king-fahd-national-library-statute-track-validate \
+        listed-entities-property-ownership-controls-track-validate \
+        non-oil-revenue-center-statute-track-validate \
+        enforcement-law-1447-track-validate \
+        overseas-saudi-contracting-rules-track-validate \
         treaty-gcc-wildlife-conservation-track-validate \
         treaty-unwto-elearning-capacity-track-validate \
         treaty-qatar-air-services-track-validate \
@@ -3113,6 +3121,30 @@ real-estate-exchange-transfer-mechanism-track-validate:
 
 sez-economic-substance-regulation-track-validate:
 	$(PY) scripts/validate_sez_economic_substance_regulation_track.py
+
+pdpl-accreditation-licensing-rules-track-validate:
+	$(PY) scripts/validate_pdpl_accreditation_licensing_rules_track.py
+
+pdpl-accreditation-certificates-rules-track-validate:
+	$(PY) scripts/validate_pdpl_accreditation_certificates_rules_track.py
+
+saudi-competitiveness-business-center-statute-track-validate:
+	$(PY) scripts/validate_saudi_competitiveness_business_center_statute_track.py
+
+king-fahd-national-library-statute-track-validate:
+	$(PY) scripts/validate_king_fahd_national_library_statute_track.py
+
+listed-entities-property-ownership-controls-track-validate:
+	$(PY) scripts/validate_listed_entities_property_ownership_controls_track.py
+
+non-oil-revenue-center-statute-track-validate:
+	$(PY) scripts/validate_non_oil_revenue_center_statute_track.py
+
+enforcement-law-1447-track-validate:
+	$(PY) scripts/validate_enforcement_law_1447_track.py
+
+overseas-saudi-contracting-rules-track-validate:
+	$(PY) scripts/validate_overseas_saudi_contracting_rules_track.py
 
 treaty-gcc-wildlife-conservation-track-validate:
 	$(PY) scripts/validate_treaty_gcc_wildlife_conservation_track.py

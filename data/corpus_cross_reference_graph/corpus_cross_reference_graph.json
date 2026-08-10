@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 25711,
-  "total_references_extracted": 6172,
-  "intra_law_count": 3261,
-  "inter_law_count": 1336,
+  "total_records_scanned": 25867,
+  "total_references_extracted": 6217,
+  "intra_law_count": 3289,
+  "inter_law_count": 1352,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4406,
-    "medium": 1766
+    "high": 4427,
+    "medium": 1790
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -6376,11 +6376,11 @@
       "source_record_id": "bog-enforcement-law-llm-art-034",
       "source_article_number": 34,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "أحكام نظام التنفيذ",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "bog_enforcement_law",
@@ -6827,11 +6827,11 @@
       "source_record_id": "bog-enforcement-implementing-regulation-llm-034",
       "source_article_number": 34,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "أحكام نظام التنفيذ",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "bog_enforcement_implementing_regulation",
@@ -6849,22 +6849,22 @@
       "source_record_id": "bog-enforcement-service-providers-controls-llm-001",
       "source_article_number": 1,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ والنظام واللائحة",
       "raw_citation_text": "أحكام نظام التنفيذ والنظام واللائحة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "bog_enforcement_service_providers_controls",
       "source_record_id": "bog-enforcement-service-providers-controls-llm-002",
       "source_article_number": 2,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "وفق نظام التنفيذ",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "bog_judicial_inspection_regulation",
@@ -6992,22 +6992,22 @@
       "source_record_id": "building-code-inspection-bodies-regulation-llm-017",
       "source_article_number": 17,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
       "raw_citation_text": "حسب نظام تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "building_code_inspection_bodies_regulation",
       "source_record_id": "building-code-inspection-bodies-regulation-llm-017",
       "source_article_number": 17,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
       "raw_citation_text": "حسب نظام تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "building_code_violations_classification_regulation",
@@ -8994,22 +8994,22 @@
       "source_record_id": "child-protection-regulation-llm-art-014",
       "source_article_number": 14,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "المهن الصحية ولائحته التنفيذية ونظام وحدات الإخصاب والأجنة وع",
       "raw_citation_text": "أحكام نظام المهن الصحية ولائحته التنفيذية ونظام وحدات الإخصاب والأجنة وع",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "child_protection_regulation",
       "source_record_id": "child-protection-regulation-llm-art-022",
       "source_article_number": 22,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الطفل ولائحته التنفيذية وخاصة حالات الإيذاء",
       "raw_citation_text": "أحكام نظام الطفل ولائحته التنفيذية وخاصة حالات الإيذاء أو الإهمال سواء م",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "child_protection_regulation",
@@ -11128,11 +11128,11 @@
       "source_record_id": "commercial-courts-regulation-llm-art-062",
       "source_article_number": 62,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "أحكام نظام التنفيذ",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "commercial_courts_implementing_regulation",
@@ -16947,11 +16947,11 @@
       "source_record_id": "customs-procedures-controls-llm-006",
       "source_article_number": 6,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية للهيئة تثمين قيمة البضائع وف",
       "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية للهيئة تثمين قيمة البضائع وف",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "customs_procedures_controls",
@@ -17068,11 +17068,11 @@
       "source_record_id": "customs-procedures-controls-llm-041",
       "source_article_number": 41,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية والأنظمة الأخرى ذات العلاقة",
       "raw_citation_text": "وفقا لنظام الجمارك الموحد ولائحته التنفيذية والأنظمة الأخرى ذات العلاقة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "customs_procedures_controls",
@@ -17662,11 +17662,11 @@
       "source_record_id": "deposit-zones-rules-llm-014",
       "source_article_number": 14,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية ووفقا للمعدلات",
       "raw_citation_text": "وفقا لنظام الجمارك الموحد ولائحته التنفيذية ووفقا للمعدلات التي تقررها ا",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "deposit_zones_rules",
@@ -17684,11 +17684,11 @@
       "source_record_id": "deposit-zones-rules-llm-015",
       "source_article_number": 15,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية والأنظمة ذات العلاقة وبحسب ا",
       "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية والأنظمة ذات العلاقة وبحسب ا",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "deposit_zones_rules",
@@ -17717,11 +17717,11 @@
       "source_record_id": "deposit-zones-rules-llm-024",
       "source_article_number": 24,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
       "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "digital_government_authority_statute",
@@ -18542,11 +18542,11 @@
       "source_record_id": "duty-free-markets-rules-llm-022",
       "source_article_number": 22,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
       "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "duty_free_markets_rules",
@@ -20273,6 +20273,303 @@
       "target_article_number": 46,
       "target_law_name_raw": "النظام",
       "raw_citation_text": "المادة (السادسة والأربعين) من النظام، ومضت مدة ستة أشهر،",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من النظام، تتولى المحكمة التح",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التوزيع",
+      "raw_citation_text": "وفق قواعد التوزيع التي تحددها اللائحة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من النظام. ح- العقود والمحررا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-007",
+      "source_article_number": 7,
+      "type": "inter_law",
+      "target_track_id": "tawtheeq_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التوثيق",
+      "raw_citation_text": "وفقا لنظام التوثيق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-007",
+      "source_article_number": 7,
+      "type": "inter_law",
+      "target_track_id": "tawtheeq_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التوثيق",
+      "raw_citation_text": "وفقا لنظام التوثيق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من النظام، معلقا على تنفيذ ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 46,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة والأربعين) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام. 2- على المحكمة -بن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام، ولم ينفذ المنفذ ضد",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من النظام، تأمر المحكمة بمنع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من النظام، أو من تاريخ إبلاغه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام. 2- يقع الحجز والتن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من النظام، أو من تاريخ إبلاغه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام، وذلك قبل صدور الأم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-030",
+      "source_article_number": 30,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام وما تحدده اللائحة،",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-030",
+      "source_article_number": 30,
+      "type": "inter_law",
+      "target_track_id": "capital_market_law",
+      "target_article_number": null,
+      "target_law_name_raw": "يتفق عليها مع الجهة المختصة بالإشراف على السوق المالية",
+      "raw_citation_text": "وفق ضوابط يتفق عليها مع الجهة المختصة بالإشراف على السوق المالية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة والثلاثين) من النظام، وذلك بناء على طلب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-032",
+      "source_article_number": 32,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 43,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والأربعين) من النظام، ما لم يتفق طالب ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-036",
+      "source_article_number": 36,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام؛ فتتخذ إجراءات التن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-036",
+      "source_article_number": 36,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام. ب- تفرض المحكمة غر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-037",
+      "source_article_number": 37,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة والثلاثين) من النظام ولم ينفذ المنفذ ضده",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-045",
+      "source_article_number": 45,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من النظام، لمن له مصلحة من أط",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-048",
+      "source_article_number": 48,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 57,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والخمسين) من النظام، تتولى المحكمة المخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-057",
+      "source_article_number": 57,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم",
+      "raw_citation_text": "أحكام نظام المرافعات أمام ديوان المظالم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-058",
+      "source_article_number": 58,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 57,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والخمسين) من النظام -بحسب الأحوال- تضمي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-058",
+      "source_article_number": 58,
+      "type": "intra_law",
+      "target_track_id": "enforcement_law_1447",
+      "target_article_number": 57,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والخمسين) من النظام -بحسب الأحوال- تضمي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "enforcement_law_1447",
+      "source_record_id": "enforcement-law-1447-llm-059",
+      "source_article_number": 59,
+      "type": "inter_law",
+      "target_track_id": "sharia_procedure_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات الشرعية",
+      "raw_citation_text": "أحكام نظام المرافعات الشرعية",
       "confidence": "high"
     },
     {
@@ -22876,11 +23173,11 @@
       "source_record_id": "finance-lease-regulation-llm-art-025",
       "source_article_number": 25,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": 9,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "المادة التاسعة من نظام التنفيذ. ويفيد الالتزام",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "financial_academy_statute",
@@ -33542,6 +33839,39 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "listed_entities_property_ownership_controls",
+      "source_record_id": "listed-entities-property-ownership-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "foreign_ownership_law",
+      "target_article_number": 4,
+      "target_law_name_raw": "تملك غير السعوديين للعقار",
+      "raw_citation_text": "المادة الرابعة من نظام تملك غير السعوديين للعقار. - الهيئة: هيئة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "listed_entities_property_ownership_controls",
+      "source_record_id": "listed-entities-property-ownership-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات",
+      "raw_citation_text": "أحكام نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "listed_entities_property_ownership_controls",
+      "source_record_id": "listed-entities-property-ownership-controls-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "capital_market_law",
+      "target_article_number": null,
+      "target_law_name_raw": "السوق المالية",
+      "raw_citation_text": "بموجب نظام السوق المالية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "listed_jsc_companies_regulation",
       "source_record_id": "listed-jsc-companies-regulation-llm-001",
       "source_article_number": 1,
@@ -40175,6 +40505,17 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "overseas_saudi_contracting_rules",
+      "source_record_id": "overseas-saudi-contracting-rules-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "overseas_saudi_contracting_rules",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة)",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "ozone_depleting_substances_regulation",
       "source_record_id": "ozone-depleting-substances-regulation-llm-009",
       "source_article_number": 9,
@@ -41756,6 +42097,149 @@
       "target_article_number": 29,
       "target_law_name_raw": "النظام",
       "raw_citation_text": "المادة (التاسعة والعشرين) من النظام. هـ- الآثار المادية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_certificates_rules",
+      "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية البيانات الشخصية",
+      "raw_citation_text": "المادة (الأولى) من نظام حماية البيانات الشخصية (\"النظام\") الصا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_certificates_rules",
+      "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_implementing_regulation",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية البيانات الشخصية",
+      "raw_citation_text": "المادة (الأولى) من اللائحة التنفيذية لنظام حماية البيانات الشخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_certificates_rules",
+      "source_record_id": "pdpl-accreditation-certificates-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 1,
+      "target_law_name_raw": "نقل البيانات الشخصية إلى خارج المملكة",
+      "raw_citation_text": "المادة (الأولى) من لائحة نقل البيانات الشخصية إلى خارج المملكة (\"اللوائح\") وي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_certificates_rules",
+      "source_record_id": "pdpl-accreditation-certificates-rules-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "pdpl_accreditation_certificates_rules",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من هذه القواعد خلال مدة سريان",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_certificates_rules",
+      "source_record_id": "pdpl-accreditation-certificates-rules-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "pdpl_accreditation_certificates_rules",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من هذه القواعد، وإشعار الجهة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_certificates_rules",
+      "source_record_id": "pdpl-accreditation-certificates-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "pdpl_accreditation_certificates_rules",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من هذه القواعد. 2 - للجهة في",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية البيانات الشخصية",
+      "raw_citation_text": "المادة (الأولى) من نظام حماية البيانات الشخصية (\"النظام\") ، ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_implementing_regulation",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية البيانات الشخصية",
+      "raw_citation_text": "المادة (الأولى) من اللائحة التنفيذية لنظام حماية البيانات الشخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 1,
+      "target_law_name_raw": "نقل البيانات الشخصية إلى خارج المملكة",
+      "raw_citation_text": "المادة (الأولى) من لائحة نقل البيانات الشخصية إلى خارج المملكة (\"اللوائح\"). و",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-002",
+      "source_article_number": 2,
+      "type": "parent_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": 33,
+      "target_law_name_raw": "النظام",
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من النظام والمادتين (الخامسة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "pdpl_accreditation_licensing_rules",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من هذه القواعد.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "pdpl_accreditation_licensing_rules",
+      "target_article_number": 1,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الأولى) من هذه القواعد. 2 - يجوز للجه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_accreditation_licensing_rules",
+      "source_record_id": "pdpl-accreditation-licensing-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "pdpl_accreditation_licensing_rules",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من هذه القواعد، إذا كان نوع ا",
       "confidence": "high"
     },
     {
@@ -44392,11 +44876,11 @@
       "source_record_id": "public-auction-sale-rules-llm-017",
       "source_article_number": 17,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
       "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "public_entities_governance_guide",
@@ -44722,11 +45206,11 @@
       "source_record_id": "qismah-regulation-llm-art-018",
       "source_article_number": 18,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ ولائحته التنفيذية",
       "raw_citation_text": "وفقاً لنظام التنفيذ ولائحته التنفيذية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "qismah_regulation",
@@ -46691,11 +47175,11 @@
       "source_record_id": "real-estate-units-law-llm-art-021",
       "source_article_number": 21,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "أحكام نظام التنفيذ",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "real_estate_units_implementing_regulation",
@@ -47879,11 +48363,11 @@
       "source_record_id": "returned-goods-customs-exemption-controls-llm-007",
       "source_article_number": 7,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية والاتفاقيات الدولية السارية",
       "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية والاتفاقيات الدولية السارية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "revenue_sharing_rules",
@@ -48378,6 +48862,17 @@
       "target_article_number": null,
       "target_law_name_raw": "المنافسات والمشتريات الحكومية",
       "raw_citation_text": "أحكام نظام المنافسات والمشتريات الحكومية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "saudi_competitiveness_business_center_statute",
+      "source_record_id": "saudi-competitiveness-business-center-statute-llm-014",
+      "source_article_number": 14,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -51421,11 +51916,11 @@
       "source_record_id": "sharia-procedure-regulation-llm-prov-386",
       "source_article_number": 386,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": 15,
       "target_law_name_raw": "التنفيذ ولوائحها التنفيذية",
       "raw_citation_text": "المادة الخامسة عشرة من نظام التنفيذ ولوائحها التنفيذية.",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "sharia_procedure_implementing_regulation",
@@ -64841,11 +65336,11 @@
       "source_record_id": "vat-regulation-llm-art-045",
       "source_article_number": 42,
       "type": "inter_law",
-      "target_track_id": "enforcement_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية المطبق في المملكة",
       "raw_citation_text": "وفقا لنظام الجمارك الموحد ولائحته التنفيذية المطبق في المملكة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "vat_regulation",

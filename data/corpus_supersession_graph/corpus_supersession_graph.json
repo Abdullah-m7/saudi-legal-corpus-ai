@@ -3,19 +3,19 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 750,
+  "total_tracks_scanned": 758,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument.",
     "repeals_full_deferred": "track A's own text fully repeals a prior instrument, BUT track A has not commenced yet — it is published and not yet in force, so the target is STILL THE LAW IN FORCE TODAY. Read `commencement_ar` on the edge for the verbatim commencement clause. Treating such an edge as a completed repeal would retire a live law."
   },
-  "edge_count": 132,
+  "edge_count": 133,
   "relation_counts": {
     "repeals_full": 120,
     "repeals_partial": 10,
     "superseded_by": 1,
-    "repeals_full_deferred": 1
+    "repeals_full_deferred": 2
   },
   "edges": [
     {
@@ -1339,6 +1339,17 @@
       "affected_articles": null,
       "note": "water_electricity_regulatory_authority_statute's own المادة (التاسعة عشرة) (article 19) states verbatim: «يحل التنظيم محل تنظيم هيئة تنظيم الكهرباء والإنتاج المزدوج، الصادر بقرار مجلس الوزراء رقم (154) وتاريخ 1428/5/4ه، وتعديلاته.». The named predecessor is not itself ingested as a corpus track. Surfaced by scripts/audit_unrecorded_supersessions.py, which found the graph carried no edge for this track, and classified by hand from the clause itself.",
       "source_ref": "data/water_electricity_regulatory_authority_statute_arabic_legal_llm/water_electricity_regulatory_authority_statute_legal_llm_001_020.json (article 19)"
+    },
+    {
+      "from_track_id": "enforcement_law_1447",
+      "relation": "repeals_full_deferred",
+      "target_track_id": "enforcement_law",
+      "target_description_ar": "نظام التنفيذ",
+      "target_decree": "Royal Decree M/53, 13/8/1433H",
+      "affected_articles": null,
+      "note": "enforcement_law_1447's own المادة (الخامسة والستون) (article 65) states verbatim: «1- يحل النظام محل نظام التنفيذ، الصادر بالمرسوم الملكي رقم (م/53) وتاريخ 1433/8/13ه، وتعديلاته، ويلغي كل ما يتعارض معه من أحكام. 2- يعمل بالنظام بعد مضي (مائة وثمانين) يوما من تاريخ نشره في الجريدة الرسمية.». The predecessor IS a corpus track (enforcement_law), identified by title AND decree number AND date together. This is the corpus's second deferred repeal and the largest: a foundational procedural statute whose replacement is published and not yet in force. Surfaced by scripts/audit_unrecorded_supersessions.py the same day the track was built.",
+      "source_ref": "data/enforcement_law_1447_arabic_legal_llm/enforcement_law_1447_legal_llm_001_065.json (article 65)",
+      "commencement_ar": "نص المادة (الخامسة والستين) من نظام التنفيذ (1447هـ) حرفياً: «1- يحل النظام محل نظام التنفيذ، الصادر بالمرسوم الملكي رقم (م/53) وتاريخ 1433/8/13ه، وتعديلاته، ويلغي كل ما يتعارض معه من أحكام. 2- يعمل بالنظام بعد مضي (مائة وثمانين) يوما من تاريخ نشره في الجريدة الرسمية.». والنشر في 14/11/1447هـ الموافق 2026-05-01م، فالنسخ **مؤجَّل**: نظام التنفيذ الصادر بالمرسوم (م/53) لا يزال **هو الساري اليوم**، ولائحته التنفيذية هي المحمولة في المستودع. وتنص المادة (الرابعة والستون) حرفياً: «يصدر الوزير اللائحة خلال (مائة وثمانين) يوما من تاريخ صدور النظام، ويعمل بها من تاريخ العمل بالنظام.» — **فلائحة النظام الجديد لم تصدر بعد**."
     }
   ],
   "concurrent_title_collisions": [

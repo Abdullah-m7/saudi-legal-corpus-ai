@@ -261,6 +261,9 @@ STATUS_TIER_MAP = {
     # Same gazette, same directness — the qualifier records only that the page
     # is a bilingual side-by-side table and the stored text is its Arabic column.
     "UQN_GAZETTE_DIRECT_FETCH_TIER1_BILINGUAL_TABLE_ARABIC_COLUMN": TIER_1,
+    # Same gazette, same directness — the qualifier records only that the page was
+    # found by re-harvesting the archive index rather than by the original sweep.
+    "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARCHIVE_REHARVEST_DISCOVERED": TIER_1,
     "UQN_GAZETTE_DIRECT_FETCH_TIER1_AUTHORITY_REGISTER_DISCOVERED": TIER_1,
     "MATCHES_UQN_GAZETTE_X_FSC_INDEPENDENT_CROSS_CHECK": TIER_2,
     "MOF_OFFICIAL_PDF_DIRECT_FETCH_VISUALLY_PAGE_IMAGE_TRANSCRIBED_X_QANONIAH_API_PARTIAL_CROSSCHECK_ARTS_1_8_ONLY_TIER_2_BOE_NO_DEDICATED_PAGE_NCAR_GOV_SA_UNREACHABLE": TIER_2,
