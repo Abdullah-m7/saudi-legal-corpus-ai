@@ -86,16 +86,29 @@ _MONTH_RE = re.compile(r"/sitemaps/(\d{4})/(\d{1,2})/sitemap_\d+\.xml")
 _ID_RE = re.compile(r"uqn\.gov\.sa/(?:([a-z0-9\-]+)/)?(?:[a-z0-9\-]+/)?(\d{3,})\s*$")
 
 
-def fetch(url: str, timeout: int) -> tuple[str | None, str | None]:
-    """One plain HTTPS GET. Returns (body, error). Never routes around a block."""
+def fetch(url: str, timeout: int, attempts: int = 3) -> tuple[str | None, str | None]:
+    """A plain HTTPS GET, retried on transport errors. Never routes around a block.
+
+    RETRY IS NOT POLITENESS, IT IS ACCURACY. The first full sweep lost 19 of the
+    163 monthly sitemaps to «Connection reset by peer» — all of them old months —
+    and a sweep that silently covers 144 months reads exactly like a sweep that
+    covers 163. The failures were always reported, but reporting a hole is not the
+    same as not having one: every unseen page in a month that failed to fetch is a
+    page this tool cannot see and cannot say it cannot see. An HTTP status is a
+    real answer and is NOT retried; a reset connection is not an answer at all."""
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return resp.read().decode("utf-8", "replace"), None
-    except urllib.error.HTTPError as e:
-        return None, "HTTP %s" % e.code
-    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
-        return None, "%s: %s" % (type(e).__name__, e)
+    err = None
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read().decode("utf-8", "replace"), None
+        except urllib.error.HTTPError as e:
+            return None, "HTTP %s" % e.code
+        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+            err = "%s: %s" % (type(e).__name__, e)
+            if attempt < attempts - 1:
+                time.sleep(2 ** attempt)
+    return None, err
 
 
 def corpus_index():
