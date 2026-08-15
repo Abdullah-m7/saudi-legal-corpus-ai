@@ -82,6 +82,67 @@ def load_caveats(path=None):
     return _CAVEATS
 
 
+# The amendment timeline, joined the same way and for the same reason.
+#
+# A hit on a consolidated article returns the wording AS IT STANDS TODAY. That is
+# the right text and it is a partial answer: a reader judging conduct from 2019
+# needs to know the wording changed, and when. The corpus knows — 852 of its 928
+# amended articles carry a dated amendment — and until this join the search
+# result said nothing at all.
+#
+# THE THREE ANSWERS ARE NOT INTERCHANGEABLE, and the display must not blur them:
+# a date, a DISCLOSED CONFLICT where the corpus holds two dates and asserts
+# neither, and «amended, date unknown». Printing the third as though it were the
+# absence of an amendment is the failure this join exists to prevent.
+_TIMELINE = None
+
+
+def load_amendment_timeline(path=None):
+    """{record_id: row} from data/corpus_amendment_timeline — empty if absent."""
+    global _TIMELINE
+    if _TIMELINE is None:
+        p = path or os.path.join(ROOT, "data", "corpus_amendment_timeline",
+                                 "corpus_amendment_timeline.jsonl")
+        rows = {}
+        if os.path.exists(p):
+            with open(p, encoding="utf-8") as fh:
+                for line in fh:
+                    if line.strip():
+                        r = json.loads(line)
+                        rows[r["record_id"]] = r
+        _TIMELINE = rows
+    return _TIMELINE
+
+
+def _latest_amendment(row):
+    """The most recent dated amendment, or None. Ordered by the Hijri date when
+    both carry one, because that is the date this corpus records consistently;
+    ties and unparseable dates keep the source's own order rather than being
+    reordered by a guess."""
+    best, best_key = None, None
+    for a in row.get("amendments") or []:
+        h = a.get("date_hijri") or ""
+        m = re.match(r"^\s*(\d{1,2})\s*/\s*(\d{1,2})\s*/\s*(1[34]\d\d)", h)
+        key = (int(m.group(3)), int(m.group(2)), int(m.group(1))) if m else None
+        if best is None or (key and (best_key is None or key > best_key)):
+            best, best_key = a, key or best_key
+    return best
+
+
+def amendment_note_ar(row):
+    """One line a reader can act on, in the corpus's own terms."""
+    if row["dating_status"] == "undated":
+        return "معدَّلة — والمستودع لا يعرف متى"
+    if row.get("conflicting_dates"):
+        c = row["conflicting_dates"][0]
+        return ("معدَّلة — وتاريخان متعارضان في المستودع (%s مقابل %s)، لا يُرجَّح بينهما"
+                % (c.get("date_printed_in_the_article_text"),
+                   c.get("date_in_the_document_level_history")))
+    a = _latest_amendment(row) or {}
+    when = a.get("date_hijri") or a.get("date_gregorian") or "بلا تاريخ"
+    return "آخر تعديل مؤرَّخ: %s — %s" % (when, (a.get("instrument_ar") or "").strip())
+
+
 def search(query, top=10, corpus=None, index=None):
     records = index if index is not None else load_index()
     qtokens = set(normalize(query))
@@ -142,6 +203,17 @@ def search(query, top=10, corpus=None, index=None):
         if c["caveats_provenance"]:
             row["caveats_provenance"] = c["caveats_provenance"]
         row["disclosures_ref"] = c["disclosures_ref"]
+    timeline = load_amendment_timeline()
+    for row in out:
+        t = timeline.get(row["record_id"])
+        if not t:
+            continue
+        row["amendment_dating_status"] = t["dating_status"]
+        row["amendment_note_ar"] = amendment_note_ar(t)
+        if t.get("amendments"):
+            row["amendments"] = t["amendments"]
+        if t.get("conflicting_dates"):
+            row["conflicting_amendment_dates"] = t["conflicting_dates"]
     return out
 
 
@@ -169,6 +241,8 @@ def main():
         print("%2d. [%s] %s — %s  (score=%d)"
               % (i, h["law_title_ar"], h["law_component"], unit, h["score"]))
         print("    %s  |  %s" % (h["retrieval_title_ar"], h["article_path"]))
+        if h.get("amendment_note_ar"):
+            print("    ⏱  %s" % h["amendment_note_ar"])
 
 
 if __name__ == "__main__":

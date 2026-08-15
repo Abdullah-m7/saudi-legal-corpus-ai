@@ -60,6 +60,29 @@ LEGAL_BOUNDARIES = [
 ]
 
 
+_TIMELINE_CACHE = None
+
+
+def _amendment_timeline():
+    """{record_id: row} from the amendment timeline layer, or {} if absent."""
+    global _TIMELINE_CACHE
+    if _TIMELINE_CACHE is None:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "search_corpus_unified",
+            os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         "search_corpus_unified.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _TIMELINE_CACHE = (mod.load_amendment_timeline(), mod.amendment_note_ar)
+    return _TIMELINE_CACHE[0]
+
+
+def _amendment_note_ar(row):
+    _amendment_timeline()
+    return _TIMELINE_CACHE[1](row)
+
+
 def build_context_pack(
     query: str,
     limit: int = 5,
@@ -122,6 +145,31 @@ def build_context_pack(
             rec["source_data_path"] = r.get("source_data_path")
         if r["_record"].get("source_text_sha256"):
             rec["source_text_sha256"] = r["_record"].get("source_text_sha256")
+
+        # «Since when?» travels with the citation, not in a side file.
+        #
+        # A context pack is handed to a model as the evidence it may rely on. A
+        # consolidated article's text is the wording AS IT STANDS TODAY, and a
+        # pack that says so without saying WHEN it changed invites an answer
+        # about 2019 built on 2024 wording. The amendment timeline knows; this
+        # joins it by the record id the pack already carries.
+        #
+        # MEASURED, AND CURRENTLY INERT HERE. This pack reads the 450-record
+        # primary-Arabic export, whose three tracks (companies_law and its two
+        # implementing regulations) contain no article marked معدلة/مضافة/ملغاة,
+        # so the join adds nothing to a pack built today. It is written anyway
+        # and stated rather than left implicit: the field appears the moment the
+        # export grows to include a consolidated track, and a reader comparing
+        # this surface with search_corpus_unified — where the same join is very
+        # much live over 25,867 records — deserves to know why they differ.
+        t = _amendment_timeline().get(r.get("source_record_id"))
+        if t:
+            rec["amendment_dating_status"] = t["dating_status"]
+            rec["amendment_note_ar"] = _amendment_note_ar(t)
+            if t.get("amendments"):
+                rec["amendments"] = t["amendments"]
+            if t.get("conflicting_dates"):
+                rec["conflicting_amendment_dates"] = t["conflicting_dates"]
 
         pack_records.append(rec)
 
