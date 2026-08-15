@@ -728,8 +728,19 @@ def _in_force_of_pair(candidates):
     return None
 
 
+_ANY_DEF_RE = re.compile(r"(?:^|[\s:،])(ال[ء-ي]{2,14})\s*:\s*([^\n.،؛]{4,120})")
+
+
 def _self_declared_parent_names(rows, layer_to_track):
-    """{track_id: the name it gives «النظام» in its own opening articles}."""
+    """{track_id: (name it gives «النظام», its whole definition block)}.
+
+    The definition block travels with the name because some instruments name
+    their parent by a term they defined two lines earlier. «لائحة صلاحيات تطبيق
+    هيئة الرقابة ومكافحة الفساد» says «الهيئة: هيئة الرقابة ومكافحة الفساد» and
+    then «النظام: نظام الهيئة» — and «نظام الهيئة» matches no title in any corpus.
+    Substituting the instrument's OWN definition of «الهيئة» gives «نظام هيئة
+    الرقابة ومكافحة الفساد», which this corpus holds as nazaha_law. That is not
+    inference: it is reading two of the source's sentences instead of one."""
     first_texts = {}
     for r in rows:
         tid = layer_to_track.get(r.get("source_layer"))
@@ -738,10 +749,27 @@ def _self_declared_parent_names(rows, layer_to_track):
         first_texts.setdefault(tid, []).append(r.get("text_ar") or "")
     out = {}
     for tid, texts in first_texts.items():
-        m = _NIZAM_DEF_RE.search(re.sub(r"\s+", " ", " ".join(texts)))
-        if m:
-            out[tid] = _DECREE_TAIL_RE.split(m.group(1))[0].strip()
+        flat = re.sub(r"\s+", " ", " ".join(texts))
+        m = _NIZAM_DEF_RE.search(flat)
+        if not m:
+            continue
+        defs = {k: v.strip() for k, v in _ANY_DEF_RE.findall(flat)}
+        out[tid] = (_DECREE_TAIL_RE.split(m.group(1))[0].strip(), defs)
     return out
+
+
+def _expand_defined_terms(name, defs):
+    """«نظام الهيئة» -> «نظام هيئة الرقابة ومكافحة الفساد», using the instrument's
+    own definitions. Returns None when nothing expands, so the caller can tell an
+    expansion apart from a name that was already complete."""
+    parts = name.split()
+    if len(parts) != 2 or not parts[0].startswith("نظام"):
+        return None
+    term = parts[1]
+    target = defs.get(term)
+    if not target or term == "النظام":
+        return None
+    return "%s %s" % (parts[0], _DECREE_TAIL_RE.split(target)[0].strip())
 
 
 def build_parent_law_map(rows, layer_to_track, registry=None):
@@ -775,7 +803,7 @@ def build_parent_law_map(rows, layer_to_track, registry=None):
         if same:
             parent[tid], basis[tid] = same, "law_component_of_the_same_corpus"
             continue
-        name = self_named.get(tid)
+        name, defs = self_named.get(tid, (None, {}))
         if name:
             key = _norm_title(name)
             # «النظام الأساس للمستشفى / للجامعة / للمؤسسة» is a constitutive
@@ -792,6 +820,18 @@ def build_parent_law_map(rows, layer_to_track, registry=None):
                 v for k, vs in titles.items() for v in vs
                 if len(key) > 12 and (key in k or k in key)]
             cands = sorted(set(cands))
+            if not cands:
+                expanded = _expand_defined_terms(name, defs)
+                if expanded:
+                    key = _norm_title(expanded)
+                    cands = sorted(set(titles.get(key) or [
+                        v for k, vs in titles.items() for v in vs
+                        if len(key) > 12 and (key in k or k in key)]))
+                    if len(cands) == 1 and cands[0] in component_of:
+                        parent[tid] = cands[0]
+                        basis[tid] = ("self_declared_definition_expanded_through_"
+                                      "the_instruments_own_defined_terms")
+                        continue
             if len(cands) == 1 and cands[0] in component_of:
                 parent[tid] = cands[0]
                 # A constitutive statute that defines «النظام» as ITSELF is not

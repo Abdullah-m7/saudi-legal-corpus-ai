@@ -23,10 +23,11 @@
       "declared_base_law_track": 16,
       "law_component_of_the_same_corpus": 90,
       "no_evidence_in_the_corpus": 399,
+      "self_declared_definition_expanded_through_the_instruments_own_defined_terms": 1,
       "self_declared_definition_of_al_nizam": 59,
       "self_declared_definition_of_al_nizam_collision_resolved_to_the_law_in_force": 1,
       "self_declared_name_is_this_track_itself": 7,
-      "self_declared_name_matches_no_held_law": 8
+      "self_declared_name_matches_no_held_law": 7
     },
     "resolved_parents": {
       "accounting_auditing_regulation": "accounting_auditing_law",
@@ -134,6 +135,7 @@
       "municipal_realestate_implementing_regulation": "municipal_realestate_law",
       "nationality_regulation": "nationality_law",
       "navigation_licence_work_permit_regulation": "maritime_commercial_law",
+      "nazaha_criminal_procedure_powers_regulation": "nazaha_law",
       "ngo_council_regulation": "associations_ngo_law",
       "nonprofit_beneficial_owner_rules": "associations_ngo_law",
       "nonprofit_center_supervisory_bodies_relations_regulation": "associations_ngo_law",
@@ -421,7 +423,6 @@
       "national_place_names_in_commercial_names_controls",
       "national_risk_council_statute",
       "national_transport_safety_center_statute",
-      "nazaha_criminal_procedure_powers_regulation",
       "nazaha_military_personnel_statute",
       "nazara_works_regulation",
       "nca_cybersecurity_violations_investigation_rules",
@@ -619,8 +620,8 @@
   "inter_law_count": 1352,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4606,
-    "medium": 1611
+    "high": 4607,
+    "medium": 1610
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -39909,12 +39910,12 @@
       "source_track_id": "nazaha_criminal_procedure_powers_regulation",
       "source_record_id": "nazaha-criminal-procedure-powers-regulation-llm-001",
       "source_article_number": 1,
-      "type": "parent_law_unresolved",
-      "target_track_id": null,
+      "type": "parent_law",
+      "target_track_id": "nazaha_law",
       "target_article_number": 2,
       "target_law_name_raw": "النظام",
       "raw_citation_text": "المادة (الثانية) من النظام.",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "nazaha_criminal_procedure_powers_regulation",

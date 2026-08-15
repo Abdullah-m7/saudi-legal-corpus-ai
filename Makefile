@@ -2015,6 +2015,11 @@ gazette-index-freshness:
 gazette-id-space-audit:
 	$(PY) scripts/audit_gazette_id_space.py
 
+# Offline. Which parent laws does the corpus CITE but not hold, and can the
+# gazette channel reach them at all? Reasons from the corpus's own text outward.
+missing-parent-laws-audit:
+	$(PY) scripts/audit_missing_parent_laws.py
+
 # LIVE NETWORK. Merges into the archive title index every page the sitemaps
 # expose and the index has never seen, then gates the new legislative ones.
 gazette-index-refresh:
