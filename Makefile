@@ -237,6 +237,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-chunking-layer-validate \
         corpus-freshness-manifest-validate \
         corpus-caveat-layer-validate \
+        corpus-amendment-timeline-validate \
         patent-law-track-validate \
         customs-law-track-validate \
         customs-regulation-track-validate \
@@ -2045,6 +2046,17 @@ corpus-freshness-manifest-validate:
 
 corpus-caveat-layer-validate:
 	$(PY) scripts/validate_corpus_caveat_layer.py
+
+# «What does this article say today?» is answered; «since when?» was not.
+# A derived layer keyed by record_id carrying each amended article's dated
+# instruments, its disclosed date conflicts, and — named, not omitted — the
+# articles the corpus cannot date, because a missing row reads as 'never
+# amended', which is a different and false statement.
+corpus-amendment-timeline:
+	$(PY) scripts/gen_corpus_amendment_timeline.py
+
+corpus-amendment-timeline-validate:
+	$(PY) scripts/validate_corpus_amendment_timeline.py
 
 patent-law-track-validate:
 	$(PY) scripts/validate_patent_law_track.py

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "generated_by": "scripts/gen_corpus_amendment_timeline.py",
+  "generated_from": "sources/*/official_source/*.json (per-article history, amendment_history and the printed footnotes inside the stored article text) joined to the Arabic LLM-ready layer by article_key, so every row carries the same record_id retrieval already uses",
+  "purpose_ar": "**«ما نصُّ هذه المادة اليوم؟» له جواب، و«منذ متى؟» لم يكن له.** 125 مساراً تحمل نصّاً مُدمَجاً بعد التعديلات — وهو الصواب في التخزين — والطبقةُ التي يقرأها النموذج تقول `is_amended: true` **ولا تحمل تاريخاً**. والدليلُ موجودٌ في آثار المصادر منذ البداية؛ **الفجوةُ أنه لا ينتقل**. هذه الطبقة تنقله، **مفتاحُها `record_id`** نفسه الذي يستعمله الاسترجاع.",
+  "total_rows": 928,
+  "by_dating_status": {
+    "dated": 852,
+    "undated": 76
+  },
+  "by_evidence": {
+    "per_article_history_in_the_source_artifact": 1058,
+    "printed_footnote_matched_to_the_document_level_history_on_BOTH_the_decision_number_and_the_date": 51
+  },
+  "counting_note_ar": "**رقمُ هذه الطبقة ليس رقمَ تدقيق التأريخ، والفرقُ مقصود.** التدقيق يعدّ المواد التي **يظهر في سجلّها سنة** (830)؛ وهذه الطبقة تعدّ المواد التي لها **تاريخُ تعديلٍ فعلي** (852): فتُسقط المدخلات التي فيها سنةٌ عابرة بلا تاريخ — **تسجيلُها تعديلاً مؤرَّخاً كذبٌ في الشكل** — وتضيف تواريخَ مقروءةً من نثر الحاشية نفسها ومن الحواشي المطبوعة الموثَّقة مرّتين. **المعياران مختلفان، والأدقُّ هو هذا.**",
+  "undated_by_track": {
+    "sharia_procedure_law": 22,
+    "vat_regulation": 17,
+    "customs_law": 9,
+    "enforcement_implementing_regulation": 7,
+    "criminal_procedure_implementing_regulation": 6,
+    "anti_smoking_regulation": 4,
+    "enforcement_law": 4,
+    "criminal_procedure_law": 2,
+    "customs_regulation": 2,
+    "administrative_judicial_council_bylaw": 1,
+    "judiciary_law": 1,
+    "king_saud_university_statute": 1
+  },
+  "records_marked_amended_that_could_not_be_joined": [],
+  "reading_rules_ar": {
+    "dated": "التعديلاتُ مؤرَّخةٌ بدليلٍ من أثر المصدر.",
+    "disclosed_conflict": "تاريخان متعارضان في المستودع، **يُعرضان ولا يُرجَّح بينهما**.",
+    "undated": "عُدِّلت المادة ولا يُعرف متى. **مذكورةٌ صراحةً**: غيابُ السطر يُقرأ «لم تُعدَّل»، وهي عبارةٌ أخرى وكاذبة."
+  },
+  "known_limitations_ar": [
+    "لا تحمل هذه الطبقة **النصَّ كما كان قبل التعديل** إلا حيث سجّله أثرُ المصدر؛ فهي تجيب «متى تغيّر» لا «ماذا كان».",
+    "التعديلاتُ المؤرَّخة على مستوى الوثيقة لا تُنسب إلى موادَّ بعينها ما لم يقل المصدرُ ذلك بنفسه — **والنسبةُ بلا نصٍّ ترجيحٌ بلا دليل**."
+  ]
+}
