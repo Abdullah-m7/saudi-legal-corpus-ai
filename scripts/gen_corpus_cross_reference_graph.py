@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import difflib
 import importlib.util
+import collections
 import glob
 import json
 import os
@@ -92,6 +93,28 @@ EXTRACTION_CAVEAT = (
 )
 
 KNOWN_LIMITATIONS = [
+    "A subordinate instrument's «النظام» is resolved to the parent named in its "
+    "own article 1, which is right whenever the regulation and the law it "
+    "implements are the CURRENT pair — and can mistarget when the regulation "
+    "PREDATES the law now holding that title. Two of the graph's four dangling "
+    "references are exactly this: hospitality_mgmt and tourism_travel_services "
+    "cite «المادة التاسعة والعشرين من النظام», and the tourism_law this corpus "
+    "holds (M/18, 1444H) has 19 articles, because their «النظام» is the repealed "
+    "predecessor tourism law, which this corpus does not hold. The dangle is the "
+    "SYMPTOM and it is the lucky case: a citation to an article number that DOES "
+    "exist in the current law would resolve silently to the wrong provision. A "
+    "date-based check (regulation older than its parent) was written and "
+    "measured, and abandoned as unreliable: only 10 of 1,255 parent references "
+    "have a gazette date recorded on BOTH ends, so the check would have been "
+    "shaped by which tracks happen to record a date rather than by which are "
+    "mistargeted. Recorded here rather than papered over with a heuristic.",
+    "Parent resolution matches the self-declared name against law-shaped track "
+    "TITLES, so a parent published as a «تنظيم» rather than a «نظام» is not "
+    "matched even when this corpus holds it. Eight tracks name a parent no held "
+    "title matches; some of those names are genuinely absent from the corpus "
+    "(«نظام البلديات والقرى», «نظام الهيئة السعودية للتخصصات الصحية», «نظام "
+    "إجراءات التراخيص البلدية») and are a real coverage signal, while others are "
+    "too generic to match anything («نظام الهيئة»). Left unresolved either way.",
     "Ordinal parsing only covers article numbers up to 999 and only the "
     "standard Arabic feminine ordinal forms (with tolerant variants: "
     "nominative/genitive tens endings -ون/-ين, teen 'عشر'/'عشرة', "
@@ -632,8 +655,100 @@ def _load_base_law_tracks():
     return out
 
 
-def build_parent_law_map(rows, layer_to_track):
-    """{track_id: parent_track_id or None} for every subordinate track."""
+# ---------------------------------------------------------------------------
+# A subordinate instrument usually SAYS what «النظام» means, in its own article 1
+# ---------------------------------------------------------------------------
+#
+# The first two evidence tiers — a declared base_law_track, or the law component
+# sitting in the same corpus key — left 415 citations across 75 tracks pointing
+# at nothing, because those regulations declare no base and their parent law is
+# filed under a different corpus key. The evidence was in the text the whole
+# time: an implementing regulation opens by DEFINING its terms, and the first of
+# them is almost always «النظام: نظام كذا».
+#
+# So the third tier reads the regulation's own definition and matches that NAME
+# against the titles of the law tracks this corpus holds. That is reading the
+# source, not inferring from topic — the regulation names its own parent.
+#
+# TITLE COLLISIONS ARE NOT A DETAIL, THEY ARE THE TRAP. Exactly two law titles
+# are held twice: «نظام التنفيذ» and «نظام إيرادات الدولة». In both cases the pair
+# is a law and its PUBLISHED-BUT-NOT-YET-IN-FORCE replacement — a shape this
+# corpus only acquired when it started ingesting deferred repeals. A dictionary
+# keyed by title silently keeps whichever it saw last, and the first run of this
+# matcher duly pointed enforcement_providers_regulation at enforcement_law_1447:
+# a regulation resolved to a law that will not be in force for months. The fix is
+# not a preference for older tracks; it is to ASK THE SUPERSESSION GRAPH. A
+# repeals_full_deferred edge names, in classified data, which of the pair is
+# still the law in force — and that is the one a subordinate instrument's
+# «النظام» means today.
+#
+# Anything still ambiguous stays unresolved. A citation with no target is a
+# visible gap; a citation with the wrong target is a confident wrong answer.
+
+_NIZAM_DEF_RE = re.compile(r"(?:^|[\s:،])ال?نظام\s*:\s*([^\n.،؛]{6,160})")
+_DECREE_TAIL_RE = re.compile(r"\s*(?:الصادر|الصادرة|,|;)\s*")
+
+
+def _norm_title(s):
+    s = re.sub(r"[\u064B-\u0652\u0640]", "", s or "")
+    s = (s.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
+          .replace("ة", "ه").replace("ى", "ي"))
+    s = re.sub(r"[«»\"'()\[\]]", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _held_law_titles(registry):
+    """{normalised title: [track_id, ...]} for law-shaped tracks. A LIST, not a
+    single id, because two titles are held twice and losing that is the bug."""
+    out = {}
+    for t in registry.get("tracks", []):
+        nm = t.get("display_name_ar") or ""
+        if nm.startswith(("نظام", "النظام")) and "لائحة" not in nm and "قواعد" not in nm:
+            out.setdefault(_norm_title(nm), []).append(t["track_id"])
+    return out
+
+
+def _in_force_of_pair(candidates):
+    """Given colliding law tracks, the one still in force per the supersession
+    graph's own repeals_full_deferred edges. Returns None if it cannot tell."""
+    path = os.path.join(ROOT, "data", "corpus_supersession_graph",
+                        "corpus_supersession_graph.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            graph = json.load(f)
+    except (OSError, ValueError):                                  # noqa: BLE001
+        return None
+    deferred = {e["from_track_id"]: e.get("target_track_id")
+                for e in graph.get("edges", [])
+                if e.get("relation") == "repeals_full_deferred"}
+    cand = set(candidates)
+    for successor, predecessor in deferred.items():
+        if successor in cand and predecessor in cand:
+            return predecessor          # the successor has not commenced yet
+    return None
+
+
+def _self_declared_parent_names(rows, layer_to_track):
+    """{track_id: the name it gives «النظام» in its own opening articles}."""
+    first_texts = {}
+    for r in rows:
+        tid = layer_to_track.get(r.get("source_layer"))
+        if tid is None or r.get("article_number") is None or r["article_number"] > 3:
+            continue
+        first_texts.setdefault(tid, []).append(r.get("text_ar") or "")
+    out = {}
+    for tid, texts in first_texts.items():
+        m = _NIZAM_DEF_RE.search(re.sub(r"\s+", " ", " ".join(texts)))
+        if m:
+            out[tid] = _DECREE_TAIL_RE.split(m.group(1))[0].strip()
+    return out
+
+
+def build_parent_law_map(rows, layer_to_track, registry=None):
+    """{track_id: parent_track_id or None} for every subordinate track.
+
+    Also returns the evidence used per track, so the resolution can be audited
+    rather than trusted."""
     corpus_of, component_of = {}, {}
     law_track_of_corpus = {}
     for r in rows:
@@ -645,16 +760,62 @@ def build_parent_law_map(rows, layer_to_track):
         if r["law_component"] in LAW_COMPONENTS:
             law_track_of_corpus.setdefault(r["corpus"], tid)
     declared = _load_base_law_tracks()
-    parent = {}
+    titles = _held_law_titles(registry or {})
+    self_named = _self_declared_parent_names(rows, layer_to_track)
+
+    parent, basis = {}, {}
     for tid, comp in component_of.items():
         if comp in LAW_COMPONENTS:
             continue                                   # a law's «النظام» is itself
         base = declared.get(tid)
         if base and base in component_of:
-            parent[tid] = base
-        else:
-            parent[tid] = law_track_of_corpus.get(corpus_of[tid])
-    return parent, component_of
+            parent[tid], basis[tid] = base, "declared_base_law_track"
+            continue
+        same = law_track_of_corpus.get(corpus_of[tid])
+        if same:
+            parent[tid], basis[tid] = same, "law_component_of_the_same_corpus"
+            continue
+        name = self_named.get(tid)
+        if name:
+            key = _norm_title(name)
+            # «النظام الأساس للمستشفى / للجامعة / للمؤسسة» is a constitutive
+            # statute naming ITSELF in shorthand. Six tracks say it, and the full
+            # registry title («النظام الأساس لمستشفى الملك فيصل التخصصي ومركز
+            # الأبحاث») never matches the shorthand, so a title matcher reports
+            # "names a law this corpus does not hold" — which reads as a coverage
+            # gap and is nothing of the kind. The phrase itself is the evidence.
+            if key.startswith("النظام الاساس"):
+                parent[tid] = tid
+                basis[tid] = "self_declared_name_is_this_track_itself"
+                continue
+            cands = titles.get(key) or [
+                v for k, vs in titles.items() for v in vs
+                if len(key) > 12 and (key in k or k in key)]
+            cands = sorted(set(cands))
+            if len(cands) == 1 and cands[0] in component_of:
+                parent[tid] = cands[0]
+                # A constitutive statute that defines «النظام» as ITSELF is not
+                # naming a parent. Kept in the map so the citation routes to
+                # intra_law, labelled apart so no report calls it a parent.
+                basis[tid] = ("self_declared_name_is_this_track_itself"
+                              if cands[0] == tid
+                              else "self_declared_definition_of_al_nizam")
+                continue
+            if len(cands) > 1:
+                pick = _in_force_of_pair(cands)
+                if pick and pick in component_of:
+                    parent[tid] = pick
+                    basis[tid] = ("self_declared_definition_of_al_nizam"
+                                  "_collision_resolved_to_the_law_in_force")
+                    continue
+                parent[tid] = None
+                basis[tid] = "ambiguous_title_matches_%d_held_laws" % len(cands)
+                continue
+            parent[tid] = None
+            basis[tid] = "self_declared_name_matches_no_held_law"
+            continue
+        parent[tid], basis[tid] = None, "no_evidence_in_the_corpus"
+    return parent, component_of, basis
 
 
 # ---------------------------------------------------------------------------
@@ -725,6 +886,24 @@ def extract_references(rows, layer_to_track, track_cores,
                             and track_id in parent_law)
                 if retarget:
                     tgt = parent_law.get(track_id)
+                    # A statute that DEFINES «النظام» as its own constitutive
+                    # statute is not citing a parent — it is citing itself. The
+                    # named-citation branch above already treats that as intra_law
+                    # and this must agree, or the graph would carry a track listed
+                    # as its own parent, which is how the earlier 1,110-reference
+                    # mistargeting looked from the outside.
+                    if tgt == track_id:
+                        if num == source_article:
+                            continue
+                        references.append({
+                            "source_track_id": track_id, "source_record_id": record_id,
+                            "source_article_number": source_article, "type": "intra_law",
+                            "target_track_id": track_id, "target_article_number": num,
+                            "target_law_name_raw": None,
+                            "raw_citation_text": _clip_citation(raw_span, lookahead, None),
+                            "confidence": "high",
+                        })
+                        continue
                     references.append({
                         "source_track_id": track_id, "source_record_id": record_id,
                         "source_article_number": source_article,
@@ -827,7 +1006,8 @@ def build_graph():
     track_cores = _build_track_cores(registry)
     rows = load_index()
 
-    parent_law, component_of = build_parent_law_map(rows, layer_to_track)
+    parent_law, component_of, parent_basis = build_parent_law_map(
+        rows, layer_to_track, registry)
     references = extract_references(rows, layer_to_track, track_cores,
                                     parent_law, component_of)
     references = mark_unfollowable_self_targets(references, rows, layer_to_track)
@@ -847,6 +1027,25 @@ def build_graph():
         "known_limitations": KNOWN_LIMITATIONS,
         "total_records_scanned": len(rows),
         "total_references_extracted": len(references),
+        "parent_law_resolution": {
+            "note": (
+                "كيف عُرف «النظام» الأمّ لكل أداةٍ تابعة، **مرتَّباً بقوة الدليل**: حقلُ "
+                "`base_law_track` المُصرَّح به، ثم مكوّنُ النظام في مفتاح المدونة نفسه، ثم "
+                "**تعريفُ الأداة نفسها لـ«النظام» في مادتها الأولى** — وهو قراءةٌ للمصدر لا "
+                "استنتاجٌ من الموضوع. **وتصادمُ العناوين ليس تفصيلاً بل هو الفخّ**: عنوانان "
+                "محمولان مرتين («نظام التنفيذ» و«نظام إيرادات الدولة»)، وكلاهما نظامٌ "
+                "وخَلَفُه **المنشور غير النافذ**. أولُ تشغيلٍ صوّب لائحةَ مقدمي خدمات التنفيذ "
+                "إلى النظام الذي **لن ينفذ قبل أشهر**. والحلُّ ليس تفضيلَ الأقدم بل **سؤالُ "
+                "رسم النسخ**: ضلعُ `repeals_full_deferred` يسمّي — ببياناتٍ مُصنَّفة — أيَّهما "
+                "**السَّاري اليوم**. وما بقي ملتبساً **يبقى بلا وجهة**: إحالةٌ بلا هدف ثغرةٌ "
+                "مرئية، وإحالةٌ بهدفٍ خاطئ **جوابٌ واثقٌ خاطئ**."),
+            "by_evidence": dict(sorted(collections.Counter(parent_basis.values()).items())),
+            "resolved_parents": {k: v for k, v in sorted(parent_law.items())
+                                 if v and v != k},
+            "tracks_whose_al_nizam_is_themselves": sorted(
+                k for k, v in parent_law.items() if v == k),
+            "unresolved_tracks": sorted(k for k, v in parent_law.items() if not v),
+        },
         "intra_law_count": intra,
         "inter_law_count": inter,
         "ambiguous_scope_count": ambiguous,
