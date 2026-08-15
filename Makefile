@@ -2020,6 +2020,12 @@ gazette-id-space-audit:
 missing-parent-laws-audit:
 	$(PY) scripts/audit_missing_parent_laws.py
 
+# Offline. «What does this article say today?» has an answer; «since when?»
+# often does not. Measures amendment datability in the source artifacts and in
+# the LLM layer separately, because they are different questions.
+amendment-dating-audit:
+	$(PY) scripts/audit_amendment_dating.py
+
 # LIVE NETWORK. Merges into the archive title index every page the sitemaps
 # expose and the index has never seen, then gates the new legislative ones.
 gazette-index-refresh:
