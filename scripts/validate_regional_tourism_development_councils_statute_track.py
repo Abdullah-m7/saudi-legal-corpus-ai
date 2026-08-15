@@ -150,8 +150,17 @@ def main():
         e.append("[2j] gazette_publication_date_hijri must be 21/9/1443")
     if src.get("gazette_publication_date_gregorian") != "2022-04-22":
         e.append("[2j] gazette_publication_date_gregorian must be 2022-04-22")
-    if src.get("legal_status_ar") != "ساري":
-        e.append("[2j] legal_status_ar must be ساري")
+    # This instrument was in force when the track was built and is not any more, so the
+    # check is no longer "must be ساري" — it is "must be لاغي AND must say by what".
+    # A repeal recorded as a bare status word is a claim with no evidence attached; the
+    # 565 per-track validators that assert «must be ساري» all inherit that shape, and this
+    # is the first track to need the other one.
+    if src.get("legal_status_ar") != "لاغي":
+        e.append("[2j] legal_status_ar must be لاغي (this statute is REPEALED)")
+    rep = src.get("repealed_by_ar", "")
+    if not rep or "(471)" not in rep or "1447" not in rep:
+        e.append("[2j] repealed_by_ar must be present and name Council of Ministers "
+                 "Decision (471) of 10/7/1447H, which repealed this statute in full")
     if src.get("document") != "تنظيم مجالس التنمية السياحية في المناطق":
         e.append("[2j] document title mismatch")
 
