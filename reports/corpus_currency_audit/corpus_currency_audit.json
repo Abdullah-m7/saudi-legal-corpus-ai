@@ -1,10 +1,10 @@
 {
  "generated_note": "Currency audit. For every track, every AMENDMENT NOTICE published in the Umm Al-Qura archive after the edition the corpus holds. An amendment notice is not a standalone instrument and is deliberately never ingested as a track (gate G1 drops it); it is evidence ABOUT a track already on file. This report asserts nothing about the amendment's content -- the notice is not the amended text. It names the track, the edition date on file, and the gazette page to go read. Matching is on the notice's SUBJECT: a notice must cover at least MIN_TRACK_COVER of the track title's distinctive words, which is what stops a notice about one authority from matching another that merely shares a word.",
- "gazette_pages_indexed": 8997,
- "amendment_notices_found": 517,
- "tracks_on_file": 608,
- "tracks_with_edition_date": 586,
- "tracks_predating_an_amendment": 50,
+ "gazette_pages_indexed": 9448,
+ "amendment_notices_found": 533,
+ "tracks_on_file": 746,
+ "tracks_with_edition_date": 724,
+ "tracks_predating_an_amendment": 61,
  "match_thresholds": {
   "min_shared_words": 2,
   "min_shorter_title_cover": 0.6,
@@ -40,32 +40,6 @@
    ]
   },
   {
-   "track_id": "building_code_inspection_bodies_regulation",
-   "title_ar": "لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي",
-   "edition_on_file": "2021-05-21",
-   "candidates": [
-    {
-     "date": "2026-05-15",
-     "title_cover": 1.0,
-     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000964",
-     "title_ar": "اعتماد تعديل لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي"
-    }
-   ]
-  },
-  {
-   "track_id": "building_code_law",
-   "title_ar": "نظام تطبيق كود البناء السعودي",
-   "edition_on_file": "2025-03-12",
-   "candidates": [
-    {
-     "date": "2026-05-15",
-     "title_cover": 0.75,
-     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000964",
-     "title_ar": "اعتماد تعديل لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي"
-    }
-   ]
-  },
-  {
    "track_id": "building_code_regulation",
    "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
    "edition_on_file": "2023-01-30",
@@ -79,13 +53,13 @@
    ]
   },
   {
-   "track_id": "chambers_of_commerce_law",
-   "title_ar": "نظام الغرف التجارية",
-   "edition_on_file": "2020-12-08",
+   "track_id": "chambers_commerce_committees_regulation",
+   "title_ar": "لائحة اللجان الوطنية واللجان القطاعية في الغرف التجارية",
+   "edition_on_file": "2023-12-08",
    "candidates": [
     {
      "date": "2026-01-23",
-     "title_cover": 1.0,
+     "title_cover": 0.83,
      "url": "https://www.uqn.gov.sa/details?p=28812",
      "title_ar": "تعديل مادة من لائحة اللجان الوطنية والقطاعية في الغرف التجارية"
     }
@@ -144,19 +118,6 @@
    ]
   },
   {
-   "track_id": "judiciary_bog_mechanism",
-   "title_ar": "آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم",
-   "edition_on_file": "2007-10-01",
-   "candidates": [
-    {
-     "date": "2022-06-17",
-     "title_cover": 1.0,
-     "url": "https://www.uqn.gov.sa/details?p=19596",
-     "title_ar": "تعديل الفقرة (5) من البند (سابعاً) من آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم"
-    }
-   ]
-  },
-  {
    "track_id": "light_goods_road_transport_regulation",
    "title_ar": "اللائحة المنظمة لنشاط النقل الخفيف للبضائع على الطرق",
    "edition_on_file": "2021-07-30",
@@ -176,9 +137,22 @@
    "candidates": [
     {
      "date": "2026-01-09",
-     "title_cover": 0.75,
+     "title_cover": 1.0,
      "url": "https://www.uqn.gov.sa/details?p=28774",
      "title_ar": "إلغاء مجلس التنمية السياحي ومجالس التنمية السياحية في المناطق"
+    }
+   ]
+  },
+  {
+   "track_id": "service_suspension_controls",
+   "title_ar": "ضوابط إيقاف الخدمات",
+   "edition_on_file": "2023-03-18",
+   "candidates": [
+    {
+     "date": "2023-11-10",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/details?p=24012",
+     "title_ar": "تعديل المدة المحددة للعمل بضوابط إيقاف الخدمات"
     }
    ]
   },
@@ -324,6 +298,46 @@
    ]
   },
   {
+   "track_id": "terrorism_law",
+   "title_ar": "نظام مكافحة جرائم الإرهاب وتمويله",
+   "edition_on_file": "2017-11-02",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/terrorism/law/official_source/terrorism_law_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2026-06-18",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001264",
+     "title_ar": "تعديل نظام مكافحة جرائم الإرهاب وتمويله"
+    },
+    {
+     "date": "2026-06-18",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001262",
+     "title_ar": "الموافقة على تعديل نظام مكافحة جرائم الإرهاب وتمويله ولائحته التنفيذية"
+    },
+    {
+     "date": "2026-06-16",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001206",
+     "title_ar": "الموافقة على تعديل نظام مكافحة جرائم الإرهاب وتمويله ولائحته التنفيذية"
+    }
+   ]
+  },
+  {
+   "track_id": "building_code_inspection_bodies_regulation",
+   "title_ar": "لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي",
+   "edition_on_file": "2021-05-21",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/building_code_inspection_bodies_regulation/official_source/building_code_inspection_bodies_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2026-05-15",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000964",
+     "title_ar": "اعتماد تعديل لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي"
+    }
+   ]
+  },
+  {
    "track_id": "aml_law",
    "title_ar": "نظام مكافحة غسل الأموال",
    "edition_on_file": "2017-11-04",
@@ -333,8 +347,28 @@
    "amendment_notices": [
     {
      "date": "2026-04-17",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000751",
+     "title_ar": "الموافقة على تعديل نظام مكافحة غسل الأموال"
+    },
+    {
+     "date": "2026-04-17",
      "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000747",
      "title_ar": "تعديل نظام مكافحة غسل الأموال"
+    }
+   ]
+  },
+  {
+   "track_id": "capital_market_institutions_regulation",
+   "title_ar": "لائحة مؤسسات السوق المالية",
+   "edition_on_file": "2023-07-08",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/capital_market_institutions_regulation/official_source/capital_market_institutions_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2026-04-10",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000717",
+     "title_ar": "اعتماد تعديل لائحة مؤسسات السوق المالية"
     }
    ]
   },
@@ -444,6 +478,21 @@
    ]
   },
   {
+   "track_id": "bog_enforcement_implementing_regulation",
+   "title_ar": "اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم",
+   "edition_on_file": "2023-09-09",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/bog_enforcement_implementing_regulation/official_source/bog_enforcement_implementing_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2025-07-25",
+     "url": "https://www.uqn.gov.sa/details?p=27295",
+     "title_ar": "تعديل وحذف في اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم"
+    }
+   ]
+  },
+  {
    "track_id": "saudi_tourism_authority_statute",
    "title_ar": "تنظيم الهيئة السعودية للسياحة",
    "edition_on_file": "2024-02-23",
@@ -455,6 +504,26 @@
      "date": "2025-02-28",
      "url": "https://www.uqn.gov.sa/details?p=27033",
      "title_ar": "تعديل فقرة من المادة الخامسة من تنظيم الهيئة السعودية للسياحة"
+    }
+   ]
+  },
+  {
+   "track_id": "intracity_bus_transport_licensing",
+   "title_ar": "إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن",
+   "edition_on_file": "2022-09-10",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/intracity_bus_transport_licensing/official_source/intracity_bus_transport_licensing_official_source.json",
+   "instrument_type": null,
+   "amendment_notices": [
+    {
+     "date": "2024-09-27",
+     "url": "https://www.uqn.gov.sa/details?p=26537",
+     "title_ar": "تعديل الفقرة 2 من المادة التاسعة عشرة من إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن"
+    },
+    {
+     "date": "2023-07-28",
+     "url": "https://www.uqn.gov.sa/details?p=23372",
+     "title_ar": "الموافقة على تعديل إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن"
     }
    ]
   },
@@ -490,6 +559,51 @@
      "date": "2024-09-27",
      "url": "https://www.uqn.gov.sa/details?p=26541",
      "title_ar": "تعديل المادة التاسعة والعشرين من اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات"
+    }
+   ]
+  },
+  {
+   "track_id": "superyacht_chartering_regulation",
+   "title_ar": "اللائحة التنظيمية لتأجير اليخوت الضخمة",
+   "edition_on_file": "2023-08-04",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/superyacht_chartering_regulation/official_source/superyacht_chartering_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-12",
+     "url": "https://www.uqn.gov.sa/details?p=25477",
+     "title_ar": "مشروع تعديلات اللائحة التنظيمية لتأجير اليخوت الضخمة (المحدثة)"
+    }
+   ]
+  },
+  {
+   "track_id": "visiting_private_yachts_regulation",
+   "title_ar": "اللائحة التنظيمية لليخوت الخاصة الزائرة",
+   "edition_on_file": "2023-08-04",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/visiting_private_yachts_regulation/official_source/visiting_private_yachts_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-12",
+     "url": "https://www.uqn.gov.sa/details?p=25478",
+     "title_ar": "مشروع تعديلات اللائحة التنظيمية لليخوت الزائرة (المحدثة)"
+    }
+   ]
+  },
+  {
+   "track_id": "cruise_ships_regulation",
+   "title_ar": "اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)",
+   "edition_on_file": "2023-08-04",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/cruise_ships_regulation/official_source/cruise_ships_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-12",
+     "url": "https://www.uqn.gov.sa/details?p=25479",
+     "title_ar": "تعديلات اللائحة التنظيمية لسفن الرحلات السياحية الكروز (المحدثة)"
     }
    ]
   },
@@ -789,6 +903,36 @@
    ]
   },
   {
+   "track_id": "king_abdulaziz_quality_award_statute",
+   "title_ar": "الترتيبات التنظيمية لجائزة الملك عبدالعزيز للجودة",
+   "edition_on_file": "2021-02-19",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/king_abdulaziz_quality_award_statute/official_source/king_abdulaziz_quality_award_statute_official_source.json",
+   "instrument_type": "STATUTE",
+   "amendment_notices": [
+    {
+     "date": "2023-05-26",
+     "url": "https://www.uqn.gov.sa/details?p=22907",
+     "title_ar": "تعديل الترتيبات التنظيمية لجائزة الملك عبدالعزيز للجودة"
+    }
+   ]
+  },
+  {
+   "track_id": "electricity_tariff_technical_controls",
+   "title_ar": "الضوابط والمتطلبات والمواصفات الفنية والقواعد الإجرائية اللازمة لتنفيذ أحكام لائحة الفوترة الإلكترونية",
+   "edition_on_file": "2021-05-28",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/electricity_tariff_technical_controls/official_source/electricity_tariff_technical_controls_official_source.json",
+   "instrument_type": "CONTROLS",
+   "amendment_notices": [
+    {
+     "date": "2023-05-19",
+     "url": "https://www.uqn.gov.sa/details?p=22842",
+     "title_ar": "تعديل الضوابط والمتطلبات والمواصفات الفنية والقواعد الإجرائية اللازمة لتنفيذ أحكام لائحة الفوترة الإلكترونية"
+    }
+   ]
+  },
+  {
    "track_id": "high_industrial_security_authority_statute",
    "title_ar": "تنظيم الهيئة العليا للأمن الصناعي",
    "edition_on_file": "2022-08-05",
@@ -865,6 +1009,46 @@
      "date": "2022-07-22",
      "url": "https://www.uqn.gov.sa/details?p=19762",
      "title_ar": "الموافقة على تعديلات نظام توزيع الغاز الجاف وغاز البترول السائل للأغراض السكنية والتجارية"
+    }
+   ]
+  },
+  {
+   "track_id": "social_insurance_legacy_law",
+   "title_ar": "نظام التأمينات الاجتماعية",
+   "edition_on_file": "2000-11-30",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/social_insurance_legacy/law/official_source/social_insurance_legacy_law_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2022-06-24",
+     "url": "https://www.uqn.gov.sa/details?p=19639",
+     "title_ar": "إضافة وتعديل على بعض مواد أنظمة التقاعد المدني والتأمينات الاجتماعية وتبادل المنافع"
+    },
+    {
+     "date": "2021-03-19",
+     "url": "https://www.uqn.gov.sa/details?p=17102",
+     "title_ar": "تعديل نظام التأمينات الاجتماعية الصادر بالمرسوم الملكي رقم (م/33) وتاريخ 1421/9/3هـ"
+    },
+    {
+     "date": "2021-02-12",
+     "url": "https://www.uqn.gov.sa/details?p=17193",
+     "title_ar": "تعديل الفقرتين (1) و (2) من المادة العاشرة من نظام التأمينات الاجتماعية"
+    }
+   ]
+  },
+  {
+   "track_id": "judiciary_bog_mechanism",
+   "title_ar": "آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم",
+   "edition_on_file": "2007-10-01",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/judiciary_bog/mechanism/official_source/judiciary_bog_mechanism_official_source.json",
+   "instrument_type": null,
+   "amendment_notices": [
+    {
+     "date": "2022-06-17",
+     "url": "https://www.uqn.gov.sa/details?p=19596",
+     "title_ar": "تعديل الفقرة (5) من البند (سابعاً) من آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم"
     }
    ]
   },
@@ -1035,26 +1219,6 @@
      "date": "2021-04-30",
      "url": "https://www.uqn.gov.sa/details?p=17542",
      "title_ar": "تعديل المادة (الخامسة والستين) من نظام المرافعات الشرعية"
-    }
-   ]
-  },
-  {
-   "track_id": "social_insurance_legacy_law",
-   "title_ar": "نظام التأمينات الاجتماعية",
-   "edition_on_file": "2000-11-30",
-   "anchor_is_exact_gazette_date": false,
-   "source_artifact": "sources/social_insurance_legacy/law/official_source/social_insurance_legacy_law_official_source.json",
-   "instrument_type": "LAW",
-   "amendment_notices": [
-    {
-     "date": "2021-03-19",
-     "url": "https://www.uqn.gov.sa/details?p=17102",
-     "title_ar": "تعديل نظام التأمينات الاجتماعية الصادر بالمرسوم الملكي رقم (م/33) وتاريخ 1421/9/3هـ"
-    },
-    {
-     "date": "2021-02-12",
-     "url": "https://www.uqn.gov.sa/details?p=17193",
-     "title_ar": "تعديل الفقرتين (1) و (2) من المادة العاشرة من نظام التأمينات الاجتماعية"
     }
    ]
   },

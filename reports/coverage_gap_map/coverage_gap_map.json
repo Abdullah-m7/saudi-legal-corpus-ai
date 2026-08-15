@@ -1245,5 +1245,58 @@
   "the_counting_difference_is_deliberate": "This layer's 852 is not the audit's 830. The audit counts articles whose history mentions a YEAR; the layer counts articles with an actual amendment DATE — dropping entries carrying a stray year and no date (recording those as dated amendments would be a lie of shape), and adding dates parsed from the note's own prose and from the twice-verified printed footnotes. The stricter number is the true one.",
   "validation": "12 checks, including: every record_id joins to the unified index; no amended article in the index lacks a row; every recorded amendment carries a date; conflicts state both readings; and no instrument appears that is not verbatim in its own source artifact.",
   "surfaced_where_it_is_read": "A layer that knows is not an answer; the reading surface answers. The timeline is joined into search_corpus_unified by the same record_id the caveat layer uses, so every hit on an amended article now prints one line: the latest dated amendment, or the disclosed two-date conflict with neither asserted, or «معدَّلة — والمستودع لا يعرف متى». The three verdicts print DISTINCTLY: printing the third as though it were the absence of an amendment is the failure the join exists to prevent. The same join was added to build_retrieval_context_pack and is CURRENTLY INERT there — that pack reads the 450-record primary-Arabic export whose three tracks contain no article marked معدلة/مضافة/ملغاة — which is stated in the code rather than left implicit, so a reader comparing the two surfaces knows why they differ instead of suspecting a bug."
+ },
+ "what_is_checked_by_discovery_holds_what_is_checked_by_a_list_drifts": {
+  "note": "**بوابةُ الجودة كانت تفحص نصفَ مولِّداتها**. طورُ المدقِّقات يكتشف عناصره من نظام الملفات فتغطيتُه 841 من 841؛ وطورُ التماثل كان يعدّ مولِّداته في **قائمةِ يد**، فبلغت 392 من 814 — **48%** — والبوابة تطبع الرقم فيُقرأ تغطيةً. **والرقمُ ليس تغطيةً حتى يُقاس مقامُه.** وشُغِّلت الـ423 غير المُغطّى: لا شيء منها يلمس الشبكة، ولا شيء منها يفشل، و**21** تُنتج غير المُودَع — عشرةُ مسارات ينقصها تنبيهُ سريانٍ يُصدره مولِّدُها نفسه، وطبقتان مشتقّتان من إحدى عشرة كانتا خارج الطور كلّه. والإصلاح: الاكتشافُ من نظام الملفّات، والاستثناءُ بسببٍ مكتوب، **وترتيبُ الطبقات مُعلَنٌ ومفحوص** فلا تدخل طبقةٌ جديدة دون أن يقرِّر أحدٌ موضعَها.",
+  "validators_discovered": 841,
+  "generators_on_disk": 814,
+  "generators_previously_covered": 392,
+  "uncovered_probed": 423,
+  "uncovered_touching_the_network": 0,
+  "uncovered_failing": 0,
+  "uncovered_producing_output_that_differs_from_committed": 21,
+  "tracks_missing_a_currency_warning_their_own_generator_emits": 10,
+  "derived_layers_outside_the_phase": [
+   "corpus_caveat_layer",
+   "corpus_amendment_timeline"
+  ],
+  "legitimate_exclusions": {
+   "scripts/gen_corpus_export_primary_arabic.py": "stamps its own generation date by design"
+  },
+  "added_seconds_to_the_gate": 50,
+  "report": "reports/qa_gate_coverage/QA_GATE_COVERAGE_AR.md"
+ },
+ "a_repealed_statute_was_being_read_as_law_in_force": {
+  "note": "**أخطرُ ما أخرجه توسيعُ الطور**: المولِّد الوحيد الذي كان **يسحب** تنبيهاً أشار إلى صفحةٍ عنوانها «إلغاء مجلس التنمية السياحي ومجالس التنمية السياحية في المناطق»، وقراءةُ الصفحة أثبتت أن **قرار مجلس الوزراء رقم (471) وتاريخ 10/7/1447هـ** ألغى **تنظيم مجالس التنمية السياحية في المناطق** بالكامل منذ 2026-01-09، والمستودع يعرضه **سارياً** منذ سبعة أشهر. **والهُويّة ثابتة بثلاثة أدلة لا يتوقّف أحدُها على الآخر** — العنوان حرفاً، والمادة (الثانية) المُنشِئة كما يصفها القرار، وفارقُ عشرة أيام بين قرار الإصدار (520/11/9/1443هـ) ونشرِه (21/9/1443هـ) — **وليس منها رقمُ القرار**، فمِلَفُّ المصدر لا يحمله أصلاً. **ولم يُغيَّر نصُّ مادة**: النصُّ باقٍ للرجوع التاريخي، وإنما تغيَّرت صفتُه. **ولا خَلَف**، فالعلاقةُ `repealed_by` لا `superseded_by`.",
+  "track_id": "regional_tourism_development_councils_statute",
+  "repealing_instrument": "قرار مجلس الوزراء رقم (471) وتاريخ 10/7/1447هـ",
+  "gazette_page": "https://www.uqn.gov.sa/details?p=28774",
+  "published": "2026-01-09",
+  "months_the_corpus_asserted_it_as_in_force": 7,
+  "identity_evidence": [
+   "verbatim title",
+   "the establishing article the decision cites",
+   "the ten-day decision-to-publication lag"
+  ],
+  "new_relation": "repealed_by (with a mandatory verbatim repeal_effective_ar)",
+  "new_caveat_code": "repealed",
+  "why_the_currency_audit_only_led_to_it": "قرارُ الإلغاء يسمّي **الجهةَ** لا **الأداة**، فلا يحمل عنوانُه كلمةَ نوع، ومطابِقُ العناوين لا يفرِّق بين إلغاء مجلسٍ وإلغاء تنظيمِه — **والصفحةُ وحدها تفرِّق**.",
+  "report": "reports/repealed_tracks/REPEALED_TRACKS_AR.md"
+ },
+ "the_matcher_lost_a_word_to_an_attached_waw": {
+  "note": "**ثلاثةُ خللٍ في مطابِق السريان، كلُّها تُسكِت تنبيهاً**: (1) العطفُ في العربية يُكتب متّصلاً، فـ«ومجالس» ليست «مجالس» عند تقاطع المجموعات، والمسارُ المذكور **ثانياً** في عنوانٍ معطوف يفقد كلمةً فتهبط تغطيتُه من 1.00 إلى 0.75 — وهكذا هبط إشعارُ الإلغاء إلى مرتبة الدليل. (2) «لائحة» تبدأ بحرف لام الجرّ نفسِه، واختبارُ الجرّ كان يفحص **الحرفَ الأول**، فكلُّ إشعارٍ موضوعُه لائحةٌ صُنِّف عديمَ النوع: ثلاثُ لوائح لم تُنبَّه على تعديلاتها، والأنظمةُ التي ذكرتها تلك الإشعارات عرضاً جمعتها أدلّةً — **معكوساً تماماً، بسببِ حرفٍ واحد**. (3) مسارٌ لا يحمل عنوانُه كلمةَ نوعٍ أصلاً («إجراءات وشروط…»، «آلية العمل…») كان **يستحيل تنبيهُه** لأن شرطاً لا يمكن استيفاؤه ليس شرطاً صارماً بل شرطٌ غائب. **والحصيلةُ مقيسة**: 6 نتائج جديدة كلُّها موثَّقة، وصفرُ نتيجةٍ مسحوبة، و9 نسباتٍ كاذبة أُسقطت بقاعدة **أن العنوان الواحد له موضوعٌ واحد**: مسارٌ كلماتُه مجموعةٌ جزئية من مسارٍ آخر سُمّي أوفى منه ليس هو الموضوع. **وهذا يهمّ حيث يقلّ ظهورُه**: 196 مساراً تختصر إلى كلمتين مميِّزتين أو أقلّ، و43 إلى كلمةٍ واحدة، فـ«غطّى الإشعارُ 100% من العنوان» جملةٌ أضعفُ بكثيرٍ ممّا تُقرأ في رُبع المستودع.",
+  "new_findings": 6,
+  "withdrawn_findings": 0,
+  "false_attributions_suppressed": 9,
+  "tracks_at_risk_before": 50,
+  "tracks_at_risk_after": 61,
+  "of_which_from_a_stale_report_not_from_the_fix": 7,
+  "tracks_reducing_to_two_distinctive_words_or_fewer": 196,
+  "tracks_reducing_to_one": 43,
+  "left_deliberately_unchanged": "لم تُرفَع شرطيةُ النوع عن الإشعارات عديمة النوع: رفعُها كان يُثبت تنبيهاً كاذباً على نظام الاتصالات (إشعارٌ يعدِّل **اسمَ هيئة** لا نظاماً). فبقيت أدلّةً."
+ },
+ "a_caveat_that_reaches_every_layer_but_the_last": {
+  "note": "**طبقةُ التحفّظات مفرداتُها مغلقة**، وما لا تعرفه يسقط في `other` حيث لا ينظر سطحُ قراءة. فكُتب أخطرُ إفصاحٍ يستطيع المستودع إصداره — **أن النصّ ملغى** — فابتلعته الطبقةُ بلا كلمة. **والمفرداتُ التي تبتلع ما لا تفهمه تُبلِغ النجاحَ نفسَه سواءٌ فهمت أم لم تفهم.** وزيدَ الرمز `repealed` **أوّلَ المفردات** لأنه يعلو على سائرها. ثم تبيَّن خللٌ ثانٍ في السطح نفسه: `search_corpus_unified.py` كان **يحمل** التحفّظ المادّي في كل نتيجة **ولا يطبعه** — يظهر في `--json` وحده. **والتحفّظُ الذي يبلغ كلَّ طبقةٍ إلا الأخيرة لم يُفصَح به لأحد.**",
+  "surfaced_where_it_is_read": "search_corpus_unified.py — سطر ⚠ تحت كل نتيجة"
  }
 }

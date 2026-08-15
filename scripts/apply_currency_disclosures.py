@@ -64,6 +64,22 @@ TEMPLATE = (
     "نص هذا المسار **قد لا يكون محدَّثاً**. يُرفع هذا التنبيه فقط عند استيعاب النص المعدَّل من "
     "مصدر رسمي.")
 
+# Some instruments carry no type word at all — «إجراءات وشروط الترخيص لممارسة النقل العام
+# بالحافلات داخل المدن», «آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم». For those
+# the type was not matched, it was INAPPLICABLE, and the disclosure must not say otherwise:
+# writing «ونوعها ذاته (غير مُصنَّف)» would assert a comparison that never took place. The
+# claim is narrowed to what was actually established — the full name, and nothing else.
+TEMPLATE_UNTYPED = (
+    "**تنبيه سريان**: النسخة المُستوعبة هنا منشورة بتاريخ {edition}، وقد رصد تدقيق السريان "
+    "(scripts/audit_corpus_currency.py) {count}{noun} في أرشيف جريدة أم القرى **بعد** هذا "
+    "التاريخ، يحمل عنوانه اسم هذه الأداة بكل كلماته المميِّزة. وعنوان هذه الأداة لا يتضمن "
+    "كلمةَ نوعٍ (نظام/لائحة/قواعد/ضوابط/تنظيم)، فلم تُقابَل الأنواع أصلاً واستندت المطابقة "
+    "إلى الاسم كاملاً وحده: {notices}. **الإشعار ليس نص التعديل**، ولذلك لا يُدَّعى هنا شيء "
+    "عن مضمونه ولم يُعدَّل نص أي مادة استناداً إليه. والمطابقة على العنوان لا على المتن، وقد "
+    "يَرِد اسم أداة داخل عنوانٍ موضوعُه أداة مجاورة، فالصفحة الرسمية المذكورة هي الفيصل. "
+    "المُفصَح عنه هو أن نص هذا المسار **قد لا يكون محدَّثاً**. يُرفع هذا التنبيه فقط عند "
+    "استيعاب النص المعدَّل من مصدر رسمي.")
+
 # Said in the disclosure so the reader knows which distinction the match rested on: an
 # implementing regulation's amendment is not evidence about the law it implements.
 KIND_AR = {
@@ -121,11 +137,12 @@ def build_description(entry):
     tail = ""
     if len(notices) > len(shown):
         tail = "، وغيرها %d إشعاراً مسرودة في تقرير التدقيق" % (len(notices) - len(shown))
-    desc = TEMPLATE.format(
+    kind = KIND_AR.get(entry.get("instrument_type"))
+    desc = (TEMPLATE if kind else TEMPLATE_UNTYPED).format(
         edition=entry["edition_on_file"],
         count=_count(len(notices)),
         noun=_noun(len(notices)),
-        kind=KIND_AR.get(entry.get("instrument_type"), "غير مُصنَّف"),
+        kind=kind,
         notices="؛ ".join(parts) + tail)
     if not entry.get("anchor_is_exact_gazette_date", True):
         desc += CONVERTED_NOTE

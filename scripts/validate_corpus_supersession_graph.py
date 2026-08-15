@@ -60,7 +60,7 @@ GEN_SCRIPT = os.path.join(ROOT, "scripts", "gen_corpus_supersession_graph.py")
 VALIDATE_REGISTRY_SCRIPT = os.path.join(ROOT, "scripts", "validate_corpus_registry.py")
 
 RELATION_TYPES = {"repeals_full", "repeals_partial", "superseded_by",
-                  "repeals_full_deferred"}
+                  "repeals_full_deferred", "repealed_by"}
 
 REQUIRED_COLLISIONS = [
     {"social_insurance_law", "social_insurance_legacy_law"},
@@ -80,6 +80,8 @@ SPOT_CHECKS = [
     ("copyright_law_2026", "repeals_full", "copyright_law"),
     ("state_revenue_law_1448", "repeals_full_deferred", "state_revenue_law"),
     ("labor_law", "repeals_full", None),
+    # The first track the corpus holds that is itself repealed with no successor.
+    ("regional_tourism_development_councils_statute", "repealed_by", None),
 ]
 
 CHECKS: list[str] = []
@@ -173,6 +175,17 @@ def main() -> int:
     missing_commencement = [e.get("from_track_id") for e in edges
                             if e.get("relation") == "repeals_full_deferred"
                             and not (e.get("commencement_ar") or "").strip()]
+    # A `repealed_by` edge says the track itself no longer applies. That claim is only
+    # readable if the operative clause travels with it: an edge asserting a repeal without
+    # quoting the words that worked it is an assertion the reader cannot check.
+    bad_repealed = [e.get("from_track_id") for e in edges
+                    if e.get("relation") == "repealed_by"
+                    and not (e.get("repeal_effective_ar") or "").strip()]
+    check("[6c] repealed_by edges quote the operative clause...",
+          not bad_repealed,
+          "a repeal the reader cannot check is not a record of one"
+          if not bad_repealed else str(bad_repealed))
+
     check("[6b] repeals_full_deferred edges carry commencement_ar...",
           not missing_commencement,
           "A repeal whose commencement is in the future must say so verbatim"

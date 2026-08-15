@@ -58,6 +58,16 @@ OUT_DIR = os.path.join(ROOT, "data", "corpus_caveat_layer")
 # code -> (class, matcher over the disclosure key with the track prefix removed,
 #          one-line Arabic statement of what it means for a reader)
 MATERIAL = [
+    # First in the list because it outranks every other caveat: the others qualify
+    # how a text may be cited, this one says it may not be cited as law at all.
+    # It was added the day the corpus first recorded a track of its own as repealed,
+    # and the omission was not theoretical — the disclosure was written, the layer
+    # matched none of its patterns, and the most consequential statement the corpus
+    # can make about a text fell through into `other`, where no reading surface
+    # looks. A vocabulary that silently absorbs what it does not recognise reports
+    # the same success whether it understood the input or not.
+    ("repealed", re.compile(r"repealed_in_full|repealed_by|no_longer_in_force"),
+     "هذا النصّ **ملغى** ولا يُستشهد به بوصفه سارياً — وبيان الإلغاء وتاريخه في إفصاح المسار"),
     ("visual_reading", re.compile(r"adjudicated_by_visual_reading"),
      "سجلات من هذا المسار قُرئت من صورة الصفحة وطوبقت بعين إنسان لا بقناة نصّ آلية"),
     ("encoding_damage", re.compile(r"letter_transposition|pdf_extraction|encoding"),

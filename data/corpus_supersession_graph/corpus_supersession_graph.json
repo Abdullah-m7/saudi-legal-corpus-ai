@@ -8,13 +8,15 @@
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument.",
+    "repealed_by": "track A is ITSELF repealed outright by a later instrument that puts nothing in its place. Distinct from `superseded_by`, where a successor exists and is the text to read instead: here there is no successor, so the track's own text is the last word on a rule that no longer applies. Read `repeal_effective_ar` for the verbatim operative clause.",
     "repeals_full_deferred": "track A's own text fully repeals a prior instrument, BUT track A has not commenced yet — it is published and not yet in force, so the target is STILL THE LAW IN FORCE TODAY. Read `commencement_ar` on the edge for the verbatim commencement clause. Treating such an edge as a completed repeal would retire a live law."
   },
-  "edge_count": 133,
+  "edge_count": 134,
   "relation_counts": {
     "repeals_full": 120,
     "repeals_partial": 10,
     "superseded_by": 1,
+    "repealed_by": 1,
     "repeals_full_deferred": 2
   },
   "edges": [
@@ -1288,6 +1290,17 @@
       "affected_articles": null,
       "note": "state_revenue_law's own المادة الثلاثون (article 30) states verbatim: «يحل هذا النظام محل نظام جباية أموال الدولة، الصادر بالإرادة الملكية رقم (41/3/2) وتاريخ 12/4/1359هـ، والمبلغ بالأمر السامي رقم (5732) في 4/5/1359هـ، ويلغي كل ما يتعارض معه من أحكام.». The named predecessor is not itself ingested as a corpus track. Surfaced by scripts/audit_unrecorded_supersessions.py, which found the graph carried no edge for this track, and classified by hand from the clause itself.",
       "source_ref": "data/state_revenue_arabic_legal_llm/state_revenue_law_legal_llm_001_032.json (article 30)"
+    },
+    {
+      "from_track_id": "regional_tourism_development_councils_statute",
+      "relation": "repealed_by",
+      "target_track_id": null,
+      "target_description_ar": "قرار مجلس الوزراء رقم (471) وتاريخ 10/7/1447هـ — إلغاء مجلس التنمية السياحي ومجالس التنمية السياحية في المناطق",
+      "target_decree": "Council of Ministers Decision 471, 10/7/1447H (published in Umm Al-Qura 9 January 2026)",
+      "affected_articles": null,
+      "note": "The repealing decision is quoted verbatim above from its own gazette page (uqn.gov.sa/details?p=28774). Identity of the repealed instrument rests on THREE independent points, none of which is the decree number the track itself never recorded: (1) the decision names «تنظيم مجالس التنمية السياحية في المناطق» word for word, which is this track's title; (2) it describes the councils as established by «المادة (الثانية) من تنظيمها», and article 2 of the text held here IS the establishing article — «ينشأ في كل منطقة مجلس للتنمية السياحية»; (3) it dates the repealed statute to Council of Ministers Decision 520 of 11/9/1443H, and this track was gazetted on 21/9/1443H — the ordinary ten-day lag between decision and publication. NOTHING REPLACES IT: the decision abolished the councils and created no successor, so there is no later text to read instead, which is why this is not `superseded_by`. HOW IT WAS FOUND: not by the currency audit, which classed the notice as a lead because its title names no instrument type — «إلغاء مجلس ...» names a BODY — but by regenerating the 423 generators the QA gate's idempotence phase had never covered, one of which withdrew a stale warning and exposed the page behind it.",
+      "source_ref": "sources/regional_tourism_development_councils_statute/official_source/regional_tourism_development_councils_statute_official_source.json (legal_status_ar, known_unresolved_discrepancies)",
+      "repeal_effective_ar": "ثانياً: إلغاء مجالس التنمية السياحية في المناطق المنشأة بموجب المادة (الثانية) من تنظيمها الصادر بقرار مجلس الوزراء رقم (520) وتاريخ 1443/9/11هـ، وإلغاء تنظيمها الصادر بالقرار نفسه."
     },
     {
       "from_track_id": "state_revenue_law_1448",

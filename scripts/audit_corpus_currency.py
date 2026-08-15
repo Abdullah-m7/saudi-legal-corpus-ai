@@ -121,13 +121,30 @@ TYPE_WORDS = [
 ]
 _TYPE_OF = {w: t for t, ws in TYPE_WORDS for w in ws}
 
+# The forms above that are already INSIDE an "of the ..." phrase. The vocabulary
+# enumerates them, so the genitive test names them instead of testing the first
+# LETTER of a word — and that distinction is not pedantic. «لائحة» begins with
+# the same letter as the linker «لـ», so a first-letter test read every notice
+# whose subject IS a regulation as naming no instrument type at all. Three
+# regulations were consequently never warned about their own amendment notices,
+# while the LAWS those notices merely mentioned collected them as leads: exactly
+# backwards, and produced by one character of orthographic coincidence.
+GENITIVE_TYPE_FORMS = {"لنظام", "بنظام"}
+
 
 def instrument_type(title):
     """The type of the instrument a TRACK title names, or None.
 
     The first type word wins: «اللائحة التنفيذية لنظام الجمعيات» is a REGULATION that happens
-    to name the law it implements."""
+    to name the law it implements.
+
+    A genitive form does NOT win, it disqualifies: «آلية العمل التنفيذية لنظام القضاء» is not
+    a LAW, it is an untyped instrument that names the law it serves. Reading it as a LAW made
+    it permanently unflaggable — its own amendment notice, which names it in full, could never
+    satisfy a type test the track had no business being subject to."""
     for w in norm_ar(title).split():
+        if w in GENITIVE_TYPE_FORMS:
+            return None
         t = _TYPE_OF.get(w)
         if t:
             return t
@@ -150,6 +167,7 @@ def notice_subject_types(title):
         base = w[1:] if coordinated else w
         t = _TYPE_OF.get(base)
         if not t:
+            genitive = genitive or w in GENITIVE_TYPE_FORMS
             continue
         if not head:
             head = True
@@ -158,7 +176,7 @@ def notice_subject_types(title):
             # the two laws it names are what the mechanism is FOR. The subject there is an
             # untyped noun, so the notice classifies as type-less and becomes a lead rather
             # than a finding.
-            if w.startswith(("ل", "ب")):
+            if w in GENITIVE_TYPE_FORMS:
                 genitive = True
                 continue
             out.add(t)
@@ -172,12 +190,35 @@ def notice_subject_types(title):
         elif coordinated:
             continue
         else:
-            genitive = genitive or w.startswith(("ل", "ب"))
+            genitive = genitive or w in GENITIVE_TYPE_FORMS
     return out
 
 
 def toks(s):
     return {w for w in norm_ar(s).split() if len(w) > 2 and w not in STOP}
+
+
+def shared_words(notice_toks, track_toks):
+    """The track's own words that the notice names.
+
+    Arabic coordination is written attached. A notice that abolishes two bodies
+    writes the second «ومجالس», and «ومجالس» is not «مجالس» to a set intersection —
+    so a track named as the SECOND item of a coordinated title silently loses a
+    word, its cover falls below MIN_TRACK_COVER, and a finding is demoted to a
+    lead. That is how «إلغاء مجلس التنمية السياحي ومجالس التنمية السياحية في
+    المناطق» — a Council of Ministers decision repealing a statute this corpus
+    holds — scored 0.75 instead of 1.00.
+
+    The waw is stripped ONLY when what remains is a word THIS TRACK's own title
+    uses. The rule therefore cannot invent a match; it can only recover one the
+    orthography hid."""
+    out = set()
+    for w in notice_toks:
+        if w in track_toks:
+            out.add(w)
+        elif w.startswith("و") and len(w) > 3 and w[1:] in track_toks:
+            out.add(w[1:])
+    return out
 
 
 HIJRI_RE = re.compile(r"^\s*(\d{1,2})\s*/\s*(\d{1,2})\s*/\s*(\d{4})\s*$")
@@ -305,6 +346,7 @@ def main(index_path):
                 or ACTOR_COLON_RE.search(title)):
             continue
         subject_types = notice_subject_types(title)
+        hits = []
         for tid, (tt, tdate, exact, ttype) in T.items():
             if not tt:
                 continue
@@ -312,11 +354,19 @@ def main(index_path):
             # الأعلى للفضاء) وتعديل اسم هيئة الاتصالات وتقنية المعلومات» renames an
             # AUTHORITY, not a law — is not evidence about any particular instrument, so it
             # is recorded as a lead rather than asserted.
-            type_ok = bool(ttype) and ttype in subject_types
+            #
+            # A TRACK that names no instrument type is the mirror case, and it must not be
+            # judged by the same test: «إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات
+            # داخل المدن» and «آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم» carry
+            # no type word, so a test of the form "the notice's type equals the track's" can
+            # never be satisfied and those tracks were unflaggable in principle — including
+            # against notices that name them word for word. A test that cannot be satisfied
+            # is not a strict test, it is an absent one.
+            type_ok = True if not ttype else (ttype in subject_types)
             if ttype and not type_ok:
                 if subject_types:
                     continue   # the notice names a type, and it is not this track's
-            shared = nt & tt
+            shared = shared_words(nt, tt)
             if len(shared) < MIN_SHARED:
                 continue
             if len(shared) / min(len(nt), len(tt)) < MIN_RATIO:
@@ -338,12 +388,25 @@ def main(index_path):
                     continue
                 if (a - b).days < CONVERSION_GUARD_DAYS:
                     continue
+            hits.append((tid, shared, cover, type_ok, ndate))
+
+        # ONE notice has ONE subject. When several tracks match, the one whose words are a
+        # strict SUBSET of another's is not that subject: «تعديل مادة من لائحة اللجان
+        # الوطنية والقطاعية في الغرف التجارية» names {الغرف، التجارية} of the Chambers of
+        # Commerce Implementing Regulation and those two words PLUS {اللجان، الوطنية،
+        # القطاعية} of the National and Sectoral Committees Regulation. The second is the
+        # subject; the first merely shares its every word. This matters most where it is
+        # least visible: 196 of the corpus's tracks reduce to two distinctive words or
+        # fewer, and 43 to a single one, so "the notice covers 100% of the title" is a far
+        # weaker statement for a quarter of the corpus than it reads as.
+        for tid, shared, cover, type_ok, ndate in hits:
+            outranked = any(other > shared for _t, other, _c, _k, _d in hits)
             # Full cover means the notice names EVERY distinctive word of the track's
             # title. Anything less is set aside rather than dropped: it is reported under
             # partial_title_matches_not_flagged so a reader can adjudicate it, because a
             # match this audit is not sure enough to assert is still a lead, and silently
             # discarding it would leave no trace that anything was seen at all.
-            if cover >= MIN_TRACK_COVER and type_ok:
+            if cover >= MIN_TRACK_COVER and type_ok and not outranked:
                 at_risk.setdefault(tid, []).append((ndate, uid, title))
             else:
                 partial.setdefault(tid, []).append((ndate, uid, title, round(cover, 2)))

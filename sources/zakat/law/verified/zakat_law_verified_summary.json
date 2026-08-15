@@ -215,6 +215,10 @@
     {
       "article_key": "zakat_law_gstc_guide_not_used_for_operative_text",
       "description": "The GSTC explanatory guide saved to scratchpad (gstc_guide.txt / GSTC_explanatory_guide_base_law.pdf) covers the PRIOR/predecessor zakat regime and was used only as background context during research, never as a source for any of this track's 128 operative article texts, all of which rest solely on ZATCA's own 1445H-regulation PDF."
+    },
+    {
+      "article_key": "zakat_law_pdf_extraction_letter_transposition",
+      "description": "**تحفُّظ على سلامة النص**: يحمل 3 سجلاً من 128 في هذا المسار أثر انقلاب رابطة لام-ألف في النص العربي — «االطلاع» موضع «الاطلاع»، و«اإلدارية» موضع «الإدارية»، و«إعالن» موضع «إعلان»، و«الالزمة» موضع «اللازمة».\n\n**ومنشأ الخلل لم يُختبر في هذا المسار**: لا يستشهد المسار بملف PDF بعينه يمكن إعادة جلبه واستخراجه، فلا يُقال هنا أهو في المصدر أم في القراءة. وقد ثبت في مسارين آخرين من مسارات هذا المستودع أن الطبقة النصية للملف الرسمي هي التي تحمله (scripts/verify_pdf_source_encoding.py)، وهي قرينة لا دليل على هذا المسار بعينه.\n\n**ولم يُصحَّح حرف واحد.** الانقلاب **يُحوِّل كلمات عربية صحيحة إلى كلمات عربية صحيحة أخرى**: «العالقة» (المُعلَّقة) قلبُ «العلاقة»، و«عالمة» (التي تعلم) قلبُ «علامة»، و«صالحية» قلبُ «صلاحية» — و«الشوائب **العالقة** ببدن السفينة» و«القضايا **العالقة** لدى المحامين» صوابٌ يقول ما يعنيه. فلا قاعدةَ آليةٌ تفصل العطب عن الصواب؛ الفصل يحتاج الجملة لا الرسم. وجُرِّب إصلاحٌ مشروطٌ بأن يكون الشكل المُصحَّح مشهوداً في نصوص المستودع السليمة فأخفق: الاستخراج يشطر الكلمة أيضاً («خ اال المدة» وأصلها «خلال المدة»)، وبعض «الشواهد» عطبٌ مماثل تسرَّب إلى مسارٍ آخر.\n\nالمُفصَح عنه أن **رسم بعض الكلمات في هذه السجلات لا يطابق الرسم الصحيح** وإن بقي المعنى مقروءاً، فلا يصح النسخ الحرفي منها قبل المقابلة بالصفحة المطبوعة. ورفعُ هذا التحفُّظ يكون بنسخٍ بشريٍّ من الصفحة المُصيَّرة، لا بقاعدة ولا بإعادة استخراج. (رصدَه scripts/audit_corpus_text_integrity.py)"
     }
   ],
   "source_artifact": "sources/zakat/law/official_source/zakat_law_official_source.json"

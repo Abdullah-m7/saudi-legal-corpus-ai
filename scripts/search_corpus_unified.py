@@ -241,6 +241,15 @@ def main():
         print("%2d. [%s] %s — %s  (score=%d)"
               % (i, h["law_title_ar"], h["law_component"], unit, h["score"]))
         print("    %s  |  %s" % (h["retrieval_title_ar"], h["article_path"]))
+        # The MATERIAL caveat is the one that changes whether the text may be cited
+        # at all, so it is printed here and not only carried in --json. It was
+        # carried and not printed until a repealed statute came back from this very
+        # search reading exactly like a statute in force: the disclosure existed, the
+        # layer held it, the joined row carried it, and the surface a human reads
+        # showed the text and nothing else. A caveat that reaches every layer except
+        # the last one has not been disclosed to anybody.
+        if h.get("caveat_summary_ar"):
+            print("    ⚠  %s" % h["caveat_summary_ar"])
         if h.get("amendment_note_ar"):
             print("    ⏱  %s" % h["amendment_note_ar"])
 

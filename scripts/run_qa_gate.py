@@ -10,10 +10,15 @@ Three phases, all mandatory:
       A validator may only be skipped by listing it in ``EXCLUDED`` with a
       written reason; anything else that fails, fails the gate.
 
-  [2] IDEMPOTENCE — re-runs the registered deterministic generators and then
-      requires the git working tree to be byte-identical to before (tracked
-      files). This catches "generator edited but outputs not regenerated" and
-      any non-deterministic generator drift.
+  [2] IDEMPOTENCE — re-runs EVERY ``scripts/gen_*.py`` and then requires the git
+      working tree to be byte-identical to before (tracked files). This catches
+      "generator edited but outputs not regenerated" and any non-deterministic
+      generator drift. Like phase 1, coverage is strict by construction: the
+      generators are discovered from the filesystem, and one may be skipped only
+      by appearing in ``EXCLUDED_GENERATORS`` with a written reason. The order in
+      which the corpus-wide derived layers run cannot be discovered, so it is
+      declared in ``DERIVED_LAYER_ORDER`` — and a layer missing from it fails the
+      phase rather than running wherever the alphabet puts it.
 
   [3] TESTS — the full pytest suite (skippable with --no-tests when the caller
       already runs pytest separately, e.g. as its own CI step).
@@ -40,402 +45,72 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # a reason string.
 EXCLUDED: dict[str, str] = {}
 
-# Deterministic generators re-run in phase 2. Each must be idempotent: running
-# it on a clean tree must produce zero tracked-file changes.
-IDEMPOTENT_GENERATORS = [
-    "scripts/gen_pdpl_arabic_law_verified.py",
-    "scripts/gen_pdpl_arabic_law_legal_llm.py",
-    "scripts/gen_pdpl_implementing_regulation_arabic_cleaned.py",
-    "scripts/gen_pdpl_implementing_regulation_arabic_verified.py",
-    "scripts/gen_pdpl_implementing_regulation_arabic_legal_llm.py",
-    "scripts/gen_investment_law_verified.py",
-    "scripts/gen_investment_law_legal_llm.py",
-    "scripts/gen_investment_regulation_verified.py",
-    "scripts/gen_investment_regulation_legal_llm.py",
-    "scripts/gen_civil_transactions_law_verified.py",
-    "scripts/gen_civil_transactions_law_legal_llm.py",
-    "scripts/gen_gtpl_law_track.py",
-    "scripts/gen_gtpl_regulation_track.py",
-    "scripts/gen_labor_law_track.py",
-    "scripts/gen_labor_regulation_track.py",
-    "scripts/gen_labor_annex1_track.py",
-    "scripts/gen_labor_annex34_tracks.py",
-    "scripts/gen_labor_annex2_track.py",
-    "scripts/gen_labor_annex5_track.py",
-    "scripts/gen_evidence_law_track.py",
-    "scripts/gen_evidence_companions_tracks.py",
-    "scripts/gen_personal_status_tracks.py",
-    "scripts/gen_sharia_procedure_law_track.py",
-    "scripts/gen_sharia_procedure_regulation_track.py",
-    "scripts/gen_criminal_procedure_law_track.py",
-    "scripts/gen_criminal_procedure_regulation_track.py",
-    "scripts/gen_enforcement_law_track.py",
-    "scripts/gen_enforcement_regulation_track.py",
-    "scripts/gen_judiciary_law_track.py",
-    "scripts/gen_board_of_grievances_law_track.py",
-    "scripts/gen_law_practice_law_track.py",
-    "scripts/gen_law_practice_regulation_track.py",
-    "scripts/gen_commercial_courts_law_track.py",
-    "scripts/gen_commercial_courts_regulation_track.py",
-    "scripts/gen_bankruptcy_law_track.py",
-    "scripts/gen_bankruptcy_regulation_track.py",
-    "scripts/gen_bankruptcy_case_rules_track.py",
-    "scripts/gen_judicial_costs_law_track.py",
-    "scripts/gen_judicial_costs_regulation_track.py",
-    "scripts/gen_arbitration_law_track.py",
-    "scripts/gen_arbitration_regulation_track.py",
-    "scripts/gen_commercial_papers_law_track.py",
-    "scripts/gen_commercial_register_law_track.py",
-    "scripts/gen_trade_names_law_track.py",
-    "scripts/gen_commercial_agencies_law_track.py",
-    "scripts/gen_chambers_of_commerce_law_track.py",
-    "scripts/gen_commercial_books_law_track.py",
-    "scripts/gen_aml_law_track.py",
-    "scripts/gen_tawtheeq_law_track.py",
-    "scripts/gen_tawtheeq_regulation_track.py",
-    "scripts/gen_real_estate_registration_law_track.py",
-    "scripts/gen_real_estate_registration_regulation_track.py",
-    "scripts/gen_real_estate_mortgage_law_track.py",
-    "scripts/gen_real_estate_finance_law_track.py",
-    "scripts/gen_real_estate_units_law_track.py",
-    "scripts/gen_real_estate_units_regulation_track.py",
-    "scripts/gen_foreign_ownership_law_track.py",
-    "scripts/gen_municipal_realestate_law_track.py",
-    "scripts/gen_municipal_realestate_regulation_track.py",
-    "scripts/gen_gcc_ownership_law_track.py",
-    "scripts/gen_terrorism_law_track.py",
-    "scripts/gen_terrorism_regulation_track.py",
-    "scripts/gen_juveniles_law_track.py",
-    "scripts/gen_juveniles_regulation_track.py",
-    "scripts/gen_whistleblower_law_track.py",
-    "scripts/gen_judicial_inspection_regulation_track.py",
-    "scripts/gen_qismah_regulation_track.py",
-    "scripts/gen_sulook_regulation_track.py",
-    "scripts/gen_aawan_regulation_track.py",
-    "scripts/gen_muslaha_regulation_track.py",
-    "scripts/gen_iflas_hudud_regulation_track.py",
-    "scripts/gen_judicial_documents_regulation_track.py",
-    "scripts/gen_bankruptcy_fees_regulation_track.py",
-    "scripts/gen_enforcement_providers_regulation_track.py",
-    "scripts/gen_alimony_fund_regulation_track.py",
-    "scripts/gen_judiciary_bog_mechanism_track.py",
-    "scripts/gen_documentation_settlement_regulation_track.py",
-    "scripts/gen_mosalaha_center_regulation_track.py",
-    "scripts/gen_medical_reports_regulation_track.py",
-    "scripts/gen_marriage_non_saudi_regulation_track.py",
-    "scripts/gen_state_funded_lawyer_regulation_track.py",
-    "scripts/gen_lessor_repossession_regulation_track.py",
-    "scripts/gen_elitigation_guide_regulation_track.py",
-    "scripts/gen_judicial_training_center_guide_track.py",
-    "scripts/gen_judgment_objection_methods_regulation_track.py",
-    "scripts/gen_real_estate_expropriation_law_track.py",
-    "scripts/gen_marriage_contract_hearing_regulation_track.py",
-    "scripts/gen_anti_bribery_law_track.py",
-    "scripts/gen_basic_law_of_governance_track.py",
-    "scripts/gen_anti_cyber_crime_law_track.py",
-    "scripts/gen_anti_harassment_law_track.py",
-    "scripts/gen_anti_trafficking_law_track.py",
-    "scripts/gen_council_of_ministers_law_track.py",
-    "scripts/gen_regions_law_track.py",
-    "scripts/gen_electronic_transactions_law_track.py",
-    "scripts/gen_allegiance_commission_law_track.py",
-    "scripts/gen_shura_council_law_track.py",
-    "scripts/gen_copyright_law_track.py",
-    "scripts/gen_telecommunications_law_track.py",
-    "scripts/gen_sama_law_track.py",
-    "scripts/gen_banking_control_law_track.py",
-    "scripts/gen_capital_market_law_track.py",
-    "scripts/gen_competition_law_track.py",
-    "scripts/gen_payment_systems_law_track.py",
-    "scripts/gen_mining_investment_law_track.py",
-    "scripts/gen_trademark_law_track.py",
-    "scripts/gen_anti_concealment_law_track.py",
-    "scripts/gen_insurance_control_law_track.py",
-    "scripts/gen_ecommerce_law_track.py",
-    "scripts/gen_vat_law_track.py",
-    "scripts/gen_franchise_law_track.py",
-    "scripts/gen_civil_aviation_law_track.py",
-    "scripts/gen_anti_narcotics_law_track.py",
-    "scripts/gen_traffic_law_track.py",
-    "scripts/gen_environmental_law_track.py",
-    "scripts/gen_income_tax_law_track.py",
-    "scripts/gen_civil_service_law_track.py",
-    "scripts/gen_social_insurance_law_track.py",
-    "scripts/gen_social_insurance_legacy_law_track.py",
-    "scripts/gen_zakat_law_track.py",
-    "scripts/gen_patent_law_track.py",
-    "scripts/gen_customs_law_track.py",
-    "scripts/gen_customs_regulation_track.py",
-    "scripts/gen_anti_fraud_law_track.py",
-    "scripts/gen_finance_companies_law_track.py",
-    "scripts/gen_cooperative_health_insurance_law_track.py",
-    "scripts/gen_healthcare_professions_law_track.py",
-    "scripts/gen_finance_lease_law_track.py",
-    "scripts/gen_maritime_commercial_law_track.py",
-    "scripts/gen_gcc_anti_dumping_law_track.py",
-    "scripts/gen_accounting_auditing_law_track.py",
-    "scripts/gen_nazaha_law_track.py",
-    "scripts/gen_awqaf_law_track.py",
-    "scripts/gen_saudi_engineers_law_track.py",
-    "scripts/gen_municipal_councils_law_track.py",
-    "scripts/gen_press_law_track.py",
-    "scripts/gen_engineering_practice_law_track.py",
-    "scripts/gen_nationality_law_track.py",
-    "scripts/gen_residency_law_track.py",
-    "scripts/gen_civil_status_law_track.py",
-    "scripts/gen_food_law_track.py",
-    "scripts/gen_health_system_law_track.py",
-    "scripts/gen_domestic_labor_regulation_track.py",
-    "scripts/gen_travel_documents_law_track.py",
-    "scripts/gen_cybersecurity_authority_law_track.py",
-    "scripts/gen_cybersecurity_authority_enablers_track.py",
-    "scripts/gen_premium_residency_law_track.py",
-    "scripts/gen_travel_documents_regulation_track.py",
-    "scripts/gen_nationality_regulation_track.py",
-    "scripts/gen_health_system_regulation_track.py",
-    "scripts/gen_food_regulation_track.py",
-    "scripts/gen_electricity_law_track.py",
-    "scripts/gen_water_law_track.py",
-    "scripts/gen_vat_regulation_track.py",
-    "scripts/gen_income_tax_regulation_track.py",
-    "scripts/gen_agriculture_law_track.py",
-    "scripts/gen_competition_regulation_track.py",
-    "scripts/gen_aml_regulation_track.py",
-    "scripts/gen_patent_regulation_track.py",
-    "scripts/gen_ecommerce_regulation_track.py",
-    "scripts/gen_franchise_regulation_track.py",
-    "scripts/gen_traffic_regulation_track.py",
-    "scripts/gen_environmental_inspection_audit_reg_track.py",
-    "scripts/gen_environmental_violations_penalties_reg_track.py",
-    "scripts/gen_environmental_wildlife_hunting_reg_track.py",
-    "scripts/gen_environmental_permits_reg_track.py",
-    "scripts/gen_environmental_air_quality_reg_track.py",
-    "scripts/gen_environmental_service_providers_reg_track.py",
-    "scripts/gen_environmental_fees_reg_track.py",
-    "scripts/gen_rett_law_track.py",
-    "scripts/gen_universities_law_track.py",
-    "scripts/gen_privatization_law_track.py",
-    "scripts/gen_antiquities_heritage_law_track.py",
-    "scripts/gen_child_protection_law_track.py",
-    "scripts/gen_protection_from_abuse_law_track.py",
-    "scripts/gen_associations_ngo_law_track.py",
-    "scripts/gen_audiovisual_media_law_track.py",
-    "scripts/gen_sports_law_track.py",
-    "scripts/gen_anti_smoking_law_track.py",
-    "scripts/gen_weapons_ammunition_law_track.py",
-    "scripts/gen_prison_detention_law_track.py",
-    "scripts/gen_civil_defense_law_track.py",
-    "scripts/gen_cooperative_societies_law_track.py",
-    "scripts/gen_building_code_law_track.py",
-    "scripts/gen_product_safety_law_track.py",
-    "scripts/gen_standards_quality_law_track.py",
-    "scripts/gen_disability_rights_law_track.py",
-    "scripts/gen_tourism_law_track.py",
-    "scripts/gen_tourism_travel_services_reg_track.py",
-    "scripts/gen_hospitality_mgmt_reg_track.py",
-    "scripts/gen_hospitality_facility_reg_track.py",
-    "scripts/gen_tourist_visa_reg_track.py",
-    "scripts/gen_environmental_noise_reg_track.py",
-    "scripts/gen_environmental_protected_areas_reg_track.py",
-    "scripts/gen_environmental_emergency_response_reg_track.py",
-    "scripts/gen_product_safety_regulation_track.py",
-    "scripts/gen_handicrafts_law_track.py",
-    "scripts/gen_medical_devices_law_track.py",
-    "scripts/gen_museums_authority_licensing_regulation_track.py",
-    "scripts/gen_heritage_authority_licensing_regulation_track.py",
-    "scripts/gen_literature_publishing_translation_authority_licensing_regulation_track.py",
-    "scripts/gen_film_authority_licensing_regulation_track.py",
-    "scripts/gen_fashion_authority_licensing_regulation_track.py",
-    "scripts/gen_music_authority_licensing_regulation_track.py",
-    "scripts/gen_culinary_arts_authority_licensing_regulation_track.py",
-    "scripts/gen_architecture_design_authority_licensing_regulation_track.py",
-    "scripts/gen_visual_arts_authority_licensing_regulation_track.py",
-    "scripts/gen_tourism_consultancy_regulation_track.py",
-    "scripts/gen_tourism_activity_inspection_regulation_track.py",
-    "scripts/gen_duty_free_markets_rules_track.py",
-    "scripts/gen_driving_schools_regulation_track.py",
-    "scripts/gen_railway_violations_committee_rules_track.py",
-    "scripts/gen_public_transport_users_rights_mechanism_track.py",
-    "scripts/gen_gcc_pesticides_regulation_track.py",
-    "scripts/gen_military_industries_rnd_regulation_track.py",
-    "scripts/gen_international_bus_transport_regulation_track.py",
-    "scripts/gen_vehicle_periodic_inspection_regulation_track.py",
-    "scripts/gen_health_specialties_membership_regulation_track.py",
-    "scripts/gen_disability_social_programs_regulation_track.py",
-    "scripts/gen_vehicle_damage_assessment_rules_track.py",
-    "scripts/gen_tourist_accommodation_facilities_regulation_track.py",
-    "scripts/gen_ngo_council_regulation_track.py",
-    "scripts/gen_health_holding_company_statute_track.py",
-    "scripts/gen_family_funds_rules_track.py",
-    "scripts/gen_airports_economic_regulation_track.py",
-    "scripts/gen_valuation_profession_conduct_rules_track.py",
-    "scripts/gen_nazara_works_regulation_track.py",
-    "scripts/gen_ballast_water_regulation_track.py",
-    "scripts/gen_sez_kaec_regulation_track.py",
-    "scripts/gen_sez_jazan_regulation_track.py",
-    "scripts/gen_sez_raskhair_regulation_track.py",
-    "scripts/gen_charitable_societies_council_regulation_track.py",
-    "scripts/gen_customs_procedures_controls_track.py",
-    "scripts/gen_social_security_regulation_track.py",
-    "scripts/gen_revenue_sharing_rules_track.py",
-    "scripts/gen_freight_broker_logistics_regulation_track.py",
-    "scripts/gen_property_ownership_committees_rules_track.py",
-    "scripts/gen_disability_nongov_social_facilities_regulation_track.py",
-    "scripts/gen_free_zone_employees_treatment_rules_track.py",
-    "scripts/gen_inspection_control_seizure_rules_track.py",
-    "scripts/gen_ip_services_licensing_rules_track.py",
-    "scripts/gen_deposit_zones_rules_track.py",
-    "scripts/gen_air_transport_services_economic_regulation_track.py",
-    "scripts/gen_privatization_governing_rules_track.py",
-    "scripts/gen_ground_handling_air_cargo_economic_regulation_track.py",
-    "scripts/gen_museums_regulation_track.py",
-    "scripts/gen_private_universities_regulation_track.py",
-    "scripts/gen_gcc_road_transport_law_track.py",
-    "scripts/gen_marpol_regulation_track.py",
-    "scripts/gen_securities_disputes_rules_track.py",
-    "scripts/gen_state_realestate_disposal_regulation_track.py",
-    "scripts/gen_securities_depository_markets_regulation_track.py",
-    "scripts/gen_capital_adequacy_rules_track.py",
-    "scripts/gen_mergers_acquisitions_regulation_track.py",
-    "scripts/gen_taxi_activity_regulation_track.py",
-    "scripts/gen_zakat_tax_customs_committees_rules_track.py",
-    "scripts/gen_official_communications_records_regulation_track.py",
-    "scripts/gen_housing_support_regulation_track.py",
-    "scripts/gen_special_purpose_entities_rules_track.py",
-    "scripts/gen_medical_devices_regulation_track.py",
-    "scripts/gen_financial_institutions_resolution_law_track.py",
-    "scripts/gen_trade_remedies_law_track.py",
-    "scripts/gen_trade_remedies_regulation_track.py",
-    "scripts/gen_financial_fraud_law_track.py",
-    "scripts/gen_state_property_lease_law_track.py",
-    "scripts/gen_state_property_lease_regulation_track.py",
-    "scripts/gen_job_discipline_law_track.py",
-    "scripts/gen_statistics_law_track.py",
-    "scripts/gen_anti_begging_law_track.py",
-    "scripts/gen_security_cameras_law_track.py",
-    "scripts/gen_antiquities_heritage_regulation_track.py",
-    "scripts/gen_meteorology_law_track.py",
-    "scripts/gen_handicrafts_regulation_track.py",
-    "scripts/gen_donations_collection_regulation_track.py",
-    "scripts/gen_falcon_center_statute_track.py",
-    "scripts/gen_geographical_indications_regulation_track.py",
-    "scripts/gen_vacant_properties_fees_regulation_track.py",
-    "scripts/gen_waqf_investment_products_regulation_track.py",
-    "scripts/gen_insurance_disputes_committees_rules_track.py",
-    "scripts/gen_entertainment_activities_law_track.py",
-    "scripts/gen_standards_quality_regulation_track.py",
-    "scripts/gen_disability_rights_regulation_track.py",
-    "scripts/gen_anti_smoking_regulation_track.py",
-    "scripts/gen_general_education_law_track.py",
-    "scripts/gen_credit_information_law_track.py",
-    "scripts/gen_real_estate_brokerage_law_track.py",
-    "scripts/gen_state_revenue_law_track.py",
-    "scripts/gen_etec_law_track.py",
-    "scripts/gen_einvoicing_regulation_track.py",
-    "scripts/gen_pdpl_cross_border_transfer_regulation_track.py",
-    "scripts/gen_sdaia_organizational_arrangements_track.py",
-    "scripts/gen_trade_names_regulation_track.py",
-    "scripts/gen_commercial_agencies_regulation_track.py",
-    "scripts/gen_accounting_auditing_regulation_track.py",
-    "scripts/gen_commercial_register_regulation_track.py",
-    "scripts/gen_real_estate_brokerage_regulation_track.py",
-    "scripts/gen_foreign_ownership_regulation_track.py",
-    "scripts/gen_anti_fraud_regulation_track.py",
-    "scripts/gen_rett_regulation_track.py",
-    "scripts/gen_anti_narcotics_regulation_track.py",
-    "scripts/gen_anti_concealment_regulation_track.py",
-    "scripts/gen_privatization_regulation_track.py",
-    "scripts/gen_chambers_of_commerce_regulation_track.py",
-    "scripts/gen_state_revenue_regulation_track.py",
-    "scripts/gen_weapons_ammunition_regulation_track.py",
-    "scripts/gen_engineering_practice_regulation_track.py",
-    "scripts/gen_allegiance_commission_regulation_track.py",
-    "scripts/gen_social_insurance_regulation_track.py",
-    "scripts/gen_saudi_engineers_regulation_track.py",
-    "scripts/gen_child_protection_regulation_track.py",
-    "scripts/gen_whistleblower_regulation_track.py",
-    "scripts/gen_social_insurance_legacy_regulation_track.py",
-    "scripts/gen_protection_from_abuse_regulation_track.py",
-    "scripts/gen_healthcare_professions_regulation_track.py",
-    "scripts/gen_shura_council_internal_regulation_track.py",
-    "scripts/gen_civil_service_regulation_track.py",
-    "scripts/gen_associations_ngo_regulation_track.py",
-    "scripts/gen_electronic_transactions_regulation_track.py",
-    "scripts/gen_electricity_regulation_track.py",
-    "scripts/gen_maritime_commercial_regulation_track.py",
-    "scripts/gen_agriculture_regulation_track.py",
-    "scripts/gen_civil_defense_regulation_track.py",
-    "scripts/gen_premium_residency_regulation_track.py",
-    "scripts/gen_water_regulation_track.py",
-    "scripts/gen_press_regulation_track.py",
-    "scripts/gen_building_code_regulation_track.py",
-    "scripts/gen_telecommunications_regulation_track.py",
-    "scripts/gen_credit_information_regulation_track.py",
-    "scripts/gen_payment_systems_regulation_track.py",
-    "scripts/gen_banking_control_regulation_track.py",
-    "scripts/gen_finance_companies_regulation_track.py",
-    "scripts/gen_finance_lease_regulation_track.py",
-    "scripts/gen_cooperative_societies_regulation_track.py",
-    "scripts/gen_bog_enforcement_law_track.py",
-    "scripts/gen_public_prosecution_law_track.py",
-    "scripts/gen_elderly_care_law_track.py",
-    "scripts/gen_elderly_care_regulation_track.py",
-    "scripts/gen_private_schools_regulation_track.py",
-    "scripts/gen_foreign_schools_regulation_track.py",
-    "scripts/gen_postal_law_track.py",
-    "scripts/gen_cma_corporate_governance_regulation_track.py",
-    "scripts/gen_tvtc_organizational_statute_track.py",
-    "scripts/gen_waste_management_law_track.py",
-    "scripts/gen_fisheries_law_track.py",
-    "scripts/gen_debt_collection_regulation_track.py",
-    "scripts/gen_insurance_authority_statute_track.py",
-    "scripts/gen_bnpl_regulation_track.py",
-    "scripts/gen_offplan_sale_law_track.py",
-    "scripts/gen_contractors_classification_law_track.py",
-    "scripts/gen_real_estate_contributions_law_track.py",
-    "scripts/gen_accredited_valuers_law_track.py",
-    "scripts/gen_white_land_fees_law_track.py",
-    "scripts/gen_frequency_spectrum_regulation_track.py",
-    "scripts/gen_mental_health_law_track.py",
-    "scripts/gen_organ_donation_law_track.py",
-    "scripts/gen_private_healthcare_institutions_law_track.py",
-    "scripts/gen_high_risk_professions_regulation_track.py",
-    "scripts/gen_osh_service_providers_regulation_track.py",
-    "scripts/gen_rega_organizational_statute_track.py",
-    "scripts/gen_offplan_sale_implementing_regulation_track.py",
-    "scripts/gen_real_estate_finance_implementing_regulation_track.py",
-    "scripts/gen_real_estate_contributions_implementing_regulation_track.py",
-    "scripts/gen_landlord_tenant_relationship_regulation_track.py",
-    "scripts/gen_real_estate_marketing_advertising_regulation_track.py",
-    "scripts/gen_real_estate_auctions_regulation_track.py",
-    "scripts/gen_petroleum_petrochemical_materials_law_track.py",
-    "scripts/gen_dry_gas_lpg_distribution_law_track.py",
-    "scripts/gen_energy_supplies_system_track.py",
-    "scripts/gen_mining_investment_implementing_regulation_track.py",
-    "scripts/gen_pharmaceutical_establishments_law_track.py",
-    "scripts/gen_seized_confiscated_funds_management_system_track.py",
-    "scripts/gen_nca_cybersecurity_violations_investigation_rules_track.py",
-    "scripts/gen_nca_cybersecurity_violations_reporting_rules_track.py",
-    "scripts/gen_cst_organizational_statute_track.py",
-    "scripts/gen_railway_law_track.py",
-    "scripts/gen_railway_law_implementing_regulation_track.py",
-    "scripts/gen_road_transport_law_track.py",
-    "scripts/gen_gaca_organizational_statute_track.py",
-    "scripts/gen_tga_organizational_statute_track.py",
-    "scripts/gen_mawani_organizational_statute_track.py",
-    "scripts/gen_hajj_umrah_external_pilgrims_law_track.py",
-    "scripts/gen_aviation_passenger_rights_regulation_track.py",
+# Phase 2 discovers its generators the way phase 1 discovers its validators.
+#
+# It did not always. Until now the list below was written by hand, and a hand-
+# written list of a growing thing is a promise that quietly stops being kept: it
+# named 392 of the 814 generators on disk. The gate printed "IDEMPOTENCE — 392
+# deterministic generators ... clean (zero drift)" and a reader took that for
+# coverage. It was 48%.
+#
+# What the uncovered half was hiding, measured by running all 423 of them: every
+# one exits 0 and none touches the network, so nothing about them justified the
+# exclusion — and 21 produced output that differed from what is committed. Ten
+# tracks were MISSING a currency warning their own generator emits, one carried a
+# warning its own rule no longer supports, and nine carried a superseded wording
+# of it. Two of the eleven corpus-wide derived layers — the caveat layer and the
+# amendment timeline — were outside the phase entirely.
+#
+# So the list is gone. Everything matching scripts/gen_*.py runs, and a generator
+# may be skipped only by appearing in EXCLUDED_GENERATORS with a written reason.
+EXCLUDED_GENERATORS: dict[str, str] = {
+    "scripts/gen_corpus_export_primary_arabic.py":
+        "stamps its own generation date into the export manifest, so it is "
+        "non-idempotent BY DESIGN. The export is a versioned cut, re-made "
+        "deliberately, not on every gate run.",
+}
+
+# The corpus-wide derived layers read what the track generators write, so they run
+# LAST, and among themselves in dependency order: the unified index before the
+# registry that embeds a snapshot of it, both before the layers that join to them.
+#
+# This is the one list phase 2 still keeps by hand, because an ORDER cannot be
+# discovered. So it is checked instead: every scripts/gen_corpus_*.py on disk must
+# appear here or in EXCLUDED_GENERATORS, and the phase FAILS if one does not. A new
+# derived layer therefore cannot join the corpus without someone deciding where in
+# the order it belongs — which is exactly the decision that was silently skipped
+# twice before.
+DERIVED_LAYER_ORDER = [
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
     "scripts/gen_corpus_supersession_graph.py",
     "scripts/gen_corpus_cross_reference_graph.py",
     "scripts/gen_corpus_glossary.py",
-    "scripts/gen_corpus_schema_manifest.py",
     "scripts/gen_corpus_chunking_layer.py",
     "scripts/gen_corpus_freshness_manifest.py",
+    "scripts/gen_corpus_caveat_layer.py",
+    "scripts/gen_corpus_amendment_timeline.py",
+    "scripts/gen_corpus_schema_manifest.py",
+]
+
+# Deterministic non-generator producers, run after the layers they read.
+TAIL_GENERATORS = [
     "scripts/run_corpus_retrieval_eval.py",
 ]
+
+
+def discover_generators():
+    """(ordered generators, corpus layers missing from DERIVED_LAYER_ORDER)."""
+    found = sorted(os.path.relpath(p, ROOT).replace(os.sep, "/")
+                   for p in glob.glob(os.path.join(ROOT, "scripts", "gen_*.py")))
+    unplaced = [g for g in found
+                if g.startswith("scripts/gen_corpus_")
+                and g not in DERIVED_LAYER_ORDER and g not in EXCLUDED_GENERATORS]
+    tracks = [g for g in found
+              if not g.startswith("scripts/gen_corpus_") and g not in EXCLUDED_GENERATORS]
+    layers = [g for g in DERIVED_LAYER_ORDER if g not in EXCLUDED_GENERATORS]
+    return tracks + layers + TAIL_GENERATORS, unplaced
 
 # Raised from 900s on 2026-08-01. The retrieval-eval pass is O(queries x index
 # records) and the corpus has grown to 437 tracks / 20,162 indexed records /
@@ -487,10 +162,20 @@ def phase_validators():
 
 
 def phase_idempotence():
-    print("[2] IDEMPOTENCE — %d deterministic generators" % len(IDEMPOTENT_GENERATORS))
+    generators, unplaced = discover_generators()
+    print("[2] IDEMPOTENCE — %d generators discovered, %d excluded (%s)"
+          % (len(generators), len(EXCLUDED_GENERATORS),
+             "none" if not EXCLUDED_GENERATORS else "; ".join(
+                 "%s: %s" % (os.path.basename(k), v.split(".")[0])
+                 for k, v in EXCLUDED_GENERATORS.items())))
     before = _tracked_state()
     failures = []
-    for g in IDEMPOTENT_GENERATORS:
+    if unplaced:
+        failures.append(
+            "corpus-wide layer(s) with no position in DERIVED_LAYER_ORDER: %s — a derived "
+            "layer must be placed in the regeneration order deliberately, not by "
+            "alphabetical accident" % unplaced)
+    for g in generators:
         code, dt, out = _run([sys.executable, g], VALIDATOR_TIMEOUT)
         if code != 0:
             failures.append("%s exited %s" % (g, code))
