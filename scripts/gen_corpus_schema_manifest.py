@@ -21,11 +21,25 @@ companion guide at reports/schema_manifest/SCHEMA_MANIFEST_GUIDE_EN.md for
 exactly which files were read). Because a curated schema can silently
 drift from the real data it claims to describe, this generator performs a
 mandatory SELF-VALIDATION pass at the end of main(): it re-reads a sample
-of real corpus files spanning multiple tracks and eras plus all five
-corpus-wide derived layers, and FAILS LOUDLY (raises SystemExit) if a
+of real corpus files spanning multiple tracks and eras plus EVERY
+corpus-wide derived layer, and FAILS LOUDLY (raises SystemExit) if a
 field this manifest claims is "always present" (i.e. listed in a schema's
-`required`) is missing from any sampled file, or if a schema's own JSON
-Schema syntax is structurally invalid.
+`required`) is missing from any sampled file, if a real row carries a
+field no schema documents, or if a schema's own JSON Schema syntax is
+structurally invalid.
+
+AND IT NOW FAILS ON WHAT IS ABSENT, NOT ONLY ON WHAT IS WRONG. A curated
+manifest describes what someone remembered to describe, and this one
+called itself authoritative over "every distinct document type" while
+describing seven of eleven derived layers: the chunking layer, the
+freshness manifest, the caveat layer and the amendment timeline were all
+built after this file and none of them ever joined it. Nothing said so,
+because the manifest enumerated what it covered and never what it MISSED.
+So the last check in self_validate() walks data/corpus_*/ on disk and
+fails if any published JSON payload is named by no schema here — which
+immediately turned up two more, the retrieval evaluation's gold queries
+and its per-query results. A completeness claim that cannot fail is not a
+claim.
 
 Reads (read-only):
     sources/<track>/law/official_source/*.json      (7 tracks sampled)
@@ -37,6 +51,12 @@ Reads (read-only):
     data/corpus_supersession_graph/corpus_supersession_graph.json
     data/corpus_cross_reference_graph/corpus_cross_reference_graph.json
     data/corpus_glossary/corpus_glossary.json
+    data/corpus_chunking_layer/corpus_chunking_layer.jsonl
+    data/corpus_freshness_manifest/corpus_freshness_manifest.json
+    data/corpus_caveat_layer/corpus_caveat_layer.jsonl
+    data/corpus_amendment_timeline/corpus_amendment_timeline.jsonl
+    data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json
+    data/corpus_retrieval_eval/corpus_retrieval_eval_results.json
 
 Writes:
     data/schema_manifest/corpus_schema_manifest.json
@@ -47,6 +67,7 @@ Usage:
 
 from __future__ import annotations
 
+import glob
 import json
 import os
 import sys
@@ -106,6 +127,15 @@ VERIFICATION_TIERS_SAMPLE = "data/corpus_verification_tiers/corpus_verification_
 SUPERSESSION_GRAPH_SAMPLE = "data/corpus_supersession_graph/corpus_supersession_graph.json"
 CROSS_REFERENCE_GRAPH_SAMPLE = "data/corpus_cross_reference_graph/corpus_cross_reference_graph.json"
 GLOSSARY_SAMPLE = "data/corpus_glossary/corpus_glossary.json"
+CHUNKING_LAYER_SAMPLE = "data/corpus_chunking_layer/corpus_chunking_layer.jsonl"
+FRESHNESS_MANIFEST_SAMPLE = "data/corpus_freshness_manifest/corpus_freshness_manifest.json"
+CAVEAT_LAYER_SAMPLE = "data/corpus_caveat_layer/corpus_caveat_layer.jsonl"
+AMENDMENT_TIMELINE_SAMPLE = ("data/corpus_amendment_timeline/"
+                             "corpus_amendment_timeline.jsonl")
+RETRIEVAL_EVAL_QUERIES_SAMPLE = ("data/corpus_retrieval_eval/"
+                                 "corpus_retrieval_eval_queries.json")
+RETRIEVAL_EVAL_RESULTS_SAMPLE = ("data/corpus_retrieval_eval/"
+                                 "corpus_retrieval_eval_results.json")
 
 
 # ---------------------------------------------------------------------------
@@ -1072,6 +1102,284 @@ def glossary_term_schema():
     }
 
 
+def chunking_layer_chunk_schema():
+    return {
+        "$schema": DIALECT,
+        "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/chunking_layer_chunk_schema.json",
+        "title": "Chunking layer chunk record",
+        "description": (
+            "One line of data/corpus_chunking_layer/corpus_chunking_layer.jsonl — a retrieval "
+            "chunk. An article short enough to embed whole appears as a single chunk with "
+            "`is_full_article: true` and `total_chunks_for_this_article: 1`; a long article is "
+            "split into overlapping windows carrying the SAME `source_record_id`, so a hit on any "
+            "window resolves back to one citable article. `char_start`/`char_end` are offsets into "
+            "that article's own `text_ar`, which is what makes a chunk quotable rather than merely "
+            "findable."
+        ),
+        "type": "object",
+        "required": ["chunk_id", "source_record_id", "source_layer", "corpus", "law_id",
+                     "law_component", "law_title_ar", "article_number", "article_path",
+                     "chunk_index", "total_chunks_for_this_article", "is_full_article",
+                     "char_start", "char_end", "word_count", "text_ar", "text_status"],
+        "properties": {
+            "chunk_id": {"type": "string",
+                "description": "Unique per chunk: the source record_id with a chunk suffix."},
+            "source_record_id": {"type": "string",
+                "description": "The unified-index record this chunk came from. NOT unique across "
+                               "the file — every window of one article repeats it, which is the "
+                               "join back to a single citation."},
+            "source_layer": {"type": "string"},
+            "corpus": {"type": "string"},
+            "law_id": {"type": "string"},
+            "law_component": {"type": "string"},
+            "law_title_ar": {"type": "string"},
+            "llm_title_ar": {"type": ["string", "null"]},
+            "retrieval_title_ar": {"type": ["string", "null"]},
+            "unit_label_ar": {"type": ["string", "null"],
+                "description": "The unit label as the SOURCE printed it («المادة الأولى», «جدول», "
+                               "«ملحق»). Present so a display never renders «مادة N» for a record "
+                               "that is not an article."},
+            "article_number": {"type": ["integer", "null"]},
+            "article_path": {"type": "string"},
+            "is_appendix": {"type": "boolean"},
+            "chunk_index": {"type": "integer", "description": "0-based within its article."},
+            "total_chunks_for_this_article": {"type": "integer", "minimum": 1},
+            "is_full_article": {"type": "boolean",
+                "description": "True iff the article was short enough to survive unsplit."},
+            "overlap_words_with_previous": {"type": "integer", "minimum": 0,
+                "description": "0 for the first chunk of an article."},
+            "char_start": {"type": "integer", "minimum": 0},
+            "char_end": {"type": "integer", "minimum": 0},
+            "word_count": {"type": "integer", "minimum": 0},
+            "text_ar": {"type": "string"},
+            "text_status": {"type": "string"},
+            "keywords_ar": {"type": "array", "items": {"type": "string"}},
+            "search_queries_ar": {"type": "array", "items": {"type": "string"}},
+        },
+        "additionalProperties": False,
+    }
+
+
+def freshness_manifest_track_schema():
+    return {
+        "$schema": DIALECT,
+        "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/freshness_manifest_track_schema.json",
+        "title": "Freshness manifest track entry",
+        "description": (
+            "One entry in the `tracks` array of "
+            "data/corpus_freshness_manifest/corpus_freshness_manifest.json — what is known about "
+            "how CURRENT a track's stored text is, and where to go to check. Two distinct risks "
+            "are recorded separately and must not be conflated: "
+            "`known_source_staleness_risk` is a judgement about the SOURCE (the official portal "
+            "may itself be serving an old edition), while "
+            "`published_amendment_after_edition_on_file` is a measured fact about the GAZETTE (a "
+            "notice naming this instrument was published after the edition held here). The second "
+            "is evidence; the first is a caution."
+        ),
+        "type": "object",
+        "required": ["track_id", "display_name_ar", "official_source_file", "verification_tier",
+                     "known_source_staleness_risk",
+                     "published_amendment_after_edition_on_file"],
+        "properties": {
+            "track_id": {"type": "string"},
+            "display_name_ar": {"type": "string"},
+            "display_name_en": {"type": ["string", "null"]},
+            "official_source_file": {"type": "string"},
+            "verification_tier": {"type": "string"},
+            "verification_tier_rationale": {"type": ["string", "null"]},
+            "registry_source_authority": {"type": ["string", "null"]},
+            "registry_source_url": {"type": ["string", "null"]},
+            "source_urls": {"type": "array", "items": {"type": "string"}},
+            "named_source_authorities": {"type": "array", "items": {"type": "string"}},
+            "last_verified_context": {"type": ["string", "null"]},
+            "known_source_staleness_risk": {"type": "boolean"},
+            "known_source_staleness_pointer": {"type": ["string", "null"]},
+            "published_amendment_after_edition_on_file": {"type": "boolean"},
+            "published_amendment_pointer": {"type": ["string", "null"],
+                "description": "Where to read the notice. Null when the flag is false."},
+        },
+        "additionalProperties": False,
+    }
+
+
+def caveat_layer_record_schema():
+    return {
+        "$schema": DIALECT,
+        "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/caveat_layer_record_schema.json",
+        "title": "Caveat layer record",
+        "description": (
+            "One line of data/corpus_caveat_layer/corpus_caveat_layer.jsonl, keyed by the SAME "
+            "`record_id` the unified index returns, so a retrieval hit can be qualified at the "
+            "moment it is cited rather than in a source file no reader opens. Caveats are split "
+            "by consequence, not by topic: MATERIAL changes how (or whether) the text may be "
+            "cited; PROVENANCE says how it was obtained. `caveats_other_keys` carries any "
+            "disclosure whose key matched neither vocabulary, VERBATIM — a closed vocabulary that "
+            "silently absorbed what it did not recognise would report the same success either way."
+        ),
+        "type": "object",
+        "required": ["record_id", "corpus", "caveats_material", "caveats_provenance",
+                     "caveats_other_keys", "caveat_summary_ar", "disclosures_ref"],
+        "properties": {
+            "record_id": {"type": "string",
+                "description": "Joins to unified_index_record_schema/record_id."},
+            "corpus": {"type": "string"},
+            "caveats_material": {"type": "array", "items": {"type": "string"},
+                "description": "Codes from the generator's MATERIAL vocabulary. `repealed` "
+                               "outranks the rest: the others qualify how a text may be cited, "
+                               "that one says it may not be cited as law at all."},
+            "caveats_provenance": {"type": "array", "items": {"type": "string"}},
+            "caveats_other_keys": {"type": "array", "items": {"type": "string"},
+                "description": "Unrecognised disclosure keys, carried through rather than dropped."},
+            "caveat_summary_ar": {"type": "string",
+                "description": "One Arabic line per material code, joined by ' | '. Empty when "
+                               "the record carries no MATERIAL caveat."},
+            "disclosures_ref": {"type": "string",
+                "description": "path#field pointing at the full text of the disclosures."},
+        },
+        "additionalProperties": False,
+    }
+
+
+def amendment_timeline_record_schema():
+    return {
+        "$schema": DIALECT,
+        "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/amendment_timeline_record_schema.json",
+        "title": "Amendment timeline record",
+        "description": (
+            "One line of data/corpus_amendment_timeline/corpus_amendment_timeline.jsonl — one "
+            "AMENDED article (legal_status_ar in معدلة/مضافة/ملغاة), keyed by `record_id`. The "
+            "corpus stores consolidated current text, which answers «what does this article say "
+            "today?» and silently drops «since when?»; this layer carries the second answer to "
+            "the identifier retrieval already returns. `dating_status` has exactly three values "
+            "and the third is the point of the layer: `undated` is RECORDED rather than omitted, "
+            "because an absent row reads as «never amended», which is a different statement and a "
+            "false one."
+        ),
+        "type": "object",
+        "required": ["record_id", "track_id", "article_key", "law_id", "law_component",
+                     "legal_status_ar", "dating_status", "amendments", "conflicting_dates",
+                     "since_when_note_ar"],
+        "properties": {
+            "record_id": {"type": "string",
+                "description": "Joins to unified_index_record_schema/record_id."},
+            "track_id": {"type": "string"},
+            "article_key": {"type": "string"},
+            "article_number": {"type": ["integer", "null"]},
+            "law_id": {"type": "string"},
+            "law_component": {"type": "string"},
+            "legal_status_ar": {"type": "string", "enum": ["معدلة", "مضافة", "ملغاة"]},
+            "dating_status": {"type": "string",
+                "enum": ["dated", "disclosed_conflict", "undated"]},
+            "amendments": {"type": "array", "items": {
+                "type": "object",
+                "required": ["instrument_ar", "evidence"],
+                "properties": {
+                    "instrument_ar": {"type": "string",
+                        "description": "Must appear VERBATIM in the track's own source artifact."},
+                    "date_hijri": {"type": ["string", "null"]},
+                    "date_gregorian": {"type": ["string", "null"]},
+                    "date_read_from": {"type": ["string", "null"]},
+                    "note_ar": {"type": ["string", "null"]},
+                    "evidence": {"type": "string",
+                        "description": "Which channel established the date. The footnote channel "
+                                       "requires agreement on BOTH the decision number and the "
+                                       "date: a single agreement is a coincidence."},
+                },
+                "additionalProperties": True}},
+            "conflicting_dates": {"type": "array", "items": {
+                "type": "object",
+                "required": ["instrument_ar", "date_printed_in_the_article_text",
+                             "date_in_the_document_level_history", "note_ar"],
+                "properties": {
+                    "instrument_ar": {"type": "string"},
+                    "date_printed_in_the_article_text": {"type": "string"},
+                    "date_in_the_document_level_history": {"type": "string"},
+                    "note_ar": {"type": "string"},
+                },
+                "additionalProperties": False},
+                "description": "The source giving two dates for one instrument. BOTH are stated "
+                               "and NEITHER is asserted."},
+            "since_when_note_ar": {"type": "string",
+                "description": "The Arabic line a reading surface prints under a hit."},
+        },
+        "additionalProperties": False,
+    }
+
+
+def retrieval_eval_query_schema():
+    return {
+        "$schema": DIALECT,
+        "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/retrieval_eval_query_schema.json",
+        "title": "Retrieval evaluation gold query",
+        "description": (
+            "One entry in the `queries` array of "
+            "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json — a natural-language "
+            "Arabic question paired with the ONE article that answers it. The gold is written as "
+            "(corpus, law_component, article_number) rather than as a record_id on purpose: a "
+            "record_id changes when a layer is rebuilt, and a question whose expected answer moves "
+            "with the plumbing measures the plumbing. Two queries per track, so the score cannot "
+            "be carried by a handful of well-covered laws."
+        ),
+        "type": "object",
+        "required": ["query_id", "query_ar", "category", "gold"],
+        "properties": {
+            "query_id": {"type": "string",
+                "description": "Stable id. Generated tracks use gz-<sha1(track)[:6]>-{1,2}."},
+            "query_ar": {"type": "string", "description": "The question, in Arabic."},
+            "category": {"type": "string",
+                "description": "definitional / procedural / penalty / scope ... — used to read "
+                               "WHERE retrieval fails, not only how often."},
+            "gold": {
+                "type": "object",
+                "required": ["corpus", "law_component", "article_number"],
+                "properties": {
+                    "corpus": {"type": "string"},
+                    "law_component": {"type": "string"},
+                    "article_number": {"type": "integer"},
+                },
+                "additionalProperties": False,
+                "description": "Addressed by law and article, not by record identity."},
+        },
+        "additionalProperties": False,
+    }
+
+
+def retrieval_eval_result_schema():
+    return {
+        "$schema": DIALECT,
+        "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/retrieval_eval_result_schema.json",
+        "title": "Retrieval evaluation per-query result",
+        "description": (
+            "One entry in the `per_query` array of "
+            "data/corpus_retrieval_eval/corpus_retrieval_eval_results.json. `gold_rank` is the "
+            "position at which the expected article was actually returned, or null if it was not "
+            "in the top-k at all — recorded per query rather than only in aggregate, because an "
+            "accuracy number tells you how often retrieval failed and this tells you WHICH "
+            "questions it failed, which is the only form a miss can be argued with. The file's "
+            "`metrics` object carries the aggregate (top1/top3/top5 accuracy, MRR@5, misses)."
+        ),
+        "type": "object",
+        "required": ["query_id", "query_ar", "category", "gold", "gold_rank",
+                     "hit_top1", "hit_top3", "hit_top5", "top_hits"],
+        "properties": {
+            "query_id": {"type": "string"},
+            "query_ar": {"type": "string"},
+            "category": {"type": "string"},
+            "gold": {"type": "object",
+                "description": "Copied verbatim from retrieval_eval_query_schema/gold."},
+            "gold_rank": {"type": ["integer", "null"],
+                "description": "1-based rank of the expected article; null == not returned in top-k."},
+            "hit_top1": {"type": "boolean"},
+            "hit_top3": {"type": "boolean"},
+            "hit_top5": {"type": "boolean"},
+            "top_hits": {"type": "array", "items": {"type": "object"},
+                "description": "What retrieval DID return, so a miss can be read rather than "
+                               "merely counted."},
+        },
+        "additionalProperties": False,
+    }
+
+
 SCHEMA_BUILDERS = {
     "official_source_schema": official_source_schema,
     "verified_record_schema": verified_record_schema,
@@ -1082,6 +1390,12 @@ SCHEMA_BUILDERS = {
     "supersession_edge_schema": supersession_edge_schema,
     "cross_reference_edge_schema": cross_reference_edge_schema,
     "glossary_term_schema": glossary_term_schema,
+    "chunking_layer_chunk_schema": chunking_layer_chunk_schema,
+    "freshness_manifest_track_schema": freshness_manifest_track_schema,
+    "caveat_layer_record_schema": caveat_layer_record_schema,
+    "amendment_timeline_record_schema": amendment_timeline_record_schema,
+    "retrieval_eval_query_schema": retrieval_eval_query_schema,
+    "retrieval_eval_result_schema": retrieval_eval_result_schema,
 }
 
 
@@ -1351,6 +1665,66 @@ def self_validate(manifest):
             break
         for d in defs_list:
             _check_required(errors, f"glossary_term_schema/{term}", d, gt_required)
+
+    # --- the four layers added after this manifest was first written -------------
+    # A curated manifest describes what someone remembered to describe. Four
+    # corpus-wide layers were built after this file and never joined it, and
+    # nothing said so: the manifest called itself authoritative over "every
+    # distinct document type" while describing seven of eleven derived layers.
+    # They are validated against real rows here like every other schema.
+    for name, path, is_jsonl in (
+            ("chunking_layer_chunk_schema", CHUNKING_LAYER_SAMPLE, True),
+            ("caveat_layer_record_schema", CAVEAT_LAYER_SAMPLE, True),
+            ("amendment_timeline_record_schema", AMENDMENT_TIMELINE_SAMPLE, True),
+    ):
+        req = manifest["schemas"][name]["required"]
+        rec = _load_jsonl_first(path)
+        _check_required(errors, "%s/first_row" % name, rec, req)
+        extra = sorted(set(rec) - set(manifest["schemas"][name]["properties"]))
+        if extra:
+            errors.append("%s: real rows carry undocumented field(s) %s" % (name, extra))
+
+    rq = _load_json(RETRIEVAL_EVAL_QUERIES_SAMPLE)
+    rq_required = manifest["schemas"]["retrieval_eval_query_schema"]["required"]
+    for q in (rq.get("queries") or [])[:5]:
+        _check_required(errors, "retrieval_eval_query_schema/%s" % q.get("query_id"),
+                        q, rq_required)
+    rr = _load_json(RETRIEVAL_EVAL_RESULTS_SAMPLE)
+    rr_required = manifest["schemas"]["retrieval_eval_result_schema"]["required"]
+    for q in (rr.get("per_query") or [])[:5]:
+        _check_required(errors, "retrieval_eval_result_schema/%s" % q.get("query_id"),
+                        q, rr_required)
+
+    fm_required = manifest["schemas"]["freshness_manifest_track_schema"]["required"]
+    fm = _load_json(FRESHNESS_MANIFEST_SAMPLE)
+    for t in (fm.get("tracks") or [])[:5]:
+        _check_required(errors, "freshness_manifest_track_schema/%s" % t.get("track_id"),
+                        t, fm_required)
+        extra = sorted(set(t) - set(
+            manifest["schemas"]["freshness_manifest_track_schema"]["properties"]))
+        if extra:
+            errors.append("freshness_manifest_track_schema: undocumented field(s) %s" % extra)
+
+    # --- and the check that keeps the twelfth layer from repeating the eleventh --
+    # Every data/corpus_*/ directory the corpus publishes must have a schema
+    # describing it. This is the one thing the manifest could not have told you
+    # before: it enumerated what it covered and never what it MISSED.
+    described = set()
+    for schema in manifest["schemas"].values():
+        described.add((schema.get("description") or "").split(" ")[0].rstrip(","))
+    for d in sorted(glob.glob(os.path.join(ROOT, "data", "corpus_*"))):
+        if not os.path.isdir(d):
+            continue
+        payloads = [f for f in sorted(os.listdir(d))
+                    if f.endswith((".json", ".jsonl")) and not f.endswith("_summary.json")]
+        for f in payloads:
+            rel = "data/%s/%s" % (os.path.basename(d), f)
+            if not any(rel in (sch.get("description") or "")
+                       for sch in manifest["schemas"].values()):
+                errors.append(
+                    "no schema in this manifest names %s — a published layer that the "
+                    "manifest does not describe makes its 'every document type' claim false"
+                    % rel)
 
     if errors:
         report = "\n".join(f"  - {e}" for e in errors)

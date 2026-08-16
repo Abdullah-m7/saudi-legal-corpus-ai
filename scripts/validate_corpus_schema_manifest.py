@@ -51,17 +51,25 @@ REQUIRED_TOP_LEVEL_KEYS = [
     "schemas", "field_provenance_notes",
 ]
 
-REQUIRED_SCHEMA_NAMES = [
-    "official_source_schema",
-    "verified_record_schema",
-    "llm_ready_layer_schema",
-    "unified_index_record_schema",
-    "corpus_registry_track_schema",
-    "verification_tier_entry_schema",
-    "supersession_edge_schema",
-    "cross_reference_edge_schema",
-    "glossary_term_schema",
-]
+def _required_schema_names():
+    """The schema set the GENERATOR declares, read from the generator itself.
+
+    This was a hand-copied list of nine names, and it aged the way hand-copied
+    lists do: six schemas were added to the manifest and the validator reported
+    them as "extra, undeclared schema entries" — a WARNING, on the six layers
+    that had finally been documented. A validator that has its own private idea
+    of what should exist does not check the generator, it checks a memory of it.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "gen_corpus_schema_manifest",
+        os.path.join(ROOT, "scripts", "gen_corpus_schema_manifest.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return list(mod.SCHEMA_BUILDERS)
+
+
+REQUIRED_SCHEMA_NAMES = _required_schema_names()
 
 try:
     import jsonschema  # type: ignore
@@ -97,7 +105,8 @@ def load_jsonl_first(rel_path: str):
 
 
 # ---------------------------------------------------------------------------
-# 1-2. Manifest exists, parses, has required top-level keys and all 9 schemas
+# 1-2. Manifest exists, parses, has required top-level keys and every schema
+#      the generator declares (read from the generator, never copied here)
 # ---------------------------------------------------------------------------
 
 def check_manifest_shape(manifest: dict) -> None:
@@ -112,7 +121,7 @@ def check_manifest_shape(manifest: dict) -> None:
 
     extra = set(schemas.keys()) - set(REQUIRED_SCHEMA_NAMES)
     if extra:
-        warn(f"manifest has extra, undeclared schema entries: {sorted(extra)}")
+        fail(f"manifest holds schema(s) the generator does not build: {sorted(extra)}")
 
 
 # ---------------------------------------------------------------------------

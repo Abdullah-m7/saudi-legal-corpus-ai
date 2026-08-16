@@ -1706,6 +1706,524 @@
         }
       },
       "additionalProperties": false
+    },
+    "chunking_layer_chunk_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/chunking_layer_chunk_schema.json",
+      "title": "Chunking layer chunk record",
+      "description": "One line of data/corpus_chunking_layer/corpus_chunking_layer.jsonl — a retrieval chunk. An article short enough to embed whole appears as a single chunk with `is_full_article: true` and `total_chunks_for_this_article: 1`; a long article is split into overlapping windows carrying the SAME `source_record_id`, so a hit on any window resolves back to one citable article. `char_start`/`char_end` are offsets into that article's own `text_ar`, which is what makes a chunk quotable rather than merely findable.",
+      "type": "object",
+      "required": [
+        "chunk_id",
+        "source_record_id",
+        "source_layer",
+        "corpus",
+        "law_id",
+        "law_component",
+        "law_title_ar",
+        "article_number",
+        "article_path",
+        "chunk_index",
+        "total_chunks_for_this_article",
+        "is_full_article",
+        "char_start",
+        "char_end",
+        "word_count",
+        "text_ar",
+        "text_status"
+      ],
+      "properties": {
+        "chunk_id": {
+          "type": "string",
+          "description": "Unique per chunk: the source record_id with a chunk suffix."
+        },
+        "source_record_id": {
+          "type": "string",
+          "description": "The unified-index record this chunk came from. NOT unique across the file — every window of one article repeats it, which is the join back to a single citation."
+        },
+        "source_layer": {
+          "type": "string"
+        },
+        "corpus": {
+          "type": "string"
+        },
+        "law_id": {
+          "type": "string"
+        },
+        "law_component": {
+          "type": "string"
+        },
+        "law_title_ar": {
+          "type": "string"
+        },
+        "llm_title_ar": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retrieval_title_ar": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit_label_ar": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The unit label as the SOURCE printed it («المادة الأولى», «جدول», «ملحق»). Present so a display never renders «مادة N» for a record that is not an article."
+        },
+        "article_number": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "article_path": {
+          "type": "string"
+        },
+        "is_appendix": {
+          "type": "boolean"
+        },
+        "chunk_index": {
+          "type": "integer",
+          "description": "0-based within its article."
+        },
+        "total_chunks_for_this_article": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "is_full_article": {
+          "type": "boolean",
+          "description": "True iff the article was short enough to survive unsplit."
+        },
+        "overlap_words_with_previous": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "0 for the first chunk of an article."
+        },
+        "char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "char_end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "word_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "text_ar": {
+          "type": "string"
+        },
+        "text_status": {
+          "type": "string"
+        },
+        "keywords_ar": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "search_queries_ar": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "freshness_manifest_track_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/freshness_manifest_track_schema.json",
+      "title": "Freshness manifest track entry",
+      "description": "One entry in the `tracks` array of data/corpus_freshness_manifest/corpus_freshness_manifest.json — what is known about how CURRENT a track's stored text is, and where to go to check. Two distinct risks are recorded separately and must not be conflated: `known_source_staleness_risk` is a judgement about the SOURCE (the official portal may itself be serving an old edition), while `published_amendment_after_edition_on_file` is a measured fact about the GAZETTE (a notice naming this instrument was published after the edition held here). The second is evidence; the first is a caution.",
+      "type": "object",
+      "required": [
+        "track_id",
+        "display_name_ar",
+        "official_source_file",
+        "verification_tier",
+        "known_source_staleness_risk",
+        "published_amendment_after_edition_on_file"
+      ],
+      "properties": {
+        "track_id": {
+          "type": "string"
+        },
+        "display_name_ar": {
+          "type": "string"
+        },
+        "display_name_en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "official_source_file": {
+          "type": "string"
+        },
+        "verification_tier": {
+          "type": "string"
+        },
+        "verification_tier_rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registry_source_authority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registry_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "named_source_authorities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "last_verified_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "known_source_staleness_risk": {
+          "type": "boolean"
+        },
+        "known_source_staleness_pointer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published_amendment_after_edition_on_file": {
+          "type": "boolean"
+        },
+        "published_amendment_pointer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Where to read the notice. Null when the flag is false."
+        }
+      },
+      "additionalProperties": false
+    },
+    "caveat_layer_record_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/caveat_layer_record_schema.json",
+      "title": "Caveat layer record",
+      "description": "One line of data/corpus_caveat_layer/corpus_caveat_layer.jsonl, keyed by the SAME `record_id` the unified index returns, so a retrieval hit can be qualified at the moment it is cited rather than in a source file no reader opens. Caveats are split by consequence, not by topic: MATERIAL changes how (or whether) the text may be cited; PROVENANCE says how it was obtained. `caveats_other_keys` carries any disclosure whose key matched neither vocabulary, VERBATIM — a closed vocabulary that silently absorbed what it did not recognise would report the same success either way.",
+      "type": "object",
+      "required": [
+        "record_id",
+        "corpus",
+        "caveats_material",
+        "caveats_provenance",
+        "caveats_other_keys",
+        "caveat_summary_ar",
+        "disclosures_ref"
+      ],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "description": "Joins to unified_index_record_schema/record_id."
+        },
+        "corpus": {
+          "type": "string"
+        },
+        "caveats_material": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Codes from the generator's MATERIAL vocabulary. `repealed` outranks the rest: the others qualify how a text may be cited, that one says it may not be cited as law at all."
+        },
+        "caveats_provenance": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "caveats_other_keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Unrecognised disclosure keys, carried through rather than dropped."
+        },
+        "caveat_summary_ar": {
+          "type": "string",
+          "description": "One Arabic line per material code, joined by ' | '. Empty when the record carries no MATERIAL caveat."
+        },
+        "disclosures_ref": {
+          "type": "string",
+          "description": "path#field pointing at the full text of the disclosures."
+        }
+      },
+      "additionalProperties": false
+    },
+    "amendment_timeline_record_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/amendment_timeline_record_schema.json",
+      "title": "Amendment timeline record",
+      "description": "One line of data/corpus_amendment_timeline/corpus_amendment_timeline.jsonl — one AMENDED article (legal_status_ar in معدلة/مضافة/ملغاة), keyed by `record_id`. The corpus stores consolidated current text, which answers «what does this article say today?» and silently drops «since when?»; this layer carries the second answer to the identifier retrieval already returns. `dating_status` has exactly three values and the third is the point of the layer: `undated` is RECORDED rather than omitted, because an absent row reads as «never amended», which is a different statement and a false one.",
+      "type": "object",
+      "required": [
+        "record_id",
+        "track_id",
+        "article_key",
+        "law_id",
+        "law_component",
+        "legal_status_ar",
+        "dating_status",
+        "amendments",
+        "conflicting_dates",
+        "since_when_note_ar"
+      ],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "description": "Joins to unified_index_record_schema/record_id."
+        },
+        "track_id": {
+          "type": "string"
+        },
+        "article_key": {
+          "type": "string"
+        },
+        "article_number": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "law_id": {
+          "type": "string"
+        },
+        "law_component": {
+          "type": "string"
+        },
+        "legal_status_ar": {
+          "type": "string",
+          "enum": [
+            "معدلة",
+            "مضافة",
+            "ملغاة"
+          ]
+        },
+        "dating_status": {
+          "type": "string",
+          "enum": [
+            "dated",
+            "disclosed_conflict",
+            "undated"
+          ]
+        },
+        "amendments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "instrument_ar",
+              "evidence"
+            ],
+            "properties": {
+              "instrument_ar": {
+                "type": "string",
+                "description": "Must appear VERBATIM in the track's own source artifact."
+              },
+              "date_hijri": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "date_gregorian": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "date_read_from": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note_ar": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "description": "Which channel established the date. The footnote channel requires agreement on BOTH the decision number and the date: a single agreement is a coincidence."
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "conflicting_dates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "instrument_ar",
+              "date_printed_in_the_article_text",
+              "date_in_the_document_level_history",
+              "note_ar"
+            ],
+            "properties": {
+              "instrument_ar": {
+                "type": "string"
+              },
+              "date_printed_in_the_article_text": {
+                "type": "string"
+              },
+              "date_in_the_document_level_history": {
+                "type": "string"
+              },
+              "note_ar": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "The source giving two dates for one instrument. BOTH are stated and NEITHER is asserted."
+        },
+        "since_when_note_ar": {
+          "type": "string",
+          "description": "The Arabic line a reading surface prints under a hit."
+        }
+      },
+      "additionalProperties": false
+    },
+    "retrieval_eval_query_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/retrieval_eval_query_schema.json",
+      "title": "Retrieval evaluation gold query",
+      "description": "One entry in the `queries` array of data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json — a natural-language Arabic question paired with the ONE article that answers it. The gold is written as (corpus, law_component, article_number) rather than as a record_id on purpose: a record_id changes when a layer is rebuilt, and a question whose expected answer moves with the plumbing measures the plumbing. Two queries per track, so the score cannot be carried by a handful of well-covered laws.",
+      "type": "object",
+      "required": [
+        "query_id",
+        "query_ar",
+        "category",
+        "gold"
+      ],
+      "properties": {
+        "query_id": {
+          "type": "string",
+          "description": "Stable id. Generated tracks use gz-<sha1(track)[:6]>-{1,2}."
+        },
+        "query_ar": {
+          "type": "string",
+          "description": "The question, in Arabic."
+        },
+        "category": {
+          "type": "string",
+          "description": "definitional / procedural / penalty / scope ... — used to read WHERE retrieval fails, not only how often."
+        },
+        "gold": {
+          "type": "object",
+          "required": [
+            "corpus",
+            "law_component",
+            "article_number"
+          ],
+          "properties": {
+            "corpus": {
+              "type": "string"
+            },
+            "law_component": {
+              "type": "string"
+            },
+            "article_number": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Addressed by law and article, not by record identity."
+        }
+      },
+      "additionalProperties": false
+    },
+    "retrieval_eval_result_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/manifest/retrieval_eval_result_schema.json",
+      "title": "Retrieval evaluation per-query result",
+      "description": "One entry in the `per_query` array of data/corpus_retrieval_eval/corpus_retrieval_eval_results.json. `gold_rank` is the position at which the expected article was actually returned, or null if it was not in the top-k at all — recorded per query rather than only in aggregate, because an accuracy number tells you how often retrieval failed and this tells you WHICH questions it failed, which is the only form a miss can be argued with. The file's `metrics` object carries the aggregate (top1/top3/top5 accuracy, MRR@5, misses).",
+      "type": "object",
+      "required": [
+        "query_id",
+        "query_ar",
+        "category",
+        "gold",
+        "gold_rank",
+        "hit_top1",
+        "hit_top3",
+        "hit_top5",
+        "top_hits"
+      ],
+      "properties": {
+        "query_id": {
+          "type": "string"
+        },
+        "query_ar": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "gold": {
+          "type": "object",
+          "description": "Copied verbatim from retrieval_eval_query_schema/gold."
+        },
+        "gold_rank": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "1-based rank of the expected article; null == not returned in top-k."
+        },
+        "hit_top1": {
+          "type": "boolean"
+        },
+        "hit_top3": {
+          "type": "boolean"
+        },
+        "hit_top5": {
+          "type": "boolean"
+        },
+        "top_hits": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "What retrieval DID return, so a miss can be read rather than merely counted."
+        }
+      },
+      "additionalProperties": false
     }
   },
   "field_provenance_notes": {
