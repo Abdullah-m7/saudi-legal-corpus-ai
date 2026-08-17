@@ -222,6 +222,8 @@ def shared_words(notice_toks, track_toks):
 
 
 HIJRI_RE = re.compile(r"^\s*(\d{1,2})\s*/\s*(\d{1,2})\s*/\s*(\d{4})\s*$")
+# «وتاريخ 23/8/1426هـ» embedded in a prose decree line.
+FREE_TEXT_HIJRI_RE = re.compile(r"وتاريخ\s*(\d{1,2}\s*/\s*\d{1,2}\s*/\s*1[34]\d\d)\s*هـ?")
 # Converted dates carry a small error, so a notice must clear the anchor by this
 # margin before it counts as later. Calibrated on the 324 tracks that record BOTH
 # a Hijri and a Gregorian gazette date: the tabular conversion below lands within
@@ -272,6 +274,17 @@ def edition_anchor(s):
         c = hijri_to_gregorian(h)
         if c:
             dates.append((c, False))
+    # The six earliest artifacts have no date FIELD at all: they record it inside a
+    # free-text decree line — «م/51 وتاريخ 23/8/1426هـ (معدَّل بسلسلة مراسيم...)».
+    # Without this they were visible to the audit and still unanchored, and an
+    # unanchored track can never be compared with a notice date, so recovering them
+    # into the sweep without reading their dates would have moved them from
+    # invisible to inert. Read as INEXACT, so the thirty-day conversion guard applies.
+    for field in ("royal_decree", "issuance_ar", "legal_basis_ar"):
+        for h in FREE_TEXT_HIJRI_RE.findall(str(s.get(field) or "")):
+            c = hijri_to_gregorian(h)
+            if c:
+                dates.append((c, False))
     for a in (s.get("amendment_history") or []):
         if isinstance(a, dict):
             c = hijri_to_gregorian(a.get("date_hijri", ""))
@@ -310,7 +323,14 @@ def track_editions():
                 s = json.load(open(p, encoding="utf-8"))
             except (ValueError, OSError):
                 continue
-            doc = s.get("document")
+            # The corpus's SIX EARLIEST artifacts name their title `title_ar`, not
+            # `document` — the Labour Law, the Civil Transactions Law, the GTPL and
+            # its regulation, and the Investment Law and its regulation. They were
+            # written before the convention settled, and `if doc:` dropped them
+            # without a word. So this audit, and every audit built on it, has never
+            # once checked the corpus's foundational laws for staleness: the most
+            # amended texts it holds were the ones it never looked at.
+            doc = s.get("document") or s.get("title_ar")
             if doc:
                 d, exact = edition_anchor(s)
                 out[tid] = (doc, d, exact, os.path.relpath(p, ROOT))
@@ -330,6 +350,18 @@ def main(index_path):
     dated = {t: d for t, (_a, d, _e, _p) in tracks.items() if d}
     print("gazette pages indexed: %d | tracks on file: %d (%d with an edition anchor)"
           % (len(index), len(tracks), len(dated)))
+    # A count with no denominator is the failure this repository keeps finding, so
+    # the denominator is printed: some registry tracks have NO official_source
+    # artifact at all (their text predates that convention and lives under an older
+    # layout), and this audit cannot see them however well it matches titles.
+    try:
+        reg = json.load(open(os.path.join(ROOT, "data", "corpus_registry",
+                                          "corpus_registry.json"), encoding="utf-8"))
+        n_reg = len(reg.get("tracks", []))
+        print("  registry tracks: %d — %d have no official_source artifact and are "
+              "OUTSIDE this audit" % (n_reg, max(0, n_reg - len(tracks))))
+    except (OSError, ValueError):                                      # noqa: BLE001
+        pass
 
     notices = [(uid, v["title"], v.get("date", "")) for uid, v in index.items()
                if v.get("title") and AMENDMENT_RE.search(v["title"])]
