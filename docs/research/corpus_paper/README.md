@@ -9,6 +9,7 @@ LREC / NLLP / Language Resources and Evaluation.
 | `ARABIC_SUMMARY_AR.md` | Arabic companion summary + pre-submission checklist. |
 | `generate_corpus_paper_stats.py` | Read-only script that computes every statistic cited in the paper. |
 | `corpus_paper_stats.json` | Generated statistics snapshot (regenerate with the script). |
+| `latex/` | LaTeX source (`main.tex`, `references.bib`) and compiled `main.pdf`; venue-adaptive (ACL/NLLP style kit auto-detected, self-contained fallback otherwise). |
 
 Reproduce all paper statistics from the repository root:
 
