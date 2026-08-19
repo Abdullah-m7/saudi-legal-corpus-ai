@@ -11,10 +11,16 @@ LREC / NLLP / Language Resources and Evaluation.
 | `corpus_paper_stats.json` | Generated statistics snapshot (regenerate with the script). |
 | `bm25_baseline.py` | Okapi BM25 baseline over the unified index, evaluated on the 519 gold queries (overall + per category). |
 | `bm25_baseline_results.json` | Generated BM25 results snapshot (regenerate with the script). |
-| `latex/` | LaTeX source (`main.tex`, `references.bib`), Figure 1 (`example_record.png` + its generator), and compiled `main.pdf`; venue-adaptive (ACL/NLLP style kit auto-detected, self-contained fallback otherwise). |
+| `domain_coverage.py` | Author-assigned domain grouping (explicit keyword rules over identifiers) behind the journal version's coverage table. |
+| `domain_coverage.json` | Generated domain-coverage snapshot (regenerate with the script). |
+| `latex/` | **Conference version** — ACL/NLLP-style two-column LaTeX source, Figure 1 and its generator, and compiled `main.pdf`. |
+| `journal/` | **Journal version** — expanded single-column Springer manuscript targeted at *Language Resources and Evaluation*, with Declarations and a coverage-by-domain section. |
 
-The LaTeX version is the canonical submission text; the Markdown mirrors it
-for in-repository reading.
+**Two submission targets, two manuscripts.** `journal/` is the current
+primary target (*Language Resources and Evaluation*); `latex/` holds the
+shorter conference version. The Markdown file mirrors the conference version
+for in-repository reading. A manuscript may be under review at only one of
+them at a time.
 
 Reproduce all paper statistics from the repository root:
 
