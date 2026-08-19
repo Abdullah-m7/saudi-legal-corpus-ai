@@ -1,46 +1,71 @@
 # NOTICE — Legal Content, Provenance, and Disclaimers
 
-## Non-official reference translation
+## Public repository status
 
-This repository contains an **internally reviewed concise reference translation** of Book One
-/ الباب الأول (Articles 1–34) of the Saudi Companies Law, in Arabic and Chinese. "Internally
-reviewed" means QA-reviewed against the attached reference translation source — it has **not**
-yet been verified article-by-article against the official *Umm Al-Qura* text.
+As of August 2026 this repository is **publicly available on GitHub**, and
+versioned releases are archived on **Zenodo** (see the DOI badge in
+`README.md` once minted). Public availability changes **none** of the
+disclaimers below: the repository remains a non-official research resource.
 
-- **中文：** 本文件为沙特《公司法》第一编（第一条至第三十四条）完整范围的**经内部审校**参考译本，
-  已对照所附参考翻译来源进行内部质检，但**尚未逐条对照官方文本核验**，采用摘要式法律表达，
-  **并非官方译本或逐字全文翻译**。
-- **العربية:** هذه الوثيقة ترجمة مرجعية موجزة ومراجَعة داخليًا مقابل مصدر الترجمة المرفق للباب الأول
-  كاملًا من نظام الشركات السعودي، المواد 1–34، ولم تُدقَّق بعد مادةً مادةً مقابل النص الرسمي،
-  **وليست ترجمة رسمية أو حرفية كاملة للنص النظامي**.
+## Not an official publication
+
+This repository is **not an official government publication**. It claims
+**no official translation** and **no official government adoption**. The
+only legally binding text of any instrument in this corpus is the Arabic
+original as published in the official gazette **Umm Al-Qura (أم القرى)**
+and maintained by the competent authorities.
 
 ## Not legal advice
 
-This material is provided for general reference and directed lookup only. It **does
-not constitute legal advice**. The only legally binding text is the Arabic original
-published in the official gazette **Umm Al-Qura (أم القرى)**. Before making any
-business decision, consult the full official text and a Saudi-qualified legal advisor.
+This material is provided for general reference, research, and directed
+lookup only. It **does not constitute legal advice**. Before making any
+business or legal decision, consult the full official text and a
+Saudi-qualified legal advisor.
 
 ## Provenance and canonical source model
 
-- The attached PDF (`inputs/bab1_source.pdf`) is the current **design/reference
-  artifact**, not the canonical long-term source.
-- The **canonical structured sources** are the JSON files under `data/`. Human-readable
-  outputs (`content/`, `dist/book1.html`, `dist/book1.pdf`) are **generated from them**.
-- Arabic reference summaries are **manually reconstructed Modern Standard Arabic**
-  (the PDF Arabic layer extracts garbled) and are concise summaries, not statutory text.
-- No article has been independently verified against the official gazette in this build.
-  Unverifiable points are flagged **`NEEDS_OFFICIAL_TEXT_CHECK`**
-  (see `data/qa/known_issues.json` and each article's `source.official_text_check`).
+- The **canonical structured sources** are the JSON files under `data/`;
+  human-readable outputs are generated from them.
+- The **official Arabic text governs.** Each track records its issuing
+  authority and official source(s) in the corpus registry
+  (`data/corpus_registry/`), and each article-level record carries a
+  per-record provenance label (`text_status`).
+- Source quality is represented, not assumed: every track is assigned a
+  **verification tier** (`data/corpus_verification_tiers/`), and tracks
+  with a documented source-staleness risk are flagged in the
+  **freshness manifest** (`data/corpus_freshness_manifest/`) rather than
+  silently patched.
+- Read-only, idempotent validators (see the `Makefile`) enforce schema,
+  counts, and hashes across all layers.
+
+## Language layers
+
+- **Arabic** is the governing layer, ingested **verbatim** from the
+  recorded official sources.
+- **English** layers are **non-official reference** material.
+- **Chinese** layers are **internal reference only** — non-official,
+  non-binding, non-governing. The early Book One (Articles 1–34) concise
+  reference translation that this repository started from is retained as a
+  historical artifact (`inputs/bab1_source.pdf` and related files); it was
+  internally QA-reviewed against its translation source, and the corpus has
+  since moved to the registry-based provenance model described above.
 
 ## Copyright posture
 
-This repository contains concise reference summaries and structured metadata. It does
-**not** reproduce the full official Arabic statutory text beyond what is present in the
-user-provided translation source. Do not add raw copyrighted official full Arabic text
-beyond that source.
+- Saudi statutory and regulatory texts reproduced here are **public legal
+  enactments** of the Kingdom of Saudi Arabia; official texts of laws,
+  regulations, and similar state documents are excluded from copyright
+  protection under the Saudi Copyright Law. This repository **asserts no
+  ownership** over them and reproduces them verbatim for reference and
+  research, with per-record source attribution.
+- The structuring apparatus — schemas, scripts, derived layers, metadata,
+  and documentation — is released under the **MIT License** (see
+  `LICENSE`).
 
-## Instrument reference
+## Instrument reference (first implemented profile)
 
 - نظام الشركات — المرسوم الملكي رقم (م/132) وتاريخ 1443/12/1هـ
 - Companies Law — Royal Decree No. (M/132), issued 2022.
+
+The full list of onboarded instruments is maintained in the corpus registry
+(`data/corpus_registry/corpus_registry.json`).

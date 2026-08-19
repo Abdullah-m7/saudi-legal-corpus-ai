@@ -29,9 +29,23 @@ not the identity of the project.
   **no official government adoption** are claimed.
 - **Not** a full Chinese 281 layer and **not** a trilingual alignment (neither
   is created).
-- **Not** a public release, and **not legal advice**.
+- **Not legal advice** — and although the repository is now publicly
+  released (see below), public availability does **not** make it an
+  official publication.
 - **Not** solely about Chinese, and **not** solely about investment guidance —
   those are one layer and one use case, respectively.
+
+## Public release status
+
+As of **August 2026** this repository is **publicly available on GitHub**,
+with versioned releases archived on **Zenodo** for a citable DOI (metadata
+in [`.zenodo.json`](.zenodo.json) and [`CITATION.cff`](CITATION.cff); the
+DOI badge is added once minted). An academic resource paper documenting the
+corpus lives under
+[`docs/research/corpus_paper/`](docs/research/corpus_paper/). Public
+availability changes none of the disclaimers above or in
+[`NOTICE.md`](NOTICE.md): the official Arabic text governs, and nothing here
+is an official publication or legal advice.
 
 ## Current implemented law profile — Saudi Companies Law
 
