@@ -35,7 +35,8 @@ Requires (Debian/Ubuntu): `texlive-latex-base`, `texlive-latex-recommended`,
 
 ## Pre-submission checklist
 
-- [ ] Confirm full author name and affiliation (placeholder in `main.tex`).
+- [x] Confirm full author name and affiliation (Abdullah Almohammedi,
+      Independent Researcher, ORCID 0009-0001-0832-0995).
 - [ ] Add the official venue style kit and switch to it.
 - [ ] Mint a DOI-carrying archival release and update Data Availability.
 - [ ] Verify every `references.bib` entry against the published record.

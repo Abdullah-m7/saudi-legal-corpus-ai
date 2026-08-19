@@ -1,6 +1,8 @@
 # The Saudi Legal Corpus for AI: An Auditable, Official-Source-Grounded, Article-Level Corpus of Saudi Arabian Legislation
 
-**Author:** Abdullah (GitHub: `al3obdi`) — *[TODO: confirm full author name and affiliation before submission]*
+**Author:** Abdullah Almohammedi (Independent Researcher) —
+`abdullah.m.almohammedi@gmail.com` —
+ORCID: [0009-0001-0832-0995](https://orcid.org/0009-0001-0832-0995)
 
 **Target venues:** LREC (resource track); Natural Legal Language Processing (NLLP) workshop; *Language Resources and Evaluation* (journal).
 
