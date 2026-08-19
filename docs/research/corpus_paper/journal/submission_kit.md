@@ -1,25 +1,38 @@
-# Submission Kit — Editorial Manager (Language Resources and Evaluation)
+# Submission Kit — Language Resources and Evaluation
 
-Every field Editorial Manager asks for, with the exact text to paste. Plain
-text only — no LaTeX markup — since the submission interface stores what you
-type verbatim and that is what gets published.
+Every field the submission system asks for, with the exact text to paste.
+Plain text only — no LaTeX markup — since the interface stores what you type
+verbatim and that is what gets published.
 
-Submission system: <https://www.editorialmanager.com/lrev/>
+## Which system: Snapp, not Editorial Manager
+
+This journal has moved new submissions to **Snapp** (Springer Nature Article
+Processing Platform). An Editorial Manager account for the journal shows no
+"Submit New Manuscript" option, because that route is closed for new
+submissions.
+
+Correct route: open the journal home page
+<https://link.springer.com/journal/10579> and click **Submit manuscript**,
+which lands on the Snapp portal <https://submission.springernature.com/>.
+Snapp requires **a new Springer Nature account** — an Editorial Manager
+login does not carry over.
 
 ---
 
 ## Files to upload
 
-| Order | Item type | File |
-|---|---|---|
-| 1 | Manuscript | `main.pdf` |
-| 2 | LaTeX source | `main.tex` |
-| 3 | Bibliography | `references.bib` |
-| 4 | Figure | `example_record.png` |
+Snapp accepts either a Word file with embedded images **or a `.zip` of the
+LaTeX sources**, which it compiles to PDF itself. Use the zip:
 
-Some Springer journals request source files only on acceptance. Upload the
-PDF as the manuscript; add the source files if the system offers a slot for
-them.
+| Item | File |
+|---|---|
+| Manuscript (LaTeX sources) | `snapp_submission.zip` (contains `main.tex`, `references.bib`, `example_record.png`) |
+| Cover letter | `cover_letter.md` — paste the text, or upload as a one-page file |
+| Local preview only | `main.pdf` (no need to upload; Snapp builds its own PDF) |
+
+Check the compiled PDF that Snapp produces before submitting: it is built
+from the zip with Springer's own class, so the layout will differ from the
+local fallback build.
 
 ---
 
@@ -27,6 +40,17 @@ them.
 
 **Original Paper** — the contribution is a complete resource with an
 evaluation component, not a short project note.
+
+## Submission flow in Snapp
+
+1. Preparation — review the journal's checklist.
+2. Cover letter.
+3. File upload — the LaTeX zip.
+4. Form completion — Snapp extracts title, abstract, and authors from the
+   manuscript; confirm or correct every extracted field against the values
+   below.
+5. Review and submit.
+6. Track progress in the portal.
 
 ---
 
@@ -79,8 +103,8 @@ processing).
 
 ## Declarations entered through the interface
 
-These are published from the interface values, not from the manuscript, so
-they must be entered here as well.
+Snapp collects these as form fields; the interface values are what get
+published, so enter them here as well as in the manuscript.
 
 **Author contributions**
 
@@ -129,12 +153,12 @@ field.
 
 ## Before you press Submit
 
-1. The system builds a merged PDF and holds the submission until you
-   **approve** it. An unapproved submission never reaches the editor — this
-   is the single most common way a submission stalls.
+1. Read the PDF that Snapp compiles from the zip, page by page. It is
+   generated with Springer's class rather than the local fallback layout, so
+   check that the tables and Figure 1 survived.
 2. Check that the author name, affiliation ("Independent Researcher"), and
-   ORCID in the interface match the manuscript exactly.
+   ORCID in the form match the manuscript exactly.
 3. Confirm the manuscript is not under review anywhere else; the cover letter
    states that it is not.
-4. Submit from a computer rather than a phone: the process spans several
-   screens with file uploads and long text fields.
+4. Submit from a computer rather than a phone: the flow spans several screens
+   with file uploads and long text fields.
