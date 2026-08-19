@@ -155,11 +155,39 @@ def retrieval_eval_stats():
         DATA / "corpus_retrieval_eval" / "corpus_retrieval_eval_queries.json"
     )
     queries = ev.get("queries", [])
+    res = load_json(
+        DATA / "corpus_retrieval_eval" / "corpus_retrieval_eval_results.json"
+    )
+
+    def metrics(rows):
+        n = len(rows)
+        ranks = [r.get("gold_rank") for r in rows]
+        return {
+            "n": n,
+            "top1_accuracy": round(sum(1 for r in ranks if r == 1) / n, 4),
+            "top5_accuracy": round(
+                sum(1 for r in ranks if r is not None and r <= 5) / n, 4
+            ),
+            "mrr_at_5": round(
+                sum(1.0 / r for r in ranks if r is not None) / n, 4
+            ),
+        }
+
+    by_cat = {}
+    for row in res.get("per_query", []):
+        by_cat.setdefault(row["category"], []).append(row)
     return {
         "eval_id": ev.get("eval_id"),
         "gold_basis": ev.get("gold_basis"),
         "total_queries": len(queries),
-        "sample_query_keys": sorted(queries[0].keys()) if queries else [],
+        "query_categories": dict(
+            Counter(q["category"] for q in queries).most_common()
+        ),
+        "metadata_searcher_metrics_overall": res.get("metrics"),
+        "metadata_searcher_metrics_by_category": {
+            c: metrics(rows)
+            for c, rows in sorted(by_cat.items(), key=lambda kv: -len(kv[1]))
+        },
     }
 
 

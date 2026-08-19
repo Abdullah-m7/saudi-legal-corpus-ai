@@ -5,7 +5,9 @@ LaTeX version of `../saudi_legal_corpus_resource_paper.md`.
 | File | Purpose |
 |---|---|
 | `main.tex` | The paper. Venue-adaptive: see below. |
-| `references.bib` | Bibliography (verify each entry before submission). |
+| `references.bib` | Bibliography (AraLegal-BERT, MultiLegalPile, and LEXTREME entries verified against the ACL Anthology; re-verify the rest before submission). |
+| `example_record.png` | Figure 1 — an example unified-index record, rendered as an image because pdfLaTeX cannot typeset Arabic script. |
+| `gen_example_record_figure.py` | Deterministic generator for Figure 1 (requires Pillow built with libraqm and the Noto Naskh Arabic font). |
 | `main.pdf` | Compiled draft (fallback layout). |
 
 ## Venue adaptation

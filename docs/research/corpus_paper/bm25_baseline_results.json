@@ -1,0 +1,2694 @@
+{
+  "baseline": "okapi_bm25",
+  "params": {
+    "k1": 1.5,
+    "b": 0.75,
+    "top_k": 5
+  },
+  "fields": "law_title_ar + llm_title_ar + text_ar (normalized, whitespace tokens)",
+  "index_path": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
+  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
+  "metrics_overall": {
+    "n": 519,
+    "top1_accuracy": 0.9037,
+    "top3_accuracy": 0.9711,
+    "top5_accuracy": 0.9788,
+    "mrr_at_5": 0.9372
+  },
+  "metrics_by_category": {
+    "topical": {
+      "n": 384,
+      "top1_accuracy": 0.9271,
+      "top3_accuracy": 0.9844,
+      "top5_accuracy": 0.9896,
+      "mrr_at_5": 0.9557
+    },
+    "provision": {
+      "n": 61,
+      "top1_accuracy": 0.9836,
+      "top3_accuracy": 0.9836,
+      "top5_accuracy": 0.9836,
+      "mrr_at_5": 0.9836
+    },
+    "definitional": {
+      "n": 55,
+      "top1_accuracy": 0.7455,
+      "top3_accuracy": 0.8909,
+      "top5_accuracy": 0.8909,
+      "mrr_at_5": 0.8091
+    },
+    "governance": {
+      "n": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 0.75,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.8
+    },
+    "rights": {
+      "n": 4,
+      "top1_accuracy": 0.75,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.875
+    },
+    "procedural": {
+      "n": 3,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 1.0
+    },
+    "capital": {
+      "n": 2,
+      "top1_accuracy": 0.5,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.75
+    },
+    "consent": {
+      "n": 2,
+      "top1_accuracy": 0.5,
+      "top3_accuracy": 0.5,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.6
+    },
+    "title_match": {
+      "n": 2,
+      "top1_accuracy": 0.5,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.75
+    },
+    "dissolution": {
+      "n": 1,
+      "top1_accuracy": 0.0,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.5
+    },
+    "hard": {
+      "n": 1,
+      "top1_accuracy": 0.0,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "mrr_at_5": 0.5
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "civ-001",
+      "category": "definitional",
+      "gold_rank": 3
+    },
+    {
+      "query_id": "civ-002",
+      "category": "definitional",
+      "gold_rank": null
+    },
+    {
+      "query_id": "civ-003",
+      "category": "definitional",
+      "gold_rank": 3
+    },
+    {
+      "query_id": "civ-004",
+      "category": "definitional",
+      "gold_rank": null
+    },
+    {
+      "query_id": "civ-005",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "civ-006",
+      "category": "definitional",
+      "gold_rank": 3
+    },
+    {
+      "query_id": "civ-007",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "civ-008",
+      "category": "definitional",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "civ-009",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "civ-010",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "civ-011",
+      "category": "definitional",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "civ-012",
+      "category": "definitional",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "civ-013",
+      "category": "definitional",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "com-001",
+      "category": "governance",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "com-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "com-003",
+      "category": "governance",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "com-004",
+      "category": "governance",
+      "gold_rank": 5
+    },
+    {
+      "query_id": "com-005",
+      "category": "capital",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "com-006",
+      "category": "dissolution",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "com-007",
+      "category": "capital",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "com-008",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-001",
+      "category": "procedural",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-002",
+      "category": "consent",
+      "gold_rank": 5
+    },
+    {
+      "query_id": "pdp-003",
+      "category": "governance",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-004",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-005",
+      "category": "procedural",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-006",
+      "category": "procedural",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-007",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-008",
+      "category": "consent",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-009",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdp-010",
+      "category": "provision",
+      "gold_rank": null
+    },
+    {
+      "query_id": "pdp-011",
+      "category": "hard",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "inv-001",
+      "category": "rights",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "inv-002",
+      "category": "rights",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "inv-003",
+      "category": "rights",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "inv-004",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "inv-005",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "inv-006",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "inv-007",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "inv-008",
+      "category": "rights",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gtp-001",
+      "category": "title_match",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gtp-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gtp-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gtp-004",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "gtp-005",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gtp-006",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gtp-007",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "lab-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-004",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-005",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "lab-006",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-007",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-008",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-009",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-010",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-011",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "lab-012",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "lab-013",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "lab-014",
+      "category": "title_match",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "ith-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ith-002",
+      "category": "definitional",
+      "gold_rank": null
+    },
+    {
+      "query_id": "ith-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ith-004",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ith-005",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ith-006",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahw-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahw-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahw-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahw-004",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mrf-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mrf-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mrf-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mrf-004",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mrf-005",
+      "category": "topical",
+      "gold_rank": null
+    },
+    {
+      "query_id": "mrf-006",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mjz-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mjz-002",
+      "category": "topical",
+      "gold_rank": null
+    },
+    {
+      "query_id": "mjz-003",
+      "category": "topical",
+      "gold_rank": null
+    },
+    {
+      "query_id": "mjr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mjr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mjr-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtn-001",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "mtn-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "mtn-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtl-003",
+      "category": "topical",
+      "gold_rank": null
+    },
+    {
+      "query_id": "mqd-001",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "mqd-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "mqd-003",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "dmz-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dmz-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dmz-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "muh-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "muh-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "muh-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mhl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mhl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mhl-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tjr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tjr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tjr-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tjl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tjl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tjl-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ifl-001",
+      "category": "topical",
+      "gold_rank": 3
+    },
+    {
+      "query_id": "ifl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ifl-003",
+      "category": "topical",
+      "gold_rank": 3
+    },
+    {
+      "query_id": "ilr-001",
+      "category": "topical",
+      "gold_rank": 4
+    },
+    {
+      "query_id": "ilr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ilr-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "icr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "icr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "icr-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tkq-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tkq-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tkr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "thk-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "thk-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "thr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awt-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awt-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awt-003",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sjt-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sjt-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ast-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wkl-001",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "wkl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ghr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ghr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dft-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dft-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gsl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gsl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "twq-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "twq-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "twr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "twr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "aqr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "aqr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "aqrr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "aqrr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rhn-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rhn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tml-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tml-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wih-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wih-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wir-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gsr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gsr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mbl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mbr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "khj-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "irh-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "irh-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "irr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahd-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ahr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hmb-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hmb-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tft-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tft-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "qsm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "qsm-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "slk-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "slk-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awn-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "msl-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "msl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ifh-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ifh-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "jud-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "jud-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "atb-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "atb-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tnf-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tnf-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nfq-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nfq-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "jbm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "jbm-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "esd-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "esd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "msc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "msc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mzj-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mzj-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mnd-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mnd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dmn-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dmn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tqe-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tqe-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtd-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mtd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tea-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tea-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nzm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nzm-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "zwj-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "zwj-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rsw-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rsw-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "blg-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "blg-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cyb-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cyb-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hrs-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hrs-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trf-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trf-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cmn-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cmn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rgn-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rgn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "etr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "etr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "shc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "shc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cpr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cpr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tlc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tlc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "scb-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "scb-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bnk-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bnk-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cml-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cml-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ctp-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ctp-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "hba-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hba-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pay-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pay-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "min-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "min-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trd-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tsr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tsr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ins-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ins-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ecm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ecm-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "vat-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "vat-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "frn-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "frn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cav-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cav-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nrc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nrc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "env-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "env-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "itx-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "itx-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cvs-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cvs-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sin-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sin-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sil-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sil-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "zkt-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "zkt-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ptn-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ptn-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cst-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cst-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "afl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "afl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fnc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fnc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "chi-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "chi-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hcp-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hcp-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fls-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fls-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mar-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mar-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gad-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gad-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "acc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "acc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "naz-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "naz-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awq-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "awq-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sen-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sen-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "muc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "muc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prs-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prs-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "epl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "epl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nat-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nat-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "res-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "res-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "csl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "csl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fod-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fod-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hsy-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hsy-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dlr-001",
+      "category": "definitional",
+      "gold_rank": null
+    },
+    {
+      "query_id": "dlr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tdl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tdl-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nca-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nca-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nce-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nce-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prm-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tdr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tdr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nrg-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "nrg-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hsr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hsr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fdr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fdr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ele-001",
+      "category": "definitional",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "ele-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wat-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wat-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "vtr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "vtr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "itr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "itr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "agr-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "agr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cmr-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cmr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "amr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "amr-002",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "ptr-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ptr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ecr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ecr-002",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fcr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fcr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tfr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tfr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "eia-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "eia-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "evp-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "evp-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "epm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "epm-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "eaq-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "eaq-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "esp-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "esp-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "efe-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "efe-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rtt-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rtt-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "unv-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "unv-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prv-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prv-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "anh-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "anh-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cpl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cpl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pfa-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pfa-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ngo-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ngo-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "avm-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "avm-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "spt-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "spt-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "smk-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "smk-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wpn-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wpn-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdt-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pdt-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cvd-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cvd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cop-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cop-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bcd-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bcd-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "psl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "psl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sql-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sql-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "drl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "drl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "trl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sqr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sqr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "drr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "drr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "asr-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "asr-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gel-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "gel-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cil-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cil-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "reb-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "reb-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "srl-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "srl-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "etc-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "etc-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "eiv-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "eiv-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pcb-001",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pcb-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sda-001",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sda-002",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tnr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "car-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "aar-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "crr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "reb-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fow-r1",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "afr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ret-r1",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "ana-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "acc-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prv-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "coc-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "srv-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wam-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "epr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "alc-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "soi-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "sen-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "chp-r1",
+      "category": "topical",
+      "gold_rank": 4
+    },
+    {
+      "query_id": "whi-r1",
+      "category": "topical",
+      "gold_rank": 3
+    },
+    {
+      "query_id": "sil-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pfa-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hcp-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "shc-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "civ-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ang-r1",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "etr-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ele-r1",
+      "category": "definitional",
+      "gold_rank": null
+    },
+    {
+      "query_id": "mar-r1",
+      "category": "topical",
+      "gold_rank": 2
+    },
+    {
+      "query_id": "agr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cdf-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wtr-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "prs-r1",
+      "category": "topical",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bcr-r1",
+      "category": "definitional",
+      "gold_rank": null
+    },
+    {
+      "query_id": "tel-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cir-r1",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pmsr-r1",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bkcr-r1",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fcr-r1",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "flr-r1",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "csr-r1",
+      "category": "definitional",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bog-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ppl-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "elcl-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "elcr-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "psr-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fsr-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "pol-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "cgr-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "tvt-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wml-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "fsl-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "dcr-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "isa-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "bnp-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ofp-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "ccl-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rec-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "acv-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wlf-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "frs-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "mnh-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "odl-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "phi-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "hrp-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "osp-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "rega-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-001",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-002",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-003",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-004",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-005",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-006",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-007",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-008",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-009",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-010",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-011",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-012",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-013",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-014",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-015",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-016",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-017",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-018",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-019",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-020",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-021",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-022",
+      "category": "provision",
+      "gold_rank": 1
+    },
+    {
+      "query_id": "wf6-023",
+      "category": "provision",
+      "gold_rank": 1
+    }
+  ]
+}

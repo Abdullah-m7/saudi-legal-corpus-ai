@@ -15,10 +15,9 @@
   % Fallback layout approximating ACL geometry.
   \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
   \usepackage{times}
-  \usepackage[numbers,sort&compress]{natbib}
+  \usepackage[round]{natbib}
   \setlength{\columnsep}{0.6cm}
   \usepackage{multicol}
-  \setcitestyle{authoryear,round}
 }
 
 \usepackage[T1]{fontenc}
@@ -27,6 +26,10 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{url}
+
+% Narrow two-column measure + many unhyphenatable \texttt identifiers:
+% let TeX stretch interword space rather than overflow into the next column.
+\emergencystretch=3em
 
 \newcommand{\corpusname}{Saudi Legal Corpus for AI}
 
@@ -52,36 +55,32 @@ Article-Level Corpus of Saudi Arabian Legislation}
 \fi
 
 \begin{abstract}
-Legal natural language processing has advanced rapidly for English and, more
-recently, for European languages, but Arabic --- and Saudi Arabian law in
-particular --- remains critically under-resourced: no openly documented,
-machine-readable, article-level corpus of Saudi legislation has previously
-been described in the literature. We present the \textbf{\corpusname}, a
-corpus of \textbf{291 legislative tracks} (201 statutory laws, 64 statutory
-regulations, 24 implementing regulations, and associated procedural rules)
-covering the Kingdom of Saudi Arabia's principal legislation, structured into
-\textbf{15{,}689 article-level records} ($\sim$1.2 million Arabic tokens) in
-a unified, LLM-ready retrieval index. The corpus is built on three design
-commitments that distinguish it from web-scraped legal collections:
-(1)~\emph{official-source grounding} --- every track records its issuing
-authority, official portal or gazette source, and per-record provenance
-labels (251 distinct provenance statuses), organized into a four-tier
-source-verification taxonomy; (2)~\emph{auditability} --- 376 read-only,
-idempotent validators enforce schema, counts, and hashes, and all derived
-layers are deterministic and re-runnable; (3)~\emph{the governing-text
-principle} --- the official Arabic text governs, and all other language
-layers are explicitly non-authoritative references. Beyond the text itself,
-the corpus ships machine-readable analytical layers that are, to our
-knowledge, the first of their kind for Saudi law: a cross-reference graph
-(3{,}607 extracted citations, 585 of them inter-law), a hand-classified
-supersession graph (102 edges), a glossary of 1{,}920 statutorily defined
-terms with 3{,}318 definitions, an embedding-ready chunking layer (16{,}304
-chunks), and a manually verified retrieval evaluation set of 519 gold
-queries, on which a deterministic lexical baseline achieves 93.3\% top-1
-accuracy (MRR@5 $=$ 0.956), leaving informative headroom for neural Arabic
-legal retrieval. We describe the corpus construction methodology, report
-detailed statistics, and discuss intended uses, limitations, and the legal
-and ethical boundaries of releasing structured national legislation for AI
+Legal NLP has advanced rapidly for English and European languages, but
+Arabic --- and Saudi Arabian law in particular --- remains critically
+under-resourced: to our knowledge, no openly documented, machine-readable,
+article-level corpus of Saudi legislation has previously been described. We
+present the \textbf{\corpusname}: 290 legislative instruments (201 statutory
+laws, 64 statutory regulations, 24 implementing regulations, one set of
+procedural rules) structured into \textbf{15{,}689 article-level records}
+($\sim$1.2M Arabic tokens) in a unified, LLM-ready retrieval index. Three
+design commitments distinguish it from web-scraped collections:
+\emph{official-source grounding} (per-record provenance labels under a
+four-tier source-verification taxonomy), \emph{auditability} (376
+read-only, idempotent validators; fully deterministic derived layers), and
+\emph{the governing-text principle} (the official Arabic text governs; all
+other language layers are non-authoritative references). The corpus also
+ships analytical layers that are, to our knowledge, the first of their kind
+for Saudi law: a citation graph (3{,}607 references, 585 inter-law), a
+hand-classified supersession graph (102 edges), a glossary of 1{,}920
+statutorily defined terms, an embedding-ready chunking layer, and a
+519-query manually confirmed retrieval benchmark. On it, the corpus's
+metadata-based lexical searcher reaches 93.3\% top-1 accuracy versus 90.4\%
+for a standard BM25 baseline, with the largest gap on definitional queries
+(90.9\% vs.\ 74.5\%) --- quantifying the value of the engineered retrieval
+metadata and leaving informative headroom for neural Arabic legal
+retrieval. We describe the construction methodology, report reproducible
+statistics, and discuss intended uses, limitations, and the legal and
+ethical boundaries of releasing structured national legislation for AI
 research.
 \end{abstract}
 
@@ -92,10 +91,10 @@ retrieval-augmented generation (RAG) over authoritative legal text is the
 standard mitigation for hallucinated law. That mitigation, however, is only
 available where authoritative legal text exists in machine-readable,
 retrieval-ready form. For the law of the Kingdom of Saudi Arabia --- a G20
-economy undergoing the most significant codification wave in its history,
-including a new Civil Transactions Law (721 articles), a new Companies Law
-(281 articles), a new Evidence Law, and a new Personal Status Law --- no
-such resource has been publicly documented. Saudi legislation is published
+economy that has recently undergone a major codification wave, including a
+new Civil Transactions Law (721 articles), a new Companies Law (281
+articles), a new Evidence Law, and a new Personal Status Law --- no such
+resource has, to our knowledge, been publicly documented. Saudi legislation is published
 officially in the \emph{Umm Al-Qura} gazette and on government portals as
 human-readable pages and PDFs; it is not distributed as structured,
 article-level, provenance-annotated data.
@@ -128,9 +127,10 @@ Our contributions are:
     graph, and a statutory-definition glossary
     (Section~\ref{sec:layers}).
   \item \textbf{A retrieval evaluation resource}: 519 manually confirmed
-    gold queries over the unified index, with a deterministic lexical
-    baseline (top-1 $=$ 93.3\%, MRR@5 $=$ 0.956) that future neural Arabic
-    legal retrievers can be measured against
+    gold queries over the unified index, with two deterministic baselines
+    --- the corpus's metadata-based lexical searcher (top-1 $=$ 93.3\%) and
+    standard BM25 (top-1 $=$ 90.4\%) --- reported per query category so
+    that future neural Arabic legal retrievers can be measured against both
     (Section~\ref{sec:retrieval}).
 \end{enumerate}
 
@@ -162,6 +162,35 @@ scarce. To our knowledge, no prior published resource provides
 article-level, machine-readable coverage of Saudi legislation with
 documented official-source provenance.
 
+Table~\ref{tab:comparison} positions the \corpusname\ against these
+resources. It is smaller by raw volume --- deliberately: it is a
+\emph{structured statute corpus}, not a pretraining dump --- and it is the
+only one that is article-level, Arabic-governing, and provenance-annotated
+per record.
+
+\begin{table*}[t]
+\centering
+\footnotesize
+\begin{tabular}{lllll}
+\toprule
+\textbf{Resource} & \textbf{Type} & \textbf{Languages} & \textbf{Unit} & \textbf{Provenance} \\
+\midrule
+Pile of Law & pretraining corpus & English & document & no \\
+MultiLegalPile & pretraining corpus & 24 (no Arabic) & document & per source \\
+LexGLUE & benchmark & English & task example & no \\
+LEXTREME & benchmark & 24 (no Arabic) & task example & no \\
+LegalBench & benchmark & English & task example & no \\
+\midrule
+\corpusname & statute corpus $+$ eval & Arabic (gov.); EN/ZH ref. & article & per record \\
+\bottomrule
+\end{tabular}
+\caption{Positioning against existing legal corpora and benchmarks. ``gov.''
+= governing layer; ``ref.'' = non-authoritative reference layers (English
+and Chinese currently cover one law). Per-record provenance here means 251
+distinct source-status labels under a four-tier verification taxonomy.}
+\label{tab:comparison}
+\end{table*}
+
 \paragraph{Legal document standards and citation networks.}
 Standards such as Akoma Ntoso \citep{palmirani2011akoma} and the European
 Legislation Identifier define structural markup for legislation; our
@@ -188,12 +217,21 @@ Ministers (\url{laws.boe.gov.sa}) and the Ministry of Justice legal portal
 (\url{laws.moj.gov.sa}), as well as issuing ministries' and authorities'
 own sites.
 
-Each corpus \textbf{track} corresponds to one legislative instrument (one
-law, one regulation, one set of rules) and records its Arabic and English
-display names, issuing authority, official source URL(s), publication dates
-(Hijri and Gregorian where available), language layers, record counts, and
-validator targets, in a central machine-readable registry (registry
-version~3.0).
+\paragraph{Terminology.} Three unit terms recur in this paper and in the
+data, at different granularities. A \textbf{track} is the registry's unit of
+management: one onboarded instrument-layer bundle with its own sources,
+validators, and reports (291 tracks, of which 290 correspond to legislative
+instruments and one is a repository-level audit artifact). An
+\textbf{instrument} (\texttt{law\_id}) is one enacted law, regulation, or
+rule set as identified in the unified index (283 appear there). A
+\textbf{corpus} (\texttt{corpus} key) is a subject-matter grouping that
+typically joins a law with its implementing regulation and annexes --- e.g.,
+the \texttt{labor} corpus spans eight components --- of which there are 199.
+
+Each track records its Arabic and English display names, issuing authority,
+official source URL(s), publication dates (Hijri and Gregorian where
+available), language layers, record counts, and validator targets, in a
+central machine-readable registry (registry version~3.0).
 
 \section{Corpus Design and Methodology}
 \label{sec:design}
@@ -258,17 +296,49 @@ caveats attached.
 
 \subsection{Record schema}
 
-The atomic unit is the \textbf{article-level record}. In the unified
-retrieval index each record carries: a stable \texttt{record\_id};
-corpus/track identifiers (\texttt{corpus}, \texttt{law\_id},
-\texttt{law\_component}); the official Arabic law title and article number;
-generated retrieval metadata (\texttt{llm\_title\_ar},
-\texttt{retrieval\_title\_ar}, \texttt{keywords\_ar},
-\texttt{search\_queries\_ar}); the verbatim governing text
-(\texttt{text\_ar}); the provenance label (\texttt{text\_status}); and the
-source layer file it was projected from. Records are self-contained: a
-single retrieved record is sufficient context to cite the law, component,
-and article.
+The atomic unit is the \textbf{article-level record}
+(Figure~\ref{fig:record}). In the unified retrieval index each record
+carries: a stable \texttt{record\_id}; corpus/track identifiers
+(\texttt{corpus}, \texttt{law\_id}, \texttt{law\_component}); the official
+Arabic law title and article number; generated retrieval metadata
+(\texttt{llm\_title\_ar}, \texttt{retrieval\_title\_ar},
+\texttt{keywords\_ar}, \texttt{search\_queries\_ar}); the verbatim
+governing text (\texttt{text\_ar}); the provenance label
+(\texttt{text\_status}); and the source layer file it was projected from.
+Records are self-contained: a single retrieved record is sufficient context
+to cite the law, component, and article.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{example_record.png}
+\caption{An example unified-index record (Article~1 of the Regulation of
+Judicial Assistants' Work, abridged: keyword and query lists truncated).
+The article text translates as: ``Judicial assistants means: those who
+assist the circuit in its work as prescribed by law.'' The
+\texttt{text\_status} label records that the text was cross-checked between
+the Ministry of Justice portal API and the published official PDF.}
+\label{fig:record}
+\end{figure*}
+
+\subsection{Metadata generation and AI-usage disclosure}
+\label{sec:disclosure}
+
+Resource papers increasingly document not only what a dataset contains but
+how each field came to be \citep{bender2018data, gebru2021datasheets}. In
+this corpus: (i)~the governing Arabic text (\texttt{text\_ar}) is ingested
+verbatim from the recorded official sources and is never generated,
+summarized, or normalized; validators enforce this by hash and count.
+(ii)~The retrieval metadata is produced \emph{mechanically} by each track's
+deterministic generator script --- keywords by term-frequency extraction
+from the article's own text, search queries and retrieval titles by
+number/title templates --- not by a generative model, which is why the
+metadata-based searcher of Section~\ref{sec:retrieval} is deterministic
+end-to-end. (iii)~The non-governing reference layers (English, and the
+internal Chinese layer) were produced with machine-assisted translation and
+passed a documented internal QA program; they are explicitly non-official
+and non-binding. (iv)~Repository tooling and documentation were developed
+with AI assistance; every data-bearing layer that tooling produces is
+regenerable deterministically and checked by read-only validators.
 
 \section{Corpus Contents and Statistics}
 \label{sec:contents}
@@ -298,10 +368,17 @@ Closure-audit track & 1 \\
 \label{tab:families}
 \end{table}
 
-Track composition is shown in Table~\ref{tab:families}. The registry counts
-16{,}753 records in total, of which 15{,}858 are primary Arabic governing
-records, 614 are reference records, and 281 are internal reference records
-(the Chinese internal layer for the Companies Law).
+Track composition is shown in Table~\ref{tab:families}; the closure-audit
+track is a repository-level QA artifact, not legislation, and carries no
+legal text. The registry counts 16{,}753 records in total: 15{,}858 primary
+Arabic governing records, 614 reference records (English layers), and 281
+internal reference records (the Chinese internal layer for the Companies
+Law). The unified retrieval index (next subsection) projects 15{,}689 of
+the primary governing records; the remaining 169 belong to the separate
+implementing-regulations intake track family, which is registry-counted but
+served through its own layer files. Its 15{,}689 records span 283 distinct
+instruments grouped into 199 subject-matter corpora (per the terminology of
+Section~\ref{sec:sources}).
 
 \subsection{The unified retrieval index}
 
@@ -443,36 +520,64 @@ measure the searcher. Queries are categorized: 384 topical, 61
 provision-lookup, 55 definitional, and 19 in smaller categories
 (governance, rights, procedural, and deliberately hard cases).
 
-\subsection{Lexical baseline results}
+\paragraph{Annotation disclosure.} The queries and golds were authored by a
+single annotator (the corpus maintainer), by reading each article's
+committed text first and writing the query from its own wording; there is
+consequently no inter-annotator agreement to report, and the set inherits
+an in-vocabulary bias that we quantify next. Provision-lookup queries
+(``Article~5 of the Labor Law'') share their surface form with the
+templated \texttt{search\_queries\_ar} metadata, so for that category the
+evaluation partly measures template matching rather than free-form
+retrieval --- the per-category breakdown below keeps this visible instead
+of averaging it away.
 
-A deterministic lexical scorer over each record's retrieval metadata
+\subsection{Baseline results}
+
+We report two deterministic baselines. The \textbf{metadata searcher} is the
+corpus's own lexical scorer over each record's generated retrieval metadata
 (weighted keyword/title/query matching; no embeddings, no learned
-parameters) achieves the results in Table~\ref{tab:baseline}.
+parameters). \textbf{BM25} is standard Okapi BM25 ($k_1{=}1.5$, $b{=}0.75$)
+over each record's law title, article title, and verbatim text, with light
+Arabic orthographic normalization (diacritics and tatweel stripped; alef,
+teh-marbuta, and alef-maqsura variants folded) and whitespace tokenization
+--- no stemming, no stopword list. Table~\ref{tab:baseline} reports overall
+and per-category results (the 19 small-category queries are included in the
+overall row but not broken out).
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lr}
+\begin{tabular}{lrrrr}
 \toprule
-\textbf{Metric} & \textbf{Value} \\
+ & \multicolumn{2}{c}{\textbf{Metadata}} & \multicolumn{2}{c}{\textbf{BM25}} \\
+\textbf{Queries} & \textbf{T@1} & \textbf{MRR} & \textbf{T@1} & \textbf{MRR} \\
 \midrule
-Top-1 accuracy & 93.3\% (484/519) \\
-Top-3 accuracy & 97.5\% (506/519) \\
-Top-5 accuracy & 98.8\% (513/519) \\
-MRR@5 & 0.956 \\
+All (519) & 93.3 & .956 & 90.4 & .937 \\
+Topical (384) & 93.2 & .957 & 92.7 & .956 \\
+Provision (61) & 98.4 & .984 & 98.4 & .984 \\
+Definitional (55) & 90.9 & .937 & 74.5 & .809 \\
 \bottomrule
 \end{tabular}
-\caption{Deterministic lexical baseline on the 519-query evaluation set.}
+\caption{Top-1 accuracy (\%) and MRR@5 on the 519-query evaluation set:
+the corpus's metadata-based searcher vs.\ standard BM25 over titles $+$
+verbatim text.}
 \label{tab:baseline}
 \end{table}
 
-Six queries miss the top-5 entirely; these are published per-query, making
-error analysis reproducible. The strength of this simple baseline reflects
-the retrieval metadata engineered into each record; the remaining headroom
---- and, more importantly, robustness to paraphrase and dialectal variation
-not present in the gold queries --- is exactly the space in which neural
-Arabic legal retrievers should be evaluated. We release the queries, golds,
-per-query results, and the runner script to support that comparison.
+Three observations. First, the near-identical provision-lookup scores
+confirm the template-matching effect disclosed above: both systems resolve
+``Article $n$ of law $X$'' queries almost perfectly, so that category says
+little about retrieval quality. Second, the gap concentrates exactly where
+retrieval is hardest: on definitional queries --- where a query like
+``definition of the sale contract'' shares few surface tokens with the
+defining article --- the engineered metadata is worth $+16.4$ points of
+top-1 accuracy over BM25 (90.9\% vs.\ 74.5\%). Third, six metadata-searcher
+queries miss the top-5 entirely; per-query results for both systems are
+published, making error analysis reproducible. The remaining headroom ---
+and, more importantly, robustness to paraphrase and dialectal variation not
+present in the gold queries --- is exactly the space in which neural Arabic
+legal retrievers should be evaluated. We release the queries, golds,
+per-query results, and both runner scripts to support that comparison.
 
 \section{Intended Uses}
 \label{sec:uses}
@@ -511,10 +616,12 @@ per-query results, and the runner script to support that comparison.
     their published caveats (confidence labels, skipped tracks) bound but
     do not remove extraction error. The supersession graph is
     hand-classified and therefore conservative and possibly incomplete.
-  \item \textbf{The evaluation set is lexically close to the corpus.} The
-    519 gold queries were written against the corpus's own terminology;
-    they measure in-vocabulary retrieval well, paraphrase robustness less
-    so.
+  \item \textbf{The evaluation set is single-annotator and lexically close
+    to the corpus.} The 519 gold queries were authored by one annotator
+    from the articles' own wording (no inter-annotator agreement), and the
+    provision-lookup category overlaps the templated query metadata
+    (Section~\ref{sec:retrieval}); the set measures in-vocabulary retrieval
+    well, paraphrase robustness less so.
   \item \textbf{Multilingual depth is uneven.} Only the Companies Law has
     full English and internal Chinese layers; the corpus is Arabic-first by
     design.
@@ -532,19 +639,23 @@ binding text is the Arabic original as published in \emph{Umm Al-Qura}. The
 structuring apparatus (schemas, scripts, derived layers, metadata) is
 released under the MIT license; the underlying statutory texts remain
 public legal enactments of the Kingdom of Saudi Arabia, and the corpus
-asserts no ownership over them. A misuse consideration specific to legal
-corpora is over-trust: shipping provenance labels, verification tiers, and
-staleness flags \emph{inside} the data --- rather than in documentation
-users never read --- is a deliberate design choice so that downstream
-systems can surface uncertainty instead of laundering it.
+asserts no ownership over them. Field-level generation provenance is
+documented in Section~\ref{sec:disclosure}, in the spirit of data
+statements and datasheets \citep{bender2018data, gebru2021datasheets}. A
+misuse consideration specific to legal corpora is over-trust: shipping
+provenance labels, verification tiers, and staleness flags \emph{inside}
+the data --- rather than in documentation users never read --- is a
+deliberate design choice so that downstream systems can surface uncertainty
+instead of laundering it.
 
 \section{Conclusion and Future Work}
 
-We presented the \corpusname: 291 legislative tracks and 15{,}689
+We presented the \corpusname: 290 legislative instruments and 15{,}689
 article-level records of Saudi legislation with per-record provenance,
 tiered source verification, deterministic validation, derived
-citation/supersession/glossary layers, and a manually verified 519-query
-retrieval benchmark with a strong lexical baseline. Future work proceeds on
+citation/supersession/glossary layers, and a manually confirmed 519-query
+retrieval benchmark with two deterministic baselines that already localize
+where retrieval is hard (definitional queries). Future work proceeds on
 three axes: (1)~neural baselines --- Arabic and multilingual embedding
 models evaluated on the released benchmark, including paraphrase-robustness
 extensions of the query set; (2)~analytical studies over the released
@@ -557,10 +668,11 @@ corpus in a jurisdiction without a machine-readable gazette.
 \section*{Data Availability}
 
 The corpus, all derived layers, all validators, the evaluation pack, and
-the statistics script for this paper are available in the repository
-\texttt{al3obdi/saudi-legal-corpus-ai}. \emph{[TODO before submission: mint
-a versioned, DOI-carrying archival release (e.g., Zenodo) and cite it
-here.]}
+the scripts reproducing every figure in this paper (corpus statistics, the
+BM25 baseline, and the example-record figure) are available in the
+repository \texttt{al3obdi/saudi-legal-corpus-ai}. \emph{[TODO before
+submission: mint a versioned, DOI-carrying archival release (e.g., Zenodo)
+and cite it here.]}
 
 \IfFileExists{acl_natbib.bst}{%
   \bibliographystyle{acl_natbib}%
