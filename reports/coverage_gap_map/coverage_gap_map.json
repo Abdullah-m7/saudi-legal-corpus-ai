@@ -1368,5 +1368,42 @@
   "of_which_an_unresolved_parent": 3,
   "inflated_count_when_matching_on_decree_numbers_too": 18,
   "obtainable_via_the_gazette": 0
+ },
+ "is_anything_missing_actually_out_of_scope_measured_not_asserted": {
+  "note": "**«ينقصنا» و«لا يعنينا» جملتان مختلفتان، والفرقُ يجب أن يكون مكتوباً**. ولم يُحكَم برأيٍ بل **بسابقة المستودع نفسِه**: صنفٌ يحمل منه 101 أداة ليس خارج نطاقه. **والنتيجة: لا دلوَ خارجَ النطاق** — 24 تنظيمَ جهةٍ ناقصة مقابل **101 محمولة**، و10 لوائح مقابل **264**، و2 قواعد مقابل 77، و2 نظام مقابل 168، وضوابط واحدة مقابل 47. **فالثمانيةُ والثلاثون متأخِّراتٌ حقيقية.** **وأوضحُ عنقود**: سبعُ لوائح لوزير النقل، خمسٌ منها سلسلةٌ متتابعة بتاريخٍ واحد (118-123/41/1 في 7/5/1441هـ)، **والمستودع يحمل أخواتِها من السلسلة نفسها** — فهو يحمل بعضَ سلسلةٍ وينقصه سبعٌ من إخوتها. **وجُرِّبت ثلاث قنوات وسُجِّلت**: الجريدةُ لا تحمل إلا إشعاراتِ تعديلها (والإصدار يسبق الأرشيف)، و`tga.gov.sa` **غير قابل للوصول** من هذه البيئة، و`mot.gov.sa` يأذن robots لكن صفحتَه مُصيَّرة بجافاسكربت وواجهتُه الرأسية محميّة تُعيد صفحةَ دعمٍ بدل JSON.",
+  "out_of_scope_instruments": 0,
+  "missing_vs_held_by_kind": {
+   "entity_statute": [
+    24,
+    101
+   ],
+   "regulation": [
+    10,
+    264
+   ],
+   "rules": [
+    2,
+    77
+   ],
+   "law": [
+    2,
+    168
+   ],
+   "controls": [
+    1,
+    47
+   ]
+  },
+  "largest_coherent_cluster": "7 Ministry of Transport activity regulations, 5 of them one consecutive series",
+  "channels_tried": [
+   "uqn.gov.sa — amendment notices only, issue predates the archive",
+   "tga.gov.sa — unreachable from this sandbox (connection reset)",
+   "mot.gov.sa — robots permits, page is JS-rendered, headless API gated"
+  ]
+ },
+ "an_official_body_is_not_a_primary_source": {
+  "note": "**ملاحظةٌ تخصّ المستودعات القانونية كلَّها**: يُعلن `mot.gov.sa/robots.txt` مساراً باسم `llms-txt` موجَّهاً للنماذج اللغوية، وقراءتُه تُظهر أنه **موجزٌ تعريفيّ مولَّدٌ بالذكاء الاصطناعي** بقيت فيه **رقائقُ استشهادٍ آلية لم تُنظَّف**. **وهو ليس مصدراً أوّلياً بحال، ولا يدخل مستودعاً قانونياً ولو كانت الجهةُ المُصدِرة رسمية.** **فالرسميّةُ صفةُ الجهة، والأوّليّةُ صفةُ الوثيقة، ولا تُغني إحداهما عن الأخرى** — وهذا التمييز سيزداد أهميةً كلَّما نشرت الجهاتُ الرسمية موادَّ مولَّدة للنماذج.",
+  "observed_at": "https://mot.gov.sa/documents/d/guest/llms-txt",
+  "never_ingested": true
  }
 }
