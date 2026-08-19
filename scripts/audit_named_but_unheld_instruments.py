@@ -82,6 +82,19 @@ NOT_AN_INSTRUMENT_RE = re.compile(r"توصية|مذكرة|برقية|المعا�
 DECREE_NUM_RE = re.compile(r"رقم\s*\(\s*([^)\n]{1,16}?)\s*\)|رقم\s*([^\s,،.]{1,12})")
 DATE_RE = re.compile(r"وتاريخ\s*([0-9\s/]{6,16})هـ")
 
+# Recited titles that ARE held, under a title the decree writes differently.
+# Adjudicated by hand and named here rather than absorbed by a similarity
+# threshold: a threshold that swallowed this one would swallow «تنظيم الهيئة
+# السعودية للمحامين» too, which scores the same against «تنظيم الهيئة السعودية
+# للسياحة» and is a genuinely different authority. Claiming a gap that is not
+# there is the same error as missing one, pointing the other way.
+HELD_UNDER_A_VARIANT_TITLE = {
+    "اللائحة التنفيذية لنظام العمل وملحقاتها":
+        "held as labor_regulation, with its five annexes as their own tracks "
+        "(labor_annex1..5) — the decree recites the regulation AND its annexes "
+        "as one title, which this corpus stores as six",
+}
+
 
 def _mod(name):
     spec = importlib.util.spec_from_file_location(
@@ -175,6 +188,8 @@ def main():
             nm = DECREE_NUM_RE.search(issued_by)
             num = (nm.group(1) or nm.group(2)) if nm else None
             dt = DATE_RE.search(issued_by)
+            if subject in HELD_UNDER_A_VARIANT_TITLE:
+                continue
             key = cur.norm_ar(subject)
             e = found.setdefault(key, {
                 "instrument_ar": subject,
@@ -215,15 +230,57 @@ def main():
         e["nearest_held_track"] = {"jaccard": best[0], "track_id": best[1],
                                    "title_ar": best[2]}
 
+    # WHO DEPENDS ON WHAT IS MISSING. An inventory is a list; a dependency is a
+    # reason. For each instrument not held, the held artifacts that NAME it are
+    # recorded, and any of those whose parent law the cross-reference graph could
+    # not resolve is flagged — acquiring one such instrument closes that track's
+    # parent reference.
+    #
+    # Matched on the NAME only. A first pass also matched on the decree number and
+    # reported 18 instruments as depended-upon; matching on the name alone reports
+    # 4. The difference was entirely decision numbers cited IN PASSING inside other
+    # laws' text — «قرار مجلس الوزراء رقم (487)» appearing in an artifact about
+    # liquefied gas does not mean that artifact depends on تنظيم دارة الملك
+    # عبدالعزيز. This is the same trap the held-test fell into a few lines above,
+    # sprung a second time in the same audit and in the opposite direction: there it
+    # invented coverage, here it invented dependency. A bare number is not a citation.
+    art_blobs = []
+    for tid, (_a, _d, _e, path) in tracks.items():
+        try:
+            art_blobs.append((tid, open(os.path.join(ROOT, path), encoding="utf-8").read()))
+        except OSError:
+            continue
+    unresolved, stranded = set(), {}
+    graph_path = os.path.join(ROOT, "data", "corpus_cross_reference_graph",
+                              "corpus_cross_reference_graph.json")
+    if os.path.exists(graph_path):
+        graph = json.load(open(graph_path, encoding="utf-8"))
+        unresolved = set(graph.get("parent_law_resolution", {}).get("unresolved_tracks", []))
+        for r in graph.get("references", []):
+            if r.get("type") == "parent_law_unresolved":
+                stranded[r["source_track_id"]] = stranded.get(r["source_track_id"], 0) + 1
+    for e in found.values():
+        key = e["instrument_ar"].strip()[:34]
+        named_by = sorted({tid for tid, blob in art_blobs if key in blob})
+        parents = [t for t in named_by if t in unresolved]
+        e["named_by_held_artifacts"] = named_by
+        e["would_resolve_the_parent_of"] = parents
+        e["stranded_references_it_would_close"] = sum(stranded.get(t, 0) for t in parents)
+
     missing = [e for e in found.values() if not e["held"]]
     with_id = [e for e in missing if e["decree_number"] and e["decree_date_hijri"]]
-    missing.sort(key=lambda e: -len(e["named_by_notices"]))
+    missing.sort(key=lambda e: (-len(e.get("named_by_held_artifacts") or []),
+                                -len(e["named_by_notices"])))
 
     print("\ninstruments recited by those notices:        %d" % len(found))
     print("  already held (by title or decree number):  %d" % (len(found) - len(missing)))
     print("  NOT held:                                  %d" % len(missing))
     print("  of those, named WITH decree number + date: %d" % len(with_id))
     print("  pages unreachable:                         %d" % len(unreachable))
+    depended = [e for e in missing if e["named_by_held_artifacts"]]
+    print("  NOT held AND named by a held artifact:     %d" % len(depended))
+    print("  ...of which an unresolved parent:          %d"
+          % sum(1 for e in depended if e["would_resolve_the_parent_of"]))
     for e in missing[:25]:
         print("\n  %d notice(s) | %s" % (len(e["named_by_notices"]), e["instrument_ar"][:88]))
         print("       %s" % (e["issued_by_ar"][:96]))
@@ -249,6 +306,7 @@ def main():
         "not_held": len(missing),
         "not_held_with_a_decree_number_and_date": len(with_id),
         "pages_unreachable": unreachable,
+        "held_under_a_variant_title": HELD_UNDER_A_VARIANT_TITLE,
         "instruments": missing,
     }, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("\nwrote %s" % os.path.relpath(OUT, ROOT))
