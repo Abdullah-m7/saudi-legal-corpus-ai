@@ -1,5 +1,8 @@
 # Saudi Legal Corpus for AI
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22019182.svg)](https://doi.org/10.5281/zenodo.22019182)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 **Multilingual, LLM-ready, official-source-based Saudi legal corpus for AI.**
 It structures Saudi laws and regulations into **auditable, machine-readable
 legal layers**. The **Saudi Companies Law is the first implemented law
@@ -38,14 +41,24 @@ not the identity of the project.
 ## Public release status
 
 As of **August 2026** this repository is **publicly available on GitHub**,
-with versioned releases archived on **Zenodo** for a citable DOI (metadata
-in [`.zenodo.json`](.zenodo.json) and [`CITATION.cff`](CITATION.cff); the
-DOI badge is added once minted). An academic resource paper documenting the
-corpus lives under
+with versioned releases archived on **Zenodo** (metadata in
+[`.zenodo.json`](.zenodo.json) and [`CITATION.cff`](CITATION.cff)):
+
+- **Concept DOI** (always the latest version):
+  [`10.5281/zenodo.22019182`](https://doi.org/10.5281/zenodo.22019182)
+- **Version DOI** (v1.0.2):
+  [`10.5281/zenodo.22019183`](https://doi.org/10.5281/zenodo.22019183)
+
+An academic resource paper documenting the corpus lives under
 [`docs/research/corpus_paper/`](docs/research/corpus_paper/). Public
 availability changes none of the disclaimers above or in
 [`NOTICE.md`](NOTICE.md): the official Arabic text governs, and nothing here
 is an official publication or legal advice.
+
+### How to cite
+
+> Almohammedi, A. (2026). *Saudi Legal Corpus for AI* (v1.0.2) [Data set].
+> Zenodo. https://doi.org/10.5281/zenodo.22019183
 
 ## Current implemented law profile — Saudi Companies Law
 

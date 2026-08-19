@@ -512,9 +512,13 @@ machine-readable gazette.
 
 The corpus, all derived layers, all validators, the evaluation pack, and the
 scripts reproducing every figure in this paper (corpus statistics, the BM25
-baseline, and the example-record figure) are available in the repository
-`al3obdi/saudi-legal-corpus-ai`. *[TODO before submission: mint a versioned,
-DOI-carrying archival release (e.g., Zenodo) and cite it here.]*
+baseline, and the example-record figure) are openly available in the
+repository <https://github.com/al3obdi/saudi-legal-corpus-ai> and are
+archived on Zenodo under the MIT license. The version described in this
+paper is v1.0.2, **DOI: [10.5281/zenodo.22019183](https://doi.org/10.5281/zenodo.22019183)**;
+the concept DOI [10.5281/zenodo.22019182](https://doi.org/10.5281/zenodo.22019182)
+always resolves to the latest version. All statistics reported here are
+reproducible from that archived version.
 
 ## References
 

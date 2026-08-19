@@ -38,7 +38,9 @@ Requires (Debian/Ubuntu): `texlive-latex-base`, `texlive-latex-recommended`,
 - [x] Confirm full author name and affiliation (Abdullah Almohammedi,
       Independent Researcher, ORCID 0009-0001-0832-0995).
 - [ ] Add the official venue style kit and switch to it.
-- [ ] Mint a DOI-carrying archival release and update Data Availability.
+- [x] Mint a DOI-carrying archival release and update Data Availability
+      (Zenodo v1.0.2 — version DOI 10.5281/zenodo.22019183, concept DOI
+      10.5281/zenodo.22019182).
 - [ ] Verify every `references.bib` entry against the published record.
 - [ ] Check the venue's anonymity policy (the draft currently names the
       author and repository; blind review requires removing both).
