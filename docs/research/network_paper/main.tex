@@ -48,30 +48,34 @@ Network analysis of legal citation has produced a substantial literature for
 the United States and Europe, but the legal systems of the Arab world have
 remained outside it, for want of machine-readable statutory corpora. Using a
 newly released, provenance-annotated corpus of Saudi Arabian legislation, we
-construct and analyse the first citation network over Saudi statutory law:
+construct and analyse what is, to our knowledge, the first citation
+network over Saudi statutory law:
 290 legislative instruments, 15{,}689 articles, and 585 extracted
 inter-instrument references. We first address a problem that the citation
 literature typically leaves implicit: the extractor that resolves a cited law
 name to a target instrument is itself fallible. Validating every resolved
 edge against the target's registered title and adjudicating the residue by
 hand, we find a 3.3\% misresolution rate and analyse only the 410 surviving
-citations. We then separate \emph{vertical} citations, in which a regulation
-elaborates its own parent statute, from \emph{horizontal} citations that
-cross instrument families --- a distinction that materially changes the
-results, since statutes with long implementing regulations otherwise appear
-central for purely hierarchical reasons. Horizontal citations account for
-79.3\% of the network, so Saudi legislation is genuinely cross-referential
-rather than merely hierarchical. The horizontal network is sparse (174
-instruments, 221 edges) and centred on a small set of hubs led by the
-Companies Law (46 citations from 26 distinct instruments) and the Labour Law
-(36 from 23), while the Capital Market Law is cited deeply but narrowly (26
-citations from 9 instruments) --- a depth/breadth contrast that raw citation
-counts conceal. Cross-referencing the citation network against a
-hand-classified supersession graph, we identify live instruments that still
-cite repealed predecessors, and we map the instruments that Saudi legislation
-cites but that no consolidated machine-readable source yet covers. We discuss
-what these structures imply for legal informatics, retrieval-augmented legal
-AI, and legislative maintenance.
+citations. We then separate \emph{vertical} citations, in which a subordinate
+instrument elaborates its own parent statute, from \emph{horizontal}
+citations that cross instrument families. The distinction is not cosmetic:
+the Labour Law appears to rival the Companies Law as the system's leading hub
+until its eight annexes are recognised as part of its own family, after which
+its horizontal citation count falls by more than a third and the Companies
+Law stands alone. Horizontal citations nevertheless account for 70.5--74.4\%
+of the network depending on how family boundaries are drawn, so Saudi
+legislation is genuinely cross-referential rather than merely hierarchical.
+The horizontal network is sparse (164 instruments, 206 edges) and highly
+concentrated: ten instruments receive 58\% of all horizontal citations, led
+by the Companies Law (46 citations from 26 distinct instruments). Breadth and
+depth diverge sharply --- the Capital Market Law draws 26 citations from only
+9 instruments, while the Criminal Procedure Law draws 13 from 13 --- a
+contrast that raw citation counts conceal. Cross-referencing the citation
+network against a hand-classified supersession graph, we identify live
+instruments that still cite repealed predecessors, and we map the instruments
+that Saudi legislation cites but that no consolidated machine-readable source
+yet covers. We discuss what these structures imply for legal informatics,
+retrieval-augmented legal AI, and legislative maintenance.
 \end{abstract}
 
 \ifdefined\usingsnstyle
@@ -108,7 +112,8 @@ major codification wave, including a Civil Transactions Law of 721 articles,
 a new Companies Law, a new Evidence Law, and a new Personal Status Law; and
 nothing about its citation structure has been measured.
 
-This paper reports the first such measurement. It uses a recently released
+This paper reports what is, to our knowledge, the first such measurement. It
+uses a recently released
 corpus of Saudi legislation --- 290 instruments and 15{,}689 article-level
 records with per-record provenance \citep{almohammedi2026corpus} --- and the
 citation graph derived from it, and asks three questions.
@@ -239,17 +244,33 @@ procedural rules. A regulation necessarily cites its own parent statute,
 often repeatedly. Counting those citations alongside references that cross
 from one body of law into another conflates two different phenomena.
 
-We therefore assign every instrument to a family by stripping structural
-suffixes from its identifier (\texttt{labor\_law} and
-\texttt{labor\_implementing\_regulation} both belong to the \texttt{labor}
-family), and classify each citation as \emph{vertical} when source and
-target share a family and \emph{horizontal} otherwise.
+Family membership must therefore be recovered before anything is counted,
+and how it is recovered matters. Deriving families by stripping structural
+suffixes from instrument identifiers is the obvious approach and it is
+wrong: it splits the Labour Law's model contract forms and accessibility
+arrangements from the Labour Law itself, and would classify 36 parent-child
+citations as horizontal. We instead take family membership from the corpus's
+own subject-matter grouping, which joins each statute with its regulation
+and annexes --- the Labour Law family spans eight components --- and recover
+it by mapping every track's data files to the grouping key its records
+carry. A residual ambiguity remains where a subordinate instrument carries
+its own grouping key derived from the parent's (bankruptcy fees under
+bankruptcy), so we report both readings: a \emph{strict} one that treats such
+keys as separate families and a \emph{prefix} one that merges them, giving
+upper and lower bounds on the horizontal share.
 
-The distinction is consequential. Two instruments that appear prominent on
-raw counts --- the Anti-Narcotics Law (15 citations) and the Traffic Law (10)
---- receive those citations from exactly one source each, namely their own
-implementing regulation, and disappear from the horizontal ranking entirely.
-Unless stated otherwise, the results below concern the horizontal network.
+The distinction is consequential in two directions. Instruments that appear
+prominent on raw counts --- the Anti-Narcotics Law (15 citations) and the
+Traffic Law (10) --- receive those citations from exactly one source each,
+their own implementing regulation, and disappear from the horizontal ranking
+entirely. More strikingly, the Labour Law falls from 36 horizontal citations
+under the naive family definition to 23 under the corrected one, because
+thirteen of its citations come from its own annexes. Under the naive
+definition the Labour Law and the Companies Law look like twin hubs of
+comparable weight; under the corrected one the Companies Law stands alone.
+An analysis that skipped this step would have reported a headline finding
+that the data do not support. Unless stated otherwise, the results below
+concern the horizontal network under the prefix reading.
 
 \section{Results}
 \label{sec:results}
@@ -268,12 +289,14 @@ Instruments with at least one citation & 201 \\
 Distinct citing pairs (edges) & 257 \\
 Citations carried & 410 \\
 \midrule
-Vertical citations (within a family) & 85 \\
-Horizontal citations (across families) & 325 \\
-Horizontal share & 79.3\% \\
+Vertical citations, strict family reading & 105 \\
+Vertical citations, prefix family reading & 121 \\
+Horizontal citations (across families) & 289--305 \\
+Horizontal share & 70.5--74.4\% \\
 \midrule
-Horizontal network: instruments & 174 \\
-Horizontal network: edges & 221 \\
+Horizontal network: instruments & 164 \\
+Horizontal network: edges & 206 \\
+Share of horizontal citations to the top ten & 58.1\% \\
 Density over the citing subgraph & 0.0064 \\
 Weakly connected components & 12 \\
 Largest component & 175 \\
@@ -286,12 +309,15 @@ Reciprocal instrument pairs & 2 \\
 
 Table~\ref{tab:structure} summarises the network. Three features stand out.
 
-First, the network is \textbf{predominantly horizontal}: 325 of 410
-citations, or 79.3\%, cross instrument families. Saudi legislation is
-therefore genuinely cross-referential; the citation structure is not an
-artefact of statute-plus-regulation drafting. This is worth stating plainly
-because the opposite result was entirely plausible \emph{a priori} for a
-codified civil-law system with a strong statute/regulation hierarchy.
+First, the network is \textbf{predominantly horizontal}: between 289 and 305
+of 410 citations --- 70.5\% to 74.4\% depending on where family boundaries
+are drawn --- cross instrument families. Saudi legislation is therefore
+genuinely cross-referential; the citation structure is not an artefact of
+statute-plus-regulation drafting. This is worth stating plainly because the
+opposite result was entirely plausible \emph{a priori} for a codified
+civil-law system with a strong statute/regulation hierarchy. It is equally
+worth noting that a naive family definition inflates this figure to 79.3\%,
+which is why we report the bounds rather than a single number.
 
 Second, the network is \textbf{sparse but connected}. Density over the
 citing subgraph is 0.0064, yet 175 of the 201 citing instruments fall into a
@@ -323,17 +349,24 @@ Procedure Law receives 13 citations from 13 distinct instruments.}
 Figure~\ref{fig:hubs} shows the horizontal in-degree of the leading
 instruments, with the number of distinct citing instruments alongside.
 
-The \textbf{Companies Law} (46 citations from 26 instruments) and the
-\textbf{Labour Law} (36 from 23) are the twin hubs of the system. Their
-prominence is intelligible: nearly every economic regulation must define who
-counts as a company and what an employment relationship entails, so these
-two instruments supply definitional infrastructure to the rest of the
-corpus. That the commercial and labour statutes --- rather than, say, the
-constitutional instruments --- occupy this position tells us something real
-about which parts of Saudi law are load-bearing in day-to-day regulation.
+The \textbf{Companies Law} is the system's dominant hub: 46 horizontal
+citations from 26 distinct instruments, nearly twice the count of any other
+instrument and drawn from the widest range of sources. Its prominence is
+intelligible --- nearly every economic regulation must settle who counts as a
+company --- and it is robust to how family boundaries are drawn. The
+\textbf{Labour Law} follows at 23 citations from 19 instruments, still the
+second-broadest reach in the corpus but no longer a rival to the Companies
+Law once its own annexes are excluded. That commercial and labour statutes
+rather than, say, constitutional instruments occupy these positions tells us
+something real about which parts of Saudi law are load-bearing in day-to-day
+regulation.
+
+Citation is heavily concentrated: the ten most-cited instruments receive
+58.1\% of all horizontal citations, while 164 instruments participate in the
+horizontal network at all. A small definitional core carries the system.
 
 Breadth and depth come apart sharply. The \textbf{Capital Market Law} ranks
-third by citation count (26) but draws them from only nine instruments: it
+second by citation count (26) but draws them from only nine instruments: it
 is cited intensively within the financial regulatory cluster and barely
 outside it. By contrast the \textbf{Criminal Procedure Law} receives 13
 citations from 13 distinct instruments, and the \textbf{Electronic
@@ -350,6 +383,15 @@ Weighted PageRank over the validated network puts the Companies Law first
 (0.047), and the Bankruptcy Law fourth (0.036). PageRank rewards the Capital
 Market Law for being cited by instruments that are themselves cited, which
 is consistent with its position at the centre of a dense financial cluster.
+
+As a robustness check we recomputed the horizontal share and the leading
+hubs on all 424 resolved edges, that is without dropping the 14
+misresolutions. The horizontal share moves only from 70.5\% to 71.5\% and
+the four leading hubs are unchanged, so the headline structural findings do
+not depend on the validation step. The step still matters for individual
+rankings further down the distribution, where instruments separated by one
+or two citations change places --- which is precisely where a reader
+interested in a specific instrument would look.
 
 \subsection{Domain structure}
 
@@ -458,7 +500,7 @@ inherit the structure measured here. Two implications follow. Retrieval that
 returns a single article will frequently be insufficient, because the
 governing rule lives in another instrument that the retrieved article cites
 --- most often the Companies Law or the Labour Law, which between them
-receive 82 horizontal citations. And a system that grounds answers in
+receive 69 horizontal citations from 45 distinct instruments. And a system that grounds answers in
 statutory text without checking supersession can reproduce dangling
 citations of exactly the kind identified in Section~\ref{sec:dangling},
 faithfully quoting a provision that points at repealed law.
@@ -491,6 +533,23 @@ deliberately incomplete, and on name matching, which we constrained to avoid
 false positives at the cost of recall. Three confirmed cases is a floor, not
 an estimate.
 
+\paragraph{Family assignment is heuristic.}
+Vertical and horizontal citation are separated using the corpus's
+subject-matter grouping, which is a good but imperfect proxy for legal
+subordination. A subordinate instrument issued under a differently named
+parent --- a capital-market authority regulation issued under the Capital
+Market Law, for instance --- is counted as horizontal. The two readings we
+report bound the effect of the ambiguity we could detect; they do not bound
+this one, which would require explicit parent-instrument metadata that no
+current source provides.
+
+\paragraph{Hub interpretation is bounded by coverage and by counting.}
+Instruments outside the corpus cannot accumulate citations, and citation
+counts measure how often an instrument is invoked, not how consequential
+each invocation is: a single reference that imports an entire licensing
+regime counts the same as a passing definitional cross-reference. Centrality
+here is a measure of referential load, not of legal importance.
+
 \paragraph{The domain grouping is author-assigned.}
 Domain membership is not a property of Saudi legislation; the twelve-domain
 grouping used in Figure~\ref{fig:domains} is applied by published rules and
@@ -505,15 +564,19 @@ principle, and we leave it to future work.
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have constructed and analysed the first citation network over Saudi
+We have constructed and analysed what is, to our knowledge, the first
+citation network over Saudi
 Arabian legislation: 290 instruments, 410 validated inter-instrument
 citations, and a 3.3\% resolution-error rate measured rather than assumed.
-The network is 79.3\% horizontal, sparse, overwhelmingly asymmetric, and
-concentrated in a single component of 175 instruments centred on the
-Companies Law and the Labour Law. Separating breadth from depth reveals two
-different kinds of importance --- the intensively cited Capital Market Law
-against the widely cited Criminal Procedure and Electronic Transactions Laws
---- that a raw citation count merges. Intersecting the citation network with
+The network is 70.5--74.4\% horizontal, sparse, overwhelmingly asymmetric,
+and concentrated in a single component of 175 instruments centred on the
+Companies Law, with the ten most-cited instruments absorbing 58\% of
+horizontal citation. Separating vertical from horizontal citation was not a
+refinement but a correction: under a naive family definition the Labour Law
+appears to co-lead the system, and it does not. Separating breadth from
+depth then reveals two further kinds of importance --- the intensively cited
+Capital Market Law against the widely cited Criminal Procedure and
+Electronic Transactions Laws --- that a raw citation count merges. Intersecting the citation network with
 a supersession graph makes a previously invisible defect class detectable:
 live instruments that cite repealed law.
 

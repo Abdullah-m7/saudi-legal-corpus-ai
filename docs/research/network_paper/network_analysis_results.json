@@ -488,11 +488,15 @@
     ]
   },
   "vertical_vs_horizontal": {
-    "vertical_citations_within_instrument_family": 85,
-    "horizontal_citations_across_families": 325,
-    "horizontal_share": 0.7927,
-    "horizontal_network_nodes": 174,
-    "horizontal_network_edges": 221,
+    "family_definition": "corpus subject-matter key; the prefix reading additionally merges a family key that extends another",
+    "vertical_strict": 105,
+    "horizontal_strict": 305,
+    "horizontal_share_strict": 0.7439,
+    "vertical_citations_within_instrument_family": 121,
+    "horizontal_citations_across_families": 289,
+    "horizontal_share": 0.7049,
+    "horizontal_network_nodes": 164,
+    "horizontal_network_edges": 206,
     "horizontal_most_cited": [
       {
         "track_id": "companies_law",
@@ -501,16 +505,16 @@
         "distinct_citing_instruments": 26
       },
       {
-        "track_id": "labor_law",
-        "title_en": "Saudi Labor Law",
-        "citations": 36,
-        "distinct_citing_instruments": 23
-      },
-      {
         "track_id": "capital_market_law",
         "title_en": "Capital Market Law",
         "citations": 26,
         "distinct_citing_instruments": 9
+      },
+      {
+        "track_id": "labor_law",
+        "title_en": "Saudi Labor Law",
+        "citations": 23,
+        "distinct_citing_instruments": 19
       },
       {
         "track_id": "sharia_procedure_law",
@@ -521,20 +525,14 @@
       {
         "track_id": "bankruptcy_law",
         "title_en": "Bankruptcy Law",
-        "citations": 16,
-        "distinct_citing_instruments": 13
+        "citations": 14,
+        "distinct_citing_instruments": 11
       },
       {
         "track_id": "criminal_procedure_law",
         "title_en": "Law of Criminal Procedure",
         "citations": 13,
         "distinct_citing_instruments": 13
-      },
-      {
-        "track_id": "environmental_law",
-        "title_en": "Environmental Law",
-        "citations": 11,
-        "distinct_citing_instruments": 4
       },
       {
         "track_id": "real_estate_registration_law",
@@ -553,12 +551,6 @@
         "title_en": "Electronic Transactions Law",
         "citations": 7,
         "distinct_citing_instruments": 7
-      },
-      {
-        "track_id": "judiciary_law",
-        "title_en": "Law of the Judiciary",
-        "citations": 7,
-        "distinct_citing_instruments": 5
       },
       {
         "track_id": "board_of_grievances_law",
@@ -583,6 +575,56 @@
         "title_en": "Banking Control Law",
         "citations": 5,
         "distinct_citing_instruments": 3
+      },
+      {
+        "track_id": "environmental_law",
+        "title_en": "Environmental Law",
+        "citations": 5,
+        "distinct_citing_instruments": 2
+      },
+      {
+        "track_id": "customs_law",
+        "title_en": "GCC Unified Customs Law",
+        "citations": 5,
+        "distinct_citing_instruments": 1
+      }
+    ],
+    "top10_share_of_horizontal_citations": 0.5813
+  },
+  "robustness_without_edge_validation": {
+    "note": "Horizontal share and the leading hubs recomputed on all 424 resolved edges, i.e. without dropping the 14 misresolutions, to show how much the validation step moves the results.",
+    "horizontal_citations": 303,
+    "horizontal_share": 0.7146,
+    "top_cited_unvalidated": [
+      {
+        "track_id": "companies_law",
+        "title_en": "Saudi Companies Law",
+        "citations": 46
+      },
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "citations": 26
+      },
+      {
+        "track_id": "labor_law",
+        "title_en": "Saudi Labor Law",
+        "citations": 23
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "citations": 17
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "title_en": "Bankruptcy Law",
+        "citations": 14
+      },
+      {
+        "track_id": "criminal_procedure_law",
+        "title_en": "Law of Criminal Procedure",
+        "citations": 13
       }
     ]
   },

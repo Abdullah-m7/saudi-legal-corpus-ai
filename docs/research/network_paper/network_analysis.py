@@ -211,31 +211,68 @@ def main():
     )
 
     # --- 4b. Vertical vs horizontal citation -------------------------------
-    # A law and its implementing regulation belong to one instrument family.
-    # Citations inside a family are vertical (a regulation elaborating its own
-    # parent statute); citations across families are horizontal (one body of
-    # law reaching into another). Conflating them inflates the apparent
-    # centrality of any statute that happens to carry a long regulation.
-    SUFFIXES = [
-        "_implementing_regulation", "_regulation", "_law", "_rules", "_statute",
-        "_guide", "_mechanism", "_arrangements", "_forms", "_manuals",
-        "_organizational_statute", "_enablers", "_legacy",
-    ]
+    # A statute, its implementing regulation, and its annexes form one
+    # instrument family. Citations inside a family are vertical (a subordinate
+    # instrument elaborating its own parent); citations across families are
+    # horizontal (one body of law reaching into another). Conflating them
+    # inflates the apparent centrality of any statute carrying long
+    # subordinate instruments.
+    #
+    # Family membership comes from the corpus's own subject-matter grouping
+    # (the `corpus` key that joins, for example, the Labour Law with its
+    # regulation and eight annexes), recovered by mapping each track's data
+    # files to the corpus key their records carry. Deriving families by
+    # stripping suffixes from identifiers does NOT work: it splits
+    # `labor_model_contract_forms` from `labor_law` and would count 36
+    # parent-child citations as horizontal.
+    file_to_corpus = {}
+    with open(DATA / "corpus_unified_index" / "corpus_unified_llm_index.jsonl",
+              encoding="utf-8") as f:
+        for line in f:
+            rec = json.loads(line)
+            file_to_corpus[rec["source_layer"]] = rec["corpus"]
+
+    track_to_family = {}
+    for tid, t in tracks.items():
+        keys = {
+            file_to_corpus[Path(p).name]
+            for p in t.get("data_paths", [])
+            if Path(p).name in file_to_corpus
+        }
+        if keys:
+            track_to_family[tid] = sorted(keys, key=len)[0]
+    # The two implementing-regulation intake tracks serve the Companies Law
+    # and carry no records in the unified index.
+    for tid in ("implementing_regulations_general",
+                "implementing_regulations_listed_joint_stock"):
+        track_to_family.setdefault(tid, "companies")
 
     def family(track_id):
-        base = track_id
-        changed = True
-        while changed:
-            changed = False
-            for s in SUFFIXES:
-                if base.endswith(s) and len(base) > len(s):
-                    base, changed = base[: -len(s)], True
-        return base
+        return track_to_family.get(track_id, track_id)
 
+    def same_family_strict(a, b):
+        return family(a) == family(b)
+
+    def same_family_prefix(a, b):
+        """Also treat a family key that extends another as the same family.
+
+        Some subordinate instruments carry their own corpus key derived from
+        the parent's (`bankruptcy_fees` under `bankruptcy`); this reading
+        counts those citations as vertical too, and gives the conservative
+        bound on the horizontal share.
+        """
+        x, y = family(a), family(b)
+        return x == y or x.startswith(y + "_") or y.startswith(x + "_")
+
+    vertical_strict = [r for r in kept
+                       if same_family_strict(r["source_track_id"],
+                                             r["target_track_id"])]
     vertical = [r for r in kept
-                if family(r["source_track_id"]) == family(r["target_track_id"])]
+                if same_family_prefix(r["source_track_id"],
+                                      r["target_track_id"])]
     horizontal = [r for r in kept
-                  if family(r["source_track_id"]) != family(r["target_track_id"])]
+                  if not same_family_prefix(r["source_track_id"],
+                                            r["target_track_id"])]
 
     H = nx.DiGraph()
     for r in horizontal:
@@ -301,12 +338,46 @@ def main():
             "betweenness": top(betweenness, n=10),
         },
         "vertical_vs_horizontal": {
+            "family_definition": (
+                "corpus subject-matter key; the prefix reading additionally "
+                "merges a family key that extends another"
+            ),
+            "vertical_strict": len(vertical_strict),
+            "horizontal_strict": len(kept) - len(vertical_strict),
+            "horizontal_share_strict": round(
+                (len(kept) - len(vertical_strict)) / len(kept), 4) if kept else None,
             "vertical_citations_within_instrument_family": len(vertical),
             "horizontal_citations_across_families": len(horizontal),
             "horizontal_share": round(len(horizontal) / len(kept), 4) if kept else None,
             "horizontal_network_nodes": H.number_of_nodes(),
             "horizontal_network_edges": H.number_of_edges(),
             "horizontal_most_cited": horizontal_top,
+            "top10_share_of_horizontal_citations": round(
+                sum(x["citations"] for x in horizontal_top[:10]) / len(horizontal), 4
+            ) if horizontal else None,
+        },
+        "robustness_without_edge_validation": {
+            "note": (
+                "Horizontal share and the leading hubs recomputed on all 424 "
+                "resolved edges, i.e. without dropping the 14 misresolutions, "
+                "to show how much the validation step moves the results."
+            ),
+            "horizontal_citations": sum(
+                1 for r in resolved
+                if not same_family_prefix(r["source_track_id"],
+                                          r["target_track_id"])),
+            "horizontal_share": round(sum(
+                1 for r in resolved
+                if not same_family_prefix(r["source_track_id"],
+                                          r["target_track_id"])) / len(resolved), 4),
+            "top_cited_unvalidated": [
+                {"track_id": k, "title_en": titles_en.get(k, ""), "citations": v}
+                for k, v in Counter(
+                    r["target_track_id"] for r in resolved
+                    if not same_family_prefix(r["source_track_id"],
+                                              r["target_track_id"])
+                ).most_common(6)
+            ],
         },
         "dangling_citations_to_repealed_instruments": {
             "count": len(dangling),

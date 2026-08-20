@@ -35,12 +35,20 @@ read-only over `data/` and deterministic.
 - **3.3% of resolved citation edges were misresolutions** and were dropped
   after hand adjudication; the paper argues this validation step should be
   standard in citation-network studies built on automatic extraction.
-- **79.3% of citations are horizontal** (across instrument families), so
-  Saudi legislation is genuinely cross-referential rather than merely
-  hierarchical.
-- **The Companies Law (46 citations from 26 instruments) and the Labour Law
-  (36 from 23)** are the system's twin hubs; the Capital Market Law is cited
-  deeply but narrowly (26 from 9).
+- **70.5–74.4% of citations are horizontal** (across instrument families,
+  bounds from two family readings), so Saudi legislation is genuinely
+  cross-referential rather than merely hierarchical.
+- **The Companies Law is the dominant hub** (46 citations from 26
+  instruments); the Labour Law follows at 23 from 19. A naive family
+  definition — stripping suffixes from identifiers — makes the Labour Law
+  look like a co-leader at 36 citations, because 13 come from its own
+  annexes. The quality review caught this and the corrected definition is
+  what the paper reports.
+- **Citation is concentrated**: the ten most-cited instruments receive 58.1%
+  of all horizontal citations.
+- **Robustness**: recomputing without the edge-validation step moves the
+  horizontal share only from 70.5% to 71.5% and leaves the leading hubs
+  unchanged.
 - **Three confirmed dangling citations**: live instruments that still cite
   repealed predecessors, found by intersecting the citation and supersession
   graphs.
@@ -52,6 +60,10 @@ read-only over `data/` and deterministic.
 - [x] Author name, affiliation, ORCID.
 - [x] Data availability with the corpus DOI.
 - [x] Declarations block.
+- [x] Quality review: family-definition bug found and corrected; novelty
+      claims hedged; robustness check and concentration statistic added;
+      limitations extended to family assignment and to what citation counts
+      do and do not measure.
 - [ ] Update the `almohammedi2026corpus` reference once paper 1 has a
       publication record (currently cited as under review).
 - [ ] Move to Springer's own `sn-jnl` class (Overleaf template) before
