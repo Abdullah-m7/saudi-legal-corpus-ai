@@ -1,0 +1,90 @@
+% Cover letter for the Artificial Intelligence and Law submission.
+% Build: pdflatex cover_letter.tex
+\documentclass[10.5pt]{letter}
+\usepackage[a4paper,top=1.8cm,bottom=1.8cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+
+\begin{document}
+\noindent
+{\large\textbf{Abdullah Almohammedi}}\\
+Independent Researcher\\
+\texttt{abdullah.m.almohammedi@gmail.com}\\
+ORCID: \href{https://orcid.org/0009-0001-0832-0995}{0009-0001-0832-0995}
+
+\vspace{0.8em}
+\noindent 20 August 2026
+
+\vspace{0.8em}
+\noindent The Editors\\
+\emph{Artificial Intelligence and Law}\\
+Springer Nature
+
+\vspace{0.9em}
+\noindent Dear Editors,
+
+\vspace{0.6em}
+I am pleased to submit the enclosed manuscript, ``Vertical Elaboration or
+Horizontal Integration? A Citation-Network Analysis of Saudi Arabian
+Legislation,'' for consideration in \emph{Artificial Intelligence and Law}.
+
+\vspace{0.5em}
+The paper reports what is, to my knowledge, the first citation-network
+analysis of an Arab legal system. Network analysis of legal citation has a
+substantial literature for the United States and Europe, but the legal
+systems of the Arab world have remained outside it for want of
+machine-readable statutory corpora. Working from a recently released,
+provenance-annotated corpus of Saudi legislation, I construct and analyse a
+network over 290 legislative instruments and 410 validated inter-instrument
+citations.
+
+\vspace{0.5em}
+Three contributions may interest the journal's readership. First, a
+methodological one: citation extraction over statutory text involves both
+detecting a citation and resolving it to an instrument, and network studies
+built on automatic extraction inherit the errors of the second step
+silently. I validate every resolved edge, adjudicate the residue by hand,
+and report a 3.3\% misresolution rate rather than assuming it away ---
+a practice I argue should be standard. Second, a structural one: separating
+\emph{vertical} citations, in which a subordinate instrument elaborates its
+own parent, from \emph{horizontal} citations across instrument families
+changes the results materially. Under a naive family definition the Labour
+Law appears to co-lead the system with the Companies Law; once its eight
+annexes are correctly attributed, its horizontal citation count falls by
+more than a third and the Companies Law stands alone. The distinction
+generalises to any jurisdiction that pairs statutes with implementing
+regulations. Third, an applied one: intersecting the citation network with a
+hand-classified supersession graph makes a previously invisible defect class
+detectable at scale --- live instruments that still cite repealed law ---
+with direct implications for retrieval-augmented legal AI, which can
+otherwise ground an answer faithfully in a provision that points at law no
+longer in force.
+
+\vspace{0.5em}
+The corpus, the citation and supersession graphs, and the analysis and
+figure scripts that reproduce every number and figure in the manuscript are
+openly available under the MIT licence and archived on Zenodo with a citable
+DOI (10.5281/zenodo.22019183).
+
+\vspace{0.5em}
+The manuscript is original, has not been published previously, and is not
+under consideration elsewhere. It cites a companion paper describing the
+underlying corpus, which is currently under review at another journal; the
+two are distinct manuscripts with distinct contributions, and the present
+paper is self-contained. There are no competing interests and no funding to
+declare. I am the sole author.
+
+\vspace{0.5em}
+Thank you for your consideration.
+
+\vspace{0.9em}
+\noindent Yours sincerely,
+
+\vspace{1em}
+\noindent\textbf{Abdullah Almohammedi}
+
+\end{document}

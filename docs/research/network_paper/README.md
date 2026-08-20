@@ -17,7 +17,11 @@ legal system the corpus captures.
 | `make_figures.py` | Produces Figures 1 and 2 from the results. |
 | `fig1_hubs.png` | Figure 1 — horizontal citations received, with breadth alongside depth. |
 | `fig2_domain_flows.png` | Figure 2 — domain-to-domain citation flow heatmap. |
-| `main.pdf` | Compiled manuscript (10 pages in the fallback layout). |
+| `main.pdf` | Compiled manuscript (11 pages in the fallback layout). |
+| `cover_letter.pdf` | Cover letter, one page — upload this to Snapp. |
+| `cover_letter.tex` | Source for the cover letter. |
+| `submission_kit.md` | Every submission field with the exact text to paste, and the answer to every Declarations screen. |
+| `snapp_submission.zip` | LaTeX sources packaged for upload — Snapp compiles them to PDF. |
 
 ## Reproduce
 
@@ -68,8 +72,8 @@ read-only over `data/` and deterministic.
       publication record (currently cited as under review).
 - [ ] Move to Springer's own `sn-jnl` class (Overleaf template) before
       submission.
-- [ ] Check the journal's current submission route — *Artificial
-      Intelligence and Law* may use Snapp or Editorial Manager.
+- [x] Submission route confirmed: Snapp, the same platform as paper 1.
+- [x] Cover letter, submission kit, and upload zip prepared.
 - [ ] Confirm the journal's figure-resolution requirements; both figures are
       generated at 300 dpi and can be re-rendered higher from the script.
 
