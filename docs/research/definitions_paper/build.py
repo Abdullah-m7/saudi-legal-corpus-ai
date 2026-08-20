@@ -181,6 +181,12 @@ def prepare(anon, for_docx):
     block = TITLE if anon else TITLE + BYLINE
     text = text.replace("\\maketitle", block + "\\vspace{1em}\n")
     if for_docx:
+        # ScholarOne's pre-fill parser reads the two-line title block as two
+        # title candidates and concatenates them, so the submission form comes
+        # up with the title entered twice. One line in the Word file, two in
+        # the typeset PDF where the break looks better.
+        text = text.replace(r"What Counts as an Establishment?\\[2pt]" + "\n",
+                            "What Counts as an Establishment? ")
         # The journal wants the manuscript double-spaced, and figures supplied
         # as separate files rather than embedded in the text.
         text = text.replace("\\onehalfspacing", "\\doublespacing")
