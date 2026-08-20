@@ -87,6 +87,8 @@ def figure_one(r):
     fig.tight_layout()
     out = HERE / "fig1_funnel.png"
     fig.savefig(out, dpi=300)
+    # Statute Law Review wants figures as separate vector files, not embedded.
+    fig.savefig(out.with_suffix(".eps"), format="eps")
     plt.close(fig)
     return out
 
@@ -130,6 +132,7 @@ def figure_two(r):
     fig.tight_layout()
     out = HERE / "fig2_adjudication.png"
     fig.savefig(out, dpi=300)
+    fig.savefig(out.with_suffix(".eps"), format="eps")
     plt.close(fig)
     return out
 

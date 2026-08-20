@@ -1,29 +1,43 @@
 # Paper 3 — Definitional Fragmentation Across Saudi Legislation
 
-*What Counts as an Establishment? Measuring Definitional Fragmentation
-Across Saudi Arabian Legislation.*
+*What Counts as an Establishment? Definitional Fragmentation Across Saudi
+Arabian Legislation.*
 
 Third paper in the series. Paper 1 (`../corpus_paper/`) describes the corpus;
 paper 2 (`../network_paper/`) analyses how instruments cite each other; this
 one asks whether they use the same vocabulary.
 
+Written as a full-length article for **Statute Law Review** (Oxford
+University Press): 7,972 words including footnotes, OSCOLA-style numbered
+footnotes, no bibliography, British spelling, double-anonymous review.
+
 | File | Purpose |
 |---|---|
-| `main.tex` | The manuscript (`\anonfalse` by default; set `\anontrue` if the target journal reviews anonymously). |
-| `references.bib` | Bibliography. |
+| `main.tex` | The manuscript — the single source for every build. Carries an `\anonfalse`/`\anontrue` switch. |
+| `build.py` | Produces every submission file from `main.tex`, and audits the anonymised one. |
 | `definition_analysis.py` | Produces every number: the indexical filter, lexical divergence, and the hand-adjudication table. |
 | `definition_analysis_results.json` | Generated results snapshot. |
-| `make_figures.py` | Produces Figures 1 and 2. |
-| `fig1_funnel.png` / `fig2_adjudication.png` | The two figures. |
-| `main.pdf` | Compiled manuscript (10 pages in the fallback layout). |
+| `make_figures.py` | Produces Figures 1 and 2, as PNG (for the PDF) and EPS (for the journal). |
+| `fig1_funnel.*` / `fig2_adjudication.*` | The two figures. |
+| `main.pdf` | Identified build, typeset — for the author, not for upload. |
+| `main_anon.pdf` | Anonymised build, typeset — read this before uploading. |
+| `submission_manuscript.docx` | **Upload.** Anonymised, double-spaced, figures referenced not embedded. |
+| `submission_title_page.docx` | **Upload.** Identity, declarations, word count. |
+| `cover_letter.tex` / `.pdf` | **Upload.** One page. |
+| `submission_kit.md` | Every submission field with the exact text to paste, and the answer to every declarations screen. |
+| `references.bib` | Retained from the earlier author–date build; `main.tex` no longer uses it, because the journal wants footnote citations. |
 
 ## Reproduce
 
 ```
 python3 docs/research/definitions_paper/definition_analysis.py
 python3 docs/research/definitions_paper/make_figures.py
-cd docs/research/definitions_paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
+cd docs/research/definitions_paper && python3 build.py
+pdflatex cover_letter && pdflatex cover_letter
 ```
+
+`build.py` needs `pandoc`; everything else needs a plain TeX Live plus
+`matplotlib`. The analysis is read-only over `data/` and deterministic.
 
 ## Headline findings
 
@@ -37,12 +51,18 @@ cd docs/research/definitions_paper && pdflatex main && bibtex main && pdflatex m
   argues this figure should not be reported as legal inconsistency.
 - **Of the twelve most widely shared substantive terms, four carry
   materially conflicting scope**: establishment, consumer, the Kingdom,
-  activity. The rest are harmonized, instrument-local, homonymous, or
+  activity. The rest are harmonised, instrument-local, homonymous, or
   indexical.
 - **Flagship case**: a sole trader with no employees is an *establishment*
   under the Competition Law and is not one under the Labour Law.
 - **The measured overstatement is 3×**, not more: all twelve adjudicated
   terms are lexically divergent and four are substantively conflicting.
+- **The extended definition of "the Kingdom" is a tax phenomenon.** Thirteen
+  of seventeen instruments define it as, simply, "the Kingdom of Saudi
+  Arabia"; the four that define territory and offshore sovereign rights are
+  exactly the four fiscal instruments.
+- **A general interpretation act would fix one of the four**, not all four —
+  the article works through which, and why that is still worth having.
 
 ## Two bugs the build caught (both would have changed the headline)
 
@@ -56,52 +76,79 @@ cd docs/research/definitions_paper && pdflatex main && bibtex main && pdflatex m
    indexical definitions. The test now applies only at the head of the
    definition, which is where Arabic statutory drafting puts the genus.
 
-## Candidate venues
+## Why `build.py` exists
 
-**Statute Law Review** (Oxford University Press) — recommended. Its stated
-objectives are the legislative process, law reform, and *the drafting and
-interpretation of legislation*, which is exactly this paper's subject.
-Verified requirements:
+pdfLaTeX honours the `\ifanon` switch. **pandoc does not** — it silently
+keeps the identifying material and drops `\maketitle`. Converting the
+manuscript by hand would therefore have uploaded an author-identified
+"anonymised" file to a double-anonymous journal, and nothing in the output
+would have shown it. `build.py` resolves the conditionals itself before
+either tool runs, then greps the finished `.docx` for the author's name,
+email, ORCID, GitHub handle and Zenodo DOIs, and refuses to finish if any of
+them survived.
+
+It also applies the journal's format requirements, which the LaTeX source
+does not encode: double spacing on the Normal, Body Text and Footnote Text
+styles (pandoc ignores `setspace`), figures replaced by `[Figure N near
+here]` markers with their captions retained, and the word count computed from
+the finished Word file rather than estimated.
+
+## Venue
+
+**Statute Law Review** (Oxford University Press). Its stated objectives are
+the legislative process, law reform, and *the drafting and interpretation of
+legislation*, which is this article's subject. Verified requirements:
 
 | | |
 |---|---|
 | Review model | Double-anonymous, two reviewers; author-suggested reviewers not considered |
-| Length | Standard article 6,500–10,000 words **including footnotes**; short article 3,000–4,000 |
+| Length | Article 6,500–10,000 words **including footnotes**; short article 3,000–4,000 |
 | Submission | ScholarOne — `mc.manuscriptcentral.com/statlaw` |
-| Manuscript format | Word/RTF, footnote citation style (not LaTeX, not author–date) |
+| Format | Word; anonymised manuscript **and** separate title page, both double-spaced; figures as separate EPS/AI; footnotes per OSCOLA |
 | Frequency | Three issues per year |
 
-Two consequences for this manuscript. It currently runs ~3,000 words of
-prose (~4,000 with tables, captions and references), so it fits the *short
-article* band as written and needs roughly doubling to enter as a standard
-article — the expansion that belongs there is doctrinal, not computational:
-Saudi drafting convention on definitions, the sole-trader/establishment case
-worked through, and comparison with jurisdictions that legislate general
-interpretation acts. And the audience is doctrinal, so the legal question
-has to lead and the pipeline has to sit behind it.
+The audience is doctrinal and quantitative work is unusual there, so the
+article leads with the legal question and keeps the pipeline behind it.
 
 Alternatives considered:
 
 - **International Journal of Law and Information Technology** (Oxford) — also
-  ScholarOne, but its scope is AI, IT and cyberspace law. This paper is
-  neither; the fit is weaker than Statute Law Review's.
-- **Artificial Intelligence and Law** (Springer) — fits the legal-AI framing,
+  ScholarOne, but its scope is AI, IT and cyberspace law. This article is
+  neither; the fit is weaker.
+- **Artificial Intelligence and Law** (Springer) — fits a legal-AI framing,
   but paper 2 is already under review there.
 - **International Journal of Legal Discourse** (De Gruyter) — legal language.
 
-Statute Law Review reviews double-anonymously (verified above), so the
-`\anontrue` switch in `main.tex` must be set before submission — the same
-step paper 2 needed.
+The earlier Springer/author–date build of this manuscript, before it was
+rewritten at article length for a law journal, is in git history.
 
 ## Pre-submission checklist
 
 - [x] Analysis, figures, and manuscript build cleanly and reproducibly.
-- [ ] Choose the venue and confirm its review model and submission route.
+- [x] Venue chosen; review model, length band, and submission route verified
+      against the journal's own author instructions.
+- [x] Expanded from short-article to article length, with the legal question
+      leading and the doctrinal analysis of the four conflicting terms as the
+      substantive core.
+- [x] Citations converted to numbered OSCOLA footnotes; drafting and
+      interpretation literature added and each reference verified against the
+      published record.
+- [x] Every count re-verified against the glossary data after the expansion,
+      which caught six errors — a footnote citing the Environmental Law for a
+      term it does not define; a miscount of the bodies enumerated in the
+      Building Code Law; two instruments left unaccounted for in the
+      per-term totals; and two definitions described more loosely than the
+      text supports.
 - [x] Quality review: every figure re-verified against the data; an invalid
       comparison in the Discussion corrected (it set 198-of-322 against
       4-of-12 and called the gap two orders of magnitude — the measured
       overstatement is 3×); the indexical filter's recall on the adjudicated
       sample (83%) now reported; a frequency-bias limitation added that
       argues the 4-in-12 figure is a lower bound on conflict density.
-- [ ] Update the `almohammedi2026corpus` reference once paper 1 has a
-      publication record.
+- [x] Anonymised build audited programmatically for identifying strings.
+- [ ] Camera-ready only: replace the "companion study" wording in section 2.3
+      and in the data availability statement with full citations to papers 1
+      and 2 once they have publication records. They are referred to
+      obliquely in the submitted version because naming them would identify
+      the author to reviewers.
+- [ ] Submit, and record the manuscript ID in `submission_kit.md`.
