@@ -15,7 +15,7 @@ one asks whether they use the same vocabulary.
 | `definition_analysis_results.json` | Generated results snapshot. |
 | `make_figures.py` | Produces Figures 1 and 2. |
 | `fig1_funnel.png` / `fig2_adjudication.png` | The two figures. |
-| `main.pdf` | Compiled manuscript (9 pages in the fallback layout). |
+| `main.pdf` | Compiled manuscript (10 pages in the fallback layout). |
 
 ## Reproduce
 
@@ -41,6 +41,8 @@ cd docs/research/definitions_paper && pdflatex main && bibtex main && pdflatex m
   indexical.
 - **Flagship case**: a sole trader with no employees is an *establishment*
   under the Competition Law and is not one under the Labour Law.
+- **The measured overstatement is 3×**, not more: all twelve adjudicated
+  terms are lexically divergent and four are substantively conflicting.
 
 ## Two bugs the build caught (both would have changed the headline)
 
@@ -70,6 +72,11 @@ manuscript. The `\anontrue` switch in `main.tex` is there for that.
 
 - [x] Analysis, figures, and manuscript build cleanly and reproducibly.
 - [ ] Choose the venue and confirm its review model and submission route.
-- [ ] Quality review (as run on papers 1 and 2).
+- [x] Quality review: every figure re-verified against the data; an invalid
+      comparison in the Discussion corrected (it set 198-of-322 against
+      4-of-12 and called the gap two orders of magnitude — the measured
+      overstatement is 3×); the indexical filter's recall on the adjudicated
+      sample (83%) now reported; a frequency-bias limitation added that
+      argues the 4-in-12 figure is a lower bound on conflict density.
 - [ ] Update the `almohammedi2026corpus` reference once paper 1 has a
       publication record.
