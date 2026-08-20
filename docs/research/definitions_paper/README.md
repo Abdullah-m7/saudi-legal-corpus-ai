@@ -58,15 +58,40 @@ cd docs/research/definitions_paper && pdflatex main && bibtex main && pdflatex m
 
 ## Candidate venues
 
-- **Statute Law Review** (Oxford) — legislative drafting and statutory
-  interpretation; quantitative work is unusual there, which cuts both ways.
+**Statute Law Review** (Oxford University Press) — recommended. Its stated
+objectives are the legislative process, law reform, and *the drafting and
+interpretation of legislation*, which is exactly this paper's subject.
+Verified requirements:
+
+| | |
+|---|---|
+| Review model | Double-anonymous, two reviewers; author-suggested reviewers not considered |
+| Length | Standard article 6,500–10,000 words **including footnotes**; short article 3,000–4,000 |
+| Submission | ScholarOne — `mc.manuscriptcentral.com/statlaw` |
+| Manuscript format | Word/RTF, footnote citation style (not LaTeX, not author–date) |
+| Frequency | Three issues per year |
+
+Two consequences for this manuscript. It currently runs ~3,000 words of
+prose (~4,000 with tables, captions and references), so it fits the *short
+article* band as written and needs roughly doubling to enter as a standard
+article — the expansion that belongs there is doctrinal, not computational:
+Saudi drafting convention on definitions, the sole-trader/establishment case
+worked through, and comparison with jurisdictions that legislate general
+interpretation acts. And the audience is doctrinal, so the legal question
+has to lead and the pipeline has to sit behind it.
+
+Alternatives considered:
+
+- **International Journal of Law and Information Technology** (Oxford) — also
+  ScholarOne, but its scope is AI, IT and cyberspace law. This paper is
+  neither; the fit is weaker than Statute Law Review's.
 - **Artificial Intelligence and Law** (Springer) — fits the legal-AI framing,
   but paper 2 is already under review there.
 - **International Journal of Legal Discourse** (De Gruyter) — legal language.
 
-Verify the chosen journal's review model before submitting: paper 2's target
-turned out to review double-anonymously, which required blinding the
-manuscript. The `\anontrue` switch in `main.tex` is there for that.
+Statute Law Review reviews double-anonymously (verified above), so the
+`\anontrue` switch in `main.tex` must be set before submission — the same
+step paper 2 needed.
 
 ## Pre-submission checklist
 
