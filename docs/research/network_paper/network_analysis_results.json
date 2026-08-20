@@ -1,0 +1,748 @@
+{
+  "edge_validation": {
+    "inter_instrument_references_extracted": 585,
+    "resolved_to_a_corpus_track": 424,
+    "unresolved_target_names": 161,
+    "auto_accepted_by_token_overlap": 408,
+    "hand_adjudicated": 16,
+    "kept_after_validation": 410,
+    "dropped_as_misresolution": 14,
+    "misresolution_rate_of_resolved_edges": 0.033,
+    "dropped_examples": [
+      {
+        "raw": "تأديب الموظفين",
+        "wrongly_resolved_to": "contractors_classification_law",
+        "target_title_ar": "نظام تصنيف المقاولين"
+      },
+      {
+        "raw": "الشريعة الإسلامية",
+        "wrongly_resolved_to": "public_prosecution_law",
+        "target_title_ar": "نظام النيابة العامة"
+      },
+      {
+        "raw": "إجراءات التراخيص البلدية ولائحته التنفيذية",
+        "wrongly_resolved_to": "debt_collection_regulation",
+        "target_title_ar": "ضوابط وإجراءات التحصيل"
+      },
+      {
+        "raw": "المهن الصحية ولائحته التنفيذية ونظام وحدات الإخصاب والأجنة وع",
+        "wrongly_resolved_to": "enforcement_law",
+        "target_title_ar": "نظام التنفيذ"
+      },
+      {
+        "raw": "الطفل ولائحته التنفيذية وخاصة حالات الإيذاء",
+        "wrongly_resolved_to": "enforcement_law",
+        "target_title_ar": "نظام التنفيذ"
+      },
+      {
+        "raw": "البلديات والقرى ولوائحه التنفيذية",
+        "wrongly_resolved_to": "press_law",
+        "target_title_ar": "نظام المطبوعات والنشر"
+      },
+      {
+        "raw": "نظم المدفوعات المهمة ذات الصلة",
+        "wrongly_resolved_to": "high_risk_professions_regulation",
+        "target_title_ar": "لائحة تنظيم العمل في المهن ذات المخاطر العالية"
+      },
+      {
+        "raw": "أي دولة",
+        "wrongly_resolved_to": "state_revenue_law",
+        "target_title_ar": "نظام إيرادات الدولة"
+      },
+      {
+        "raw": "الإيداع",
+        "wrongly_resolved_to": "juveniles_law",
+        "target_title_ar": "نظام الأحداث"
+      },
+      {
+        "raw": "الإيداع",
+        "wrongly_resolved_to": "juveniles_law",
+        "target_title_ar": "نظام الأحداث"
+      },
+      {
+        "raw": "النقد العربي السعودي",
+        "wrongly_resolved_to": "nationality_law",
+        "target_title_ar": "نظام الجنسية العربية السعودية"
+      },
+      {
+        "raw": "الجمارك الموحد ولائحته التنفيذية المطبق في المملكة",
+        "wrongly_resolved_to": "enforcement_law",
+        "target_title_ar": "نظام التنفيذ"
+      },
+      {
+        "raw": "تصدر عن وزير المالية",
+        "wrongly_resolved_to": "contractors_classification_law",
+        "target_title_ar": "نظام تصنيف المقاولين"
+      },
+      {
+        "raw": "الوثائق والمحفوظات",
+        "wrongly_resolved_to": "travel_documents_law",
+        "target_title_ar": "نظام وثائق السفر"
+      }
+    ]
+  },
+  "network": {
+    "nodes_total": 290,
+    "nodes_with_at_least_one_citation": 201,
+    "edges_distinct_instrument_pairs": 257,
+    "citations_carried": 410,
+    "density_over_active_subgraph": 0.006393,
+    "weakly_connected_components": 12,
+    "largest_weak_component_size": 175,
+    "reciprocal_pairs": 2,
+    "self_citations_excluded": 0
+  },
+  "centrality": {
+    "most_cited_in_degree": [
+      {
+        "track_id": "labor_law",
+        "title_en": "Saudi Labor Law",
+        "title_ar": "نظام العمل",
+        "value": 47,
+        "distinct_citing_instruments": 24
+      },
+      {
+        "track_id": "companies_law",
+        "title_en": "Saudi Companies Law",
+        "title_ar": "نظام الشركات",
+        "value": 46,
+        "distinct_citing_instruments": 26
+      },
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "title_ar": "نظام السوق المالية",
+        "value": 26,
+        "distinct_citing_instruments": 9
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "title_ar": "نظام المرافعات الشرعية",
+        "value": 17,
+        "distinct_citing_instruments": 12
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "title_en": "Bankruptcy Law",
+        "title_ar": "نظام الإفلاس",
+        "value": 17,
+        "distinct_citing_instruments": 14
+      },
+      {
+        "track_id": "anti_narcotics_law",
+        "title_en": "Anti-Narcotics and Psychotropic Substances Control Law",
+        "title_ar": "نظام مكافحة المخدرات والمؤثرات العقلية",
+        "value": 15,
+        "distinct_citing_instruments": 1
+      },
+      {
+        "track_id": "criminal_procedure_law",
+        "title_en": "Law of Criminal Procedure",
+        "title_ar": "نظام الإجراءات الجزائية",
+        "value": 13,
+        "distinct_citing_instruments": 13
+      },
+      {
+        "track_id": "environmental_law",
+        "title_en": "Environmental Law",
+        "title_ar": "نظام البيئة",
+        "value": 11,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "real_estate_registration_law",
+        "title_en": "Real Estate In-Kind Registration Law",
+        "title_ar": "نظام التسجيل العيني للعقار",
+        "value": 10,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "traffic_law",
+        "title_en": "Traffic Law",
+        "title_ar": "نظام المرور",
+        "value": 10,
+        "distinct_citing_instruments": 1
+      },
+      {
+        "track_id": "banking_control_law",
+        "title_en": "Banking Control Law",
+        "title_ar": "نظام مراقبة البنوك",
+        "value": 9,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "electronic_transactions_law",
+        "title_en": "Electronic Transactions Law",
+        "title_ar": "نظام التعاملات الإلكترونية",
+        "value": 8,
+        "distinct_citing_instruments": 8
+      },
+      {
+        "track_id": "telecommunications_law",
+        "title_en": "Telecommunications and Information Technology Act",
+        "title_ar": "نظام الاتصالات وتقنية المعلومات",
+        "value": 8,
+        "distinct_citing_instruments": 3
+      },
+      {
+        "track_id": "judiciary_law",
+        "title_en": "Law of the Judiciary",
+        "title_ar": "نظام القضاء",
+        "value": 7,
+        "distinct_citing_instruments": 5
+      },
+      {
+        "track_id": "enforcement_law",
+        "title_en": "Law of Enforcement",
+        "title_ar": "نظام التنفيذ",
+        "value": 6,
+        "distinct_citing_instruments": 6
+      }
+    ],
+    "most_citing_out_degree": [
+      {
+        "track_id": "labor_model_contract_forms",
+        "title_en": "Unified Model Employment Contract Forms (Labor Annex 5)",
+        "title_ar": "النماذج الموحدة لعقد العمل بأنواعه",
+        "value": 17,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "anti_narcotics_regulation",
+        "title_en": "Implementing Regulation of the Anti-Narcotics and Psychotropic Substances Control Law",
+        "title_ar": "اللائحة التنفيذية لنظام مكافحة المخدرات والمؤثرات العقلية",
+        "value": 16,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "traffic_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian Traffic Law",
+        "title_ar": "اللائحة التنفيذية لنظام المرور",
+        "value": 12,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "labor_implementing_regulation",
+        "title_en": "Labor Law Implementing Regulation",
+        "title_ar": "اللائحة التنفيذية لنظام العمل",
+        "value": 11,
+        "distinct_citing_instruments": 1
+      },
+      {
+        "track_id": "rett_regulation",
+        "title_en": "Implementing Regulation of the Real Estate Transaction Tax Law",
+        "title_ar": "اللائحة التنفيذية لنظام رسوم التصرفات العقارية",
+        "value": 11,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "income_tax_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian Income Tax Law",
+        "title_ar": "اللائحة التنفيذية لنظام ضريبة الدخل",
+        "value": 10,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "title_en": "CMA Corporate Governance Regulations",
+        "title_ar": "لائحة حوكمة الشركات",
+        "value": 9,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "offplan_sale_implementing_regulation",
+        "title_en": "Implementing Regulation of the Off-Plan Sale/Lease of Real Estate Projects Law (WAFI)",
+        "title_ar": "اللائحة التنفيذية لنظام بيع وتأجير مشروعات عقارية على الخارطة",
+        "value": 9,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "vat_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian VAT Law",
+        "title_ar": "اللائحة التنفيذية لنظام ضريبة القيمة المضافة",
+        "value": 8,
+        "distinct_citing_instruments": 1
+      },
+      {
+        "track_id": "sports_law",
+        "title_en": "Sports Law",
+        "title_ar": "نظام الرياضة",
+        "value": 8,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "water_regulation",
+        "title_en": "Implementing Regulation of the Water Law for the Ministry of Environment, Water and Agriculture's (MEWA) mandate",
+        "title_ar": "اللائحة التنفيذية لنظام المياه الخاصة بمهام وزارة البيئة والمياه والزراعة",
+        "value": 8,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "social_insurance_legacy_regulation",
+        "title_en": "Implementing Regulations of the Old/Legacy Social Insurance Law (M/33, 1421H)",
+        "title_ar": "اللوائح التنفيذية لنظام التأمينات الاجتماعية (القديم) — م/33، 1421هـ",
+        "value": 7,
+        "distinct_citing_instruments": 0
+      },
+      {
+        "track_id": "companies_law",
+        "title_en": "Saudi Companies Law",
+        "title_ar": "نظام الشركات",
+        "value": 6,
+        "distinct_citing_instruments": 26
+      },
+      {
+        "track_id": "elitigation_guide_regulation",
+        "title_en": "Procedural Guide for the Electronic Litigation Service",
+        "title_ar": "الدليل الإجرائي لخدمة التقاضي الإلكتروني",
+        "value": 6,
+        "distinct_citing_instruments": 1
+      },
+      {
+        "track_id": "finance_companies_regulation",
+        "title_en": "Implementing Regulation of the Finance Companies Control Law",
+        "title_ar": "اللائحة التنفيذية لنظام مراقبة شركات التمويل",
+        "value": 6,
+        "distinct_citing_instruments": 1
+      }
+    ],
+    "pagerank": [
+      {
+        "track_id": "companies_law",
+        "title_en": "Saudi Companies Law",
+        "title_ar": "نظام الشركات",
+        "value": 0.075093,
+        "distinct_citing_instruments": 26
+      },
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "title_ar": "نظام السوق المالية",
+        "value": 0.066137,
+        "distinct_citing_instruments": 9
+      },
+      {
+        "track_id": "labor_law",
+        "title_en": "Saudi Labor Law",
+        "title_ar": "نظام العمل",
+        "value": 0.04743,
+        "distinct_citing_instruments": 24
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "title_en": "Bankruptcy Law",
+        "title_ar": "نظام الإفلاس",
+        "value": 0.036245,
+        "distinct_citing_instruments": 14
+      },
+      {
+        "track_id": "social_insurance_regulation",
+        "title_en": "Implementing Regulation of the (New) Social Insurance Law",
+        "title_ar": "اللائحة التنفيذية لنظام التأمينات الاجتماعية",
+        "value": 0.023312,
+        "distinct_citing_instruments": 3
+      },
+      {
+        "track_id": "criminal_procedure_law",
+        "title_en": "Law of Criminal Procedure",
+        "title_ar": "نظام الإجراءات الجزائية",
+        "value": 0.019442,
+        "distinct_citing_instruments": 13
+      },
+      {
+        "track_id": "judiciary_law",
+        "title_en": "Law of the Judiciary",
+        "title_ar": "نظام القضاء",
+        "value": 0.01834,
+        "distinct_citing_instruments": 5
+      },
+      {
+        "track_id": "electronic_transactions_law",
+        "title_en": "Electronic Transactions Law",
+        "title_ar": "نظام التعاملات الإلكترونية",
+        "value": 0.01575,
+        "distinct_citing_instruments": 8
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "title_ar": "نظام المرافعات الشرعية",
+        "value": 0.015638,
+        "distinct_citing_instruments": 12
+      },
+      {
+        "track_id": "board_of_grievances_law",
+        "title_en": "Law of the Board of Grievances",
+        "title_ar": "نظام ديوان المظالم",
+        "value": 0.015075,
+        "distinct_citing_instruments": 6
+      },
+      {
+        "track_id": "lessor_repossession_regulation",
+        "title_en": "Controls for the Lessor's Repossession of Movable Assets",
+        "title_ar": "ضوابط تسلم المؤجر الأصول المنقولة",
+        "value": 0.012467,
+        "distinct_citing_instruments": 1
+      },
+      {
+        "track_id": "enforcement_law",
+        "title_en": "Law of Enforcement",
+        "title_ar": "نظام التنفيذ",
+        "value": 0.010213,
+        "distinct_citing_instruments": 6
+      },
+      {
+        "track_id": "real_estate_expropriation_law",
+        "title_en": "Law on Expropriation of Real Estate for Public Interest and Temporary Seizure of Real Estate",
+        "title_ar": "نظام نزع ملكية العقارات للمصلحة العامة ووضع اليد المؤقت على العقارات",
+        "value": 0.009044,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "environmental_law",
+        "title_en": "Environmental Law",
+        "title_ar": "نظام البيئة",
+        "value": 0.00728,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "real_estate_brokerage_law",
+        "title_en": "Real Estate Brokerage Law",
+        "title_ar": "نظام الوساطة العقارية",
+        "value": 0.006674,
+        "distinct_citing_instruments": 5
+      }
+    ],
+    "betweenness": [
+      {
+        "track_id": "labor_law",
+        "title_en": "Saudi Labor Law",
+        "title_ar": "نظام العمل",
+        "value": 0.002511,
+        "distinct_citing_instruments": 24
+      },
+      {
+        "track_id": "companies_law",
+        "title_en": "Saudi Companies Law",
+        "title_ar": "نظام الشركات",
+        "value": 0.002097,
+        "distinct_citing_instruments": 26
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "title_ar": "نظام المرافعات الشرعية",
+        "value": 0.001213,
+        "distinct_citing_instruments": 12
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "title_en": "Bankruptcy Law",
+        "title_ar": "نظام الإفلاس",
+        "value": 0.001135,
+        "distinct_citing_instruments": 14
+      },
+      {
+        "track_id": "social_insurance_regulation",
+        "title_en": "Implementing Regulation of the (New) Social Insurance Law",
+        "title_ar": "اللائحة التنفيذية لنظام التأمينات الاجتماعية",
+        "value": 0.000775,
+        "distinct_citing_instruments": 3
+      },
+      {
+        "track_id": "tawtheeq_law",
+        "title_en": "Notarization Law",
+        "title_ar": "نظام التوثيق",
+        "value": 0.000469,
+        "distinct_citing_instruments": 3
+      },
+      {
+        "track_id": "gtpl_law",
+        "title_en": "Government Tenders and Procurement Law",
+        "title_ar": "نظام المنافسات والمشتريات الحكومية",
+        "value": 0.000384,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "enforcement_law",
+        "title_en": "Law of Enforcement",
+        "title_ar": "نظام التنفيذ",
+        "value": 0.000216,
+        "distinct_citing_instruments": 6
+      },
+      {
+        "track_id": "board_of_grievances_law",
+        "title_en": "Law of the Board of Grievances",
+        "title_ar": "نظام ديوان المظالم",
+        "value": 0.000216,
+        "distinct_citing_instruments": 6
+      },
+      {
+        "track_id": "evidence_law",
+        "title_en": "Saudi Evidence Law",
+        "title_ar": "نظام الإثبات",
+        "value": 0.000192,
+        "distinct_citing_instruments": 2
+      }
+    ]
+  },
+  "vertical_vs_horizontal": {
+    "vertical_citations_within_instrument_family": 85,
+    "horizontal_citations_across_families": 325,
+    "horizontal_share": 0.7927,
+    "horizontal_network_nodes": 174,
+    "horizontal_network_edges": 221,
+    "horizontal_most_cited": [
+      {
+        "track_id": "companies_law",
+        "title_en": "Saudi Companies Law",
+        "citations": 46,
+        "distinct_citing_instruments": 26
+      },
+      {
+        "track_id": "labor_law",
+        "title_en": "Saudi Labor Law",
+        "citations": 36,
+        "distinct_citing_instruments": 23
+      },
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "citations": 26,
+        "distinct_citing_instruments": 9
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "citations": 17,
+        "distinct_citing_instruments": 12
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "title_en": "Bankruptcy Law",
+        "citations": 16,
+        "distinct_citing_instruments": 13
+      },
+      {
+        "track_id": "criminal_procedure_law",
+        "title_en": "Law of Criminal Procedure",
+        "citations": 13,
+        "distinct_citing_instruments": 13
+      },
+      {
+        "track_id": "environmental_law",
+        "title_en": "Environmental Law",
+        "citations": 11,
+        "distinct_citing_instruments": 4
+      },
+      {
+        "track_id": "real_estate_registration_law",
+        "title_en": "Real Estate In-Kind Registration Law",
+        "citations": 9,
+        "distinct_citing_instruments": 3
+      },
+      {
+        "track_id": "telecommunications_law",
+        "title_en": "Telecommunications and Information Technology Act",
+        "citations": 7,
+        "distinct_citing_instruments": 2
+      },
+      {
+        "track_id": "electronic_transactions_law",
+        "title_en": "Electronic Transactions Law",
+        "citations": 7,
+        "distinct_citing_instruments": 7
+      },
+      {
+        "track_id": "judiciary_law",
+        "title_en": "Law of the Judiciary",
+        "citations": 7,
+        "distinct_citing_instruments": 5
+      },
+      {
+        "track_id": "board_of_grievances_law",
+        "title_en": "Law of the Board of Grievances",
+        "citations": 6,
+        "distinct_citing_instruments": 6
+      },
+      {
+        "track_id": "enforcement_law",
+        "title_en": "Law of Enforcement",
+        "citations": 6,
+        "distinct_citing_instruments": 6
+      },
+      {
+        "track_id": "investment_law",
+        "title_en": "Saudi Investment Law",
+        "citations": 5,
+        "distinct_citing_instruments": 5
+      },
+      {
+        "track_id": "banking_control_law",
+        "title_en": "Banking Control Law",
+        "citations": 5,
+        "distinct_citing_instruments": 3
+      }
+    ]
+  },
+  "dangling_citations_to_repealed_instruments": {
+    "count": 3,
+    "distinct_citing_instruments": 3,
+    "cases": [
+      {
+        "citing_track": "environmental_inspection_audit",
+        "citing_title_en": "Implementing Regulation for Environmental Inspection and Audit",
+        "citing_article": 8,
+        "cited_name_raw": "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+        "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+        "repealed_instrument": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة (النسخة السابقة)",
+        "repealed_by": "environmental_violations_penalties",
+        "repealed_by_title_en": "Implementing Regulation for Recording Environmental Violations and Imposing Penalties",
+        "relation": "repeals_full"
+      },
+      {
+        "citing_track": "environmental_service_providers",
+        "citing_title_en": "Implementing Regulation for Environmental Service Providers",
+        "citing_article": 12,
+        "cited_name_raw": "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+        "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+        "repealed_instrument": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة (النسخة السابقة)",
+        "repealed_by": "environmental_violations_penalties",
+        "repealed_by_title_en": "Implementing Regulation for Recording Environmental Violations and Imposing Penalties",
+        "relation": "repeals_full"
+      },
+      {
+        "citing_track": "residency_law",
+        "citing_title_en": "Foreigners' Residency Law",
+        "citing_article": 56,
+        "cited_name_raw": "الموظفين العام",
+        "raw_citation_text": "المادة ( 31 ) المعدلة يحاكم عليها بموجب نظام الموظفي",
+        "repealed_instrument": "نظام الموظفين العام",
+        "repealed_by": "civil_service_law",
+        "repealed_by_title_en": "Civil Service Law",
+        "relation": "repeals_full"
+      }
+    ]
+  },
+  "cited_but_absent_from_corpus": {
+    "reference_count": 161,
+    "distinct_names": 128,
+    "top_names": {
+      "تصدر بقرار": 9,
+      "الشركة الأساس": 4,
+      "التسجيل في منصة المجلس لمسار ترخيص": 4,
+      "الشركات ونظام السوق المالية ولوائحهما التنفيذية": 3,
+      "عملها": 3,
+      "تعويضات فرع المعاشات": 3,
+      "الأساسية": 2,
+      "التقاعد": 2,
+      "دور الرعاية الاجتماعية وقواعدها التنفيذية": 2,
+      "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع": 2,
+      "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة": 2,
+      "الهيئة": 2,
+      "العمل التنفيذية لنظام القضاء ونظام ديوان المظالم": 2,
+      "المهنة": 2,
+      "الموظفين العام": 2,
+      "ومعايير يقرها لذلك": 2,
+      "وجدول صلاحيات يعتمدها المجلس": 2,
+      "اللجان الطبية": 2,
+      "تفويض الصلاحيات": 2,
+      "ومعايير تحددها اللائحة": 1,
+      "يحدد": 1,
+      "تحدد وفقا لنوع وحجم النشاط بما يتفق مع أهداف واستراتيجيات الو": 1,
+      "تحدد المساحات والمحاصيل وآلية تطبيق تلك الضوابط": 1,
+      "وآليات تحددها الوزارة": 1,
+      "المنظمة الدولية للمعايير": 1
+    }
+  },
+  "domain_flows": {
+    "intra_domain_citations": 235,
+    "inter_domain_citations": 175,
+    "top_flows": {
+      "Labor and social insurance -> Labor and social insurance": 40,
+      "Courts, procedure and enforcement -> Courts, procedure and enforcement": 39,
+      "Commercial and corporate -> Commercial and corporate": 26,
+      "Criminal justice, security and civil status -> Criminal justice, security and civil status": 26,
+      "Financial and capital markets -> Financial and capital markets": 21,
+      "Financial and capital markets -> Commercial and corporate": 21,
+      "Civil, personal status and property -> Civil, personal status and property": 21,
+      "Health, environment and safety -> Health, environment and safety": 18,
+      "Tax and zakat -> Tax and zakat": 18,
+      "Education, culture, media and civil society -> Commercial and corporate": 11,
+      "Tax and zakat -> Financial and capital markets": 10,
+      "Civil, personal status and property -> Financial and capital markets": 10,
+      "Technology, data, telecommunications and IP -> Technology, data, telecommunications and IP": 9,
+      "Labor and social insurance -> Commercial and corporate": 8,
+      "Education, culture, media and civil society -> Education, culture, media and civil society": 7
+    },
+    "all_flows": {
+      "Labor and social insurance -> Labor and social insurance": 40,
+      "Courts, procedure and enforcement -> Courts, procedure and enforcement": 39,
+      "Commercial and corporate -> Commercial and corporate": 26,
+      "Criminal justice, security and civil status -> Criminal justice, security and civil status": 26,
+      "Financial and capital markets -> Financial and capital markets": 21,
+      "Financial and capital markets -> Commercial and corporate": 21,
+      "Civil, personal status and property -> Civil, personal status and property": 21,
+      "Health, environment and safety -> Health, environment and safety": 18,
+      "Tax and zakat -> Tax and zakat": 18,
+      "Education, culture, media and civil society -> Commercial and corporate": 11,
+      "Tax and zakat -> Financial and capital markets": 10,
+      "Civil, personal status and property -> Financial and capital markets": 10,
+      "Technology, data, telecommunications and IP -> Technology, data, telecommunications and IP": 9,
+      "Labor and social insurance -> Commercial and corporate": 8,
+      "Education, culture, media and civil society -> Education, culture, media and civil society": 7,
+      "Criminal justice, security and civil status -> Courts, procedure and enforcement": 7,
+      "Commercial and corporate -> Financial and capital markets": 7,
+      "Energy, industry and infrastructure -> Courts, procedure and enforcement": 7,
+      "Courts, procedure and enforcement -> Commercial and corporate": 6,
+      "Energy, industry and infrastructure -> Energy, industry and infrastructure": 5,
+      "Constitutional and administrative -> Constitutional and administrative": 5,
+      "Courts, procedure and enforcement -> Technology, data, telecommunications and IP": 5,
+      "Tax and zakat -> Commercial and corporate": 5,
+      "Courts, procedure and enforcement -> Labor and social insurance": 5,
+      "Financial and capital markets -> Courts, procedure and enforcement": 4,
+      "Civil, personal status and property -> Courts, procedure and enforcement": 4,
+      "Energy, industry and infrastructure -> Financial and capital markets": 3,
+      "Commercial and corporate -> Courts, procedure and enforcement": 3,
+      "Commercial and corporate -> Labor and social insurance": 3,
+      "Energy, industry and infrastructure -> Commercial and corporate": 3,
+      "Technology, data, telecommunications and IP -> Labor and social insurance": 3,
+      "Civil, personal status and property -> Education, culture, media and civil society": 3,
+      "Health, environment and safety -> Energy, industry and infrastructure": 3,
+      "Education, culture, media and civil society -> Civil, personal status and property": 2,
+      "Education, culture, media and civil society -> Technology, data, telecommunications and IP": 2,
+      "Energy, industry and infrastructure -> Civil, personal status and property": 2,
+      "Education, culture, media and civil society -> Labor and social insurance": 2,
+      "Health, environment and safety -> Labor and social insurance": 2,
+      "Tax and zakat -> Labor and social insurance": 2,
+      "Labor and social insurance -> Financial and capital markets": 2,
+      "Energy, industry and infrastructure -> Labor and social insurance": 2,
+      "Civil, personal status and property -> Commercial and corporate": 2,
+      "Health, environment and safety -> Courts, procedure and enforcement": 2,
+      "Criminal justice, security and civil status -> Financial and capital markets": 2,
+      "Education, culture, media and civil society -> Financial and capital markets": 1,
+      "Energy, industry and infrastructure -> Education, culture, media and civil society": 1,
+      "Commercial and corporate -> Health, environment and safety": 1,
+      "Financial and capital markets -> Technology, data, telecommunications and IP": 1,
+      "Commercial and corporate -> Civil, personal status and property": 1,
+      "Commercial and corporate -> Technology, data, telecommunications and IP": 1,
+      "Financial and capital markets -> Criminal justice, security and civil status": 1,
+      "Education, culture, media and civil society -> Courts, procedure and enforcement": 1,
+      "Tax and zakat -> Energy, industry and infrastructure": 1,
+      "Financial and capital markets -> Labor and social insurance": 1,
+      "Energy, industry and infrastructure -> Criminal justice, security and civil status": 1,
+      "Energy, industry and infrastructure -> Constitutional and administrative": 1,
+      "Civil, personal status and property -> Criminal justice, security and civil status": 1,
+      "Civil, personal status and property -> Constitutional and administrative": 1,
+      "Technology, data, telecommunications and IP -> Financial and capital markets": 1,
+      "Criminal justice, security and civil status -> Labor and social insurance": 1,
+      "Courts, procedure and enforcement -> Criminal justice, security and civil status": 1,
+      "Civil, personal status and property -> Labor and social insurance": 1,
+      "Tax and zakat -> Courts, procedure and enforcement": 1,
+      "Tax and zakat -> Education, culture, media and civil society": 1,
+      "Education, culture, media and civil society -> Health, environment and safety": 1,
+      "Health, environment and safety -> Commercial and corporate": 1
+    }
+  }
+}
