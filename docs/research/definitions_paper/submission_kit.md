@@ -12,10 +12,22 @@ pdflatex cover_letter && pdflatex cover_letter
 
 ## Where
 
-**ScholarOne Manuscripts — <https://mc.manuscriptcentral.com/statlaw>**
+| | |
+|---|---|
+| Journal home | <https://academic.oup.com/slr> |
+| Author guidelines | <https://academic.oup.com/slr/pages/author-guidelines> |
+| **Submission site** | **<https://mc.manuscriptcentral.com/statlaw>** (ScholarOne Manuscripts) |
+| Editors-in-Chief | Professor Constantin Stefanou and Professor Helen Xanthaki |
 
-ScholarOne accounts are per-journal-family, not shared with Springer's Snapp
-(used for papers 1 and 2). Create an account with the same email and ORCID.
+ScholarOne accounts are per-publisher, not shared with Springer's Snapp (used
+for papers 1 and 2). Create a new account with the same email and ORCID.
+
+Note that Professor Xanthaki, one of the two Editors-in-Chief, is the author
+of two of the works the article's drafting-literature footnotes rest on
+(*Thornton's Legislative Drafting*, 6th edn, and *Drafting Legislation*).
+That is a sign the article is aimed at the right journal, and it is also a
+reason those two citations had to be exactly right; both were checked against
+the published record.
 
 ## What to upload
 
@@ -66,6 +78,10 @@ abdullah.m.almohammedi@gmail.com · ORCID 0009-0001-0832-0995
 **Suggested reviewers:** none. The journal states that it does not consider
 author-suggested reviewers.
 
+**Review process:** the Editorial Office does an initial assessment, then one
+of the Editors-in-Chief oversees double-anonymous review, normally by two
+reviewers. The journal publishes three issues a year and gives no timeline.
+
 ## Declarations screens
 
 | Question | Answer |
@@ -77,6 +93,22 @@ author-suggested reviewers.
 | Previously published / preprint | No preprint of this article. Two companion manuscripts on the same corpus are under review at other journals; disclosed in the cover letter and on the title page. |
 | Under consideration elsewhere | No. |
 | Licence | Standard licence (no charge). Choose a Creative Commons licence only if a funder requires it — open access charges apply and there is no funder here. |
+
+## Format rules the build already applies
+
+The journal asks for things the LaTeX source does not encode. `build.py`
+handles each of them, so do not re-do them by hand in Word:
+
+| Requirement | How it is met |
+|---|---|
+| Word files | pandoc, from the same `main.tex` |
+| Double-spaced | Normal, Body Text and Footnote Text styles patched in a pandoc reference document |
+| Times New Roman | the same reference document |
+| No underlines | the Hyperlink style's underline is stripped; the anonymised manuscript has no links at all |
+| Figures separate, not embedded | each figure becomes `[Figure N near here]` plus its caption; EPS files uploaded separately |
+| Tables editable | Table 1 stays a real Word table |
+| Cross-references | `\ref` is resolved to a number before conversion, because it otherwise becomes a broken internal link in Word |
+| Anonymised | the `\ifanon` switch is resolved by the script, then the finished file is searched for identifying strings |
 
 ## Before clicking submit
 

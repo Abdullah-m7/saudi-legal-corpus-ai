@@ -184,6 +184,21 @@ def prepare(anon, for_docx):
         # The journal wants the manuscript double-spaced, and figures supplied
         # as separate files rather than embedded in the text.
         text = text.replace("\\onehalfspacing", "\\doublespacing")
+        # \ref survives into Word as a broken internal hyperlink --- and the
+        # figure labels are removed below anyway --- so resolve every
+        # cross-reference to its number before pandoc sees it.
+        numbers = {}
+        for i, m in enumerate(FIGURE_ENV.finditer(text), 1):
+            label = re.search(r"\\label\{([^}]*)\}", m.group(0))
+            if label:
+                numbers[label.group(1)] = str(i)
+        for i, m in enumerate(re.finditer(r"\\label\{(tab:[^}]*)\}", text), 1):
+            numbers[m.group(1)] = str(i)
+        def deref(m):
+            if m.group(1) not in numbers:
+                sys.exit(f"unresolved cross-reference: {m.group(1)}")
+            return numbers[m.group(1)]
+        text = re.sub(r"\\ref\{([^}]*)\}", deref, text)
         text, n = FIGURE_ENV.subn(figure_paragraphs, text)
         if n != 2:
             sys.exit(f"expected 2 figure environments, rewrote {n}")
@@ -244,6 +259,20 @@ def double_spaced_reference():
         done.append(style_id)
     if "Normal" not in done:
         sys.exit("could not set double spacing on the Normal style")
+    # The journal asks for Times New Roman; pandoc's default reference
+    # document uses the theme fonts, which resolve to Calibri.
+    fonts = ('<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" '
+             'w:cs="Times New Roman" w:eastAsia="Times New Roman"/>')
+    patched, hits = re.subn(r"<w:rFonts[^>]*/>", fonts, patched)
+    if hits == 0:
+        sys.exit("could not set the document font")
+    # Hyperlink styling underlines the text, which the journal asks authors
+    # to avoid; the anonymised manuscript has no external links anyway.
+    patched = re.sub(
+        r'(<w:style [^>]*w:styleId="Hyperlink"[^>]*>)'
+        r'((?:(?!</w:style>).)*?)</w:style>',
+        lambda m: m.group(1) + re.sub(r"<w:u [^>]*/>", "", m.group(2))
+        + "</w:style>", patched, flags=re.S)
     parts["word/styles.xml"] = patched.encode("utf-8")
     with zipfile.ZipFile(ref, "w", zipfile.ZIP_DEFLATED) as z:
         for name, data in parts.items():
