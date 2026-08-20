@@ -1,0 +1,87 @@
+% Cover letter for the Language Resources and Evaluation submission.
+% Build: pdflatex cover_letter.tex
+\documentclass[10.5pt]{letter}
+\usepackage[a4paper,top=1.8cm,bottom=1.8cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+
+\begin{document}
+\noindent
+{\large\textbf{Abdullah Almohammedi}}\\
+Independent Researcher\\
+\texttt{abdullah.m.almohammedi@gmail.com}\\
+ORCID: \href{https://orcid.org/0009-0001-0832-0995}{0009-0001-0832-0995}
+
+\vspace{0.8em}
+\noindent 20 August 2026
+
+\vspace{0.8em}
+\noindent The Editors\\
+\emph{Language Resources and Evaluation}\\
+Springer Nature
+
+\vspace{0.9em}
+\noindent Dear Editors,
+
+\vspace{0.6em}
+I am pleased to submit the enclosed manuscript, ``The Saudi Legal Corpus for
+AI: An Auditable, Official-Source-Grounded, Article-Level Corpus of Saudi
+Arabian Legislation,'' for consideration as a Research article in
+\emph{Language Resources and Evaluation}.
+
+\vspace{0.5em}
+The manuscript describes a new language resource: a corpus of 290 Saudi
+legislative instruments structured into 15,689 article-level records
+(approximately 1.2 million Arabic tokens) across twelve legal domains,
+together with derived analytical layers and a retrieval benchmark. To my
+knowledge, no openly documented, machine-readable, article-level corpus of
+Saudi legislation has previously been described in the literature, and Arabic
+is at most marginally represented in the existing legal-NLP resource
+landscape (Pile of Law, MultiLegalPile, LexGLUE, LEXTREME, LegalBench).
+
+\vspace{0.5em}
+I believe the work fits the journal's scope in three respects. First, it is a
+resource paper in the strict sense: the contribution is the corpus, its
+construction methodology, and its documentation, rather than a modelling
+result. Second, it addresses resource \emph{quality} as a first-class
+concern --- every record carries its own provenance label, every instrument
+is placed in a four-tier source-verification taxonomy, and known
+source-staleness risks are published rather than concealed, which I offer as
+a reusable template for building legal corpora in jurisdictions without a
+machine-readable official gazette. Third, it includes an evaluation
+component: a manually confirmed 519-query retrieval benchmark with two
+deterministic baselines reported per query category, which localizes where
+retrieval over Arabic statutory text is actually hard (definitional queries,
+where the corpus's engineered retrieval metadata outperforms BM25 by 16.4
+points of top-1 accuracy).
+
+\vspace{0.5em}
+The corpus, all derived layers, all validators, the evaluation pack, and the
+scripts that reproduce every figure in the manuscript are openly available
+under the MIT licence and archived on Zenodo with a citable DOI
+(10.5281/zenodo.22019183), so every statistic reported in the paper can be
+independently regenerated from the archived version.
+
+\vspace{0.5em}
+The manuscript is original, has not been published previously, and is not
+under consideration by any other journal or conference. There are no
+competing interests and no funding to declare. I am the sole author. The
+corpus contains enacted national legislation and no personal data; the
+manuscript states explicitly that it is not an official government
+publication, contains no official translation, and does not constitute legal
+advice.
+
+\vspace{0.5em}
+Thank you for your consideration.
+
+\vspace{0.9em}
+\noindent Yours sincerely,
+
+\vspace{1em}
+\noindent\textbf{Abdullah Almohammedi}
+
+\end{document}
