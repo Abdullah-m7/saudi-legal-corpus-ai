@@ -151,4 +151,6 @@ rewritten at article length for a law journal, is in git history.
       and 2 once they have publication records. They are referred to
       obliquely in the submitted version because naming them would identify
       the author to reviewers.
-- [ ] Submit, and record the manuscript ID in `submission_kit.md`.
+- [x] **Submitted to Statute Law Review, 20 August 2026 — STATLAW-2026-147.**
+      Submission proof audited for anonymity, footnote rendering and figure
+      resolution before submitting; see `submission_kit.md`.

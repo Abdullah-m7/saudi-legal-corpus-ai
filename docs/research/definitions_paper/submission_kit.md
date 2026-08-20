@@ -121,11 +121,23 @@ handles each of them, so do not re-do them by hand in Word:
 - [ ] Confirm both EPS figures open.
 - [ ] Confirm the title page carries the word count that `build.py` reported.
 
-## After submission
-
-Record the manuscript ID here, alongside the corresponding entries for papers
-1 and 2:
+## Submitted
 
 ```
-Statute Law Review — manuscript ID: ____________  submitted: ____________
+Statute Law Review — manuscript ID: STATLAW-2026-147   submitted: 20 August 2026
 ```
+
+Submitted as an **Article** (7,972 words including footnotes), double-anonymous
+review. Five files uploaded: anonymised manuscript, title page, two EPS
+figures, cover letter; the cover letter text was also pasted into the Details
+and Comments box.
+
+The submission proof was audited before submitting: no identifying string
+appears anywhere in its 32 pages — the platform excluded the title page and
+the cover letter from the review proof, as their designations require. All 26
+footnotes rendered as real footnotes, numbered from 1. Both figures rendered
+from EPS at 300 dpi with their captions.
+
+Next: the Editorial Office does an initial assessment, then one of the
+Editors-in-Chief oversees review by (normally) two reviewers. The journal
+publishes three issues a year and gives no timeline.
