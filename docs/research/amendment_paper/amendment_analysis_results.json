@@ -1,0 +1,950 @@
+{
+  "inventory": {
+    "articles_with_a_recorded_legal_status": 13089,
+    "instruments_covered": 272,
+    "instruments_in_registry": 291,
+    "by_status": {
+      "original": 12109,
+      "amended": 730,
+      "repealed": 138,
+      "added": 105,
+      "unrecorded": 7
+    },
+    "articles_not_in_their_original_form": 973,
+    "share_not_in_their_original_form": 0.0743
+  },
+  "churn_concentration": {
+    "instruments": 272,
+    "instruments_with_no_recorded_change": 160,
+    "share_of_instruments_with_no_recorded_change": 0.5882,
+    "changed_articles_total": 973,
+    "top_10_instruments_share_of_changed_articles": 0.3844,
+    "gini_of_changed_articles_across_instruments": 0.8236,
+    "most_changed_instruments": [
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "articles": 243,
+        "changed": 90,
+        "amended": 14,
+        "repealed": 75,
+        "added": 1,
+        "churn_rate": 0.3704
+      },
+      {
+        "track_id": "vat_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian VAT Law",
+        "articles": 82,
+        "changed": 45,
+        "amended": 42,
+        "repealed": 0,
+        "added": 3,
+        "churn_rate": 0.5488
+      },
+      {
+        "track_id": "income_tax_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian Income Tax Law",
+        "articles": 74,
+        "changed": 44,
+        "amended": 19,
+        "repealed": 25,
+        "added": 0,
+        "churn_rate": 0.5946
+      },
+      {
+        "track_id": "traffic_law",
+        "title_en": "Traffic Law",
+        "articles": 86,
+        "changed": 34,
+        "amended": 32,
+        "repealed": 1,
+        "added": 1,
+        "churn_rate": 0.3953
+      },
+      {
+        "track_id": "income_tax_law",
+        "title_en": "Income Tax Law",
+        "articles": 81,
+        "changed": 29,
+        "amended": 29,
+        "repealed": 0,
+        "added": 0,
+        "churn_rate": 0.358
+      },
+      {
+        "track_id": "privatization_regulation",
+        "title_en": "Implementing Regulation of the Privatization Law",
+        "articles": 169,
+        "changed": 29,
+        "amended": 19,
+        "repealed": 0,
+        "added": 10,
+        "churn_rate": 0.1716
+      },
+      {
+        "track_id": "commercial_agencies_regulation",
+        "title_en": "Implementing Regulation of the Commercial Agencies Law",
+        "articles": 49,
+        "changed": 28,
+        "amended": 1,
+        "repealed": 0,
+        "added": 27,
+        "churn_rate": 0.5714
+      },
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "articles": 68,
+        "changed": 26,
+        "amended": 25,
+        "repealed": 0,
+        "added": 1,
+        "churn_rate": 0.3824
+      },
+      {
+        "track_id": "accredited_valuers_law",
+        "title_en": "Certified/Accredited Valuers Law",
+        "articles": 45,
+        "changed": 25,
+        "amended": 25,
+        "repealed": 0,
+        "added": 0,
+        "churn_rate": 0.5556
+      },
+      {
+        "track_id": "civil_service_law",
+        "title_en": "Civil Service Law",
+        "articles": 44,
+        "changed": 24,
+        "amended": 19,
+        "repealed": 1,
+        "added": 4,
+        "churn_rate": 0.5455
+      },
+      {
+        "track_id": "civil_status_law",
+        "title_en": "Saudi Arabian Civil Status Law",
+        "articles": 96,
+        "changed": 24,
+        "amended": 24,
+        "repealed": 0,
+        "added": 0,
+        "churn_rate": 0.25
+      },
+      {
+        "track_id": "commercial_courts_law",
+        "title_en": "Commercial Courts Law",
+        "articles": 96,
+        "changed": 21,
+        "amended": 1,
+        "repealed": 20,
+        "added": 0,
+        "churn_rate": 0.2188
+      },
+      {
+        "track_id": "law_practice_law",
+        "title_en": "Code of Law Practice",
+        "articles": 56,
+        "changed": 21,
+        "amended": 8,
+        "repealed": 1,
+        "added": 12,
+        "churn_rate": 0.375
+      },
+      {
+        "track_id": "residency_law",
+        "title_en": "Foreigners' Residency Law",
+        "articles": 69,
+        "changed": 21,
+        "amended": 16,
+        "repealed": 1,
+        "added": 4,
+        "churn_rate": 0.3043
+      },
+      {
+        "track_id": "dry_gas_lpg_distribution_law",
+        "title_en": "The Dry Gas and LPG Distribution Law for Residential/Commercial Purposes",
+        "articles": 21,
+        "changed": 18,
+        "amended": 17,
+        "repealed": 1,
+        "added": 0,
+        "churn_rate": 0.8571
+      }
+    ],
+    "highest_churn_rate_min_20_articles": [
+      {
+        "track_id": "dry_gas_lpg_distribution_law",
+        "title_en": "The Dry Gas and LPG Distribution Law for Residential/Commercial Purposes",
+        "articles": 21,
+        "changed": 18,
+        "amended": 17,
+        "repealed": 1,
+        "added": 0,
+        "churn_rate": 0.8571
+      },
+      {
+        "track_id": "hajj_umrah_external_pilgrims_law",
+        "title_en": "Law of Service Providers for External Hajj Pilgrims",
+        "articles": 24,
+        "changed": 15,
+        "amended": 14,
+        "repealed": 0,
+        "added": 1,
+        "churn_rate": 0.625
+      },
+      {
+        "track_id": "public_prosecution_law",
+        "title_en": "Public Prosecution Law",
+        "articles": 30,
+        "changed": 18,
+        "amended": 16,
+        "repealed": 2,
+        "added": 0,
+        "churn_rate": 0.6
+      },
+      {
+        "track_id": "income_tax_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian Income Tax Law",
+        "articles": 74,
+        "changed": 44,
+        "amended": 19,
+        "repealed": 25,
+        "added": 0,
+        "churn_rate": 0.5946
+      },
+      {
+        "track_id": "commercial_agencies_regulation",
+        "title_en": "Implementing Regulation of the Commercial Agencies Law",
+        "articles": 49,
+        "changed": 28,
+        "amended": 1,
+        "repealed": 0,
+        "added": 27,
+        "churn_rate": 0.5714
+      },
+      {
+        "track_id": "accredited_valuers_law",
+        "title_en": "Certified/Accredited Valuers Law",
+        "articles": 45,
+        "changed": 25,
+        "amended": 25,
+        "repealed": 0,
+        "added": 0,
+        "churn_rate": 0.5556
+      },
+      {
+        "track_id": "vat_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian VAT Law",
+        "articles": 82,
+        "changed": 45,
+        "amended": 42,
+        "repealed": 0,
+        "added": 3,
+        "churn_rate": 0.5488
+      },
+      {
+        "track_id": "civil_service_law",
+        "title_en": "Civil Service Law",
+        "articles": 44,
+        "changed": 24,
+        "amended": 19,
+        "repealed": 1,
+        "added": 4,
+        "churn_rate": 0.5455
+      },
+      {
+        "track_id": "building_code_regulation",
+        "title_en": "Implementing Regulation of the Law on Application of the Saudi Building Code",
+        "articles": 30,
+        "changed": 15,
+        "amended": 13,
+        "repealed": 0,
+        "added": 2,
+        "churn_rate": 0.5
+      },
+      {
+        "track_id": "traffic_law",
+        "title_en": "Traffic Law",
+        "articles": 86,
+        "changed": 34,
+        "amended": 32,
+        "repealed": 1,
+        "added": 1,
+        "churn_rate": 0.3953
+      },
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "articles": 68,
+        "changed": 26,
+        "amended": 25,
+        "repealed": 0,
+        "added": 1,
+        "churn_rate": 0.3824
+      },
+      {
+        "track_id": "law_practice_law",
+        "title_en": "Code of Law Practice",
+        "articles": 56,
+        "changed": 21,
+        "amended": 8,
+        "repealed": 1,
+        "added": 12,
+        "churn_rate": 0.375
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "articles": 243,
+        "changed": 90,
+        "amended": 14,
+        "repealed": 75,
+        "added": 1,
+        "churn_rate": 0.3704
+      },
+      {
+        "track_id": "nationality_law",
+        "title_en": "Saudi Arabian Nationality Law",
+        "articles": 30,
+        "changed": 11,
+        "amended": 11,
+        "repealed": 0,
+        "added": 0,
+        "churn_rate": 0.3667
+      },
+      {
+        "track_id": "anti_bribery_law",
+        "title_en": "Anti-Bribery Law",
+        "articles": 25,
+        "changed": 9,
+        "amended": 7,
+        "repealed": 0,
+        "added": 2,
+        "churn_rate": 0.36
+      }
+    ]
+  },
+  "repeal_concentration": {
+    "repealed_articles_total": 138,
+    "instruments_holding_them": 18,
+    "largest_holder_share": 0.5435,
+    "by_instrument": [
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "repealed_articles": 75
+      },
+      {
+        "track_id": "income_tax_regulation",
+        "title_en": "Implementing Regulation of the Saudi Arabian Income Tax Law",
+        "repealed_articles": 25
+      },
+      {
+        "track_id": "commercial_courts_law",
+        "title_en": "Commercial Courts Law",
+        "repealed_articles": 20
+      },
+      {
+        "track_id": "electronic_transactions_law",
+        "title_en": "Electronic Transactions Law",
+        "repealed_articles": 2
+      },
+      {
+        "track_id": "enforcement_implementing_regulation",
+        "title_en": "Implementing Regulation of the Law of Enforcement",
+        "repealed_articles": 2
+      },
+      {
+        "track_id": "public_prosecution_law",
+        "title_en": "Public Prosecution Law",
+        "repealed_articles": 2
+      },
+      {
+        "track_id": "arbitration_implementing_regulation",
+        "title_en": "Implementing Regulation of the Arbitration Law",
+        "repealed_articles": 1
+      },
+      {
+        "track_id": "civil_service_law",
+        "title_en": "Civil Service Law",
+        "repealed_articles": 1
+      },
+      {
+        "track_id": "dry_gas_lpg_distribution_law",
+        "title_en": "The Dry Gas and LPG Distribution Law for Residential/Commercial Purposes",
+        "repealed_articles": 1
+      },
+      {
+        "track_id": "enforcement_law",
+        "title_en": "Law of Enforcement",
+        "repealed_articles": 1
+      }
+    ]
+  },
+  "history_shapes": {
+    "articles_with_an_amendment_history": 972,
+    "event_log_shape": 617,
+    "prior_version_shape": 349,
+    "mixed_shape": 6,
+    "amendment_events_per_article_event_log_shape": {
+      "1": 508,
+      "2": 91,
+      "3": 9,
+      "4": 7,
+      "5": 1,
+      "7": 1
+    },
+    "articles_amended_more_than_once_event_log_shape": 109
+  },
+  "amending_instruments": {
+    "distinct_amending_instruments": 179,
+    "article_amendment_pairs": 759,
+    "top_10_share_of_amended_articles": 0.3544,
+    "most_active_amending_instruments": [
+      {
+        "decree": "المرسوم الملكي رقم م/43",
+        "articles_touched": 81
+      },
+      {
+        "decree": "قرار مجلس إدارة المركز الوطني للتخصيص رقم 1/4/2023",
+        "articles_touched": 29
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/115",
+        "articles_touched": 27
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/190",
+        "articles_touched": 25
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/7",
+        "articles_touched": 24
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/112",
+        "articles_touched": 18
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/89",
+        "articles_touched": 17
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/66",
+        "articles_touched": 17
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/31",
+        "articles_touched": 17
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/25",
+        "articles_touched": 14
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/12",
+        "articles_touched": 13
+      },
+      {
+        "decree": "المرسوم الملكي رقم م/244",
+        "articles_touched": 13
+      }
+    ],
+    "history_entries_without_a_gregorian_date": 585,
+    "amendments_by_gregorian_year": {
+      "2006": 1,
+      "2007": 1,
+      "2012": 5,
+      "2013": 2,
+      "2015": 1,
+      "2016": 1,
+      "2017": 1,
+      "2018": 16,
+      "2019": 3,
+      "2020": 5,
+      "2021": 172,
+      "2022": 20,
+      "2023": 4,
+      "2025": 13,
+      "2026": 8
+    }
+  },
+  "prior_text_selection": {
+    "similarity_of_history_text_to_the_current_article_text": {
+      "معدلة": {
+        "entries": 139,
+        "median_similarity_to_current_text": 1.0,
+        "share_effectively_identical_to_current_text": 0.8345
+      },
+      "اصلية": {
+        "entries": 87,
+        "median_similarity_to_current_text": 0.8182,
+        "share_effectively_identical_to_current_text": 0.069
+      },
+      "unlabelled": {
+        "entries": 130,
+        "median_similarity_to_current_text": 1.0,
+        "share_effectively_identical_to_current_text": 0.5538
+      },
+      "مضافة": {
+        "entries": 1,
+        "median_similarity_to_current_text": 0.9608,
+        "share_effectively_identical_to_current_text": 0.0
+      }
+    },
+    "conclusion": "Only entries labelled 'original' are superseded wording; the rest restate the current text and are excluded from the magnitude measure."
+  },
+  "amendment_magnitude": {
+    "amended_articles_total": 730,
+    "amended_articles_with_a_recorded_prior_text": 87,
+    "coverage_of_amended_articles": 0.1192,
+    "measure": "Jaccard over normalised content tokens, current vs superseded wording",
+    "median_similarity": 0.8182,
+    "buckets": {
+      "near_identical_ge_0.90": 32,
+      "moderate_revision_0.50_to_0.90": 38,
+      "substantial_rewrite_lt_0.50": 17
+    },
+    "articles_that_grew": 48,
+    "articles_that_shrank": 32,
+    "median_token_change": 4,
+    "most_rewritten": [
+      {
+        "track_id": "judiciary_law",
+        "article_number": 72,
+        "similarity": 0.0968,
+        "tokens_now": 6,
+        "tokens_before": 29
+      },
+      {
+        "track_id": "law_practice_law",
+        "article_number": 30,
+        "similarity": 0.1081,
+        "tokens_now": 14,
+        "tokens_before": 34
+      },
+      {
+        "track_id": "law_practice_law",
+        "article_number": 41,
+        "similarity": 0.2614,
+        "tokens_now": 171,
+        "tokens_before": 137
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "article_number": 55,
+        "similarity": 0.2712,
+        "tokens_now": 57,
+        "tokens_before": 55
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "article_number": 65,
+        "similarity": 0.2742,
+        "tokens_now": 45,
+        "tokens_before": 46
+      },
+      {
+        "track_id": "terrorism_implementing_regulation",
+        "article_number": 16,
+        "similarity": 0.3627,
+        "tokens_now": 358,
+        "tokens_before": 122
+      },
+      {
+        "track_id": "enforcement_implementing_regulation",
+        "article_number": null,
+        "similarity": 0.3636,
+        "tokens_now": 26,
+        "tokens_before": 22
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "article_number": 46,
+        "similarity": 0.4038,
+        "tokens_now": 73,
+        "tokens_before": 29
+      },
+      {
+        "track_id": "terrorism_law",
+        "article_number": 12,
+        "similarity": 0.4194,
+        "tokens_now": 28,
+        "tokens_before": 19
+      },
+      {
+        "track_id": "real_estate_registration_law",
+        "article_number": 9,
+        "similarity": 0.42,
+        "tokens_now": 40,
+        "tokens_before": 45
+      }
+    ]
+  },
+  "citations_into_changed_articles": {
+    "citations_resolved_to_an_article_with_a_known_status": 2624,
+    "citations_pointing_at_an_amended_or_repealed_article": 233,
+    "share": 0.0888,
+    "corpus_base_rate_of_changed_articles": 0.0743,
+    "ratio_to_base_rate": 1.194,
+    "reading": "The share is close to the corpus-wide base rate, so citations are not markedly over-exposed to changed text. The finding is the absolute count: live cross-references that point at wording which has since moved.",
+    "by_status": {
+      "amended": 227,
+      "repealed": 6
+    },
+    "examples": [
+      {
+        "citing_track": "aawan_regulation",
+        "citing_article": 14,
+        "cited_track": "sharia_procedure_law",
+        "cited_title_en": "Law of Sharia Procedure",
+        "cited_article": 11,
+        "cited_article_status": "معدلة",
+        "type": "inter_law"
+      },
+      {
+        "citing_track": "accounting_auditing_regulation",
+        "citing_article": 1,
+        "cited_track": "accounting_auditing_law",
+        "cited_title_en": "Law of the Accounting and Auditing Profession",
+        "cited_article": 1,
+        "cited_article_status": "معدلة",
+        "type": "inter_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 21,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 34,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 33,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 32,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 34,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 33,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 34,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 32,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 34,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 33,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 36,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 34,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 36,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 7,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 40,
+        "cited_track": "accredited_valuers_law",
+        "cited_title_en": "Certified/Accredited Valuers Law",
+        "cited_article": 24,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "accredited_valuers_law",
+        "citing_article": 43,
+        "cited_track": "insurance_control_law",
+        "cited_title_en": "Cooperative Insurance Companies Control Law",
+        "cited_article": 18,
+        "cited_article_status": "معدلة",
+        "type": "inter_law"
+      },
+      {
+        "citing_track": "aml_law",
+        "citing_article": 18,
+        "cited_track": "aml_law",
+        "cited_title_en": "Anti-Money Laundering Law",
+        "cited_article": 15,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "anti_bribery_law",
+        "citing_article": 13,
+        "cited_track": "anti_bribery_law",
+        "cited_title_en": "Anti-Bribery Law",
+        "cited_article": 8,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "anti_fraud_law",
+        "citing_article": 10,
+        "cited_track": "anti_fraud_law",
+        "cited_title_en": "Anti-Commercial Fraud Law",
+        "cited_article": 5,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "anti_fraud_law",
+        "citing_article": 11,
+        "cited_track": "anti_fraud_law",
+        "cited_title_en": "Anti-Commercial Fraud Law",
+        "cited_article": 5,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "anti_smoking_regulation",
+        "citing_article": 12,
+        "cited_track": "anti_smoking_regulation",
+        "cited_title_en": "Implementing Regulation of the Anti-Smoking Law",
+        "cited_article": 7,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "anti_smoking_regulation",
+        "citing_article": 13,
+        "cited_track": "anti_smoking_regulation",
+        "cited_title_en": "Implementing Regulation of the Anti-Smoking Law",
+        "cited_article": 3,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "antiquities_heritage_law",
+        "citing_article": 81,
+        "cited_track": "antiquities_heritage_law",
+        "cited_title_en": "Antiquities, Museums and Urban Heritage Law",
+        "cited_article": 90,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "antiquities_heritage_law",
+        "citing_article": 91,
+        "cited_track": "antiquities_heritage_law",
+        "cited_title_en": "Antiquities, Museums and Urban Heritage Law",
+        "cited_article": 90,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "arbitration_law",
+        "citing_article": 42,
+        "cited_track": "arbitration_law",
+        "cited_title_en": "Arbitration Law",
+        "cited_article": 24,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "bankruptcy_implementing_regulation",
+        "citing_article": 1,
+        "cited_track": "bankruptcy_implementing_regulation",
+        "cited_title_en": "Implementing Regulation of the Bankruptcy Law",
+        "cited_article": 2,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "building_code_regulation",
+        "citing_article": 6,
+        "cited_track": "building_code_regulation",
+        "cited_title_en": "Implementing Regulation of the Law on Application of the Saudi Building Code",
+        "cited_article": 5,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "capital_market_law",
+        "citing_article": 14,
+        "cited_track": "capital_market_law",
+        "cited_title_en": "Capital Market Law",
+        "cited_article": 13,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "capital_market_law",
+        "citing_article": 33,
+        "cited_track": "capital_market_law",
+        "cited_title_en": "Capital Market Law",
+        "cited_article": 31,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      },
+      {
+        "citing_track": "capital_market_law",
+        "citing_article": 55,
+        "cited_track": "capital_market_law",
+        "cited_title_en": "Capital Market Law",
+        "cited_article": 59,
+        "cited_article_status": "معدلة",
+        "type": "intra_law"
+      }
+    ]
+  },
+  "churn_against_citation": {
+    "instruments_compared_min_20_articles": 189,
+    "cited_instruments": 74,
+    "uncited_instruments": 115,
+    "mean_churn_rate_cited": 0.1066,
+    "mean_churn_rate_uncited": 0.0614,
+    "mean_churn_rate_top_15_most_cited": 0.1335,
+    "note": "In-degree is the unvalidated inter-instrument citation count from the cross-reference layer; the companion citation study showed hand validation moves aggregate shares by about one percentage point.",
+    "confound": "Age is not controlled for. An older instrument has had more time to be amended and more time to be cited, so the gradient below is consistent with both a real relationship and pure ageing. The registry carries a publication date for only 2 of 291 tracks, so this cannot be tested from the corpus as it stands.",
+    "most_cited_with_churn": [
+      {
+        "track_id": "capital_market_law",
+        "title_en": "Capital Market Law",
+        "articles": 68,
+        "churn_rate": 0.3824,
+        "citations_received": 26
+      },
+      {
+        "track_id": "bankruptcy_law",
+        "title_en": "Bankruptcy Law",
+        "articles": 231,
+        "churn_rate": 0.0087,
+        "citations_received": 17
+      },
+      {
+        "track_id": "sharia_procedure_law",
+        "title_en": "Law of Sharia Procedure",
+        "articles": 243,
+        "churn_rate": 0.3704,
+        "citations_received": 17
+      },
+      {
+        "track_id": "anti_narcotics_law",
+        "title_en": "Anti-Narcotics and Psychotropic Substances Control Law",
+        "articles": 74,
+        "churn_rate": 0.0,
+        "citations_received": 15
+      },
+      {
+        "track_id": "criminal_procedure_law",
+        "title_en": "Law of Criminal Procedure",
+        "articles": 222,
+        "churn_rate": 0.0135,
+        "citations_received": 13
+      },
+      {
+        "track_id": "environmental_law",
+        "title_en": "Environmental Law",
+        "articles": 49,
+        "churn_rate": 0.0204,
+        "citations_received": 11
+      },
+      {
+        "track_id": "real_estate_registration_law",
+        "title_en": "Real Estate In-Kind Registration Law",
+        "articles": 40,
+        "churn_rate": 0.075,
+        "citations_received": 10
+      },
+      {
+        "track_id": "traffic_law",
+        "title_en": "Traffic Law",
+        "articles": 86,
+        "churn_rate": 0.3953,
+        "citations_received": 10
+      },
+      {
+        "track_id": "banking_control_law",
+        "title_en": "Banking Control Law",
+        "articles": 26,
+        "churn_rate": 0.0385,
+        "citations_received": 9
+      },
+      {
+        "track_id": "enforcement_law",
+        "title_en": "Law of Enforcement",
+        "articles": 98,
+        "churn_rate": 0.0408,
+        "citations_received": 9
+      },
+      {
+        "track_id": "electronic_transactions_law",
+        "title_en": "Electronic Transactions Law",
+        "articles": 31,
+        "churn_rate": 0.2258,
+        "citations_received": 8
+      },
+      {
+        "track_id": "telecommunications_law",
+        "title_en": "Telecommunications and Information Technology Act",
+        "articles": 41,
+        "churn_rate": 0.0,
+        "citations_received": 8
+      },
+      {
+        "track_id": "judiciary_law",
+        "title_en": "Law of the Judiciary",
+        "articles": 85,
+        "churn_rate": 0.0353,
+        "citations_received": 7
+      },
+      {
+        "track_id": "board_of_grievances_law",
+        "title_en": "Law of the Board of Grievances",
+        "articles": 26,
+        "churn_rate": 0.0385,
+        "citations_received": 6
+      },
+      {
+        "track_id": "income_tax_law",
+        "title_en": "Income Tax Law",
+        "articles": 81,
+        "churn_rate": 0.358,
+        "citations_received": 6
+      }
+    ]
+  },
+  "supersession": {
+    "edges": 102,
+    "relation_counts": {
+      "repeals_full": 91,
+      "repeals_partial": 10,
+      "superseded_by": 1
+    },
+    "targets_outside_the_corpus": 97
+  }
+}
