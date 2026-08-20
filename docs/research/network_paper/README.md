@@ -21,7 +21,8 @@ legal system the corpus captures.
 | `cover_letter.pdf` | Cover letter, one page — upload this to Snapp. |
 | `cover_letter.tex` | Source for the cover letter. |
 | `submission_kit.md` | Every submission field with the exact text to paste, and the answer to every Declarations screen. |
-| `snapp_submission.zip` | LaTeX sources packaged for upload — Snapp compiles them to PDF. |
+| `snapp_submission.zip` | **Blinded** LaTeX sources for upload — Snapp compiles them to PDF. |
+| `main_identified.tex` / `main_identified.pdf` | Identified build, for the record and the camera-ready. Never uploaded. |
 
 ## Reproduce
 
@@ -74,6 +75,12 @@ read-only over `data/` and deterministic.
       submission.
 - [x] Submission route confirmed: Snapp, the same platform as paper 1.
 - [x] Cover letter, submission kit, and upload zip prepared.
+- [x] Blinded for double-anonymous review: author block, self-citation,
+      data-availability URL/DOI, and the Declarations section are all
+      switched off by `\anontrue`; the compiled PDF was audited for
+      identifying strings and is clean.
+- [ ] After acceptance, flip `\anontrue` to `\anonfalse` and restore the
+      full Data availability statement and Declarations.
 - [ ] Confirm the journal's figure-resolution requirements; both figures are
       generated at 300 dpi and can be re-rendered higher from the script.
 

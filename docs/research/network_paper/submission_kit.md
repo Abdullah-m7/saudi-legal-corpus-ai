@@ -4,6 +4,28 @@ Every field the submission system asks for, with the exact text to paste.
 Plain text only — no LaTeX markup — since the interface stores what you type
 verbatim and that is what gets published.
 
+## ⚠️ Double-anonymous review — read this first
+
+*Artificial Intelligence and Law* reviews **double-anonymously**: the
+manuscript reviewers see must carry no author identity. The manuscript
+source therefore has an `\anontrue` switch, set for submission, which:
+
+- empties the author block (no name, email, ORCID);
+- cites the companion corpus paper as an anonymised reference rather than by
+  the author's name;
+- replaces the Data availability statement with one that withholds the
+  repository URL and DOI (both identify the author) and offers them to the
+  editors on request;
+- drops the Declarations section entirely, since Snapp collects those as
+  form fields and publishes the interface values.
+
+`snapp_submission.zip` contains the **blinded** source. `main_identified.tex`
+/ `main_identified.pdf` keep the identified build for the record and for the
+camera-ready; do not upload them. Flip `\anontrue` to `\anonfalse` after
+acceptance.
+
+The cover letter is **not** blinded — editors see it, reviewers do not.
+
 ## Route: Snapp (same system as paper 1)
 
 *Artificial Intelligence and Law* uses **Snapp**, the same platform as
@@ -92,10 +114,10 @@ The author declares no competing interests.
 No funding was received for conducting this study.
 ```
 
-**Ethics approval**
+**Ethics statement**
 
 ```
-Not applicable. The study involves no human participants, no animal subjects, and no personal data; it analyses published national legislation only.
+Not applicable. This study involves no human participants, no animal subjects, no plant material, and no personal data; it analyses published national legislation only.
 ```
 
 **Data availability**
@@ -135,8 +157,10 @@ Identical to paper 1 except where noted:
 1. Read the PDF Snapp compiles from the zip, page by page. Check that both
    figures rendered, that Table 1 is intact, and that the bibliography
    resolved (15 references).
-2. Check the author name, affiliation ("Independent Researcher"), and ORCID
-   against the manuscript.
+2. **Confirm the compiled PDF carries no author identity** — no name, email,
+   ORCID, repository URL, or DOI anywhere, including the references. The
+   blinded build was audited for exactly these strings and is clean; check
+   again after any edit.
 3. The manuscript cites the companion corpus paper as under review. If that
    paper's status changes before you submit this one, update the reference
    in `references.bib` and rebuild the zip.
