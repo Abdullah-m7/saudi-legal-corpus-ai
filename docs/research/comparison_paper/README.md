@@ -375,6 +375,26 @@ generated file. `numbers.py` now refuses to emit a macro name containing a
 digit, which turns a baffling compile error into a plain sentence at the point
 of generation.
 
+## The two quotations, checked against the page rather than a summary
+
+The article quotes the publisher twice, and both quotations reached this
+project through a summarising fetch rather than the page itself. A paraphrase
+presented as a quotation would be a serious defect in a paper whose argument is
+that publishers should be held to what they say, so both were checked against
+the raw HTML.
+
+Both are verbatim. The check also turned up a sentence worth adding — *Clicking
+on the banner reveals the outstanding changes* — and, more importantly, a
+context problem the extract had hidden.
+
+The quotations sit a few lines after a passage about legislation originating
+from the EU. If the three-month commitment were scoped to EU-derived
+amendments, this article's framing would overstate it badly. Parsing the page's
+heading structure settles it: both sentences fall under **Our editorial
+practice and timescales**, and *Legislation originating from the EU* is a
+separate heading that comes afterwards. The commitment is general. The footnote
+now cites the heading and says why.
+
 ## Reproduce
 
 ```
