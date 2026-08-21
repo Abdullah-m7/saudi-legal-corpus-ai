@@ -8,9 +8,11 @@ paper 2 (`../network_paper/`) analyses how instruments cite each other; paper 3
 the temporal question the first three left alone: what changes, where, and how
 much.
 
-**Venue: *The Theory and Practice of Legislation* (Routledge / Taylor &
-Francis)** — requirements verified from the journal's own instructions. See
-*Venue* below.
+**Submitted to *The Theory and Practice of Legislation* (Routledge / Taylor &
+Francis) on 21 August 2026 — submission ID 269589949.** Editorial contact:
+`RTPL-peerreview@journals.tandf.co.uk` (quote the ID in the subject line).
+Requirements were verified from the journal's own instructions before
+submitting; see *Venue* below.
 
 | File | Purpose |
 |---|---|
@@ -207,6 +209,16 @@ different publishers, different manuscripts.
       articles may read it as slight. The material that would strengthen it is
       doctrinal — how other jurisdictions publish amendment status, and the
       Evidence Law transfer worked through as a case study in restructuring.
-- [ ] Submit at `rp.tandfonline.com` and record the manuscript ID here.
+- [x] **Submitted 21 August 2026 — ID 269589949.** Four files uploaded and
+      their designations checked in the portal's preview before sending: the
+      anonymous and identified manuscripts in the right slots (the one
+      plausible failure with two near-identical files), plus both figures as
+      TIFF.
+- [ ] Await the editorial office's initial assessment, then double-anonymous
+      review by two reviewers.
+- [ ] Optional: the paper sits at under half the 10,000-word ceiling. It
+      qualifies as it stands; if reviewers ask for more, the material to add is
+      doctrinal — how other jurisdictions publish amendment status, and the
+      Evidence Law transfer worked through as a case study in restructuring.
 - [ ] Decide how to refer to papers 1–3: they are cited obliquely as "companion
       studies" so the manuscript can be anonymised.
