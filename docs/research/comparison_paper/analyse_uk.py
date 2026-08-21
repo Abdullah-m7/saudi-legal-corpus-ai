@@ -142,9 +142,22 @@ def main():
 
     # An effect only means "the displayed text is out of date" when the service
     # marks it as still requiring application.
-    def live_effects(act):
+    def flagged_effects(act):
         return [e for e in act.get("effects", [])
                 if e.get("RequiresApplied") == "true"]
+
+    def live_effects(act):
+        """Effects that mean the displayed text does not reflect the law in force.
+
+        `RequiresApplied="true"` alone does not mean that, and reading it as if
+        it did is why the first version of this analysis was withdrawn. An
+        effect marked `Prospective="true"` in `ukm:InForce` is enacted but not
+        yet commenced: the service is right not to apply it, because applying
+        it would misstate the law. Both counts are reported, and the prospective
+        ones are the larger group by a wide margin.
+        """
+        return [e for e in flagged_effects(act)
+                if e.get("InForceProspective") != "true"]
 
     # The service marks each Act `revised` --- maintained in amended form --- or
     # `final`. A `final` Act is served as enacted, so it has no revised text for
@@ -172,6 +185,8 @@ def main():
     affected_final = [a for a in final if live_effects(a)]
     all_effects = [e for a in got for e in live_effects(a)]
     every_effect = [e for a in got for e in a.get("effects", [])]
+    prospective = [e for a in got for e in flagged_effects(a)
+                   if e.get("InForceProspective") == "true"]
 
     # Provisions, not effects: several effects can name the same provision, and
     # counting effects would overstate how much text is involved.
@@ -356,6 +371,10 @@ def main():
             "acts_affected_share": round(len(affected) / len(got), 4) if got else None,
             "effects_requiring_application": len(all_effects),
             "effects_in_block_total": len(every_effect),
+            "effects_flagged_but_prospective": len(prospective),
+            "note": "an effect flagged RequiresApplied is not necessarily in "
+                    "force; prospective ones are enacted but not yet "
+                    "commenced, and the service is correct not to apply them",
             "difference_between_the_two_measures":
                 len(every_effect) - len(all_effects),
             "distinct_affected_provisions": len(provisions),
@@ -446,9 +465,11 @@ def main():
     print(f"  amendments enacted but not incorporated: "
           f"{u['effects_requiring_application']:,}")
     print(f"  across {u['distinct_affected_provisions']:,} distinct provisions")
-    print(f"  the whole effects block holds {u['effects_in_block_total']:,}; "
-          f"reporting that number instead would overstate by "
-          f"{u['difference_between_the_two_measures']:,}")
+    print(f"  {u['effects_flagged_but_prospective']:,} further effects are "
+          f"flagged but prospective --- enacted, not yet in force, and\n  "
+          f"correctly not applied; counting them as a backlog is the error "
+          f"this analysis was rebuilt to avoid")
+    print(f"  the whole effects block holds {u['effects_in_block_total']:,}")
     print(f"  ten most affected Acts hold "
           f"{u['top_10_acts_share_of_effects']*100:.1f}% of all of them")
     print(f"\nthree denominators, none of them the obvious one on its own:")

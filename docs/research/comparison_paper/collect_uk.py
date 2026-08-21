@@ -185,14 +185,51 @@ def unapplied_effects(xml):
                           chunk)
         if title:
             attrs["AffectingTitle"] = title.group(1)
+
+        # The field the first version of this study got wrong, and the reason
+        # every number it produced had to be withdrawn.
+        #
+        # `RequiresApplied="true"` does not mean an amendment is in force and
+        # missing from the text. It means only that the effect has not been
+        # applied. Whether it *should* have been is in `ukm:InForce`, a child
+        # element that an attribute-only parse cannot see: `Prospective="true"`
+        # marks an amendment that is enacted but not yet commenced, which the
+        # service is right not to apply, because applying it would misstate the
+        # law. In a sample of six affected Acts, 1,477 of 1,480 flagged effects
+        # were prospective.
+        #
+        # `ukm:CommencementAuthority` carries the commencement provision and
+        # its start date. The withdrawn draft claimed this jurisdiction does
+        # not publish commencement dates and built its sharpest argument on
+        # that. It publishes them, per effect.
+        in_force = re.search(r"<ukm:InForce\b([^>]*?)/?>", chunk)
+        if in_force:
+            for key in ("Applied", "Prospective", "Qualification", "Date"):
+                m = re.search(rf'\b{key}="([^"]*)"', in_force.group(1))
+                if m:
+                    attrs[f"InForce{key}"] = m.group(1)
+        authority = re.search(
+            r"<ukm:CommencementAuthority>(.*?)</ukm:CommencementAuthority>",
+            chunk, re.S)
+        if authority:
+            for key, name in (("StartDate", "CommencementStartDate"),
+                              ("URI", "CommencementURI")):
+                m = re.search(rf'\b{key}="([^"]*)"', authority.group(1))
+                if m:
+                    attrs[name] = m.group(1)
         effects.append(attrs)
         if attrs.get("RequiresApplied") == "true":
             kind = attrs.get("Type", "?")
             types[kind] = types.get(kind, 0) + 1
+    flagged = [a for a in effects if a.get("RequiresApplied") == "true"]
+    # The only count that means "the displayed text does not reflect the law in
+    # force": flagged for application, and not prospective.
+    live = [a for a in flagged if a.get("InForceProspective") != "true"]
     return {
         "unapplied_total": len(elements),
-        "unapplied_requiring_application": sum(
-            1 for a in effects if a.get("RequiresApplied") == "true"),
+        "unapplied_requiring_application": len(flagged),
+        "unapplied_and_in_force": len(live),
+        "unapplied_but_prospective": len(flagged) - len(live),
         "by_type": types,
         "effects": effects,
     }
@@ -282,7 +319,8 @@ def collect(years):
             acts.append(record)
             print(f"  {record['id']:>18s}  {attempt['http_status']}  "
                   f"{attempt['seconds']:5.2f}s  "
-                  f"unapplied={record.get('unapplied_requiring_application', '-')}")
+                  f"in-force={record.get('unapplied_and_in_force', '-')} "
+                  f"prospective={record.get('unapplied_but_prospective', '-')}")
             time.sleep(CRAWL_DELAY)
         path.write_text(json.dumps(
             {"year": year, "feed_attempt": feed_attempt, "acts": acts},
