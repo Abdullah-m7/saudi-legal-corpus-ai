@@ -118,6 +118,9 @@ def figure_one(results):
     fig.tight_layout()
     fig.savefig(HERE / "fig1_churn.png", dpi=300)
     fig.savefig(HERE / "fig1_churn.eps", format="eps")
+    # The journal's preferred artwork formats are PS, JPEG, TIFF or Word, at
+    # 300 dpi for colour; EPS is not on that list, so ship TIFF as well.
+    fig.savefig(HERE / "fig1_churn.tiff", dpi=300)
     plt.close(fig)
     return HERE / "fig1_churn.png"
 
@@ -158,6 +161,7 @@ def figure_two(results):
     fig.tight_layout()
     fig.savefig(HERE / "fig2_citation_tiers.png", dpi=300)
     fig.savefig(HERE / "fig2_citation_tiers.eps", format="eps")
+    fig.savefig(HERE / "fig2_citation_tiers.tiff", dpi=300)
     plt.close(fig)
     return HERE / "fig2_citation_tiers.png"
 

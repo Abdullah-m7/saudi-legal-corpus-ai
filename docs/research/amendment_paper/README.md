@@ -8,9 +8,9 @@ paper 2 (`../network_paper/`) analyses how instruments cite each other; paper 3
 the temporal question the first three left alone: what changes, where, and how
 much.
 
-**Venue: recommended but not confirmed.** See *Venue* below — the leading
-candidate's own author page cannot be reached from this environment, so its
-length band is unverified and must be checked before the paper is adapted.
+**Venue: *The Theory and Practice of Legislation* (Routledge / Taylor &
+Francis)** — requirements verified from the journal's own instructions. See
+*Venue* below.
 
 | File | Purpose |
 |---|---|
@@ -137,59 +137,66 @@ limit the paper already claims.
 
 ## Venue
 
-**Recommended: *The Theory and Practice of Legislation* (Routledge / Taylor &
-Francis).** The scope match is unusually exact — the journal's own statement of
-what it welcomes names *evidence-based drafting*, *pre- and post-legislative
-scrutiny for effectiveness and efficiency*, *the utility and necessity of
-codification*, and *the role of IT in legislation*. Those are, in order, this
-paper's method, its subject, its section on consolidation, and its proposal for
-a reverse-reference index.
+***The Theory and Practice of Legislation*** (Routledge / Taylor & Francis).
+The scope match is unusually exact — the journal's own statement of what it
+welcomes names *evidence-based drafting*, *pre- and post-legislative scrutiny
+for effectiveness and efficiency*, *the utility and necessity of codification*,
+and *the role of IT in legislation*. Those are, in order, this paper's method,
+its subject, its section on consolidation, and its proposal for a
+reverse-reference index. It is also the highest-ranked legislation journal in
+the world on Scopus and Scimago, by its own account.
 
-| | Status |
+Requirements, all verified from the journal's instructions page:
+
+| | |
 |---|---|
-| Publisher | Routledge / Taylor & Francis — **verified** |
-| Scope | as above — **verified** from the journal's own about-page |
-| Review model | double-blind — **verified** |
-| Ranking | JCR Q1 in Law, IF ≈ 1.4 — **verified** from indexing services |
-| **Length band** | **UNVERIFIED.** A search result suggested 10,000–12,000 words preferred and 15,000 maximum with a 150-word abstract, but that text may come from a generic Taylor & Francis guidelines PDF rather than this journal's page. **Check before adapting.** |
-| Submission system | **UNVERIFIED** |
-| Editorial board | **UNVERIFIED** |
+| Article type | Original Article |
+| **Length** | **no more than 10,000 words** — a ceiling, not a target |
+| Abstract | unstructured, 300 words |
+| Keywords | 5–15 |
+| Citations | **OSCOLA 4th edition** — the style this paper already uses |
+| Review | **double anonymous**, two independent reviewers |
+| Format | Word; figures supplied separately |
+| Figures | 300 dpi colour; preferred formats PS, JPEG, TIFF or Word — **not EPS**, so `make_figures.py` also emits TIFF |
+| Submission | **T&F Submission Portal, `rp.tandfonline.com`** — not ScholarOne, and a separate account from a tandfonline.com reading account |
+| Required declarations | funding (state "none" if none), disclosure/competing interests, **declaration of generative AI use**, CRediT roles, biographical note (≤200 words), data availability with DOI |
 
-Taylor & Francis blocks this environment (HTTP 403 on fetch, connection reset
-in a real browser through the proxy), so the three unverified rows have to be
-read off the journal's own author-guidelines page by hand. If the 10,000-word
-figure is right, the manuscript needs roughly to double, as paper 3 did for
-*Statute Law Review*.
+The manuscript already conforms on every count that was checkable: 4,706 words
+against a 10,000 ceiling, a 260-word abstract against 300, six keywords, OSCOLA
+footnotes, "this article" never "this paper", and an `\anontrue` switch for the
+anonymised build.
 
 Alternatives considered:
 
 - ***Journal of Empirical Legal Studies*** (Wiley) — double-anonymous,
-  free-format submission, no stated word limit, all verified. Rejected on fit
-  rather than quality: JELS publishes predominantly causal-inference work, and
-  this paper is descriptive with an openly uncontrolled confound. It would be
-  read as a study without an identification strategy.
-- ***Statute Law Review*** (Oxford) — the best scope fit of all, but paper 3 is
-  under review there now. Submitting a second manuscript to the same journal
-  before the first resolves is not sensible.
-- **JURIX** (International Conference on Legal Knowledge and Information
-  Systems) — fits the current length without expansion and turns around fast,
-  but conference proceedings carry less weight with the legal audience this
-  paper is written for.
+  free-format, no stated word limit. Rejected on fit rather than quality: JELS
+  publishes predominantly causal-inference work, and this paper is descriptive
+  with an openly uncontrolled confound.
+- ***Statute Law Review*** (Oxford) — the closest scope match of all, but paper
+  3 is under review there now.
+- **JURIX** — fits without expansion and turns around fast, but conference
+  proceedings carry less weight with this paper's intended audience.
 
 One note of transparency rather than concern: Statute Law Review's
 Editors-in-Chief lead the same legislative-studies community this journal
-serves, so the same small readership may see both papers. Different journals,
-different publishers, different manuscripts — this is ordinary, and it is
-disclosed on the title page either way.
+serves, so the same readership may see both papers. Different journals,
+different publishers, different manuscripts.
 
 ## Next steps
 
-- [ ] Read the recommended journal's author-guidelines page by hand and fill in
-      the three unverified rows above — length band, submission system, review
-      confirmation. The current draft is 4,706 words including footnotes.
-- [ ] If the length band requires it, expand as paper 3 was expanded: the
-      doctrinal material this paper can add is the comparative treatment of how
-      other jurisdictions publish amendment status, and a worked account of the
-      Evidence Law transfer as a case study in legislative restructuring.
+- [x] Requirements verified from the journal's own instructions; the earlier
+      "10,000–12,000 words preferred" lead was wrong — it came from a generic
+      Taylor & Francis PDF. The real rule is **no more than 10,000**, so the
+      draft needs no expansion to qualify.
+- [ ] **Author to write two things only he can**: the declaration of generative
+      AI use (drafted in `build.py` as a starting point — it is a statement in
+      his name and must be confirmed or rewritten) and the biographical note
+      (≤200 words).
+- [ ] Optional but worth considering: the paper sits at under half the length
+      ceiling. It qualifies as it stands, but a journal whose norm is longer
+      articles may read it as slight. The material that would strengthen it is
+      doctrinal — how other jurisdictions publish amendment status, and the
+      Evidence Law transfer worked through as a case study in restructuring.
+- [ ] Submit at `rp.tandfonline.com` and record the manuscript ID here.
 - [ ] Decide how to refer to papers 1–3: they are cited obliquely as "companion
       studies" so the manuscript can be anonymised.
