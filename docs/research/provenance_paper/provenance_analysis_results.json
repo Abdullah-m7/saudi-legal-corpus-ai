@@ -118,6 +118,17 @@
     },
     "sample_bias": "Coverage is uneven and not monotonic: 87% of tier-1 tracks have article-level records against 59% of tier-2, 28% of tier-3 and 73% of tier-4. The under-representation of tier 3 --- the tracks whose official source could not be reached at all --- means the share without a cross-verified official primary is more likely understated than overstated."
   },
+  "unavailability_and_archive_overlap": {
+    "articles": 11704,
+    "unreachable": 2345,
+    "archive": 2443,
+    "both": 1591,
+    "share_of_unreachable_that_also_used_an_archive": 0.6785,
+    "share_of_archive_use_that_was_also_unreachable": 0.6512,
+    "archive_without_recorded_unavailability": 852,
+    "unavailability_without_archive_recovery": 754,
+    "reading": "The archive standing in for an unreachable official page is the dominant pattern but not the only one: about two thirds of each set overlaps, and each retains a substantial remainder."
+  },
   "official_record_disagrees_with_itself": {
     "measure": "The official record contradicting itself --- a portal whose displayed article and whose own change log differ, or which contradicts another part of itself. Reported separately from mere staleness against an independent source, which is a weaker claim.",
     "separately_stale_against_another_source": {
@@ -125,7 +136,39 @@
       "tracks": 2
     },
     "distinct_strings": 4,
-    "articles_affected": 57,
+    "articles_directly_implicated": 9,
+    "directly_implicated": {
+      "environmental_law": {
+        "articles": [
+          1
+        ],
+        "what": "BOE's own per-article amendment log gives a current wording for the definition of `the competent authority' that differs from BOE's own main running text. The other 48 articles matched verbatim across all three sources."
+      },
+      "press_law": {
+        "articles": [
+          5,
+          9,
+          36,
+          37,
+          38,
+          40
+        ],
+        "what": "BOE's page carries a changed-article marker and a fully quoted amendment log for each of these articles while its main displayed body still shows the pre-amendment text."
+      },
+      "engineering_practice_law": {
+        "articles": [
+          1
+        ],
+        "what": "BOE's change log quotes Council of Ministers Resolution 250 (7/4/1444H) substituting a ministry name, while BOE's main body has shown a third, different wording at every snapshot checked since 2019 --- predating the resolution."
+      },
+      "travel_documents_law": {
+        "articles": [
+          6
+        ],
+        "what": "BOE's own amendment log for the article omits any decree citation for its 1439H amendment; the citation was recovered from a secondary source."
+      }
+    },
+    "articles_carrying_one_of_these_strings_upper_bound": 57,
     "tracks_affected": 4,
     "cases": [
       {

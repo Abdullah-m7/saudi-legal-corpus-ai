@@ -55,9 +55,9 @@ single source; 8.2 per cent required optical or visual reconstruction; and 4.9
 per cent record a defect in the official text itself. Weighted by article, 17.0
 per cent of the corpus has no cross-verified official primary source behind it,
 and the coverage of the sample makes that an underestimate rather than an
-overestimate. In four instruments the official record contradicts itself: the
-article the portal displays and the change log the same portal publishes do not
-agree. Two conclusions follow. Web archives are not a convenience for legal
+overestimate. In four instruments the official record contradicts itself across nine
+articles: the article the portal displays and the change log the same portal
+publishes do not agree. Two conclusions follow. Web archives are not a convenience for legal
 research but part of its load-bearing structure, with no guarantee of
 permanence and no legal status. And a legal corpus should ship the strength of
 the evidence behind each text alongside the text, because a reader who is given
@@ -109,14 +109,18 @@ is not a claim that the sources are badly maintained. It is a measurement of
 how often a researcher who needs the official text will not get it on the
 first attempt --- or the fifth.
 
-Second, \textbf{web archives did the work instead}. 20.9 per cent of articles
-were obtained through an archived capture rather than a live official page. The
-two figures are close, and the reason is visible in the records themselves: the
-common pattern is an instrument whose live portal page was unreachable and
-whose text was recovered from a snapshot of that same page. The Internet
-Archive, in other words, is not a fallback for this kind of research. It is
-part of the infrastructure, and it holds that position without any legal
-status, any guarantee of permanence, and no obligation to anyone.
+Second, \textbf{web archives did much of the work instead}. 20.9 per cent of
+articles were obtained through an archived capture rather than a live official
+page. The two totals are close, but that alone would prove nothing --- so the
+joint is measured rather than inferred: 67.8 per cent of the articles whose
+official source was unreachable were recovered through an archive, and 65.1 per
+cent of archive use coincided with a recorded unavailability. The archive
+standing in for a page that would not load is therefore the dominant pattern
+and not the only one; 7.3 per cent of articles used an archive with no
+unavailability recorded, and 6.4 per cent record unavailability that an archive
+did not resolve. The Internet Archive is not a fallback for this kind of
+research. It is part of the infrastructure, and it holds that position without
+any legal status, any guarantee of permanence, and no obligation to anyone.
 
 Third, \textbf{the evidence behind the text is uneven, and nothing published
 alongside the text says so}. Weighted by article, 64.2 per cent of the corpus
@@ -296,12 +300,18 @@ a portrait of a corpus assembled carelessly from whatever was to hand, and the
 other rows should be read in that light: they describe what a careful process
 had to do, not what a careless one got away with.
 
-\textbf{Unavailability and archive use are almost the same number.} 20.0 per
-cent against 20.9 per cent, and 28.0 per cent of instruments on both. The
-records show why: the recurring pattern is a live official page that could not
-be retrieved and an archived capture of that same page that could. The archive
-is not supplying different or better material. It is supplying the official
-material, at a moment when the official channel could not.
+\textbf{Unavailability and archive use are close, and they overlap by about
+two thirds.} The totals are 20.0 per cent against 20.9 per cent, with 28.0 per
+cent of instruments on both --- but matching totals do not establish that the
+same articles are involved, so the joint distribution is computed. Of the
+articles whose official source was unreachable, 67.8 per cent were recovered
+through an archive; of the articles obtained through an archive, 65.1 per cent
+had a recorded unavailability. The archive is mostly not supplying different or
+better material: it is supplying the official material, at a moment when the
+official channel could not. The remainders matter too, and neither is small:
+852 articles used an archive with no unavailability recorded --- an archived
+capture preferred for its stability, or consulted to check whether a live page
+had changed --- and 754 record an unavailability that no archive resolved.
 
 \textbf{Optical reconstruction is an instrument-level burden.} 8.2 per cent of
 articles but 14.0 per cent of instruments. The sources that had to be read as
@@ -357,22 +367,46 @@ instruments, or 26 per cent.
 
 The sharpest cases are the ones where the problem is not access but
 consistency. In four instruments the build record documents the official source
-contradicting itself, affecting 57 articles.
+contradicting itself, across nine articles in total.
+
+A note on that count, because it is easy to inflate. A provenance string is
+attached to every article of the instrument it describes, so it records the
+scope of the \emph{verification route}, not the scope of the problem. The
+Environmental Law's string rides on all 49 of its articles; its registry note
+records that 48 matched verbatim across three sources and one did not. The
+figure below is therefore read from each instrument's own account of its
+discrepancy, and the count of articles merely carrying one of these strings ---
+57 --- is reported in the results file as the upper bound it is.
 
 The pattern in three of the four is the same. The legislative portal displays a
 consolidated article, and the same portal publishes a change log recording the
 amendments made to it; the two do not agree, because the change log has been
-updated and the displayed body has not. In the Press Law the change log's text
-was the current one and the main body was stale. In the Law of Engineering
-Practice the change log quotes a resolution whose `before' wording does not
-match the body the portal displays, and a third source --- the professional
-body's own PDF --- gives a third reading. In the Travel Documents Law the change
-log records an amendment and omits the decree number that made it, which the
-corpus supplied from two secondary sources.
+updated and the displayed body has not.
 
-The fourth is the Environmental Law article with which this article opened,
-where the record simply states that the portal contradicts itself, resolved
-against two independent sources.
+In the \textbf{Press Law} this affects six articles --- 5, 9, 36, 37, 38 and 40
+--- for each of which the portal simultaneously carries a changed-article marker
+and a fully quoted amendment log while its main displayed body still shows the
+pre-amendment text.
+
+In the \textbf{Law of Engineering Practice} it affects article 1, and the
+disagreement is three-way rather than two: the portal's change log quotes a
+Council of Ministers resolution substituting a ministry name, while the
+portal's own main body has shown a third, different wording at every snapshot
+checked since 2019 --- a wording that predates the resolution.\footnote{Council
+of Ministers Resolution 250, 7/4/1444H.} The professional body's own published
+PDF agrees with neither, and the corpus records the case as unresolved.
+
+In the \textbf{Travel Documents Law} it affects article 6, where the portal's
+amendment log records an amendment and omits the decree citation for it
+entirely; the citation was recovered from a secondary source.
+
+The fourth is the \textbf{Environmental Law} article with which this article
+opened. There the disagreement is confined to a single definition --- `the
+competent authority' in article 1 --- where the portal's per-article amendment
+log gives a current wording that its own main running text does not carry. It
+was resolved against two independent sources outside the portal, and the corpus
+flags it as warranting dedicated legal review rather than treating it as
+settled.
 
 Two things follow. The first is practical: a researcher relying on a single
 retrieval from a single official page has no way to detect any of this, because

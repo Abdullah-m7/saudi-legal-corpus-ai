@@ -54,18 +54,26 @@ across 200 instruments:
 | Defect recorded in the official source | 4.9% | 6.5% |
 | *Multi-source cross-verification* | *86.1%* | *87.5%* |
 
-- **Unavailability and archive use are almost the same number**, and the records
-  show why: the recurring pattern is a live official page that could not be
-  retrieved and an archived capture of that same page that could. The archive
-  is not supplying different material — it is supplying the official material,
-  at a moment when the official channel could not.
+- **Unavailability and archive use overlap by about two thirds** — measured,
+  not inferred from the two similar totals. 67.8% of articles whose official
+  source was unreachable were recovered through an archive; 65.1% of archive
+  use coincided with a recorded unavailability. The archive is mostly supplying
+  the official material at a moment when the official channel could not. The
+  remainders are not small either: 852 articles used an archive with no
+  unavailability recorded, and 754 record an unavailability no archive
+  resolved.
 - **17.0% of the corpus, by article, has no cross-verified official primary
   source.** Registry-wide by instrument, tiers 3 and 4 together are 76 of 291
   (26%).
-- **In four instruments the official record contradicts itself** — 57 articles.
-  In three, the portal's own change log and the article the same portal
-  displays do not agree; in the fourth the record states the contradiction
-  outright. A researcher who retrieves once cannot detect any of this.
+- **In four instruments the official record contradicts itself** — across
+  **nine articles**: Press Law arts 5, 9, 36, 37, 38, 40 (changed-article
+  marker and full amendment log on the portal, pre-amendment text in its own
+  displayed body); Law of Engineering Practice art 1 (a three-way divergence,
+  the portal's main body reading differently from its own change log at every
+  snapshot since 2019); Travel Documents Law art 6 (the portal's amendment log
+  omits the decree citation entirely); Environmental Law art 1 (one definition,
+  where the per-article log and the main running text disagree). A researcher
+  who retrieves once cannot detect any of this.
 - **One instrument in seven could not be read by machine without an optical
   pass** — and each pass is an opportunity for a silent error no downstream user
   can detect.
@@ -81,6 +89,30 @@ provenance field meaning three different things.
 That is reported rather than quietly cleaned, because it is the strongest
 available argument for the paper's own recommendation: provenance needs a
 controlled vocabulary and a schema, not a place to write a sentence.
+
+## Quality review — what it caught
+
+Run before any venue was chosen, as with papers 1–4. Every number was
+re-derived from the results file and every named instrument checked against its
+registry note. Two defects, both of the kind that survive a careless read:
+
+1. **An inflated count.** The paper said the official record contradicts itself
+   "affecting 57 articles". A provenance string is attached to every article of
+   its instrument, so 57 is the scope of the *verification route*, not of the
+   problem. The Environmental Law's string rides on all 49 of its articles while
+   its own note records that **48 matched verbatim and one definition did not**.
+   The honest figure is **nine articles**, read from each instrument's account
+   of its own discrepancy; the 57 is kept in the results file as the upper
+   bound it is. The corrected section is also much stronger, because it can now
+   name the articles and say what went wrong in each.
+2. **A relationship inferred from two marginals.** The paper argued that the
+   archive was standing in for unreachable official pages because the two
+   totals were close — 20.0% and 20.9%. Two similar totals establish nothing
+   about whether the same articles are involved. Measured, the joint is **67.8%
+   / 65.1%**: the dominant pattern, but not the near-identity the marginals
+   implied, and with 852 and 754 articles respectively in the two remainders.
+   This is the same species of error as paper 4's base-rate finding, caught by
+   the same habit of computing the joint instead of trusting a coincidence.
 
 ## Three corrections the build caught
 
@@ -128,9 +160,8 @@ computes this so the paper does not have to claim a convenient direction.
 
 - [ ] Choose the venue and verify its scope, review model, length band and
       submission route against the journal's own instructions. Current draft is
-      3,977 words including footnotes. Candidates worth checking: *International
+      4,338 words including footnotes. Candidates worth checking: *International
       Journal of Legal Information* (Cambridge), *Legal Information Management*
       (Cambridge/BIALL), *Data & Policy* (Cambridge). The four journals already
       holding papers 1–4 are not available.
-- [ ] Quality review before submission. Each of the four previous papers had a
-      headline-changing defect caught at that stage.
+- [x] Quality review complete — see above.

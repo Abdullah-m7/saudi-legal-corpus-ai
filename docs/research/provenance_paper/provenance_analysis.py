@@ -216,6 +216,41 @@ def measure(rows, table):
     return out, provenance_rows
 
 
+def unavailability_and_archive_overlap(rows, table):
+    """How often the archive stood in for an unreachable official source.
+
+    Two similar marginals do not establish that they describe the same
+    instruments. The claim needs the joint distribution, so it is computed.
+    """
+    by_string = {t["string"]: t for t in table}
+    prov = [r for r in rows if by_string[r["status"]]["is_provenance_statement"]]
+    unreachable = archive = both = 0
+    for r in prov:
+        m = set(by_string[r["status"]]["measures"])
+        u = "official_source_unreachable" in m
+        a = "reached_through_a_web_archive" in m
+        unreachable += u
+        archive += a
+        both += u and a
+    total = len(prov)
+    return {
+        "articles": total,
+        "unreachable": unreachable,
+        "archive": archive,
+        "both": both,
+        "share_of_unreachable_that_also_used_an_archive":
+            round(both / unreachable, 4) if unreachable else 0.0,
+        "share_of_archive_use_that_was_also_unreachable":
+            round(both / archive, 4) if archive else 0.0,
+        "archive_without_recorded_unavailability": archive - both,
+        "unavailability_without_archive_recovery": unreachable - both,
+        "reading": "The archive standing in for an unreachable official page "
+                   "is the dominant pattern but not the only one: about two "
+                   "thirds of each set overlaps, and each retains a "
+                   "substantial remainder.",
+    }
+
+
 def tier_analysis(provenance_rows):
     """The hand-assigned tiers, weighted by article as well as by track.
 
@@ -306,6 +341,43 @@ def self_contradiction_cases(rows, table):
         seen.add(r["status"])
         cases.append({"track": r["track"], "article": r["article"],
                       "status": r["status"]})
+    # A provenance string is attached to every article of its track, so the
+    # number of articles carrying it is the scope of the VERIFICATION ROUTE,
+    # not the scope of the contradiction. The Environmental Law's string rides
+    # on 49 articles while its registry note records that 48 of them matched
+    # verbatim across three sources and one definition in article 1 did not.
+    # The articles actually implicated are therefore read from each track's own
+    # note and recorded here, with the string count kept as the upper bound it
+    # is.
+    DIRECTLY_IMPLICATED = {
+        "environmental_law": {
+            "articles": [1],
+            "what": "BOE's own per-article amendment log gives a current "
+                    "wording for the definition of `the competent authority' "
+                    "that differs from BOE's own main running text. The other "
+                    "48 articles matched verbatim across all three sources.",
+        },
+        "press_law": {
+            "articles": [5, 9, 36, 37, 38, 40],
+            "what": "BOE's page carries a changed-article marker and a fully "
+                    "quoted amendment log for each of these articles while its "
+                    "main displayed body still shows the pre-amendment text.",
+        },
+        "engineering_practice_law": {
+            "articles": [1],
+            "what": "BOE's change log quotes Council of Ministers Resolution "
+                    "250 (7/4/1444H) substituting a ministry name, while BOE's "
+                    "main body has shown a third, different wording at every "
+                    "snapshot checked since 2019 --- predating the resolution.",
+        },
+        "travel_documents_law": {
+            "articles": [6],
+            "what": "BOE's own amendment log for the article omits any decree "
+                    "citation for its 1439H amendment; the citation was "
+                    "recovered from a secondary source.",
+        },
+    }
+
     per_string = Counter(r["status"] for r in rows)
     stale = [r for r in rows
              if "STALE" in tokens(r["status"]) and is_provenance(r["status"])
@@ -321,7 +393,11 @@ def self_contradiction_cases(rows, table):
             "tracks": len({r["track"] for r in stale}),
         },
         "distinct_strings": len(cases),
-        "articles_affected": sum(per_string[c["status"]] for c in cases),
+        "articles_directly_implicated": sum(
+            len(v["articles"]) for v in DIRECTLY_IMPLICATED.values()),
+        "directly_implicated": DIRECTLY_IMPLICATED,
+        "articles_carrying_one_of_these_strings_upper_bound": sum(
+            per_string[c["status"]] for c in cases),
         "tracks_affected": len({
             r["track"] for r in rows
             if contradicts_itself(tokens(r["status"]))
@@ -350,6 +426,8 @@ def main():
     results = {
         "provenance_layer": measures,
         "verification_tiers": tier_analysis(provenance_rows),
+        "unavailability_and_archive_overlap":
+            unavailability_and_archive_overlap(rows, table),
         "official_record_disagrees_with_itself":
             self_contradiction_cases(rows, table),
         "freshness": freshness(),
@@ -370,9 +448,14 @@ def main():
     t = results["verification_tiers"]
     print(f"  {t['share_without_a_cross_verified_official_primary']:.1%} of "
           "articles sit in a track with no cross-verified official primary")
+    o = results["unavailability_and_archive_overlap"]
+    print(f"  archive stood in for an unreachable source in "
+          f"{o['share_of_unreachable_that_also_used_an_archive']:.1%} of the "
+          "unreachable cases")
     c = results["official_record_disagrees_with_itself"]
     print(f"  official record disagrees with itself: {c['tracks_affected']} "
-          f"instruments, {c['articles_affected']} articles")
+          f"instruments, {c['articles_directly_implicated']} articles "
+          "directly implicated")
 
 
 if __name__ == "__main__":
