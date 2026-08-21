@@ -349,7 +349,38 @@ paper 5's cost claim, which until now was an argument.
       field costs nothing extra — but labelled observer-relative and used only
       within a jurisdiction, never set against the Saudi figure. Publishing data
       at its true strength is not the same as discarding it.
-- [ ] **Refine the schema: its five fields are not alike.** Using it
+- [x] **The schema needs `discrepancy` to record who declared it.** Applied to
+      a well-run API, four of the five fields are constant — one value each for
+      `source_class`, `retrieval_route`, `corroboration` and `transformation`
+      across every record. That is the schema behaving correctly, not failing:
+      it costs nothing here precisely because there is nothing to say.
+
+      But the defect this study is about was invisible to all five. An Act
+      whose text omits 222 enacted amendments was retrieved perfectly —
+      official-primary, live, no transformation, nothing to report — so under
+      the schema as written it is indistinguishable from an Act with no
+      unapplied effects at all.
+
+      The schema does not have to be extended to fix that. Its purpose line for
+      `discrepancy` is "is there a known problem with this record?", and a
+      publisher flagging its own text as not current is exactly that. What
+      paper 5's field *values* leave out is that a discrepancy can be
+      **declared by the source** as well as **found by the collector**, and a
+      null means something different in each case: found-by-collector cost two
+      sources and a comparison, so a null may only mean nobody looked hard
+      enough; declared-by-source costs nothing to record, so a null means the
+      publisher did not say. One null field standing for both is the same
+      collapse paper 5 objects to when a single confidence score stands for
+      availability and consistency at once.
+
+      Over the collection so far, 82 records carry a source-declared
+      discrepancy and none a collector-found one. In the Saudi corpus it was
+      the reverse: four self-contradicting instruments, every one of them found
+      by hand. Same defect class, opposite provenance — which is the argument
+      for the sub-field and, incidentally, for asking publishers to declare
+      rather than asking consumers to discover.
+- [ ] **Second refinement, still to write up: the fields are not alike in a
+      different way.** Using it
       prospectively showed something paper 5 did not distinguish.
       `retrieval_route` is **observer-relative** — its value depends on who
       collected, from where, and when, so it does not compare across

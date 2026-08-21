@@ -56,6 +56,56 @@ def retrieved(act):
             or act.get("retrieval_retry", {}).get("http_status") == "200")
 
 
+def schema_record(act, effects):
+    """The five-field provenance record as paper 5 defines it, assembled whole.
+
+    The collector writes four of the five fields directly. The fifth,
+    `discrepancy`, it writes only for a failed retrieval --- and that leaves out
+    the defect this whole study is about, because an Act whose text omits
+    enacted amendments was retrieved perfectly: official-primary, live, no
+    transformation, nothing to report. Under the schema as written, the record
+    with 222 unapplied effects and the record with none are indistinguishable.
+
+    They should not be, and the schema does not actually require them to be.
+    Its purpose line for `discrepancy` is "is there a known problem with this
+    record?", and an Act the publisher itself flags as not reflecting the law in
+    force is exactly that. What paper 5's field *values* leave out is that a
+    discrepancy can be **declared by the source** rather than **found by the
+    collector**, and the two are not interchangeable:
+
+      found by the collector --- cost two or more sources and a comparison, so
+      a null means "we did not find one", which may only mean we did not look
+      hard enough;
+      declared by the source --- costs nothing to record, and a null means "the
+      publisher did not say", which is not evidence of absence either, but of a
+      completely different kind.
+
+    A single null field standing for both is the same collapse paper 5 objects
+    to when a confidence score stands for availability and consistency at once.
+    So `discrepancy` carries who declared it. That is the refinement this
+    jurisdiction produced, and it is recorded here rather than asserted: the
+    UK's 222-effect Act is the case that makes it unavoidable.
+
+    Assembled in the analysis rather than the collector only because the sweep
+    was already running. The information was in the collector's hands at the
+    moment of retrieval --- it arrived in the same response --- so the schema's
+    cost claim is untouched; where the value is serialised is not an epistemic
+    question. The collector is to write it directly on the next full run.
+    """
+    record = dict(act.get("provenance") or {})
+    if effects:
+        record["discrepancy"] = {
+            "kind": "source-declares-text-not-current",
+            "declared_by": "source",
+            "effects_not_incorporated": len(effects),
+            "oldest_affecting_instrument_year": min(
+                (int(e["AffectingYear"]) for e in effects
+                 if e.get("AffectingYear", "").isdigit()), default=None),
+        }
+    elif record.get("discrepancy"):
+        record["discrepancy"]["declared_by"] = "collector"
+    return record
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--as-of", default=date.today().isoformat(),
@@ -187,6 +237,18 @@ def main():
     recently_revised_with_old_effects.sort(
         key=lambda r: -r["effects_from_instruments_10_years_or_older"])
 
+    schema = [schema_record(a, live_effects(a)) for a in got]
+    declared = sum(1 for r in schema
+                   if (r.get("discrepancy") or {}).get("declared_by") == "source")
+    collector_found = sum(
+        1 for r in schema
+        if (r.get("discrepancy") or {}).get("declared_by") == "collector")
+    constant_fields = {
+        field: len({r.get(field) for r in schema})
+        for field in ("source_class", "retrieval_route", "corroboration",
+                      "transformation")
+    }
+
     per_act = sorted((len(live_effects(a)), a["id"], a.get("title") or "")
                      for a in affected)[::-1]
     total = sum(n for n, _, _ in per_act)
@@ -238,6 +300,12 @@ def main():
                      "commencement dates are not in this metadata"}
             if ages else None),
         "as_of": as_of.isoformat(),
+        "schema_in_use": {
+            "records": len(schema),
+            "distinct_values_per_field": constant_fields,
+            "discrepancy_declared_by_source": declared,
+            "discrepancy_found_by_collector": collector_found,
+        },
         "publisher_target": "amendments incorporated within three months of "
                             "coming into force (legislation.gov.uk); "
                             "compliance is not computable from this metadata "
@@ -312,6 +380,16 @@ def main():
         print(f"    {r['effects_from_instruments_10_years_or_older']:>4} effects, "
               f"oldest {r['oldest_affecting_instrument_year']}, "
               f"revised {r['last_modified']}  {(r['title'] or '')[:44]}")
+    s = results["schema_in_use"]
+    print(f"\nthe five-field schema over {s['records']} records: "
+          f"distinct values per field")
+    for field, n in s["distinct_values_per_field"].items():
+        print(f"    {field:16s} {n}")
+    print(f"    discrepancy      declared by the source {s['discrepancy_declared_by_source']}, "
+          f"found by the collector {s['discrepancy_found_by_collector']}")
+    print("  four fields near-constant is the schema behaving correctly on a "
+          "well-run API;\n  it is the discrepancy field that carries this "
+          "jurisdiction, and only once it\n  records who declared the problem")
     print(f"\nwrote {OUT.name}")
 
 
