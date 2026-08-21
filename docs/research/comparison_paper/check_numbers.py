@@ -24,6 +24,11 @@ SRC = HERE / "main.tex"
 
 # A measurement, in the shapes results take: 1,234 / 1{,}234 / 35.1 per cent /
 # 12.5\%. Years and plain small integers are left alone.
+# A LaTeX length is a layout dimension, not a result. `1.5em` inside a
+# hangparas environment tripped this check once; excluding lengths keeps the
+# guard aimed at prose, which is the only place a measurement can be typed.
+LENGTH = re.compile(r"\d*\.?\d+\s*(?:em|ex|pt|bp|cm|mm|in|pc|sp|\\[a-zA-Z]+)")
+
 SUSPECT = re.compile(
     r"(?<![\\A-Za-z0-9])"
     r"(\d{1,3}(?:[,{]\S?,?\}?\d{3})+"      # thousands-separated
@@ -51,8 +56,12 @@ def main():
         stripped = line.split("%")[0]
         if EXEMPT.search(stripped):
             continue
+        lengths = {m.group(0).strip() for m in LENGTH.finditer(stripped)}
         for m in SUSPECT.finditer(stripped):
-            bad.append((n, m.group(1), line.strip()[:78]))
+            value = m.group(1)
+            if any(value in length for length in lengths):
+                continue
+            bad.append((n, value, line.strip()[:78]))
     if bad:
         print(f"{len(bad)} typed measurement(s) in main.tex --- use a macro "
               f"from numbers.tex instead:")

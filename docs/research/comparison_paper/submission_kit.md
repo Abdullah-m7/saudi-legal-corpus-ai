@@ -17,7 +17,7 @@ single anonymized, and the guide says **double anonymized**.
 | **Never combine graphs into one image** | The single panelled figure was split into two |
 | **Numbered sections** (1, 1.1, 1.1.1) | Article class numbers them |
 | **US spelling** | Converted |
-| **APA 7th citations**, alphabetical reference list | **Outstanding — see below** |
+| **APA 7th citations**, alphabetical reference list | Converted; six entries, every DOI re-checked against Crossref |
 | **CRediT roles** | In the declarations |
 | Declaration of generative AI use | Complete, with tool and version |
 | Funding statement (the journal supplies wording for "none") | Present |
@@ -26,17 +26,26 @@ single anonymized, and the guide says **double anonymized**.
 | **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | **Outstanding: the photograph is the author's to supply** |
 | Graphical abstract | Encouraged, not required. Not planned |
 
-## The one large piece of work left
+## What the APA conversion turned up
 
-**OSCOLA footnotes to APA 7th.** The manuscript cites in footnotes; the journal
-requires author–date citations and an alphabetical reference list. That is a
-rewrite of every citation plus a new reference section.
+Converting from OSCOLA footnotes to author–date citations forced every entry to
+carry volume, issue and page numbers that a footnote can elide — and that is
+where two errors were sitting. Each DOI was resolved through the Crossref API,
+which returns the publisher's own deposited metadata rather than a rendering of
+a page:
 
-It is deliberately last. Converting references before the text settles means
-converting them twice, and `references.md` — the ledger recording what each
-citation was checked against — has to be carried through the conversion intact,
-because an APA entry needs volume, issue and page numbers that a footnote can
-elide.
+- **Wang & Strong** ends at page **33**, not 34. Search results gave both
+  numbers; the deposit settles it.
+- **Gebru et al.** has exactly **seven** authors. The ACM page shows "+3"
+  beside the author list, which is a display artifact. A reference list built
+  from that page would have carried three authors who do not exist.
+
+Neither would have been caught by re-reading the manuscript. Both were caught
+by asking a different system the same question.
+
+Four remaining footnotes are substantive notes rather than citations, which APA
+permits sparingly. One said "Ibid." — a legal-citation idiom with no place in
+an author–date system — and now names its source.
 
 ## Things that are not required, and are not being done
 
