@@ -90,12 +90,59 @@ python3 docs/research/comparison_paper/collect_uk.py --all
 Read-only against `legislation.gov.uk`. Resumable: a year already collected is
 skipped, so a long sweep can be stopped and restarted without refetching.
 
+## First result — the 2023 pilot
+
+57 Acts, one request each, `Crawl-delay` honoured.
+
+**Consistency.** 11 of the 56 Acts retrieved (19.6 per cent) carry at least one
+effect the service flags as enacted but not incorporated into the text it
+displays, and those 11 carry **232 such effects between them**. The largest are
+the Levelling-up and Regeneration Act 2023 (96), the Seafarers' Wages Act 2023
+(69) and the Online Safety Act 2023 (24) — the last a statute cited
+internationally, whose official text does not reflect 24 effects the same
+service records against it.
+
+**Availability — not attributable yet.** The sweep saw one retrieval failure in
+57 and three responses over ten seconds (14.4 s, 47.0 s, 49.5 s) against a
+median of 0.45 s. It is tempting to report that even a well-resourced service
+has measurable friction. It has not been established:
+
+- the failed Act returned 200 on three immediate re-attempts, in 0.89 s, 0.24 s
+  and 0.12 s, so the failure was transient;
+- a control of six requests through the same proxy to an unrelated stable host
+  returned 200 every time, all under half a second — which neither convicts nor
+  clears the proxy on six requests.
+
+**The confound this exposes is larger than the pilot.** The Saudi figures were
+collected from an ordinary network; these are collected from a datacentre
+address behind an agent proxy. Comparing "20 per cent unreachable" with "1.8
+per cent" across two networks and two periods is not a comparison. This is the
+same error the collector's author refused to make an hour earlier, when three
+regional portals returned 403 to this environment and that was recorded as an
+artefact rather than a measurement.
+
+Three ways out, to be settled before any availability figure is reported:
+
+1. **Restrict the comparison to consistency**, the axis a network cannot
+   contaminate: an unapplied effect is a property of the data, not of its
+   delivery. Cleanest, and sufficient on its own for paper 5's central claim.
+2. **Build a designed control** — measure the proxy's own failure rate over
+   thousands of requests to stable hosts and subtract it.
+3. **Re-collect from the same network as the Saudi corpus**, so the two
+   environments match.
+
+**What the pilot did settle.** The five-field schema captured the one failure in
+its `discrepancy` field at collection time, with the HTTP status and the curl
+error, and cost nothing to populate. That is the first practical evidence for
+paper 5's cost claim, which until now was an argument.
+
 ## Status
 
 - [x] Jurisdiction chosen, on evidence rather than convenience: reachability,
       API, and a measurable consistency gap all verified before committing.
 - [x] Collector written, with the five-field schema applied prospectively.
-- [ ] Pilot sweep, then the full statute book.
+- [x] Pilot sweep (2023) — see above.
+- [ ] Settle the environment confound, then the full statute book.
 - [ ] Analysis: what share of Acts, and of provisions, does the service itself
       flag as not reflecting the law in force? How old are the oldest unapplied
       effects?
