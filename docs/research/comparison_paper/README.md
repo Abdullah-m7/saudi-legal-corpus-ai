@@ -231,6 +231,32 @@ not the age of the breach.
 
 Source: <https://www.legislation.gov.uk/understanding-legislation>
 
+## Where the numbers stand (partial: 1988–1991)
+
+The sweep is still running. These are the four years collected so far and will
+change; they are recorded because the *shape* of the result is already clear
+and because the measures below are the ones the publisher's own service
+standard forces.
+
+Two measures answer the "some backlog is the design" objection directly.
+
+**The tail.** 60.2 per cent of unapplied effects come from an instrument ten or
+more years old; 30.7 per cent from one twenty or more years old. This is the
+age of the *amending instrument*, not of the breach — commencement can lag
+enactment by decades, and the Transport Act 1982 proves it. But it is also the
+only date the publisher gives a user, which is the point.
+
+**Backlog or neglect.** Seventeen Acts were revised by the service **within the
+last year** and still carry an effect from an instrument ten or more years old.
+A record nobody has touched would have a stale last-modified date; these do
+not. The Road Traffic Act 1988 was revised on 2026-06-29 — seven weeks before
+the analysis date — and still displays text omitting **222 effects**, the
+oldest from 1982. The Opticians Act 1989 was revised in January 2025 and
+carries 100, the oldest from 2008.
+
+That is an actively maintained record with a standing queue, not an abandoned
+one, which is a sharper and more uncomfortable finding than a backlog would be.
+
 ## Reproduce
 
 ```

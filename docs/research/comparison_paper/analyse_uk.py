@@ -146,6 +146,47 @@ def main():
         if e.get("AffectingYear", "").isdigit()
         and int(e["AffectingYear"]) < a["_year"])
 
+    # The service commits to incorporating amendments within three months of
+    # their coming into force, so a non-zero backlog is the design and its
+    # existence is not a finding. What can be a finding is the tail. These
+    # thresholds are on the age of the *affecting instrument*, which is the
+    # only date published: an effect whose amending Act is twenty years old is
+    # not proof of a twenty-year breach, because commencement can lag enactment
+    # by decades, but the distribution is what the publisher gives a user to
+    # reason with, and that is the point.
+    tail = {}
+    for threshold in (5, 10, 20):
+        n = sum(c for y, c in ages.items() if as_of.year - y >= threshold)
+        tail[f"affecting_instrument_{threshold}_or_more_years_old"] = {
+            "effects": n,
+            "share": round(n / len(all_effects), 4) if all_effects else None,
+        }
+
+    # An Act the service revised recently, still carrying effects from an old
+    # instrument, separates a standing backlog from a record nobody has touched.
+    # If the record were simply stale, its last-modified date would be stale
+    # too.
+    recently_revised_with_old_effects = []
+    for a in affected:
+        modified = a.get("last_modified") or ""
+        if not modified[:4].isdigit():
+            continue
+        if as_of.year - int(modified[:4]) > 1:
+            continue
+        old_effects = [e for e in live_effects(a)
+                       if e.get("AffectingYear", "").isdigit()
+                       and as_of.year - int(e["AffectingYear"]) >= 10]
+        if old_effects:
+            recently_revised_with_old_effects.append({
+                "id": a["id"], "title": a.get("title"),
+                "last_modified": modified,
+                "effects_from_instruments_10_years_or_older": len(old_effects),
+                "oldest_affecting_instrument_year":
+                    min(int(e["AffectingYear"]) for e in old_effects),
+            })
+    recently_revised_with_old_effects.sort(
+        key=lambda r: -r["effects_from_instruments_10_years_or_older"])
+
     per_act = sorted((len(live_effects(a)), a["id"], a.get("title") or "")
                      for a in affected)[::-1]
     total = sum(n for n, _, _ in per_act)
@@ -197,6 +238,15 @@ def main():
                      "commencement dates are not in this metadata"}
             if ages else None),
         "as_of": as_of.isoformat(),
+        "publisher_target": "amendments incorporated within three months of "
+                            "coming into force (legislation.gov.uk); "
+                            "compliance is not computable from this metadata "
+                            "because commencement dates are not published",
+        "tail": tail,
+        "revised_within_a_year_but_carrying_effects_10_years_or_older":
+            recently_revised_with_old_effects[:15],
+        "count_revised_within_a_year_carrying_old_effects":
+            len(recently_revised_with_old_effects),
         "most_affected_acts": [
             {"effects": n, "id": i, "title": t} for n, i, t in per_act[:15]],
     }
@@ -246,6 +296,22 @@ def main():
               "are not published in this metadata")
     print(f"  effects whose affecting instrument predates the Act it amends: "
           f"{results['effects_whose_affecting_instrument_predates_the_act']}")
+    print("\nthe service aims to incorporate amendments within three months of "
+          "their coming\n  into force, so some backlog is the design --- the "
+          "tail is the question:")
+    for key, v in results["tail"].items():
+        years = key.split("_")[2]
+        print(f"    affecting instrument {years}+ years old: {v['effects']:,} "
+              f"effects ({v['share']*100:.1f}%)")
+    n = results["count_revised_within_a_year_carrying_old_effects"]
+    print(f"\n{n} Acts were revised within the last year and still carry an "
+          f"effect from an\n  instrument 10+ years old --- a standing queue, "
+          f"not an untouched record")
+    for r in results[
+            "revised_within_a_year_but_carrying_effects_10_years_or_older"][:5]:
+        print(f"    {r['effects_from_instruments_10_years_or_older']:>4} effects, "
+              f"oldest {r['oldest_affecting_instrument_year']}, "
+              f"revised {r['last_modified']}  {(r['title'] or '')[:44]}")
     print(f"\nwrote {OUT.name}")
 
 
