@@ -320,6 +320,26 @@ paragraph before review caught it. The collector now captures the title, and
 the names wait for data that carries them — obtainable from about twenty
 targeted requests rather than a second full sweep.
 
+## An independent recomputation, and the trap it fell into first
+
+`analyse_uk.py` has accumulated denominators, guards and exclusions. Each was
+added for a reason, and together they are enough machinery to be wrong in a way
+that still looks plausible. `verify_uk.py` recounts the headline figures from
+the raw year files by the most obvious route available and compares.
+
+It shares no code with the analysis on purpose. Two implementations that import
+the same helper agree by construction, which proves nothing.
+
+Its first run reported a mismatch on **every** figure — 595 Acts against 525,
+6,026 effects against 5,156. Nothing was wrong. The results file had been built
+before the last two years landed, so a live recomputation was being compared
+against a stale snapshot, and the uniform gap was exactly the 70 Acts collected
+in between. The verifier now runs the analysis itself before comparing, and the
+reason is written into its docstring so the next person does not spend the same
+ten minutes.
+
+With that fixed, all seven figures agree.
+
 ## Reproduce
 
 ```
@@ -557,6 +577,7 @@ paper 5's cost claim, which until now was an argument.
 |---|---|
 | `collect_uk.py` | Collects the Acts and populates paper 5's five-field schema at collection time. |
 | `analyse_uk.py` | Produces every number, from the collection only. |
+| `verify_uk.py` | Recomputes the headline figures by a separate route and compares. |
 | `uk_analysis_results.json` | Generated results snapshot. |
 | `make_figures.py` | Figures 1 and 2, as PNG, TIFF and EPS. |
 | `fig1_age_bands.*` / `fig2_maintained_and_stale.*` | The two figures. |
