@@ -281,6 +281,35 @@ def main():
                       "transformation")
     }
 
+    # Effects grouped by how old the amending instrument is. Bands rather than
+    # single years because the reader's question is "how far past any plausible
+    # window", not "how many in 2011"; the publisher's target is three months,
+    # so the first band is already far outside it.
+    bands = [(0, 4, "under 5 years"), (5, 9, "5-9"), (10, 19, "10-19"),
+             (20, 29, "20-29"), (30, 999, "30 or more")]
+    by_band = {label: 0 for _, _, label in bands}
+    for year, count in ages.items():
+        age = as_of.year - year
+        for lo, hi, label in bands:
+            if lo <= age <= hi:
+                by_band[label] += count
+                break
+
+    # The cross-tabulation behind the backlog-or-neglect claim: when the service
+    # last revised an Act against how old the oldest amendment it has still not
+    # applied is. A record nobody maintains sits top-left; the finding is the
+    # mass at the right-hand end of the recent columns.
+    cross = {}
+    for a in affected:
+        modified = (a.get("last_modified") or "")[:4]
+        years = [int(e["AffectingYear"]) for e in live_effects(a)
+                 if e.get("AffectingYear", "").isdigit()]
+        if not modified.isdigit() or not years:
+            continue
+        decade = (as_of.year - min(years)) // 10 * 10
+        key = f"{modified}|{decade}"
+        cross[key] = cross.get(key, 0) + 1
+
     per_act = sorted((len(live_effects(a)), a["id"], a.get("title") or "")
                      for a in affected)[::-1]
     total = sum(n for n, _, _ in per_act)
@@ -353,6 +382,8 @@ def main():
                             "compliance is not computable from this metadata "
                             "because commencement dates are not published",
         "tail": tail,
+        "effects_by_age_band_of_affecting_instrument": by_band,
+        "acts_by_last_revised_year_and_oldest_effect_decade": cross,
         "revised_within_a_year_but_carrying_effects_10_years_or_older":
             recently_revised_with_old_effects[:15],
         "count_revised_within_a_year_carrying_old_effects":
