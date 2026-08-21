@@ -76,36 +76,50 @@ def main():
         return [e for e in act.get("effects", [])
                 if e.get("RequiresApplied") == "true"]
 
-    # An Act the Statute Law Database does not maintain in revised form carries
-    # no unapplied effects because nobody is applying any --- not because its
-    # text is current. Left in the denominator it would sit there looking
-    # clean and drag the headline share down. The share is therefore reported
-    # over the maintained set as well as over everything retrieved, and the
-    # gap between the two is reported rather than a choice being made quietly.
+    # The service marks each Act `revised` --- maintained in amended form --- or
+    # `final`. A `final` Act is served as enacted, so it has no revised text for
+    # an amendment to be missing from, and an absence of unapplied effects on it
+    # says nothing about whether it reflects the law in force. Left in the
+    # denominator it would look clean and pull the headline share down. Both
+    # shares are reported rather than one chosen quietly. What is observed is
+    # reported as observed: `final` Acts carrying an unapplied effect are
+    # counted, not assumed away.
     revised = [a for a in got if a.get("document_status") == "revised"]
-    unmaintained = [a for a in got if a.get("document_status") != "revised"]
+    final = [a for a in got if a.get("document_status") != "revised"]
     affected = [a for a in got if live_effects(a)]
-    affected_unmaintained = [a for a in unmaintained if live_effects(a)]
+    affected_final = [a for a in final if live_effects(a)]
     all_effects = [e for a in got for e in live_effects(a)]
     every_effect = [e for a in got for e in a.get("effects", [])]
 
     # Provisions, not effects: several effects can name the same provision, and
     # counting effects would overstate how much text is involved.
-    provisions = set()
-    for a in got:
-        for e in live_effects(a):
-            p = e.get("AffectedProvisions")
-            if p:
-                provisions.add((e.get("AffectedURI", a["id"]), p))
+    def distinct_provisions(acts):
+        seen = set()
+        for a in acts:
+            for e in live_effects(a):
+                p = e.get("AffectedProvisions")
+                if p:
+                    seen.add((e.get("AffectedURI", a["id"]), p))
+        return seen
+
+    provisions = distinct_provisions(got)
 
     # The denominator for the per-provision figure. legislation.gov.uk counts
     # body paragraphs separately from schedule paragraphs; a Saudi article is a
     # numbered provision in the body of an instrument, so `body_paragraphs` is
-    # the closer analogue, but affected provisions can sit in schedules too.
+    # the closer analogue, but affected provisions do sit in schedules too.
     # Both totals are reported and neither is presented as the answer.
-    body = sum(a.get("body_paragraphs") or 0 for a in got)
-    total_paras = sum(a.get("total_paragraphs") or 0 for a in got)
-    missing_stats = sum(1 for a in got if a.get("body_paragraphs") is None)
+    #
+    # The ratio is computed over the Acts that publish a paragraph count and
+    # nothing else. Taking provisions from every Act and paragraphs from only
+    # those that publish a count would put a numerator and a denominator drawn
+    # from different sets into the same fraction --- which is what the first
+    # version of this did, silently, and it inflated the rate.
+    counted = [a for a in got if a.get("body_paragraphs") is not None]
+    body = sum(a["body_paragraphs"] for a in counted)
+    total_paras = sum(a.get("total_paragraphs") or 0 for a in counted)
+    missing_stats = len(got) - len(counted)
+    provisions_in_counted = distinct_provisions(counted)
 
     # `AffectingYear` is the year of the instrument making the amendment, and
     # it is NOT the date the amendment took effect. The Transport Act 1982
@@ -154,17 +168,19 @@ def main():
             "difference_between_the_two_measures":
                 len(every_effect) - len(all_effects),
             "distinct_affected_provisions": len(provisions),
-            "acts_maintained_in_revised_form": len(revised),
-            "acts_not_maintained": len(unmaintained),
-            "acts_affected_share_of_maintained":
+            "acts_status_revised": len(revised),
+            "acts_status_final": len(final),
+            "acts_affected_share_of_revised":
                 round(len(affected) / len(revised), 4) if revised else None,
-            "affected_acts_that_are_not_maintained":
-                len(affected_unmaintained),
-            "body_paragraphs_in_retrieved_acts": body,
-            "total_paragraphs_in_retrieved_acts": total_paras,
+            "final_acts_carrying_an_unapplied_effect": len(affected_final),
+            "acts_with_paragraph_statistics": len(counted),
             "acts_without_paragraph_statistics": missing_stats,
+            "affected_provisions_in_those_acts": len(provisions_in_counted),
+            "body_paragraphs_in_those_acts": body,
+            "total_paragraphs_in_those_acts": total_paras,
             "affected_provisions_per_1000_body_paragraphs":
-                round(len(provisions) / body * 1000, 2) if body else None,
+                round(len(provisions_in_counted) / body * 1000, 2)
+                if body else None,
             "top_10_acts_share_of_effects":
                 round(top10 / total, 4) if total else None,
         },
@@ -203,22 +219,23 @@ def main():
           f"{u['difference_between_the_two_measures']:,}")
     print(f"  ten most affected Acts hold "
           f"{u['top_10_acts_share_of_effects']*100:.1f}% of all of them")
-    if u["acts_maintained_in_revised_form"]:
-        print(f"\nof the {u['acts_maintained_in_revised_form']} Acts the service "
-              f"maintains in revised form, {u['acts_affected_share_of_maintained']*100:.1f}% "
-              f"are affected")
-        print(f"  {u['acts_not_maintained']} retrieved Acts are not maintained in "
-              f"revised form and cannot show an unapplied effect whatever their "
-              f"state;\n  {u['affected_acts_that_are_not_maintained']} of them "
-              f"nonetheless carry one")
-    if u["body_paragraphs_in_retrieved_acts"]:
-        print(f"\n{u['distinct_affected_provisions']:,} affected provisions "
-              f"against {u['body_paragraphs_in_retrieved_acts']:,} body "
-              f"paragraphs\n  = "
-              f"{u['affected_provisions_per_1000_body_paragraphs']} per 1,000 "
-              f"({u['total_paragraphs_in_retrieved_acts']:,} paragraphs including "
-              f"schedules;\n  {u['acts_without_paragraph_statistics']} Acts "
-              f"publish no paragraph count)")
+    if u["acts_status_revised"]:
+        print(f"\nof the {u['acts_status_revised']} Acts the service maintains in "
+              f"revised form, {u['acts_affected_share_of_revised']*100:.1f}% are "
+              f"affected")
+        print(f"  {u['acts_status_final']} are marked final --- served as enacted, "
+              f"with no revised text\n  for an amendment to be missing from; "
+              f"{u['final_acts_carrying_an_unapplied_effect']} of those carry an "
+              f"unapplied effect anyway")
+    if u["body_paragraphs_in_those_acts"]:
+        print(f"\n{u['affected_provisions_in_those_acts']:,} affected provisions "
+              f"against {u['body_paragraphs_in_those_acts']:,} body paragraphs"
+              f"\n  = {u['affected_provisions_per_1000_body_paragraphs']} per "
+              f"1,000 ({u['total_paragraphs_in_those_acts']:,} paragraphs "
+              f"including schedules)")
+        print(f"  over the {u['acts_with_paragraph_statistics']} Acts that publish "
+              f"a paragraph count; {u['acts_without_paragraph_statistics']} do not "
+              f"and are\n  excluded from both sides of that ratio")
     if results["oldest_affecting_instrument"]:
         o = results["oldest_affecting_instrument"]
         print(f"\noldest affecting instrument still unapplied: {o['year']}, "

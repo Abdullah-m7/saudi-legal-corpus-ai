@@ -141,6 +141,47 @@ progress.
 All three fields cost one extra parse and no extra request. The sweep was
 restarted so every record carries them.
 
+## Two collectors, and what they cost
+
+The sweep was restarted several times as the collector learned what the
+endpoint offers. On one of those restarts the old process was not killed:
+`pgrep -f ... | head -1` returned the shell wrapper's pid, not the
+interpreter's, so `kill` hit the wrong thing and the previous sweep kept
+running.
+
+For about ten minutes **two collectors ran at once**. Two consequences, and the
+second is the one that matters.
+
+The visible one: the old process wrote 1990 and 1991 without the new metadata
+fields while the new process wrote 1988 with them. That surfaced as a
+nonsensical reading — 46 Acts appearing to publish no `DocumentStatus` and no
+paragraph statistics, and 15 of those "unmaintained" Acts carrying unapplied
+effects, which contradicted the reason the field had just been added. The two
+year files were deleted and recollected; the real distribution is 93 `revised`
+to 8 `final`, with every Act publishing a paragraph count.
+
+The one worth recording: **for those ten minutes this collection was hitting
+`legislation.gov.uk` at twice the crawl delay it declares**, in a project whose
+argument is about how publishers of official data are treated by the people who
+consume them. Nothing was harmed at that volume, and it is written down here
+rather than quietly fixed, because a paper that asks publishers to be honest
+about their own defects has no business hiding its own.
+
+Killing a background process is now done by the interpreter's pid, read from
+`ps`, and verified gone before anything restarts.
+
+## A ratio with a numerator and denominator from different sets
+
+While the stale-process artefact was being traced, the per-provision figure was
+found to be computing affected provisions across **every** retrieved Act and
+body paragraphs across only the Acts that publish a count. Both sides of the
+fraction were drawn from different sets, and the rate came out inflated.
+
+It now takes both from the same set and reports how many Acts were excluded.
+With clean data no Act is excluded — but the guard stays, because the fault was
+invisible while the numbers looked plausible, which is the only kind of fault
+that reaches print.
+
 ## Reproduce
 
 ```
