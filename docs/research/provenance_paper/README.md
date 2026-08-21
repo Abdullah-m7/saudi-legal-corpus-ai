@@ -130,9 +130,9 @@ registry note. Two defects, both of the kind that survive a careless read:
 3. **The sharpest claim was too broad.** "The official record disagrees with
    itself" first swept in mere staleness against an independent source. Narrowed
    to the portal contradicting *itself* — the record says so, or its own change
-   log disagrees with the article it displays — it is **4 instruments, 57
-   articles**, with staleness against another source counted separately (2
-   instruments, 82 articles).
+   log disagrees with the article it displays — it is **4 instruments**, with
+   staleness against another source counted separately (2 instruments, 82
+   articles). The article count was corrected again at review; see above.
 
 ## The direction of the error is computed, not asserted
 
