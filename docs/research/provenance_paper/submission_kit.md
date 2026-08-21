@@ -20,7 +20,7 @@ and are marked **[confirm on the form]**.
 
 **Research Article.** The journal's own description — "use rigorous methods
 that investigate how data science can inform or impact policy", target
-**~8,000 words**. The manuscript is **7,630 words including footnotes**.
+**~8,000 words**. The manuscript is **7,571 words including footnotes**.
 
 ## 2. Title
 
@@ -33,8 +33,13 @@ Can You Build on the Official Record? Availability, Consistency and Provenance i
 
 ## 3. Abstract
 
-`abstract_plain.txt` — **307 words**. Paste whole; do not let the form's
-character counter truncate it silently.
+`abstract_plain.txt` — **249 words**.
+
+The form caps the abstract at **250 words**, a limit that appears nowhere in
+the journal's written instructions and only on the field itself. The manuscript
+carried 307 and was cut to fit; no number and no conclusion was dropped, only
+wording. `build.py` now generates this file from the manuscript, so the two can
+no longer disagree — which they briefly did.
 
 ## 4. Policy Significance Statement
 

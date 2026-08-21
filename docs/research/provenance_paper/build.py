@@ -333,6 +333,36 @@ def clean(*stems):
                 f.unlink()
 
 
+# The submission form's abstract box and its Policy Significance box take plain
+# text. Generating them here rather than by hand is not tidiness: when the
+# abstract was trimmed to the form's 250-word limit, the hand-made
+# abstract_plain.txt kept the old 307-word text and would have been pasted into
+# the form. The manuscript is the only source either file may come from.
+FORM_FIELDS = (
+    ("abstract_plain.txt", r"\\begin\{abstract\}\s*\\noindent\s*(.*?)\s*\\end\{abstract\}"),
+    ("policy_significance_plain.txt",
+     r"\\textbf\{Policy Significance Statement\}\s*\\noindent\s*(.*?)\s*\\vspace"),
+)
+
+
+def form_fields(source):
+    """Write the plain-text forms of the fields the submission form asks for."""
+    for name, pattern in FORM_FIELDS:
+        m = re.search(pattern, source, re.S)
+        if not m:
+            sys.exit(f"cannot find the source text for {name}")
+        text = " ".join(m.group(1).split())
+        text = text.replace("---", "\u2014").replace("--", "\u2013")
+        text = re.sub(r"\\%", "%", text)
+        # A LaTeX command or a stray brace reaching the form would be pasted
+        # into the journal's record verbatim, so refuse instead of shipping it.
+        residue = re.findall(r"\\[a-zA-Z]+|[{}$]", text)
+        if residue:
+            sys.exit(f"{name} still carries LaTeX: {sorted(set(residue))}")
+        (HERE / name).write_text(text + "\n", encoding="utf-8")
+        print(f"  {name}: {len(text.split())} words")
+
+
 def main():
     if not shutil.which("pandoc"):
         sys.exit("pandoc is required for the .docx build")
@@ -359,6 +389,9 @@ def main():
          "submission_manuscript_with_author_details.docx", ref)
     print(f"  anonymous: {words} words including footnotes "
           "(check against the chosen journal's limit)")
+
+    print("submission form fields")
+    form_fields(SRC.read_text(encoding="utf-8"))
 
     print("anonymity audit")
     terms = ("Almohammedi", "abdullah", "orcid", "Abdullah-m7",
