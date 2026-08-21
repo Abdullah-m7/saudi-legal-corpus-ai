@@ -24,6 +24,8 @@ since, and that is recorded there too.
 | `fig1_access.*` / `fig2_tiers.*` | The two figures. |
 | `main.pdf` / `main_anon.pdf` | Typeset builds. |
 | `submission_manuscript_with_author_details.docx` / `submission_manuscript_anonymous.docx` | Word builds. |
+| `submission_kit.md` | Everything the submission form asks for, in the order it asks. |
+| `abstract_plain.txt` / `policy_significance_plain.txt` | Plain-text forms for pasting into the form. |
 
 ## Reproduce
 
@@ -255,7 +257,7 @@ thing this paper measures.
 
 ## Next steps
 
-- [x] **Reframed for *Data & Policy* and expanded to 7,297 words** including
+- [x] **Reframed for *Data & Policy* and expanded to 7,630 words** including
       footnotes, against an approximate 8,000-word target. The empirical core is
       unchanged; what was added is the policy frame and the constructive half:
       who builds on the official record (§2), a minimal five-field provenance
@@ -265,7 +267,27 @@ thing this paper measures.
       data.
 - [x] **Independent review of the added sections complete** — five more
       defects, listed below.
-- [ ] Request the APC waiver at submission — there is no funder.
+- [x] **Policy Significance Statement added (128 words).** Not named in the
+      journal's written instructions, but every published research article
+      carries one, displayed above the abstract. Funding moved under *Financial
+      Support* and competing interests brought into the manuscript, both as the
+      journal prints them. Abstract trimmed 329 → 307 words.
+- [x] **Figure alt text written into the manuscript**, as the publisher's
+      WCAG 2.1 AA artwork guidance requires. Each description carries the values
+      a sighted reader takes from the chart, so nothing in the figures is
+      available only visually.
+- [x] **Submission kit written** — `submission_kit.md`. Article type, the
+      one-line title, which three files go in which slot, every declaration the
+      form asks about, and the answers, consistent with the manuscript.
+- [ ] **Request the APC waiver at submission — there is no funder.** The
+      journal is fully open access, so acceptance triggers a charge, and the
+      waiver is requested at submission rather than after acceptance. Cambridge
+      Core was returning 404 on its fees page during a stated service
+      disruption, so the exact figure and the waiver's mechanics have to be read
+      off the form. If no waiver option appears in the flow, email the editorial
+      office before the manuscript goes to review.
+- [ ] Submit at <https://mc.manuscriptcentral.com/dataandpolicy> and record the
+      manuscript ID here.
 - [ ] Single-blind review means the anonymised build is not required, but
       `build.py` should keep producing it: the next venue may need it.
 - [x] Quality review complete — see above.
