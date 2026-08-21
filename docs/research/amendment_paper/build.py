@@ -377,6 +377,12 @@ def main():
     if missing:
         sys.exit(f"identified manuscript is missing: {missing}")
     print("  with author details: carries author, ORCID, repository and DOIs")
+    # The journal's AI-policy checkbox confirms that the manuscript names the
+    # tool WITH ITS VERSION. Shipping the placeholder would make that
+    # confirmation untrue, so refuse rather than let it through quietly.
+    if "anonversion" in named:
+        sys.exit("the AI declaration still says ANONVERSION -- the author must "
+                 "supply the tool version before these files are uploaded")
 
     for f in ("fig1_churn.eps", "fig2_citation_tiers.eps"):
         if not (HERE / f).exists():

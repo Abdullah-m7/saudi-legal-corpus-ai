@@ -191,8 +191,13 @@ different publishers, different manuscripts.
       "10,000–12,000 words preferred" lead was wrong — it came from a generic
       Taylor & Francis PDF. The real rule is **no more than 10,000**, so the
       draft needs no expansion to qualify.
-- [x] Declaration of generative AI use — confirmed by the author and written
-      into the manuscript.
+- [ ] **Declaration of generative AI use — one field outstanding.** The
+      submission portal's AI checkbox confirms that the manuscript names the
+      tool *with its version number*, how it was used, and why. The declaration
+      now states all three, but the version is still the placeholder
+      `ANONVERSION`, which only the author can fill. `build.py` refuses to
+      produce the upload files while it is there, so the placeholder cannot
+      reach a journal by accident.
 - [x] Biographical note drafted (90 words, within the 200 limit) from verifiable
       facts only: independent researcher, built the corpus, current lines of
       work. **The author should read it and correct anything that misdescribes

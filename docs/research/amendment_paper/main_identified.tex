@@ -11,8 +11,6 @@
 
 % Set \anontrue before producing the file uploaded to a journal that reviews
 % anonymously.
-\newif\ifanon
-\anonfalse
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -25,20 +23,28 @@
 \title{What Changes, and Where?\\
 Legislative Churn Across Saudi Arabian Legislation}
 
-\ifanon
-  \author{}
-  \date{}
-\else
+
   \author{Abdullah Almohammedi \\
     Independent Researcher \\
     \texttt{abdullah.m.almohammedi@gmail.com} \\
     ORCID: \href{https://orcid.org/0009-0001-0832-0995}{0009-0001-0832-0995}}
   \date{}
-\fi
+
 
 \begin{document}
 
-\maketitle
+\begin{center}
+{\Large\bfseries What Changes, and Where?\\[2pt]
+Legislative Churn Across Saudi Arabian Legislation\par}
+\end{center}
+\begin{center}
+Abdullah Almohammedi\\
+Independent Researcher\\
+\texttt{abdullah.m.almohammedi@gmail.com}\\
+ORCID: 0009-0001-0832-0995
+\end{center}
+\vspace{1em}
+
 
 \begin{abstract}
 \noindent
@@ -592,7 +598,7 @@ The Law of Sharia Procedure remains the clearest case. It is in force, it is
 cited, its numbering is intact, and seventy-five of its articles say nothing.
 Nothing in how it is published conveys that. Now, at least, it can be counted.
 
-\ifanon\else
+
 \section*{Acknowledgements and declarations}
 
 \paragraph{Funding.} No funding was received for conducting this study.
@@ -644,6 +650,6 @@ in this article --- what changes in them over time.
 \paragraph{Legal status.} This article analyses a non-official research
 corpus. Nothing here constitutes legal advice, and the binding text of any
 instrument is the Arabic original published in \emph{Umm al-Qura}.
-\fi
+
 
 \end{document}

@@ -6,13 +6,11 @@
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
 \usepackage{times}
 \usepackage{setspace}
-\onehalfspacing
+\doublespacing
 \usepackage[hidelinks]{hyperref}
 
 % Set \anontrue before producing the file uploaded to a journal that reviews
 % anonymously.
-\newif\ifanon
-\anonfalse
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -25,22 +23,30 @@
 \title{What Changes, and Where?\\
 Legislative Churn Across Saudi Arabian Legislation}
 
-\ifanon
-  \author{}
-  \date{}
-\else
+
   \author{Abdullah Almohammedi \\
     Independent Researcher \\
     \texttt{abdullah.m.almohammedi@gmail.com} \\
     ORCID: \href{https://orcid.org/0009-0001-0832-0995}{0009-0001-0832-0995}}
   \date{}
-\fi
+
 
 \begin{document}
 
-\maketitle
+\begin{center}
+{\Large\bfseries What Changes, and Where? Legislative Churn Across Saudi Arabian Legislation\par}
+\end{center}
+\begin{center}
+Abdullah Almohammedi\\
+Independent Researcher\\
+\texttt{abdullah.m.almohammedi@gmail.com}\\
+ORCID: 0009-0001-0832-0995
+\end{center}
+\vspace{1em}
 
-\begin{abstract}
+
+\subsection*{Abstract}
+
 \noindent
 Fifty-eight consecutive articles of the Saudi Law of Sharia Procedure were
 repealed by a single royal decree in December 2021, and seventy-five of its
@@ -65,7 +71,7 @@ of it. And cross-instrument references are more than twice as likely as the
 base rate to point at an article that has since changed, while an instrument's
 references to its own articles are not: drafters maintain their own internal
 references and cannot maintain anyone else's.
-\end{abstract}
+
 
 \vspace{1em}\noindent\textbf{Keywords:} legislative amendment; consolidation;
 statutory maintenance; Saudi Arabia; legal corpora; empirical legal studies
@@ -127,7 +133,7 @@ regime being tuned.
 Third, change concentrates where the system leans hardest. Instruments that
 other instruments cite have a mean churn rate of 10.7 per cent against 6.1
 per cent for instruments nobody cites, rising to 13.4 per cent for the fifteen
-most cited. Section~\ref{sec:reliance} sets out why this is suggestive rather
+most cited. Section~7 sets out why this is suggestive rather
 than established: age is not controlled for, and it cannot be, because the
 corpus dates only two of its instruments.
 
@@ -246,7 +252,7 @@ text-bearing entry as a prior version would have produced a magnitude analysis
 over 226 articles reporting that amendments barely change anything, which is
 an artefact of the schema rather than a fact about Saudi law. The analysis
 script publishes the similarity evidence for the exclusion rather than
-asserting it, and the magnitude measure in section~\ref{sec:magnitude} is
+asserting it, and the magnitude measure in section~6 is
 confined to the 87 articles that carry a genuine prior text.
 
 \subsection{Measures}
@@ -300,16 +306,16 @@ Articles amended more than once (event-log subset) & 109 \\
 \label{tab:inventory}
 \end{table}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{fig1_churn.png}
-\caption{The twelve most changed instruments, split by how they changed. The
-split is the point: the same total is reached by repeal in one instrument, by
-addition in another, and by amendment in place in a third.}
-\label{fig:churn}
-\end{figure}
+\bigskip
+\noindent\textit{[Figure 1 near here --- supplied as a separate file, fig1\_churn.eps]}
 
-Table~\ref{tab:inventory} gives the aggregate. Three features deserve comment.
+\noindent\textbf{Figure 1.} The twelve most changed instruments, split by how they changed. The
+split is the point: the same total is reached by repeal in one instrument, by
+addition in another, and by amendment in place in a third.
+\bigskip
+
+
+Table~1 gives the aggregate. Three features deserve comment.
 
 \textbf{The total is modest.} Of 13,089 articles, 12,109 stand as enacted.
 That 7.4 per cent of a legal system's text has moved is neither alarming nor
@@ -321,7 +327,7 @@ of 272 --- record no change whatever, and the ten most changed instruments
 hold better than a third of all changed articles. A Gini coefficient of 0.82
 puts the concentration of legislative change on a par with the concentration
 of citation reported for the same corpus, and the two concentrations turn out
-to be related (section~\ref{sec:reliance}).
+to be related (section~7).
 
 \textbf{Amendment is itself concentrated.} 179 distinct decrees and
 resolutions account for the amendments that could be attributed, and the ten
@@ -333,7 +339,7 @@ it means the maintenance burden is bursty rather than continuous.
 
 \section{Instruments change in different ways}
 
-Figure~\ref{fig:churn} separates the twelve most changed instruments into
+Figure~1 separates the twelve most changed instruments into
 amendment, repeal and addition, and the separation does real work. Three
 signatures are visible, and they are three different legal events.
 
@@ -415,14 +421,14 @@ that an article `has been amended' has told them very little.
 \section{Change and reliance}
 \label{sec:reliance}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.78\textwidth]{fig2_citation_tiers.png}
-\caption{Mean churn rate by citation tier, over the 189 instruments of at
+\bigskip
+\noindent\textit{[Figure 2 near here --- supplied as a separate file, fig2\_citation\_tiers.eps]}
+
+\noindent\textbf{Figure 2.} Mean churn rate by citation tier, over the 189 instruments of at
 least 20 articles. The three tiers are not disjoint: the fifteen most cited
-are a subset of the cited.}
-\label{fig:tiers}
-\end{figure}
+are a subset of the cited.
+\bigskip
+
 
 \subsection{Instruments others rely on change more}
 
@@ -430,7 +436,7 @@ Restricting to the 189 instruments with at least 20 articles --- below that a
 churn rate is dominated by its denominator --- the instruments that other
 instruments cite have a mean churn rate of 10.7 per cent, against 6.1 per cent
 for the 115 instruments no other instrument cites. The fifteen most cited
-average 13.4 per cent (Figure~\ref{fig:tiers}).
+average 13.4 per cent (Figure~2).
 
 The gradient is clean, and it is also exactly the sort of result that deserves
 scepticism. \textbf{Age is not controlled for.} An instrument enacted in
@@ -520,7 +526,7 @@ same instrument the companion citation study proposed for a different purpose,
 and it is worth noting that one artefact serves both.
 
 \paragraph{`Amended' is too coarse a label to publish alone.} Section
-\ref{sec:magnitude} found amendments ranging from a substituted phrase to the
+6 found amendments ranging from a substituted phrase to the
 replacement of ninety per cent of an article's wording, all carrying the same
 label. Where the superseded text exists in the record, showing it --- or even
 showing a similarity indicator --- costs nothing and tells a reader whether
@@ -554,7 +560,7 @@ publish a prior version. It supports the claim that amendments vary enormously
 in magnitude. It does not support any estimate of how the other 88 per cent are
 distributed.
 
-\paragraph{The reliance gradient is uncontrolled.} As section~\ref{sec:reliance}
+\paragraph{The reliance gradient is uncontrolled.} As section~7
 states, age is a live alternative explanation and cannot be tested from this
 corpus.
 
@@ -566,7 +572,7 @@ year-on-year analysis is attempted here.
 
 \paragraph{Reference resolution is automatic.} The cross-reference layer is
 built by pattern extraction, and the companion citation study found that a
-small share of resolved edges were misresolutions. Section~\ref{sec:reliance}'s
+small share of resolved edges were misresolutions. Section~7's
 inter-instrument figure rests on 86 references, so a handful of bad
 resolutions would move it.
 
@@ -592,7 +598,7 @@ The Law of Sharia Procedure remains the clearest case. It is in force, it is
 cited, its numbering is intact, and seventy-five of its articles say nothing.
 Nothing in how it is published conveys that. Now, at least, it can be counted.
 
-\ifanon\else
+
 \section*{Acknowledgements and declarations}
 
 \paragraph{Funding.} No funding was received for conducting this study.
@@ -644,6 +650,6 @@ in this article --- what changes in them over time.
 \paragraph{Legal status.} This article analyses a non-official research
 corpus. Nothing here constitutes legal advice, and the binding text of any
 instrument is the Arabic original published in \emph{Umm al-Qura}.
-\fi
+
 
 \end{document}
