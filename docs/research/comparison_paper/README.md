@@ -379,8 +379,38 @@ paper 5's cost claim, which until now was an argument.
       by hand. Same defect class, opposite provenance — which is the argument
       for the sub-field and, incidentally, for asking publishers to declare
       rather than asking consumers to discover.
-- [ ] **Second refinement, still to write up: the fields are not alike in a
-      different way.** Using it
+- [x] **The deeper refinement, which corrects my own first statement of it.**
+      An earlier note here said `retrieval_route` is observer-relative while
+      `corroboration` and `discrepancy` are not. That was wrong, and wrong in a
+      way that pointed at something better. A discrepancy the *collector* finds
+      is observer-relative in exactly the way a retrieval route is — it depends
+      on which sources that collector consulted. Only a *source-declared* one
+      is reproducible.
+
+      So the division is not between fields. It is between what a value
+      describes:
+
+      | Field | Describes |
+      |---|---|
+      | `source_class` | the **record** — whose copy this is |
+      | `retrieval_route` | the **encounter** — whether the live source answered *us* |
+      | `corroboration` | the **encounter** — how many sources *we* found agreeing |
+      | `transformation` | the **encounter** — what *we* had to do to the bytes we got |
+      | `discrepancy` | either, depending on `declared_by` |
+
+      Four of the five describe the encounter. **That is why the availability
+      half of this comparison had to be abandoned** — not a network accident a
+      control could have fixed, but the structure of the schema. Encounters do
+      not compare across collections, because the two encounters differ before
+      the two records do.
+
+      The practical consequence goes back to paper 5's own proposal. That paper
+      asks *publishers* to populate these fields. If a publisher does, the
+      encounter fields describe the publisher's encounter with its own source —
+      a different thing again, and not comparable with a consumer's. A
+      provenance schema intended for cross-collection use has to mark which of
+      its fields are encounter-relative. Paper 5's does not, and this
+      jurisdiction is what made that visible. Using it
       prospectively showed something paper 5 did not distinguish.
       `retrieval_route` is **observer-relative** — its value depends on who
       collected, from where, and when, so it does not compare across

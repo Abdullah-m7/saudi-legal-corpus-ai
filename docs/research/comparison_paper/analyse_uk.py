@@ -56,6 +56,26 @@ def retrieved(act):
             or act.get("retrieval_retry", {}).get("http_status") == "200")
 
 
+# What each field describes, which is not the same as what it is about.
+#
+# A value describing the *encounter* --- this collector, this network, this day
+# --- cannot be compared against another collection's, because the two
+# encounters differ before the records do. A value describing the *record as
+# published* can: any reader reproduces it.
+#
+# Four of paper 5's five fields describe the encounter. That is why the
+# availability half of this comparison had to be abandoned (see README): not a
+# network accident that a control could have fixed, but the structure of the
+# schema. And `discrepancy` is neither, or both --- it depends on who declared
+# it, which is the refinement this jurisdiction forced.
+FIELD_KIND = {
+    "source_class": "record",       # whose copy this is, a fact about the source
+    "retrieval_route": "encounter",  # whether the live source answered *us*
+    "corroboration": "encounter",    # how many sources *we* found agreeing
+    "transformation": "encounter",   # what *we* had to do to the bytes we got
+    "discrepancy": "depends on declared_by",
+}
+
 def schema_record(act, effects):
     """The five-field provenance record as paper 5 defines it, assembled whole.
 
@@ -302,6 +322,7 @@ def main():
         "as_of": as_of.isoformat(),
         "schema_in_use": {
             "records": len(schema),
+            "what_each_field_describes": FIELD_KIND,
             "distinct_values_per_field": constant_fields,
             "discrepancy_declared_by_source": declared,
             "discrepancy_found_by_collector": collector_found,
@@ -384,7 +405,8 @@ def main():
     print(f"\nthe five-field schema over {s['records']} records: "
           f"distinct values per field")
     for field, n in s["distinct_values_per_field"].items():
-        print(f"    {field:16s} {n}")
+        print(f"    {field:16s} {n}   describes the "
+              f"{s['what_each_field_describes'][field]}")
     print(f"    discrepancy      declared by the source {s['discrepancy_declared_by_source']}, "
           f"found by the collector {s['discrepancy_found_by_collector']}")
     print("  four fields near-constant is the schema behaving correctly on a "
