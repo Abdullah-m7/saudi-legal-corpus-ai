@@ -40,8 +40,14 @@ def main():
     if not SRC.exists():
         print("main.tex does not exist yet --- nothing to check")
         return 0
+    lines = SRC.read_text(encoding="utf-8").splitlines()
+    # Only the body. Package options carry lengths --- `margin=2.5cm` is a
+    # layout setting, not a result --- and flagging them trains the author to
+    # ignore the check, which is worse than not having one.
+    start = next((i for i, l in enumerate(lines)
+                  if l.strip().startswith("\\begin{document}")), 0)
     bad = []
-    for n, line in enumerate(SRC.read_text(encoding="utf-8").splitlines(), 1):
+    for n, line in enumerate(lines[start:], start + 1):
         stripped = line.split("%")[0]
         if EXEMPT.search(stripped):
             continue

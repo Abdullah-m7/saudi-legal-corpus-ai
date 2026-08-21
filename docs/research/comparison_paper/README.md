@@ -362,6 +362,19 @@ leaving years, section numbers and citations alone. Self-tested against a decoy
 containing all four cases: it flags `1{,}402` and `35.1 per cent`, and passes
 `art 60 in 1988` and a Zenodo DOI.
 
+Its first run on the real manuscript produced a false positive —
+`margin=2.5cm`, a package option — so the check now reads only the body. A
+guard that flags layout settings trains its author to ignore it, which is worse
+than having none.
+
+The mechanism also produced a failure worth recording, because the error it
+raises points nowhere near its cause. A LaTeX control sequence is letters only,
+so `\nTailEffects10` parses as `\nTailEffects` followed by the characters
+`10`, and the compiler reports *Missing \begin{document}* at a line in the
+generated file. `numbers.py` now refuses to emit a macro name containing a
+digit, which turns a baffling compile error into a plain sentence at the point
+of generation.
+
 ## Reproduce
 
 ```
@@ -603,6 +616,7 @@ paper 5's cost claim, which until now was an argument.
 | `numbers.py` | Turns the results into LaTeX macros; the manuscript holds no digits. |
 | `check_numbers.py` | Refuses a manuscript that types a number the analysis owns. |
 | `numbers.tex` | Generated macros. Never edited. |
+| `main.tex` / `main.pdf` | The manuscript. Holds no digits; carries an `\anonfalse` switch. |
 | `uk_analysis_results.json` | Generated results snapshot. |
 | `make_figures.py` | Figures 1 and 2, as PNG, TIFF and EPS. |
 | `fig1_age_bands.*` / `fig2_maintained_and_stale.*` | The two figures. |
