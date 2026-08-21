@@ -1,7 +1,7 @@
 # Paper 5 — The Evidentiary Basis of the Corpus
 
-*What It Took to Read the Law: Access, Provenance and the Evidentiary Basis of
-a Digital Legal Corpus.*
+*Can You Build on the Official Record? Availability, Consistency and Provenance
+in a State's Published Law.*
 
 Fifth paper in the series, and the one that examines the ground the other four
 stand on. Papers 1–4 measured what the legal system contains
@@ -136,6 +136,23 @@ registry note. Two defects, both of the kind that survive a careless read:
    staleness against another source counted separately (2 instruments, 82
    articles). The article count was corrected again at review; see above.
 
+## Two more defects the expansion caught
+
+3. **A guessed instrument name.** The worked example of a strongly-attested
+   instrument called `aawan_regulation` "the Regulation of the Aawan platform".
+   It is the **Regulation Organizing the Work of Judicial Assistants**. Same
+   class of error as paper 4's invented article number: a plausible-sounding
+   detail nobody had checked.
+4. **A bias reported in only the flattering direction.** The paper said the
+   17.0% figure was an underestimate, citing sample coverage. True, but
+   incomplete: a tier is assigned on an instrument's *weakest* evidence, so the
+   Accredited Valuers Law — 40 of 45 articles at close to the strongest
+   standard, 5 single-source — contributes all 45 articles to tier 4. That bias
+   runs the other way. Both are now stated, they are not netted against each
+   other, and the claim is reduced to a range: **a sixth to a quarter**,
+   depending on the unit counted and how conservatively a mixed instrument is
+   graded.
+
 ## The direction of the error is computed, not asserted
 
 The article-level sample does not cover every instrument, and the ones it
@@ -210,9 +227,17 @@ thing this paper measures.
 
 ## Next steps
 
-- [ ] Confirm the *Data & Policy* fit is acceptable, then reframe the
-      introduction and discussion toward public data infrastructure and expand
-      toward the 8,000-word target.
+- [x] **Reframed for *Data & Policy* and expanded to 7,225 words** including
+      footnotes, against an approximate 8,000-word target. The empirical core is
+      unchanged; what was added is the policy frame and the constructive half:
+      who builds on the official record (§2), a minimal five-field provenance
+      schema derived from what this corpus wrote in free text (§7), why such a
+      schema is not already standard, what a data consumer can do without
+      waiting for publishers, and how the method transfers to non-legal public
+      data.
+- [ ] Re-review after the expansion. The rewrite already caught two of its own
+      defects — see below — but the added sections have not had an adversarial
+      pass of their own.
 - [ ] Request the APC waiver at submission — there is no funder.
 - [ ] Single-blind review means the anonymised build is not required, but
       `build.py` should keep producing it: the next venue may need it.

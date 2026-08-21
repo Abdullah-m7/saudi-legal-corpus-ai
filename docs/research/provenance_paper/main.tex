@@ -21,8 +21,8 @@
 \usepackage{url}
 \emergencystretch=3em
 
-\title{What It Took to Read the Law:\\
-Access, Provenance and the Evidentiary Basis of a Digital Legal Corpus}
+\title{Can You Build on the Official Record?\\
+Availability, Consistency and Provenance in a State's Published Law}
 
 \ifanon
   \author{}
@@ -41,32 +41,39 @@ Access, Provenance and the Evidentiary Basis of a Digital Legal Corpus}
 
 \begin{abstract}
 \noindent
-Empirical legal research, legal information systems and legal AI all rest on
-an assumption none of them states: that the official text of the law was
-available, and was itself consistent, at the moment the text was collected.
-This article tests that assumption against the record kept while building a
-corpus of Saudi Arabian legislation. Every verified article carries a
-provenance string naming the sources consulted and how they were reconciled,
-and every instrument carries a hand-assigned verification tier. Measured over
-the 11,704 articles whose record names its sources, the official source was
-unreachable for 20.0 per cent of them, covering 28.0 per cent of instruments;
-20.9 per cent were obtained through a web archive; 10.2 per cent rest on a
-single source; 8.2 per cent required optical or visual reconstruction; and 4.9
-per cent record a defect in the official text itself. Weighted by article, 17.0
-per cent of the corpus has no cross-verified official primary source behind it,
-and the coverage of the sample makes that an underestimate rather than an
-overestimate. In four instruments the official record contradicts itself across nine
-articles: the article the portal displays and the change log the same portal
-publishes do not agree. Two conclusions follow. Web archives are not a convenience for legal
-research but part of its load-bearing structure, with no guarantee of
-permanence and no legal status. And a legal corpus should ship the strength of
-the evidence behind each text alongside the text, because a reader who is given
-only the text cannot tell the difference between a provision confirmed against
-two official sources and one transcribed from a single scan.
+Governments publish their law online, and a growing amount of public and
+private activity is built directly on those publications: compliance systems,
+regulatory technology, legal research, and language models grounded in
+statutory text. All of it assumes that the official record is available when
+needed and internally consistent when read. That assumption is rarely tested,
+because testing it requires a contemporaneous record of what each attempt to
+retrieve the official text actually returned. This article reports one. In
+building a corpus of Saudi Arabian legislation, every verified article was
+annotated with the sources consulted and how they were reconciled, and every
+instrument was assigned a verification tier by hand. Measured over the 11,704
+articles whose record names its sources, the official source was unreachable
+for 20.0 per cent of them, covering 28.0 per cent of instruments; 20.9 per cent
+were obtained through a web archive, and two thirds of those cases coincide
+with a recorded unavailability of the live source; 8.2 per cent required
+optical reconstruction; and 4.9 per cent record a defect in the official text
+itself. Weighted by article, 17.0 per cent of the corpus has no cross-verified
+official primary source behind it, and the coverage of the sample makes that an
+underestimate. In four instruments the official record contradicts itself
+across nine articles: the provision the portal displays and the amendment log
+the same portal publishes do not agree. We draw three conclusions for the
+publishers and users of official data. Web archives are load-bearing
+infrastructure for public-record research, and hold that position with no
+mandate and no guarantee of permanence. Availability and internal consistency
+are distinct properties and need separate measurement. And a public dataset
+should carry the strength of the evidence behind each record, for which we
+propose a minimal five-field provenance schema derived from what this corpus
+recorded in free text --- and from the 24 per cent of its own provenance values
+that turned out not to be provenance statements at all.
 \end{abstract}
 
-\vspace{1em}\noindent\textbf{Keywords:} legal information; provenance; web
-archiving; official sources; legal corpora; Saudi Arabia
+\vspace{1em}\noindent\textbf{Keywords:} public data infrastructure;
+provenance; data quality; web archiving; official records; open government
+data; legal informatics; Saudi Arabia
 \vspace{1.5em}
 
 \section{Introduction}
@@ -80,12 +87,24 @@ portal and taking the reading on which they agreed.\footnote{Environmental Law
 is published with the analysis code.}
 
 That is an uncomfortable observation to build on, and it is not the point of
-this article. The point is what it takes to notice. A researcher who consults
-the portal once, on a good day, gets an answer and no reason to doubt it. The
+this article. The point is what it takes to notice. A user who consults the
+portal once, on a good day, gets an answer and no reason to doubt it. The
 discrepancy is visible only to someone who consulted the portal repeatedly, kept
 a record of what each attempt returned, and compared. Almost nobody does that,
 because almost nobody has reason to: the official source is where the law is,
 and if the official source says something, that is what the law says.
+
+The reason this matters beyond one statute is that the population of users has
+changed. When the audience for published law was lawyers reading one provision
+at a time, an occasional outage was an inconvenience and an inconsistency was
+something a professional would notice and query. The audience now includes
+systems: compliance engines, regulatory-technology products, public bodies
+consuming each other's published rules, and models grounded in statutory text.
+These consume the record at volume, without a professional reader between the
+source and the answer, and they cannot query anything. For them an outage is
+not an inconvenience --- it is a gap silently filled from somewhere else, or a
+record that never enters the collection at all, with nothing downstream marking
+either event.
 
 This article examines what happens to that assumption when it is checked. It
 uses a corpus of Saudi Arabian legislation in which every verified article
@@ -141,7 +160,42 @@ is reported here rather than quietly cleaned, because it is the strongest
 available argument that provenance needs a vocabulary and a schema rather than
 a place to write a sentence.
 
-\section{The assumption, and who relies on it}
+\section{Who builds on the official record}
+
+The stakes of this question are not confined to research. Publishing law online
+converted a reference artefact into an operational one, and a large amount of
+public and private activity now consumes it directly rather than through a
+human intermediary who might notice a problem.
+
+\paragraph{Compliance and regulatory technology.} Systems that determine
+whether an obligation applies to a firm read statutory text and act on it.
+Where the text is retrieved once, cached, and served thereafter, a defect at
+retrieval time propagates silently: nothing downstream can distinguish a
+provision transcribed from a stable official page from one recovered from an
+archived capture of a page that no longer resolves.
+
+\paragraph{Government's own systems.} Public bodies consume each other's
+published rules. An agency implementing a licensing regime relies on the
+published text of the law that creates it, and on the published text of every
+instrument that one cross-references. Section~\ref{sec:contradiction} describes
+four instruments where the official record disagrees with itself; a public body
+reading the portal has exactly the same exposure as a private one.
+
+\paragraph{Language models grounded in statutory text.} Retrieval-augmented
+systems answer from a corpus, and the corpus was collected at a moment. The
+literature on these systems concentrates on retrieval quality and on
+hallucination, both of which presume that the retrieved text is the law. What
+this article measures is the layer below: whether the text entered the corpus
+correctly in the first place, and how strongly it is attested.
+
+\paragraph{Open government data more generally.} Legal publication is one
+instance of a wider pattern. States publish registries, budgets, procurement
+notices, statistical series and legal texts, and the same three questions apply
+to all of them: was it available when it was needed, is it internally
+consistent, and does anything published alongside the data say how strongly it
+is attested? Law is a useful place to ask because the correct answer is
+unusually well defined --- there is a right text, published in a gazette, and
+divergence from it is an error rather than a matter of interpretation.
 
 \subsection{In citation practice}
 
@@ -184,6 +238,28 @@ the Semantic Web} (Springer 2011) 75.} The gap is not representational. It is
 that nobody is required to fill the fields, and a corpus that leaves them empty
 looks exactly like a corpus whose text is impeccable.
 
+\subsection{In the data-stewardship literature}
+
+The general case for recording provenance is settled. The FAIR principles make
+`Reusable' conditional on data being `associated with detailed provenance', and
+they are endorsed across research funders, publishers and
+infrastructures.\footnote{Mark D Wilkinson and others, `The FAIR Guiding
+Principles for Scientific Data Management and Stewardship' (2016) 3 Scientific
+Data 160018.} A standard vocabulary for expressing it has existed since
+2013.\footnote{W3C, \emph{PROV-O: The PROV Ontology} (W3C Recommendation, 30
+April 2013).}
+
+What this article adds is not another argument that provenance matters. It is
+an account of what provenance turns out to be \emph{for}, once a collection is
+large enough that nobody can remember how any particular record was obtained.
+The FAIR formulation --- `detailed provenance' --- is satisfied, on its face, by
+the free-text field this corpus used. That field was written conscientiously,
+article by article, by people who cared about the question, and it still could
+not be counted without first classifying 158 distinct strings by rule, and
+still contained 24 per cent of values that were not provenance at all. `Detailed'
+is not the operative property. \emph{Closed} is: a small set of fields with
+enumerated values, which is what section~\ref{sec:schema} proposes.
+
 \subsection{In the archiving literature}
 
 That legal citations rot is not a new observation. Zittrain, Albert and Lessig
@@ -209,6 +285,16 @@ example, that the Ministry of Justice portal's API text was cross-checked
 against the official PDF from the same portal, or that the live official portal
 was unreachable and the text rests on two independent secondary sources agreeing
 word for word. There are 15,408 such articles and 158 distinct strings.
+
+Two examples convey the register better than a description. One article's
+status reads, in effect, that the Ministry of Justice portal's API text was
+cross-checked against the official PDF from the same portal --- a
+single official channel, two artefacts, no difficulty. Another records that the
+live legislative portal was unreachable, that the text was taken from an
+archived capture of that portal, and that it was cross-verified against two
+independent reproductions and the official gazette, with one ligature defect
+from PDF extraction corrected and disclosed. Both are one field of one record.
+The first is four tokens long; the second is thirty.
 
 Each instrument also carries a verification tier assigned by hand: two or more
 official sources in agreement (tier 1); one official source cross-checked
@@ -347,23 +433,72 @@ primary source at all: 4.5 per cent because no official source could be reached,
 and 12.5 per cent because the evidence is single-source or varies within the
 instrument.
 
+\subsection{What a tier means in practice}
+
+The tiers are easier to trust with two instruments behind them.
+
+At the top, the Regulation Organizing the Work of Judicial Assistants: every
+article was taken from the Ministry of Justice portal's database and checked,
+article by article, against the official PDF published by the same ministry
+from the same portal. Two official artefacts, no access failure, agreement
+throughout. A user who needs to be certain of a provision in that instrument
+can be about as certain as the published record permits.
+
+At the bottom, the Accredited Valuers Law --- and it illustrates something more
+useful than a simple contrast. Forty of its forty-five articles were taken from
+the administering authority's own official PDF and cross-verified against the
+official gazette and two independent reproductions, which is close to the
+strongest evidence in the corpus. The remaining five rest on a single source,
+because the primary legislative portal could not be reached for them. The whole
+instrument is graded tier 4.
+
+That is the scheme working as designed: a tier describes the weakest evidence
+anywhere in the instrument, because a user asking about one provision has no
+way to know whether it falls in the strong forty or the weak five. It also
+means the tier figures are pessimistic at the instrument level, which
+section~\ref{sec:direction} takes up alongside the bias that runs the other
+way.
+
+Between them sits the largest group by instrument count: one official source
+reached, then cross-checked against independent non-official reproductions.
+That is a defensible standard and it is not the same as two official sources
+agreeing, because the non-official reproduction may itself derive from the
+official one --- a possibility this corpus flags where it was detected but
+cannot exclude in general.
+
 \subsection{The direction of the error}
+\label{sec:direction}
 
-That 17.0 per cent is an underestimate, and it is worth being precise about
-why, because the alternative --- asserting that a convenient figure is
-conservative --- is exactly the move a reader should distrust.
+Two biases act on the 17.0 per cent figure, and they pull in opposite
+directions. Reporting only the one that flatters the argument would be the
+move a reader should most distrust, so both are stated.
 
-Not every instrument in the corpus has article-level verified records, and the
-ones that do are not a random draw. Coverage by tier is 87 per cent for tier 1,
-59 per cent for tier 2, 28 per cent for tier 3 and 73 per cent for tier 4. The
-pattern is not monotonic, but tier 3 --- the instruments whose official source
-could not be reached at all --- is by a wide margin the least represented. The
-instruments most likely to be missing from the article-weighted measure are the
-instruments whose evidence is weakest. A registry-wide count of instruments,
-which does not have this problem, puts tiers 3 and 4 together at 76 of 291
+\textbf{Sample coverage understates it.} Not every instrument has article-level
+verified records, and the ones that do are not a random draw. Coverage by tier
+is 87 per cent for tier 1, 59 per cent for tier 2, 28 per cent for tier 3 and 73
+per cent for tier 4. The pattern is not monotonic, but tier 3 --- the
+instruments whose official source could not be reached at all --- is by a wide
+margin the least represented, so the instruments most likely to be missing are
+those whose evidence is weakest. A registry-wide count of instruments, which
+does not have this problem, puts tiers 3 and 4 together at 76 of 291
 instruments, or 26 per cent.
 
+\textbf{Worst-part grading overstates it.} A tier is assigned to an instrument
+on its weakest evidence, so an instrument like the Accredited Valuers Law ---
+forty articles at close to the strongest standard and five at the weakest ---
+contributes all forty-five of its articles to tier 4. Article-weighted tier
+figures therefore attribute strong evidence to a weak tier whenever the
+weakness is localised.
+
+We cannot net these against each other, and we do not try. What can be said is
+narrower and still worth saying: the share of this corpus that a careful user
+would want to treat as less than fully attested is somewhere in the region of a
+sixth to a quarter, depending on which unit is counted and how conservatively a
+mixed instrument is graded --- and it is not the zero that a dataset shipping
+text alone implicitly asserts.
+
 \section{When the official record disagrees with itself}
+\label{sec:contradiction}
 
 The sharpest cases are the ones where the problem is not access but
 consistency. In four instruments the build record documents the official source
@@ -417,6 +552,77 @@ both without reconciling them has published a contradiction. Sixteen
 instruments in this corpus carry a documented staleness risk of exactly this
 kind.
 
+\section{A minimal provenance schema}
+\label{sec:schema}
+
+The most transferable output of this exercise is not a percentage. It is the
+observation that everything measured above was recoverable only because someone
+wrote down, at the time, what each retrieval attempt returned --- and that
+writing it in prose made the record nearly unusable at the scale where it
+mattered. Twenty-four per cent of the values in this corpus's provenance field
+are not provenance statements at all, and the remainder had to be classified by
+a rule over free text before anything could be counted.
+
+What was actually needed is small. The five fields below carry everything the
+analysis in this article extracted from 158 distinct free-text strings, and
+they are derived from that record rather than proposed in the abstract: each
+field exists because the free text was already trying to express it.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lp{7.4cm}}
+\toprule
+\textbf{Field} & \textbf{Values and purpose} \\
+\midrule
+\texttt{source\_class} & \emph{official-primary} (the publishing authority's
+own channel), \emph{official-secondary} (another public body republishing it),
+\emph{independent}, \emph{aggregator}. Answers: whose copy is this? \\
+\addlinespace
+\texttt{retrieval\_route} & \emph{live}, \emph{archived-capture},
+\emph{offline-artefact} (a PDF or scan held locally), \emph{proxy}. Answers:
+how was it obtained, and would the same request work today? \\
+\addlinespace
+\texttt{corroboration} & Integer: the number of independent sources found to
+agree. Zero means single-source. Answers: how strongly is it attested? \\
+\addlinespace
+\texttt{transformation} & \emph{none}, \emph{text-extraction},
+\emph{optical-recognition}, \emph{manual-transcription}. Answers: what could
+have introduced an error that no reader can see? \\
+\addlinespace
+\texttt{discrepancy} & Null, or a short structured note: which sources
+disagreed, and whether the disagreement was resolved. Answers: is there a known
+problem with this record? \\
+\bottomrule
+\end{tabular}
+\caption{A minimal provenance schema, derived from what the free-text record in
+this corpus was already trying to say.}
+\label{tab:schema}
+\end{table}
+
+Three properties of Table~\ref{tab:schema} matter more than its particular
+field names.
+
+It is \textbf{cheap}. Four of the five fields are closed vocabularies of three
+or four values, and a collection process that knows how it obtained a document
+knows all of them at the moment of collection. The expensive part of provenance
+is reconstructing it afterwards, which is what this article had to do.
+
+It \textbf{separates availability from consistency}. \texttt{retrieval\_route}
+records whether the live source worked; \texttt{discrepancy} records whether the
+sources agreed. These are different failures with different remedies, and a
+single confidence score --- the usual shorthand --- collapses them. The corpus
+studied here has instruments that were perfectly available and internally
+contradictory, and instruments that were unreachable but, once recovered, in
+complete agreement across three sources.
+
+It \textbf{degrades honestly}. A record with \texttt{corroboration = 0} and
+\texttt{transformation = optical-recognition} is not hidden by an aggregate; a
+user filtering for reliability can exclude it, and a user who does not at least
+cannot claim they were not told. The verification tiers this corpus assigned by
+hand are a coarser version of the same idea, and even four levels turned out to
+be more than almost any comparable dataset publishes.
+
 \section{What follows}
 
 \paragraph{Cite the retrieval, not just the provision.} If the official source
@@ -445,6 +651,25 @@ Web archives occupy this position for legal research without any mandate to do
 so and without any legal recognition of the role. Whether they should is a
 question for the institutions that publish law, not for the archives.
 
+\paragraph{Publish availability as a service property, not a hope.} A state
+that publishes its law online has taken on an operational commitment whether or
+not it has said so. The measurements here are not a service-level study and
+cannot be one --- they record what one collector saw from one network over one
+period --- but they are enough to show that the commitment is not currently
+being met at the level users assume. The remedy is ordinary infrastructure
+practice: publish uptime, publish a stable retrieval interface, and treat a
+consolidated text and its own amendment log as a single artefact that must
+agree before either is served.
+
+\paragraph{Deposit, rather than depend on someone else archiving.} One article
+in five in this corpus reached it through a web archive. That is a dependency
+on a third party with no obligation to the state whose law it is preserving,
+and it is invisible to everyone downstream. States that already operate legal
+deposit for print have the institutional machinery for the digital equivalent;
+what is missing is the instruction to use it for the state's own published
+record, and a citable identifier for each version so that a reader can retrieve
+what an author actually read.
+
 \paragraph{Use a vocabulary, not a sentence.} The finding that indicts this
 corpus is the one most useful to the next builder. Free-text provenance decays:
 it accumulates conventions, absorbs values that belong in other fields, and
@@ -454,6 +679,93 @@ controlled vocabulary --- source class, retrieval route, cross-verification
 count, defect flag --- would have carried the same information, and this
 article's analysis would have taken a tenth of the effort and made none of the
 judgement calls that section~\ref{sec:method} had to disclose.
+
+\subsection{Why this is not already standard}
+
+If the schema is as cheap as section~\ref{sec:schema} claims, its absence needs
+explaining. Three reasons seem to us to account for most of it, and none is
+about cost.
+
+\textbf{Provenance is invisible when everything works.} A collection assembled
+in a week from a responsive source has nothing interesting to record, and the
+value of having recorded it appears only later --- when a source changes, a
+discrepancy surfaces, or someone asks how a particular record was obtained. By
+then the information is gone. This is the ordinary structure of an
+under-provided good, and it is why the field has to be populated by the
+collection process rather than by whoever eventually needs it.
+
+\textbf{Publishing weakness looks like admitting weakness.} A dataset that
+marks a tenth of its records as single-source invites the question why, and
+a dataset that marks none invites nothing. The incentive runs the wrong way,
+and it runs that way for public bodies most of all. The counter-argument is
+that the weakness exists whether or not it is marked, and that the unmarked
+version transfers the risk to users who cannot see it --- but that argument has
+to be made, because the default is silence.
+
+\textbf{There is no convention to comply with.} Dataset documentation practice
+addresses composition, collection and intended use; provenance at the level of
+the individual record is not part of what a dataset is normally expected to
+carry. A convention would change this faster than any argument about incentives,
+which is the practical case for proposing a small and boring one rather than a
+complete ontology that already exists and is not used.
+
+\subsection{What a user can do in the meantime}
+
+Most consumers of official data cannot change how it is published, and the
+recommendations above are addressed to people who can. Three things are
+available to everyone else, and this corpus is evidence for each.
+
+\textbf{Retrieve more than once, and keep what you got.} Every discrepancy
+reported in section~\ref{sec:contradiction} was found by comparing retrievals
+--- across time, across two parts of the same portal, or against an independent
+reproduction. A single retrieval cannot detect any of them. Keeping the
+response, rather than only the parsed result, costs almost nothing and is the
+difference between noticing a source change and being silently overtaken by it.
+
+\textbf{Treat a second source as a test, not a backup.} The value of the
+independent reproductions in this corpus was rarely that they supplied text the
+official source could not. It was that they disagreed on 4.9 per cent of
+articles and thereby located the defects. A pipeline that consults a second
+source only when the first fails gets the resilience and forgoes the
+measurement.
+
+\textbf{Record what you could not do.} The most useful entries in this corpus's
+provenance field are the ones admitting a shortfall: single-source, portal
+unreachable, amendment text unobtained, three-way divergence unresolved.
+Recording a gap costs a field and preserves the option of returning to it;
+leaving it blank makes a weak record indistinguishable from a strong one,
+including to the person who created it.
+
+\section{Applying this elsewhere}
+
+Nothing in the method is specific to law, to Saudi Arabia, or to this corpus.
+It requires one thing that is rare and not difficult: that whoever collects a
+public dataset records what each retrieval attempt returned, at the time, in a
+form a machine can read.
+
+A group building any collection from an official source can produce the
+measurements in this article by populating Table~\ref{tab:schema} during
+collection and running three counts afterwards --- the share of records whose
+live source failed, the share recovered through an archive and the overlap
+between them, and the share resting on a single source. The analysis here is
+about two hundred lines of code, and most of that is the classification of free
+text that a schema would have made unnecessary.
+
+Two adjustments would be needed outside the legal domain. Where a dataset has
+no single authoritative version --- a statistical series revised on a schedule,
+say --- \texttt{discrepancy} carries more weight than \texttt{corroboration},
+because disagreement between two sources may be a legitimate revision rather
+than an error. And where records are produced continuously rather than
+enacted, availability should be sampled over time rather than observed once at
+collection, which turns a build-time snapshot into the monitoring study this
+one explicitly is not.
+
+The comparison that would be most useful is the obvious one: the same
+measurements, for the same kind of source, in several jurisdictions. This
+article can say that a fifth of one state's published legal record was
+unreachable when someone tried to collect it. Whether that is typical,
+unusually good or unusually bad is not knowable from a single case, and it is
+the first question any reader should ask.
 
 \section{Limitations}
 
@@ -488,30 +800,42 @@ throughout.
 
 \section{Conclusion}
 
-Four studies of this corpus have measured what a legal system contains, how its
-instruments cite one another, whether they use a common vocabulary, and how
-they change over time. Each rests on a foundation none of them examined: that
-the text was there to be read, and was consistent, when it was collected.
+Governments publish law, and increasingly the audience is machinery. This
+article asked whether the record that machinery consumes is available when
+needed and consistent when read, using the only evidence that can answer it: a
+contemporaneous account of what each retrieval attempt actually returned.
 
-Examined, that foundation holds for about two thirds of the corpus and is
-qualified for the rest. The official source could not be reached for one
-article in five. One article in five arrived through a web archive, mostly a
-capture of the very page that could not be reached live. One instrument in
-seven required reading images. Seventeen per cent of the text has no
-cross-verified official primary behind it, and that figure understates the
-position because the instruments with the weakest evidence are the least likely
-to be measured at all. In four instruments the official record contradicts
-itself, and a reader consulting it once has no way to know.
+For roughly two thirds of one state's published legal corpus, the answer is
+straightforwardly yes --- two or more official sources, in agreement, obtained
+without difficulty. For the rest it is qualified. The official source could not
+be reached for one article in five. One article in five arrived through a web
+archive, and two thirds of those cases coincide with a live source that would
+not respond. One instrument in seven had to be read as images. Around a sixth
+to a quarter of the corpus, depending on the unit counted, rests on evidence a
+careful user would want to treat as less than fully attested. In four
+instruments the record contradicts itself, and in each the contradiction is
+between two things the same official portal publishes.
 
-None of this makes the law unknowable, and none of it is an accusation against
-the institutions that publish it. It is a description of a gap between how
-digital legal research assumes its sources behave and how they were observed to
-behave over one sustained attempt to use them. The remedy is not better
-sources, which is nobody's to promise. It is a record: cite the retrieval,
-publish the strength of the evidence, and use a vocabulary that survives being
-read by a machine. This corpus did two of those three, and the third is the
-reason its own provenance field had to be classified before it could be
-counted.
+None of this makes the law unknowable, and none of it is an accusation. Legal
+publication in this jurisdiction is extensive, it is free, and for most of the
+corpus it worked. The finding is narrower and more actionable: the gap is
+between how those who build on official data assume it behaves and how it was
+observed to behave across one sustained attempt to use it --- and nothing
+published alongside the data tells a user which case they are in.
+
+Three things would close that gap, and none requires better sources, which is
+nobody's to promise. Record availability as a service property rather than an
+assumption. Deposit the record rather than relying on third-party archives that
+have taken on no obligation. And carry the strength of the evidence with each
+record, in five closed fields rather than a sentence.
+
+The last of these is the one this article can demonstrate rather than argue.
+Everything measured here was recoverable only because someone wrote down, at
+the time, what each attempt returned. That they wrote it in prose is why the
+analysis needed a classifier, a published mapping and two rounds of correction
+before it could report a number --- and why nearly a quarter of the values
+turned out not to be provenance at all. The record was worth keeping. It was
+kept in the wrong shape. Both halves of that sentence are the finding.
 
 \ifanon\else
 \section*{Acknowledgements and declarations}
