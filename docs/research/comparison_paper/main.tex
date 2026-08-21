@@ -37,29 +37,27 @@ Reading a Public Publisher's Own Quality Signal}
 
 \begin{abstract}
 \noindent
-Compliance systems, regulatory technology and models grounded in statutory text
-now read published law directly. A companion study proposed a five-field
-provenance schema so that a consumer of such data can tell what stands behind
-each record; this article applies it prospectively to a second jurisdiction and
-reports what happened when it did. The United Kingdom's official legislation
-service publishes, per Act and machine-readably, the amendments it has not
-applied to the text it displays: \nFlagged{} across the Public General Acts of
-\nYearFrom{}--\nYearTo{}. Read as a backlog --- the reading the flag invites,
-and the one this study first recorded --- that overstates by a factor of
-\nOverstatementFactor. \nProspectiveShare{} per cent are prospective, enacted
-but not commenced; a further \nScheduled{} carry a commencement date still in
-the future, and the service is right not to apply either. What remains is
+Compliance systems and models grounded in statutory text now read published
+law directly. A companion study proposed a five-field provenance schema so that
+a consumer of such data can tell what stands behind each record; this article
+applies it to a second jurisdiction. The United Kingdom's official legislation service
+publishes, per Act and machine-readably, the amendments it has not applied to
+the text it displays: \nFlagged{} across the Public General Acts of
+\nYearFrom{}--\nYearTo{}. Read as a backlog --- the reading the flag invites, and
+the one this study first recorded --- that overstates by a factor of
+\nOverstatementFactor. \nProspectiveShare{} per cent are enacted but not
+commenced; a further \nScheduled{} carry a commencement date still in the
+future, and the service is right to apply neither. What remains is
 \nInForceNow{} effects in \nActsAffected{} Acts, none in force longer than
-\nLongestDays{} days against a published three-month target, all from a single
+\nLongestDays{} days against a published three-month target, all from one
 commencement three weeks before the analysis date. The service meets its own
 standard without exception. The transferable result is the error: everything
 needed to read the record correctly is published, but the flag inviting the
 wrong conclusion is an attribute on each effect while the fact correcting it is
 a child element inside it, and the publisher's prose covers all four states
-with one term. A consumer who parses attributes and checks the documentation is
-confirmed in a false accusation against a service doing its job. Publishing the
-distinguishing fact is not enough; its placement decides what most readers
-conclude.
+with one term. A consumer who parses attributes and checks the documentation is confirmed in a
+false accusation against a service doing its job. Publishing the distinguishing
+fact is not enough; its placement decides what most readers conclude.
 \end{abstract}
 
 \vspace{1em}\noindent\textbf{Keywords:} public data infrastructure; data
@@ -130,7 +128,7 @@ a property of use rather than of the artefact goes back to Wang and
 Strong,\footnote{R Y Wang and D M Strong, `Beyond Accuracy: What Data Quality
 Means to Data Consumers' (1996) 12(4) \emph{Journal of Management Information
 Systems} 5.} whose survey of data consumers found a conception of quality much
-broader than accuracy, organised into dimensions including believability,
+broader than accuracy, organized into dimensions including believability,
 interpretability and ease of understanding. That framework anticipates the
 problem here in one respect and misses it in another. It is right that quality
 is relative to a consumer; but its dimensions are properties a dataset
@@ -140,7 +138,7 @@ the fault is in the relation between two fields rather than in either field.
 
 \paragraph{Open government data and metadata quality.} The open-data literature
 has repeatedly identified metadata as the binding constraint on reuse. Janssen,
-Charalabidis and Zuiderwijk catalogued adoption barriers and argued against a
+Charalabidis and Zuiderwijk cataloged adoption barriers and argued against a
 `publish and they will come' model of open data.\footnote{M Janssen, Y
 Charalabidis and A Zuiderwijk, `Benefits, Adoption Barriers and Myths of Open
 Data and Open Government' (2012) 29(4) \emph{Information Systems Management}
@@ -268,12 +266,20 @@ does not reflect the law.}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{fig1_what_the_flag_means.png}
-\caption{The composition on a linear scale, then the same excluding the
-prospective majority so that the smaller categories are legible. A logarithmic
-axis would have fitted all four comfortably and removed the disproportion,
-which is the finding.}
-\label{fig:flag}
+\includegraphics[width=\textwidth]{fig1_all_flagged_effects.png}
+\caption{The four states of a flagged effect, on a linear scale. The scale is
+linear because the disproportion is the finding: a logarithmic axis would fit
+all four bars comfortably and remove it.}
+\label{fig:flagged}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig2_excluding_prospective.png}
+\caption{The same effects excluding the prospective majority, where the three
+remaining categories become legible. Percentages are still of the full
+population, so the two figures can be read against each other.}
+\label{fig:rest}
 \end{figure}
 
 \paragraph{The measure that matters.} \nActsAffected{} Acts of \nActsRetrieved{}
@@ -318,7 +324,7 @@ Those figures describe this collector, on this network, over this period. They
 do not describe \texttt{legislation.gov.uk}, and they cannot be compared with a
 collection made from a different network at a different time. The companion
 study's Saudi measurements were taken from the author's own connection, over an
-earlier period, against portals whose behaviour has since changed --- and that
+earlier period, against portals whose behavior has since changed --- and that
 measurement cannot be repeated, which is precisely the argument that study
 makes about contemporaneous evidence.
 
