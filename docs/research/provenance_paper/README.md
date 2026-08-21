@@ -10,9 +10,12 @@ whether they share a vocabulary (`../definitions_paper/`), and how they change
 (`../amendment_paper/`). All four assume the official text was available, and
 itself consistent, when it was collected. This one tests that.
 
-**Venue: *Data & Policy* (Cambridge University Press) recommended.** See
-*Venue* below — two journals that would have fitted better have left Cambridge
-since, and that is recorded there too.
+**Submitted to *Data & Policy* (Cambridge University Press) on 21 August 2026
+— manuscript ID DAP-2026-0368.** Research Article, Standard Focus Area 3
+(*Policy & Literacy for Data*), single-blind review. Submitted at
+<https://mc.manuscriptcentral.com/dataandpolicy>. See *Venue* below — two
+journals that would have fitted better have left Cambridge since, and that is
+recorded there too.
 
 | File | Purpose |
 |---|---|
@@ -288,8 +291,30 @@ thing this paper measures.
       disruption, so the exact figure and the waiver's mechanics have to be read
       off the form. If no waiver option appears in the flow, email the editorial
       office before the manuscript goes to review.
-- [ ] Submit at <https://mc.manuscriptcentral.com/dataandpolicy> and record the
-      manuscript ID here.
+- [x] **Submitted 21 August 2026 — DAP-2026-0368.** Three files uploaded and
+      their designations checked in the system's own proof before sending: the
+      manuscript as Main Document, and the two figures in the right slots. That
+      check earned its place — the figure picker had `fig1_access.tiff`
+      selected twice, and the duplicate was caught on the upload screen because
+      it shows filenames.
+- [x] **Open Data and Open Materials badges claimed.** Both criteria hold: the
+      data availability statement carries a DOI in a recognised repository, and
+      the published scripts regenerate every number and figure. An article
+      arguing that publishers should expose the strength of the evidence behind
+      each record should not ship without them.
+- [ ] Await the editorial office's initial assessment, then single-blind review.
+- [x] **APC waiver requested in the cover letter.** No form field asks for it:
+      the submission page states that a prospective author's financial
+      circumstances have no bearing on the editorial decision and that no author
+      will ultimately face a financial barrier to publication, so the charge is
+      settled through the journal's open-access options after acceptance. The
+      request is on record either way.
+- [x] Recommended reviewers: Axel Polleres (WU Vienna — Open Data Portal Watch),
+      Monica Palmirani (Bologna — Akoma Ntoso, legislative versioning), Anneke
+      Zuiderwijk-van Eijk (TU Delft — open government data infrastructures).
+      Two were required; three were given so the editor has a choice across the
+      article's three faces. All three were checked against the journal's own
+      editorial board first — recommending a sitting editor wastes a slot.
 - [ ] Single-blind review means the anonymised build is not required, but
       `build.py` should keep producing it: the next venue may need it.
 - [x] Quality review complete — see above.
