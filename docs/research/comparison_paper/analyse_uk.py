@@ -310,6 +310,25 @@ def main():
         key = f"{modified}|{decade}"
         cross[key] = cross.get(key, 0) + 1
 
+    # Where the old part of the queue comes from. Banding the ages hid this:
+    # the pre-2022 tail is not a smooth decay but a set of spikes, and each
+    # spike turns out to be dominated by a single amending instrument. That
+    # makes the old backlog a small number of identifiable instruments nobody
+    # has worked through, rather than diffuse neglect --- a different problem
+    # with a different remedy.
+    #
+    # Reported by URI and not by name. The instrument's title lives in
+    # `ukm:AffectingTitle`, a child element rather than an attribute, so the
+    # collector's attribute-based parse never captured it. Supplying names from
+    # memory instead is exactly the fault that reached the opening paragraph of
+    # paper 4 before review caught it.
+    old_effects = [e for e in all_effects
+                   if e.get("AffectingYear", "").isdigit()
+                   and int(e["AffectingYear"]) < as_of.year - 4]
+    by_instrument = Counter(e.get("AffectingURI", "?") for e in old_effects)
+    old_total = sum(by_instrument.values())
+    top_ten = by_instrument.most_common(10)
+
     per_act = sorted((len(live_effects(a)), a["id"], a.get("title") or "")
                      for a in affected)[::-1]
     total = sum(n for n, _, _ in per_act)
@@ -382,6 +401,19 @@ def main():
                             "compliance is not computable from this metadata "
                             "because commencement dates are not published",
         "tail": tail,
+        "old_queue_concentration": {
+            "definition": "effects whose affecting instrument is more than "
+                          "four years old, i.e. outside any plausible reading "
+                          "of the publisher's three-month target",
+            "effects": old_total,
+            "distinct_affecting_instruments": len(by_instrument),
+            "top_10_share": round(sum(n for _, n in top_ten) / old_total, 4)
+                            if old_total else None,
+            "top_10": [{"affecting_uri": u, "effects": n} for u, n in top_ten],
+            "titles": "not recorded --- ukm:AffectingTitle is a child element, "
+                      "not an attribute, so the collector did not capture it; "
+                      "names must be verified from source before use",
+        },
         "effects_by_age_band_of_affecting_instrument": by_band,
         "acts_by_last_revised_year_and_oldest_effect_decade": cross,
         "revised_within_a_year_but_carrying_effects_10_years_or_older":
@@ -476,6 +508,18 @@ def main():
     print("  four fields near-constant is the schema behaving correctly on a "
           "well-run API;\n  it is the discrepancy field that carries this "
           "jurisdiction, and only once it\n  records who declared the problem")
+    o = results["old_queue_concentration"]
+    if o["effects"]:
+        print(f"\nthe old part of the queue is concentrated, not diffuse:")
+        print(f"  {o['effects']:,} effects from instruments more than four "
+              f"years old,\n  from {o['distinct_affecting_instruments']} "
+              f"distinct instruments --- the ten most prolific hold "
+              f"{o['top_10_share']*100:.1f}%")
+        for row in o["top_10"][:5]:
+            print(f"    {row['effects']:>4}  "
+                  f"{row['affecting_uri'].split('/id/')[-1]}")
+        print("  (by identifier; titles are not in the collection and must be "
+              "verified before use)")
     print(f"\nwrote {OUT.name}")
 
 

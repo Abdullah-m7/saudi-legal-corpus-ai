@@ -289,6 +289,37 @@ avoid, so all three are reported:
 The service records repeal in the Act's title rather than in a metadata field,
 so that last row is title-derived and labelled as such in the output.
 
+## The old queue is a handful of instruments, not diffuse neglect
+
+Banding the ages for figure 1 hid the structure that matters. The per-year
+distribution has three parts:
+
+- a **recent working queue** — 424 effects from 2024, 469 from 2025, 865 from
+  2026, which is what any three-month target produces under volume;
+- a **trough** at 2017–2021 — 11, 10, 64, 49, 3 — showing the service does work
+  through its queue;
+- an **old tail that is spiky, not decaying** — 240 from 2002, 235 from 2006,
+  269 from 2012, 287 from 2015.
+
+Each spike turns out to be one instrument. 258 of the 2012 spike's 325 effects
+come from a single amending Act; 205 of 2002's 290; 155 of 2006's 240. Across
+the whole pre-2022 tail, **ten instruments hold 44.9 per cent** of 2,914
+effects drawn from 226 distinct instruments.
+
+So the old backlog is not a service falling behind across the board. It is a
+small, identifiable set of amending instruments nobody has worked through — a
+different problem, with a different and much cheaper remedy. It is also the
+same shape paper 4 found in Saudi amendment activity, where the ten most active
+decrees accounted for 35.4 per cent of article-amendment pairs.
+
+**The instruments are recorded by identifier and deliberately not named.**
+Their titles sit in `ukm:AffectingTitle`, a child element rather than an
+attribute, which the collector's attribute-based parse never captured. Naming
+them from memory instead is precisely the fault that reached paper 4's opening
+paragraph before review caught it. The collector now captures the title, and
+the names wait for data that carries them — obtainable from about twenty
+targeted requests rather than a second full sweep.
+
 ## Reproduce
 
 ```
@@ -494,6 +525,10 @@ paper 5's cost claim, which until now was an argument.
       retry pass recovers the coverage.
 - [ ] Full sweep of the statute book (1988–2026 running; extend earlier if the
       backlog reaches further back than the modern era).
+- [ ] **Name the ten instruments behind the old queue**, from
+      `ukm:AffectingTitle`, by re-fetching only the Acts that carry those
+      effects — about twenty requests, not another sweep. Until then the
+      finding is stated by identifier.
 - [ ] **Test the 1988 start date before claiming coverage.** The range was
       chosen on the assumption that unapplied effects accumulate in modern
       legislation and that earlier years would return zeros. The data now

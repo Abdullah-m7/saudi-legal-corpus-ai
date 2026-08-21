@@ -157,17 +157,34 @@ EFFECT_ATTRS = ("Type", "RequiresApplied", "AffectingYear", "AffectingNumber",
                 "AffectedProvisions", "AffectedURI", "AppliedModified",
                 "Modified")
 
+# `AffectingTitle` is a child element, not an attribute, so the parse above
+# misses it --- which left the analysis able to say that ten instruments hold
+# 45 per cent of the old backlog but not able to say which ten. Naming them
+# from memory instead is the fault that reached paper 4's opening paragraph
+# before review caught it, so the title is captured here and the claim waits
+# for the next full run.
+AFFECTING_TITLE = re.compile(
+    r"<ukm:AffectingURI[^>]*>|<ukm:AffectingTitle>([^<]*)</ukm:AffectingTitle>")
+
 
 def unapplied_effects(xml):
     """Effects the service itself flags as not incorporated into its own text."""
-    elements = re.findall(r"<ukm:UnappliedEffect\b[^>]*>", xml)
+    # Split on the effect boundary so each element's own child elements travel
+    # with it; findall over the open tags alone would leave the titles behind.
+    chunks = re.split(r"(?=<ukm:UnappliedEffect\b)", xml)[1:]
+    elements = [c for c in chunks if c.startswith("<ukm:UnappliedEffect")]
     effects, types = [], {}
-    for element in elements:
+    for chunk in elements:
+        element = chunk[:chunk.find(">") + 1]
         attrs = {}
         for key in EFFECT_ATTRS:
             m = re.search(rf'\b{key}="([^"]*)"', element)
             if m:
                 attrs[key] = m.group(1)
+        title = re.search(r"<ukm:AffectingTitle>([^<]*)</ukm:AffectingTitle>",
+                          chunk)
+        if title:
+            attrs["AffectingTitle"] = title.group(1)
         effects.append(attrs)
         if attrs.get("RequiresApplied") == "true":
             kind = attrs.get("Type", "?")
