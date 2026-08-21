@@ -18,8 +18,8 @@
 \newif\ifanon
 \anonfalse
 
-\title{Declared and Unapplied: What a Well-Run Legal Publisher\\
-Still Cannot Tell You About Its Own Text}
+\title{Ninety-Three Per Cent of a Backlog Is Not a Backlog:\\
+Reading a Public Publisher's Own Quality Signal}
 
 \ifanon
   \author{}
@@ -41,38 +41,45 @@ A companion study measured whether one state's official legal record was
 available and internally consistent when someone tried to build on it, and
 found that neither could be assumed.\footnote{Cited as a companion study so
 this article can be read on its own; the corpus and analysis are openly
-published.} It ended with a proposal --- a five-field provenance schema that a
-publisher of official data could populate at the point of collection --- and
-with a weakness it stated plainly: one jurisdiction, and an argument rather than
-a demonstration that the method travels.
+published.} It proposed a five-field provenance schema for publishers of
+official data, and stated a weakness plainly: one jurisdiction, and an argument
+rather than a demonstration that the method travels.
 
-This article is the demonstration, and it is not a replication. Repeating a
-measurement in a second place tests whether a number recurs. Applying an
-instrument in a second place tests the instrument. The second is the more useful
-thing to do with a proposal, and it is what this article reports: what the
-schema captured, what it missed, and what had to change in it.
+This article is the demonstration, and what it demonstrates is not what it set
+out to. Repeating a measurement elsewhere tests whether a number recurs.
+Applying an instrument elsewhere tests the instrument. The instrument failed
+first, in a way worth reporting.
 
-The jurisdiction was chosen so that the answer would be informative whichever
-way it came out. The United Kingdom's official legislation service is, by any
-ordinary standard, well run. It publishes a documented interface, permanent
-identifiers for every provision, and machine-readable metadata alongside every
-text. If the companion study's findings were about a particular state's
-capacity, almost nothing here should be measurable.
+The United Kingdom's official legislation service publishes, in each Act's own
+metadata, a machine-readable list of amendments it has not applied to the text
+it displays. Read as a backlog, that list says \nFlagged{} amendments across the
+modern statute book are missing from the law as published --- an unusually
+clean finding, and the one this study first recorded.
 
-Something is, and it is not what the companion study looked for. The service
-publishes, in each Act's own metadata, a list of amendments that have been
-enacted and that it has \emph{not} incorporated into the text it displays. It
-declares this rather than concealing it. It states a target for clearing them.
-And a reader still cannot tell, for any particular provision, whether the
-declared defect is a week old or a decade old --- because the field that would
-answer that is not published.
+It is wrong by a factor of \nOverstatementFactor. Each effect also carries
+whether the amendment is in force. \nProspective{} of them
+(\nProspectiveShare{} per cent) are prospective: enacted, not commenced, no
+date set. A further \nScheduled{} have a commencement date still in the future.
+The service is right not to apply either --- applying an amendment that is not
+in force would misstate the law. What remains is \nInForceNow{} effects, and
+none has been in force for more than \nLongestDays{} days against a published
+target of three months.
 
-That is the shape of the finding, and it is the opposite of the companion
-study's. There, the defect had to be excavated: four instruments whose portal
-text disagreed with the portal's own amendment log, each found by hand. Here it
-is handed to the reader, at scale, per provision, in a form a machine can read
---- and it is still not enough. The gap between those two cases is what this
-article is about.
+The finding, then, is the opposite of the one this article was drafted to
+report: the service meets its own standard without exception. But the more
+useful result is the error. The distinguishing field is a child element inside
+each effect; the flag that invites the wrong reading is an attribute on the
+effect itself, and the publisher's own prose calls both `unapplied effects'
+without separating them. A reader who takes the obvious path --- parse the
+attributes, trust the wording --- produces a false accusation against a public
+service that is doing its job, and produces it with every appearance of rigour.
+
+That is the companion study's argument arriving from an unexpected direction.
+That paper asked publishers to ship the strength of the evidence with the text.
+Here the evidence is shipped, completely and machine-readably, and the default
+reading of it is still wrong by two orders of magnitude. Publishing the
+distinguishing fact is not sufficient; where it sits, relative to the fact that
+invites the error, decides what most readers will conclude.
 
 \section{What the service publishes about its own currency}
 
@@ -135,7 +142,62 @@ published: any reader, on any network, at any time, obtains the same count.
 
 \section{Results}
 
-% Written when the sweep is complete. Every figure comes from numbers.tex.
+\paragraph{Coverage.} \nActsListed{} Public General Acts from \nYearFrom{} to
+\nYearTo{} were listed and \nActsRetrieved{} retrieved; none was lost.
+
+\paragraph{What the flag contains.} Of the \nFlagged{} effects the service
+flags as not applied:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+& \textbf{Effects} & \textbf{Share} \\
+\midrule
+Prospective --- enacted, no commencement date & \nProspective{} & \nProspectiveShare\% \\
+Commencement scheduled, date still future & \nScheduled{} & \nScheduledShare\% \\
+In force now, not applied & \nInForceNow{} & \nInForceShare\% \\
+In force, no date recorded & \nInForceUndated{} & --- \\
+\bottomrule
+\end{tabular}
+\caption{The same flag, four meanings. Only the last two describe text that
+does not reflect the law.}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1_what_the_flag_means.png}
+\caption{The composition on a linear scale, then the same excluding the
+prospective majority so that the smaller categories are legible. A logarithmic
+axis would have fitted all four comfortably and removed the disproportion,
+which is the finding.}
+\label{fig:flag}
+\end{figure}
+
+\paragraph{The measure that matters.} \nActsAffected{} Acts of \nActsRetrieved{}
+--- \nActsAffectedShare{} per cent --- display text that does not reflect the
+law in force, across \nProvisions{} distinct provisions. Against a body of
+\nBodyParagraphs{} paragraphs, that is \nProvisionsPerThousand{} affected
+provisions per thousand.
+
+\paragraph{Compliance is total, and concentrated in one event.} The service
+undertakes to incorporate amendments within three months of their coming into
+force. \nBeyondTarget{} effects exceed that. The longest any amendment in the
+modern statute book has been in force without being applied is \nLongestDays{}
+days.
+
+The dated in-force effects are not spread across the period at all. All
+\nInForceNow{} came into force on the same day, three weeks before the analysis
+date, and all belong to two related instruments: the Pension Schemes Act 2021
+and the Pension Schemes (Northern Ireland) Act 1993.\footnote{The remaining
+\nInForceUndated{} effects are recorded as in force without a date and cannot be
+timed; they are counted in the affected totals and excluded from the duration
+figures.} The entire population of out-of-date text in the modern UK statute
+book is one commencement, three weeks old.
+
+That is why this article carries one figure and not two. A distribution of
+\nInForceNow{} identical values is not a chart.
 
 \section{What the schema learned about itself}
 
@@ -189,19 +251,39 @@ fields are encounter-relative. That one does not.
 
 \section{What follows}
 
-% Written with the results.
+\paragraph{Publishing the distinguishing field is not enough; placing it is.}
+Everything needed to read this record correctly is published. The failure is
+one of arrangement: the flag that invites the wrong conclusion is an attribute
+on the effect, and the fact that corrects it is a child element inside it. A
+consumer parsing attributes --- the ordinary way to read this format --- gets
+the first and not the second, and nothing in the response marks the omission.
+A publisher cannot control how it is read, but it can decide which fact is
+cheapest to reach.
+
+\paragraph{Prose that does not distinguish what the data distinguishes.} The
+service describes flagging `unapplied effects'. Its data separates four states
+under that phrase, only two of which mean the text is out of date. The
+documentation was checked against the reading used here and appeared to confirm
+it, because the words are true of all four. Where a vocabulary is coarser than
+the schema it describes, the documentation will validate a wrong reading.
+
+\paragraph{A measurement that reverses is worth more than one that confirms.}
+This study set out expecting to find a backlog, found one, and had to withdraw
+it. The corrected result --- a public publisher meeting its stated standard
+without exception across \nYearFrom{}--\nYearTo{} --- is a kind of finding the
+open-data literature reports rarely, in part because it is not what anyone goes
+looking for.
 
 \section{Limits}
 
-\paragraph{The age of an amendment is not published.} Every age reported here
-is the age of the \emph{amending instrument}, which is the only date the
-service exposes. It is not the date the amendment came into force, and the two
-can be decades apart: \nBackwardEffects{} effects in this collection have an
-affecting instrument older than the Act it amends, because provisions that were
-never commenced bite, when commenced, on a later consolidating Act. Compliance
-with the three-month target therefore cannot be computed from what the service
-publishes --- which is itself among the findings, but it also bounds every age
-figure here.
+\paragraph{A claim this article previously made, withdrawn.} An earlier draft
+stated that commencement dates are not published and concluded that the
+publisher withholds the field needed to verify its own service standard. That
+was the opposite of true. Every effect carries its commencement position in
+\texttt{ukm:InForce}, and the durations reported above are a subtraction over
+that field. The error had the same cause as the headline error: a parse that
+read attributes and not child elements, and a conclusion drawn from what the
+parse returned rather than from what the response contained.
 
 \paragraph{Denominators are choices, and all of them are reported.} An Act the
 service serves as enacted rather than in revised form has no revised text for

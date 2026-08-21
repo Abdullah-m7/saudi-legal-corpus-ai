@@ -1,52 +1,68 @@
 # Paper 6 — The Second Jurisdiction
 
-> ## STOP — the central measure was wrong, and every number below it is withdrawn
->
-> This paper counted effects flagged `RequiresApplied="true"` and read them as
-> *amendments in force that the service has not incorporated into the text it
-> displays*. That reading came from the shape of the data. It was checked
-> against the publisher's prose, which describes flagging "unapplied effects",
-> and the check passed — because the prose does not distinguish the two cases
-> the data does.
->
-> Each effect also carries `<ukm:InForce>`, a child element the collector's
-> attribute-only parse never captured. Almost all of them read
-> `Prospective="true"`: the amendment has been **enacted but has not come into
-> force**. The service is not behind on those. Applying them would misstate the
-> law, and withholding them is correct.
->
-> In a sample of six affected Acts spanning the collection, **1,477 of 1,480
-> flagged effects are prospective and 3 are in force**. Two further Acts
-> checked in full — the Road Traffic Act 1988 and the Social Security
-> Administration Act 1992 — are 261/261 and 194/194 prospective.
->
-> So "513 Acts display text the service says is out of date" is false, and so
-> is every figure derived from it: the tail, the concentration, the
-> maintained-but-stale cross-tabulation, both figures, and the manuscript's
-> framing. A second consequence: this README and the draft said commencement
-> dates are not published. **They are** — in `ukm:CommencementAuthority` and
-> `ukm:InForceDates`, on every effect. The claim that the publisher withholds
-> the field needed to check its own service standard was the opposite of true.
->
-> What survives is a real and smaller question: how many flagged effects *are*
-> in force and unapplied, and for how long. That is measurable from the same
-> endpoint once `InForce` is captured. The collector must be extended and the
-> statute book swept again before any number here is used.
->
-> Nothing below this notice has been revised yet. It is left in place because
-> the sequence that produced the error is part of the record.
+*Ninety-Three Per Cent of a Backlog Is Not a Backlog: Reading a Public
+Publisher's Own Quality Signal.*
 
-*Working title: does the finding travel? Applying a provenance schema
-prospectively to a second state's published law.*
+## The finding, and the two withdrawn versions of it
 
-Paper 5 (`../provenance_paper/`) measured whether one state's official legal
-record was available and internally consistent when someone tried to use it at
-scale, and proposed a five-field provenance schema for publishers of official
-data. It has one weakness it states openly: **n = 1**. It argues that the
-method transfers to other jurisdictions and to non-legal public data, and an
-argument is not a demonstration.
+`legislation.gov.uk` flags **14,407** effects across the modern statute book as
+not applied to the text it displays. Read as a backlog — which is how the flag
+reads, and how this study first read it — that is a very large number.
 
-This is the demonstration. It is not a replication.
+It overstates by a factor of **131**:
+
+| | Effects | Share |
+|---|---|---|
+| Prospective — enacted, no commencement date | 13,396 | 93.0% |
+| Commencement scheduled, date still future | 901 | 6.3% |
+| **In force now, not applied** | **99** | **0.7%** |
+| In force, no date recorded | 11 | 0.1% |
+
+Only the last two describe text that does not reflect the law. That is **9 Acts
+of 1,578** (0.6%), across 77 provisions.
+
+**The service meets its published three-month target without exception.** The
+longest any amendment has been in force and unapplied is **21 days** — and all
+99 dated cases share one commencement, three weeks before the analysis date, in
+the Pension Schemes Act 2021 and its Northern Ireland counterpart. The entire
+population of out-of-date text in the modern UK statute book is a single
+commencement event.
+
+### It took three attempts to measure
+
+1. **`RequiresApplied="true"`** → 513 Acts, 14,407 effects. Withdrawn: the flag
+   says only that an effect is not applied, not that it should be.
+2. **Excluding `Prospective="true"`** → 84 Acts, 1,011 effects. Also wrong: an
+   effect can have a settled commencement date that is still in the future. A
+   date fixed for next March is no more in force than no date at all.
+3. **Excluding future commencement dates** → 9 Acts, 110 effects. Verified
+   independently.
+
+A second claim was withdrawn with the first, and it was the sharper one. Two
+drafts said commencement dates are not published, and concluded that the
+publisher withholds the field needed to check its own standard. Every effect
+carries it, in `ukm:InForce`. The duration figures above are a subtraction over
+that field.
+
+### Why the error is the contribution
+
+Everything needed to read this record correctly is published. The failure is
+arrangement: the flag that invites the wrong conclusion is an **attribute** on
+the effect; the fact that corrects it is a **child element** inside it. A
+consumer parsing attributes — the ordinary way to read this format — gets the
+first and not the second, and the publisher's own prose calls all four states
+"unapplied effects", so checking the documentation confirms the wrong reading.
+
+The companion study asks publishers to ship the strength of the evidence with
+the text. Here it is shipped, completely and machine-readably, and the default
+reading is still wrong by two orders of magnitude. Publishing the
+distinguishing fact is not sufficient. Where it sits, relative to the fact that
+invites the error, decides what most readers conclude.
+
+Everything below this line predates the correction and is kept because the
+sequence that produced it is part of the record.
+
+---
 
 ## Why the United Kingdom
 

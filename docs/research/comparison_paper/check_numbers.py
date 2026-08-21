@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Refuse to build a manuscript that types a number the analysis owns.
 
-numbers.py removes the class of defect where a figure in prose drifts from the
+make_numbers.py removes the class of defect where a figure in prose drifts from the
 figure in the data. It only removes it if the manuscript actually uses the
 macros, so this looks for bare digits in the text and asks whether each one is
 allowed.

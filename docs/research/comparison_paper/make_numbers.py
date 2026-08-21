@@ -17,7 +17,12 @@ The formatting rules are here rather than in the manuscript for the same
 reason: thousands separators and percentages to one decimal are decisions that
 should be made once.
 
-    python3 docs/research/comparison_paper/numbers.py
+    python3 docs/research/comparison_paper/make_numbers.py
+
+Named `make_numbers.py`, not `numbers.py`. The obvious name shadows Python's
+standard-library `numbers` module for every script in this directory, and numpy
+imports it: `make_figures.py` died with "module 'numbers' has no attribute
+'Integral'", an error naming neither this file nor the collision.
 """
 
 import json
@@ -88,6 +93,20 @@ def macros(r):
     # in the README with its method. Hard-coded here because it is measured
     # data that no analysis run produces; regenerate it by re-running the probe
     # if the claim is ever revisited.
+    st = u["flagged_effects_by_state"]
+    flagged = sum(st.values())
+    m["Flagged"] = thousands(flagged)
+    m["Prospective"] = thousands(st.get("prospective", 0))
+    m["ProspectiveShare"] = percent(st.get("prospective", 0) / flagged)
+    m["Scheduled"] = thousands(st.get("commencement_scheduled", 0))
+    m["ScheduledShare"] = percent(st.get("commencement_scheduled", 0) / flagged)
+    m["InForceNow"] = thousands(st.get("in_force", 0))
+    m["InForceShare"] = percent(st.get("in_force", 0) / flagged)
+    m["InForceUndated"] = thousands(st.get("in_force_undated", 0))
+    m["TargetDays"] = str(u["publisher_target_days"])
+    m["BeyondTarget"] = str(u["in_force_unapplied_beyond_target"])
+    m["LongestDays"] = str(u["longest_unapplied_days"])
+    m["OverstatementFactor"] = str(round(flagged / u["effects_requiring_application"]))
     m["PreSampleActs"] = "20"
     m["PreSampleAffected"] = "five"
     m["PreSampleEffects"] = "218"

@@ -250,9 +250,10 @@ def main():
     # bite, when commenced, on a later consolidating Act. Effects whose
     # affecting instrument predates the Act they affect are counted below, and
     # they are not rare. So subtracting years does not measure how long
-    # anything has gone unincorporated --- and commencement dates are not in
-    # this metadata, so that duration cannot be computed from this collection
-    # at all.
+    # anything has gone unincorporated. The duration itself IS computable ---
+    # ukm:InForce carries the commencement position, and the in-force
+    # durations reported above are a subtraction over it. An earlier version of
+    # this file said commencement dates were not published; they are.
     #
     # What can be said exactly: the affecting instrument dates from year Y, and
     # the effect is still unapplied as at the date the analysis is run against.
@@ -446,7 +447,7 @@ def main():
              "count": ages[min(ages)],
              "note": "years since the affecting instrument was passed, NOT the "
                      "time the amendment has gone unincorporated --- "
-                     "commencement dates are not in this metadata"}
+                     "see the in-force duration figures for the real measure"}
             if ages else None),
         "as_of": as_of.isoformat(),
         "schema_in_use": {
@@ -459,7 +460,7 @@ def main():
         "publisher_target": "amendments incorporated within three months of "
                             "coming into force (legislation.gov.uk); "
                             "compliance is not computable from this metadata "
-                            "because commencement dates are not published",
+                            "because commencement can lag enactment by decades",
         "tail": tail,
         "old_queue_concentration": {
             "definition": "effects whose affecting instrument is more than "
@@ -550,7 +551,7 @@ def main():
               f"({o['count']} effect(s))")
         print("  that is the age of the amending instrument, not how long the "
               "amendment has gone\n  unincorporated --- commencement dates "
-              "are not published in this metadata")
+              "is the amending instrument's age, not the breach's")
     print(f"  effects whose affecting instrument predates the Act it amends: "
           f"{results['effects_whose_affecting_instrument_predates_the_act']}")
     print("\nthe service aims to incorporate amendments within three months of "
