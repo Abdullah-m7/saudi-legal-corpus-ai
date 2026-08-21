@@ -175,7 +175,25 @@ paper 5's cost claim, which until now was an argument.
       correction to paper 5, which is what a second jurisdiction should produce:
       not "the number repeated" but "the instrument learned something about
       itself".
-- [ ] Full sweep of the statute book.
+- [x] **Second pass added for failed retrievals, once the comparison narrowed.**
+      The collector deliberately does not retry: a non-200 is evidence about
+      availability, and retrying it away erases the measurement. That was right
+      while availability was in the comparison. It is not right now — a failed
+      retrieval no longer buys a measurement, it only costs an Act's worth of
+      coverage in the consistency count. `--retry-failures` makes one further
+      attempt and **keeps both**: the first stays untouched, the second is
+      recorded beside it, and the discrepancy note becomes
+      `retrieval-failed-then-recovered` rather than being deleted. A reader can
+      see that the document arrived on a second try.
+
+      Both failures so far behaved identically: a 60-second timeout on a
+      document of a few kilobytes, which then returned in under a second.
+      `ukpga/1988/2` is 6.5 KB and answered in 0.60s and 0.38s on re-attempt.
+      That is a connection that never opened — this collector's network, not
+      the service — and it is the second piece of evidence for narrowing the
+      comparison.
+- [ ] Full sweep of the statute book (1988–2026 running; extend earlier if the
+      backlog turns out to reach further back than the modern era).
 - [ ] Analysis: what share of Acts, and of provisions, does the service itself
       flag as not reflecting the law in force? How old are the oldest unapplied
       effects?

@@ -188,12 +188,76 @@ def collect(years):
         print(f"{year}: {len(acts)} Acts written to {path.name}")
 
 
+def retry_failures():
+    """Second pass over the Acts whose first retrieval failed.
+
+    The collector deliberately does not retry: a non-200 is evidence about
+    availability, and retrying it away would erase the measurement. That was
+    right while availability was part of the comparison. It is not right now.
+    The comparison has been narrowed to consistency (see README), so a failed
+    retrieval no longer buys a measurement --- it only costs an Act's worth of
+    coverage in the count of unincorporated amendments.
+
+    Both attempts are kept. The first stays exactly where it was, so the
+    availability record remains what the collector actually saw; the second is
+    recorded beside it under `retrieval_retry`, and only it fills the
+    consistency data. Nothing is overwritten, so a reader can see that the
+    document arrived on a second try and decide what to make of it.
+
+    Every failure seen so far has been a connection that never opened ---
+    60-second timeouts on documents of a few kilobytes that then return in
+    under a second --- which is the signature of this collector's network, not
+    of the service.
+    """
+    recovered = still_failing = 0
+    for path in sorted(STORE.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not data.get("acts"):
+            continue
+        changed = False
+        for act in data["acts"]:
+            if act["retrieval"]["http_status"] == "200":
+                continue
+            if act.get("retrieval_retry", {}).get("http_status") == "200":
+                continue
+            year, num = act["id"].split("/")[1:]
+            attempt, body = fetch(ACT_META.format(year=year, num=num))
+            act["retrieval_retry"] = attempt
+            changed = True
+            if attempt["http_status"] == "200":
+                act.update(unapplied_effects(body))
+                title = re.search(r"<dc:title>([^<]*)</dc:title>", body)
+                act["title"] = title.group(1) if title else None
+                # The record now has the text, so the discrepancy that stood
+                # for "we could not get this" is resolved rather than deleted.
+                act["provenance"]["retrieval_route"] = "live"
+                act["provenance"]["discrepancy"] = {
+                    "kind": "retrieval-failed-then-recovered",
+                    "first_attempt_status": act["retrieval"]["http_status"],
+                    "first_attempt_seconds": act["retrieval"]["seconds"],
+                }
+                recovered += 1
+                print(f"  recovered {act['id']} in {attempt['seconds']:.2f}s")
+            else:
+                still_failing += 1
+                print(f"  still failing {act['id']} ({attempt['http_status']})")
+            time.sleep(CRAWL_DELAY)
+        if changed:
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=1),
+                            encoding="utf-8")
+    print(f"recovered {recovered}, still failing {still_failing}")
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--years", help="e.g. 2018-2020 or 2019")
     ap.add_argument("--all", action="store_true",
                     help="1801 to the present")
+    ap.add_argument("--retry-failures", action="store_true",
+                    help="second pass over Acts whose first retrieval failed")
     a = ap.parse_args()
+    if a.retry_failures:
+        retry_failures()
+        return
     if a.all:
         years = range(1801, 2027)
     elif a.years and "-" in a.years:

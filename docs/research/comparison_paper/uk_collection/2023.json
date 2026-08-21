@@ -1220,15 +1220,27 @@
    },
    "provenance": {
     "source_class": "official-primary",
-    "retrieval_route": null,
+    "retrieval_route": "live",
     "corroboration": 0,
     "transformation": "none",
     "discrepancy": {
-     "kind": "retrieval-failed",
-     "http_status": "000",
-     "curl_error": "curl: (28) Operation timed out after 60002 milliseconds with 0 bytes received"
+     "kind": "retrieval-failed-then-recovered",
+     "first_attempt_status": "000",
+     "first_attempt_seconds": 60.015
     }
-   }
+   },
+   "retrieval_retry": {
+    "url": "https://www.legislation.gov.uk/ukpga/2023/54/introduction/data.xml",
+    "http_status": "200",
+    "redirects": 0,
+    "bytes": 9992,
+    "seconds": 0.503,
+    "curl_error": null
+   },
+   "unapplied_total": 0,
+   "unapplied_requiring_application": 0,
+   "by_type": {},
+   "title": "Procurement Act 2023"
   },
   {
    "id": "ukpga/2023/55",
