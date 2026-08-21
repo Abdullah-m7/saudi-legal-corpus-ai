@@ -375,6 +375,8 @@ def citations_into_changed_articles(articles, tracks):
     graph = json.loads(XREF.read_text(encoding="utf-8"))
     resolved = hits = 0
     by_status = Counter()
+    by_type_resolved = Counter()
+    by_type_hit = Counter()
     cases = []
     for ref in graph["references"]:
         target_track = ref.get("target_track_id")
@@ -386,10 +388,12 @@ def citations_into_changed_articles(articles, tracks):
             continue
         resolved += 1
         st = status[key]
+        by_type_resolved[ref.get("type")] += 1
         if st in (AMENDED, REPEALED):
             hits += 1
             by_status[st] += 1
-            if len(cases) < 25:
+            by_type_hit[ref.get("type")] += 1
+            if len(cases) < 60:
                 cases.append({
                     "citing_track": ref.get("source_track_id"),
                     "citing_article": ref.get("source_article_number"),
@@ -416,7 +420,13 @@ def citations_into_changed_articles(articles, tracks):
                    "that point at wording which has since moved.",
         "by_status": {"amended": by_status[AMENDED],
                       "repealed": by_status[REPEALED]},
-        "examples": cases,
+        "by_reference_type": {
+            t: {"resolved": by_type_resolved[t],
+                "pointing_at_changed_text": by_type_hit[t],
+                "share": round(by_type_hit[t] / by_type_resolved[t], 4)
+                if by_type_resolved[t] else 0.0}
+            for t in sorted(by_type_resolved)},
+        "examples": [c for c in cases if c["type"] == "inter_law"] or cases,
     }
 
 
