@@ -107,6 +107,12 @@ def macros(r):
     m["BeyondTarget"] = str(u["in_force_unapplied_beyond_target"])
     m["LongestDays"] = str(u["longest_unapplied_days"])
     m["OverstatementFactor"] = str(round(flagged / u["effects_requiring_application"]))
+    # The intermediate measure --- prospective excluded, future commencement
+    # dates still counted --- reported in the article as the correction that was
+    # not enough. Derived here so it cannot drift from the state counts.
+    m["EffectsSecondPass"] = thousands(
+        st.get("commencement_scheduled", 0) + st.get("in_force", 0)
+        + st.get("in_force_undated", 0))
     m["PreSampleActs"] = "20"
     m["PreSampleAffected"] = "five"
     m["PreSampleEffects"] = "218"

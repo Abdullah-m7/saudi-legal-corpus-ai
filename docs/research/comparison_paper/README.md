@@ -59,6 +59,43 @@ reading is still wrong by two orders of magnitude. Publishing the
 distinguishing fact is not sufficient. Where it sits, relative to the fact that
 invites the error, decides what most readers conclude.
 
+## Expansion to a Research Paper (in progress)
+
+The article is being expanded from a ~2,500-word case study to the 8,000–12,000
+band a full research paper needs, with *Government Information Quarterly* as
+the target. Current state: **4,279 words**, eight pages.
+
+Added so far, all of it material the short version had no room for:
+
+- **Three measurements of the same thing** — the two withdrawn readings set out
+  in full, with why each survived its checks. The key point is now explicit:
+  the independent verifier agreed at every stage, including the wrong ones,
+  because two implementations of one definition agree by construction.
+- **What made this record misreadable** — the structural diagnosis, stated as
+  four properties a publisher can look for in its own schema: the inviting fact
+  is cheaper to reach than the correcting one; the qualifier is not marked as
+  required; the vocabulary is coarser than the schema; the error is asymmetric
+  and points toward accusation.
+- **Availability, recorded and not compared** — the figures this collection
+  holds and the structural reason they are not set against the companion
+  study's.
+- **Reproducibility** — including the limits of the verifier, stated against
+  interest.
+- **Threats to validity** — including the 11 undated in-force effects, which
+  are the one direction in which the compliance finding could be wrong, and the
+  admission that a fourth reading may exist.
+
+Still to write: **related work**. That is the bulk of the remaining words and
+the slowest part, because every citation is checked rather than recalled — see
+`references.md`, which records what was verified and against what. Three
+entries so far.
+
+**Blocked:** GIQ's guide for authors could not be read from this environment.
+ScienceDirect and the Elsevier journal page both return 403 behind a CAPTCHA,
+and the Editorial Manager URL redirects to the vendor's own site. Word limit,
+review model, whether Highlights are required and the abstract limit are all
+unknown, and none of them will be written down from memory.
+
 ## Venue
 
 **Recommended: ACM *Digital Government: Research and Practice*, as a Case

@@ -246,7 +246,148 @@ book is one commencement, three weeks old.
 That is why this article carries one figure and not two. A distribution of
 \nInForceNow{} identical values is not a chart.
 
-\section{What the schema learned about itself}
+\section{Availability, recorded and not compared}
+
+The companion study's headline measures were about availability: whether the
+official source answered at all. This collection recorded the same measures and
+does not set them against that study's, for a reason that is a finding about
+the schema rather than a limitation of the data.
+
+Of \nActsListed{} Acts listed, \nActsRetrieved{} were retrieved. Retrieval
+failures during collection were recorded rather than retried away while
+availability was still in scope; a second pass over them recovered every one,
+each in under a second, and both attempts are kept in the record. Successful
+responses arrived in under two seconds throughout. Every failure was a
+connection that produced no bytes and then expired.
+
+Those figures describe this collector, on this network, over this period. They
+do not describe \texttt{legislation.gov.uk}, and they cannot be compared with a
+collection made from a different network at a different time. The companion
+study's Saudi measurements were taken from the author's own connection, over an
+earlier period, against portals whose behaviour has since changed --- and that
+measurement cannot be repeated, which is precisely the argument that study
+makes about contemporaneous evidence.
+
+A control for the network would address half of that and leave the period
+untouched. The comparison is therefore not attempted. What is reported instead
+is the structural reason it cannot be, developed in
+section~\ref{sec:schema}: four of the schema's five fields describe the
+encounter rather than the record, and encounters differ before records do.
+
+\section{Reproducibility}
+
+Every number in this article is produced by scripts published with it, and the
+article contains no typed figure: the manuscript source carries macros, and the
+macros are regenerated from the analysis results before each compilation. A
+figure in the prose therefore cannot drift from the figure in the data, because
+only one copy of it exists. A separate check refuses to compile a manuscript
+that types a number the analysis owns.
+
+The analysis is verified against a second implementation written to share no
+code with it, recounting the headline figures from the raw collection by the
+most direct route available. That check is reported here with a caveat earned
+during this study: it agreed with the analysis at every stage, including the
+two that were wrong. Two implementations of the same definition agree by
+construction. Such a check detects arithmetic and bookkeeping faults and cannot
+detect a mistaken definition, which is the class of fault that actually
+threatened this paper.
+
+The collection is reproducible in the ordinary sense --- the collector is
+published, the endpoints are stable, and a year already gathered is skipped so
+a sweep can resume --- but it is a snapshot. The service revises its records
+continuously; \texttt{dc:modified} on the affected Acts shows revisions within
+weeks of the analysis date. A collection taken later will differ, and the
+figures here are stamped with the date they describe.
+
+\section{Three measurements of the same thing}
+
+The measure reported above was reached in three stages, and the two discarded
+stages are more instructive than the surviving one. Each was defensible on the
+evidence available when it was made, each produced a number that survived
+internal checking, and each was wrong.
+
+\paragraph{First: the flag alone.} \texttt{RequiresApplied="true"} is an
+attribute on each effect. Read as `this amendment should be in the text and is
+not', it gives \nFlagged{} effects. That reading was tested in the two ways
+available without further parsing. It was checked against the publisher's own
+description, which speaks of flagging `unapplied effects' and does not
+distinguish states beneath that phrase. And it was checked against an
+independent recount, written to share no code with the analysis, which agreed
+on every figure.
+
+Neither check could have caught the error. The documentation's wording is true
+of all four states, so consulting it confirms any of them. The independent
+recount counted the same wrong thing by a different route, which is what an
+independent implementation of a wrong definition does. Agreement between two
+implementations tests the implementations, not the definition.
+
+\paragraph{Second: excluding the prospective effects.} \texttt{ukm:InForce} is
+a child element inside each effect, invisible to an attribute-level parse.
+Reading it and excluding \texttt{Prospective="true"} removes \nProspective{}
+effects and leaves \nEffectsSecondPass{}. This is the obvious correction, and it
+is the one most consumers who discover the field would make.
+
+It still overstates by an order of magnitude. An effect can be
+non-prospective --- its commencement settled --- with the commencement date
+itself still in the future. \nScheduled{} effects are in exactly that position.
+The field that distinguishes them is not a different element but a different
+attribute of the same one, and its meaning depends on a comparison with the
+date of reading.
+
+\paragraph{Third: comparing the commencement date with the present.} This is
+the measure reported above: \nEffects{} effects in \nActsAffected{} Acts.
+
+\paragraph{What the sequence shows.} Each stage required reading one level
+deeper into the same response, and at each stage the previous answer looked
+complete. There was no error message, no missing field, no malformed record ---
+the data was correct and completely published throughout. What changed was how
+much of it was consulted.
+
+This is the difference between a record being \emph{available} and a record
+being \emph{read correctly}, and it is not addressed by any of the measures
+usually proposed for open data quality. Completeness, timeliness, accuracy and
+machine-readability were all satisfied at every stage. A dataset can score
+perfectly on each and still have a default reading that is wrong by two orders
+of magnitude.
+
+\section{What made this record misreadable}
+
+The failure here is structural rather than accidental, and the structure can be
+described in a way that transfers to other datasets.
+
+\paragraph{The inviting fact is cheaper to reach than the correcting fact.}
+\texttt{RequiresApplied} is an attribute on the effect element.
+\texttt{ukm:InForce} is a child element of it. In every common way of consuming
+XML --- an attribute map, a flattening to tabular form, a regular expression
+over tags --- the first is obtained by default and the second requires a
+deliberate second step. Cost asymmetry between a fact and its qualifier
+determines which one a consumer ends up with.
+
+\paragraph{The qualifier is not marked as required.} Nothing in the record
+indicates that \texttt{RequiresApplied} is uninterpretable on its own. A
+consumer who reads it and stops receives no signal that anything is missing,
+because from the parser's point of view nothing is.
+
+\paragraph{The vocabulary is coarser than the schema.} The publisher's
+documentation calls all four states `unapplied effects'. The term is accurate
+for each of them and discriminating for none. Prose that names a superset of
+what the data distinguishes will validate a reader's wrong reading, and the
+more carefully that reader checks the documentation, the more confident the
+wrong reading becomes.
+
+\paragraph{The consequence is asymmetric.} Reading \texttt{RequiresApplied}
+alone does not produce a slightly imprecise figure. It produces one
+\nOverstatementFactor{} times too large, pointing in the direction of
+accusation, against an institution that is meeting its published commitment.
+The error is not merely large; it is large in the direction that generates
+findings people want to publish.
+
+None of these four properties is unique to this dataset. Together they describe
+a shape --- an inviting attribute, a qualifying child, an undiscriminating
+label --- that a publisher can look for in its own schema, and that a consumer
+can look for before trusting a count.
+
+\section{What the schema learned about itself}\label{sec:schema}
 
 Two changes to the companion study's proposal came out of using it, and neither
 would have come out of thinking about it.
@@ -324,46 +465,39 @@ without exception across \nYearFrom{}--\nYearTo{} --- is a kind of finding the
 open-data literature reports rarely, in part because it is not what anyone goes
 looking for.
 
-\section{Limits}
+\section{Threats to validity}
 
-\paragraph{A claim this article previously made, withdrawn.} An earlier draft
-stated that commencement dates are not published and concluded that the
-publisher withholds the field needed to verify its own service standard. That
-was the opposite of true. Every effect carries its commencement position in
-\texttt{ukm:InForce}, and the durations reported above are a subtraction over
-that field. The error had the same cause as the headline error: a parse that
-read attributes and not child elements, and a conclusion drawn from what the
-parse returned rather than from what the response contained.
-
-\paragraph{Denominators are choices, and all of them are reported.} An Act the
-service serves as enacted rather than in revised form has no revised text for
-an amendment to be missing from; a wholly repealed Act has no live text at all.
-Excluding them raises the affected share and including them lowers it. Neither
-is obviously right, so the article reports the share on all three bases rather
-than choosing one.
-
-\paragraph{Coverage.} \nActsListed{} Acts were listed and \nActsRetrieved{}
-retrieved. Retrieval failures were recorded rather than retried away while
-availability was in scope; once it left the comparison, a second pass recovered
-what it could, and both attempts are kept in the record.
-
-\paragraph{The modern statute book, and a lower bound.} The sweep covers
-Public General Acts from \nYearFrom{} to \nYearTo{}. That range was chosen on
-the assumption that unapplied effects accumulate in modern legislation, and the
-assumption is wrong: a sample of twenty Acts drawn from before it found five
-carrying unapplied effects and \nPreSampleEffects{} effects in total, the
-Highways Act 1980 alone accounting for \nHighwaysEffects{}. Every total
-reported here is therefore a lower bound on the statute book as a whole rather
-than a census of it, and the concentration figures are computed within the
-period covered.
-
-Extending the sweep is a matter of time rather than method --- at the
-publisher's declared crawl delay the pre-1988 book is many hours of collection
---- and the range is stated rather than quietly presented as complete.
+\paragraph{One jurisdiction, one publisher, one format.} The structural
+diagnosis in section~5 is drawn from a single schema. Its four properties are
+stated so that they can be looked for elsewhere, not because they have been
+observed elsewhere.
 
 \paragraph{Primary legislation only.} Statutory instruments are not covered.
-They are the larger population and carry their own unapplied effects; nothing
-here should be read as a statement about them.
+They are the larger population, they carry their own unapplied effects, and
+nothing here should be read as a statement about them.
+
+\paragraph{A snapshot of a moving record.} All figures describe the collection
+date. The in-force effects reported here arose from a commencement three weeks
+earlier and will be applied, on the publisher's stated timetable, within
+another two months. A collection taken at a different moment would find
+different effects --- and, if the service continues to meet its target, a
+similarly small number of them.
+
+\paragraph{The undated in-force effects.} \nInForceUndated{} effects are
+recorded as in force with no date. They are counted in the affected totals and
+excluded from every duration figure, because their duration is unknown. If any
+of them has been in force for longer than the target, this article would not
+detect it. That is the one direction in which the compliance finding could be
+wrong, and it is bounded: \nInForceUndated{} effects out of \nFlagged{}.
+
+
+
+\paragraph{The measure could be wrong again.} Three readings of this record
+have been reported, two of them withdrawn. Each was checked and each survived
+its checks. The third is reported with more confidence than the first two, on
+the grounds that it consults every field the record carries about the state of
+an effect --- but that was the belief at each earlier stage as well. A reader
+with a fourth reading is invited to test it against the published collection.
 
 \ifanon\else
 \section*{Declarations}
