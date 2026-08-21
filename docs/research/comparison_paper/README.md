@@ -494,6 +494,15 @@ paper 5's cost claim, which until now was an argument.
       retry pass recovers the coverage.
 - [ ] Full sweep of the statute book (1988–2026 running; extend earlier if the
       backlog reaches further back than the modern era).
+- [ ] **Test the 1988 start date before claiming coverage.** The range was
+      chosen on the assumption that unapplied effects accumulate in modern
+      legislation and that earlier years would return zeros. The data now
+      undercuts that assumption: effects sitting on 1988 Acts come from
+      instruments as old as 1982, so age of Act and age of effect are not the
+      same axis. A sample of pre-1988 Acts settles whether the range excludes
+      real data — and it is queued rather than run now, because issuing extra
+      requests alongside the running sweep is exactly the rate-doubling
+      recorded above as a fault.
 - [ ] **Re-run the same command after the sweep to fill 1990 and 1991**, which
       were skipped after their files were deleted behind the running collector.
       Because a year is skipped only when its file exists, the same invocation
