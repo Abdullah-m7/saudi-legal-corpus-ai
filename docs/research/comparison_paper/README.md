@@ -1,5 +1,41 @@
 # Paper 6 — The Second Jurisdiction
 
+> ## STOP — the central measure was wrong, and every number below it is withdrawn
+>
+> This paper counted effects flagged `RequiresApplied="true"` and read them as
+> *amendments in force that the service has not incorporated into the text it
+> displays*. That reading came from the shape of the data. It was checked
+> against the publisher's prose, which describes flagging "unapplied effects",
+> and the check passed — because the prose does not distinguish the two cases
+> the data does.
+>
+> Each effect also carries `<ukm:InForce>`, a child element the collector's
+> attribute-only parse never captured. Almost all of them read
+> `Prospective="true"`: the amendment has been **enacted but has not come into
+> force**. The service is not behind on those. Applying them would misstate the
+> law, and withholding them is correct.
+>
+> In a sample of six affected Acts spanning the collection, **1,477 of 1,480
+> flagged effects are prospective and 3 are in force**. Two further Acts
+> checked in full — the Road Traffic Act 1988 and the Social Security
+> Administration Act 1992 — are 261/261 and 194/194 prospective.
+>
+> So "513 Acts display text the service says is out of date" is false, and so
+> is every figure derived from it: the tail, the concentration, the
+> maintained-but-stale cross-tabulation, both figures, and the manuscript's
+> framing. A second consequence: this README and the draft said commencement
+> dates are not published. **They are** — in `ukm:CommencementAuthority` and
+> `ukm:InForceDates`, on every effect. The claim that the publisher withholds
+> the field needed to check its own service standard was the opposite of true.
+>
+> What survives is a real and smaller question: how many flagged effects *are*
+> in force and unapplied, and for how long. That is measurable from the same
+> endpoint once `InForce` is captured. The collector must be extended and the
+> statute book swept again before any number here is used.
+>
+> Nothing below this notice has been revised yet. It is left in place because
+> the sequence that produced the error is part of the record.
+
 *Working title: does the finding travel? Applying a provenance schema
 prospectively to a second state's published law.*
 
