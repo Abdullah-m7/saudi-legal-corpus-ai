@@ -1,0 +1,1513 @@
+{
+  "provenance_layer": {
+    "articles_with_a_status_field": 15408,
+    "distinct_status_strings": 158,
+    "articles_whose_status_is_a_provenance_statement": 11704,
+    "articles_excluded_not_a_provenance_statement": 3704,
+    "excluded_strings": [
+      "UNCHANGED",
+      "AMENDED",
+      "AMENDED_DATED",
+      "MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER",
+      "ساري",
+      "REPEALED",
+      "ADDED_DATED",
+      "ADDED",
+      "AMENDED_UNDATED",
+      "AMENDED_TEXT_UNCONFIRMED",
+      "AMENDED_CURRENT_TEXT_UNCONFIRMED",
+      "ORIGINAL_TEXT_INCOMPLETE"
+    ],
+    "note": "The status field mixes provenance statements with lifecycle values such as UNCHANGED. Only the former are measured; the mixture is itself reported in the paper as a finding about uncontrolled provenance vocabularies.",
+    "tracks_with_a_provenance_statement": 200,
+    "measures": {
+      "official_source_unreachable": {
+        "articles": 2345,
+        "article_share": 0.2004,
+        "tracks": 56,
+        "track_share": 0.28
+      },
+      "reached_through_a_web_archive": {
+        "articles": 2443,
+        "article_share": 0.2087,
+        "tracks": 56,
+        "track_share": 0.28
+      },
+      "single_source_only": {
+        "articles": 1199,
+        "article_share": 0.1024,
+        "tracks": 20,
+        "track_share": 0.1
+      },
+      "required_optical_or_visual_reconstruction": {
+        "articles": 958,
+        "article_share": 0.0819,
+        "tracks": 28,
+        "track_share": 0.14
+      },
+      "defect_in_the_official_source": {
+        "articles": 575,
+        "article_share": 0.0491,
+        "tracks": 13,
+        "track_share": 0.065
+      },
+      "multi_source_cross_verification": {
+        "articles": 10078,
+        "article_share": 0.8611,
+        "tracks": 175,
+        "track_share": 0.875
+      }
+    }
+  },
+  "verification_tiers": {
+    "taxonomy": {
+      "TIER_1_PRIMARY_MULTI_SOURCE": "مصدران رسميان مستقلان على الأقل (أو أكثر) متطابقان دون أي فجوة وصول غير محلولة — مثل قاعدة بيانات بوابة وزارة العدل مقابل نسخة PDF الرسمية المنشورة من نفس البوابة، أو هيئة البيعة/هيئة الخبراء (BOE) مق",
+      "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": "مصدر رسمي أساسي واحد تم الوصول إليه واعتماد نصه الحاكم، مع تدقيق مقارن مقابل مصادر ثانوية غير حكومية (nezams.com، qadha.org.sa، تغطية صحفية، فحص هيكلي في FAOLEX، إلخ) دون تأكيد نصي من مصدر رسمي ثانٍ م",
+      "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": "تعذّر الوصول إلى البوابة الرسمية الأساسية (عادة بوابة هيئة الخبراء BOE) في جولة البناء هذه؛ يستند النص بالكامل إلى مصدرين ثانويين مستقلين (أو أكثر) متطابقين مع بعضهما البعض، دون أي تأكيد من مصدر رسمي ",
+      "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": "أحادي المصدر (رسمي أو ثانوي) لجزء ذي حجم معتبر من المسار دون أي تدقيق مقارن، و/أو المسار موثّق صراحة بأنه ذو ثقة متفاوتة على مستوى المادة (مثل نظام المرور، نظام السوق المالية، نظام مكافحة الرشوة، الفص"
+    },
+    "tracks_by_tier_registry_wide": {
+      "TIER_1_PRIMARY_MULTI_SOURCE": 127,
+      "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 88,
+      "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 39,
+      "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 37
+    },
+    "tracks_with_per_article_variation": 21,
+    "articles_by_tier": {
+      "TIER_1_PRIMARY_MULTI_SOURCE": 7509,
+      "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 2208,
+      "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 525,
+      "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 1462
+    },
+    "article_share_by_tier": {
+      "TIER_1_PRIMARY_MULTI_SOURCE": 0.6416,
+      "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 0.1887,
+      "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 0.0449,
+      "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 0.1249
+    },
+    "tracks_by_tier_in_this_sample": {
+      "TIER_1_PRIMARY_MULTI_SOURCE": 110,
+      "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 52,
+      "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 11,
+      "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 27
+    },
+    "articles_in_a_track_with_no_tier_record": 0,
+    "articles_without_a_cross_verified_official_primary": 1987,
+    "share_without_a_cross_verified_official_primary": 0.1698
+  },
+  "official_record_disagrees_with_itself": {
+    "measure": "The official record contradicting itself --- a portal whose displayed article and whose own change log differ, or which contradicts another part of itself. Reported separately from mere staleness against an independent source, which is a weaker claim.",
+    "separately_stale_against_another_source": {
+      "articles": 82,
+      "tracks": 2
+    },
+    "distinct_strings": 4,
+    "articles_affected": 57,
+    "tracks_affected": 4,
+    "cases": [
+      {
+        "track": "environmental_law",
+        "article": 1,
+        "status": "BOE_WAYBACK_X_GREEN_ORG_PDF_X_NEZAMS_TRIPLE_VERIFIED_ART1_BOE_SELF_CONTRADICTION"
+      },
+      {
+        "track": "press_law",
+        "article": 5,
+        "status": "TIER_1_BOE_WAYBACK_FEB2026_NEARLIVE_CLEAN_CHANGELOG_POPUP_TEXT_INCORPORATED_MAIN_BODY_STALE_X_MEDIA_GOV_SA_OFFICIAL_PDF_STRUCTURAL_SCRAMBLED_EXTRACTION_X_WIPOLEX_NEZAMS_QANOONIAH_CROSSCHECK_LIVE_BOE_UNREACHABLE_DIRECT"
+      },
+      {
+        "track": "engineering_practice_law",
+        "article": 1,
+        "status": "BOE_CHANGELOG_COM_RESOLUTION_250_1444H_QUOTED_BUT_BEFORE_PHRASE_MISMATCH_X_MAIN_BODY_STABLE_STALE_INGESTED_X_SAUDIENG_SA_OFFICIAL_PDF_THIRD_DIVERGENT_WORDING_UNRESOLVED_THREE_WAY_LIVE_BOE_UNREACHABLE"
+      },
+      {
+        "track": "travel_documents_law",
+        "article": 6,
+        "status": "BOE_CHANGELOG_PARA2_PHRASE_INSERTION_CLEAN_X_NEZAMS_COM_SUPPLIES_CM217_1439H_DECREE_CITATION_BOE_CHANGELOG_ITSELF_OMITS_DECREE_NUMBER_LIVE_BOE_UNREACHABLE"
+      }
+    ]
+  },
+  "freshness": {
+    "total_tracks": 291,
+    "known_source_staleness_risk_count": 16,
+    "tracks_without_a_resolvable_official_source_file": 1,
+    "methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts i"
+  },
+  "string_classification_table": [
+    {
+      "string": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+      "articles": 4520,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "UNCHANGED",
+      "articles": 3279,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL",
+      "articles": 721,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "articles": 391,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED",
+      "articles": 261,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "HRSD_CONSOLIDATED_CROSS_CHECKED_BOE",
+      "articles": 249,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "KSU_1440H_SINGLE_SOURCE_STRUCTURALLY_CROSS_CHECKED_VS_HRSD",
+      "articles": 245,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+      "articles": 224,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "NEZAMS_PRIMARY_X_RAKADVOCATE_SPOT_CHECKED",
+      "articles": 180,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "AMENDED",
+      "articles": 175,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "KSU_MIRROR_X_QISTAS_PARTIAL_VERBATIM_X_MULTISOURCE_STRUCTURAL_CORROBORATION",
+      "articles": 170,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "UQN_GAZETTE_WAYBACK_ARCHIVE_ORIGINAL_TEXT_PRESS_CORROBORATED_1444_AMENDMENT_TEXT_UNOBTAINED",
+      "articles": 166,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "REEXTRACTED_FROM_OFFICIAL_MOF_PDF_CROSS_CHECKED",
+      "articles": 157,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "SAMA_RULEBOOK_PDF_SINGLE_SOURCE_LIGATURE_TRANSPOSITION_CORRECTED",
+      "articles": 133,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED",
+      "articles": 128,
+      "is_provenance_statement": true,
+      "measures": [
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "MCIT_CST_DUAL_PRIMARY_SOURCE_TEXT_LAYER_REMEDIATED",
+      "articles": 108,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "UQN_GOV_SA_PRIMARY_OFFICIAL_GAZETTE_X_QANOONSA_INDEPENDENT_SECONDARY_ARTICLE_BY_ARTICLE_CROSS_VERIFIED_X_ARGAAM_TERTIARY_APPROVAL_CORROBORATED_BOE_LIVE_UNREACHABLE",
+      "articles": 107,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "HRSD_OFFICIAL_PDF_OCR_IMAGE_CROSS_CHECKED_BILINGUAL_FORM",
+      "articles": 102,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "articles": 99,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "MIRROR_TEXT_CROSS_CHECKED_AGAINST_OFFICIAL_MOF_PDF",
+      "articles": 99,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "TIER_2_MOM_WAYBACK_NOV2024_VISION_READ_FULL_X_UQN_GOV_SA_PARTIAL_CROSSCHECK_ART69_LIVE_MOM_UNREACHABLE_DIRECT",
+      "articles": 99,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "CMA_GOV_SA_OFFICIAL_PDF_PRIMARY_X_LIGATURE_DEFECT_CORRECTED_X_AMENDMENT_FOOTNOTE_CROSSCHECK",
+      "articles": 95,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED",
+      "articles": 92,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE",
+      "articles": 86,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED",
+      "articles": 82,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY",
+      "articles": 81,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT",
+      "articles": 81,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "AMENDED_DATED",
+      "articles": 76,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "HRSD_OFFICIAL_PDF_OCR_IMAGE_CROSS_CHECKED",
+      "articles": 75,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "articles": 74,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_PROXY_X_NEZAMS_X_QADHA_REFERENCE_TRIPLE_VERIFIED",
+      "articles": 74,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED",
+      "articles": 71,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "TIER_1_BOE_WAYBACK_SIX_TIMEPOINT_2019_2025_ZERO_AMENDMENTS_X_MOMAH_GOV_SA_OFFICIAL_TWO_DATED_PDFS_X_NEZAMS_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 69,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "RESIDENCY_LAW_SECONDARY_CROSS_VERIFIED_MOHAMAH_RAKADVOCATE_ISLAMPORT_NSHR_PDF_STRUCTURAL_MATCH_BOE_NOT_INDEXED_MOI_LIVE_AND_WAYBACK_UNREACHABLE",
+      "articles": 69,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER",
+      "articles": 68,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED",
+      "articles": 66,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_WAYBACK_X_FAOLEX_CROSS_VERIFIED",
+      "articles": 64,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MATCHES_UQN_GAZETTE_X_FSC_INDEPENDENT_CROSS_CHECK",
+      "articles": 63,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_PRIMARY_X_NEZAMS_SPOTCHECK_X_QANOONSA_STRUCTURE_VERIFIED",
+      "articles": 63,
+      "is_provenance_statement": true,
+      "measures": [
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MOF_OFFICIAL_PDF_DIRECT_SINGLE_SOURCE_VISUALLY_VERIFIED",
+      "articles": 57,
+      "is_provenance_statement": true,
+      "measures": [
+        "required_optical_or_visual_reconstruction",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "articles": 55,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF",
+      "articles": 53,
+      "is_provenance_statement": true,
+      "measures": [
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED",
+      "articles": 53,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "WIPO_LEX_PRIMARY_PDF_X_BOE_STATUS_CARD_CROSS_VERIFIED",
+      "articles": 52,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "QANOONSA_COM_RAW_HTML_DIRECT_FETCH_MAR2026_PUBLISH_APR2026_WAYBACK_JUL2026_LIVE_STABLE_X_NCAR_GOV_SA_OFFICIAL_ARCHIVE_METADATA_CROSSCHECK_X_QANONIAH_COM_INDEX_CONFIRM_BOE_NO_DEDICATED_LAWID_MOI_GDP_UNREACHABLE_UQN_GOV_SA_REACHABLE_BUT_SPECIFIC_GAZETTE_PAGE_NOT_LOCATED_THIS_PASS",
+      "articles": 52,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MATCHES_MC_GOV_SA_LIVE_PORTAL",
+      "articles": 49,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "BOE_WAYBACK_X_GREEN_ORG_PDF_X_NEZAMS_TRIPLE_VERIFIED_ART1_BOE_SELF_CONTRADICTION",
+      "articles": 49,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "TGA_WAYBACK_DOUBLE_SNAPSHOT_X_QISTAS_PARTIAL_CROSSCHECK_LIVE_TGA_UNREACHABLE",
+      "articles": 49,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_OFFICIAL_PRIMARY_TEXT_AR_STRUCTURAL_XVERIFIED_REGA_PDF",
+      "articles": 49,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "ساري",
+      "articles": 45,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED_LAW_QUOTES",
+      "articles": 45,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_X_NEZAMS_FULL_CROSS_VERIFIED",
+      "articles": 44,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "articles": 44,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "required_optical_or_visual_reconstruction",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "articles": 44,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "TIER_1_BOE_WAYBACK_FEB2026_NEARLIVE_CLEAN_TEXT_X_MEDIA_GOV_SA_OFFICIAL_PDF_STRUCTURAL_SCRAMBLED_EXTRACTION_X_WIPOLEX_NEZAMS_QANOONIAH_CROSSCHECK_LIVE_BOE_UNREACHABLE_DIRECT",
+      "articles": 43,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_ARCHIVE_X_BFC_GOV_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503",
+      "articles": 41,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_PRIMARY_SOURCE_MCIT_PDF_CROSS_CHECKED",
+      "articles": 41,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "NEZAMS_HTML_SINGLE_FULLTEXT_X_QISTAS_PREAMBLE_PARTIAL_MATCH",
+      "articles": 40,
+      "is_provenance_statement": true,
+      "measures": [
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "NEZAMS_FULLTEXT_SINGLE_AGGREGATOR_X_UQN_GAZETTE_DECREE_METADATA_X_WEBSEARCH_PARTIAL_VERBATIM_CROSSCHECK_X_MUHAMAPP_STRUCTURAL_PARTIAL_LIVE_BOE_UNREACHABLE_WAYBACK_CONTENT_BLOCKED_BY_SANDBOX_EGRESS",
+      "articles": 37,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "GOVERNMENT_PRIMARY_OFFICIAL_COUNCIL_PUBLICATION_VIA_WAYBACK_VISUAL_VERIFICATION",
+      "articles": 34,
+      "is_provenance_statement": true,
+      "measures": [
+        "reached_through_a_web_archive",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "articles": 32,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "articles": 32,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED",
+      "articles": 32,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_HTML_AMENDMENT_NODE_CROSS_VERIFIED",
+      "articles": 31,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "SINGLE_PRIMARY_SOURCE_WIPO_STRUCTURAL_CROSS_CHECK_MANUAL_LIGATURE_CORRECTION",
+      "articles": 31,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "articles": 30,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_OFFICIAL_PRIMARY_X_QANOONSA_FULLTEXT_X_AUNKLAW_STRUCTURAL_CROSS_VERIFIED_GACA_GOV_SA_UNREACHABLE",
+      "articles": 30,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "MOH_PDF_PRIMARY_X_SECOND_MOH_EXPORT_VERIFIED_WAYBACK_IDENTICAL_BOE_NCAR_UNREACHABLE",
+      "articles": 30,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "articles": 30,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_OFFICIAL_PRIMARY_TEXT_AR_CROSS_VERIFIED_AJEL_QANOONSA",
+      "articles": 29,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "DUAL_PRIMARY_SOURCE_BOE_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "articles": 28,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "SECONDARY_SOURCE_STRUCTURAL_WIPO_CROSS_CHECK_BOE_UNREACHABLE",
+      "articles": 28,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "articles": 28,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "REPEALED",
+      "articles": 27,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED",
+      "articles": 27,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "REGA_OFFICIAL_PDF_VISUALLY_VERIFIED_X_UQN_GAZETTE_FULLTEXT_CROSSCHECK_TIER1_BOE_UNREACHABLE",
+      "articles": 27,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "GOVERNMENT_AGENCY_OFFICIAL_PDF_PRIMARY_SOURCE_BOE_ARCHIVE_CROSS_VERIFIED",
+      "articles": 27,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOARD_OFFICIAL_PDF_VISUALLY_ADJUDICATED_GAZETTE_CONFIRMED",
+      "articles": 26,
+      "is_provenance_statement": true,
+      "measures": [
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "articles": 26,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_BOE_WAYBACK_SIX_TIMEPOINT_PRIMARY_X_AWQAF_GOV_SA_OFFICIAL_SCAN_X_NEZAMS_X_WEBSEARCH_PRESS_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 25,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_OFFICIAL_PRIMARY_X_ARGAAM_PRESS_CROSSCHECK_DGA_BOE_UNREACHABLE",
+      "articles": 25,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "MISA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "articles": 25,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "UNAMENDED_TRIPLE_TIMEPOINT_BOE_WAYBACK_X_FAOLEX_PDF_MIRROR_X_NEZAMS_PARTIAL_X_QANOONSA_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 24,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MATCHES_OFFICIAL_SCAN_VISUALLY_VERIFIED",
+      "articles": 24,
+      "is_provenance_statement": true,
+      "measures": [
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_BOE_WAYBACK_PRIMARY_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 22,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "NEZAMS_COM_SINGLE_FULLTEXT_SOURCE_BOE_LIVE_TLS_RESET_WAYBACK_MACHINE_EGRESS_AND_TOOL_BLOCKED_MAWANI_GOV_SA_WAF_405_BLOCKED_QANOONSA_NO_DEDICATED_PAGE_FOUND_INDEPENDENT_METADATA_ONLY_CROSSCHECK_TIER_4_SINGLE_SOURCE",
+      "articles": 20,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "SAMA_OFFICIAL_PDF_OCR_X_NEZAMS_CROSS_VERIFIED",
+      "articles": 20,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "NEZAMS_SSR_HTML_LIVE_FETCH_X_LEXISMIDDLEEAST_STRUCTURAL_CROSSCHECK_ARTS_1_20_ONLY_BOE_LIVE_AND_WAYBACK_UNREACHABLE",
+      "articles": 20,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_PRIMARY_X_SECONDARY_CROSS_VERIFIED",
+      "articles": 20,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "SECONDARY_SINGLE_SOURCE_VERBATIM_PARTIAL_CROSS_CHECK_BOE_UNREACHABLE",
+      "articles": 19,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503",
+      "articles": 19,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_BOE_WAYBACK_DUAL_SNAPSHOT_BASE_TEXT_X_NEZAMS_TRIPLE_CROSS_CHECK_X_QANOONSA_UMM_AL_QURA_5065_FOR_RESOLUTION_430_ARTS_3_4_BOE_POPUP_VERBATIM_MATCH_ARTS_1_5_8_10_QANOONSA_ONLY_LIVE_BOE_AND_CST_GOV_SA_BOTH_TLS_RESET_THIS_PASS",
+      "articles": 19,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "NCOSH_OFFICIAL_PDF_PRIMARY_VISUAL_REEXTRACTION_UQN_GAZETTE_CROSS_VERIFIED",
+      "articles": 19,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "articles": 18,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "PRIMARY_MC_GOVSA_PDF_X_SPA_OFFICIAL_CORROBORATION_TIER2",
+      "articles": 18,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "UQN_GOV_SA_OFFICIAL_GAZETTE_DIRECT_HTML_HTTP200_X_QANOONSA_COM_INDEPENDENT_SECONDARY_WORDFORWORD_MATCH_ALL_18_ARTICLES_X_LAWS_BOE_GOV_SA_AND_SAUDIENG_SA_LIVE_UNREACHABLE_WAYBACK_CONTENT_PATH_BLOCKED_CDX_ONLY",
+      "articles": 18,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_TWO_INDEPENDENT_WAYBACK_SNAPSHOTS_LITERAL_MATCH_TIER1_X_NEZAMS_PARTIAL_CROSSCHECK_LIVE_PORTAL_503",
+      "articles": 18,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_THREE_TIMEPOINT_NOV2019_DEC2022_JAN2026_TEXT_STABLE_X_NEZAMS_COM_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 18,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_SNAPSHOT_UNODC_ENGLISH_SUBSTANCE_VERIFIED",
+      "articles": 17,
+      "is_provenance_statement": true,
+      "measures": [
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_PRIMARY_X_NEZAMS_X_SAUDIPEDIA_TRIPLE_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "articles": 17,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED",
+      "articles": 17,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "HRSD_SINGLE_SOURCE_TEXT_LAYER_ARTIFACTS_MANUALLY_REVIEWED_LOWER_CONFIDENCE",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_THREE_TIMEPOINT_NOV2019_NOV2022_FEB2026_TEXT_STABLE_X_SAUDIENG_SA_OFFICIAL_PDF_WAYBACK_JUN2025_WORDFORWORD_MATCH_X_QANOONSA_QANONIAH_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_REGA_OWN_SITE_SCANNED_PDF_DIRECT_VISUAL_READ_X_NEZAMS_COM_PARTIAL_CROSSCHECK_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE_THIS_PASS",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "SDAIA_OFFICIAL_SITE_PDF_PRIMARY_JINA_READER_PROXY_LIGATURE_ARTIFACT_RECONSTRUCTED_X_QISTAS_LEXISMIDDLEEAST_SPA_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_BOE_WAYBACK_DUAL_SNAPSHOT_DEC2024_JUL2025_X_NEZAMS_COM_BASE_TEXT_CROSS_VERIFIED_X_UQN_GOV_SA_PRIMARY_GAZETTE_CAPTURE_FOR_ARTICLE_6_RESOLUTION_12_BOE_STALE_FOR_THAT_ARTICLE_X_ARTICLE_5_ENERGY_MINISTRY_AMENDMENT_CONFIRMED_TO_EXIST_BUT_NOT_TEXTUALLY_INCORPORATED_LIVE_BOE_TLS_RESET_THIS_PASS",
+      "articles": 16,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_SOCPA_PDF_VIA_WAYBACK_TESSERACT_OCR_PRIMARY_X_PDFTOTEXT_DIGIT_CROSSCHECK_X_SECONDARY_SOURCES_LIVE_SOCPA_UNREACHABLE",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_PRIMARY_X_REGA_PRIMARY_CROSS_VERIFIED",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "CST_OFFICIAL_PDF_PRIMARY_VISUAL_TRANSCRIPTION_EN_STRUCTURAL_CROSSCHECK",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "UQN_GOV_SA_OFFICIAL_GAZETTE_SSR_HTML_X_QANOONSA_COM_WORD_FOR_WORD_MATCH_X_ARGAAM_COM_TERTIARY_CORROBORATION_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE_THIS_PASS_WHOLESALE_REISSUE_ALL_ARTICLES_ORIGINAL",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "UQN_OFFICIAL_GAZETTE_LIVE_FETCH_PRIMARY_X_QANOONSA_COM_BYTE_LEVEL_CROSSCHECK_X_ARGAAM_COM_QUOTE_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "ZATCA_PORTAL_PRIMARY_TWO_PIPELINE_OCR_X_SECONDARY_CROSS_VERIFIED",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_LIVE_HTML_PRIMARY_QANOONSA_TRIPLE_PAGE_CROSSVERIFIED_ARTICLE_RENUMBERING_DISCLOSED",
+      "articles": 15,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "PREMIUM_RESIDENCY_LAW_BOE_LIVE_UNREACHABLE_WAYBACK_MULTI_SNAPSHOT_2019_2025_X_MISA_OFFICIAL_CONSOLIDATED_PDF_CROSS_VERIFIED",
+      "articles": 14,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_BOE_WAYBACK_THREE_TIMEPOINT_JAN2020_DEC2022_MAY2025_PRIMARY_X_TVTC_OFFICIAL_SITE_CITATION_ONLY_X_NEZAMS_QANOONSA_WEBSEARCH_CROSSCHECK_LIVE_BOE_AND_LIVE_TVTC_UNREACHABLE",
+      "articles": 13,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_OFFICIAL_PRIMARY_TEXT_AR_X_REGA_OFFICIAL_PORTAL_DUAL_PRIMARY_CROSSVERIFIED",
+      "articles": 12,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_OFFICIAL_PRIMARY_TEXT_AR_DUAL_PRIMARY_CROSS_VERIFIED_REGA_OFFICIAL_SITE",
+      "articles": 12,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "REGA_BOARD_RESOLUTION_PDF_PRIMARY_VISUAL_REEXTRACTION_PRESS_CORROBORATED",
+      "articles": 12,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "UQN_GAZETTE_PDF_CROSS_VERIFIED_HTML_MIRROR",
+      "articles": 12,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "ADDED_DATED",
+      "articles": 11,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_HTML_CROSS_VERIFIED",
+      "articles": 11,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_FULLTEXT_REPLACEMENT_CLEAN_INCORPORATED_X_NEZAMS_COM_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 10,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "articles": 9,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "ADDED",
+      "articles": 9,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "articles": 9,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "QANOONSA_SECONDARY_TEXT_UQN_PRIMARY_PAGE_TRUNCATED_STRUCTURALLY_XVERIFIED_LEXIS",
+      "articles": 9,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "MIXED_TIER_SEE_PER_ARTICLE_STATUS_BOE_WAYBACK_THREE_TIMEPOINT_PRIMARY_X_SAUDIENG_SA_OFFICIAL_SITE_WAYBACK_THREE_TIMEPOINT_X_AAWSAT_PRESS_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 9,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "HRSD_OFFICIAL_PDF_ACTUALTEXT_OCR_IMAGE_CROSS_CHECKED",
+      "articles": 8,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "NCA_OFFICIAL_PDF_PRIMARY_TEXTLAYER_X_VISUAL_RENDER_CROSSCHECK_X_NEWS_TOPICAL_SECONDARY_TIER2_DECISION_NUMBER_UNCONFIRMED_CITED_NUMBER_BELONGS_TO_COMPANION",
+      "articles": 8,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "PREMIUM_RESIDENCY_REGULATION_AUNKLAW_SOLE_VERBATIM_SOURCE_QANONIAH_PAYWALLED_BEYOND_ART5_NCAR_BOE_PRGOV_UNREACHABLE",
+      "articles": 8,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable",
+        "single_source_only"
+      ]
+    },
+    {
+      "string": "MOF_OFFICIAL_PDF_DIRECT_X_QANONIAH_API_CROSS_VERIFIED",
+      "articles": 8,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_THREE_TIMEPOINT_NOV2019_DEC2022_DEC2025_TEXT_STABLE_X_NEZAMS_COM_QISTAS_COM_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 8,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "BOE_PORTAL_MULTI_SOURCE_CROSS_CHECKED",
+      "articles": 7,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification"
+      ]
+    },
+    {
+      "string": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QANOONSA_STRUCTURAL_FULL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "articles": 7,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "TIER_1_BOE_WAYBACK_FEB2026_NEARLIVE_CLEAN_CHANGELOG_POPUP_TEXT_INCORPORATED_MAIN_BODY_STALE_X_MEDIA_GOV_SA_OFFICIAL_PDF_STRUCTURAL_SCRAMBLED_EXTRACTION_X_WIPOLEX_NEZAMS_QANOONIAH_CROSSCHECK_LIVE_BOE_UNREACHABLE_DIRECT",
+      "articles": 6,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "AMENDED_UNDATED",
+      "articles": 5,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "PREMIUM_RESIDENCY_REGULATION_QANONIAH_X_AUNKLAW_VERBATIM_CROSS_VERIFIED_NCAR_BOE_PRGOV_UNREACHABLE",
+      "articles": 5,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "AMENDED_TEXT_UNCONFIRMED",
+      "articles": 4,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "AMENDED_CURRENT_TEXT_UNCONFIRMED",
+      "articles": 2,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "BOE_CHANGELOG_FULLTEXT_REPLACEMENT_M134_1440H_CLEAN_INCORPORATED_X_NEZAMS_COM_QISTAS_COM_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 2,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "SECONDARY_PRESS_CONVERGENCE_AMENDMENT_UNCONFIRMED_VERBATIM",
+      "articles": 1,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "SECONDARY_SOURCE_PLUS_PRIMARY_OCR_CONFIRMED_AMENDMENT",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "required_optical_or_visual_reconstruction"
+      ]
+    },
+    {
+      "string": "ORIGINAL_TEXT_INCOMPLETE",
+      "articles": 1,
+      "is_provenance_statement": false,
+      "measures": []
+    },
+    {
+      "string": "BOE_CHANGELOG_COM_RESOLUTION_250_1444H_QUOTED_BUT_BEFORE_PHRASE_MISMATCH_X_MAIN_BODY_STABLE_STALE_INGESTED_X_SAUDIENG_SA_OFFICIAL_PDF_THIRD_DIVERGENT_WORDING_UNRESOLVED_THREE_WAY_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_TWO_STEP_M14_1405H_FULLTEXT_PLUS_M88_1444H_CLEAN_SUBSTITUTION_INCORPORATED_X_NEWS_CROSSCHECK_JAN2023_MOTHER_TRANSMISSION_AMENDMENT_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_WAYBACK_THREE_TIMEPOINT_TEXT_STABLE_EXCEPT_2019_TYPO_VARIANT_CONFIRMED_CLERICAL_NOT_A_DECREE_AMENDMENT_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "GOVERNMENT_PRIMARY_SPA_ANNOUNCEMENT_VERIFIED",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": []
+    },
+    {
+      "string": "BOE_CHANGELOG_REPEALED_M134_1440H_TEXT_PRESERVED_X_NEZAMS_COM_QISTAS_COM_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_PARA2_PHRASE_INSERTION_CLEAN_X_NEZAMS_COM_SUPPLIES_CM217_1439H_DECREE_CITATION_BOE_CHANGELOG_ITSELF_OMITS_DECREE_NUMBER_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_PHRASE_SUBSTITUTION_M11_1443H_CLEAN_X_UQN_GOV_SA_OFFICIAL_GAZETTE_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_NEW_ARTICLE_ADDED_M11_1443H_X_UQN_GOV_SA_OFFICIAL_GAZETTE_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_PARA3_FULLTEXT_REPLACEMENT_M11_1443H_CLEAN_X_UQN_GOV_SA_OFFICIAL_GAZETTE_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "BOE_CHANGELOG_TWO_STEP_M48_1437H_FULLTEXT_PLUS_M71_1444H_PARAGRAPH_ADDITION_CLEAN_INCORPORATED_X_NEZAMS_COM_QISTAS_COM_CROSSCHECK_LIVE_BOE_UNREACHABLE",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "multi_source_cross_verification",
+        "official_source_unreachable"
+      ]
+    },
+    {
+      "string": "QANOONSA_COM_RAW_HTML_DIRECT_FETCH_MAR2026_PUBLISH_APR2026_WAYBACK_JUL2026_LIVE_STABLE_X_NCAR_GOV_SA_OFFICIAL_ARCHIVE_METADATA_CROSSCHECK_X_QANONIAH_COM_INDEX_CONFIRM_BOE_NO_DEDICATED_LAWID_MOI_GDP_UNREACHABLE_UQN_GOV_SA_REACHABLE_BUT_SPECIFIC_GAZETTE_PAGE_NOT_LOCATED_THIS_PASS_PARA3_SOURCE_TYPO_VERBATIM_PRESERVED_NOT_SILENTLY_CORRECTED",
+      "articles": 1,
+      "is_provenance_statement": true,
+      "measures": [
+        "defect_in_the_official_source",
+        "multi_source_cross_verification",
+        "official_source_unreachable",
+        "reached_through_a_web_archive"
+      ]
+    },
+    {
+      "string": "AMENDED_PENDING_NOT_YET_EFFECTIVE",
+      "articles": 1,
+      "is_provenance_statement": false,
+      "measures": []
+    }
+  ]
+}
