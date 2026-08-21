@@ -22,7 +22,9 @@ Francis)** — requirements verified from the journal's own instructions. See
 | `fig1_churn.*` / `fig2_citation_tiers.*` | The two figures. |
 | `main.pdf` | Identified build, typeset. |
 | `main_anon.pdf` | Anonymised build, typeset. |
-| `submission_manuscript.docx` / `submission_title_page.docx` | Word builds, ready for a journal that wants them. |
+| `submission_manuscript_with_author_details.docx` | **Upload 1** — full manuscript, author block and all declarations. |
+| `submission_manuscript_anonymous.docx` | **Upload 2** — full manuscript, anonymised and audited. |
+| `fig1_churn.tiff` / `fig2_citation_tiers.tiff` | **Upload 3–4** — figures in a format the journal accepts. |
 
 ## Reproduce
 
@@ -159,7 +161,8 @@ Requirements, all verified from the journal's instructions page:
 | Format | Word; figures supplied separately |
 | Figures | 300 dpi colour; preferred formats PS, JPEG, TIFF or Word — **not EPS**, so `make_figures.py` also emits TIFF |
 | Submission | **T&F Submission Portal, `rp.tandfonline.com`** — not ScholarOne, and a separate account from a tandfonline.com reading account |
-| Required declarations | funding (state "none" if none), disclosure/competing interests, **declaration of generative AI use**, CRediT roles, biographical note (≤200 words), data availability with DOI |
+| Required declarations | funding (state "none" if none), disclosure/competing interests, **declaration of generative AI use**, CRediT roles, biographical note (≤200 words), data availability with DOI — all written into the manuscript's declarations section, which the `\ifanon` switch removes from the anonymous build |
+| Upload format | **two complete manuscripts** — "with author details" and "anonymous" — not a manuscript plus a separate title page |
 
 The manuscript already conforms on every count that was checkable: 4,706 words
 against a 10,000 ceiling, a 260-word abstract against 300, six keywords, OSCOLA
@@ -188,10 +191,12 @@ different publishers, different manuscripts.
       "10,000–12,000 words preferred" lead was wrong — it came from a generic
       Taylor & Francis PDF. The real rule is **no more than 10,000**, so the
       draft needs no expansion to qualify.
-- [ ] **Author to write two things only he can**: the declaration of generative
-      AI use (drafted in `build.py` as a starting point — it is a statement in
-      his name and must be confirmed or rewritten) and the biographical note
-      (≤200 words).
+- [x] Declaration of generative AI use — confirmed by the author and written
+      into the manuscript.
+- [x] Biographical note drafted (90 words, within the 200 limit) from verifiable
+      facts only: independent researcher, built the corpus, current lines of
+      work. **The author should read it and correct anything that misdescribes
+      him** — it is a statement about a person, not about data.
 - [ ] Optional but worth considering: the paper sits at under half the length
       ceiling. It qualifies as it stands, but a journal whose norm is longer
       articles may read it as slight. The material that would strengthen it is

@@ -344,38 +344,53 @@ def main():
     print("anonymised build")
     latex("main_anon", prepare(anon=True, for_docx=False))
 
-    print("submission manuscript")  # reads main_anon.aux for \\ref numbers
-    (HERE / "submission_manuscript.tex").write_text(
-        prepare(anon=True, for_docx=True), encoding="utf-8")
+    # The submission portal asks for two complete manuscripts --- one carrying
+    # the author's details and one anonymous --- rather than a manuscript plus
+    # a separate title page. Both are produced from the same source.
+    print("submission manuscripts")  # read main_anon.aux for \\ref numbers
     ref = double_spaced_reference()
-    words = docx("submission_manuscript", "submission_manuscript.docx", ref)
+    (HERE / "submission_manuscript_anonymous.tex").write_text(
+        prepare(anon=True, for_docx=True), encoding="utf-8")
+    words = docx("submission_manuscript_anonymous",
+                 "submission_manuscript_anonymous.docx", ref)
+    (HERE / "submission_manuscript_with_author_details.tex").write_text(
+        prepare(anon=False, for_docx=True), encoding="utf-8")
+    docx("submission_manuscript_with_author_details",
+         "submission_manuscript_with_author_details.docx", ref)
     limit = 10000  # The Theory and Practice of Legislation, Original Article
-    print(f"  submission_manuscript.docx: {words} words including footnotes "
+    print(f"  anonymous: {words} words including footnotes "
           f"({'within' if words <= limit else 'OVER'} the {limit:,}-word limit)")
 
-    print("title page")
-    latex("submission_title_page",
-          TITLE_PAGE.replace("__WORDCOUNT__", f"{words:,}"))
-    docx("submission_title_page", "submission_title_page.docx", ref)
-
     print("anonymity audit")
-    leaks = [w for w in ("Almohammedi", "abdullah", "orcid", "Abdullah-m7",
-                         "github.com", "zenodo", "0009-0001")
-             if w.lower() in to_plain(HERE / "submission_manuscript.docx"
-                                      ).lower()]
+    terms = ("Almohammedi", "abdullah", "orcid", "Abdullah-m7",
+             "github.com", "zenodo", "0009-0001")
+    anon_text = to_plain(HERE / "submission_manuscript_anonymous.docx").lower()
+    leaks = [w for w in terms if w.lower() in anon_text]
     if leaks:
         sys.exit(f"anonymised manuscript leaks: {leaks}")
-    print("  submission_manuscript.docx: clean")
+    print("  anonymous: clean")
+    # The identified file must carry the details the anonymous one hides ---
+    # a silent failure here would submit two anonymous manuscripts.
+    named = to_plain(
+        HERE / "submission_manuscript_with_author_details.docx").lower()
+    missing = [w for w in terms if w.lower() not in named]
+    if missing:
+        sys.exit(f"identified manuscript is missing: {missing}")
+    print("  with author details: carries author, ORCID, repository and DOIs")
 
     for f in ("fig1_churn.eps", "fig2_citation_tiers.eps"):
         if not (HERE / f).exists():
             print(f"  ! {f} missing --- run make_figures.py")
 
-    clean("main_identified", "main_anon", "submission_title_page")
+    clean("main_identified", "main_anon")
     for junk in ("reference.docx",
                  "main_identified.tex", "main_identified.pdf",
                  "main_anon.tex", "main_anon.docx",
-                 "submission_manuscript.tex", "submission_title_page.tex"):
+                 "submission_manuscript.tex", "submission_manuscript.docx",
+                 "submission_manuscript_anonymous.tex",
+                 "submission_manuscript_with_author_details.tex",
+                 "submission_title_page.tex", "submission_title_page.docx",
+                 "submission_title_page.pdf"):
         f = HERE / junk
         if f.exists():
             f.unlink()
