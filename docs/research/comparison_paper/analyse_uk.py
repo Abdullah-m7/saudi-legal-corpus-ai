@@ -302,11 +302,15 @@ def main():
     cross = {}
     for a in affected:
         modified = (a.get("last_modified") or "")[:4]
-        years = [int(e["AffectingYear"]) for e in live_effects(a)
-                 if e.get("AffectingYear", "").isdigit()]
-        if not modified.isdigit() or not years:
+        # Not `years`: that name holds the collection's own year range, and
+        # rebinding it here left the coverage line reporting "2026-2026" for a
+        # collection spanning 1988 to 2026 --- which would have gone into the
+        # manuscript as the period the study covers.
+        affecting_years = [int(e["AffectingYear"]) for e in live_effects(a)
+                           if e.get("AffectingYear", "").isdigit()]
+        if not modified.isdigit() or not affecting_years:
             continue
-        decade = (as_of.year - min(years)) // 10 * 10
+        decade = (as_of.year - min(affecting_years)) // 10 * 10
         key = f"{modified}|{decade}"
         cross[key] = cross.get(key, 0) + 1
 
@@ -334,9 +338,13 @@ def main():
     total = sum(n for n, _, _ in per_act)
     top10 = sum(n for n, _, _ in per_act[:10])
 
+    if years and len(set(years)) != max(years) - min(years) + 1:
+        missing = sorted(set(range(min(years), max(years) + 1)) - set(years))
+        print(f"  ! collection has gaps: {missing}")
     results = {
         "coverage": {
             "years": [min(years), max(years)] if years else None,
+            "years_collected": len(set(years)),
             "acts_listed": len(acts),
             "acts_retrieved": len(got),
             "recovered_on_second_attempt": len(recovered),
@@ -427,7 +435,8 @@ def main():
                    encoding="utf-8")
 
     c, u = results["coverage"], results["unincorporated"]
-    print(f"years {c['years'][0]}-{c['years'][1]}   "
+    print(f"years {c['years'][0]}-{c['years'][1]} "
+          f"({c['years_collected']} collected)   "
           f"Acts listed {c['acts_listed']}, retrieved {c['acts_retrieved']} "
           f"({c['recovered_on_second_attempt']} on a second attempt), "
           f"never retrieved {c['acts_never_retrieved']}")
