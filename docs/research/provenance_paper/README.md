@@ -153,6 +153,34 @@ registry note. Two defects, both of the kind that survive a careless read:
    depending on the unit counted and how conservatively a mixed instrument is
    graded.
 
+## Five more defects, from the review of the expansion
+
+The added sections were reviewed on their own, and every one of these survived
+the drafting pass that produced them:
+
+5. **A synthesised worked example.** The method section illustrated a "complex"
+   provenance string with one that combined an archived capture, a ligature
+   correction, a gazette and two reproductions. **No such string exists** — it
+   was assembled from plausible parts. Replaced with a real one: an authority's
+   own site PDF fetched through a reader proxy, a ligature artefact
+   reconstructed, three secondary cross-checks, and the instrument's page not
+   located on the national portal at all. Twenty-one tokens, sixteen articles.
+6. **A misdescribed measure.** "The independent reproductions disagreed on 4.9%
+   of articles." That measure counts articles where a **defect was recorded** —
+   which includes ligature corruption from PDF extraction, an artefact rather
+   than a disagreement between sources. Reworded to say what the number is.
+7. **A wrong count of its own table.** "Four of the five fields are closed
+   vocabularies." Three are; one is an integer and one is free text.
+8. **Code size overstated in the flattering direction.** "About two hundred
+   lines of code" — the analysis is **462**. The claim was that the method is
+   cheap to replicate, so understating it by half was self-serving.
+9. **Two token counts wrong** in the worked examples (four → seven, twenty →
+   twenty-one).
+
+Defects 5 and 8 are the same failure in different clothes: a plausible number
+that was never checked because it sounded right, in a paper whose whole subject
+is checking what sounds right.
+
 ## The direction of the error is computed, not asserted
 
 The article-level sample does not cover every instrument, and the ones it
@@ -227,7 +255,7 @@ thing this paper measures.
 
 ## Next steps
 
-- [x] **Reframed for *Data & Policy* and expanded to 7,225 words** including
+- [x] **Reframed for *Data & Policy* and expanded to 7,297 words** including
       footnotes, against an approximate 8,000-word target. The empirical core is
       unchanged; what was added is the policy frame and the constructive half:
       who builds on the official record (§2), a minimal five-field provenance
@@ -235,9 +263,8 @@ thing this paper measures.
       schema is not already standard, what a data consumer can do without
       waiting for publishers, and how the method transfers to non-legal public
       data.
-- [ ] Re-review after the expansion. The rewrite already caught two of its own
-      defects — see below — but the added sections have not had an adversarial
-      pass of their own.
+- [x] **Independent review of the added sections complete** — five more
+      defects, listed below.
 - [ ] Request the APC waiver at submission — there is no funder.
 - [ ] Single-blind review means the anonymised build is not required, but
       `build.py` should keep producing it: the next venue may need it.

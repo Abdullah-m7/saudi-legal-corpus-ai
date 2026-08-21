@@ -246,8 +246,9 @@ they are endorsed across research funders, publishers and
 infrastructures.\footnote{Mark D Wilkinson and others, `The FAIR Guiding
 Principles for Scientific Data Management and Stewardship' (2016) 3 Scientific
 Data 160018.} A standard vocabulary for expressing it has existed since
-2013.\footnote{W3C, \emph{PROV-O: The PROV Ontology} (W3C Recommendation, 30
-April 2013).}
+2013.\footnote{Timothy Lebo, Satya Sahoo and Deborah McGuinness (eds),
+\emph{PROV-O: The PROV Ontology} (W3C Recommendation, 30 April 2013)
+\textless http://www.w3.org/TR/2013/REC-prov-o-20130430/\textgreater.}
 
 What this article adds is not another argument that provenance matters. It is
 an account of what provenance turns out to be \emph{for}, once a collection is
@@ -286,15 +287,17 @@ against the official PDF from the same portal, or that the live official portal
 was unreachable and the text rests on two independent secondary sources agreeing
 word for word. There are 15,408 such articles and 158 distinct strings.
 
-Two examples convey the register better than a description. One article's
-status reads, in effect, that the Ministry of Justice portal's API text was
-cross-checked against the official PDF from the same portal --- a
-single official channel, two artefacts, no difficulty. Another records that the
-live legislative portal was unreachable, that the text was taken from an
-archived capture of that portal, and that it was cross-verified against two
-independent reproductions and the official gazette, with one ligature defect
-from PDF extraction corrected and disclosed. Both are one field of one record.
-The first is four tokens long; the second is thirty.
+Two real examples convey the register better than a description. The
+commonest string in the corpus, carried by 4,520 articles, records that the
+Ministry of Justice portal's API text was cross-checked against the official
+PDF published from the same portal: one official channel, two artefacts, no
+difficulty. At the other extreme, one instrument's string records that the
+authority's own site PDF was the primary source but had to be fetched through
+a reader proxy, that a ligature artefact in it was reconstructed, that it was
+cross-checked against three independent secondary sources, and that the page
+for the instrument could not be located on the national legislative portal at
+all. Both are a single field of a single record; the first runs to seven
+tokens, the second to twenty-one.
 
 Each instrument also carries a verification tier assigned by hand: two or more
 official sources in agreement (tier 1); one official source cross-checked
@@ -603,9 +606,11 @@ this corpus was already trying to say.}
 Three properties of Table~\ref{tab:schema} matter more than its particular
 field names.
 
-It is \textbf{cheap}. Four of the five fields are closed vocabularies of three
-or four values, and a collection process that knows how it obtained a document
-knows all of them at the moment of collection. The expensive part of provenance
+It is \textbf{cheap}. Three of the five fields are closed vocabularies of
+four values, a fourth is an integer, and only the last is free text --- reserved
+for the case where something actually went wrong. A collection process that
+knows how it obtained a document knows all of them at the moment of
+collection. The expensive part of provenance
 is reconstructing it afterwards, which is what this article had to do.
 
 It \textbf{separates availability from consistency}. \texttt{retrieval\_route}
@@ -722,12 +727,13 @@ reproduction. A single retrieval cannot detect any of them. Keeping the
 response, rather than only the parsed result, costs almost nothing and is the
 difference between noticing a source change and being silently overtaken by it.
 
-\textbf{Treat a second source as a test, not a backup.} The value of the
-independent reproductions in this corpus was rarely that they supplied text the
-official source could not. It was that they disagreed on 4.9 per cent of
-articles and thereby located the defects. A pipeline that consults a second
-source only when the first fails gets the resilience and forgoes the
-measurement.
+\textbf{Treat a second source as a test, not a backup.} 86.1 per cent of
+articles here were compared against more than one source, and that comparison
+is what located the defects recorded against 4.9 per cent of them --- a
+disagreement between sources in some cases, a corruption visible only once two
+renderings of the same document were set side by side in others. A pipeline
+that consults a second source only when the first fails gets the resilience and
+forgoes the detection.
 
 \textbf{Record what you could not do.} The most useful entries in this corpus's
 provenance field are the ones admitting a shortfall: single-source, portal
@@ -748,8 +754,8 @@ measurements in this article by populating Table~\ref{tab:schema} during
 collection and running three counts afterwards --- the share of records whose
 live source failed, the share recovered through an archive and the overlap
 between them, and the share resting on a single source. The analysis here is
-about two hundred lines of code, and most of that is the classification of free
-text that a schema would have made unnecessary.
+about 460 lines of code, and the largest single part of it is the
+classification of free text that a schema would have made unnecessary.
 
 Two adjustments would be needed outside the legal domain. Where a dataset has
 no single authoritative version --- a statistical series revised on a schedule,
