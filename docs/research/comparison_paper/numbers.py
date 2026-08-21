@@ -84,6 +84,14 @@ def macros(r):
         key = f"affecting_instrument_{threshold}_or_more_years_old"
         m[f"TailEffects{word}"] = thousands(tail[key]["effects"])
         m[f"TailShare{word}"] = percent(tail[key]["share"])
+    # From the pre-1988 probe, which is a sample rather than a sweep and lives
+    # in the README with its method. Hard-coded here because it is measured
+    # data that no analysis run produces; regenerate it by re-running the probe
+    # if the claim is ever revisited.
+    m["PreSampleActs"] = "20"
+    m["PreSampleAffected"] = "five"
+    m["PreSampleEffects"] = "218"
+    m["HighwaysEffects"] = "132"
     oldest = r.get("oldest_affecting_instrument") or {}
     if oldest:
         m["OldestInstrumentYear"] = str(oldest["year"])

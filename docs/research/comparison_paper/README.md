@@ -604,7 +604,27 @@ paper 5's cost claim, which until now was an argument.
       `ukm:AffectingTitle`, by re-fetching only the Acts that carry those
       effects — about twenty requests, not another sweep. Until then the
       finding is stated by identifier.
-- [ ] **Test the 1988 start date before claiming coverage.** The range was
+- [x] **The 1988 start date was tested, and the assumption behind it was
+      wrong.** The range was chosen on the belief that unapplied effects
+      accumulate in modern legislation and earlier years would return zeros. A
+      sample of twenty Acts from 1968, 1975, 1980 and 1985 found **five**
+      carrying unapplied effects and **218** effects in total. The **Highways
+      Act 1980** alone carries **132** — a heavily used statute whose displayed
+      text omits that many enacted amendments.
+
+      So the sweep does exclude real data, and every total reported here is a
+      **lower bound on the statute book** rather than a census of it. That is
+      now stated in the manuscript's limits rather than left as an unexamined
+      range. Extending the sweep is time, not method: at the declared crawl
+      delay the pre-1988 book is many hours.
+
+      Two caveats on the probe itself. It is a convenience sample of the
+      highest-numbered Acts in four years, not a random one. And the 1925 and
+      1948 feeds returned no Acts in the expected form, so nothing is claimed
+      about those years either way.
+- [ ] Sweep the pre-1988 book if the paper's claim needs a census rather than
+      a floor. Not obviously required: a floor is enough for the argument, and
+      saying so is more honest than a total that quietly stops at 1988. The range was
       chosen on the assumption that unapplied effects accumulate in modern
       legislation and that earlier years would return zeros. The data now
       undercuts that assumption: effects sitting on 1988 Acts come from
