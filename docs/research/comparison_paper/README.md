@@ -105,6 +105,42 @@ The Road Traffic Act 1988 is the case worth keeping either way: the official
 service displays a text that omits **261 enacted amendments**, some of them
 from an Act passed six years before it.
 
+## The unit of comparison, settled
+
+Paper 5 reports Saudi figures per *article* and per *instrument*. The UK
+equivalents are per *provision* and per *Act*, and the README carried this as
+an open question because a count of affected provisions is not a share without
+a denominator.
+
+The denominator was already in the bytes being fetched and thrown away.
+`ukm:Statistics` gives `BodyParagraphs`, `ScheduleParagraphs` and
+`TotalParagraphs` per Act. A Saudi article is a numbered provision in the body
+of an instrument, so `BodyParagraphs` is the closer analogue — but affected
+provisions do sit in schedules, so both totals are reported and neither is
+presented as *the* answer.
+
+## The confound that would have deflated the headline
+
+The same response carries `ukm:DocumentStatus`. The service maintains some Acts
+in **revised** form and serves others only **as enacted**.
+
+An Act that is not maintained carries no unapplied effects **because nobody is
+applying any** — not because its text is current. In a count of "Acts
+displaying text known to be out of date" it would sit in the denominator
+looking clean and pull the share down. Nothing in the effects block reveals
+this; only the status field does.
+
+The analysis now reports the share over the maintained set as well as over
+everything retrieved, states the gap, and counts the unmaintained Acts that
+carry an unapplied effect anyway.
+
+`dc:modified` is kept for the same kind of reason: it is the date the service
+last revised the record, which separates a standing backlog from work in
+progress.
+
+All three fields cost one extra parse and no extra request. The sweep was
+restarted so every record carries them.
+
 ## Reproduce
 
 ```

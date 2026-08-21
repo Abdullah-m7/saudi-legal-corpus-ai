@@ -76,7 +76,16 @@ def main():
         return [e for e in act.get("effects", [])
                 if e.get("RequiresApplied") == "true"]
 
+    # An Act the Statute Law Database does not maintain in revised form carries
+    # no unapplied effects because nobody is applying any --- not because its
+    # text is current. Left in the denominator it would sit there looking
+    # clean and drag the headline share down. The share is therefore reported
+    # over the maintained set as well as over everything retrieved, and the
+    # gap between the two is reported rather than a choice being made quietly.
+    revised = [a for a in got if a.get("document_status") == "revised"]
+    unmaintained = [a for a in got if a.get("document_status") != "revised"]
     affected = [a for a in got if live_effects(a)]
+    affected_unmaintained = [a for a in unmaintained if live_effects(a)]
     all_effects = [e for a in got for e in live_effects(a)]
     every_effect = [e for a in got for e in a.get("effects", [])]
 
@@ -88,6 +97,15 @@ def main():
             p = e.get("AffectedProvisions")
             if p:
                 provisions.add((e.get("AffectedURI", a["id"]), p))
+
+    # The denominator for the per-provision figure. legislation.gov.uk counts
+    # body paragraphs separately from schedule paragraphs; a Saudi article is a
+    # numbered provision in the body of an instrument, so `body_paragraphs` is
+    # the closer analogue, but affected provisions can sit in schedules too.
+    # Both totals are reported and neither is presented as the answer.
+    body = sum(a.get("body_paragraphs") or 0 for a in got)
+    total_paras = sum(a.get("total_paragraphs") or 0 for a in got)
+    missing_stats = sum(1 for a in got if a.get("body_paragraphs") is None)
 
     # `AffectingYear` is the year of the instrument making the amendment, and
     # it is NOT the date the amendment took effect. The Transport Act 1982
@@ -136,6 +154,17 @@ def main():
             "difference_between_the_two_measures":
                 len(every_effect) - len(all_effects),
             "distinct_affected_provisions": len(provisions),
+            "acts_maintained_in_revised_form": len(revised),
+            "acts_not_maintained": len(unmaintained),
+            "acts_affected_share_of_maintained":
+                round(len(affected) / len(revised), 4) if revised else None,
+            "affected_acts_that_are_not_maintained":
+                len(affected_unmaintained),
+            "body_paragraphs_in_retrieved_acts": body,
+            "total_paragraphs_in_retrieved_acts": total_paras,
+            "acts_without_paragraph_statistics": missing_stats,
+            "affected_provisions_per_1000_body_paragraphs":
+                round(len(provisions) / body * 1000, 2) if body else None,
             "top_10_acts_share_of_effects":
                 round(top10 / total, 4) if total else None,
         },
@@ -174,6 +203,22 @@ def main():
           f"{u['difference_between_the_two_measures']:,}")
     print(f"  ten most affected Acts hold "
           f"{u['top_10_acts_share_of_effects']*100:.1f}% of all of them")
+    if u["acts_maintained_in_revised_form"]:
+        print(f"\nof the {u['acts_maintained_in_revised_form']} Acts the service "
+              f"maintains in revised form, {u['acts_affected_share_of_maintained']*100:.1f}% "
+              f"are affected")
+        print(f"  {u['acts_not_maintained']} retrieved Acts are not maintained in "
+              f"revised form and cannot show an unapplied effect whatever their "
+              f"state;\n  {u['affected_acts_that_are_not_maintained']} of them "
+              f"nonetheless carry one")
+    if u["body_paragraphs_in_retrieved_acts"]:
+        print(f"\n{u['distinct_affected_provisions']:,} affected provisions "
+              f"against {u['body_paragraphs_in_retrieved_acts']:,} body "
+              f"paragraphs\n  = "
+              f"{u['affected_provisions_per_1000_body_paragraphs']} per 1,000 "
+              f"({u['total_paragraphs_in_retrieved_acts']:,} paragraphs including "
+              f"schedules;\n  {u['acts_without_paragraph_statistics']} Acts "
+              f"publish no paragraph count)")
     if results["oldest_affecting_instrument"]:
         o = results["oldest_affecting_instrument"]
         print(f"\noldest affecting instrument still unapplied: {o['year']}, "

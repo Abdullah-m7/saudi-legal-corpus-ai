@@ -176,6 +176,49 @@ def unapplied_effects(xml):
     }
 
 
+def act_metadata(xml):
+    """The descriptive fields the same response already carries.
+
+    Two of these decide whether the headline figure means anything.
+
+    `document_status` separates Acts the Statute Law Database maintains in
+    revised form from those served only as enacted. An unmaintained Act carries
+    no unapplied effects **because nobody is applying any**, not because its
+    text is current --- and in a count of "Acts displaying out-of-date text" it
+    would sit silently in the denominator looking clean. It has to be visible
+    so the share can be computed over the maintained set as well as over all.
+
+    `body_paragraphs` and `schedule_paragraphs` are the denominator for the
+    per-provision figure. Without them the analysis can only report how many
+    provisions are affected, never what share of the Act that is, which is the
+    unit paper 5's Saudi per-article numbers would have to be set against.
+
+    `last_modified` is the date the service last revised the record, which
+    separates a backlog from work in progress.
+
+    All of it arrives in bytes already being fetched, so keeping it costs one
+    parse and no extra request.
+    """
+    def one(pattern, group=1):
+        m = re.search(pattern, xml)
+        return m.group(group) if m else None
+
+    stats = {}
+    for name, key in (("TotalParagraphs", "total_paragraphs"),
+                      ("BodyParagraphs", "body_paragraphs"),
+                      ("ScheduleParagraphs", "schedule_paragraphs")):
+        v = one(rf'<ukm:{name} Value="(\d+)"')
+        stats[key] = int(v) if v else None
+
+    return {
+        "title": one(r"<dc:title>([^<]*)</dc:title>"),
+        "enactment_date": one(r'<ukm:EnactmentDate Date="([^"]*)"'),
+        "last_modified": one(r"<dc:modified>([^<]*)</dc:modified>"),
+        "document_status": one(r'<ukm:DocumentStatus Value="([^"]*)"'),
+        "document_main_type": one(r'<ukm:DocumentMainType Value="([^"]*)"'),
+        **stats,
+    }
+
 def act_numbers(year):
     attempt, body = fetch(YEAR_FEED.format(year=year))
     if attempt["http_status"] != "200":
@@ -213,8 +256,7 @@ def collect(years):
             }
             if attempt["http_status"] == "200":
                 record.update(unapplied_effects(body))
-                t = re.search(r"<dc:title>([^<]*)</dc:title>", body)
-                record["title"] = t.group(1) if t else None
+                record.update(act_metadata(body))
             acts.append(record)
             print(f"  {record['id']:>18s}  {attempt['http_status']}  "
                   f"{attempt['seconds']:5.2f}s  "
@@ -264,8 +306,7 @@ def retry_failures():
             changed = True
             if attempt["http_status"] == "200":
                 act.update(unapplied_effects(body))
-                title = re.search(r"<dc:title>([^<]*)</dc:title>", body)
-                act["title"] = title.group(1) if title else None
+                act.update(act_metadata(body))
                 # The record now has the text, so the discrepancy that stood
                 # for "we could not get this" is resolved rather than deleted.
                 act["provenance"]["retrieval_route"] = "live"
