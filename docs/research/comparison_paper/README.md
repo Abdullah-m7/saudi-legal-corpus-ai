@@ -231,12 +231,20 @@ not the age of the breach.
 
 Source: <https://www.legislation.gov.uk/understanding-legislation>
 
-## Where the numbers stand (partial: 1988–1991)
+## Where the numbers stand (partial: 1988–1989)
 
-The sweep is still running. These are the four years collected so far and will
-change; they are recorded because the *shape* of the result is already clear
-and because the measures below are the ones the publisher's own service
-standard forces.
+The sweep is still running. These are the **two** years collected so far — 101
+Acts — and they will change. They are recorded because the shape of the result
+is already clear and because the measures below are the ones the publisher's
+own service standard forces.
+
+A first version of this section said "1988–1991". It was wrong, and the way it
+was wrong is worth keeping: 1990 and 1991 were collected by the stale second
+process, deleted with it, and then **skipped** by the surviving process, which
+had already passed those years while their files still existed. The collector
+skips a year whose file is present, which is the right behaviour for resuming
+and the wrong behaviour when a file is removed behind it. Re-running the same
+command after the sweep fills only the gaps, and that is queued below.
 
 Two measures answer the "some backlog is the design" objection directly.
 
@@ -386,6 +394,10 @@ paper 5's cost claim, which until now was an argument.
       service.
 - [ ] Full sweep of the statute book (1988–2026 running; extend earlier if the
       backlog reaches further back than the modern era).
+- [ ] **Re-run the same command after the sweep to fill 1990 and 1991**, which
+      were skipped after their files were deleted behind the running collector.
+      Because a year is skipped only when its file exists, the same invocation
+      collects exactly the missing years and nothing else.
 - [ ] Analysis: what share of Acts, and of provisions, does the service itself
       flag as not reflecting the law in force? How old are the oldest unapplied
       effects?
