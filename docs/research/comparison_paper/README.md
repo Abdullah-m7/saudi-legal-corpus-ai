@@ -59,6 +59,36 @@ reading is still wrong by two orders of magnitude. Publishing the
 distinguishing fact is not sufficient. Where it sits, relative to the fact that
 invites the error, decides what most readers conclude.
 
+## Venue
+
+**Recommended: ACM *Digital Government: Research and Practice*, as a Case
+Study.** Its own description of that type — "field-based reports reflecting on
+lessons learned from novel experiments" — is a literal description of this
+article, and its 2,000–4,000 word band fits the manuscript as written, with no
+padding and no cutting. Double-anonymous review; the audience is government
+data, metadata and digital governance, which is exactly this article's.
+
+The alternative in the same journal is a Research Paper at 8,000–12,000 words,
+three times the current length. The material exists — the availability figures
+that were recorded but deliberately not compared, the method in full, the
+narrative of three successive corrections, and a literature section — but it is
+days of work, and the risk is real: the sharpest thing this article has is a
+short, hard result, and tripling it to meet a band would bury that under
+apparatus.
+
+If it is rejected as too slight, expansion is still open, and by then a
+reviewer's report says *where* to expand. That is better than guessing now.
+
+Two practical points. ACM has been fully open access since January 2026, so
+acceptance triggers an APC; waivers exist, as with paper 5. And submission is a
+PDF in the ACM large format template rather than Word — a LaTeX manuscript
+makes that cheap but not free.
+
+*Government Information Quarterly* carries more weight and was not assessed:
+its guide-for-authors sits behind a CAPTCHA that this environment cannot pass,
+and after the errors recorded above, no requirement here is going to be written
+down from memory.
+
 ## Quality review — what it caught
 
 Run as with papers 1–5, after the rebuild. Four defects, one of them the same
