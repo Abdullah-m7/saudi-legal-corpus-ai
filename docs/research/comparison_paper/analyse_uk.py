@@ -146,18 +146,31 @@ def main():
         return [e for e in act.get("effects", [])
                 if e.get("RequiresApplied") == "true"]
 
-    def live_effects(act):
-        """Effects that mean the displayed text does not reflect the law in force.
+    def effect_state(effect):
+        """What a flagged effect actually is. Three answers, not two.
 
-        `RequiresApplied="true"` alone does not mean that, and reading it as if
-        it did is why the first version of this analysis was withdrawn. An
-        effect marked `Prospective="true"` in `ukm:InForce` is enacted but not
-        yet commenced: the service is right not to apply it, because applying
-        it would misstate the law. Both counts are reported, and the prospective
-        ones are the larger group by a wide margin.
+        This measure has been wrong twice, each time by reading one field and
+        stopping. `RequiresApplied="true"` says only that the effect has not
+        been applied; taken as a backlog it overstates by 145 times. Excluding
+        `Prospective="true"` fixes most of that and still overstates by ten,
+        because an effect can be non-prospective — its commencement date is
+        settled — and that date can be in the future. A commencement fixed for
+        next March is no more in force than one with no date at all.
+
+        Only `in_force` means the displayed text does not reflect the law.
         """
+        if effect.get("InForceProspective") == "true":
+            return "prospective"
+        raw = (effect.get("InForceDate") or "")[:10]
+        try:
+            started = date.fromisoformat(raw)
+        except ValueError:
+            return "in_force_undated"
+        return "in_force" if started <= as_of else "commencement_scheduled"
+
+    def live_effects(act):
         return [e for e in flagged_effects(act)
-                if e.get("InForceProspective") != "true"]
+                if effect_state(e) in ("in_force", "in_force_undated")]
 
     # The service marks each Act `revised` --- maintained in amended form --- or
     # `final`. A `final` Act is served as enacted, so it has no revised text for
@@ -185,8 +198,21 @@ def main():
     affected_final = [a for a in final if live_effects(a)]
     all_effects = [e for a in got for e in live_effects(a)]
     every_effect = [e for a in got for e in a.get("effects", [])]
-    prospective = [e for a in got for e in flagged_effects(a)
-                   if e.get("InForceProspective") == "true"]
+    states = Counter(effect_state(e) for a in got for e in flagged_effects(a))
+    # How long each in-force effect has actually gone unapplied --- the measure
+    # the withdrawn version said could not be computed because commencement
+    # dates were not published. They are published, in ukm:InForce.
+    overdue = []
+    for a in got:
+        for e in flagged_effects(a):
+            if effect_state(e) != "in_force":
+                continue
+            started = date.fromisoformat(e["InForceDate"][:10])
+            overdue.append({"days": (as_of - started).days,
+                            "act": a["id"], "title": a.get("title"),
+                            "provisions": e.get("AffectedProvisions"),
+                            "in_force_since": e["InForceDate"][:10]})
+    overdue.sort(key=lambda r: -r["days"])
 
     # Provisions, not effects: several effects can name the same provision, and
     # counting effects would overstate how much text is involved.
@@ -371,10 +397,17 @@ def main():
             "acts_affected_share": round(len(affected) / len(got), 4) if got else None,
             "effects_requiring_application": len(all_effects),
             "effects_in_block_total": len(every_effect),
-            "effects_flagged_but_prospective": len(prospective),
-            "note": "an effect flagged RequiresApplied is not necessarily in "
-                    "force; prospective ones are enacted but not yet "
-                    "commenced, and the service is correct not to apply them",
+            "flagged_effects_by_state": dict(states),
+            "note": "a flagged effect is not necessarily in force. Prospective "
+                    "ones have no commencement date; scheduled ones have a "
+                    "date still in the future. The service is correct not to "
+                    "apply either, and only the in-force remainder means the "
+                    "displayed text does not reflect the law",
+            "publisher_target_days": 90,
+            "in_force_unapplied_beyond_target":
+                sum(1 for r in overdue if r["days"] > 90),
+            "longest_unapplied_days": overdue[0]["days"] if overdue else None,
+            "in_force_unapplied": overdue[:20],
             "difference_between_the_two_measures":
                 len(every_effect) - len(all_effects),
             "distinct_affected_provisions": len(provisions),
@@ -465,11 +498,20 @@ def main():
     print(f"  amendments enacted but not incorporated: "
           f"{u['effects_requiring_application']:,}")
     print(f"  across {u['distinct_affected_provisions']:,} distinct provisions")
-    print(f"  {u['effects_flagged_but_prospective']:,} further effects are "
-          f"flagged but prospective --- enacted, not yet in force, and\n  "
-          f"correctly not applied; counting them as a backlog is the error "
-          f"this analysis was rebuilt to avoid")
-    print(f"  the whole effects block holds {u['effects_in_block_total']:,}")
+    print("\nwhat the flagged effects actually are:")
+    total_flagged = sum(u["flagged_effects_by_state"].values())
+    labels = {"prospective": "prospective --- no commencement date",
+              "commencement_scheduled": "commencement scheduled, still future",
+              "in_force": "in force now, and unapplied",
+              "in_force_undated": "in force, no date recorded"}
+    for key, label in labels.items():
+        v = u["flagged_effects_by_state"].get(key, 0)
+        print(f"    {v:>7,}  {v / total_flagged * 100:5.1f}%  {label}")
+    print(f"\nagainst the publisher's three-month target: "
+          f"{u['in_force_unapplied_beyond_target']} effects exceed it")
+    if u["longest_unapplied_days"] is not None:
+        print(f"  the longest any amendment has been in force and unapplied is "
+              f"{u['longest_unapplied_days']} days")
     print(f"  ten most affected Acts hold "
           f"{u['top_10_acts_share_of_effects']*100:.1f}% of all of them")
     print(f"\nthree denominators, none of them the obvious one on its own:")

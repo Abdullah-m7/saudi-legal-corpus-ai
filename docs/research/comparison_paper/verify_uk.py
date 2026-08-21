@@ -42,9 +42,24 @@ def recompute():
         # is what the withdrawn version of this study counted, and it is not
         # the measure: an effect marked prospective in ukm:InForce is enacted
         # but not commenced, so the service is right not to have applied it.
-        live = [e for e in a.get("effects", [])
-                if e.get("RequiresApplied") == "true"
-                and e.get("InForceProspective") != "true"]
+        # Three conditions, written out rather than borrowed. A flagged effect
+        # counts only if it is not prospective and its commencement date has
+        # actually arrived; a date set for next year is not in force.
+        live = []
+        for e in a.get("effects", []):
+            if e.get("RequiresApplied") != "true":
+                continue
+            if e.get("InForceProspective") == "true":
+                continue
+            raw = (e.get("InForceDate") or "")[:10]
+            if not raw:
+                live.append(e)
+                continue
+            try:
+                if date.fromisoformat(raw) <= AS_OF:
+                    live.append(e)
+            except ValueError:
+                live.append(e)
         affected += bool(live)
         effects += len(live)
         if isinstance(a.get("body_paragraphs"), int):
