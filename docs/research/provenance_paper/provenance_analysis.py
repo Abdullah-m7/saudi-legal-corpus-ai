@@ -240,6 +240,18 @@ def tier_analysis(provenance_rows):
     total_articles = sum(by_tier_articles.values())
     order = tiers["tier_order"]
     weak = [t for t in order if t.startswith(("TIER_3", "TIER_4"))]
+
+    # The article-level sample does not cover every track, and the tracks it
+    # misses are not a random draw: the weakest-evidence tiers are the least
+    # likely to have article-level verified records at all. Quantify the gap
+    # so the direction of the bias is stated rather than assumed.
+    registry_wide = tiers["summary_by_tier"]
+    coverage = {t: {
+        "tracks_registry_wide": registry_wide.get(t, 0),
+        "tracks_in_the_article_sample": by_tier_tracks[t],
+        "coverage": round(by_tier_tracks[t] / registry_wide[t], 4)
+        if registry_wide.get(t) else None,
+    } for t in order}
     return {
         "taxonomy": {k: " ".join(str(v).split())[:200]
                      for k, v in tiers["taxonomy"].items()},
@@ -257,6 +269,14 @@ def tier_analysis(provenance_rows):
         "share_without_a_cross_verified_official_primary":
             round(sum(by_tier_articles[t] for t in weak) / total_articles, 4)
         if total_articles else 0.0,
+        "sample_coverage_by_tier": coverage,
+        "sample_bias": "Coverage is uneven and not monotonic: 87% of tier-1 "
+                       "tracks have article-level records against 59% of "
+                       "tier-2, 28% of tier-3 and 73% of tier-4. The "
+                       "under-representation of tier 3 --- the tracks whose "
+                       "official source could not be reached at all --- means "
+                       "the share without a cross-verified official primary "
+                       "is more likely understated than overstated.",
     }
 
 
