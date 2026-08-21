@@ -56,14 +56,23 @@ it displays. Read as a backlog, that list says \nFlagged{} amendments across the
 modern statute book are missing from the law as published --- an unusually
 clean finding, and the one this study first recorded.
 
-It is wrong by a factor of \nOverstatementFactor. Each effect also carries
-whether the amendment is in force. \nProspective{} of them
+It is wrong by a factor of \nOverstatementFactor, and it took two corrections
+rather than one to find out --- which is itself part of the argument. Each
+effect also carries whether the amendment is in force. \nProspective{} of them
 (\nProspectiveShare{} per cent) are prospective: enacted, not commenced, no
 date set. A further \nScheduled{} have a commencement date still in the future.
 The service is right not to apply either --- applying an amendment that is not
 in force would misstate the law. What remains is \nInForceNow{} effects, and
 none has been in force for more than \nLongestDays{} days against a published
 target of three months.
+
+The second of those categories is why one correction was not enough. Excluding
+the prospective effects is the obvious fix once the in-force field is found, and
+it still overstates by an order of magnitude: an effect can be non-prospective
+--- its commencement settled --- with that commencement fixed for a date that
+has not arrived. A date set for next spring is no more in force than no date at
+all. Each stage of this measurement looked correct until the next field was
+read.
 
 The finding, then, is the opposite of the one this article was drafted to
 report: the service meets its own standard without exception. But the more
@@ -103,11 +112,13 @@ The second is a service standard: `We aim to incorporate new amendments into
 the text of the legislation within three months of those amendments coming into
 force.'\footnote{Ibid., same heading.}
 
-The standard matters as much for what it rules out as for what it establishes.
-A three-month target means the expected steady state is not zero unapplied
-effects; a queue is the design, not the defect. Any finding here has to be
-about the queue's tail rather than its existence, and the analysis is built
-accordingly.
+The standard is what makes compliance measurable rather than a matter of
+impression, and it also rules something out. A three-month target means the
+expected steady state is not zero unapplied effects: a queue is the design, not
+the defect, so the existence of flagged effects establishes nothing on its own.
+What the standard permits is a direct test --- how long has each amendment
+actually been in force without being applied --- and the answer needs the
+commencement date, which the service publishes for every effect.
 
 \section{Method}
 
@@ -137,8 +148,13 @@ across collections, because they differ before the records do. No control
 corrects for that. Availability figures are recorded and published for this
 collection, and are not set against the companion study's.
 
-An unapplied effect has no such problem. It is a property of the data as
-published: any reader, on any network, at any time, obtains the same count.
+An unapplied effect has no such problem \emph{in principle}: it is a property
+of the data as published, so any reader, on any network, at any time, can
+obtain the same count. In practice they will not, and the rest of this article
+is about why --- the count depends on which of the record's fields the reader
+consults, and the obvious selection is wrong by two orders of magnitude.
+Reproducibility of a measure and agreement between measurers are different
+properties, and only the first is guaranteed here.
 
 \section{Results}
 
@@ -210,11 +226,14 @@ the collection: one source class, one retrieval route, one corroboration count,
 one transformation. That is the schema working, not failing --- it costs
 nothing here because there is nothing to say.
 
-But the defect this study measures was invisible to all five fields. An Act
-whose displayed text omits hundreds of enacted amendments was retrieved
-perfectly: official primary source, live, no transformation, nothing to report.
-Under the schema as written, it is indistinguishable from an Act with no
-unapplied effects at all.
+But the defect this study measures was invisible to all five fields. Every
+affected Act was retrieved perfectly --- official primary source, live, no
+transformation, nothing to report --- so under the schema as written an Act
+displaying text that does not reflect the law is indistinguishable from one
+that is entirely current. The argument does not depend on the size of the
+defect, and the size is small: \nActsAffected{} Acts, \nEffects{} effects. An
+earlier draft made the same point with an Act omitting hundreds of amendments,
+which the corrected measure shows does not exist.
 
 The remedy is not a sixth field. The purpose the companion study gives
 \texttt{discrepancy} is `is there a known problem with this record?', and a

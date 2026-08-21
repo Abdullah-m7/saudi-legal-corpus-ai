@@ -59,6 +59,34 @@ reading is still wrong by two orders of magnitude. Publishing the
 distinguishing fact is not sufficient. Where it sits, relative to the fact that
 invites the error, decides what most readers conclude.
 
+## Quality review — what it caught
+
+Run as with papers 1–5, after the rebuild. Four defects, one of them the same
+class that review caught in three earlier papers: a sentence that survived a
+revision and now asserted something the corrected data contradicts.
+
+1. **A claim about an Act that does not exist.** The schema section argued its
+   point with "an Act whose displayed text omits hundreds of enacted
+   amendments". Under the corrected measure the whole statute book holds 110
+   such effects across 9 Acts. The argument never needed the size, so it now
+   makes the point without it — and says so.
+2. **A self-contradiction.** The method section said an unapplied effect "is a
+   property of the data as published: any reader, on any network, at any time,
+   obtains the same count." The article's entire finding is that readers obtain
+   different counts depending on which fields they parse. The claim is now
+   split: reproducible in principle, not agreed in practice, and the difference
+   between those two is what the paper is about.
+3. **Reasoning built for a backlog that is not there.** The section on the
+   service standard closed by saying any finding "has to be about the queue's
+   tail rather than its existence". There is no tail. The standard's real role
+   is that it makes compliance testable, which is what the paragraph now says.
+4. **An omission that weakened the contribution.** The article reported being
+   wrong by a factor of 131 without mentioning that the first correction was
+   also wrong. That second failure is the sharper one — excluding prospective
+   effects is the obvious fix and still overstates tenfold — and it is now in
+   the introduction, because "each stage looked correct until the next field
+   was read" is the paper's argument, not an aside.
+
 Everything below this line predates the correction and is kept because the
 sequence that produced it is part of the record.
 
