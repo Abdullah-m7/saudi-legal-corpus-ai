@@ -340,6 +340,28 @@ ten minutes.
 
 With that fixed, all seven figures agree.
 
+## No number is typed into this manuscript
+
+Every figure in papers 1 to 5 was typed into the manuscript by hand and caught,
+if at all, by review afterwards. Review found a wrong share in paper 3, a wrong
+count and a wrong top-ten figure in paper 4, and a wrong article count in paper
+5. Four defects of one kind — and each had survived several careful readings,
+because a plausible number in prose looks exactly like a correct one.
+
+This paper removes the class instead of checking for it.
+
+`numbers.py` turns `uk_analysis_results.json` into LaTeX macros. The manuscript
+writes `\nActsRetrieved`, never `590`, and the macros are regenerated before
+every compile. A figure cannot go stale, cannot be mistyped, and cannot
+disagree with the analysis, because only one copy of it exists.
+
+`check_numbers.py` enforces it, since the mechanism is worthless if the
+manuscript quietly types a digit anyway. It rejects anything shaped like a
+measurement — a thousands-separated count, a decimal, a percentage — while
+leaving years, section numbers and citations alone. Self-tested against a decoy
+containing all four cases: it flags `1{,}402` and `35.1 per cent`, and passes
+`art 60 in 1988` and a Zenodo DOI.
+
 ## Reproduce
 
 ```
@@ -578,6 +600,9 @@ paper 5's cost claim, which until now was an argument.
 | `collect_uk.py` | Collects the Acts and populates paper 5's five-field schema at collection time. |
 | `analyse_uk.py` | Produces every number, from the collection only. |
 | `verify_uk.py` | Recomputes the headline figures by a separate route and compares. |
+| `numbers.py` | Turns the results into LaTeX macros; the manuscript holds no digits. |
+| `check_numbers.py` | Refuses a manuscript that types a number the analysis owns. |
+| `numbers.tex` | Generated macros. Never edited. |
 | `uk_analysis_results.json` | Generated results snapshot. |
 | `make_figures.py` | Figures 1 and 2, as PNG, TIFF and EPS. |
 | `fig1_age_bands.*` / `fig2_maintained_and_stale.*` | The two figures. |
