@@ -23,7 +23,7 @@ single anonymized, and the guide says **double anonymized**.
 | Funding statement (the journal supplies wording for "none") | Present |
 | Competing interests | Present |
 | Research data — **Option B**, deposit *encouraged* | Exceeded: GitHub plus Zenodo with a DOI |
-| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | **Outstanding: the photograph is the author's to supply** |
+| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Draft in `biography.md` (89 words, with a 62-word alternative) for the author to correct; **the photograph is the author's to supply** |
 | Graphical abstract | Encouraged, not required. Not planned |
 
 ## What the APA conversion turned up
@@ -56,8 +56,11 @@ argument, and its data is already deposited under a DOI.
 ## Before submitting
 
 - [ ] APA conversion, with every entry checked against `references.md`
-- [ ] Author biography (≤ 100 words) and photograph — the author's to write and
-      supply; a biography is a statement about a person, not about data
+- [ ] Author biography — a draft is in `biography.md`, written only from what
+      this repository shows. It carries no degree, institution, city or career,
+      because none of that is in the record. **Read it and correct it**; a
+      biography is a statement about a person, not about data
+- [ ] Passport-type photograph, separate file
 - [ ] Confirm the affiliation spelling in the submission profile. The
       ScholarOne account used for paper 3 carries `Independent Reseacher`
 - [ ] Read the system-generated PDF proof to the last page before sending
