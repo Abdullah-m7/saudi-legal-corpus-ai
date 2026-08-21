@@ -49,7 +49,7 @@ history. That is 13,089 articles across 272 of the 291 tracks.
 - **973 articles (7.4%) are no longer in their original form**: 730 amended,
   138 repealed, 105 added.
 - **Change is extremely concentrated.** 160 of 272 instruments (58.8%) record
-  no change at all; the ten most changed hold 34.4% of all changed articles;
+  no change at all; the ten most changed hold 38.4% of all changed articles;
   Gini 0.82.
 - **Instruments change in three different ways**, and a single "amendments"
   count would merge them: the Sharia Procedure Law is *hollowed out* (75 of its
@@ -60,9 +60,11 @@ history. That is 13,089 articles across 272 of the 291 tracks.
   decrees; the ten most active account for 35.4% of article-amendment pairs;
   one royal decree touches 81 articles.
 - **"Amended" hides an order of magnitude.** On the 87 articles with a recorded
-  prior text, median similarity to the superseded wording is 0.82 — but 17 of
-  87 retain under half their vocabulary, and one article of the Judiciary Law
-  keeps under a tenth.
+  prior text, median similarity to the superseded wording is 0.82, but 17 of 87
+  score below 0.50. Article 72 of the Judiciary Law shrank from 29 tokens to 6
+  and shares three with its predecessor: it used to require the Deputy Minister
+  of Justice to be a serving or former judge of a stated grade, and now only
+  fixes the rank of the post. The qualification was deleted, not reworded.
 - **Instruments others rely on change more**: 6.1% churn for uncited
   instruments, 10.7% for cited, 13.4% for the fifteen most cited. Age is not
   controlled for and may explain part of it — stated in the paper, not buried.
@@ -95,20 +97,50 @@ history. That is 13,089 articles across 272 of the 291 tracks.
   selected by which sources publish prior text.
 - The reliance gradient is uncontrolled for age; the registry dates 2 of 291
   tracks, so it cannot be controlled from this corpus.
-- Only 174 of 759 article-amendment pairs carry a Gregorian date, and the
+- Only 175 of 759 article-amendment pairs carry a Gregorian date (23%), and the
   instruments that do are unrepresentative, so **no time series is attempted** —
   the apparent 2021 spike is an artefact of which sources expose dates.
 - The cross-reference layer is pattern-extracted; the inter-instrument exposure
   figure rests on 86 resolved references.
 
+## Quality review — what it caught
+
+Run before any venue was chosen, as with papers 1–3. Every numerical claim was
+re-derived from the results file and every named instrument and article checked
+against the source records. Five defects, one of them serious:
+
+1. **A fabricated example.** The opening invented "article 60 of the Law of
+   Sharia Procedure" as a repealed article. Article 60 is *original* and carries
+   substantive text on objections to judgments in absentia. The real story is
+   better and is now what the paper opens with: Royal Decree M/43 (26/5/1443H)
+   issued the 129-article Evidence Law and, in the same instrument, repealed
+   articles **101–158** of the Sharia Procedure Law — the whole of its treatment
+   of proof, 58 consecutive articles.
+2. **A wrong share.** "More than a third" of the Sharia Procedure Law repealed;
+   it is 75 of 243, or 30.9% — nearly a third.
+3. **A wrong count.** "Four of the twelve most changed instruments are tax or
+   tax-adjacent … 147 changed articles." Three are tax instruments and they hold
+   118.
+4. **The wrong top-ten share.** The table reported 34.4% where the analysis says
+   38.4% — the amending-decree share (35.4%) had been conflated with the
+   instrument share.
+5. **An over-glossed Jaccard.** "Roughly one amendment in five replaces most of
+   the article's wording" does not follow from a score below 0.50: for versions
+   of similar length, 0.50 means about two-thirds of tokens still in common. The
+   paper now states what the threshold means in a footnote and stops claiming
+   more than it supports.
+
+Repeal attribution was also made exact while checking: of the Sharia Procedure
+Law's 75 repeals, 58 are M/43, 9 are M/101, 1 is M/93, and **7 carry no
+repealing decree in the record at all** — an illustration of the transcription
+limit the paper already claims.
+
 ## Next steps
 
 - [ ] Choose the venue and verify its review model, length band, and submission
       route against the journal's own author instructions — the paper-3
-      procedure. Current draft is ~4,400 words including footnotes, which suits
+      procedure. Current draft is 4,706 words including footnotes, which suits
       an empirical-legal-studies or legal-informatics venue as it stands and
       would need expansion for a law review.
-- [ ] Quality review before submission. The three previous papers each had a
-      headline-changing defect caught at this stage.
 - [ ] Decide how to refer to papers 1–3: they are cited obliquely as "companion
       studies" so the manuscript can be anonymised.

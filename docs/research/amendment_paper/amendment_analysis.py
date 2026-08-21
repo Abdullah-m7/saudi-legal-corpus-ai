@@ -242,8 +242,10 @@ def amending_instruments(articles):
     decrees = Counter()
     dated = Counter()
     undated = 0
+    dated_pairs = 0
     for a in articles:
         seen = set()
+        seen_dated = set()
         for entry in a["history"]:
             name = normalise_decree(entry.get("decree"))
             if not name:
@@ -252,10 +254,12 @@ def amending_instruments(articles):
             greg = entry.get("gregorianDecreeDate")
             if greg:
                 dated[(name, greg[:4])] += 1
+                seen_dated.add(name)
             else:
                 undated += 1
         for name in seen:
             decrees[name] += 1
+        dated_pairs += len(seen_dated)
     years = Counter(year for (_, year), n in dated.items() for _ in range(n))
     total = sum(decrees.values())
     top = decrees.most_common(12)
@@ -268,7 +272,15 @@ def amending_instruments(articles):
         "most_active_amending_instruments":
             [{"decree": d, "articles_touched": n} for d, n in top],
         "history_entries_without_a_gregorian_date": undated,
+        "article_amendment_pairs_with_a_gregorian_date": dated_pairs,
+        "date_coverage": round(dated_pairs / total, 4) if total else 0.0,
         "amendments_by_gregorian_year": dict(sorted(years.items())),
+        "dates_are_not_a_time_series": "Fewer than a quarter of pairs carry a "
+                                       "date and the instruments that do are "
+                                       "not representative, so the year "
+                                       "counts below describe which sources "
+                                       "expose dates, not when Saudi "
+                                       "legislation changed.",
     }
 
 

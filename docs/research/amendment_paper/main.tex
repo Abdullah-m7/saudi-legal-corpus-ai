@@ -42,9 +42,10 @@ Legislative Churn Across Saudi Arabian Legislation}
 
 \begin{abstract}
 \noindent
-Seventy-five of the articles of the Saudi Law of Sharia Procedure have been
-repealed. The instrument is still in force, still cited, and still read by
-practitioners --- but more than a third of it no longer says anything. How
+Fifty-eight consecutive articles of the Saudi Law of Sharia Procedure were
+repealed by a single royal decree in December 2021, and seventy-five of its
+243 articles --- nearly a third --- are now repealed in total. The instrument
+is still in force, still cited, and unchanged in size and numbering. How
 common is that? Legal systems are usually studied as they stand at a moment,
 because the evidence to study them as they move has not existed. Using a
 machine-readable corpus in which 13,089 articles across 272 Saudi legislative
@@ -72,11 +73,16 @@ statutory maintenance; Saudi Arabia; legal corpora; empirical legal studies
 
 \section{Introduction}
 
-A practitioner opens the Law of Sharia Procedure and turns to article 60. It
-is not there --- or rather, it is there and it is empty, repealed and left in
-place so that the numbering of the articles around it survives. Seventy-five
-of that instrument's articles are in the same condition. It remains in force;
-what remains of it is roughly two-thirds of what was enacted.
+On 26/5/1443H --- 30 December 2021 --- a single royal decree issued the Saudi
+Evidence Law, 129 articles in eleven chapters.\footnote{Evidence Law (Royal
+Decree M/43, 26/5/1443H).} The same decree repealed articles 101 to 158 of the
+Law of Sharia Procedure: fifty-eight consecutive articles, the whole of that
+instrument's treatment of proof, lifted out and re-enacted elsewhere. Two
+later decrees repealed ten more. Seventy-five of the Law of Sharia Procedure's
+243 articles are now repealed --- nearly a third of the instrument --- and
+none of this is visible in its shape. It remains in force, its articles are
+still numbered 1 to 243, and a reader who does not check the status of each
+article will not discover which of them still say anything.
 
 This is not a defect peculiar to one statute. It is what a working legal
 system looks like from the inside. Statutes are amended, articles are
@@ -88,9 +94,9 @@ jurisdictions, is how much of it does it, where, and how far.
 The obstacle is evidential. Measuring change requires knowing, for each
 article, whether it is the article originally enacted --- and legal databases
 usually present the consolidated current text, silently. The history is
-either absent, or present as prose a human must read. There is no jurisdiction
-in the Arab world for which the question has been asked at corpus scale, and
-few anywhere.
+either absent, or present as prose a human must read. We are aware of no Arab
+jurisdiction for which the question has been asked at corpus scale, and of few
+studies anywhere that ask it at the level of the individual article.
 
 This article asks it for Saudi Arabia. It uses a corpus in which every article
 verified against an official source carries a legal status --- original,
@@ -283,7 +289,7 @@ Added & 105 \\
 Articles not in their original form & 973 (7.4\%) \\
 \midrule
 Instruments recording no change at all & 160 (58.8\%) \\
-Share of changed articles in the ten most changed instruments & 34.4\% \\
+Share of changed articles in the ten most changed instruments & 38.4\% \\
 Gini of changed articles across instruments & 0.82 \\
 \midrule
 Distinct amending instruments identified & 179 \\
@@ -333,8 +339,17 @@ signatures are visible, and they are three different legal events.
 
 \paragraph{Hollowing out.} The Law of Sharia Procedure has 90 changed
 articles, of which 75 are repeals --- 54 per cent of every repealed article in
-the corpus, in one instrument. The Commercial Courts Law shows the same
-signature at smaller scale: 20 of its 21 changed articles are repeals. This is
+the corpus, in one instrument. Fifty-eight of those repeals are the single
+block of articles 101 to 158 removed by the decree that issued the Evidence
+Law. The rest came from elsewhere, and the breakdown is a useful illustration
+of the limits of the record: nine articles were repealed by a later decree,
+one by an earlier one, and for seven the corpus records the repeal but no
+repealing instrument at all.\footnote{Royal Decree M/43 (26/5/1443H) accounts
+for 58 of the 75 --- articles 101--158; Royal Decree M/101 for 9 --- articles
+227--235; Royal Decree M/93 for article 35. Seven further articles are
+recorded as repealed with no decree attributed.} The
+Commercial Courts Law shows the same signature at smaller scale: 20 of its 21
+changed articles are repeals. This is
 what it looks like when a subject matter is moved out of an instrument and
 into a new one, leaving the original in force but emptied in the relevant part.
 An instrument in this condition is the most dangerous kind for a reader,
@@ -353,9 +368,10 @@ Status Law, 24 amendments and nothing else. Here the instrument's structure is
 stable and its content is being adjusted --- the pattern one would expect of a
 technical regime being kept current.
 
-The fiscal instruments deserve a note of their own. Four of the twelve most
-changed instruments are tax or tax-adjacent, and between them they hold 147
-changed articles. That is consistent with what one would expect of a system
+The fiscal instruments deserve a note of their own. Three of the twelve most
+changed instruments are tax instruments --- the VAT Regulation, the Income Tax
+Regulation and the Income Tax Law --- and between them they hold 118 changed
+articles, an eighth of every changed article in the corpus. That is consistent with what one would expect of a system
 that introduced value added tax in 2018 and has been adjusting the surrounding
 regime since, and it is a reminder that a churn ranking is partly a map of
 recent policy attention rather than of anything intrinsic to the instruments.
@@ -376,14 +392,25 @@ thirty-eight are moderate revisions, and seventeen are substantial rewrites
 
 The distribution matters more than the median. Most amendment in this sample
 is small --- a phrase substituted, a cross-reference updated, a threshold
-changed. But roughly one amendment in five replaces most of the article's
-wording. Article 72 of the Law of the Judiciary retains under a tenth of its
-former vocabulary and shrank from 29 tokens to 6; article 30 of the Code of
-Law Practice, likewise, from 34 to 14. An amendment, in other words, is not a
-category with a typical magnitude; it is a label covering interventions that
-differ by an order of magnitude in what they do to the text. A system that
-tells a reader only that an article `has been amended' has told them very
-little.
+changed. But roughly one amendment in five falls below 0.50, which for
+articles of similar length means that about a third of the vocabulary has
+gone.\footnote{Jaccard similarity is the intersection over the union, so for
+two versions of equal length a score of 0.50 corresponds to roughly two-thirds
+of tokens in common. A low score is a substantial revision; it is not a
+synonym for `most of the article was replaced'.}
+
+The extreme cases are extreme in substance and not only in wording. Article 72
+of the Law of the Judiciary shrank from 29 tokens to 6 and shares three of
+them with its predecessor. It formerly provided that the Deputy Minister of
+Justice be chosen from among serving or former judges of a stated minimum
+grade; it now provides only that the post is appointed at the excellent rank.
+The qualification requirement was not reworded --- it was deleted, and the
+similarity score is the trace of that deletion rather than its measure.
+
+An amendment, in other words, is not a category with a typical magnitude. It
+is a label covering interventions that range from a substituted preposition to
+the removal of a substantive condition, and a system that tells a reader only
+that an article `has been amended' has told them very little.
 
 \section{Change and reliance}
 \label{sec:reliance}
@@ -450,9 +477,9 @@ Corpus base rate of changed articles & --- & --- & 7.4\% \\
 \label{tab:exposure}
 \end{table}
 
-References an instrument makes to its own articles sit at the base rate.
-References it makes to another instrument's articles are more than twice as
-likely to point at text that has moved.
+References an instrument makes to its own articles sit at the base rate: 8.6
+per cent against 7.4. References it makes to another instrument's articles run
+at 17.4 per cent --- twice the internal rate and 2.4 times the base rate.
 
 The mechanism is not mysterious, and that is what makes the result useful. A
 drafter amending an instrument has the whole of that instrument in front of
@@ -531,8 +558,8 @@ distributed.
 states, age is a live alternative explanation and cannot be tested from this
 corpus.
 
-\paragraph{Dates are too sparse for a time series.} Only 174 of 759
-article-amendment pairs carry a Gregorian date, and the instruments that carry
+\paragraph{Dates are too sparse for a time series.} Only 175 of 759
+article-amendment pairs carry a Gregorian date --- 23 per cent --- and the instruments that carry
 dates are not representative. The apparent concentration of dated amendments in
 a single year is an artefact of which sources expose dates, and no
 year-on-year analysis is attempted here.
