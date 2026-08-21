@@ -142,7 +142,40 @@ paper 5's cost claim, which until now was an argument.
       API, and a measurable consistency gap all verified before committing.
 - [x] Collector written, with the five-field schema applied prospectively.
 - [x] Pilot sweep (2023) — see above.
-- [ ] Settle the environment confound, then the full statute book.
+- [x] **The environment confound is settled by narrowing the claim, not by
+      controlling for it: the comparison is restricted to consistency.** The
+      pilot recorded one timeout in 57 and three responses over ten seconds
+      against a 0.45-second median. Tempting to report as friction on a
+      gold-standard service; it is not reportable. Re-attempting the failed Act
+      returned 200 three times in under a second, so the failure was transient,
+      and this collector runs from a datacentre address behind a proxy while the
+      Saudi collection ran from the author's own network, at a different time,
+      against portals that have since changed. A proxy control fixes the network
+      half of that and leaves the time half untouched — and the Saudi
+      measurement cannot be re-run, which is the very point paper 5 makes about
+      contemporaneous evidence. Paying for a number that stays incomparable is
+      the wrong trade.
+
+      Consistency has none of that problem. An unincorporated amendment is a
+      property of the data *as published*: any reader, on any network, at any
+      time, gets the same count. In an article whose argument is about
+      verifiability, that is not the lesser measure.
+- [x] Availability data is still collected and will still be published — the
+      field costs nothing extra — but labelled observer-relative and used only
+      within a jurisdiction, never set against the Saudi figure. Publishing data
+      at its true strength is not the same as discarding it.
+- [ ] **Refine the schema: its five fields are not alike.** Using it
+      prospectively showed something paper 5 did not distinguish.
+      `retrieval_route` is **observer-relative** — its value depends on who
+      collected, from where, and when, so it does not compare across
+      collections. `corroboration` and `discrepancy` are not: they are
+      properties of the record itself, and any reader reproduces them. Paper 5
+      treats the five alike. They are not, and the difference was found by using
+      the schema rather than by thinking about it. This belongs in paper 6 as a
+      correction to paper 5, which is what a second jurisdiction should produce:
+      not "the number repeated" but "the instrument learned something about
+      itself".
+- [ ] Full sweep of the statute book.
 - [ ] Analysis: what share of Acts, and of provisions, does the service itself
       flag as not reflecting the law in force? How old are the oldest unapplied
       effects?
