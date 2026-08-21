@@ -81,18 +81,36 @@ def fetch(url, timeout=60):
     started = time.time()
     p = subprocess.run(
         ["curl", "-sS", "-L", "--max-time", str(timeout),
-         "-w", "\n%{http_code}\t%{num_redirects}\t%{size_download}", url],
+         # Every successful response in this collection arrives in under two
+         # seconds; every failure is a connection that never opens and then
+         # burns the whole timeout. Capping the connect phase separately fails
+         # those fast --- at two in twelve requests in one stretch, waiting a
+         # minute each would add hours of nothing to the sweep --- and it
+         # sharpens the record rather than blurring it: time_connect separates
+         # "could not reach the host" from "host was slow to answer", which is
+         # the distinction needed to say whose failure it was.
+         "--connect-timeout", "10",
+         "-w", "\n%{http_code}\t%{num_redirects}\t%{size_download}"
+               "\t%{time_connect}", url],
         capture_output=True, text=True)
     elapsed = round(time.time() - started, 3)
     body, _, tail = p.stdout.rpartition("\n")
     parts = tail.split("\t")
     status = parts[0] if parts and parts[0] else "000"
+
+    def field(i, cast):
+        try:
+            return cast(parts[i])
+        except (IndexError, ValueError):
+            return None
+
     return {
         "url": url,
         "http_status": status,
-        "redirects": int(parts[1]) if len(parts) > 1 and parts[1] else 0,
-        "bytes": int(parts[2]) if len(parts) > 2 and parts[2] else 0,
+        "redirects": field(1, int) or 0,
+        "bytes": field(2, int) or 0,
         "seconds": elapsed,
+        "connect_seconds": field(3, float),
         "curl_error": p.stderr.strip()[:200] or None,
     }, body
 

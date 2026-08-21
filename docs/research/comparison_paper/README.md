@@ -192,8 +192,23 @@ paper 5's cost claim, which until now was an argument.
       That is a connection that never opened — this collector's network, not
       the service — and it is the second piece of evidence for narrowing the
       comparison.
+- [x] **A separate connect timeout, added after the failures showed a shape.**
+      Two of the first twelve requests of the sweep died the same way as the
+      pilot's one: sixty seconds, no bytes. Every success in the collection
+      answers in under two seconds. There is no middle — a request either
+      returns at once or its connection never opens — so `--connect-timeout 10`
+      loses no real response and stops the sweep spending a minute on each dead
+      socket. At the observed rate that alone would have added hours of waiting
+      to a run already pinned to a five-second crawl delay.
+
+      It also improves the record rather than hiding the failures: `curl`'s
+      `time_connect` is now stored with every attempt, which separates *could
+      not reach the host* from *host was slow to answer*. That is the
+      distinction needed to say whose failure it was, and it is the third piece
+      of evidence that these are this collector's network rather than the
+      service.
 - [ ] Full sweep of the statute book (1988–2026 running; extend earlier if the
-      backlog turns out to reach further back than the modern era).
+      backlog reaches further back than the modern era).
 - [ ] Analysis: what share of Acts, and of provisions, does the service itself
       flag as not reflecting the law in force? How old are the oldest unapplied
       effects?
