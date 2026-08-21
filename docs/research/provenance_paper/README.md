@@ -10,7 +10,9 @@ whether they share a vocabulary (`../definitions_paper/`), and how they change
 (`../amendment_paper/`). All four assume the official text was available, and
 itself consistent, when it was collected. This one tests that.
 
-**Venue not yet chosen.** The draft is complete and builds.
+**Venue: *Data & Policy* (Cambridge University Press) recommended.** See
+*Venue* below — two journals that would have fitted better have left Cambridge
+since, and that is recorded there too.
 
 | File | Purpose |
 |---|---|
@@ -156,12 +158,62 @@ computes this so the paper does not have to claim a convenient direction.
   not a monitoring study — it cannot distinguish an outage from a block or a
   rate limit.
 
+## Venue
+
+### A correction to an earlier suggestion
+
+Both law-librarianship journals suggested earlier as Cambridge titles have left
+Cambridge, and the suggestion was made from stale knowledge:
+
+- ***International Journal of Legal Information*** (IALL) is now published by
+  **De Gruyter Brill**, not Cambridge. Archived issues remain on Cambridge Core,
+  which is what makes the mistake easy.
+- ***Legal Information Management*** (BIALL) moved to **Edinburgh University
+  Press** from the start of 2026, ending a 21-year relationship with Cambridge.
+  It also targets ~3,500-word practitioner pieces and takes submissions by
+  email.
+
+On fit alone, IJLI is the most natural home this paper has: it is the journal
+of record for law-library and legal-information scholarship, which is exactly
+what a study of source availability and provenance is. It is simply not
+Cambridge any more.
+
+### Recommended, and verified: *Data & Policy* (Cambridge University Press)
+
+| | |
+|---|---|
+| Publisher | Cambridge University Press — **verified** |
+| Scope | research using rigorous methods on how data science informs or affects policy, including the legitimacy and effectiveness of policy making |
+| Article type | Research article, approx. **8,000 words**; Commentary approx. 4,000; **Data paper** approx. 8,000 |
+| Review | **single-blind** — so no anonymised build is needed, unlike papers 2–5 so far |
+| Submission | **ScholarOne**, `mc.manuscriptcentral.com/dataandpolicy`, or via Overleaf |
+| Open access | Gold OA with an APC — **a waiver can be requested by authors without funding**, which applies here |
+| Data policy | Transparency and Openness Promotion: data and code expected to be openly available — already exceeded by this project |
+
+Two consequences for the manuscript. The draft is 4,338 words against an
+approximate 8,000-word target, so there is room and probably an expectation to
+expand. And the framing would shift from legal-citation practice toward public
+data infrastructure: the question *Data & Policy* readers care about is whether
+the official record a state publishes can be relied on by anyone building on
+it, which is the paper's finding stated in their terms rather than a different
+paper.
+
+### A note recorded while checking
+
+Cambridge Core was serving a site-wide disruption notice while these
+requirements were being verified — "we have suspended some systems and
+services" — and both journals' author-instruction pages returned 404 on the
+first attempts. The requirements above were eventually retrieved through a
+text-extraction proxy. The irony is not the point; the point is that it is a
+third independent instance, encountered by accident in one afternoon, of the
+thing this paper measures.
+
 ## Next steps
 
-- [ ] Choose the venue and verify its scope, review model, length band and
-      submission route against the journal's own instructions. Current draft is
-      4,338 words including footnotes. Candidates worth checking: *International
-      Journal of Legal Information* (Cambridge), *Legal Information Management*
-      (Cambridge/BIALL), *Data & Policy* (Cambridge). The four journals already
-      holding papers 1–4 are not available.
+- [ ] Confirm the *Data & Policy* fit is acceptable, then reframe the
+      introduction and discussion toward public data infrastructure and expand
+      toward the 8,000-word target.
+- [ ] Request the APC waiver at submission — there is no funder.
+- [ ] Single-blind review means the anonymised build is not required, but
+      `build.py` should keep producing it: the next venue may need it.
 - [x] Quality review complete — see above.
