@@ -182,6 +182,55 @@ With clean data no Act is excluded — but the guard stays, because the fault wa
 invisible while the numbers looked plausible, which is the only kind of fault
 that reaches print.
 
+## The assumption the whole paper rests on, checked
+
+Everything here reads `RequiresApplied="true"` as *this amendment is in force
+and is not in the text the service displays*. That reading came from the shape
+of the data, not from the publisher, and if it were wrong every number would be
+worthless. It is the paper's single highest-risk assumption and it was checked
+before any number was written up.
+
+legislation.gov.uk states it directly: **"If the primary legislation on
+legislation.gov.uk has any unapplied effects, we flag them in the 'Changes to
+Legislation' banner on the website."** The reading holds.
+
+The same page gave something better than confirmation.
+
+## A publisher that states a service standard, and publishes no way to check it
+
+legislation.gov.uk commits to a target: **"We aim to incorporate new amendments
+into the text of the legislation within three months of those amendments coming
+into force."**
+
+Two consequences, and they pull in opposite directions. Both belong in the
+paper.
+
+**Against overclaiming.** A three-month target means the expected steady state
+is *not* zero unapplied effects. "33 of 93 Acts are affected" is therefore not
+by itself a failure — some backlog is the design. Any finding has to be about
+the tail, not the existence, of the queue.
+
+**The finding.** Compliance with that target cannot be computed from what the
+service publishes. The target is measured from *coming into force*, and
+commencement dates are not in this metadata — the Transport Act 1982 amending
+the Road Traffic Act 1988 shows how far commencement can lag enactment. So the
+publisher states a standard for the currency of its own text and does not
+publish the one field that would let a user verify it against any particular
+provision.
+
+That is paper 5's argument arriving from the other direction. Paper 5 asked
+publishers to ship the strength of the evidence with the text, on the grounds
+that a user cannot otherwise tell which case they are in. Here the publisher
+has gone further than almost anyone — it declares the defect, per provision,
+in machine-readable form — and a user still cannot tell whether any given
+flagged provision is inside the three-month window or years past it.
+
+What can be reported is the distribution of affecting-instrument years among
+unapplied effects, stated as what it is: the age of the amending instrument,
+not the age of the breach.
+
+Source: <https://www.legislation.gov.uk/understanding-legislation>
+
 ## Reproduce
 
 ```
