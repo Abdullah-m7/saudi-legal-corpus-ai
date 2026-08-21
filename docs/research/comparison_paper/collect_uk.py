@@ -140,19 +140,39 @@ def provenance(attempt):
     }
 
 
+# Attributes kept from each effect. `AffectingYear` is how long the amendment
+# has gone unincorporated, and `AffectedProvisions` is the unit against which
+# the Saudi per-article figures will have to be set --- neither is recoverable
+# from a count, and re-fetching the statute book to get them would cost hours
+# against a five-second crawl delay. Keeping the attributes rather than a
+# summary also leaves the choice of what matters to the analysis, where it
+# belongs, instead of freezing it in the collector.
+EFFECT_ATTRS = ("Type", "RequiresApplied", "AffectingYear", "AffectingNumber",
+                "AffectingClass", "AffectingURI", "AffectingProvisions",
+                "AffectedProvisions", "AffectedURI", "AppliedModified",
+                "Modified")
+
+
 def unapplied_effects(xml):
     """Effects the service itself flags as not incorporated into its own text."""
     elements = re.findall(r"<ukm:UnappliedEffect\b[^>]*>", xml)
-    requires = [e for e in elements if 'RequiresApplied="true"' in e]
-    types = {}
-    for e in requires:
-        m = re.search(r'Type="([^"]*)"', e)
-        key = m.group(1) if m else "?"
-        types[key] = types.get(key, 0) + 1
+    effects, types = [], {}
+    for element in elements:
+        attrs = {}
+        for key in EFFECT_ATTRS:
+            m = re.search(rf'\b{key}="([^"]*)"', element)
+            if m:
+                attrs[key] = m.group(1)
+        effects.append(attrs)
+        if attrs.get("RequiresApplied") == "true":
+            kind = attrs.get("Type", "?")
+            types[kind] = types.get(kind, 0) + 1
     return {
         "unapplied_total": len(elements),
-        "unapplied_requiring_application": len(requires),
+        "unapplied_requiring_application": sum(
+            1 for a in effects if a.get("RequiresApplied") == "true"),
         "by_type": types,
+        "effects": effects,
     }
 
 
