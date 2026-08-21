@@ -107,8 +107,10 @@ accordingly.
 \paragraph{Collection.} Every Public General Act from \nYearFrom{} to
 \nYearTo{} was enumerated from the service's own year feeds, and each Act's
 metadata retrieved from its \texttt{introduction/data.xml} endpoint. That
-endpoint carries the complete unapplied-effects block at roughly a ninth of the
-bytes of the full text, which was verified rather than assumed. The service's
+endpoint carries the complete unapplied-effects block --- verified rather than
+assumed, by comparing it against the full text and the contents listing for the
+same Act and finding the same effects in all three --- at a fraction of the
+bytes. The service's
 \texttt{robots.txt} declares a five-second crawl delay and the collector
 honours it, which is why a sweep of the statute book takes hours.
 
