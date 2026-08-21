@@ -154,8 +154,20 @@ def main():
     # shares are reported rather than one chosen quietly. What is observed is
     # reported as observed: `final` Acts carrying an unapplied effect are
     # counted, not assumed away.
+    # A wholly repealed Act has no live text to be out of date, so it belongs in
+    # the denominator no more than a `final` one does. The service marks repeal
+    # in the title rather than in a metadata field, so this is title-derived and
+    # said to be. It matters much less than the status split --- 4 of the
+    # affected Acts are repealed and they carry 5 effects out of thousands ---
+    # but it is the same argument, and reporting only the denominator that
+    # flatters the finding would be the error this analysis is built to avoid.
+    def is_repealed(act):
+        return "(repealed)" in (act.get("title") or "")
+
     revised = [a for a in got if a.get("document_status") == "revised"]
     final = [a for a in got if a.get("document_status") != "revised"]
+    live = [a for a in revised if not is_repealed(a)]
+    repealed = [a for a in got if is_repealed(a)]
     affected = [a for a in got if live_effects(a)]
     affected_final = [a for a in final if live_effects(a)]
     all_effects = [e for a in got for e in live_effects(a)]
@@ -291,6 +303,15 @@ def main():
             "difference_between_the_two_measures":
                 len(every_effect) - len(all_effects),
             "distinct_affected_provisions": len(provisions),
+            "acts_marked_repealed_in_title": len(repealed),
+            "acts_revised_and_not_repealed": len(live),
+            "acts_affected_share_of_revised_and_not_repealed":
+                round(len([a for a in live if live_effects(a)]) / len(live), 4)
+                if live else None,
+            "affected_acts_that_are_repealed":
+                len([a for a in repealed if live_effects(a)]),
+            "effects_sitting_on_repealed_acts":
+                sum(len(live_effects(a)) for a in repealed),
             "acts_status_revised": len(revised),
             "acts_status_final": len(final),
             "acts_affected_share_of_revised":
@@ -358,6 +379,18 @@ def main():
           f"{u['difference_between_the_two_measures']:,}")
     print(f"  ten most affected Acts hold "
           f"{u['top_10_acts_share_of_effects']*100:.1f}% of all of them")
+    print(f"\nthree denominators, none of them the obvious one on its own:")
+    print(f"    all {c['acts_retrieved']} retrieved            "
+          f"{u['acts_affected_share']*100:5.1f}% affected")
+    print(f"    {u['acts_status_revised']:>4} maintained in revised form  "
+          f"{u['acts_affected_share_of_revised']*100:5.1f}%")
+    print(f"    {u['acts_revised_and_not_repealed']:>4} revised and not repealed   "
+          f"{u['acts_affected_share_of_revised_and_not_repealed']*100:5.1f}%")
+    print(f"  {u['acts_marked_repealed_in_title']} Acts are marked repealed in "
+          f"their title (the service records repeal there,\n  not in a metadata "
+          f"field, so this is title-derived); "
+          f"{u['affected_acts_that_are_repealed']} of them are affected,\n  "
+          f"carrying {u['effects_sitting_on_repealed_acts']} effects")
     if u["acts_status_revised"]:
         print(f"\nof the {u['acts_status_revised']} Acts the service maintains in "
               f"revised form, {u['acts_affected_share_of_revised']*100:.1f}% are "

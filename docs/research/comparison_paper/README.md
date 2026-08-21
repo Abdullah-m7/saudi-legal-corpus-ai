@@ -265,6 +265,30 @@ carries 100, the oldest from 2008.
 That is an actively maintained record with a standing queue, not an abandoned
 one, which is a sharper and more uncomfortable finding than a backlog would be.
 
+## Two risks checked before the data was complete
+
+**Are the effects listed on an Act actually about that Act?** If some were
+about a different instrument, the per-Act attribution would be wrong and the
+concentration figures with it. Checked directly: 4,313 effects, **zero** whose
+`AffectedURI` points anywhere but the Act carrying them. Attribution is exact
+and nothing is double-counted.
+
+**Do wholly repealed Acts contaminate the result?** Barely, in the numerator —
+4 of the affected Acts are repealed and they carry 5 effects out of 4,313. But
+48 repealed Acts sit in the *denominator*, and a repealed Act has no live text
+to be out of date, exactly as a `final` one has no revised text. Reporting only
+the denominator that flatters the finding is the error this analysis exists to
+avoid, so all three are reported:
+
+| Denominator | Affected |
+|---|---|
+| all 368 retrieved | 32.9% |
+| 360 maintained in revised form | 33.6% |
+| 312 revised and not repealed | 37.5% |
+
+The service records repeal in the Act's title rather than in a metadata field,
+so that last row is title-derived and labelled as such in the output.
+
 ## Reproduce
 
 ```
