@@ -8,9 +8,9 @@ paper 2 (`../network_paper/`) analyses how instruments cite each other; paper 3
 the temporal question the first three left alone: what changes, where, and how
 much.
 
-**Venue not yet chosen.** The draft is complete and builds; it is deliberately
-venue-neutral until the target is picked and its requirements verified, as was
-done for paper 3.
+**Venue: recommended but not confirmed.** See *Venue* below — the leading
+candidate's own author page cannot be reached from this environment, so its
+length band is unverified and must be checked before the paper is adapted.
 
 | File | Purpose |
 |---|---|
@@ -135,12 +135,61 @@ Law's 75 repeals, 58 are M/43, 9 are M/101, 1 is M/93, and **7 carry no
 repealing decree in the record at all** — an illustration of the transcription
 limit the paper already claims.
 
+## Venue
+
+**Recommended: *The Theory and Practice of Legislation* (Routledge / Taylor &
+Francis).** The scope match is unusually exact — the journal's own statement of
+what it welcomes names *evidence-based drafting*, *pre- and post-legislative
+scrutiny for effectiveness and efficiency*, *the utility and necessity of
+codification*, and *the role of IT in legislation*. Those are, in order, this
+paper's method, its subject, its section on consolidation, and its proposal for
+a reverse-reference index.
+
+| | Status |
+|---|---|
+| Publisher | Routledge / Taylor & Francis — **verified** |
+| Scope | as above — **verified** from the journal's own about-page |
+| Review model | double-blind — **verified** |
+| Ranking | JCR Q1 in Law, IF ≈ 1.4 — **verified** from indexing services |
+| **Length band** | **UNVERIFIED.** A search result suggested 10,000–12,000 words preferred and 15,000 maximum with a 150-word abstract, but that text may come from a generic Taylor & Francis guidelines PDF rather than this journal's page. **Check before adapting.** |
+| Submission system | **UNVERIFIED** |
+| Editorial board | **UNVERIFIED** |
+
+Taylor & Francis blocks this environment (HTTP 403 on fetch, connection reset
+in a real browser through the proxy), so the three unverified rows have to be
+read off the journal's own author-guidelines page by hand. If the 10,000-word
+figure is right, the manuscript needs roughly to double, as paper 3 did for
+*Statute Law Review*.
+
+Alternatives considered:
+
+- ***Journal of Empirical Legal Studies*** (Wiley) — double-anonymous,
+  free-format submission, no stated word limit, all verified. Rejected on fit
+  rather than quality: JELS publishes predominantly causal-inference work, and
+  this paper is descriptive with an openly uncontrolled confound. It would be
+  read as a study without an identification strategy.
+- ***Statute Law Review*** (Oxford) — the best scope fit of all, but paper 3 is
+  under review there now. Submitting a second manuscript to the same journal
+  before the first resolves is not sensible.
+- **JURIX** (International Conference on Legal Knowledge and Information
+  Systems) — fits the current length without expansion and turns around fast,
+  but conference proceedings carry less weight with the legal audience this
+  paper is written for.
+
+One note of transparency rather than concern: Statute Law Review's
+Editors-in-Chief lead the same legislative-studies community this journal
+serves, so the same small readership may see both papers. Different journals,
+different publishers, different manuscripts — this is ordinary, and it is
+disclosed on the title page either way.
+
 ## Next steps
 
-- [ ] Choose the venue and verify its review model, length band, and submission
-      route against the journal's own author instructions — the paper-3
-      procedure. Current draft is 4,706 words including footnotes, which suits
-      an empirical-legal-studies or legal-informatics venue as it stands and
-      would need expansion for a law review.
+- [ ] Read the recommended journal's author-guidelines page by hand and fill in
+      the three unverified rows above — length band, submission system, review
+      confirmation. The current draft is 4,706 words including footnotes.
+- [ ] If the length band requires it, expand as paper 3 was expanded: the
+      doctrinal material this paper can add is the comparative treatment of how
+      other jurisdictions publish amendment status, and a worked account of the
+      Evidence Law transfer as a case study in legislative restructuring.
 - [ ] Decide how to refer to papers 1–3: they are cited obliquely as "companion
       studies" so the manuscript can be anonymised.
