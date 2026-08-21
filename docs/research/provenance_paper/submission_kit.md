@@ -52,14 +52,41 @@ the abstract.
 
 ## 5. Keywords
 
-Eight, in this order:
+**The form takes at most five**, added one at a time. Use these:
 
 ```
-public data infrastructure; provenance; data quality; web archiving; official records; open government data; legal informatics; Saudi Arabia
+provenance
+data quality
+public data infrastructure
+open government data
+web archiving
 ```
 
-If the form caps the number of fields, keep the first five — they carry the
-paper's subject; the last three are placement.
+The manuscript lists eight; its order is not an order of priority, so the five
+are chosen rather than taken off the top. *Saudi Arabia* is dropped because the
+abstract carries it and Cambridge Core indexes abstracts. *Legal informatics*
+is dropped deliberately: the article was reframed to reach past law, and the
+term would signal a legal-informatics paper in a data-policy journal and pull
+reviewers from the wrong field. *Official records* gives way to *open
+government data*, a research community with its own literature — which is where
+this article's readers are.
+
+## 5b. Standard Focus Area
+
+**Area 3: Policy & Literacy for Data.**
+
+The form requires one and tells the author to read the descriptions. Area 3's
+own description names *data supply chains, ownership, provenance, sharing,
+linkage, and data curation*, and *high-quality metadata, which must adhere to
+common standards to ensure interoperability*. That is this article's subject
+and its proposal.
+
+Area 1, *Digital & Data-Driven Transformations in Governance*, is the plausible
+alternative and is wrong: its description is about decision-making — public
+participation, collective intelligence, government-citizen interaction,
+democratic deliberation. This article does not study how decisions are made. It
+measures the quality of the record decisions are made on. The field routes the
+manuscript to reviewers, so the distinction is not cosmetic.
 
 ## 6. Files to upload
 
@@ -121,7 +148,8 @@ the form's questions consistently with it:
 | Generative AI use | **Yes** — declared in full: tool with version, how it was used, why. The manuscript names Claude Opus 5 (Anthropic). |
 | Author contributions (CRediT) | Conceptualisation, data curation, methodology, software, formal analysis, investigation, writing — original draft, writing — review and editing. Sole author. |
 | Data availability | Open: GitHub repository plus Zenodo archive, MIT licence, DOI `10.5281/zenodo.22019183` (concept DOI `10.5281/zenodo.22019182`). |
-| Preprint | **No.** |
+| Preprint | **No.** No arXiv e-print number. |
+| Conference / special track / special collection | **N/A** to all three. |
 | Suggested reviewers | Leave blank unless the field is mandatory. |
 
 The journal follows the **TOP (Transparency and Openness Promotion)** policy,
