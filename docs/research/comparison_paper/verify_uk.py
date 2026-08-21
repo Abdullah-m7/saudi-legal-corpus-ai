@@ -38,8 +38,13 @@ def recompute():
     effects = affected = body = 0
     provisions, years = set(), {}
     for a in ok:
+        # Both conditions, independently expressed. `RequiresApplied` alone
+        # is what the withdrawn version of this study counted, and it is not
+        # the measure: an effect marked prospective in ukm:InForce is enacted
+        # but not commenced, so the service is right not to have applied it.
         live = [e for e in a.get("effects", [])
-                if e.get("RequiresApplied") == "true"]
+                if e.get("RequiresApplied") == "true"
+                and e.get("InForceProspective") != "true"]
         affected += bool(live)
         effects += len(live)
         if isinstance(a.get("body_paragraphs"), int):
