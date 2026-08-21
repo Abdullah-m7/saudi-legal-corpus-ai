@@ -29,17 +29,16 @@ Read-only and deterministic. Run from the repository root:
     python3 docs/research/comparison_paper/analyse_uk.py
 """
 
+import argparse
 import json
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 STORE = HERE / "uk_collection"
 OUT = HERE / "uk_analysis_results.json"
 
-# The collection is a snapshot. Ages are measured against the latest year the
-# collection itself covers rather than today's date, so that re-running the
-# analysis on the same files always gives the same answer.
 def load():
     years, acts = [], []
     for path in sorted(STORE.glob("*.json")):
@@ -58,6 +57,11 @@ def retrieved(act):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--as-of", default=date.today().isoformat(),
+                    help="date the collection is treated as current at "
+                         "(YYYY-MM-DD); recorded in the results")
+    as_of = date.fromisoformat(ap.parse_args().as_of)
     years, acts = load()
     if not acts:
         raise SystemExit("no collection found --- run collect_uk.py first")
@@ -85,12 +89,30 @@ def main():
             if p:
                 provisions.add((e.get("AffectedURI", a["id"]), p))
 
-    latest = max(years) if years else None
+    # `AffectingYear` is the year of the instrument making the amendment, and
+    # it is NOT the date the amendment took effect. The Transport Act 1982
+    # amends the Road Traffic Act 1988: provisions never commenced in 1982
+    # bite, when commenced, on a later consolidating Act. Effects whose
+    # affecting instrument predates the Act they affect are counted below, and
+    # they are not rare. So subtracting years does not measure how long
+    # anything has gone unincorporated --- and commencement dates are not in
+    # this metadata, so that duration cannot be computed from this collection
+    # at all.
+    #
+    # What can be said exactly: the affecting instrument dates from year Y, and
+    # the effect is still unapplied as at the date the analysis is run against.
+    # That date is a parameter whose value is recorded, rather than today's
+    # date read silently, so the same files and the same --as-of always give
+    # the same answer.
     ages = Counter()
     for e in all_effects:
         y = e.get("AffectingYear")
         if y and y.isdigit():
             ages[int(y)] += 1
+    backwards = sum(
+        1 for a in got for e in live_effects(a)
+        if e.get("AffectingYear", "").isdigit()
+        and int(e["AffectingYear"]) < a["_year"])
 
     per_act = sorted((len(live_effects(a)), a["id"], a.get("title") or "")
                      for a in affected)[::-1]
@@ -119,10 +141,17 @@ def main():
         },
         "by_type": dict(Counter(e.get("Type", "?") for e in all_effects)
                         .most_common(15)),
-        "affecting_year": dict(sorted(ages.items())),
-        "oldest_outstanding": (
-            {"affecting_year": min(ages), "years_outstanding": latest - min(ages),
-             "count": ages[min(ages)]} if ages and latest else None),
+        "affecting_instrument_year": dict(sorted(ages.items())),
+        "effects_whose_affecting_instrument_predates_the_act": backwards,
+        "oldest_affecting_instrument": (
+            {"year": min(ages),
+             "years_since": as_of.year - min(ages),
+             "count": ages[min(ages)],
+             "note": "years since the affecting instrument was passed, NOT the "
+                     "time the amendment has gone unincorporated --- "
+                     "commencement dates are not in this metadata"}
+            if ages else None),
+        "as_of": as_of.isoformat(),
         "most_affected_acts": [
             {"effects": n, "id": i, "title": t} for n, i, t in per_act[:15]],
     }
@@ -145,11 +174,16 @@ def main():
           f"{u['difference_between_the_two_measures']:,}")
     print(f"  ten most affected Acts hold "
           f"{u['top_10_acts_share_of_effects']*100:.1f}% of all of them")
-    if results["oldest_outstanding"]:
-        o = results["oldest_outstanding"]
-        print(f"\noldest outstanding amendment: enacted {o['affecting_year']}, "
-              f"{o['years_outstanding']} years unincorporated "
+    if results["oldest_affecting_instrument"]:
+        o = results["oldest_affecting_instrument"]
+        print(f"\noldest affecting instrument still unapplied: {o['year']}, "
+              f"{o['years_since']} years before {as_of.isoformat()} "
               f"({o['count']} effect(s))")
+        print("  that is the age of the amending instrument, not how long the "
+              "amendment has gone\n  unincorporated --- commencement dates "
+              "are not published in this metadata")
+    print(f"  effects whose affecting instrument predates the Act it amends: "
+          f"{results['effects_whose_affecting_instrument_predates_the_act']}")
     print(f"\nwrote {OUT.name}")
 
 

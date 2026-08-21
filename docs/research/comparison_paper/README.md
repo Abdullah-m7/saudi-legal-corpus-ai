@@ -80,6 +80,31 @@ The sound measure is the `UnappliedEffects` block in each Act's own metadata,
 which is what the collector reads. This is the same trap as the base-rate error
 in paper 4 (`../amendment_paper/`), and it appeared within an hour of starting.
 
+## A measure that had to be renamed before it became a number
+
+The analysis first reported "oldest outstanding amendment: enacted 1982, 6
+years unincorporated". Both halves were wrong, and the second was wrong in an
+interesting way.
+
+`AffectingYear` is the year of the instrument that makes the amendment. It is
+not the date the amendment took effect, and it is not bounded by the age of the
+Act being amended. **The Transport Act 1982 amends the Road Traffic Act 1988**:
+provisions that were never commenced in 1982 bite, once commenced, on a later
+consolidating Act. In 1988 alone, 20 unapplied effects have an affecting
+instrument older than the Act they affect.
+
+So a subtraction of years measures nothing. Commencement dates are not in this
+metadata, which means the duration an amendment has gone unincorporated
+**cannot be computed from this collection at all**. What can be stated exactly
+is narrower: the affecting instrument dates from year Y, and the effect is
+still unapplied as at a stated date. The analysis now says that, takes the date
+as `--as-of` rather than reading today's clock silently, and records the value
+in the results so the same files give the same answer.
+
+The Road Traffic Act 1988 is the case worth keeping either way: the official
+service displays a text that omits **261 enacted amendments**, some of them
+from an Act passed six years before it.
+
 ## Reproduce
 
 ```
