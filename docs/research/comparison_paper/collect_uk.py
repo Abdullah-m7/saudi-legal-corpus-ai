@@ -81,14 +81,19 @@ def fetch(url, timeout=60):
     started = time.time()
     p = subprocess.run(
         ["curl", "-sS", "-L", "--max-time", str(timeout),
-         # Every successful response in this collection arrives in under two
-         # seconds; every failure is a connection that never opens and then
-         # burns the whole timeout. Capping the connect phase separately fails
-         # those fast --- at two in twelve requests in one stretch, waiting a
-         # minute each would add hours of nothing to the sweep --- and it
-         # sharpens the record rather than blurring it: time_connect separates
-         # "could not reach the host" from "host was slow to answer", which is
-         # the distinction needed to say whose failure it was.
+         # This flag does nothing here, and the measurement is why it is kept.
+         # It was added on the theory that failures were connections that never
+         # opened, so capping the connect phase would fail them fast. The
+         # recorded time_connect refutes that: it is ~0.0002s on successes and
+         # failures alike, because outbound traffic goes through a local proxy
+         # that accepts instantly. The connect phase never reaches the origin,
+         # so no connect timeout can bound a stall beyond it --- only
+         # --max-time can, and every success here answers in under two seconds,
+         # so that is the lever to lower on the next full run.
+         #
+         # time_connect is still recorded, but it does NOT separate "could not
+         # reach the host" from "host was slow to answer" through a proxy: it
+         # is constant. An earlier version of this comment claimed it did.
          "--connect-timeout", "10",
          "-w", "\n%{http_code}\t%{num_redirects}\t%{size_download}"
                "\t%{time_connect}", url],

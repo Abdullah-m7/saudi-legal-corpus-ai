@@ -438,7 +438,8 @@ paper 5's cost claim, which until now was an argument.
       That is a connection that never opened — this collector's network, not
       the service — and it is the second piece of evidence for narrowing the
       comparison.
-- [x] **A separate connect timeout, added after the failures showed a shape.**
+- [x] **A connect timeout that turned out to do nothing — kept, because
+      measuring that is the point.**
       Two of the first twelve requests of the sweep died the same way as the
       pilot's one: sixty seconds, no bytes. Every success in the collection
       answers in under two seconds. There is no middle — a request either
@@ -447,12 +448,26 @@ paper 5's cost claim, which until now was an argument.
       socket. At the observed rate that alone would have added hours of waiting
       to a run already pinned to a five-second crawl delay.
 
-      It also improves the record rather than hiding the failures: `curl`'s
-      `time_connect` is now stored with every attempt, which separates *could
-      not reach the host* from *host was slow to answer*. That is the
-      distinction needed to say whose failure it was, and it is the third piece
-      of evidence that these are this collector's network rather than the
-      service.
+      **That reasoning was wrong, and the field added to support it is what
+      disproved it.** `time_connect` is ~0.0002 s on successes and failures
+      alike, because outbound traffic goes through a local proxy that accepts
+      instantly; the connect phase never reaches the origin. No connect timeout
+      can bound a stall beyond it. The flag has no effect, the apparent
+      improvement after adding it was the transient clearing on its own, and
+      four requests have since died the same way at exactly 60.02 s.
+
+      Two claims made earlier here are withdrawn. `time_connect` does **not**
+      separate *could not reach the host* from *host was slow to answer* — down
+      a proxy it separates nothing, being constant — so it was never a third
+      piece of evidence that the failures are this collector's network. That
+      conclusion still holds on the evidence that remains (re-attempts succeed
+      in under a second, every time), but on two legs rather than three.
+
+      `--max-time` is the lever that would actually bound the waste, and every
+      success in this collection answers in under two seconds. Lowering it is
+      queued for the next full run rather than done mid-sweep: four wasted
+      minutes across nine years of Acts is not worth a fifth restart, and the
+      retry pass recovers the coverage.
 - [ ] Full sweep of the statute book (1988–2026 running; extend earlier if the
       backlog reaches further back than the modern era).
 - [ ] **Re-run the same command after the sweep to fill 1990 and 1991**, which
