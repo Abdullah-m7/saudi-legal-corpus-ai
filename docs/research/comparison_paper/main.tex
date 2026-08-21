@@ -121,6 +121,60 @@ reading of it is still wrong by two orders of magnitude. Publishing the
 distinguishing fact is not sufficient; where it sits, relative to the fact that
 invites the error, decides what most readers will conclude.
 
+\section{Related work}
+
+Three literatures bear on this article, and it sits in a gap between them.
+
+\paragraph{Data quality as fitness for use.} The framing that treats quality as
+a property of use rather than of the artefact goes back to Wang and
+Strong,\footnote{R Y Wang and D M Strong, `Beyond Accuracy: What Data Quality
+Means to Data Consumers' (1996) 12(4) \emph{Journal of Management Information
+Systems} 5.} whose survey of data consumers found a conception of quality much
+broader than accuracy, organised into dimensions including believability,
+interpretability and ease of understanding. That framework anticipates the
+problem here in one respect and misses it in another. It is right that quality
+is relative to a consumer; but its dimensions are properties a dataset
+\emph{has}, assessed one at a time. The record examined in this article scores
+well on every one of them and still produces a wrong answer by default, because
+the fault is in the relation between two fields rather than in either field.
+
+\paragraph{Open government data and metadata quality.} The open-data literature
+has repeatedly identified metadata as the binding constraint on reuse. Janssen,
+Charalabidis and Zuiderwijk catalogued adoption barriers and argued against a
+`publish and they will come' model of open data.\footnote{M Janssen, Y
+Charalabidis and A Zuiderwijk, `Benefits, Adoption Barriers and Myths of Open
+Data and Open Government' (2012) 29(4) \emph{Information Systems Management}
+258.} Neumaier, Umbrich and Polleres built the closest methodological
+antecedent to this study: an automated, repeated assessment of metadata quality
+across many open data portals, measuring completeness, accuracy and
+retrievability at scale.\footnote{S Neumaier, J Umbrich and A Polleres,
+`Automated Quality Assessment of Metadata across Open Data Portals' (2016) 8(1)
+\emph{ACM Journal of Data and Information Quality} art 2.}
+
+That work measures whether metadata is present and correct. This article
+assumes both --- the metadata examined here is present, correct, complete and
+machine-readable --- and asks a different question: whether a competent
+consumer, reading it in the ordinary way, arrives at what it says. The two
+questions come apart, and the second has no established measure.
+
+\paragraph{Provenance and dataset documentation.} The W3C PROV data model gives
+a general vocabulary for recording what an artefact was derived from and by
+what activity.\footnote{W3C, \emph{PROV-DM: The PROV Data Model} (W3C
+Recommendation, 30 April 2013).} Datasheets for Datasets proposed a
+documentation practice --- a prose record of motivation, composition,
+collection process and recommended uses --- to travel with a dataset and make
+its limits legible to a later user.\footnote{T Gebru and others, `Datasheets
+for Datasets' (2021) 64(12) \emph{Communications of the ACM} 86.} Both address
+the case where the needed information is \emph{absent}. Neither addresses the
+case examined here, where the information is present, structured and
+authoritative, and the consumer still gets it wrong because of where it sits.
+
+\paragraph{The gap.} Between `the publisher did not say' and `the consumer did
+not read' there is a third condition: the publisher said it, in a place and a
+vocabulary that make the wrong reading the cheap one. This article is an
+account of that condition, measured on a national statute book, together with
+four properties by which a schema can be checked for it.
+
 \section{What the service publishes about its own currency}
 
 Two features of \texttt{legislation.gov.uk} matter here, and both are the

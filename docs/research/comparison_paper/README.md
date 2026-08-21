@@ -85,10 +85,25 @@ Added so far, all of it material the short version had no room for:
   are the one direction in which the compliance finding could be wrong, and the
   admission that a fourth reading may exist.
 
-Still to write: **related work**. That is the bulk of the remaining words and
-the slowest part, because every citation is checked rather than recalled — see
-`references.md`, which records what was verified and against what. Three
-entries so far.
+- **Related work** — written, and positioned in a gap between three
+  literatures rather than inside one. Fitness-for-use (Wang & Strong) is right
+  that quality is relative to a consumer, but its dimensions are properties a
+  dataset *has*, assessed one at a time; this record scores well on every one
+  and still misleads, because the fault is in the relation between two fields.
+  Open-data metadata quality (Janssen et al.; Neumaier et al.) measures whether
+  metadata is present and correct — which this article assumes. Provenance and
+  documentation practice (W3C PROV; Datasheets for Datasets) addresses
+  information that is *absent*. Between "the publisher did not say" and "the
+  consumer did not read" sits a third condition: the publisher said it, in a
+  place and a vocabulary that make the wrong reading the cheap one.
+
+Five citations verified so far, each recorded in `references.md` with what it
+was checked against. One entry is worth reading on its own: a summarising layer
+reported the Janssen article as issue 3; the publisher's own page and an
+independent lookup both give issue 4.
+
+Still to write: expanded results, implications for publishers and consumers,
+and any further citations the legal-informatics side needs.
 
 **Blocked:** GIQ's guide for authors could not be read from this environment.
 ScienceDirect and the Elsevier journal page both return 403 behind a CAPTCHA,
