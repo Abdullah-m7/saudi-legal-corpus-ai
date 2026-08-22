@@ -23,7 +23,7 @@ single anonymized, and the guide says **double anonymized**.
 | Funding statement (the journal supplies wording for "none") | Present |
 | Competing interests | Present |
 | Research data — **Option B**, deposit *encouraged* | Exceeded: GitHub plus Zenodo with a DOI |
-| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Draft in `biography.md` (89 words, with a 62-word alternative) for the author to correct; **the photograph is the author's to supply** |
+| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Draft in `biography.md` (89 words, with a 62-word alternative) for the author to correct; photograph supplied: `Almohammedi_photo.jpg`, 1254x1254 JPEG |
 | Graphical abstract | Encouraged, not required. Not planned |
 
 ## What the APA conversion turned up
@@ -60,7 +60,10 @@ argument, and its data is already deposited under a DOI.
       this repository shows. It carries no degree, institution, city or career,
       because none of that is in the record. **Read it and correct it**; a
       biography is a statement about a person, not about data
-- [ ] Passport-type photograph, separate file
+- [x] Passport-type photograph: `Almohammedi_photo.jpg`. Plain white
+      background, face forward, even lighting, 1254x1254 px — over 300 dpi at
+      any width a journal prints an author photo. Square rather than portrait,
+      which journals accept; there is headroom to crop to portrait if asked
 - [ ] Confirm the affiliation spelling in the submission profile. The
       ScholarOne account used for paper 3 carries `Independent Reseacher`
 - [ ] Read the system-generated PDF proof to the last page before sending

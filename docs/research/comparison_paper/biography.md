@@ -57,5 +57,8 @@ biographies in this journal carry an affiliation and a field of training.
 
 ## The photograph
 
-Passport-type, supplied as a separate file. Yours to provide; nothing in this
-repository can stand in for it.
+`Almohammedi_photo.jpg` — supplied by the author. 1254x1254 JPEG on a plain
+white background, face forward, evenly lit. That is over 300 dpi at any width a
+journal prints an author photo, so no resampling is needed. It is square rather
+than portrait, which journals accept, and there is headroom above and below to
+crop to portrait if a publisher asks.
