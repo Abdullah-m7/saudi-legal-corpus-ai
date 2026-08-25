@@ -23,7 +23,7 @@ single anonymized, and the guide says **double anonymized**.
 | Funding statement (the journal supplies wording for "none") | Present |
 | Competing interests | Present |
 | Research data — **Option B**, deposit *encouraged* | Exceeded: GitHub plus Zenodo with a DOI |
-| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Done. 85 words, chosen and filled in by the author, set on the title page from `biography.md`; photograph supplied: `Almohammedi_photo.jpg`, 1254x1254 JPEG |
+| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Done. 87 words, chosen and filled in by the author, set on the title page from `biography.md`; photograph supplied: `Almohammedi_photo.jpg`, 1254x1254 JPEG |
 | Graphical abstract | Encouraged, not required. Not planned |
 
 ## The anonymized build
@@ -106,11 +106,9 @@ from the source.
 ## Before submitting
 
 - [ ] APA conversion, with every entry checked against `references.md`
-- [x] Author biography — chosen and completed by the author: Option B, 85
-      words, trained in law, based in Jeddah. Set on the title page directly
-      from `biography.md`, so the two cannot disagree
-- [ ] Confirm Jeddah is the author's current base. It is where the degree was
-      taken; the biography's sentence is present tense
+- [x] Author biography — chosen and completed by the author: Option B, 87
+      words, trained in law, based in Rabigh, Saudi Arabia. Set on the title
+      page directly from `biography.md`, so the two cannot disagree
 - [x] Passport-type photograph: `Almohammedi_photo.jpg`. Plain white
       background, face forward, even lighting, 1254x1254 px — over 300 dpi at
       any width a journal prints an author photo. Square rather than portrait,

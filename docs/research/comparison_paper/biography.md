@@ -4,10 +4,10 @@ The journal asks for a biography of at most 100 words, in an editable format,
 with a passport-type photograph supplied separately.
 
 **The author has chosen Option B.** Trained in law (LL.B., Saudi Electronic
-University, Jeddah branch). `⟨city⟩` is filled as Jeddah, which is where the
-degree was taken — **the author should confirm this is also where he is now
-based**, since the biography states a current location, not a past one. One
-word changes it. The other two options are kept below for the record.
+University, Jeddah branch). `⟨city⟩` is filled as Rabigh, Saudi Arabia — the
+author's current base, confirmed by him. The country is named because the
+biography's other option, Jeddah, needs no gloss for an international reader
+and Rabigh does. The other two options are kept below for the record.
 
 Pick one, then fill every
 `⟨angle-bracketed⟩` blank — or strike the blank out if you would rather not
@@ -46,8 +46,8 @@ biography to argue for the work.
 > Arabian legislation in which every verified article carries the sources it
 > was reconciled from, and uses it to measure availability, consistency and
 > amendment in the official record. He is an independent researcher based in
-> Jeddah, trained in law, and publishes the data and code behind every
-> figure he reports.
+> Rabigh, Saudi Arabia, trained in law, and publishes the data and code
+> behind every figure he reports.
 
 ---
 
@@ -68,7 +68,7 @@ rather than sparse.
 
 | Blank | Why it earns its place |
 |---|---|
-| ~~`⟨city⟩`~~ | Filled: **Jeddah**, where the LL.B. was taken. Confirm it is your current base — the sentence reads as present tense. |
+| ~~`⟨city⟩`~~ | Filled: **Rabigh, Saudi Arabia** — the author's current base. Not the city where the LL.B. was taken, which was Jeddah; the sentence is present tense and states where he is, not where he studied. |
 | `⟨degree⟩ in ⟨field⟩ from ⟨university⟩` | The single line that most changes how an unaffiliated author is read. Leave it out only if you would rather it were not asked about. |
 | `⟨what you are working on now⟩` | A forward line. "Extending the corpus to a second jurisdiction" is true and is enough. |
 | ~~`⟨and trained in field⟩`~~ | Filled: **trained in law**. Named without an institution, which is the lighter form and the honest one — the degree is real, and where it was taken is not what a reader of this journal is asking. |

@@ -38,7 +38,7 @@ IDENTIFIERS = [
     "abdullah.m.almohammedi",
     "0009-0001-0832-0995",
     "Abdullah-m7",
-    "Jeddah",
+    "Rabigh",
 ]
 
 
