@@ -231,6 +231,22 @@ def read_biography():
     return bio
 
 
+def write_vitae_docx(bio: str) -> Path:
+    """The journal wants the biography in an editable format, so a PDF will
+    not do. Generated from the same string the title page uses, so the two
+    cannot come to disagree about what the author's biography says.
+    """
+    out = HERE / "Almohammedi_biography.docx"
+    md = HERE / "_vitae.md"
+    md.write_text(f"**Abdullah Almohammedi**\n\n{bio}\n", encoding="utf-8")
+    try:
+        subprocess.run(["pandoc", str(md), "-o", str(out)], check=True,
+                       capture_output=True, text=True)
+    finally:
+        md.unlink(missing_ok=True)
+    return out
+
+
 def latex(path: Path):
     for _ in range(2):
         r = subprocess.run(
@@ -292,6 +308,9 @@ def main():
     title_path.write_text(build_title_page(tex, identified), encoding="utf-8")
     print(f"  wrote {title_path.name}")
 
+    vitae = write_vitae_docx(read_biography())
+    print(f"  wrote {vitae.name}")
+
     anon_pdf = latex(anon_path)
     title_pdf = latex(title_path)
     print(f"  compiled {anon_pdf.name} and {title_pdf.name}\n")
@@ -307,8 +326,14 @@ def main():
     print(f"  manuscript source and PDF carry none of: {', '.join(IDENTIFIERS)}")
     print("  PDF metadata carries none of them either")
     print("  title page carries the name, the email and the ORCID\n")
-    print("Upload: main_anonymous.tex, the figures, highlights.txt,")
-    print("        title_page.pdf, Almohammedi_photo.jpg")
+    print("Upload, by the file type the submission system asks for:")
+    print("  Manuscript without author details  main_anonymous.tex")
+    print("  Title page with author details     title_page.pdf")
+    print("  Author biography                   Almohammedi_biography.docx")
+    print("  Cover letter                       cover_letter.pdf")
+    print("  Highlights                         highlights.txt")
+    print("  Figures (supplementary section)    fig1_*.pdf, fig2_*.pdf")
+    print("  Author photograph                  Almohammedi_photo.jpg")
 
 
 if __name__ == "__main__":

@@ -91,6 +91,21 @@ argument, and its data is already deposited under a DOI.
 
 ## What to upload
 
+The submission system names its own file types. These are the ones it offers
+and what goes in each; the figures and the photograph belong to the
+*optional and supplementary* section below the required one.
+
+| File type in the system | File |
+|---|---|
+| Manuscript without author details | `main_anonymous.tex` |
+| Title page with author details | `title_page.pdf` |
+| Author biography | `Almohammedi_biography.docx` — editable, as the guide requires; a PDF would not satisfy it |
+| Cover letter | `cover_letter.pdf` |
+| Highlights | `highlights.txt` |
+| Declaration of competing interests | **No file.** Confirmed by ticking the box on the upload page instead |
+| *(supplementary)* Figures | `fig1_all_flagged_effects.pdf`, `fig2_excluding_prospective.pdf` |
+| *(supplementary)* Author photograph | `Almohammedi_photo.jpg` |
+
 | File | What it is |
 |---|---|
 | `main_anonymous.tex` | The manuscript source, self-contained: `numbers.tex` is inlined by `build.py`, so nothing has to resolve at the publisher's end. No author block, no repository URL, no ORCID |
