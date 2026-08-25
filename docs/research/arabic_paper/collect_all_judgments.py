@@ -59,7 +59,25 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36")
 DELAY = 1.0          # the portal's own client-side rate limit
 PAGE_SIZE = 500      # the largest the endpoint honours
-SHARD_SIZE = 500
+SHARD_SIZE = 100
+
+# Highest-value benches first. If the run is cut short - and an ephemeral
+# container makes that likely - what exists should be the part worth having.
+# The Supreme Court's permanent panel is where principles are settled; the
+# commercial court is 95% of the corpus by volume and can wait.
+COURT_PRIORITY = [
+    "المحكمة العليا -  الهيئة الدائمة",
+    "المحكمة العليا ",
+    "مجلس القضاء الأعلى - الهيئة الدائمة",
+    "محكمة الاستئناف",
+    "محكمة الاستئناف الجزائية المتخصصة",
+    "المحكمة العمالية",
+    "المحكمة العامة",
+    "محكمة الأحوال الشخصية",
+    "محكمة الأحوال الشخصية - الأحكام القديمة",
+    "التجاري - القديم ",
+    "المحكمة التجارية",
+]
 
 TEXT_FIELDS = ("judgmentFacts", "judgmentReasons", "judgmentRuling",
                "judgmentTextofRulling", "appealFacts", "appealReasons",
@@ -249,12 +267,36 @@ def record_for(meta, detail):
     }
 
 
+def commit_shard(path):
+    """Put the shard in the repository as soon as it exists.
+
+    Anything left only in the container dies with it, and a collection meant
+    to run overnight cannot rely on the container lasting the night. A failed
+    push is reported and not retried here; the next shard will carry both.
+    """
+    repo = HERE.parents[2]
+    for cmd in (["git", "add", str(path)],
+                ["git", "commit", "-q", "-m",
+                 f"Judgment shard {path.name}"],
+                ["git", "push", "-q", "origin",
+                 "claude/saudi-legal-academic-research-yk3zku"]):
+        r = subprocess.run(cmd, cwd=repo, capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"    {cmd[1]} failed: {(r.stderr or r.stdout).strip()[:120]}")
+            return False
+    return True
+
+
 def stage_text():
     if not INDEX.exists():
         sys.exit("run --stage index first")
     index = [json.loads(l) for l in INDEX.read_text(encoding="utf-8").splitlines() if l.strip()]
     already = done_ids()
-    todo = [r for r in index if r["id"] not in already]
+    rank = {c: i for i, c in enumerate(COURT_PRIORITY)}
+    todo = sorted((r for r in index if r["id"] not in already),
+                  key=lambda r: (rank.get(r.get("courtName"), len(rank)),
+                                 str(r.get("judgementDate") or ""), r["id"]),
+                  reverse=False)
     print(f"{len(index):,} in the index, {len(already):,} already collected, "
           f"{len(todo):,} to fetch — about {len(todo) / 3600:.1f} hours")
 
@@ -270,7 +312,9 @@ def stage_text():
         with shard.open("w", encoding="utf-8") as fh:
             for row in buffer:
                 fh.write(json.dumps(row, ensure_ascii=False) + "\n")
-        print(f"  wrote {shard.name} ({len(buffer)} judgments)")
+        ok = commit_shard(shard)
+        print(f"  wrote {shard.name} ({len(buffer)} judgments)"
+              f"{'' if ok else ' — NOT committed'}")
         n += 1
         buffer = []
 
