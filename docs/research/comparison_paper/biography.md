@@ -3,9 +3,11 @@
 The journal asks for a biography of at most 100 words, in an editable format,
 with a passport-type photograph supplied separately.
 
-**The author has chosen Option B and is trained in law (LL.B., Saudi
-Electronic University), so that blank is now filled.** One blank remains:
-`⟨city⟩`. The other two options are kept below for the record.
+**The author has chosen Option B.** Trained in law (LL.B., Saudi Electronic
+University, Jeddah branch). `⟨city⟩` is filled as Jeddah, which is where the
+degree was taken — **the author should confirm this is also where he is now
+based**, since the biography states a current location, not a past one. One
+word changes it. The other two options are kept below for the record.
 
 Pick one, then fill every
 `⟨angle-bracketed⟩` blank — or strike the blank out if you would rather not
@@ -44,7 +46,7 @@ biography to argue for the work.
 > Arabian legislation in which every verified article carries the sources it
 > was reconciled from, and uses it to measure availability, consistency and
 > amendment in the official record. He is an independent researcher based in
-> ⟨city⟩, trained in law, and publishes the data and code behind every
+> Jeddah, trained in law, and publishes the data and code behind every
 > figure he reports.
 
 ---
@@ -66,7 +68,7 @@ rather than sparse.
 
 | Blank | Why it earns its place |
 |---|---|
-| `⟨city⟩` | Every biography in this journal locates its author. Riyadh, Jeddah, wherever you are. |
+| ~~`⟨city⟩`~~ | Filled: **Jeddah**, where the LL.B. was taken. Confirm it is your current base — the sentence reads as present tense. |
 | `⟨degree⟩ in ⟨field⟩ from ⟨university⟩` | The single line that most changes how an unaffiliated author is read. Leave it out only if you would rather it were not asked about. |
 | `⟨what you are working on now⟩` | A forward line. "Extending the corpus to a second jurisdiction" is true and is enough. |
 | ~~`⟨and trained in field⟩`~~ | Filled: **trained in law**. Named without an institution, which is the lighter form and the honest one — the degree is real, and where it was taken is not what a reader of this journal is asking. |
