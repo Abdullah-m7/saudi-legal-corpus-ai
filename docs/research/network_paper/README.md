@@ -4,6 +4,13 @@
 of Saudi Arabian Legislation* — targeted at **Artificial Intelligence and
 Law** (Springer), the journal of record for the AI-and-law field.
 
+**Submitted via Snapp. Status as of 25 August 2026: `Under Consideration` —
+editor assigned.** The paper has cleared desk screening and the handling
+editor is seeking reviewers; the next expected state is reviewers assigned.
+Progress is reported on the Research Square tracking dashboard
+(<https://www.researchsquare.com/>). This is the furthest along of the six
+papers.
+
 Builds on paper 1 (`../corpus_paper/`, under review at *Language Resources
 and Evaluation*): that paper describes the corpus, this one analyses the
 legal system the corpus captures.

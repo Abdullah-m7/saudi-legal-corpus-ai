@@ -3,6 +3,13 @@
 Academic resource paper documenting this repository's corpus, targeted at
 LREC / NLLP / Language Resources and Evaluation.
 
+**Submitted to *Language Resources and Evaluation* (Springer) via Snapp.
+Status as of 25 August 2026: `Under Consideration` — submission checks
+complete, editor not yet assigned.** Springer Nature reports progress on the
+Research Square tracking dashboard (<https://www.researchsquare.com/>), which
+is where these status lines come from; Snapp itself issues no manuscript
+number visible to the author at this stage.
+
 | File | Purpose |
 |---|---|
 | `saudi_legal_corpus_resource_paper.md` | The paper draft (English). |
