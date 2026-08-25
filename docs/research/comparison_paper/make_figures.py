@@ -15,9 +15,16 @@ Figure 1  The composition of the flagged effects, all four states on one linear
 Figure 2  The same, excluding the prospective majority, where the three smaller
           categories become legible.
 
-Resolution follows the journal's artwork rules rather than a default: colour
-halftones at a minimum of 300 dpi and, at full page width, at least 2244 pixels
-across. The earlier figure was 2040 and would have been rejected.
+The journal's artwork rules set different thresholds by kind of image, and
+these are bar charts: line drawings, not photographs. As bitmaps they would
+need 1000 dpi and 7480 pixels at full page width, which the 300 dpi raster
+outputs here do not meet. As vector drawings they need neither - the rules ask
+only for EPS or PDF. So PDF is the format that goes to the journal, and it is
+what the manuscript includes: vector, resolution-independent, and native to
+pdflatex, which cannot read EPS at all.
+
+PNG and TIFF are still written, for reading in the repository and for any
+venue that asks for a raster.
 
 Deterministic over the analysis results. Run from the repository root, after
 analyse_uk.py:
@@ -113,10 +120,8 @@ def draw(keys, states, total, title, subtitle, stem, height):
     ax.set_title(f"{title}\n{subtitle}", fontsize=9.6, color=INK, loc="left",
                  pad=10)
     fig.subplots_adjust(left=0.215, right=0.975, top=0.80, bottom=0.17)
-    for ext in ("png", "tiff", "eps"):
-        fig.savefig(HERE / f"{stem}.{ext}",
-                    dpi=300 if ext != "eps" else None,
-                    format="eps" if ext == "eps" else None)
+    for ext in ("pdf", "eps", "png", "tiff"):
+        fig.savefig(HERE / f"{stem}.{ext}", dpi=300 if ext in ("png", "tiff") else None)
     plt.close(fig)
     return HERE / f"{stem}.png"
 

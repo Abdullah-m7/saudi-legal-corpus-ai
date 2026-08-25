@@ -13,7 +13,7 @@ single anonymized, and the guide says **double anonymized**.
 | **Keywords: 1–7** | 6 |
 | **Highlights: 3–5 bullets, ≤ 85 characters each**, separate file with `highlights` in the name | `highlights.txt`, generated and length-checked by `make_highlights.py` |
 | **Source file `.tex`** — PDF is not an acceptable source | LaTeX throughout |
-| **Figures as separate files**, ≥ 300 dpi, ≥ 2244 px at full page width | 2280 px, 300 dpi, TIFF + EPS + PNG |
+| **Figures as separate files**, in the format the rules set for their kind | **PDF, vector.** The 300 dpi / 2244 px rule this row used to cite is the one for photographs. These are bar charts — line drawings — and as bitmaps would need 1000 dpi and 7480 px, which the 2280 px rasters do not meet. As vector drawings the rules ask only for EPS or PDF and set no resolution at all |
 | **Never combine graphs into one image** | The single panelled figure was split into two |
 | **Numbered sections** (1, 1.1, 1.1.1) | Article class numbers them |
 | **US spelling** | Converted |
@@ -93,9 +93,8 @@ argument, and its data is already deposited under a DOI.
 
 | File | What it is |
 |---|---|
-| `main_anonymous.tex` | The manuscript source. No author block, no repository URL, no ORCID |
-| `numbers.tex` | Included by the manuscript; every measurement it reports |
-| `fig1_all_flagged_effects.tiff`, `fig2_excluding_prospective.tiff` | Figures, separate files, 300 dpi, 2280 px. **Two files, not one** |
+| `main_anonymous.tex` | The manuscript source, self-contained: `numbers.tex` is inlined by `build.py`, so nothing has to resolve at the publisher's end. No author block, no repository URL, no ORCID |
+| `fig1_all_flagged_effects.pdf`, `fig2_excluding_prospective.pdf` | Figures, vector. **Two files, not one** |
 | `highlights.txt` | 5 bullets, each within 85 characters |
 | `title_page.pdf` | Identity, declarations, CRediT, data availability, vitae |
 | `Almohammedi_photo.jpg` | Passport-type photograph |

@@ -106,6 +106,24 @@ def split_conditionals(tex, anon=True):
     return "".join(out), identified
 
 
+def inline_numbers(tex):
+    """Fold numbers.tex into the manuscript.
+
+    The uploaded file is compiled by the publisher's system, not here. An
+    \\input that resolves on this machine is a second file that has to arrive,
+    be recognised, and be found by name at their end - three ways for a build
+    to fail on a dependency the reader never sees. The values are still
+    generated; they are pasted in by this script rather than read at compile
+    time.
+    """
+    numbers = (HERE / "numbers.tex").read_text(encoding="utf-8")
+    if "\\input{numbers}" not in tex:
+        sys.exit("main.tex no longer inputs numbers.tex; check before building")
+    return tex.replace("\\input{numbers}",
+                       "%% numbers.tex, inlined so the upload is one file.\n"
+                       + numbers.strip(), 1)
+
+
 def harden_metadata(tex):
     """Stop the PDF carrying an author in metadata the page never shows."""
     marker = "\\hypersetup{pdfauthor={},pdftitle={},pdfsubject={},pdfkeywords={},pdfcreator={}}\n"
@@ -263,7 +281,7 @@ def main():
     print("Building the Government Information Quarterly submission files.\n")
     tex = read_source()
     anon, identified = split_conditionals(tex)
-    anon = harden_metadata(anon)
+    anon = harden_metadata(inline_numbers(anon))
 
     anon_path = HERE / "main_anonymous.tex"
     anon_path.write_text(anon, encoding="utf-8")
