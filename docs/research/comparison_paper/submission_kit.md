@@ -117,6 +117,35 @@ and what goes in each; the figures and the photograph belong to the
 `main_anonymous.pdf` is for reading before upload; the system compiles its own
 from the source.
 
+## Submitted
+
+25 August 2026. The submission service is `submit.elsevier.com`, not Editorial
+Manager directly; it ingests into EM, and the first status is `Submission
+Received via Ingest`.
+
+Three things the kit had not anticipated, all found at the screen rather than
+in the guide:
+
+- **The file-type list wanted an author biography and a cover letter as their
+  own uploads.** Neither existed in an uploadable form: the biography lived
+  only inside the title page, and the guide asks for it in an editable format,
+  which a PDF is not.
+- **A mobile file picker greys out `.tex`.** The guide refuses a PDF source, so
+  the compliant file could not be selected at all. The optional section's
+  *LaTeX source files* slot took the zip, and the manuscript slot took the
+  Word copy — both formats the guide accepts.
+- **There is no author-photograph file type.** The guide says to supply the
+  photograph "as a separate figure", but the review PDF is built from the
+  manuscript, figures and tables, so a photograph uploaded as a figure would
+  put the author's face in front of the reviewers. It went in as
+  supplementary material instead.
+
+Classifications chosen (3–5 allowed, and they drive reviewer matching): Data
+Quality, Government Information, Open Data, Information Policy, **Law**. The
+last is the one that matters most — the argument turns on enacted-but-not-
+commenced being a legal distinction, and a reviewer without it can read the
+paper as a note about untidy data.
+
 ## Before submitting
 
 - [ ] APA conversion, with every entry checked against `references.md`

@@ -3,6 +3,14 @@
 *Ninety-Three Per Cent of a Backlog Is Not a Backlog: Reading a Public
 Publisher's Own Quality Signal.*
 
+**Submitted to *Government Information Quarterly* (Elsevier) on 25 August 2026
+as a Research Paper, via <https://submit.elsevier.com>, which passed it into
+Editorial Manager — status on arrival: `Submission Received via Ingest`.**
+Double anonymized review; subscription rather than open access (the APC is USD
+4,800 and there is no funding or institution behind this work). Nine files
+uploaded; see `submission_kit.md` for what went into each slot and why. No
+manuscript number is issued at the ingest stage.
+
 ## The finding, and the two withdrawn versions of it
 
 `legislation.gov.uk` flags **14,407** effects across the modern statute book as
