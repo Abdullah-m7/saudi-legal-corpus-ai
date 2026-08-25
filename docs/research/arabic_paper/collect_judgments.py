@@ -53,6 +53,25 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36")
 DELAY = 1.0  # the portal's own client-side limit
 
+def occurrences(text, term):
+    """Count the term the way the ministry's search finds it.
+
+    A plain substring count is wrong here. The portal matches morphologically:
+    it returns a judgment for المستهلك whose body only ever says للمستهلك and
+    مستهلك. Counting the literal string gives zero on a judgment where the
+    word appears six times, and anyone filtering on a positive count would
+    discard exactly the judgments the search was right to return.
+
+    So the count strips the definite article to a stem and allows the ordinary
+    Arabic proclitics in front of it: the article, و ف ب ك ل and their pairs.
+    It will still miss a broken-plural form such as منشآت, which shares no
+    surface with منشأة; that is a floor on the count, not a ceiling.
+    """
+    stem = re.sub(r"^ال", "", term)
+    pattern = re.compile(r"[وف]?[بكل]?(?:ال)?" + re.escape(stem))
+    return len(pattern.findall(text))
+
+
 TEXT_FIELDS = ("judgmentFacts", "judgmentReasons", "judgmentRuling",
                "judgmentTextofRulling", "appealFacts", "appealReasons",
                "appealRuling", "appealTextofRulling")
@@ -146,12 +165,12 @@ def main():
                 "court": r.get("courtName"),
                 "isAppeal": r.get("isAppeal"),
                 "characters": len(body),
-                "occurrences": body.count(args.term),
+                "occurrences": occurrences(body, args.term),
                 "text": body,
             })
             print(f"  [{len(rows)}/{wanted}] {r.get('courtName')} "
                   f"{r.get('judgementNumber')} — {len(body)} حرفًا, "
-                  f"«{args.term}» ×{body.count(args.term)}")
+                  f"«{args.term}» ×{occurrences(body, args.term)}")
         page += 1
 
     slug = re.sub(r'[\\/:*?"<>|\s]+', "_", args.term).strip("_")
