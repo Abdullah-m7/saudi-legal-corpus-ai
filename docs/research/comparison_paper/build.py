@@ -247,6 +247,62 @@ def write_vitae_docx(bio: str) -> Path:
     return out
 
 
+def write_docx(anon_tex: str) -> Path:
+    """A Word copy of the anonymous manuscript, for when .tex cannot be sent.
+
+    The journal accepts .doc/.docx or .tex and refuses a PDF, so this is a
+    compliant source rather than a workaround - but it is the fallback, not
+    the preferred file: the LaTeX carries the typesetting the journal will
+    eventually want.
+
+    Three things have to be right that are wrong by default. Without -s
+    pandoc writes no title block and the manuscript arrives untitled. Without
+    --number-sections the headings lose the numbering the journal requires.
+    And Word cannot render an embedded PDF, so the figures are pointed at the
+    300 dpi rasters for this output only.
+    """
+    out = HERE / "main_anonymous.docx"
+    tmp = HERE / "_docx_source.tex"
+    src = anon_tex
+    for stem in ("fig1_all_flagged_effects", "fig2_excluding_prospective"):
+        src = src.replace("{" + stem + "}", "{" + stem + ".png}")
+
+    # pandoc files \title into the document's properties, where a reader never
+    # looks, and \maketitle then renders nothing. Put the title on the page.
+    title = " ".join(extract(r"\\title\{(.+?)\n*\}", src,
+                             "the title").replace("\\\\", " ").split())
+    src = src.replace("\\maketitle",
+                      "\\begin{center}{\\Large\\bfseries " + title + "}\\end{center}", 1)
+
+    # pandoc hoists an abstract environment above everything else, which puts
+    # the abstract before the title. As an ordinary section it stays put.
+    src = src.replace("\\begin{abstract}", "\\section*{Abstract}", 1)
+    src = src.replace("\\end{abstract}", "", 1)
+    tmp.write_text(src, encoding="utf-8")
+    try:
+        subprocess.run(["pandoc", str(tmp), "-s", "--number-sections",
+                        "-o", str(out)], check=True, capture_output=True, text=True)
+    finally:
+        tmp.unlink(missing_ok=True)
+    return out
+
+
+def zip_latex() -> Path:
+    """The LaTeX upload as one archive.
+
+    Some file pickers will not offer a .tex at all. A zip of the source and
+    its figures is the same submission in a container every picker accepts.
+    """
+    import zipfile
+    out = HERE / "main_anonymous_latex.zip"
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for name in ("main_anonymous.tex",
+                     "fig1_all_flagged_effects.pdf",
+                     "fig2_excluding_prospective.pdf"):
+            z.write(HERE / name, name)
+    return out
+
+
 def latex(path: Path):
     for _ in range(2):
         r = subprocess.run(
@@ -274,6 +330,17 @@ def audit(anon_tex: Path, anon_pdf: Path, title_pdf: Path):
         for token in IDENTIFIERS:
             if token.lower() in target.lower():
                 failures.append(f"{label} contains {token!r}")
+
+    docx = HERE / "main_anonymous.docx"
+    if docx.exists():
+        import zipfile
+        blob = b"".join(zipfile.ZipFile(docx).read(n)
+                        for n in zipfile.ZipFile(docx).namelist())
+        rendered = subprocess.run(["pandoc", str(docx), "-t", "plain"],
+                                  capture_output=True, text=True).stdout
+        for token in IDENTIFIERS:
+            if token.lower().encode() in blob.lower() or token.lower() in rendered.lower():
+                failures.append(f"main_anonymous.docx contains {token!r}")
 
     # PDF metadata is not in the extracted text and is read by anyone with a
     # PDF viewer's properties dialog.
@@ -310,6 +377,9 @@ def main():
 
     vitae = write_vitae_docx(read_biography())
     print(f"  wrote {vitae.name}")
+
+    print(f"  wrote {write_docx(anon).name} and {zip_latex().name} "
+          f"(alternatives, for a picker that refuses .tex)")
 
     anon_pdf = latex(anon_path)
     title_pdf = latex(title_path)
