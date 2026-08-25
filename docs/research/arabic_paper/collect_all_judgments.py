@@ -97,41 +97,108 @@ def plain(value):
     return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", value)).split())
 
 
+SITEMAP = "https://laws.moj.gov.sa/sitemap-judicial-decisions.xml"
+
+
+def sitemap_ids():
+    """The ministry's own sitemap, as a second opinion on what exists.
+
+    It is not the full enumeration - 10,000 unique ids against 50,638
+    reported - but it is a different route to the same corpus, and the ids it
+    carries that the paged listing missed are proof the listing misses some.
+    """
+    out = subprocess.run(["curl", "-sS", "-A", UA, "--max-time", "180", SITEMAP],
+                         capture_output=True, text=True)
+    time.sleep(DELAY)
+    if out.returncode != 0:
+        print("  sitemap unavailable; continuing without it")
+        return set()
+    ids = {urllib.parse.unquote(u.rsplit("/", 1)[-1])
+           for u in re.findall(r"<loc>([^<]+)</loc>", out.stdout)
+           if "/JudicialDecisionsList/" in u}
+    print(f"  sitemap lists {len(ids):,} unique judgments")
+    return ids
+
+
+def index_pass(pages, known):
+    """One sweep of the paged listing. Returns the records it had not seen."""
+    fresh = []
+    for page in range(1, pages + 1):
+        got = request("POST", "/Judgements/judgements-list",
+                      {"pageNumber": page, "pageSize": PAGE_SIZE,
+                       "courtTypes": 0, "term": "", "sortingBy": 2})
+        if not got or not got.get("success"):
+            print(f"    page {page}: no answer")
+            continue
+        for r in got["model"]["judgementsCollection"]:
+            if r["id"] not in known:
+                known.add(r["id"])
+                r["retrieved_at"] = now()
+                fresh.append(r)
+    return fresh
+
+
 def stage_index():
-    first = request("POST", "/Judgements/judgements-list",
+    """Sweep until the listing stops yielding anything new.
+
+    The paged listing is not stable. Re-fetching page 7 after a complete pass
+    returned seven ids that pass had never seen, and no page had failed. The
+    records shift between pages while the corpus is being read, so a single
+    pass does not miss a few duplicates - it misses judgments, silently. One
+    pass gave 49,515 of the 50,638 the endpoint itself reports.
+
+    So: sweep repeatedly, keep what is new, and stop only after two
+    consecutive sweeps that add nothing. Then merge the sitemap's ids, which
+    come by a different route and catch some the listing never offers.
+    """
+    known, rows = set(), []
+    if INDEX.exists():
+        for line in INDEX.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                known.add(r["id"])
+                rows.append(r)
+        print(f"resuming from {len(rows):,} already indexed")
+
+    probe = request("POST", "/Judgements/judgements-list",
                     {"pageNumber": 1, "pageSize": PAGE_SIZE, "courtTypes": 0,
                      "term": "", "sortingBy": 2})
-    if not first or not first.get("success"):
+    if not probe or not probe.get("success"):
         sys.exit("the index endpoint did not answer")
-    total = first["model"]["totalCount"]
+    total = probe["model"]["totalCount"]
     pages = (total + PAGE_SIZE - 1) // PAGE_SIZE
-    print(f"{total:,} judgments, {pages} pages of {PAGE_SIZE}")
+    print(f"the endpoint reports {total:,} judgments, {pages} pages of {PAGE_SIZE}")
 
-    seen, rows = set(), []
-    for page in range(1, pages + 1):
-        got = first if page == 1 else request(
-            "POST", "/Judgements/judgements-list",
-            {"pageNumber": page, "pageSize": PAGE_SIZE, "courtTypes": 0,
-             "term": "", "sortingBy": 2})
-        if not got or not got.get("success"):
-            print(f"  page {page}: no answer, recorded as a gap")
-            continue
-        batch = got["model"]["judgementsCollection"]
-        fresh = [r for r in batch if r["id"] not in seen]
-        seen.update(r["id"] for r in batch)
-        rows.extend(fresh)
-        if page % 10 == 0 or page == pages:
-            print(f"  page {page}/{pages}: {len(rows):,} unique so far")
+    dry = 0
+    for sweep in range(1, 21):
+        added = index_pass(pages, known)
+        rows.extend(added)
+        print(f"  sweep {sweep}: +{len(added):,} new, {len(rows):,} total "
+              f"({len(rows) / total:.1%} of what the endpoint reports)")
+        with INDEX.open("w", encoding="utf-8") as fh:
+            for r in rows:
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+        dry = dry + 1 if not added else 0
+        if dry >= 2:
+            print(f"  two consecutive sweeps added nothing; the listing is exhausted")
+            break
 
-    with INDEX.open("w", encoding="utf-8") as fh:
-        for r in rows:
-            r["retrieved_at"] = now()
-            fh.write(json.dumps(r, ensure_ascii=False) + "\n")
-    dup = total - len(rows)
-    print(f"\nwrote {INDEX.name}: {len(rows):,} unique judgments")
-    if dup:
-        print(f"{dup:,} of the {total:,} the endpoint reported were duplicates "
-              f"across pages, or pages that did not answer")
+    extra = sitemap_ids() - known
+    if extra:
+        print(f"  the sitemap carries {len(extra):,} the listing never offered")
+        with INDEX.open("a", encoding="utf-8") as fh:
+            for jid in sorted(extra):
+                fh.write(json.dumps(
+                    {"id": jid, "from": "sitemap only", "retrieved_at": now()},
+                    ensure_ascii=False) + "\n")
+            rows.extend([{"id": j} for j in extra])
+
+    print(f"\nwrote {INDEX.name}: {len(rows):,} judgments against the "
+          f"{total:,} the endpoint reports")
+    if len(rows) < total:
+        print(f"{total - len(rows):,} short. The listing stopped offering new "
+              f"ids before reaching its own count; that gap is real and is not "
+              f"papered over here.")
 
 
 def done_ids():
