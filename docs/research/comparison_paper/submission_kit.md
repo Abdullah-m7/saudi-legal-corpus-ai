@@ -8,7 +8,7 @@ single anonymized, and the guide says **double anonymized**.
 
 | Requirement | Status |
 |---|---|
-| **Double anonymized review** — title page and anonymized manuscript as **separate files** | `build.py` produces both; the anonymity audit checks in both directions |
+| **Double anonymized review** — title page and anonymized manuscript as **separate files** | Done. `build.py` produces both and audits in both directions |
 | **Abstract ≤ 250 words** | 248 |
 | **Keywords: 1–7** | 6 |
 | **Highlights: 3–5 bullets, ≤ 85 characters each**, separate file with `highlights` in the name | `highlights.txt`, generated and length-checked by `make_highlights.py` |
@@ -18,13 +18,49 @@ single anonymized, and the guide says **double anonymized**.
 | **Numbered sections** (1, 1.1, 1.1.1) | Article class numbers them |
 | **US spelling** | Converted |
 | **APA 7th citations**, alphabetical reference list | Converted; six entries, every DOI re-checked against Crossref |
-| **CRediT roles** | In the declarations |
+| **CRediT roles** | On the title page — the line names the author, so it cannot sit in the anonymized manuscript |
 | Declaration of generative AI use | Complete, with tool and version |
 | Funding statement (the journal supplies wording for "none") | Present |
 | Competing interests | Present |
 | Research data — **Option B**, deposit *encouraged* | Exceeded: GitHub plus Zenodo with a DOI |
-| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Draft in `biography.md` (89 words, with a 62-word alternative) for the author to correct; photograph supplied: `Almohammedi_photo.jpg`, 1254x1254 JPEG |
+| **Vitae** — biography ≤ 100 words plus a passport-type photograph, editable format | Done. 85 words, chosen and filled in by the author, set on the title page from `biography.md`; photograph supplied: `Almohammedi_photo.jpg`, 1254x1254 JPEG |
 | Graphical abstract | Encouraged, not required. Not planned |
+
+## The anonymized build
+
+`build.py` produces both files from `main.tex`. Three things about it are worth
+knowing before anyone edits it.
+
+**The identity is deleted, not switched off.** The journal wants LaTeX source,
+not a PDF. A `.tex` that carries the author inside a disabled `\else` branch
+carries the author in plain text to everyone who opens the upload. So the
+script resolves every `\ifanon` block and writes out only the surviving
+branch; `main_anonymous.tex` has no author block to re-enable.
+
+**The declarations are split, not dropped.** An earlier version moved the whole
+Declarations section to the title page, which took the data-availability
+statement and the note on the subject with it. Neither names anyone, and a
+reviewer needs both — the first to judge reproducibility, the second because
+without it the article can be read as an accusation against the publisher it
+studies. Only the CRediT line and the repository URL are held back now, and the
+manuscript says where the URL went.
+
+**The audit runs in both directions.** The manuscript must contain no
+identifying token, in its source, in its rendered text, and in the PDF metadata
+that no reader sees but every properties dialog shows. The title page must
+contain the name, the email and the ORCID: a title page that passed an
+anonymity check would mean the identity had been stripped from the one file
+meant to carry it.
+
+### The one thing anonymity cannot cover
+
+The article describes its companion study as measuring one state's legal
+record, and names that state as Saudi Arabia once, where the methods section
+compares network conditions. A determined reviewer could find the companion
+study and, from it, the author. This is normal in double anonymized review and
+not worth mutilating the paper to prevent: the alternative is a methods section
+that hides which jurisdiction a measurement came from, which is worse than being
+identified. Anonymity here means not self-identifying, not being unfindable.
 
 ## What the APA conversion turned up
 
@@ -53,13 +89,28 @@ The journal encourages a graphical abstract and co-submission to *Data in
 Brief*. Neither is planned: the article has two figures that already carry its
 argument, and its data is already deposited under a DOI.
 
+## What to upload
+
+| File | What it is |
+|---|---|
+| `main_anonymous.tex` | The manuscript source. No author block, no repository URL, no ORCID |
+| `numbers.tex` | Included by the manuscript; every measurement it reports |
+| `fig1_all_flagged_effects.tiff`, `fig2_excluding_prospective.tiff` | Figures, separate files, 300 dpi, 2280 px. **Two files, not one** |
+| `highlights.txt` | 5 bullets, each within 85 characters |
+| `title_page.pdf` | Identity, declarations, CRediT, data availability, vitae |
+| `Almohammedi_photo.jpg` | Passport-type photograph |
+
+`main_anonymous.pdf` is for reading before upload; the system compiles its own
+from the source.
+
 ## Before submitting
 
 - [ ] APA conversion, with every entry checked against `references.md`
-- [ ] Author biography — a draft is in `biography.md`, written only from what
-      this repository shows. It carries no degree, institution, city or career,
-      because none of that is in the record. **Read it and correct it**; a
-      biography is a statement about a person, not about data
+- [x] Author biography — chosen and completed by the author: Option B, 85
+      words, trained in law, based in Jeddah. Set on the title page directly
+      from `biography.md`, so the two cannot disagree
+- [ ] Confirm Jeddah is the author's current base. It is where the degree was
+      taken; the biography's sentence is present tense
 - [x] Passport-type photograph: `Almohammedi_photo.jpg`. Plain white
       background, face forward, even lighting, 1254x1254 px — over 300 dpi at
       any width a journal prints an author photo. Square rather than portrait,
@@ -67,3 +118,6 @@ argument, and its data is already deposited under a DOI.
 - [ ] Confirm the affiliation spelling in the submission profile. The
       ScholarOne account used for paper 3 carries `Independent Reseacher`
 - [ ] Read the system-generated PDF proof to the last page before sending
+- [ ] Check the proof's first page for a byline the system added from the
+      submitting account. The manuscript file is clean; the platform is a
+      separate opportunity to break anonymity
