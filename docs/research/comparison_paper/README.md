@@ -5,11 +5,12 @@ Publisher's Own Quality Signal.*
 
 **Submitted to *Government Information Quarterly* (Elsevier) on 25 August 2026
 as a Research Paper, via <https://submit.elsevier.com>, which passed it into
-Editorial Manager — status on arrival: `Submission Received via Ingest`.**
+Editorial Manager — manuscript number **GIQ-D-26-01924**.** Track at
+<https://www.editorialmanager.com/GIQ/>, under *Submissions Being Processed*.
 Double anonymized review; subscription rather than open access (the APC is USD
 4,800 and there is no funding or institution behind this work). Nine files
-uploaded; see `submission_kit.md` for what went into each slot and why. No
-manuscript number is issued at the ingest stage.
+uploaded; see `submission_kit.md` for what went into each slot and why. The
+number was issued within minutes of ingest, not at editor assignment.
 
 ## The finding, and the two withdrawn versions of it
 
