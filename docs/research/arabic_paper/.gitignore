@@ -1,4 +1,16 @@
+# Fetched material that a script regenerates.
 rulings_cache/
 judgments_cache/
+
+# Run logs.
 collection.log
-judgments_*.jsonl
+index.log
+text.log
+
+# The term-scoped searches, superseded by the full corpus. Each of the four
+# terms begins with the definite article, hence the pattern.
+judgments_ال*.jsonl
+
+# judgments_index.jsonl and judgments/ ARE committed: the index is the
+# corpus's backbone, and the shards are how a fourteen-hour collection
+# survives a container that does not live that long.
