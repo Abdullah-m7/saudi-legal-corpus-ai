@@ -27,9 +27,14 @@ prose about what a court meant. A tool that a lawyer might rely on must not
 put words in a court's mouth.
 
 Output
-  citator/instruments/<track_id>.json    every article of that instrument
+  citator/articles/<track_id>/<n>.json   one article and every judgment on it
+  citator/instruments/<track_id>.json    that instrument's articles, summarised
   citator/index.json                     instruments, counts, article ranges
-  citator/README.md                      what it is and how to read it
+
+One file per article, because that is the unit of the question. Holding a
+whole instrument in one file put 65 MB behind a lookup of one provision, and
+GitHub warned about it; a practitioner wanting article 90 should fetch
+article 90.
 """
 
 import collections
@@ -149,6 +154,8 @@ def main():
             print(f"  shard {si}/{len(SHARDS)}: {n:,} judgments, {cites:,} entries")
 
     OUT.mkdir(exist_ok=True)
+    ARTS = HERE / "articles"
+    ARTS.mkdir(exist_ok=True)
     summary = []
     for tid, articles in sorted(entries.items(), key=lambda kv: -sum(len(v) for v in kv[1].values())):
         payload = {
@@ -158,18 +165,32 @@ def main():
             "entries": sum(len(v) for v in articles.values()),
             "articles": {},
         }
+        folder = ARTS / tid
+        folder.mkdir(exist_ok=True)
         for num in sorted(articles):
             rows = sorted(articles[num], key=lambda e: (e["hijri_date"] or ""))
             meta = arts.get((tid, num), {})
-            payload["articles"][str(num)] = {
+            by_voice = dict(collections.Counter(e["voice"] for e in rows))
+            record = {
+                "track_id": tid, "instrument": names.get(tid),
                 "article_number": num,
                 "label": meta.get("label"),
                 "section": meta.get("section"),
                 "official_text": meta.get("text"),
                 "legal_status": meta.get("legal_status"),
                 "citations": len(rows),
-                "by_voice": dict(collections.Counter(e["voice"] for e in rows)),
+                "by_voice": by_voice,
                 "judgments": rows,
+            }
+            (folder / f"{num}.json").write_text(
+                json.dumps(record, ensure_ascii=False, indent=1), encoding="utf-8")
+            payload["articles"][str(num)] = {
+                "article_number": num, "label": meta.get("label"),
+                "section": meta.get("section"),
+                "has_official_text": bool(meta.get("text")),
+                "legal_status": meta.get("legal_status"),
+                "citations": len(rows), "by_voice": by_voice,
+                "file": f"articles/{tid}/{num}.json",
             }
         (OUT / f"{tid}.json").write_text(
             json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
