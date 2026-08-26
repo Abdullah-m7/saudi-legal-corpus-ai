@@ -89,7 +89,17 @@ def now():
 
 
 def request(method, path, body=None, tries=3):
+    """One call, paced so that requests start at least DELAY apart.
+
+    The portal's own client limits itself to one request a second. Sleeping a
+    full second *after* a call that already took 1.8 seconds honours that
+    twice over and costs a third of the run: measured, 200 judgments took 563
+    seconds, so the whole corpus would take 39 hours rather than the 14 that
+    counting only the sleep suggested. Sleeping the remainder of the second
+    keeps the promise exactly and no more.
+    """
     for attempt in range(1, tries + 1):
+        started = time.monotonic()
         cmd = ["curl", "-sS", "-A", UA, "--max-time", "120",
                "-H", "Accept: application/json"]
         if method == "POST":
@@ -97,7 +107,7 @@ def request(method, path, body=None, tries=3):
                     "-d", json.dumps(body, ensure_ascii=False)]
         cmd.append(BASE + path)
         out = subprocess.run(cmd, capture_output=True, text=True)
-        time.sleep(DELAY)
+        time.sleep(max(0.0, DELAY - (time.monotonic() - started)))
         if out.returncode == 0:
             try:
                 return json.loads(out.stdout)
