@@ -19,6 +19,9 @@
 % make_numbers.py from the analysis outputs. Nothing is typed.
 \input{numbers}
 
+% Correspondence details live outside the repository; see contact.example.tex.
+\IfFileExists{contact.tex}{\input{contact}}{\input{contact.example}}
+
 \newif\ifanon
 \anonfalse
 
@@ -44,8 +47,15 @@ The Enacted Law and the Applied Law in \nJudgments{} Judgments}
 \ifanon\else
 \begin{center}
 \small
-Correspondence: Abdullah Almohammedi, Rabigh, Makkah Province, Saudi Arabia\\
-\texttt{abdullah.m.almohammedi@gmail.com}
+\begin{minipage}{0.8\textwidth}
+\centering
+\singlespacing
+Correspondence, proofs and offprints:\\
+Abdullah Almohammedi\\
+\ContactAddress\\
+Telephone: \ContactPhone\\
+\texttt{\ContactEmail}
+\end{minipage}
 \end{center}
 \fi
 

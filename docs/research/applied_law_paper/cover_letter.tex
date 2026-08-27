@@ -9,13 +9,15 @@
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \pagestyle{empty}
+\IfFileExists{contact.tex}{\input{contact}}{\input{contact.example}}
 
 \begin{document}
 \noindent
 {\large\textbf{Abdullah Almohammedi}}\\
 Independent Researcher\\
-Rabigh, Makkah Province, Saudi Arabia\\
-\texttt{abdullah.m.almohammedi@gmail.com}\\
+\ContactAddress\\
+Telephone: \ContactPhone\\
+\texttt{\ContactEmail}\\
 ORCID: \href{https://orcid.org/0009-0001-0832-0995}{0009-0001-0832-0995}
 
 \vspace{0.8em}
