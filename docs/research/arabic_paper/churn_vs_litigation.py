@@ -18,6 +18,15 @@ repealed, and how many times is it cited? If amendment tracked use, an
 amended article would be cited more often than an original one in the same
 instrument.
 
+The pooled article-level ratio is confounded and cannot be read on its own:
+amended articles are not spread evenly over the statute book, and the
+instrument that carries most of the citations — the commercial courts law —
+is also among the most heavily amended. So the pooled figure is followed by a
+within-instrument sign test: inside each instrument holding both kinds of
+article, is an amended article more likely to have been cited than an
+original one? Each instrument then contributes one vote, and no instrument's
+size can carry the result.
+
 Spearman rather than Pearson: citation counts are heavily skewed - one
 article carries 14% of everything - and a rank correlation says whether the
 ordering agrees without letting that one article set the answer.
@@ -25,6 +34,7 @@ ordering agrees without letting that one article set the answer.
 
 import collections
 import json
+import math
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -140,6 +150,33 @@ def main():
             print(f"  an amended article is cited {ratio:.2f}× as often "
                   f"as an original one")
 
+    # ---- within-instrument control: one vote per instrument ----
+    per = collections.defaultdict(lambda: {True: [0, 0], False: [0, 0]})
+    for (tid, num), is_changed in status.items():
+        c = by_inst.get(tid, {}).get(str(num), 0)
+        cell = per[tid][is_changed]
+        cell[0] += 1
+        cell[1] += 1 if c else 0
+    up = down = tie = 0
+    for tid, d in per.items():
+        a, o = d[True], d[False]
+        if not a[0] or not o[0]:
+            continue
+        ra, ro = a[1] / a[0], o[1] / o[0]
+        up += ra > ro
+        down += ra < ro
+        tie += ra == ro
+    n_eff = up + down
+    pval = 2 * sum(math.comb(n_eff, k) for k in range(min(up, down) + 1)) \
+        / (2 ** n_eff) if n_eff else 1.0
+    pval = min(1.0, pval)
+    print(f"\nwithin-instrument sign test over {up + down + tie:,} instruments "
+          f"holding both kinds of article:")
+    print(f"  amended cited more often  {up:>4}")
+    print(f"  original cited more often {down:>4}")
+    print(f"  tied                      {tie:>4}")
+    print(f"  two-sided sign test p = {pval:.3f}")
+
     (HERE / "churn_vs_litigation_results.json").write_text(json.dumps({
         "instrument_level": {"n": len(rows), "spearman": rho,
                              "rows": [{"track": a, "churn": b, "citations": c,
@@ -148,7 +185,10 @@ def main():
                           "changed": {"n": changed_total, "cited": changed_cited,
                                       "citations": cc},
                           "original": {"n": orig_total, "cited": orig_cited,
-                                       "citations": oc}},
+                                       "citations": oc},
+                          "within_instrument": {"amended_higher": up,
+                                                "original_higher": down,
+                                                "tied": tie, "p": pval}},
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     print("\nwrote churn_vs_litigation_results.json")
 

@@ -112,6 +112,12 @@ def main():
         print(f"{key:<12} {tot:>10,} {len(c):>12} "
               f"{proc/tot:>10.1%} {top10/tot:>12.1%}")
 
+    only_recital = sorted(set(counts["recital"]) - set(counts["reasoning"]),
+                          key=lambda k: -counts["recital"][k])
+    print(f"\n{len(only_recital)} instruments appear in الوقائع and never in "
+          f"the reasoning; the largest are "
+          + ", ".join(f"{k} ({counts['recital'][k]})" for k in only_recital[:4]))
+
     rec = sum(attribution.values())
     print(f"\ninside الوقائع: {attribution['court']:,} of {rec:,} citations "
           f"({attribution['court']/rec:.1%}) sit in a sentence whose actor is "
@@ -137,6 +143,7 @@ def main():
         {"judgments": n, "segmented": segmented,
          "counts": {k: dict(v) for k, v in counts.items()},
          "recital_attribution": dict(attribution),
+         "recital_only_instruments": only_recital,
          "recital_procedural": {f"{w}_{'proc' if p else 'other'}": v
                                 for (w, p), v in recital_proc.items()}},
         ensure_ascii=False, indent=2), encoding="utf-8")

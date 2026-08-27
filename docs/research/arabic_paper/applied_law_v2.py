@@ -36,7 +36,7 @@ def main():
     anaph = collections.Counter()
     docs = collections.defaultdict(set)
     unmatched = collections.Counter()
-    total = n = 0
+    total = n = citing = 0
 
     for shard in sorted((HERE / "judgments").glob("*.jsonl")):
         for line in shard.read_text(encoding="utf-8").splitlines():
@@ -45,7 +45,9 @@ def main():
             r = json.loads(line)
             n += 1
             last = M.Recent()
-            for _, raw in CITE.findall(r["text"]):
+            hits = CITE.findall(r["text"])
+            citing += bool(hits)
+            for _, raw in hits:
                 total += 1
                 tid, kind = M.match(raw, index, order, last)
                 if kind == "named":
@@ -63,7 +65,8 @@ def main():
     combined = collections.Counter(named)
     combined.update(anaph)
 
-    print(f"{n:,} judgments, {total:,} citations")
+    print(f"{n:,} judgments, {citing:,} of them citing a statute "
+          f"({citing/n:.1%}), {total:,} citations")
     print(f"  named      {sum(named.values()):>8,}  ({sum(named.values())/total:>5.1%})")
     print(f"  anaphoric  {sum(anaph.values()):>8,}  ({sum(anaph.values())/total:>5.1%})")
     print(f"  unmatched  {total-matched:>8,}  ({(total-matched)/total:>5.1%})")
@@ -85,7 +88,7 @@ def main():
         print(f"   {c:>5,}  {name}")
 
     (HERE / "applied_law_v2_results.json").write_text(json.dumps(
-        {"judgments": n, "citations": total,
+        {"judgments": n, "judgments_citing": citing, "citations": total,
          "named": dict(named), "anaphoric": dict(anaph),
          "judgments_by_instrument": {k: len(v) for k, v in docs.items()},
          "unmatched": dict(unmatched.most_common(300))},

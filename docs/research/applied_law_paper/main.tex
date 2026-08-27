@@ -36,39 +36,23 @@ The Enacted Law and the Applied Law in \nJudgments{} Judgments}
 
 \begin{abstract}
 \noindent
-Empirical work on legislation measures what states enact. Empirical work on
-courts measures what judges decide. The two are rarely joined, because doing
-so needs both corpora for one jurisdiction at article level, and those do not
-usually exist together. This article joins them for Saudi Arabia:
-\nRegistryArticles{} articles across \nInstruments{} instruments, and
-\nJudgments{} judgments in full text, published by the Ministry of Justice
-through an open interface. \nCitations{} statutory citations are extracted
-from the judgments and matched to the instruments, \nUnmatchedShare{} per cent
-failing to match. Three findings follow. First, the applied law is a small
-fraction of the enacted law: \nArticlesCited{} articles are cited at least
-once, \nArticlesCitedShare{} per cent of the statute book, and
-\nInstrumentsNever{} of \nInstruments{} instruments are never cited at all.
-Second, what is applied is overwhelmingly procedural --- \nProceduralShare{}
-per cent of citations --- and the single most-cited provision, cited
-\nTopArticleCitations{} times, is the article stating which disputes the court
-may hear at all. Third, and against the obvious explanation, the narrowing is
-not imposed by the parties. Separating each judgment at its own headings, the
-court cites procedure at \nReasoningProcedural{} per cent in its reasoning
-against \nRecitalProcedural{} per cent in the statement of the case, and draws
-on \nReasoningInstruments{} instruments where the statement of the case draws
-on \nRecitalInstruments{}. The statement of the case is not the bar's voice
-either --- at least \nRecitalByCourtShare{} per cent of its citations sit in a
-sentence whose actor is the court, narrating a step it took --- and that
-cuts the same way, because those citations are \nRecitalCourtProcedural{} per
-cent procedural against \nRecitalOtherProcedural{} per cent for the rest. What
-is put to the court is markedly less procedural than what the court answers
-with. A fourth result is a null: amendment activity predicts neither citation
-nor its absence. The enacted and the applied appear
-to run in parallel rather than in dialogue.
+Empirical work on legislation measures what states enact; empirical work on
+courts measures what judges decide. This article joins them for Saudi Arabia,
+matching \nCitations{} statutory citations in \nJudgments{} published
+judgments to \nRegistryArticles{} articles across \nInstruments{} instruments.
+\nArticlesCitedShare{} per cent of the statute book is ever cited and
+\nInstrumentsNever{} instruments never are; what is applied is
+\nProceduralShare{} per cent procedural, and the most-cited provision is the
+commercial court's own jurisdiction clause. Segmenting judgments by their
+headings shows the narrowing happens at the bench, not the bar. Amendment
+predicts neither citation nor its absence.
 \end{abstract}
 
 \noindent\textbf{Keywords:} empirical legal studies; legislation; judicial
 citation; legal informatics; open government data; Saudi Arabia
+
+\smallskip
+\noindent\textbf{JEL codes:} K40, K41, K10, C81
 
 \section{Introduction}
 
@@ -78,27 +62,257 @@ citation; legal informatics; open government data; Saudi Arabia
 
 \subsection{The legislative corpus}
 
+The legislative side is a verified corpus of Saudi primary legislation:
+\nRegistryArticles{} articles distributed over \nInstruments{} instruments,
+each article carried as a record with its number, its heading, its text, and
+its legal status --- original, amended, added or repealed. Instruments are
+laws (\emph{nizam}) and their implementing regulations
+(\emph{la'iha tanfidhiyya}), which
+in Saudi practice are separate instruments with independently numbered
+articles, a distinction that turns out to matter for matching
+(§\ref{sec:matching}). Provenance for each record --- the route by which it
+was retrieved, the corroboration behind it, and any discrepancy between
+sources --- is carried in the corpus itself rather than asserted in prose.
+
 \subsection{The judgment corpus}
+
+The judicial side is \nJudgments{} judgments in full text, published by the
+Ministry of Justice and retrieved through the interface its own portal uses.
+Each record carries the judgment number, the court, the city, the Hijri date,
+and the text of the judgment as published, with the parties' names already
+masked by the publisher.
+
+Two features of the corpus bound everything that follows. It is
+overwhelmingly commercial: the commercial courts supply the great majority of
+the published judgments, first-instance and appellate, and other jurisdictions
+appear only in small numbers. And the interface exposes fields that would have
+made the analysis in §\ref{sec:voices} unnecessary --- \texttt{judgmentFacts},
+\texttt{judgmentReasons}, \texttt{judgmentRuling} --- which are null in every
+one of the \nJudgments{} records. The structure the courts write into their
+judgments is present; the structure the publisher promises is not.
 
 \section{Method}
 
 \subsection{Extracting a citation}
 
+A Saudi judgment cites a provision in a stable form: the article, then the
+preposition \emph{min} (`of'), then the name of the instrument. Citations are extracted by matching
+that form and capturing two groups, the article expression and the instrument
+name. \nCitations{} citations are extracted from \nJudgmentsCiting{} of the
+\nJudgments{} judgments (\nJudgmentsCitingShare{} per cent); the remainder
+cite no statute in this form at all.
+
+The capture needs a stopping rule. Judgments routinely quote the article they
+have just cited, and a name capture that runs to the end of the sentence
+swallows the quotation and matches nothing. Captures are therefore truncated
+at a list of tokens that begin a new syntactic unit --- \emph{al-sadir}
+(`issued by'), \emph{wa-llati nassat} (`which provided'), \emph{ala al-nahw
+al-ati} (`as follows') and others --- before matching is attempted.
+
 \subsection{Matching an instrument}
+\label{sec:matching}
+
+Instrument names in judgments differ from registry titles in predictable
+ways: the singular \emph{nizam al-mahkama al-tijariyya} where the registry
+writes the plural \emph{nizam al-mahakim al-tijariyya}; a regulation called
+\emph{la'ihat nizam X} where the registry writes \emph{al-la'iha
+al-tanfidhiyya li-nizam X}; and parenthetical variants in the registry itself. Each registry title is expanded into the forms a judgment
+might use, and a captured name is matched against that index.
+
+The direction of containment carries meaning, and getting it wrong produces
+confident errors rather than misses. A regulation's title contains its parent
+law's title as a substring, so a test that accepts containment in either
+direction will send a citation of article 16 of the Commercial Courts Law
+--- the article stating the court's jurisdiction --- to the Implementing
+Regulation of that same Law. In an earlier
+version of this analysis that single defect misdirected roughly half of all
+citations, and it was silent, because every citation still matched something.
+Matching therefore proceeds in three ordered steps: exact equality; then the
+longest registry title contained in the captured name, so that a citation
+spelling out the regulation's title reaches the regulation; then the shortest
+registry title containing the captured name, so that a citation naming only
+the law reaches the law.
+
+Anaphora is resolved by kind. A bare \emph{al-nizam} (`the Law') or
+\emph{al-la'iha} (`the Regulation'), and phrases such as \emph{dhat al-nizam}
+(`that same Law') or \emph{al-la'iha nafsuha} (`the Regulation itself'),
+refer to an instrument named earlier in the same judgment. Resolving them to whichever instrument was named
+most recently sends articles of a law into its regulation whenever the
+regulation was mentioned last, which in a commercial judgment it usually was.
+\emph{Al-nizam} is therefore resolved to the last \emph{law} named in that
+judgment and \emph{al-la'iha} to the last \emph{regulation}. Anaphoric matches are recorded
+separately throughout: \nNamed{} citations name their instrument and
+\nAnaphoric{} are resolved, and a resolved reference is a weaker observation
+that a reader should be able to set aside. \nUnmatchedShare{} per cent of
+citations match no instrument in the registry and are dropped.
 
 \subsection{Reading an article number}
 
+Article numbers in Saudi judgments are more often spelled out than written in
+digits: \emph{al-madda al-khamisa wa-al-tisun bad al-mi'a} is article 195. A parser that
+reads digits alone would measure a minority of citations and report it as a
+census. Article expressions are therefore parsed by a reader for Arabic
+ordinals that also handles Eastern Arabic numerals, compound forms, and both
+paragraph constructions --- the compressed \mbox{16/3} and the expanded
+`paragraph 3 of article 16' --- returning an article number and, where
+present, a paragraph. \nUnparsedShare{} per cent of
+expressions cannot be parsed and are dropped. A further \nOutOfRangeShare{}
+per cent parse to a number beyond the last article of the matched instrument
+--- a mismatch between the judgment and the registry, or a matching error ---
+and are also dropped rather than assigned.
+
 \subsection{Separating the voices}
+\label{sec:voices}
+
+A judgment is not one voice. It opens with a statement of the case, passes to
+the court's reasons, and closes with the operative disposition, and a statute
+cited in the first is not a statute the court applied. With the API's own
+fields empty, the segmentation is read from the headings the courts write:
+\emph{al-waqai} (the statement of the case), then \emph{al-asbab} (the
+reasons), then \emph{hakamat al-daira} (`the circuit has adjudged'). Where
+the headings are
+present and in order the judgment is segmented; \nSegmented{} judgments
+(\nSegmentedShare{} per cent) qualify, and the rest are excluded from the
+voice analysis rather than forced into a shape they do not have. Because
+anaphora resolution needs document order, the text is scanned once and each
+citation is assigned to a segment by its offset.
+
+One caution about the first segment matters enough to state as method. It is
+tempting to call it the pleadings, and wrong: \emph{al-waqai} is written by
+the court, and it carries the court's own procedural narration alongside the
+parties' arguments as the court reports them.\footnote{A typical instance, in
+translation: `The circuit notes that it held this preparatory hearing
+pursuant to article 90 of the Implementing Regulation of the Commercial
+Courts Law' --- the court describing a step it took, not an argument put to
+it.} Counting
+it as argument overstates the bar's citation practice and understates the
+bench's. Each citation in the segment therefore carries an attribution read
+from the sentence around it: whether the nearest actor to the citation is the
+court or a party. Because Arabic places the subject after the verb as readily
+as before it, the sentence is searched in both directions and the nearest cue
+wins.
+
+The attribution cue is lexical, and its accuracy is reported rather than
+assumed. On a random sample of forty citations classified as the court's, 37
+were the court narrating, two were ambiguous, and one was a party's
+memorandum written in the first person. The complementary class is much
+weaker, so no party share is reported anywhere in this article: what is
+reported is the court-attributed count, as a floor.
 
 \section{Results}
 
 \subsection{How much of the statute book is applied}
 
+Of the \nRegistryArticles{} articles in the corpus, \nArticlesCited{} are
+cited at least once in \nJudgments{} judgments --- \nArticlesCitedShare{} per
+cent of the statute book. At the level of the instrument, \nInstrumentsCited{} of
+\nInstruments{} instruments are cited at least once
+(\nInstrumentsCitedShare{} per cent) and \nInstrumentsNever{} are never cited
+at all.
+
+The published record is heavily commercial, so a reader should expect
+criminal, family and administrative instruments to be absent. They are, and
+so is much else: entire commercial and financial instruments, with articles
+addressed to disputes that plainly arise, appear nowhere in fifty thousand
+judgments. Absence here is not proof that an instrument is unused; it is proof
+that its use, if any, is not visible in what the state publishes.
+
 \subsection{How concentrated the applied part is}
+
+The applied part is not merely small but concentrated inside itself. The
+single most-cited instrument accounts for \nTopOneShare{} per cent of all
+matched citations, and the ten most-cited for \nTopTenShare{} per cent. At
+article level the skew is sharper still: one article carries
+\nArtTopOneShare{} per cent of all citations whose article number could be
+read, the top ten carry \nArtTopTenShare{} per cent, and the top hundred
+\nArtTopHundredShare{} per cent.
+
+What is applied is also overwhelmingly procedural. Instruments governing how
+a case is brought, heard, proved and enforced account for
+\nProceduralShare{} per cent of matched citations; everything the law says
+about the substance of commercial obligations accounts for the rest.
+
+The most-cited provision in the corpus, cited \nTopArticleCitations{} times,
+is the article that lists the disputes the commercial court may hear at all.
+The provisions immediately behind it govern hearing a case in the absence of
+a defendant, the preparatory hearing, ordinary written evidence, and the plea
+of want of jurisdiction. The busiest provision in Saudi commercial
+adjudication is not a rule about commerce. It is the court's statement that it
+may proceed.
 
 \subsection{Who narrows: the bar or the bench}
 
+The obvious explanation for that narrowing is that courts answer what is put
+to them, and what is put to them is procedural. The segmentation tests it, and
+does not support it.
+
+\begin{table}[t]
+\centering
+\caption{Statutory citations by segment, across \nSegmented{} segmented
+judgments.}
+\label{tab:voices}
+\begin{tabular}{lrrr}
+\toprule
+Segment & Citations & Instruments & Procedural \\
+\midrule
+Statement of the case & \nRecitalCitations{} & \nRecitalInstruments{} & \nRecitalProcedural{}\% \\
+Reasons               & \nReasoningCitations{} & \nReasoningInstruments{} & \nReasoningProcedural{}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:voices} shows the court's reasons to be more procedural than
+the statement of the case, not less, and drawn from a narrower set of
+instruments: \nReasoningInstruments{} against \nRecitalInstruments{}.
+In \nRecitalOnlyInstruments{} instruments a statute is cited in the statement
+of the case and never once in a court's reasons.
+
+The attribution measurement sharpens this rather than softening it. Of the
+\nRecitalCitations{} citations in the statement of the case, at least
+\nRecitalByCourt{} (\nRecitalByCourtShare{} per cent) sit in a sentence whose
+actor is the court itself. Those citations are \nRecitalCourtProcedural{} per
+cent procedural --- the court reciting the provisions under which it convened,
+proceeded and satisfied itself of jurisdiction. The remainder, which is where
+the parties' arguments live, is \nRecitalOtherProcedural{} per cent
+procedural. Leaving the court's own narration inside the segment was
+flattering its procedural share; taking it out widens the gap between what is
+put to the court and what the court answers with, from
+\nRecitalProcedural{}~versus~\nReasoningProcedural{} to
+\nRecitalOtherProcedural{}~versus~\nReasoningProcedural{}.
+
+The narrowing therefore happens at the bench, not at the bar. Substantive
+instruments are raised and are answered with procedure.
+
 \subsection{Amendment and application}
+
+If legislative attention followed judicial use, the amended part of the
+statute book would be the applied part. It is not.
+
+At instrument level, over the \nChurnInstruments{} instruments whose records
+carry a status breakdown --- of which only \nChurnInstrumentsCited{} are cited
+at all --- the rank correlation between an instrument's churn and its citation
+count is $\rho = \nChurnSpearman{}$: weakly positive and carried by a handful
+of large instruments.
+
+At article level the pooled comparison appears to say the opposite of a null.
+Across \nStatusArticles{} articles with a recorded status,
+\nAmendedCitedShare{} per cent of the \nAmendedArticles{} amended, added or
+repealed articles are ever cited, against \nOriginalCitedShare{} per cent of
+the \nOriginalArticles{} original ones, and an amended article draws
+\nAmendedPerArticle{} citations on average against \nOriginalPerArticle{} ---
+a ratio of \nAmendedRatio{}$\times$.
+
+That ratio is a composition effect and should not be reported without its
+control. Amended articles are not spread evenly across the statute book, and
+the instrument carrying the largest share of all citations is also among the
+most heavily amended; the pooled figure mostly records which instruments are
+litigated, not which articles are amended. Controlling within the instrument
+--- one vote per instrument, over the \nWithinInstruments{} instruments
+holding both amended and original articles --- amended articles are more
+likely to have been cited in \nWithinAmendedHigher{} instruments, less likely
+in \nWithinOriginalHigher{}, with \nWithinTied{} tie: a two-sided sign test
+gives $p = \nWithinP{}$. Inside an instrument, whether an article has been
+amended tells you nothing about whether a court has ever applied it.
 
 \section{Threats to validity}
 
@@ -108,8 +322,29 @@ citation; legal informatics; open government data; Saudi Arabia
 
 \section*{References}
 
+\section*{Availability of data and code}
+
+The Journal of Legal Analysis applies the data and code availability policy of
+the American Economic Association, and this article is written to it. The
+legislative corpus, the judgment corpus, the extraction and matching code, the
+ordinal parser, the segmentation and attribution code, and the scripts that
+produce every number in this article are public.\footnote{Repository:
+\url{https://github.com/Abdullah-m7/saudi-legal-corpus-ai}. Every measurement
+reported here is generated into a single file of macros by
+\texttt{make\_numbers.py} and typeset from it; no number in this manuscript is
+typed by hand.} The judgments are reproduced as the Ministry publishes them,
+with parties' names masked at source; a further redaction pass over
+identifiers that the publisher's own masking missed is included in the
+repository and documented there.
+
 \ifanon\else
 \section*{Declarations}
+
+\noindent\textbf{Funding.} None.
+
+\noindent\textbf{Competing interests.} None.
+
+\noindent\textbf{Author contributions.} Sole author.
 \fi
 
 \end{document}
