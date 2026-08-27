@@ -44,14 +44,14 @@ def main():
                 continue
             r = json.loads(line)
             n += 1
-            last = None
+            last = M.Recent()
             for _, raw in CITE.findall(r["text"]):
                 total += 1
                 tid, kind = M.match(raw, index, order, last)
                 if kind == "named":
                     named[tid] += 1
                     docs[tid].add(r["id"])
-                    last = tid
+                    last.note(tid)
                 elif kind == "anaphoric":
                     anaph[tid] += 1
                     docs[tid].add(r["id"])

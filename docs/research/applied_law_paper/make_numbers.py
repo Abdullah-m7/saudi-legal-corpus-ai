@@ -9,10 +9,14 @@ source the first time the analysis is re-run.
 """
 
 import json
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SRC = HERE.parent / "arabic_paper"
+sys.path.insert(0, str(SRC))
+
+import match_instruments as M      # noqa: E402
 
 
 def load(name):
@@ -38,13 +42,7 @@ def main():
     matched = named + anaph
     cited_instruments = len(set(inst["named"]) | set(inst["anaphoric"]))
 
-    PROC = {"commercial_courts_law", "commercial_courts_implementing_regulation",
-            "sharia_procedure_law", "sharia_procedure_implementing_regulation",
-            "evidence_law", "evidence_procedural_manuals", "arbitration_law",
-            "arbitration_implementing_regulation",
-            "law_practice_implementing_regulation", "enforcement_law",
-            "enforcement_implementing_regulation", "bankruptcy_case_rules",
-            "evidence_expertise_rules"}
+    PROC = M.PROCEDURAL
     combined = dict(inst["named"])
     for k, v in inst["anaphoric"].items():
         combined[k] = combined.get(k, 0) + v
@@ -55,10 +53,12 @@ def main():
                   reverse=True)
     art_total = sum(flat)
 
-    vp, vr = voice["counts"]["pleadings"], voice["counts"]["reasoning"]
+    vp, vr = voice["counts"]["recital"], voice["counts"]["reasoning"]
     tp, tr = sum(vp.values()), sum(vr.values())
     pp = sum(v for k, v in vp.items() if k in PROC) / tp
     pr = sum(v for k, v in vr.items() if k in PROC) / tr
+    att = voice["recital_attribution"]
+    rp = voice["recital_procedural"]
 
     al = churn["article_level"]
     N = {
@@ -83,10 +83,18 @@ def main():
         "nTopArticleCitations": flat[0],
         "nSegmented": voice["segmented"],
         "nSegmentedShare": 100 * voice["segmented"] / voice["judgments"],
-        "nPleadingsProcedural": 100 * pp,
+        "nRecitalProcedural": 100 * pp,
         "nReasoningProcedural": 100 * pr,
-        "nPleadingsInstruments": len(vp),
+        "nRecitalInstruments": len(vp),
         "nReasoningInstruments": len(vr),
+        "nRecitalCitations": tp,
+        "nReasoningCitations": tr,
+        "nRecitalByCourt": att["court"],
+        "nRecitalByCourtShare": 100 * att["court"] / (att["court"] + att["other"]),
+        "nRecitalCourtProcedural":
+            100 * rp["court_proc"] / (rp["court_proc"] + rp["court_other"]),
+        "nRecitalOtherProcedural":
+            100 * rp["other_proc"] / (rp["other_proc"] + rp["other_other"]),
         "nChurnSpearman": churn["instrument_level"]["spearman"],
         "nStatusArticles": al["articles"],
     }

@@ -11,7 +11,9 @@ An entry is one citation, and carries
   the article, with its official verified text where the corpus holds it
   the judgment that cites it — court, city, Hijri date, judgment number
   the passage around the citation, so the reader sees the application
-  whose voice it is: the parties' pleadings, or the court's own reasoning
+  whose voice it is: the statement of the case, the court's own reasoning,
+  or the operative part — and, inside the statement of the case, whether the
+  citation is the court's own narration or a party's argument
 
 That last field is what makes this worth more than a search box. «The court
 held» and «counsel argued» are different facts, and a citator that conflates
@@ -19,6 +21,16 @@ them misleads the person relying on it. The judgments carry their own
 structure — الوقائع then الأسباب then حكمت الدائرة — and where those headings
 are present the segment is recorded; where they are not, the voice is marked
 unknown rather than guessed.
+
+A first build called the pre-الأسباب segment *pleadings*. That was wrong, and
+wrong in a way that mattered: الوقائع is written by the court, and a great
+deal of it is the court's own procedural narration — «وتشير الدائرة إلى أنها
+عقدت هذه الجلسة التحضيرية بناءً على المادة التسعين». Counting that as an
+argument put to the court overstates the bar and understates the bench. The
+segment is now named `recital` for what it is, and every citation inside it
+carries an `attribution` field: `court` where the sentence names the bench as
+the actor, `unattributed` otherwise. See ../arabic_paper/voice_attribution.py
+for the cue lists and the hand validation.
 
 WHAT THIS IS NOT
 It is not a summary, a headnote, or an interpretation. Every passage is the
@@ -50,6 +62,7 @@ sys.path.insert(0, str(ANALYSIS))
 
 import arabic_ordinals as A      # noqa: E402
 import match_instruments as M    # noqa: E402
+import voice_attribution as V    # noqa: E402
 
 REGISTRY = REPO / "data" / "corpus_registry" / "corpus_registry.json"
 SHARDS = sorted((ANALYSIS / "judgments").glob("*.jsonl"))
@@ -119,21 +132,25 @@ def main():
             n += 1
             text = r["text"]
             bounds = voice_bounds(text)
-            last = None
+            last = M.Recent()
             for m in CITE.finditer(text):
                 tid, kind = M.match(m.group(2), index, order, last)
                 if kind == "named":
-                    last = tid
+                    last.note(tid)
                 if not tid:
                     continue
                 num, para = A.parse(m.group(1))
                 if num is None:
                     continue
                 cites += 1
+                attribution = None
                 if bounds is None:
                     voice = "unknown"
                 elif m.start() < bounds[0]:
-                    voice = "pleadings"
+                    voice = "recital"
+                    attribution = V.attribute(text, m.start())[0]
+                    if attribution == "party":
+                        attribution = "unattributed"
                 elif m.start() < bounds[1]:
                     voice = "reasoning"
                 else:
@@ -147,7 +164,9 @@ def main():
                     "hijri_date": r["hijri_date"],
                     "paragraph": para,
                     "voice": voice,
-                    "passage": " ".join(text[a:b].split()),
+                    "attribution": attribution,
+                    "passage": text[a:b],
+                    "at": m.start() - a,
                 })
                 seen[(tid, num)] += 1
         if si % 50 == 0:
@@ -171,6 +190,7 @@ def main():
             rows = sorted(articles[num], key=lambda e: (e["hijri_date"] or ""))
             meta = arts.get((tid, num), {})
             by_voice = dict(collections.Counter(e["voice"] for e in rows))
+            court_recital = sum(1 for e in rows if e["attribution"] == "court")
             record = {
                 "track_id": tid, "instrument": names.get(tid),
                 "article_number": num,
@@ -180,6 +200,7 @@ def main():
                 "legal_status": meta.get("legal_status"),
                 "citations": len(rows),
                 "by_voice": by_voice,
+                "recital_by_court": court_recital,
                 "judgments": rows,
             }
             (folder / f"{num}.json").write_text(
@@ -190,6 +211,7 @@ def main():
                 "has_official_text": bool(meta.get("text")),
                 "legal_status": meta.get("legal_status"),
                 "citations": len(rows), "by_voice": by_voice,
+                "recital_by_court": court_recital,
                 "file": f"articles/{tid}/{num}.json",
             }
         (OUT / f"{tid}.json").write_text(

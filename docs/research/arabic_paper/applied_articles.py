@@ -50,14 +50,14 @@ def main():
         for line in shard.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue
-            last = None
+            last = M.Recent()
             for art, raw in CITE.findall(json.loads(line)["text"]):
                 total += 1
                 tid, kind = M.match(raw, index, order, last)
                 if not tid:
                     continue
                 if kind == "named":
-                    last = tid
+                    last.note(tid)
                 num, _ = A.parse(art)
                 if num is None:
                     unparsed += 1
