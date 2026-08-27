@@ -36,6 +36,22 @@ Not in the whole judgment. A ruling of عدم الاختصاص contains that phr
 its own operative part whether or not anyone pleaded it, so searching the
 whole text counts the court's disposition as a party's plea. Detection stops
 at حكمت الدائرة.
+
+Not in the whole RECORD either. A published record can hold two judgments,
+the first-instance one and the appeal, and this index is about what was
+pleaded at first instance and what the court below did with it. So the plea
+and the disposition are both read inside the first document, and the appeal
+is reported separately rather than mixed in.
+
+AND WHETHER IT SURVIVED
+A cell reading «قُضي بعدم الاختصاص — الدفع أصاب» is worth little to a
+practitioner who does not also know that the appeal court set that judgment
+aside. Each entry now carries the appellate fate of its judgment, read from
+the appellate operative part by ../arabic_paper/appellate_outcome.py.
+
+The operative part is also matched on the text with its diacritics stripped:
+«حَكَمَتِ الدَائِرَةُ» is fully vowelled in 584 judgments, and a plain-script
+pattern reported every one of them as having no stated disposition.
 """
 
 import collections
@@ -47,6 +63,17 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ANALYSIS = HERE.parent / "arabic_paper"
 SHARDS = sorted((ANALYSIS / "judgments").glob("*.jsonl"))
+sys.path.insert(0, str(ANALYSIS))
+
+import appellate_outcome as AO     # noqa: E402
+import voice_attribution as V      # noqa: E402
+
+APPEAL_AR = {"affirmed": "أُيِّد", "reversed": "نُقض أو أُلغي",
+             "substituted": "أُلغي وحُكم مجددًا", "varied": "عُدِّل",
+             "not_admitted": "لم يُقبل الاعتراض شكلًا",
+             "other_disposition": "فُصل على وجهٍ آخر",
+             "unclear": "لم يتبيّن من المنطوق",
+             "no_appeal": "لا استئناف في السجلّ"}
 
 DEFENCES = {
     "عدم الاختصاص": r"عدم\s+(?:ال)?اختصاص",
@@ -72,9 +99,21 @@ OTHERWISE = "قُضي بغير ذلك — لا يفيد في هذا الدفع"
 BEFORE, AFTER = 200, 300
 
 
-def operative_of(text):
-    m = RULING.search(text)
-    return text[m.start():m.start() + 1200] if m else None
+def first_document(text, sections):
+    """The first-instance judgment inside the record, as (start, end)."""
+    spans = V.parts(text, sections)
+    return spans[0] if spans else (0, len(text))
+
+
+def operative_of(text, span):
+    """The operative part inside one document, found despite vowelling."""
+    a, b = span
+    stripped, back = AO.bare_with_map(text[a:b])
+    m = RULING.search(stripped)
+    if not m:
+        return None, None
+    start = a + back[m.start()]
+    return text[start:start + 1200], start
 
 
 def disposition(op):
@@ -102,6 +141,7 @@ def main():
     pats = {k: re.compile(v) for k, v in DEFENCES.items()}
     hits = collections.defaultdict(list)
     outcome = collections.defaultdict(collections.Counter)
+    survival = collections.defaultdict(collections.Counter)
     n = 0
     for shard in SHARDS:
         for line in shard.read_text(encoding="utf-8").splitlines():
@@ -110,11 +150,16 @@ def main():
             r = json.loads(line)
             n += 1
             text = r["text"]
-            op = operative_of(text)
+            span = first_document(text, r.get("sections"))
+            op, at = operative_of(text, span)
+            # the disposition is read from the ORIGINAL text: bare() folds
+            # أ into ا, and «بإلزام» stops matching itself. Stripping is for
+            # finding the operative part, not for reading it.
             decided = disposition(op)
             # the plea is a party's, so look for it before the disposition
-            k = RULING.search(text)
-            body = text[:k.start()] if k else text
+            body = text[span[0]:at] if at else text[span[0]:span[1]]
+            appeal_text = (r.get("sections") or {}).get("appealTextofRulling")
+            appeal = AO.outcome(appeal_text)[0] if appeal_text else "no_appeal"
             for name, pat in pats.items():
                 m = pat.search(body)
                 if not m:
@@ -130,8 +175,11 @@ def main():
                     "passage": " ".join(body[a:b].split()),
                     "operative": " ".join(op.split())[:400] if op else None,
                     "outcome": meaning,
+                    "appeal": appeal,
+                    "appeal_ar": APPEAL_AR[appeal],
                 })
                 outcome[name][meaning] += 1
+                survival[name][appeal] += 1
     HERE.mkdir(exist_ok=True)
     summary = []
     for name, rows in sorted(hits.items(), key=lambda kv: -len(kv[1])):
@@ -139,11 +187,14 @@ def main():
         rows.sort(key=lambda e: (e["hijri_date"] or ""))
         (HERE / f"{slug}.json").write_text(json.dumps({
             "defence": name, "judgments": len(rows),
-            "outcomes": dict(outcome[name]), "entries": rows,
+            "outcomes": dict(outcome[name]),
+            "appeal": dict(survival[name]), "entries": rows,
         }, ensure_ascii=False, indent=1), encoding="utf-8")
         summary.append({"defence": name, "judgments": len(rows),
                         "share": round(len(rows) / n, 4),
-                        "outcomes": dict(outcome[name]), "file": f"{slug}.json"})
+                        "outcomes": dict(outcome[name]),
+                        "appeal": dict(survival[name]),
+                        "file": f"{slug}.json"})
         print(f"  {len(rows):>6,} ({len(rows)/n:>5.1%})  {name}")
         for k, v in outcome[name].most_common():
             print(f"          {v:>6,}  {k}")

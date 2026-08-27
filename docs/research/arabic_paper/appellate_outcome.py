@@ -55,6 +55,29 @@ def bare(s):
     return s.replace("ى", "ي")
 
 
+def bare_with_map(s):
+    """Strip diacritics, and keep a way back to the original offsets.
+
+    bare() is enough when the match itself is all that matters. When a caller
+    needs to slice the ORIGINAL text at a position found in the stripped one,
+    deleting characters silently shifts every offset after the first vowel
+    mark. This returns the stripped string alongside an index that maps each
+    of its positions back to the position it came from.
+    """
+    out, back = [], []
+    for i, ch in enumerate(s):
+        if DIACRITICS.match(ch):
+            continue
+        if ch in "أإآٱ":
+            ch = "ا"
+        elif ch == "ى":
+            ch = "ي"
+        out.append(ch)
+        back.append(i)
+    back.append(len(s))
+    return "".join(out), back
+
+
 OPERATIVE = re.compile(
     r"\(\s*لذلك\s*\)|لذلك\s*[:：]|فلهذه\s+الاسباب|"
     r"نص\s+الحكم\s*[:：]|\(\s*منطوق\s+الحكم\s*\)|منطوق\s+الحكم\s*[:：]|"
