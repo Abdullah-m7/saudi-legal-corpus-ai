@@ -14,6 +14,14 @@ The documents carry their own structure instead. Saudi commercial judgments
 run الوقائع → الأسباب → حكمت الدائرة, and this segments on those headings and
 counts citations separately in each part.
 
+A published record can carry two judgments — the first-instance decision and,
+where the case went up, the appellate one — concatenated in the publisher's
+field order. Segmenting the concatenation as a single document lets the
+boundary straddle: the first «الأسباب:» opens in one judgment and the first
+«حكمت الدائرة» after it closes in the next, so an appellate recital is
+counted as first-instance reasoning. Each document is therefore segmented on
+its own, by voice_attribution.segments.
+
 Segments
   recital     from the start (or الوقائع) to the الأسباب heading
   reasoning   from الأسباب to حكمت الدائرة
@@ -55,15 +63,6 @@ PROCEDURAL = M.PROCEDURAL
 SEGMENTS = ("recital", "reasoning", "operative")
 
 
-def bounds(text):
-    """(end of الوقائع, start of the operative part) or None."""
-    r = V.REASONS.search(text)
-    k = V.RULING.search(text, r.end() if r else 0)
-    if not r or not k:
-        return None
-    return r.start(), k.start()
-
-
 def main():
     index, order = M.build(REGISTRY)
     counts = {k: collections.Counter() for k in SEGMENTS}
@@ -76,9 +75,10 @@ def main():
             if not line.strip():
                 continue
             n += 1
-            text = json.loads(line)["text"]
-            b = bounds(text)
-            if not b:
+            r = json.loads(line)
+            text = r["text"]
+            spans = V.segments(text, r.get("sections"))
+            if not any(v != "unknown" for _, _, v in spans):
                 continue
             segmented += 1
             last = M.Recent()
@@ -88,8 +88,9 @@ def main():
                     last.note(tid)
                 if not tid:
                     continue
-                seg = ("recital" if m.start() < b[0]
-                       else "reasoning" if m.start() < b[1] else "operative")
+                seg = V.voice_at(spans, m.start())
+                if seg == "unknown":
+                    continue
                 counts[seg][tid] += 1
                 if seg == "recital":
                     who = ("court" if V.attribute(text, m.start())[0] == "court"

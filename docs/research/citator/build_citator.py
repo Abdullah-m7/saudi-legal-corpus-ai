@@ -20,7 +20,9 @@ held» and «counsel argued» are different facts, and a citator that conflates
 them misleads the person relying on it. The judgments carry their own
 structure — الوقائع then الأسباب then حكمت الدائرة — and where those headings
 are present the segment is recorded; where they are not, the voice is marked
-unknown rather than guessed.
+unknown rather than guessed. A record can hold two judgments, first instance
+and appeal, and each is segmented on its own; see
+../arabic_paper/voice_attribution.py.
 
 A first build called the pre-الأسباب segment *pleadings*. That was wrong, and
 wrong in a way that mattered: الوقائع is written by the court, and a great
@@ -70,17 +72,7 @@ OUT = HERE / "instruments"
 
 CITE = re.compile(
     r"الماد[ةه]\s*\(?\s*([^\)\n]{1,40}?)\s*\)?\s*من\s+((?:نظام|لائحة|النظام|اللائحة)[^\.،؛\n\)]{0,60})")
-REASONS = re.compile(r"(?<!فلهذه\s)الأسباب\s*[:：]")
-RULING = re.compile(r"حكمت\s+الدائرة")
 BEFORE, AFTER = 260, 340
-
-
-def voice_bounds(text):
-    r = REASONS.search(text)
-    k = RULING.search(text, r.end() if r else 0)
-    if not r or not k:
-        return None
-    return r.end(), k.start()
 
 
 def article_texts(tracks):
@@ -131,7 +123,7 @@ def main():
             r = json.loads(line)
             n += 1
             text = r["text"]
-            bounds = voice_bounds(text)
+            spans = V.segments(text, r.get("sections"))
             last = M.Recent()
             for m in CITE.finditer(text):
                 tid, kind = M.match(m.group(2), index, order, last)
@@ -144,17 +136,11 @@ def main():
                     continue
                 cites += 1
                 attribution = None
-                if bounds is None:
-                    voice = "unknown"
-                elif m.start() < bounds[0]:
-                    voice = "recital"
+                voice = V.voice_at(spans, m.start())
+                if voice == "recital":
                     attribution = V.attribute(text, m.start())[0]
                     if attribution == "party":
                         attribution = "unattributed"
-                elif m.start() < bounds[1]:
-                    voice = "reasoning"
-                else:
-                    voice = "operative"
                 a = max(0, m.start() - BEFORE)
                 b = min(len(text), m.end() + AFTER)
                 entries[tid][num].append({

@@ -38,6 +38,7 @@ def main():
     churn = load("churn_vs_litigation_results.json")
     scope = load("restricted_denominator_results.json")
     comp = load("corpus_composition_results.json")
+    uby = load("unparsed_by_year_results.json")
     dd = load("dedup_robustness_results.json")["distinct"]
     top_cities = sum(list(comp["cities"].values())[:3])
     sc_n, sc_b = scope["art. 16 scope, narrow"], scope["art. 16 scope, broad"]
@@ -119,6 +120,10 @@ def main():
         "nDuplicateExtra": comp["duplicate_extra"],
         "nDuplicateGroups": comp["duplicate_groups"],
         "nDuplicateShare": 100 * comp["duplicate_extra"] / comp["judgments"],
+        "nUnparsedYearMin": uby["min"],
+        "nUnparsedYearMax": uby["max"],
+        "nLabourJudgments": comp["labour"],
+        "nRecentShare": 100 * comp["recent_1442_plus"] / comp["judgments"],
         "nCommercialShare": 100 * comp["commercial_first_instance"] / comp["judgments"],
         "nAppellate": comp["appellate_judgments"],
         "nAppellateFlaggedFalse": comp["appellate_flagged_false"],

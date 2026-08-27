@@ -63,6 +63,61 @@ PARTY_CUE = re.compile(
 WINDOW = 400
 
 
+PART_ORDER = ("judgmentFacts", "judgmentReasons", "judgmentRuling",
+              "judgmentTextofRulling", "appealFacts", "appealReasons",
+              "appealRuling", "appealTextofRulling")
+
+
+def parts(text, sections):
+    """The (start, end) span of each source document inside a record's text.
+
+    A published record can hold two judgments: the first-instance one and,
+    where the case went up, the appellate one, concatenated by the collector
+    in the publisher's own field order. Segmenting the concatenation as if it
+    were one document lets the boundary straddle — the first «الأسباب:» opens
+    in the first judgment and the first «حكمت الدائرة» after it can close in
+    the second, so an appellate recital is read as first-instance reasoning.
+    It happens in 416 of the 27,350 segmented records, which is small and is
+    not a reason to leave it wrong. Each document is segmented on its own.
+    """
+    if not sections:
+        return [(0, len(text))]
+    spans, pos = [], 0
+    for f in PART_ORDER:
+        v = sections.get(f)
+        if not v:
+            continue
+        spans.append((pos, pos + len(v)))
+        pos += len(v) + 1          # the single space the collector joined on
+    return spans or [(0, len(text))]
+
+
+def segments(text, sections):
+    """(start, end, voice) over the whole record, document by document.
+
+    Voices are recital, reasoning and operative where a document carries the
+    headings in order, and unknown for the whole of a document that does not.
+    """
+    out = []
+    for a, b in parts(text, sections):
+        r = REASONS.search(text, a, b)
+        k = RULING.search(text, r.end() if r else a, b)
+        if not r or not k:
+            out.append((a, b, "unknown"))
+            continue
+        out.append((a, r.start(), "recital"))
+        out.append((r.end(), k.start(), "reasoning"))
+        out.append((k.start(), b, "operative"))
+    return out
+
+
+def voice_at(spans, at):
+    for a, b, v in spans:
+        if a <= at < b:
+            return v
+    return "unknown"
+
+
 def recital(text):
     """The الوقائع segment, or None when the judgment lacks the headings."""
     r = REASONS.search(text)

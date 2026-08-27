@@ -57,6 +57,8 @@ def main():
 
     commercial = sum(v for k, v in courts.items()
                      if k.startswith("المحكمة التجارية"))
+    labour = sum(v for k, v in courts.items() if "عمالي" in k)
+    recent = sum(v for y, v in years.items() if y.isdigit() and int(y) >= 1442)
     dup_groups = sum(1 for v in seen.values() if v > 1)
     dup_extra = sum(v - 1 for v in seen.values() if v > 1)
     ys = sorted(y for y in years if y.isdigit())
@@ -65,6 +67,8 @@ def main():
     print(f"  exact duplicates: {dup_extra:,} extra copies across "
           f"{dup_groups:,} groups ({dup_extra/n:.2%} of the corpus)")
     print(f"  commercial first instance: {commercial:,} ({commercial/n:.1%})")
+    print(f"  labour court: {labour:,}")
+    print(f"  Hijri 1442 or later: {recent:,} ({recent/n:.1%})")
     print(f"  records carrying an appeal flag: {appeal_field:,}")
     print(f"  issued by an appellate or supreme court: {appellate:,}, "
           f"of which {appellate_flagged_false:,} are flagged is_appeal=false")
@@ -83,6 +87,8 @@ def main():
         "judgments": n, "distinct_texts": len(seen),
         "duplicate_extra": dup_extra, "duplicate_groups": dup_groups,
         "commercial_first_instance": commercial,
+        "labour": labour,
+        "recent_1442_plus": recent,
         "appeal_flag_present": appeal_field,
         "appellate_judgments": appellate,
         "appellate_flagged_false": appellate_flagged_false,
