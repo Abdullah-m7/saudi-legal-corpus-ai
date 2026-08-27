@@ -37,6 +37,9 @@ def main():
     voice = load("cite_by_voice_results.json")
     churn = load("churn_vs_litigation_results.json")
     scope = load("restricted_denominator_results.json")
+    comp = load("corpus_composition_results.json")
+    dd = load("dedup_robustness_results.json")["distinct"]
+    top_cities = sum(list(comp["cities"].values())[:3])
     sc_n, sc_b = scope["art. 16 scope, narrow"], scope["art. 16 scope, broad"]
     sc_a = scope["instruments ever cited"]
     per_inst = scope["instruments"]
@@ -109,6 +112,19 @@ def main():
             100 * rp["other_proc"] / (rp["other_proc"] + rp["other_other"]),
         "nChurnSpearman": churn["instrument_level"]["spearman"],
         "nStatusArticles": al["articles"],
+        "nDistinctTexts": comp["distinct_texts"],
+        "nDedupTopOne": dd["top1"],
+        "nDedupTopTen": dd["top10"],
+        "nDedupProcedural": dd["procedural"],
+        "nDuplicateExtra": comp["duplicate_extra"],
+        "nDuplicateGroups": comp["duplicate_groups"],
+        "nDuplicateShare": 100 * comp["duplicate_extra"] / comp["judgments"],
+        "nCommercialShare": 100 * comp["commercial_first_instance"] / comp["judgments"],
+        "nAppellate": comp["appellate_judgments"],
+        "nAppellateFlaggedFalse": comp["appellate_flagged_false"],
+        "nFirstYear": comp["first_year"],
+        "nLastYear": comp["last_year"],
+        "nTopCitiesShare": 100 * top_cities / comp["judgments"],
         "nJoinInstruments": scope["the whole registry"]["instruments"],
         "nScopeNarrowInstruments": sc_n["instruments"],
         "nScopeNarrowArticles": sc_n["articles"],

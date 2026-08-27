@@ -508,10 +508,147 @@ instrument that tells it what the parties owe each other is barely opened.
 \section{Threats to validity}
 \label{sec:threats}
 
+\paragraph{The corpus is what the Ministry publishes, and that is not the
+docket.} Two selection filters stand between any dispute and this dataset,
+and neither can be removed by better extraction. Disputes that settle never
+reach a judgment at all, and settled disputes differ systematically from
+tried ones (Priest and Klein 1984). Of the judgments that are given,
+publication is a further filter, and published and unpublished decisions have
+been shown to differ in kind rather than merely in number (Siegelman and
+Donohue 1990). Every result here is a statement about the published record.
+Where the article says a provision is never cited, it means never cited in
+what the state publishes.
+
+\paragraph{The record is commercial, urban and recent.}
+\nCommercialShare{} per cent of the judgments come from the commercial
+courts; \nTopCitiesShare{} per cent come from three cities; the Hijri dates
+run from \nFirstYear{} to \nLastYear{} but the mass is in the last five
+years. Criminal, family, labour and administrative adjudication are
+effectively absent --- the corpus holds a double-digit number of labour
+judgments and no decisions of the tax and zakat committees. An instrument
+addressed to those forums cannot be cited here, which is why
+§\ref{sec:denominator} rebuilds the denominator rather than defending the
+first one.
+
+\paragraph{The registry is a corpus, not the statute book.} The
+\nInstruments{} instruments are the instruments this project has verified,
+not the totality of Saudi legislation. Ministerial decisions, circulars of
+the Supreme Judicial Council and unpublished administrative instruments are
+outside it, and some of them are cited in judgments: they account for part of
+the \nUnmatchedShare{} per cent of citations that match nothing. The
+denominators in Table~\ref{tab:denominators} are therefore denominators of a
+verified corpus.
+
+\paragraph{Published fields cannot be relied on, including one that looks
+reliable.} The interface exposes \texttt{judgmentFacts},
+\texttt{judgmentReasons} and \texttt{judgmentRuling}, and all three are null
+in every record, which is why the segmentation in §\ref{sec:voices} is read
+from the text. It also exposes \texttt{isAppeal}, which is present,
+well-typed, and false on every one of the \nJudgments{} records --- including
+all \nAppellate{} judgments whose own court field names a court of appeal or
+the Supreme Court. A field that never varies is not a field. First-instance
+and appellate judgments are therefore separated here by court name and not by
+the flag provided for the purpose.
+
+\paragraph{The portal serves some judgments more than once.}
+\nDuplicateExtra{} records (\nDuplicateShare{} per cent) are exact textual
+duplicates of another record, across \nDuplicateGroups{} groups, leaving
+\nDistinctTexts{} distinct texts. Duplication inflates any count of citations
+that repeats a standard formula, which is precisely the material the busiest
+articles consist of. The counts reported here are counts of citations in the
+corpus as published, and the shares were recomputed over distinct texts alone
+to check that the concentration is not an artefact of the repetition: the
+most-cited instrument's share moves from \nTopOneShare{} per cent to
+\nDedupTopOne{}, the top ten from \nTopTenShare{} to \nDedupTopTen{}, and
+the procedural share from \nProceduralShare{} to \nDedupProcedural{}. A
+reader comparing an absolute count against another source should still know
+the duplication is there.
+
+\paragraph{Matching, parsing and resolution each drop or infer.}
+\nUnmatchedShare{} per cent of citations match no instrument;
+\nUnparsedShare{} per cent carry an article expression that cannot be parsed;
+\nOutOfRangeShare{} per cent parse to a number the matched instrument does
+not have and are dropped rather than assigned. A further \nAnaphoric{} of
+the \nCitations{} citations name no instrument at all and are resolved by
+inference from the same judgment; they are counted separately throughout
+so that a reader who rejects the inference can subtract them. None of these
+is random with respect to the result: an unparseable article expression is
+more likely in an old judgment, and an unmatched name is more likely for an
+instrument outside the registry, so both biases run towards understating the
+long tail --- the direction that makes the concentration reported here a
+conservative estimate rather than an inflated one.
+
+\paragraph{The attribution inside the statement of the case is a floor.} The
+court-versus-party classification rests on lexical cues, validated at 37 of
+40 on a hand-read sample of the court class. The complementary class was
+measured and found unreliable, so no party share is reported. Where the
+article says at least \nRecitalByCourtShare{} per cent of those citations are
+the court's own narration, the qualifier is doing real work.
+
 \section{Discussion}
 \label{sec:discussion}
 
+The result that survives every robustness check is a difference between two
+instruments of the same legal system, enacted by the same legislature,
+addressed to the same court, and cited by the same judges in the same
+judgments. One is nearly exhausted. The other is barely opened.
+
+The tempting reading is that the substantive code is defective, or unknown to
+the profession, or too new. The data do not support any of the three, and one
+of them can be tested directly: if the code were simply unknown to the bar,
+citations to it would be scarce in the parties' material as well as in the
+court's reasons. They are not. Substantive instruments are raised in the
+statement of the case at a markedly higher rate than they appear in the
+reasons, and \nRecitalOnlyInstruments{} instruments appear there and never
+once in a court's reasoning. Whatever is narrowing the applied law is
+operating between the argument and the judgment.
+
+A second reading is more mundane and probably closer: a judgment must resolve
+a dispute, and a judgment that resolves it on jurisdiction, admissibility,
+evidence or limitation never reaches the substantive question at all. On that
+reading the procedural concentration is not a pathology but the arithmetic of
+disposition --- most cases are decided on the shortest available ground, and
+the shortest available ground is procedural. This is consistent with the
+finding that the most-cited provision in the corpus is the jurisdiction
+clause, and with the preparatory-hearing article being cited overwhelmingly
+in narration rather than in reasoning.
+
+Both readings have the same implication for how codification is evaluated. A
+legislature that measures its output by articles enacted is measuring
+something only loosely related to what its courts use. Between them, the
+enacted and the applied here run in parallel: amendment does not follow
+citation, citation does not follow amendment, and the correlation between an
+instrument's churn and its use is near zero once composition is controlled.
+If a code is intended to shape adjudication, the fact that
+\nCivilShare{} per cent of its articles have ever been cited in fifty
+thousand judgments is a measurement worth having, whatever one concludes
+from it.
+
+The method generalises beyond this jurisdiction more readily than the
+substance. Any state that publishes judgments in full text and holds its
+legislation at article level can be measured this way, and the defects
+documented in §\ref{sec:method} --- containment direction, anaphora by kind,
+the recital that is not the parties' voice --- are not features of Arabic.
+They are features of the way legal texts refer to other legal texts, and each
+of them, left uncorrected, produces a confident number rather than a missing
+one.
+
 \section{Conclusion}
+
+Saudi Arabia has enacted a great deal of law in a short time and has begun to
+publish what its commercial courts do with it. Joining the two shows a legal
+system applying a small, procedurally concentrated part of what it has
+enacted: \nArticlesCitedShare{} per cent of the articles in a verified corpus
+of \nRegistryArticles{}, \nScopeNarrowShare{} per cent within the courts'
+own statutory jurisdiction, and \nProceduralShare{} per cent of all matched
+citations falling on the instruments that govern how a case is heard rather
+than what it is about. The narrowing is not imposed by the parties, and it
+does not track legislative attention.
+
+The sharpest statement of it needs no denominator at all. The law that tells
+the court how to proceed has \nCCLShare{} per cent of its articles cited. The
+code that tells the court what the parties owe each other has
+\nCivilShare{} per cent.
 
 \section*{References}
 
