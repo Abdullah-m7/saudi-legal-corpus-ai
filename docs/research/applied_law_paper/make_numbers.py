@@ -36,6 +36,13 @@ def main():
     arts = load("applied_articles_results.json")
     voice = load("cite_by_voice_results.json")
     churn = load("churn_vs_litigation_results.json")
+    scope = load("restricted_denominator_results.json")
+    sc_n, sc_b = scope["art. 16 scope, narrow"], scope["art. 16 scope, broad"]
+    sc_a = scope["instruments ever cited"]
+    per_inst = scope["instruments"]
+
+    def art(t):
+        return per_inst[t]["articles"], per_inst[t]["cited"]
 
     named = sum(inst["named"].values())
     anaph = sum(inst["anaphoric"].values())
@@ -102,6 +109,26 @@ def main():
             100 * rp["other_proc"] / (rp["other_proc"] + rp["other_other"]),
         "nChurnSpearman": churn["instrument_level"]["spearman"],
         "nStatusArticles": al["articles"],
+        "nJoinInstruments": scope["the whole registry"]["instruments"],
+        "nScopeNarrowInstruments": sc_n["instruments"],
+        "nScopeNarrowArticles": sc_n["articles"],
+        "nScopeNarrowCited": sc_n["articles_cited"],
+        "nScopeNarrowShare": 100 * sc_n["share"],
+        "nScopeBroadInstruments": sc_b["instruments"],
+        "nScopeBroadArticles": sc_b["articles"],
+        "nScopeBroadShare": 100 * sc_b["share"],
+        "nAppliedOnlyInstruments": sc_a["instruments"],
+        "nAppliedOnlyArticles": sc_a["articles"],
+        "nAppliedOnlyShare": 100 * sc_a["share"],
+        "nCCLArticles": art("commercial_courts_law")[0],
+        "nCCLCited": art("commercial_courts_law")[1],
+        "nCCLShare": 100 * art("commercial_courts_law")[1] / art("commercial_courts_law")[0],
+        "nCivilArticles": art("civil_transactions_law")[0],
+        "nCivilCited": art("civil_transactions_law")[1],
+        "nCivilShare": 100 * art("civil_transactions_law")[1] / art("civil_transactions_law")[0],
+        "nEvidenceShare": 100 * art("evidence_law")[1] / art("evidence_law")[0],
+        "nCompaniesShare": 100 * art("companies_law")[1] / art("companies_law")[0],
+        "nBankruptcyShare": 100 * art("bankruptcy_law")[1] / art("bankruptcy_law")[0],
         "nUnparsed": arts["unparsed"],
         "nUnparsedShare": 100 * arts["unparsed"] / arts["citations"],
         "nOutOfRange": arts["out_of_range"],
