@@ -44,6 +44,12 @@ LEFT, RIGHT = 200, 240
 VOICE_AR = {"reasoning": "تعليل المحكمة", "recital": "الوقائع",
             "operative": "المنطوق", "unknown": "غير محدَّد"}
 
+APPEAL_AR = {"affirmed": "أُيِّد", "reversed": "نُقض أو أُلغي",
+             "substituted": "أُلغي وحُكم مجددًا", "varied": "عُدِّل",
+             "not_admitted": "لم يُقبل الاعتراض شكلًا",
+             "other_disposition": "فُصل على وجهٍ آخر",
+             "unclear": "لم يتبيّن من المنطوق"}
+
 
 def norm(s):
     s = DIAC.sub("", s)
@@ -220,6 +226,25 @@ def digest(tid, num, sets, labels):
         c = f"{plain(ys[i])} | {ar(years[ys[i]])}" if i < len(ys) else " | "
         A(f"| {a} | | {b} | | {c} |")
     A("")
+
+    appeal = collections.Counter(e.get("appeal") for e in ent)
+    with_appeal = sum(v for k, v in appeal.items() if k != "no_appeal")
+    if with_appeal:
+        A("## مصير الأحكام أمام الاستئناف\n")
+        A(f"من {ar(n)} استشهادًا بهذه المادة، **{ar(with_appeal)}** يقع في حكمٍ "
+          f"يحمل السجلُّ نفسه قرار الاستئناف فيه:\n")
+        A("| المآل | استشهادات | من ذوات الاستئناف |\n|---|---:|---:|")
+        for k in ("affirmed", "reversed", "substituted", "varied",
+                  "not_admitted", "other_disposition", "unclear"):
+            if appeal[k]:
+                A(f"| {APPEAL_AR[k]} | {ar(appeal[k])} | "
+                  f"{pct(appeal[k], with_appeal)} |")
+        A("")
+        A("**واقرأ هذا الجدول على وجهه.** «أُيِّد» تعني أن ذلك الحكم بعينه صمد، "
+          "لا أن ما فهمه من المادة صار مبدأً. و«نُقض» لا تعني أن المادة "
+          "أُسيء تطبيقها — فقد يُنقض الحكم لسببٍ آخر فيه لا صلة له بها. "
+          "والمآل مقروءٌ من منطوق حكم الاستئناف وحده، وما لم يُصرَّح به "
+          "«لم يتبيّن».\n")
 
     for v in ("reasoning", "recital"):
         rows = [e for e in ent if e["voice"] == v and e["_clause"]]

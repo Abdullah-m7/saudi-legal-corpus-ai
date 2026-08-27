@@ -11,6 +11,8 @@ An entry is one citation, and carries
   the article, with its official verified text where the corpus holds it
   the judgment that cites it — court, city, Hijri date, judgment number
   the passage around the citation, so the reader sees the application
+  whether the judgment survived appeal, where the record carries the
+  appellate decision — the question a practitioner asks before relying on it
   whose voice it is: the statement of the case, the court's own reasoning,
   or the operative part — and, inside the statement of the case, whether the
   citation is the court's own narration or a party's argument
@@ -65,6 +67,7 @@ sys.path.insert(0, str(ANALYSIS))
 import arabic_ordinals as A      # noqa: E402
 import match_instruments as M    # noqa: E402
 import voice_attribution as V    # noqa: E402
+import appellate_outcome as AO   # noqa: E402
 
 REGISTRY = REPO / "data" / "corpus_registry" / "corpus_registry.json"
 SHARDS = sorted((ANALYSIS / "judgments").glob("*.jsonl"))
@@ -124,6 +127,8 @@ def main():
             n += 1
             text = r["text"]
             spans = V.segments(text, r.get("sections"))
+            appeal_text = (r.get("sections") or {}).get("appealTextofRulling")
+            appeal = AO.outcome(appeal_text)[0] if appeal_text else "no_appeal"
             last = M.Recent()
             for m in CITE.finditer(text):
                 tid, kind = M.match(m.group(2), index, order, last)
@@ -151,6 +156,7 @@ def main():
                     "paragraph": para,
                     "voice": voice,
                     "attribution": attribution,
+                    "appeal": appeal,
                     "passage": text[a:b],
                     "at": m.start() - a,
                 })
@@ -177,6 +183,8 @@ def main():
             meta = arts.get((tid, num), {})
             by_voice = dict(collections.Counter(e["voice"] for e in rows))
             court_recital = sum(1 for e in rows if e["attribution"] == "court")
+            by_appeal = dict(collections.Counter(
+                e["appeal"] for e in rows))
             record = {
                 "track_id": tid, "instrument": names.get(tid),
                 "article_number": num,
@@ -187,6 +195,7 @@ def main():
                 "citations": len(rows),
                 "by_voice": by_voice,
                 "recital_by_court": court_recital,
+                "by_appeal": by_appeal,
                 "judgments": rows,
             }
             (folder / f"{num}.json").write_text(
@@ -198,6 +207,7 @@ def main():
                 "legal_status": meta.get("legal_status"),
                 "citations": len(rows), "by_voice": by_voice,
                 "recital_by_court": court_recital,
+                "by_appeal": by_appeal,
                 "file": f"articles/{tid}/{num}.json",
             }
         (OUT / f"{tid}.json").write_text(
