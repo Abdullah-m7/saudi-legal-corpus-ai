@@ -1,19 +1,33 @@
 cff-version: 1.2.0
-message: "If you use this dataset, please cite it as below."
+title: >-
+  Saudi Legal Corpus: verified legislation at article level, published
+  judgments in full text, and a citator joining them
+message: >-
+  If you use this corpus or the tools built on it, please cite it. Each
+  record carries its own provenance; the field notes in the repository say
+  what the data will and will not support.
 type: dataset
-title: "Saudi Legal Corpus for AI"
 authors:
   - family-names: Almohammedi
     given-names: Abdullah
-    affiliation: "Independent Researcher"
-    orcid: "https://orcid.org/0009-0001-0832-0995"
-repository-code: "https://github.com/Abdullah-m7/saudi-legal-corpus-ai"
-license: MIT
+    orcid: https://orcid.org/0009-0001-0832-0995
+    country: SA
+abstract: >-
+  Two corpora for one jurisdiction, joined at the level at which a lawyer
+  argues. The legislative side holds 15,855 verified articles across 291
+  Saudi instruments, each with its number, text, legal status and retrieval
+  provenance. The judicial side holds 50,666 judgments published in full text
+  by the Ministry of Justice, of which 15,383 carry the appellate decision as
+  well. A citator links them: 99,158 statutory citations matched to the
+  article cited, each carrying the segment of the judgment it sits in, whether
+  the court or a party is speaking, and whether that judgment survived appeal.
 keywords:
-  - Arabic
-  - legal NLP
-  - Saudi Arabia
+  - empirical legal studies
   - legislation
-  - corpus
-  - retrieval benchmark
-abstract: "A machine-readable dataset of Saudi legislation: 291 legislative tracks and 15,689 article-level records with official-source provenance, derived analytical layers, and a 519-query retrieval benchmark. This release is not an official government publication, does not provide legal advice, and is not a substitute for the official Arabic texts. The official Arabic text governs."
+  - judicial citation
+  - legal informatics
+  - Arabic legal corpora
+  - open government data
+  - Saudi Arabia
+license: CC-BY-4.0
+repository-code: https://github.com/Abdullah-m7/saudi-legal-corpus-ai
