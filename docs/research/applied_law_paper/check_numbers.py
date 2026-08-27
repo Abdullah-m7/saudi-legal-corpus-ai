@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SRC = HERE / "main.tex"
+SOURCES = (HERE / "main.tex", HERE / "cover_letter.tex")
 
 # A measurement, in the shapes results take: 1,234 / 1{,}234 / 35.1 per cent /
 # 12.5\%. Years and plain small integers are left alone.
@@ -41,9 +41,9 @@ SUSPECT = re.compile(
 EXEMPT = re.compile(r"zenodo|doi|orcid|github|ukpga|nisi|http", re.I)
 
 
-def main():
+def check(SRC):
     if not SRC.exists():
-        print("main.tex does not exist yet --- nothing to check")
+        print(f"{SRC.name} does not exist yet --- nothing to check")
         return 0
     lines = SRC.read_text(encoding="utf-8").splitlines()
     # Only the body. Package options carry lengths --- `margin=2.5cm` is a
@@ -63,13 +63,23 @@ def main():
                 continue
             bad.append((n, value, line.strip()[:78]))
     if bad:
-        print(f"{len(bad)} typed measurement(s) in main.tex --- use a macro "
+        print(f"{len(bad)} typed measurement(s) in {SRC.name} --- use a macro "
               f"from numbers.tex instead:")
         for n, value, context in bad:
             print(f"  line {n}: {value!r}\n    {context}")
         return 1
-    print("no typed measurements in main.tex")
+    print(f"no typed measurements in {SRC.name}")
     return 0
+
+
+def main():
+    """The letter quotes the paper, so it is checked with the same rule.
+
+    An earlier draft of the cover letter carried two figures from a stale run
+    of the analysis. The manuscript could not, because it is typeset from
+    generated macros; the letter could, because nothing was watching it.
+    """
+    return max(check(src) for src in SOURCES)
 
 
 if __name__ == "__main__":

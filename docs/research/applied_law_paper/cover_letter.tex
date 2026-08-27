@@ -9,6 +9,11 @@
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
 \pagestyle{empty}
+
+% The letter quotes the manuscript's figures, so it reads them from the same
+% generated file the manuscript does. A letter that disagrees with the paper
+% it introduces is a bad first impression, and it is avoidable.
+\input{numbers}
 \IfFileExists{contact.tex}{\input{contact}}{\input{contact.example}}
 
 \begin{document}
@@ -34,7 +39,7 @@ Harvard Law School
 \vspace{0.6em}
 I am pleased to submit the enclosed manuscript, ``98 Per Cent of the
 Procedure, 26 Per Cent of the Code: The Enacted Law and the Applied Law in
-50,666 Judgments,'' for consideration in the \emph{Journal of Legal
+\nJudgments{} Judgments,'' for consideration in the \emph{Journal of Legal
 Analysis}.
 
 \vspace{0.5em}
@@ -43,19 +48,19 @@ on courts measures what judges decide. Joining the two requires both corpora
 for one jurisdiction at article level, which is why it is rarely done. Saudi
 Arabia now permits it: the state has codified much of its private and
 commercial law within a decade, and its Ministry of Justice publishes
-commercial judgments in full text. The article links 106,337 statutory
-citations in 50,666 published judgments to 15,855 articles across 291
-instruments, and reports what the link shows.
+commercial judgments in full text. The article links \nCitations{} statutory
+citations in \nJudgments{} published judgments to \nRegistryArticles{}
+articles across \nInstruments{} instruments, and reports what the link shows.
 
 \vspace{0.5em}
 The central result compares two instruments to themselves, so it depends on
 no choice of denominator. The Commercial Courts Law, which tells the court
-how to proceed, has 97.9 per cent of its articles cited in the corpus. The
-Civil Transactions Law --- the codification of Saudi private law, and the
-instrument the commercial court's own jurisdiction clause names --- has 25.8
-per cent of its 721. Across the statute book 11.2 per cent of articles are
-ever cited; within the jurisdiction the statute draws for itself, 29.4 per
-cent. The obvious objection to the wider figures, that the published record
+how to proceed, has \nCCLShare{} per cent of its articles cited in the
+corpus. The Civil Transactions Law --- the codification of Saudi private law,
+and the instrument the commercial court's own jurisdiction clause names ---
+has \nCivilShare{} per cent of its \nCivilArticles{}. Across the statute book
+\nArticlesCitedShare{} per cent of articles are ever cited; within the
+jurisdiction the statute draws for itself, \nScopeNarrowShare{} per cent. The obvious objection to the wider figures, that the published record
 is commercial while the denominator is not, is answered by rebuilding the
 denominator from the jurisdiction clause under two readings and by a fourth
 denominator that concedes the objection outright.
@@ -64,8 +69,8 @@ denominator that concedes the objection outright.
 Two further results may interest referees. Segmenting each judgment at its
 own headings shows the narrowing to happen at the bench rather than the bar:
 the court's reasons are more procedural than the statement of the case, not
-less, and 23 instruments appear in the statement of the case and never once
-in a court's reasoning. And amendment activity predicts neither citation nor
+less, and \nRecitalOnlyInstruments{} instruments appear in the statement of
+the case and never once in a court's reasoning. And amendment activity predicts neither citation nor
 its absence: the pooled ratio suggesting otherwise is a composition effect
 that disappears under a within-instrument control.
 
