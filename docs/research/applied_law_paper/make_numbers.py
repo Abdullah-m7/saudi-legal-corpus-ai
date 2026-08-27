@@ -123,6 +123,11 @@ def main():
         "nCCLArticles": art("commercial_courts_law")[0],
         "nCCLCited": art("commercial_courts_law")[1],
         "nCCLShare": 100 * art("commercial_courts_law")[1] / art("commercial_courts_law")[0],
+        # The title carries these two, so they are rounded here rather than in
+        # the manuscript: a number spelled out in a title is a number that
+        # will one day disagree with the analysis that produced it.
+        "nCCLShareRound": round(100 * art("commercial_courts_law")[1] / art("commercial_courts_law")[0]),
+        "nCivilShareRound": round(100 * art("civil_transactions_law")[1] / art("civil_transactions_law")[0]),
         "nCivilArticles": art("civil_transactions_law")[0],
         "nCivilCited": art("civil_transactions_law")[1],
         "nCivilShare": 100 * art("civil_transactions_law")[1] / art("civil_transactions_law")[0],
