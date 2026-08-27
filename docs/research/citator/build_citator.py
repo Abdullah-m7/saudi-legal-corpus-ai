@@ -73,9 +73,8 @@ REGISTRY = REPO / "data" / "corpus_registry" / "corpus_registry.json"
 SHARDS = sorted((ANALYSIS / "judgments").glob("*.jsonl"))
 OUT = HERE / "instruments"
 
-CITE = re.compile(
-    r"الماد[ةه]\s*\(?\s*([^\)\n]{1,40}?)\s*\)?\s*من\s+((?:نظام|لائحة|النظام|اللائحة)[^\.،؛\n\)]{0,60})")
-BEFORE, AFTER = 260, 340
+CITE = V.CITE     # one definition, in voice_attribution
+BEFORE, AFTER = 260, 340      # the window kept around each citation
 
 
 def article_texts(tracks):

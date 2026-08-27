@@ -13,11 +13,11 @@ import re
 from pathlib import Path
 
 import match_instruments as M
+import voice_attribution as V
 
 HERE = Path(__file__).resolve().parent
 REGISTRY = HERE.parents[2] / "data" / "corpus_registry" / "corpus_registry.json"
-CITE = re.compile(
-    r"الماد[ةه]\s*\(?\s*([^\)\n]{1,40}?)\s*\)?\s*من\s+((?:نظام|لائحة|النظام|اللائحة)[^\.،؛\n\)]{0,60})")
+CITE = V.CITE     # one definition, in voice_attribution
 
 PROCEDURAL = {
     "commercial_courts_law", "commercial_courts_implementing_regulation",

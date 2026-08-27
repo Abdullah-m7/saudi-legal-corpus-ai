@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Who is speaking in الوقائع — the court, or a party?
+"""Who is speaking in الوقائع — the court, or a party? And where is a citation?
+
+This module also owns CITE, the pattern every other script uses to find a
+statutory citation, so that there is one definition to correct when it turns
+out to be wrong — and it did turn out to be wrong.
 
 The citator and `cite_by_voice.py` both split a judgment at its own headings:
 everything before «الأسباب:» was labelled *pleadings*, everything between
@@ -34,7 +38,16 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 CITE = re.compile(
-    r"الماد[ةه]\s*\(?\s*([^\)\n]{1,40}?)\s*\)?\s*من\s+((?:نظام|لائحة|النظام|اللائحة)[^\.،؛\n\)]{0,60})")
+    r"(?<![ء-ي])(?:ال|لل|بال|كال|فال|وال|ول|بل|ب|ل|و)?ماد[ةه]"
+    r"\s*\(?\s*([^\)\n]{1,40}?)\s*\)?\s*من\s+"
+    r"((?:نظام|لائحة|النظام|اللائحة)[^\.،؛\n\)]{0,60})")
+
+# The prefix alternation is not decoration. A judgment writes «وفقاً للمادة
+# التاسعة والعشرين من نظام الإثبات» as readily as «المادة التاسعة والعشرين»,
+# and a pattern anchored on «المادة» alone missed 16,682 citations — 15.7 per
+# cent of everything this project had counted. It surfaced when the same
+# extractor was pointed at a lawyer's draft and silently dropped two of his
+# four articles. The lookbehind keeps «عمادة» and «شهادة» out.
 REASONS = re.compile(r"(?<!فلهذه\s)الأسباب\s*[:：]")
 RULING = re.compile(r"حكمت\s+الدائرة")
 FACTS = re.compile(r"الوقائع\s*[:：]")
