@@ -15,6 +15,18 @@ document is segmented on its own; see voice_attribution.parts.
 Three measures, the same three the article uses at first instance: how much
 of what is cited is procedural, how many distinct instruments are drawn on,
 and how concentrated the citations are.
+
+READ THE POOLED RESULT WITH appeal_selection.py BESIDE IT. Only 22.3 per cent
+of paired records carry reasons at both levels, and whether a circuit writes
+its own reasons is not independent of what it decides: it writes in 34 per
+cent of reversals and 26 per cent of affirmances. Stratifying by outcome
+splits the pooled figure. Where the appeal affirms, its reasons really are
+more procedural than the reasons below — 95.4 against 92.4 per cent,
+p = 0.002. Where it disturbs the judgment, the direction reverses — 90.0
+against 93.3 — but on 368 pairs that is p = 0.11 and establishes nothing.
+The pooled number in this script is therefore an affirmance result wearing a
+general label, and should not be reported as «appellate reasoning is more
+procedural» without the stratification.
 """
 
 import collections
