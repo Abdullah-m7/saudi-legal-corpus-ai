@@ -15,10 +15,20 @@ The threat is testable, so it is tested rather than acknowledged. Two ways:
   2. Does the finding survive inside each outcome? Recompute the procedural
      shares separately for affirmances and for disturbed judgments. A result
      that holds in both strata is not produced by the mix between them.
+
+The stratified shares are pooled over citations, and citations inside one
+judgment are not independent draws, so a test on them would overstate its own
+confidence. The test reported here is therefore run over pairs, not citations:
+each pair contributes one number, the procedural share of the appellate reasons
+minus the procedural share of the reasons below, and the null that the two
+levels do not differ is tested by flipping the sign of that number at random.
+That is the exact randomisation test for paired data, it needs no distribution
+assumption, and it is the difference the article actually claims.
 """
 
 import collections
 import json
+import random
 import sys
 from pathlib import Path
 
@@ -32,6 +42,21 @@ import match_instruments as M     # noqa: E402
 import voice_attribution as V     # noqa: E402
 
 DISTURBED = {"reversed", "substituted", "varied"}
+REPS = 20000        # permutation replications
+SEED = 0            # fixed: the reported p-value is reproducible
+
+
+def signflip(diffs, reps=REPS, seed=SEED):
+    """Two-sided p for «the mean paired difference is zero», by sign flips."""
+    if not diffs:
+        return None
+    obs = abs(sum(diffs) / len(diffs))
+    rng = random.Random(seed)
+    hits = sum(
+        abs(sum(d if rng.getrandbits(1) else -d for d in diffs)) / len(diffs)
+        >= obs - 1e-12
+        for _ in range(reps))
+    return (hits + 1) / (reps + 1)
 
 
 def reasons_span(text, a, b):
@@ -44,6 +69,7 @@ def main():
     index, order = M.build(REGISTRY)
     wrote = collections.Counter()          # (outcome, wrote reasons?)
     cited = collections.defaultdict(collections.Counter)   # (stratum, level)
+    pairs = collections.defaultdict(list)  # stratum -> per-pair differences
 
     for shard in sorted((HERE / "judgments").glob("*.jsonl")):
         for line in shard.read_text(encoding="utf-8").splitlines():
@@ -67,6 +93,8 @@ def main():
             stratum = ("disturbed" if outcome in DISTURBED
                        else "affirmed" if outcome == "affirmed" else "other")
             last = M.Recent()
+            here = {"first": collections.Counter(), "appeal":
+                    collections.Counter()}
             for m in V.CITE.finditer(text):
                 tid, kind = M.match(m.group(2), index, order, last)
                 if kind == "named":
@@ -76,8 +104,22 @@ def main():
                 i = m.start()
                 if fr[0] <= i < fr[1]:
                     cited[(stratum, "first")][tid] += 1
+                    here["first"][tid] += 1
                 elif ar_[0] <= i < ar_[1]:
                     cited[(stratum, "appeal")][tid] += 1
+                    here["appeal"][tid] += 1
+
+            # one number per pair, and only where both levels cited something:
+            # a level that cites nothing has no procedural share to compare.
+            if here["first"] and here["appeal"]:
+                share = {}
+                for level, c in here.items():
+                    tot = sum(c.values())
+                    share[level] = sum(
+                        v for k, v in c.items() if k in M.PROCEDURAL) / tot
+                d = 100 * (share["appeal"] - share["first"])
+                pairs[stratum].append(d)
+                pairs["all"].append(d)
 
     print("does the appeal court write its own reasons?\n")
     print(f"{'outcome':<20}{'wrote':>8}{'did not':>10}{'share writing':>15}")
@@ -105,6 +147,18 @@ def main():
             out["strata"][f"{stratum}_{level}"] = {
                 "citations": tot, "instruments": len(c),
                 "procedural": 100 * proc / tot}
+
+    print("\nthe same difference tested over pairs, not citations:\n")
+    print(f"{'stratum':<12}{'pairs':>8}{'mean diff':>12}{'p':>10}")
+    out["paired"] = {}
+    for stratum in ("all", "affirmed", "disturbed"):
+        d = pairs[stratum]
+        if not d:
+            continue
+        mean = sum(d) / len(d)
+        p = signflip(d)
+        print(f"{stratum:<12}{len(d):>8,}{mean:>+11.1f}pp{p:>10.4f}")
+        out["paired"][stratum] = {"pairs": len(d), "mean_diff": mean, "p": p}
 
     (HERE / "appeal_selection_results.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")

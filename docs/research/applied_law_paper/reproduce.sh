@@ -29,6 +29,7 @@ python3 "$ANALYSIS/unparsed_by_year.py"         # is the parse loss time-skewed?
 echo "== manuscript"
 python3 make_numbers.py                         # numbers.tex, 93 macros
 python3 check_numbers.py                        # refuse any hand-typed number
+python3 ../check_fresh.py                       # and a stale result
 python3 ../check_docs.py                        # and refuse a stale note
 pdflatex -interaction=nonstopmode main.tex >/dev/null
 pdflatex -interaction=nonstopmode main.tex >/dev/null

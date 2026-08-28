@@ -21,6 +21,9 @@ echo "== what predicts disturbance"
 python3 "$A/reversal_model.py"                      # the whole span
 python3 "$A/reversal_model.py" --from 1439 --to 1444  # the mature window
 
+# a generated number is only as fresh as the JSON under it
+python3 ../check_fresh.py
+
 echo "== manuscript"
 python3 make_numbers.py
 python3 check_numbers.py

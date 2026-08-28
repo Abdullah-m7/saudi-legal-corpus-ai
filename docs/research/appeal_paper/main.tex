@@ -49,8 +49,11 @@ the judgment. A logistic model on the \nModelN{} decided between
 \nWindowFrom{} and \nWindowTo{} --- the window in which the record is mature
 enough to read --- finds the procedural
 share of a judgment's own citations the strongest protection against
-disturbance (odds ratio \nOrProcedural{}), while its length, its citation
-count and whether it wrote reasons predict nothing.
+disturbance (odds ratio \nOrProcedural{}) and one of \nHolmSurvivors{} terms
+of eleven to survive correction for multiple testing. The judgment's citation
+count and whether it wrote its own reasons predict nothing; its length
+predicts weakly, and in the direction opposite to the one a reader would
+guess.
 \end{abstract}
 
 \noindent\textbf{Keywords:} appellate review; judicial reason-giving; empirical
@@ -98,12 +101,15 @@ Third, a logistic model asks what separates the judgments that were disturbed
 from those that survived, using only what can be read from the first-instance
 document. On the \nModelN{} decided between \nWindowFrom{} and \nWindowTo{},
 the strongest protection is the procedural share of a judgment's own
-statutory citations (odds ratio \nOrProcedural{}, $p$ \nPProcedural{}). A
-judgment resting on the law of procedure is harder to disturb than one
-resting on the law of obligations. Its length, the number of instruments it
-cites, and whether it wrote its own reasons predict nothing at all.
+statutory citations (odds ratio \nOrProcedural{}), one of only
+\nHolmSurvivors{} terms of eleven to survive correction for multiple testing.
+A judgment resting on the law of procedure is harder to disturb than
+one resting on the law of obligations. The number of instruments it cites and
+whether it wrote its own reasons predict nothing; its length predicts a
+little, and longer judgments are disturbed slightly more often rather than
+less.
 
-Two methodological points are reported rather than assumed. The appellate
+Three methodological points are reported rather than assumed. The appellate
 disposition is read from the operative part of the appellate document and
 nowhere else, because an appellate recital narrates the history of the case
 and a pattern applied to the whole document reads an earlier affirmance as
@@ -112,9 +118,16 @@ hand-read samples before it was used. And the year in which a judgment was
 given cannot be read across the whole span: a recent judgment appears here
 with an appellate decision only if the appeal was both brought and decided
 before the corpus was collected, so the disturbed rate falls from
-\nDisturbedShare{} per cent in the mature years to almost nothing in the last
-of them. The window is therefore an argument to the model rather than a
-silent assumption, and the article reports the mature one.
+\nModelBase{} per cent inside the mature window to almost nothing in the last
+years of the span. The window is therefore an argument to the model rather
+than a silent assumption, and the article reports the mature one.
+
+The third is about the unit of analysis. Where a comparison is between two
+levels of the same dispute, it is made over pairs and not over citations: citations
+cluster inside judgments, and pooling them weights a dispute by how many
+citations it happens to carry. That distinction is not cosmetic here. It
+reverses the sign of one of this article's own earlier results, which
+§\ref{sec:results} reports and withdraws.
 
 \section{Related work}
 \label{sec:related}
@@ -171,35 +184,370 @@ corpus is dominated by the years since.
 
 \subsection{A record that carries both levels}
 
+The Ministry of Justice publishes Saudi commercial judgments in full text
+through the interface its own portal uses. A published record holds the
+judgment, and where the case was appealed it holds the appellate decision as
+well, in a separate field of the same record. \nAppeals{} records carry an
+appellate decision; \nPaired{} of those carry it beside the first-instance
+judgment, and \nAppealOnly{} carry the appellate decision alone.
+
+That storage decision is the whole of this article's data advantage, and it
+was not made for research. It also caused a defect worth stating, because it
+shows what the pairing does to naive processing: an earlier analysis of this
+corpus segmented each record on its own headings, and where a record held two
+judgments the segmentation ran from the reasons of the first into the
+disposition of the second. Each document is now segmented separately.
+
 \subsection{What the published record is}
+
+The corpus holds \nJudgments{} judgments, overwhelmingly commercial and
+concentrated in three cities and the last few Hijri years. Section
+\ref{sec:threats} states the consequences. Two features of the published
+fields matter for method rather than for interpretation. The interface
+exposes \texttt{judgmentFacts}, \texttt{judgmentReasons} and
+\texttt{judgmentRuling}, which are null in every record, so the structure of a
+judgment must be read from its text. And it exposes \texttt{isAppeal}, which
+is present, well-typed, and false on every record --- including every record
+that carries an appellate decision. First instance and appeal are separated
+here by the fields that hold the text, not by the flag provided for the
+purpose.
 
 \section{Method}
 \label{sec:method}
 
 \subsection{Reading the appellate disposition}
 
+The disposition is read from the operative part of the appellate document and
+from nowhere else. An appellate recital routinely narrates the history of the
+case, including earlier affirmances, so a pattern applied to the whole
+document reports an old affirmance as this court's ruling. The operative part
+is located by the markers Saudi circuits use to introduce it, and only the
+text after the last such marker is classified; where the operative part
+quotes the judgment below --- which it usually does, at length --- the quoted
+disposition is cut away before classification, and the label is whichever
+disposition the court states first.
+
+Dispositions are classified as affirmed, reversed, replaced by a fresh
+judgment, varied, not admitted, disposed of on another ground, or unclear.
+Nothing is forced: a document whose operative part cannot be located, or
+whose disposition matches none of these, is unclear and is reported as such.
+
+The classifier was corrected four times, each time against a hand-read
+sample rather than by inspection. The operative part is fully vowelled in a
+few hundred judgments and a plain-script pattern missed all of them; a
+refusal of a request for arbitration is not an inadmissible appeal; the
+window swallowed the quoted judgment below; and a fixed order of tests read
+\emph{affirming a judgment that had reversed an administrative decision} as
+a reversal. On a random sample of twenty classifications read after the last
+correction, none was wrong.
+
 \subsection{Whether the appeal reasoned}
 
+Saudi judgments carry their own structure --- \emph{al-waqa'i}, then
+\emph{al-asbab}, then the operative part --- and an appellate document is
+counted as having reasoned when that structure is present within it. This is
+a count of whether the second instance put its own reasoning on the record,
+not a judgment about quality: a circuit affirming on the reasons below has
+given reasons by adoption.
+
 \subsection{Modelling disturbance}
+
+The model is a logistic regression of disturbance on features of the
+first-instance judgment. Disturbed means reversed, replaced or varied;
+affirmed means affirmed. Appeals that never reached the merits are excluded
+rather than coded as affirmances.
+
+Every feature is read from the first-instance document alone: the city, the
+Hijri year, the length of the text, the number of statutory citations, the
+number of distinct instruments cited, the procedural share of those
+citations, whether the judgment carried its own reasons under the headings,
+whether its operative part disposed of the case on the merits rather than on
+a preliminary point, and whether a preliminary defence was raised in it. A
+model that saw the appellate text would be predicting the outcome from
+itself.
+
+The fit is by iteratively reweighted least squares, written out rather than
+imported: the replication guide promises that the analysis runs with no
+third-party package, and a reviewer running the pipeline should not discover
+otherwise because one script wanted a matrix inverse.
 
 \section{Results}
 \label{sec:results}
 
 \subsection{What appeals do}
 
+\begin{table}[t]
+\centering
+\caption{Appellate dispositions across \nAppeals{} published appellate
+decisions.}
+\label{tab:outcomes}
+\begin{tabular}{lrr}
+\toprule
+Disposition & Judgments & Share \\
+\midrule
+Affirmed                       & \nAffirmed{}     & \nAffirmedShare{}\% \\
+Reversed                       & \nReversed{}     & \nReversedShare{}\% \\
+Replaced by a fresh judgment   & \nSubstituted{}  & \nSubstitutedShare{}\% \\
+Varied                         & \nVaried{}       & --- \\
+Not admitted                   & \nNotAdmitted{}  & \nNotAdmittedShare{}\% \\
+Disposed of on another ground  & \nOtherDisposition{} & \nOtherShare{}\% \\
+Unclear                        & \nUnclearOutcome{}   & \nUnclearShare{}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:outcomes} gives the dispositions. \nDecidedOnMerits{}
+decisions reached the merits, and \nDisturbedShare{} per cent of those
+disturbed the judgment below. The rate is low, as the error-correction
+account predicts of appeals that are brought at all, and the striking figure
+beside it is the \nNotAdmittedShare{} per cent that failed at the threshold:
+about one appellate decision in seven never reached the question the appellant
+wanted answered.
+
 \subsection{Reason-giving at the second instance}
+
+\nOwnReasons{} appellate judgments --- \nOwnReasonsShare{} per cent --- carry
+reasons of their own. The remaining \nNoReasonsShare{} per cent affirm or
+dispose on the reasons below.
+
+Whether a circuit writes is not independent of what it decides. It wrote in
+\nWroteAffirming{} per cent of affirmances, \nWroteReversing{} per cent of
+reversals, \nWroteSubstituting{} per cent where it replaced the judgment with
+its own, and \nWroteNotAdmitting{} per cent where the appeal failed at the
+threshold. A circuit that leaves the judgment standing mostly adopts the
+reasoning below; a circuit that disturbs it mostly explains itself. That is
+what one would want of an appellate court, and it is also what makes the
+comparison in the next subsection a biased sample of appeals rather than a
+sample of appeals.
 
 \subsection{Reasoning compared, where both levels reasoned}
 
+Both levels reasoned in \nBothReasoned{} pairs, \nBothReasonedShare{} per
+cent of the pairs. Pooled over citations, the appellate reasons look more
+procedural than the reasons below --- \nAppealProcedural{} per cent against
+\nFirstProcedural{} --- and drawn from a narrower set of instruments,
+\nAppealInstruments{} distinct instruments against \nFirstInstruments{}.
+
+That figure is computed on the wrong unit, and it does not survive being put
+on the right one. Citations are not independent draws: they cluster inside
+judgments, so pooling them weights a pair by how many citations it happens to
+carry, and a few citation-heavy appellate documents can carry the average.
+Table~\ref{tab:paired} runs the same comparison over pairs. Each of the
+\nPairsTested{} pairs in which both levels cite a matched instrument
+contributes one number --- the procedural share of the appellate reasons minus
+the procedural share of the reasons below --- and the null that the levels do
+not differ is tested by flipping the sign of that number at random, which is
+the exact randomisation test for paired data and assumes nothing about its
+distribution.
+
+\begin{table}[t]
+\centering
+\caption{The same comparison over pairs rather than over citations. A negative
+difference means the appellate reasons are less procedural than the reasons
+below. Two-sided $p$ by sign-flip permutation.}
+\label{tab:paired}
+\begin{tabular}{lrrr}
+\toprule
+Pairs where both levels cited & Pairs & Mean difference & $p$ \\
+\midrule
+All                      & \nPairsTested{}    & \nDiffAll{}       & \nPDiffAll{} \\
+The appeal affirmed      & \nPairsAffirmed{}  & \nDiffAffirmed{}  & \nPDiffAffirmed{} \\
+The appeal disturbed     & \nPairsDisturbed{} & \nDiffDisturbed{} & \nPDiffDisturbed{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sign reverses. Over all pairs the mean paired difference is
+\nDiffAll{} percentage points --- the appellate reasons are, if anything,
+\emph{less} procedural than the reasons below --- and it does not reach
+significance ($p$ = \nPDiffAll{}). Split by outcome, the affirmances that
+dominate the pooled figure show nothing at all (\nDiffAffirmed{} points, $p$ =
+\nPDiffAffirmed{}, on \nPairsAffirmed{} pairs). The difference lives in the
+\nPairsDisturbed{} pairs where the appeal disturbed the judgment:
+\nDiffDisturbed{} points, $p$ = \nPDiffDisturbed{}. A circuit that overturns
+reaches for substantive law more than the judgment it overturned did.
+
+Two things follow, and the first is a withdrawal. On the unit at which the
+claim is actually made, appellate reasons are not more procedural than the
+reasons below; the pooled statement was an artefact of weighting pairs by
+their citation counts, and it is withdrawn rather than qualified. The second
+is that the surviving difference is reported with the same discipline applied
+to it: three tests appear in Table~\ref{tab:paired}, and $p$ =
+\nPDiffDisturbed{} would not survive correction for three any more than a
+model term at that level survives correction for eleven. It is reported as a
+signal that the strata differ, not as an established difference.
+
 \subsection{What predicts disturbance}
+
+\begin{table}[t]
+\centering
+\caption{Logistic regression of disturbance on features of the first-instance
+judgment, \nWindowFrom{}--\nWindowTo{}. \nModelN{} judgments, base rate
+\nModelBase{} per cent.}
+\label{tab:model}
+\begin{tabular}{lrrr}
+\toprule
+Feature of the judgment below & Odds ratio & $p$ & Holm $p$ \\
+\midrule
+Procedural share of its citations & \nOrProcedural{} & \nPProcedural{} & \nHolmProcedural{} \\
+Hijri year                        & \nOrYear{}       & \nPYear{}       & \nHolmYear{} \\
+Dammam                            & \nOrDammam{}     & \nPDammam{}     & \nHolmDammam{} \\
+Riyadh                            & \nOrRiyadh{}     & \nPRiyadh{}     & \nHolmRiyadh{} \\
+Jeddah                            & \nOrJeddah{}     & \nPJeddah{}     & \nHolmJeddah{} \\
+Disposed on the merits            & \nOrMerits{}     & \nPMerits{}     & \nHolmMerits{} \\
+Preliminary defence raised        & \nOrDefence{}    & \nPDefence{}    & \nHolmDefence{} \\
+Wrote its own reasons             & \nOrReasons{}    & \nPReasons{}    & \nHolmReasons{} \\
+Length (log characters)           & \nOrLength{}     & \nPLength{}     & \nHolmLength{} \\
+Number of citations               & \nOrCitations{}  & \nPCitations{}  & \nHolmCitations{} \\
+Distinct instruments cited        & \nOrInstruments{} & \nPInstruments{} & \nHolmInstruments{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Eleven coefficients are tested at once, so the table carries a Holm-adjusted
+$p$ beside the raw one, and the text below treats as established only the
+\nHolmSurvivors{} terms that survive it.
+
+The strongest coefficient in Table~\ref{tab:model} is the procedural share of
+a judgment's own citations, at \nOrProcedural{} (Holm $p$ =
+\nHolmProcedural{}). A judgment whose statutory authority is procedural is
+markedly harder to disturb than one resting on the law of obligations,
+controlling for whether it decided the merits at all. The other two survivors
+are the Hijri year, which is reported only inside the mature window for the
+reason given in §\ref{sec:threats}, and one city: Dammam's judgments are
+disturbed more often than the other cities' at \nOrDammam{} (Holm $p$ =
+\nHolmDammam{}), which this article records and does not explain.
+
+Three terms are worth as much as the coefficients because they are flat on
+every reading of the table. The number of statutory citations in a judgment
+(\nOrCitations{}), the number of distinct instruments it cites
+(\nOrInstruments{}), and whether it wrote its own reasons under the headings
+(\nOrReasons{}) do not predict whether it survives. A heavily cited judgment
+is not a safer judgment.
+
+Two terms sit between the two groups and are reported rather than relied on.
+Deciding the merits is protective at \nOrMerits{} and length is mildly
+aggravating at \nOrLength{}; each is significant on the raw $p$
+(\nPMerits{} and \nPLength{}) and neither survives correction
+(\nHolmMerits{} and \nHolmLength{}). Which way length points is worth
+recording even so, because it is not the direction a reader would guess:
+longer judgments are disturbed slightly more often, not less. Nothing in this
+model supports the idea that a judgment protects itself by being long.
 
 \section{Threats to validity}
 \label{sec:threats}
 
+\paragraph{Only appealed judgments are here.} A judgment enters this analysis
+because someone challenged it. Nothing here describes the judgments no one
+appealed, which are the great majority, and the disturbance rate is a rate
+among appeals rather than an error rate among judgments.
+
+\paragraph{Recent judgments are censored, which is why the window is an
+argument.} A judgment appears with an appellate decision only if the appeal
+was brought and decided before the corpus was collected. For the most recent
+years that selects the fastest appeals. The measured disturbance rate rises
+through the mature years and then collapses in the last two, which is a fact
+about the collection date and not about the courts. The model is therefore
+reported on \nWindowFrom{}--\nWindowTo{}, and the whole span is kept as the
+comparison that shows why.
+
+\paragraph{Who writes reasons is not random, and the comparison inherits it.}
+The reasoning comparison uses the \nBothReasonedShare{} per cent of pairs
+where both levels reasoned, and reasoning goes with disturbing: a circuit that
+disturbs a judgment writes its own reasons far more often than one that
+affirms. Every statement about appellate reasoning in this article is
+therefore a statement about that minority of appeals, selected by their
+outcome, and not about appeals in general.
+
+\paragraph{Eleven terms, three strata, one corpus.} Testing many things on one
+body of data produces small $p$-values on its own. Both the model and the
+paired comparison are reported with that in mind: Table~\ref{tab:model}
+carries the Holm-adjusted $p$ and only \nHolmSurvivors{} of its eleven terms
+are relied on, and the difference in Table~\ref{tab:paired} is reported as a
+signal rather than an established result for the same reason. Where an earlier
+version of this analysis pooled citations instead of pairs, the correction
+reversed a sign, and the withdrawal is recorded in §\ref{sec:results} rather
+than removed from it.
+
+\paragraph{The corpus is what the Ministry publishes.} It is overwhelmingly
+commercial and urban. Cases that settle produce no judgment at all, and
+published and unpublished decisions differ. Every rate here is a rate within
+the published record.
+
+\paragraph{The classifier is lexical.} The disposition is read from operative
+language, validated by hand, and left unclear rather than guessed where the
+language does not decide it; \nUnclearShare{} per cent of appellate decisions
+are unclear and are excluded from the rates that depend on the disposition.
+
 \section{Discussion}
 \label{sec:discussion}
 
+The finding with the widest reach is the one that requires no model. In about
+three appellate decisions in four, the second instance adds no reasoning of
+its own to the public record. That is lawful, it is efficient, and on the
+reason-giving literature's own account it is defensible: reasons adopted are
+reasons given. But it has a consequence for anyone outside the case. A
+practitioner who wants to know what an appellate court thinks of an argument
+will find, in three files out of four, only that it agreed with someone else;
+and a researcher measuring appellate reasoning is measuring a minority of
+appeals selected by their outcome. A court system that publishes its
+judgments has decided that its reasoning is a public good. The rate at which
+the second instance actually supplies it is therefore a measurable feature of
+that policy, and it can be reported alongside clearance rates and disposal
+times without anyone having to read a judgment.
+
+The model's central coefficient joins this article to the question its
+predecessor asked. Measuring what Saudi courts cite shows an applied law that
+is overwhelmingly procedural. Measuring what survives appeal shows why that
+may be self-reinforcing: the procedural share of a judgment's own citations
+is the strongest protection against disturbance in this model. A judgment
+grounded in the law of procedure is harder to overturn than one grounded in
+the law of obligations. Whether that is because procedural questions have
+determinate answers, or because appellate circuits are readier to substitute
+their own view on substance, this data cannot say --- but the incentive it
+describes points one way.
+
+The nulls deserve their own sentence. Citation count, the breadth of
+authority cited, and whether the court below wrote its own reasons do not
+predict survival, and length predicts it only weakly and in the wrong
+direction for any account on which thoroughness protects. If judicial training
+or performance measurement rewards the appearance of thoroughness --- a long
+judgment, a wall of citations --- it is rewarding something this record does
+not connect to outcomes.
+
 \section{Conclusion}
+
+Saudi commercial judgments are published with the appellate decision inside
+the record of the judgment it reviews. That accident of storage yields
+\nPaired{} matched pairs and answers questions dockets cannot: not only how
+often appeals succeed, but whether the second instance explains itself, and
+what distinguishes the judgments it lets stand.
+
+It explains itself in about one appeal in four, and more often when it
+disturbs than when it affirms. \nDisturbedShare{} per cent of appeals that
+reach the merits disturb the judgment. And the feature of a judgment that
+best protects it is not its length or the weight of authority it cites, but
+that its authority is procedural.
+
+\section*{Availability of data and code}
+
+The corpus, the extraction and classification code, the model, and the
+scripts that generate every number in this article are public.\footnote{%
+Repository: \url{https://github.com/Abdullah-m7/saudi-legal-corpus-ai}.
+Every measurement here is generated into a file of macros by
+\texttt{make\_numbers.py} and typeset from it; a check refuses to build a
+manuscript that types one by hand.} Judgments are reproduced as the Ministry
+publishes them, with parties' names masked at source and a further redaction
+pass over identifiers the publisher's masking missed.
+
+\section*{Use of AI tools}
+
+The analysis code and drafts of this manuscript were produced with the
+assistance of a large language model (Anthropic's Claude) working under the
+author's direction. The author designed the study, framed every question,
+verified each result against the corpus, and is responsible for the content.
+No measurement in this article is produced by a language model: every number
+is computed by the deposited code from the deposited data.
 
 \section*{References}
 
@@ -224,11 +572,5 @@ Cases.'' \emph{Law \& Society Review} 24(5): 1133--1170.
 Vogel, Frank E. 2000. \emph{Islamic Law and Legal System: Studies of Saudi
 Arabia}. Leiden: Brill.
 \end{hangparas}
-
-\section*{Availability of data and code}
-
-\ifanon\else
-\section*{Declarations}
-\fi
 
 \end{document}
