@@ -339,11 +339,21 @@ def main():
     for stale in OUT.glob("*.md"):
         if stale.name != "README.md" and stale.name not in written:
             stale.unlink()
+    # The closing sentence quotes two of the table's own cells. It used to type
+    # them, and they went stale the moment the citation pattern was corrected:
+    # the table above said 83.2 and 2.4 while the sentence below said 82.9 and
+    # 2.2. A generated page that hand-types a figure it just generated is worse
+    # than one that never generated it, because the reader trusts it.
+    d90 = json.loads((ARTS / "commercial_courts_implementing_regulation" /
+                      "90.json").read_text(encoding="utf-8"))
+    n90 = d90["citations"]
+    v90 = collections.Counter(e["voice"] for e in d90["judgments"])
     index.append("\nوالترتيب بعدد الاستشهادات، والعدد ليس أهمية. فالمادة "
-                 "التسعون — الجلسة التحضيرية — يقع ٨٢٫٩٪ من استشهاداتها في "
-                 "سرد الوقائع و٢٫٢٪ في التعليل: مادةٌ يكثر وصفُ إعمالها، لا "
-                 "مادةٌ تدور عليها الخصومة. وعمود «تعليل» أصدق من عمود "
-                 "«استشهادات».\n")
+                 "التسعون — الجلسة التحضيرية — يقع "
+                 f"{pct(v90['recital'], n90)} من استشهاداتها في سرد الوقائع و"
+                 f"{pct(v90['reasoning'], n90)} في التعليل: مادةٌ يكثر وصفُ "
+                 "إعمالها، لا مادةٌ تدور عليها الخصومة. وعمود «تعليل» أصدق "
+                 "من عمود «استشهادات».\n")
     (OUT / "README.md").write_text("\n".join(index), encoding="utf-8")
 
 
