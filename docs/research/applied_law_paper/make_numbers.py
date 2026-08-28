@@ -161,6 +161,11 @@ def main():
         "nCivilArticles": art("civil_transactions_law")[0],
         "nCivilCited": art("civil_transactions_law")[1],
         "nCivilShare": 100 * art("civil_transactions_law")[1] / art("civil_transactions_law")[0],
+        # the denominators these shares are taken over, so a table can print
+        # both without typing either
+        "nEvidenceArticles": art("evidence_law")[0],
+        "nCompaniesArticles": art("companies_law")[0],
+        "nBankruptcyArticles": art("bankruptcy_law")[0],
         "nEvidenceShare": 100 * art("evidence_law")[1] / art("evidence_law")[0],
         "nCompaniesShare": 100 * art("companies_law")[1] / art("companies_law")[0],
         "nBankruptcyShare": 100 * art("bankruptcy_law")[1] / art("bankruptcy_law")[0],

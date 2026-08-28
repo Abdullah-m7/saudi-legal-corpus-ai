@@ -615,11 +615,192 @@ outside the corpus tested something no amount of internal checking could
 reach.} Every figure in this Article was recomputed after the correction.
 
 \section{Findings}
+\label{sec:findings}
 
 \subsection{Uptake at the Article Level}
+
+\nJudgmentsCitingShare{} per cent of the judgments in this corpus cite at
+least one statutory provision. What they cite is a small part of what has been
+enacted.
+
+Of the \nRegistryArticles{} articles in the registry, \nArticlesCited{} ---
+\nArticlesCitedShare{} per cent --- are cited even once in
+\nJudgments{} judgments. Of the \nInstruments{} instruments,
+\nInstrumentsCited{} are cited at all; \nInstrumentsNever{} are never cited by
+any judgment in the corpus.
+
+Table~\ref{tab:denominators} reports the figure under all four denominators
+described in Part~III.E, because the objection that the denominator is too
+generous is the first one a reader should make.
+
+\begin{table}[t]
+\centering
+\singlespacing
+\caption{Share of the statute book cited at least once, under four
+denominators.}
+\label{tab:denominators}
+\begin{tabular}{lrr}
+\toprule
+Denominator & Articles & Cited \\
+\midrule
+The whole registry                & \nRegistryArticles{}    & \nArticlesCitedShare{}\% \\
+Article 16's field, read broadly  & \nScopeBroadArticles{}  & \nScopeBroadShare{}\% \\
+Article 16's field, read narrowly & \nScopeNarrowArticles{} & \nScopeNarrowShare{}\% \\
+Instruments the courts do cite    & \nAppliedOnlyArticles{} & \nAppliedOnlyShare{}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two of the four denominators come from the legislature. The other two are
+built to be hostile to the finding: the last drops every instrument the courts
+never touch, so that the denominator contains only law they demonstrably use,
+and the share is still \nAppliedOnlyShare{} per cent. Under no reading does a
+majority of the enacted text enter adjudication.
+
+What is cited is also concentrated. The single most-cited article accounts for
+\nArtTopOneShare{} per cent of all matched citations; the top ten account for
+\nArtTopTenShare{} per cent; the top hundred for
+\nArtTopHundredShare{} per cent.\footnote{The most-cited article is CCL
+art.~16 --- the jurisdiction clause --- at \nTopArticleCitations{} citations.
+A court reading its own jurisdiction is the corpus's most frequent act of
+statutory interpretation.} The applied law is not a thin, even layer over the
+statute book. It is a few dozen provisions, read constantly.
+
 \subsection{The Procedural Asymmetry}
+
+\nProceduralShare{} per cent of matched citations fall on instruments
+governing how a case is heard rather than what the parties owe each
+other.\footnote{The classification is by instrument, not by article: an
+instrument is procedural if its subject is the conduct of litigation --- the
+Commercial Courts Law and its implementing regulation, the Law of Shar\=i`ah
+Procedure and its regulation, the Evidence Law, the Law of Enforcement, and
+the like. Recomputed over the \nDistinctTexts{} distinct texts alone, to
+remove the effect of republished judgments, the share is
+\nDedupProcedural{} per cent.}
+
+The sharpest statement of that asymmetry compares instruments to themselves,
+where no denominator is chosen by anyone (Table~\ref{tab:instruments}).
+
+\begin{table}[t]
+\centering
+\singlespacing
+\caption{Share of an instrument's own articles cited at least once.}
+\label{tab:instruments}
+\begin{tabular}{lrr}
+\toprule
+Instrument & Articles & Cited \\
+\midrule
+Commercial Courts Law   & \nCCLArticles{}   & \nCCLShare{}\% \\
+Evidence Law            & \nEvidenceArticles{}   & \nEvidenceShare{}\% \\
+Companies Law           & \nCompaniesArticles{}  & \nCompaniesShare{}\% \\
+Bankruptcy Law          & \nBankruptcyArticles{} & \nBankruptcyShare{}\% \\
+Civil Transactions Law  & \nCivilArticles{} & \nCivilShare{}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Commercial Courts Law has \nCCLCited{} of its \nCCLArticles{} articles
+cited --- \nCCLShare{} per cent. The Civil Transactions Law has
+\nCivilCited{} of \nCivilArticles{} --- \nCivilShare{} per cent. The first
+tells the court how to proceed. The second tells the court what the parties
+owe each other, and is the instrument the amended jurisdiction clause of the
+first directs the court toward.
+
+It would be convenient to attribute this to the code's youth. That
+explanation is available and this Article does not exclude it; Part~V returns
+to it. But it does not explain the ordering of the other three rows, which
+are not new: the Evidence Law, enacted a year before the code, is at
+\nEvidenceShare{} per cent, and the Bankruptcy Law and Companies Law,
+substantive instruments both, sit between. The gradient runs from procedure
+to substance, not from old to new.
+
 \subsection{The Bench, Not the Bar}
+
+The obvious objection to everything above is that the courts cite what they
+are given. If litigants argue procedure, judgments will be procedural, and the
+measurement describes the bar rather than the bench.
+
+The objection is testable, and it fails. In the \nSegmented{} judgments that
+can be segmented on their own headings --- \nSegmentedShare{} per cent of the
+corpus --- each citation is located in the statement of the case or in the
+court's reasons (Table~\ref{tab:segments}).
+
+\begin{table}[t]
+\centering
+\singlespacing
+\caption{Statutory citations by segment, across \nSegmented{} segmented
+judgments.}
+\label{tab:segments}
+\begin{tabular}{lrrr}
+\toprule
+Segment & Citations & Instruments & Procedural \\
+\midrule
+Statement of the case   & \nRecitalCitations{}   & \nRecitalInstruments{}   & \nRecitalProcedural{}\% \\
+The court's reasons     & \nReasoningCitations{} & \nReasoningInstruments{} & \nReasoningProcedural{}\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The court's reasons are \emph{more} procedural than the statement of the case,
+not less, and drawn from a narrower set of instruments:
+\nReasoningInstruments{} against \nRecitalInstruments{}. In
+\nRecitalOnlyInstruments{} instruments a statute appears in the statement of
+the case and never once in any court's reasons.
+
+Attribution sharpens this rather than softening it. Of the
+\nRecitalCitations{} citations in the statement of the case, at least
+\nRecitalByCourt{} --- \nRecitalByCourtShare{} per cent --- sit in a sentence
+whose actor is the court itself, narrating what it did. Those are
+\nRecitalCourtProcedural{} per cent procedural, which is what one would expect
+of a court reciting the provisions under which it convened. The remainder,
+which is where the parties' arguments live, is \nRecitalOtherProcedural{} per
+cent procedural. Removing the court's own narration from the segment
+therefore \emph{widens} the gap between what is put to the court and what the
+court answers with, from \nRecitalProcedural{} against
+\nReasoningProcedural{} per cent to \nRecitalOtherProcedural{} against
+\nReasoningProcedural{}.
+
+Substantive instruments are raised, and are answered with procedure. Whatever
+is narrowing the applied law, it is not the bar.
+
 \subsection{Amendment Does Not Predict Use}
+
+A last explanation deserves testing, because it would make the finding
+uninteresting. Perhaps the uncited portion of the statute book is its dead
+portion --- provisions superseded in substance, which the legislature has left
+standing and the courts have sensibly abandoned. If so, legislative attention
+should track judicial use: the articles a legislature has bothered to amend
+should be the articles courts cite.
+
+Pooled across the \nStatusArticles{} articles whose status the registry
+records, that is exactly what appears. The \nAmendedArticles{} amended
+articles are cited at \nAmendedPerArticle{} citations per article against
+\nOriginalPerArticle{} for the \nOriginalArticles{} articles standing as
+enacted --- a ratio of \nAmendedRatio{} to one, and
+\nAmendedCitedShare{} per cent of amended articles are cited at all against
+\nOriginalCitedShare{} per cent of original ones.
+
+The pooled figure is a composition effect and it does not survive a control.
+Amendment is not distributed evenly across instruments: the heavily amended
+instruments are the procedural ones, which are also the heavily cited ones,
+and the pooled comparison is reading that rather than any relation between
+amendment and use. Comparing amended against original articles \emph{within}
+each instrument, across the \nWithinInstruments{} instruments where both
+classes appear, the amended articles are cited more often in
+\nWithinAmendedHigher{}, less often in \nWithinOriginalHigher{}, and equally
+in \nWithinTied{} --- a sign test at $p$ = \nWithinP{}. There is no
+within-instrument relation at all.
+
+The same holds one level up. Across the \nChurnInstruments{} instruments with
+a recorded amendment history, of which \nChurnInstrumentsCited{} are cited,
+the rank correlation between how much an instrument has been amended and how
+much it is cited is \nChurnSpearman{} --- weak, and in any case an
+instrument-level association that says nothing about which articles are used.
+
+So the claim that amendment predicts citation is withdrawn, and with it the
+explanation it would have supported. The uncited portion of the Saudi statute
+book is not the portion the legislature has abandoned. It is live law that
+courts do not reach for.
 
 \section{Implications and Limits}
 

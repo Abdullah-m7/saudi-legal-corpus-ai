@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SOURCES = (HERE / "main.tex",)
+SOURCES = (HERE / "main.tex", HERE / "cover_letter.tex")
 
 # A measurement, in the shapes results take: 1,234 / 1{,}234 / 35.1 per cent /
 # 12.5\%. Years and plain small integers are left alone.
@@ -41,6 +41,33 @@ SUSPECT = re.compile(
 # Lines that legitimately carry digits: the generated macros are not here, but
 # citations and DOIs are.
 EXEMPT = re.compile(r"zenodo|doi|orcid|github|ukpga|nisi|http", re.I)
+
+
+# A table cell is where a bare integer is a measurement. `129` in prose is
+# probably an article number or a year; `129` in a tabular row is a count that
+# something computed, and it belongs in a macro. This was found the way most
+# things here were found --- by typing three article counts into a table and
+# noticing that every guard passed.
+TABLE = re.compile(r"\\begin\{tabular\}.*?\\end\{tabular\}", re.S)
+CELL_INT = re.compile(r"(?<![\\A-Za-z0-9.])(\d{2,})(?![A-Za-z0-9.])")
+
+
+def check_tables(SRC, lines):
+    """Bare integers inside a tabular environment, which macros should supply."""
+    text = "\n".join(lines)
+    bad = []
+    for table in TABLE.finditer(text):
+        start = text[:table.start()].count("\n") + 1
+        for n, line in enumerate(table.group(0).splitlines(), start):
+            body = line.split("%")[0]
+            if EXEMPT.search(body):
+                continue
+            # only the value columns. The first field of a row is its label,
+            # and «Article 16's field» is a name, not a count.
+            for cell in body.split("&")[1:]:
+                for m in CELL_INT.finditer(cell):
+                    bad.append((n, m.group(1), line.strip()[:78]))
+    return bad
 
 
 def check(SRC):
@@ -64,6 +91,7 @@ def check(SRC):
             if any(value in length for length in lengths):
                 continue
             bad.append((n, value, line.strip()[:78]))
+    bad += check_tables(SRC, lines[start:])
     if bad:
         print(f"{len(bad)} typed measurement(s) in {SRC.name} --- use a macro "
               f"from numbers.tex instead:")
