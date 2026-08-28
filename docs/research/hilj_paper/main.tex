@@ -432,8 +432,187 @@ read the record, and a study that trusted either would report structure that
 is not there.
 
 \section{Method}
+\label{sec:method}
 
-[Part III.]
+A reader is entitled to know how a claim about \nCitations{} citations was
+produced, and in enough detail to disbelieve it. This Part sets out the
+steps. It is longer than a methods note in an empirical journal would be,
+because the errors that matter here are legal rather than statistical: they
+are errors about which provision a court was talking about, and a lawyer can
+check them.
+
+\subsection{Two Corpora, Joined at the Article}
+
+The legislative side is a registry of \nRegistryArticles{} articles across
+\nInstruments{} Saudi instruments, each article carrying its number, its text,
+its position in the instrument's chapter structure, and its status --- whether
+it stands as originally enacted, has been amended, or has been
+repealed.\footnote{Repealed articles are retained and flagged rather than
+deleted. A judgment given in 1441H may cite a provision repealed in 1443H, and
+a registry that dropped it would record that citation as unmatched, which is a
+different error from the one it looks like.} The judicial side is
+\nJudgments{} judgments published in full text.
+
+\nJoinInstruments{} of the instruments can be joined to the judgments;
+\nInstrumentsCited{} of them are cited at least once. Of the judgments,
+\nJudgmentsCiting{} --- \nJudgmentsCitingShare{} per cent --- cite at least one
+statutory provision. The remainder cite none, which is itself worth stating: a
+judgment that resolves a dispute without naming a provision is not an
+anomaly in this record.
+
+\subsection{Finding a Citation}
+
+Saudi judicial prose names a provision in a recognizable shape: an ordinal or
+numeral for the article, a preposition, and the instrument's name --- ``article
+(16) of the Commercial Courts Law.'' The shape is recognizable but not
+uniform, and three features of written Arabic complicate it.
+
+Prefixes attach to the word for ``article'' rather than standing apart, so the
+same reference appears as \emph{al-m\=addah}, \emph{bil-m\=addah},
+\emph{lil-m\=addah}, \emph{wal-m\=addah} and so on, each a single orthographic
+word.\footnote{An early version of the pattern accepted only some of these
+prefixes. See \emph{infra} Part III.F.} Diacritics are optional and appear
+irregularly, so a pattern written against unvowelled text fails on the
+minority of judgments that are fully vowelled. And the article number may be a
+numeral in either Arabic-Indic or Western digits, or spelled as a compound
+ordinal.
+
+\nCitations{} citations are extracted. What follows is what is done with them.
+
+\subsection{Matching a Citation to the Provision It Names}
+
+Two steps, and the first is where the serious errors live.
+
+\paragraph{The instrument.} A citation names an instrument in words, and the
+words must be resolved to one of the \nInstruments{} in the registry. String
+containment is the obvious method and it is wrong, because Saudi instrument
+names nest: the title of the \emph{Implementing Regulation of the Commercial
+Courts Law} contains the title of the \emph{Commercial Courts Law} entire. A
+matcher that accepts containment in either direction will send citations of
+the statute to the regulation, and it will do so silently, because every
+citation still matches something. Matching therefore proceeds in a fixed
+order: exact title first; then the longest registry title contained in the
+cited name; and only then the shortest registry title that contains
+it.\footnote{The consequence of getting this wrong is not marginal. In an
+earlier version of this analysis the containment test ran in both directions,
+and it misdirected roughly half of all citations --- with no visible symptom,
+because the match rate was unaffected.}
+
+Judgments also refer anaphorically: ``the Law,'' ``the Regulation,'' ``the
+same Law,'' after naming the instrument once. \nAnaphoric{} citations are of
+this kind, against \nNamed{} that name their instrument outright. Anaphora is
+resolved by \emph{kind} and not by recency: ``the Regulation'' resolves to the
+most recent regulation mentioned, not to the most recent instrument of any
+sort. Resolving by recency sends a statute's articles to its own implementing
+regulation whenever the two are discussed together, which in these judgments
+is constantly.
+
+\paragraph{The article.} The article number is then read. Compound Arabic
+ordinals are parsed rather than looked up, so that ``the ninety-fifth after
+the hundred'' resolves to 195. A number that resolves to an article the
+instrument does not contain is recorded as out of range and excluded rather
+than rounded to a neighbour: \nOutOfRange{} citations, \nOutOfRangeShare{} per
+cent, fall in that class.
+
+\nUnmatchedShare{} per cent of citations are left unmatched. They are reported
+as unmatched and not distributed across the instruments in proportion, because
+a citation whose instrument cannot be identified is not evidence about any
+instrument.
+
+\subsection{Reading Where the Citation Sits}
+
+A count of citations answers a narrower question than it appears to. A
+provision named in the court's recital of what a party argued is not a
+provision the court applied, and treating the two alike measures the bar and
+the bench together.
+
+Saudi judgments carry their own internal structure and announce it with
+headings --- the statement of the case, the reasons, the operative part ---
+and \nSegmented{} judgments, \nSegmentedShare{} per cent, can be segmented on
+those headings. Each citation is then located in the segment it falls in.
+
+Segmentation alone is not enough, and the reason is a fact about Saudi
+judgment-writing rather than about software. The segment before the reasons is
+not a transcript of the parties' pleadings. It is written by the court, and a
+large part of it is the court narrating what it did --- convening, satisfying
+itself of jurisdiction, ordering an expert report --- with the governing
+provisions named as it goes. Of the \nRecitalCitations{} citations in that
+segment, at least \nRecitalByCourt{} (\nRecitalByCourtShare{} per cent) sit in
+a sentence whose grammatical actor is the court or the circuit
+itself.\footnote{The attribution is a lexical cue, not an understanding of the
+sentence, and it is reported as a floor rather than a partition: the
+unattributed remainder contains both party argument and further judicial
+narration whose cue was not caught. On a sample of \nVoiceSample{} attributions
+read by hand, \nVoiceCorrect{} were correct.} Treating that segment as the parties' voice
+would have credited litigants with the court's own procedural recitals ---
+and, because those recitals are almost entirely procedural, would have made
+the bar look far more procedural than it is.
+
+\subsection{Choosing a Denominator}
+
+The headline figure --- what share of the statute book is ever cited ---
+depends on what counts as the statute book, and the choice can be made to
+produce almost any answer. It is therefore made four times, and all four are
+reported.
+
+\begin{enumerate}
+\singlespacing
+\item \textbf{The whole registry}: \nRegistryArticles{} articles.
+\nArticlesCitedShare{} per cent cited.
+\item \textbf{Article 16, read broadly}: every instrument the commercial
+courts' jurisdiction clause reaches on a generous reading ---
+\nScopeBroadInstruments{} instruments, \nScopeBroadArticles{} articles.
+\nScopeBroadShare{} per cent cited.
+\item \textbf{Article 16, read narrowly}: the same clause read strictly ---
+\nScopeNarrowInstruments{} instruments, \nScopeNarrowArticles{} articles.
+\nScopeNarrowShare{} per cent cited.
+\item \textbf{Instruments ever cited}: the objection conceded outright. Every
+instrument never cited at all is dropped from the denominator, leaving
+\nAppliedOnlyArticles{} articles in \nAppliedOnlyInstruments{} instruments
+that the courts demonstrably do use. \nAppliedOnlyShare{} per cent cited.
+\end{enumerate}
+
+The fourth is the most hostile denominator this Article can construct against
+itself, and the figure it yields is still under a quarter. Two of the four are
+drawn from the legislature's own jurisdiction clause rather than from the
+author's judgment about relevance, which is the point of Part~II.C.
+
+One robustness check belongs here. The published record contains duplicates
+--- \nDuplicateGroups{} groups of judgments sharing a text, \nDuplicateExtra{}
+extra copies, \nDuplicateShare{} per cent of the corpus. Recomputing the
+headline shares over the \nDistinctTexts{} distinct texts alone moves the
+procedural share from \nProceduralShare{} to \nDedupProcedural{} per cent. The
+results are not artefacts of republication.
+
+\subsection{Three Defects, and a Fourth Found by Accident}
+
+Each of the following produced a confident wrong answer, and none announced
+itself. They are reported because a reader assessing this Article's figures
+should know what kind of error it is capable of, and because the fourth was
+found in a way worth recording.
+
+\emph{Containment in both directions.} Described above. It misdirected roughly
+half of all citations while leaving the match rate untouched.
+
+\emph{Anaphora by recency.} ``The Law,'' resolved to the last instrument named
+rather than the last \emph{law} named, sent statutes' articles to their own
+regulations.
+
+\emph{The recital read as the parties' voice.} Described above. It made the
+central finding of Part~IV.C point the wrong way.
+
+\emph{The prefix gap.} The pattern that finds a citation accepted several of
+the prefixes Arabic attaches to the word for ``article'' but not all of them,
+and so missed \nPrefixGap{} citations outright --- \nPrefixGapShare{} per
+cent of everything the project had counted. It was not
+found by any check run against the judgments. It was found by pointing the
+extractor at a document written by a practising lawyer, whose prose used a
+prefix the corpus's own drafting conventions had made
+rare.\footnote{The general lesson is not about Arabic. Fifty thousand
+documents produced by one institution share that institution's habits, and a
+tool validated only against them inherits the habits as assumptions. Input from
+outside the corpus tested something no amount of internal checking could
+reach.} Every figure in this Article was recomputed after the correction.
 
 \section{Findings}
 

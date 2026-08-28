@@ -21,8 +21,10 @@ echo "== what predicts disturbance"
 python3 "$A/reversal_model.py"                      # the whole span
 python3 "$A/reversal_model.py" --from 1439 --to 1444  # the mature window
 
-# a generated number is only as fresh as the JSON under it
-python3 ../check_fresh.py
+# everything above has just been re-run, so record the results as current
+# with the code that wrote them. Between full runs, `check_fresh.py` with no
+# argument is what refuses a stale build.
+python3 ../check_fresh.py --stamp
 
 echo "== manuscript"
 python3 make_numbers.py

@@ -19,6 +19,9 @@ sys.path.insert(0, str(SRC))
 import match_instruments as M      # noqa: E402
 
 
+import history as H            # noqa: E402  (SRC is on the path above)
+
+
 def load(name):
     return json.loads((SRC / name).read_text(encoding="utf-8"))
 
@@ -76,6 +79,12 @@ def main():
     ch, og = al["changed"], al["original"]
     wi = al["within_instrument"]
     N = {
+        # recorded in arabic_paper/history.py, not recomputed
+        "nPrefixGap": H.PREFIX_GAP,
+        "nPrefixGapShare": H.PREFIX_GAP_SHARE,
+        "nVoiceSample": H.VOICE_SAMPLE,
+        "nVoiceCorrect": H.VOICE_CORRECT,
+
         "nJudgments": inst["judgments"],
         "nJudgmentsCiting": inst["judgments_citing"],
         "nJudgmentsCitingShare": 100 * inst["judgments_citing"] / inst["judgments"],
