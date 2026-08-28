@@ -1,15 +1,42 @@
 # Paper 3 — Definitional Fragmentation Across Saudi Legislation
 
-*What Counts as an Establishment? Definitional Fragmentation Across Saudi
-Arabian Legislation.*
+*How Much Do Statutes Disagree? Measuring Definitional Fragmentation Across a
+Legal System.*
 
 Third paper in the series. Paper 1 (`../corpus_paper/`) describes the corpus;
 paper 2 (`../network_paper/`) analyses how instruments cite each other; this
 one asks whether they use the same vocabulary.
 
-Written as a full-length article for **Statute Law Review** (Oxford
-University Press): 7,972 words including footnotes, OSCOLA-style numbered
-footnotes, no bibliography, British spelling, double-anonymous review.
+> **Desk-rejected by Statute Law Review on 28 August 2026**
+> (`STATLAW-2026-147`), before review. The editors said it was not suitable
+> and suggested *a journal specialising in Company Law* — which the article is
+> not: it compares the Competition Law with the Labour Law and ends at
+> drafting reform, which is SLR's own subject.
+>
+> The likeliest reading is that the title did the filing. *Establishment*, to
+> a British lawyer, is either freedom of establishment or a corporate vehicle;
+> the Arabic **المنشأة** is neither. The second possibility cannot be excluded
+> and is the same pattern as the JLA rejection the same day: a description of
+> Saudi law offered to readers with no stake in Saudi law.
+>
+> The article has therefore been reframed rather than merely retitled. The
+> general proposition now leads — in the title, in the abstract, and in the
+> first paragraph — and the sole trader arrives as the illustration rather
+> than the subject.
+
+**Note on the venue circle.** Constantin Stefanou and Helen Xanthaki are joint
+editors-in-chief of *Statute Law Review*; Stefanou directs the Sir William
+Dale Centre for Legislative Studies at IALS and was managing editor of the
+*European Journal of Law Reform* from 2012 to 2022, remaining on its advisory
+board. EJLR is therefore not the next venue. The editorship of *The Theory and
+Practice of Legislation*, where paper 5 is under review, has not been checked.
+
+**Current target: *The Loophole*,** the journal of the Commonwealth
+Association of Legislative Counsel — practising legislative drafters, which is
+the audience this article's conclusion addresses. Their caps are 8,000 words
+including footnotes and a 200-word abstract; the manuscript is at 7,993 and
+the abstract at 198. Verify the remaining requirements from their own page
+before submitting.
 
 | File | Purpose |
 |---|---|

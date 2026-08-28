@@ -23,8 +23,8 @@
 \usepackage{url}
 \emergencystretch=3em
 
-\title{What Counts as an Establishment?\\
-Definitional Fragmentation Across Saudi Arabian Legislation}
+\title{How Much Do Statutes Disagree?\\
+Measuring Definitional Fragmentation Across a Legal System}
 
 \ifanon
   \author{}
@@ -37,31 +37,34 @@ Definitional Fragmentation Across Saudi Arabian Legislation}
   \date{}
 \fi
 
+\input{numbers}
+
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
 \noindent
-A sole trader with no employees carries on an economic activity. Under the
-Competition Law that makes her an \emph{establishment}; under the Labour Law
-it does not, because she employs nobody for wages. Both statutes define the
-same Arabic word, and they define it differently. How often does this
-happen, and does it matter? The question has been argued from examples
-because the evidence to answer it has not existed. Using a machine-readable
-corpus of 290 Saudi legislative instruments carrying 1,920 defined terms and
-3,318 definitions, this article measures definitional fragmentation across a
-whole legal system, and argues that the measurement is worth less than the
-two distinctions needed to perform it. The first separates \emph{indexical}
-definitions --- an instrument defining `the Law' as itself --- from
-substantive ones; indexical definitions are the most repeated in the corpus
-and cannot disagree. The second separates lexical from substantive
-divergence: 61.5 per cent of shared substantive terms are worded
-differently, and most of that is paraphrase. Reading the twelve most widely
-shared terms across every instrument that defines them yields four genuine
-conflicts. Definitional fragmentation in Saudi legislation is therefore real
-but narrow --- and, being narrow, it is a tractable target for drafting
-reform rather than a structural defect.
+Drafting manuals agree that a term should carry a stable meaning across a
+legal system, and that definitions should not multiply without reason.
+Whether real systems comply has never been measured: the question has been
+argued from examples, because settling it requires every statutory definition
+in a jurisdiction, extracted from the instrument that made it.
+
+This article supplies that measurement, from a corpus of \nInstruments{} Saudi
+legislative instruments carrying \nTerms{} defined terms and \nDefinitions{}
+definitions --- and argues that the measurement is worth less than the two
+distinctions needed to perform it. The first separates \emph{indexical}
+definitions, where an instrument defines `the Law' as itself, from substantive
+ones; indexical definitions are the most repeated in the corpus and cannot
+disagree. The second separates lexical from substantive divergence:
+\nDivergentShare{} per cent of shared substantive terms are worded
+differently, and most of that is paraphrase. Reading the \nReviewed{} most
+widely shared terms across every instrument that defines them yields
+\nConflicting{} genuine conflicts. A sole trader with no employees is an
+\emph{establishment} under the Competition Law and not one under the Labour
+Law; that is a real conflict, and most apparent ones are not. Fragmentation is
+real but narrow, and therefore a tractable target for drafting reform.
 \end{abstract}
 
 \vspace{1em}\noindent\textbf{Keywords:} statutory definitions; legislative
@@ -71,8 +74,16 @@ consistency
 
 \section{Introduction}
 
-Consider a woman who sells handmade furniture from a workshop she owns and
-runs alone. She has no employees. Whether she is an \emph{establishment}
+Legislative drafting has a rule about definitions, and no evidence about how
+far it is kept. The rule is that a term should carry a stable meaning across a
+legal system, that definitions should not multiply without reason, and that a
+drafter departing from an established definition should know that he is
+departing from it. Whether legal systems comply is an empirical question that
+has been argued entirely from examples, because nobody has counted.
+
+Here is one of the examples. Consider a woman who sells handmade furniture
+from a workshop she owns and runs alone. She has no employees. Whether she is
+an \emph{establishment}
 --- \emph{al-munsha'ah}, a term that recurs throughout Saudi regulatory
 legislation --- depends entirely on which statute is asking. The Competition
 Law defines an establishment as `any natural or legal person carrying on an
@@ -84,23 +95,18 @@ of whatever kind',\footnote{Labour Law (Royal Decree M/51, 23/8/1426H) art
 its own statute well. Together they mean that a single word, in a single
 legal system, sorts the same person onto opposite sides of a line.
 
-Practitioners meet this constantly and drafters are warned about it. The
-standard guidance in legislative drafting is that a term should carry a
-stable meaning across a legal system, that definitions should not multiply
-without reason, and that a drafter departing from an established definition
-should know that he is departing from it. What the guidance has never had is
-evidence about how far real legal systems comply. Discussion proceeds by
-example: a striking pair of divergent definitions is produced, and the reader
-is invited to infer that the system is either riddled with such pairs or that
-this one is an outlier. Both inferences are unsupported, because nobody has
-counted.
+Practitioners meet this constantly. What the guidance has never had is
+evidence: a striking pair of divergent definitions is produced, and the reader
+is invited to infer either that the system is riddled with such pairs or that
+this one is an outlier. Both inferences are unsupported. This article counts,
+and the answer is neither of them.
 
 Counting requires something few jurisdictions possess: a machine-readable
 corpus in which every statutory definition has been extracted from the
 instrument that made it, with its provenance intact. This article uses such a
-corpus for Saudi Arabia --- 290 legislative instruments, of which 214 have a
-definitions article that parses cleanly, yielding 1,920 distinct defined
-terms carrying 3,318 definitions.\footnote{The corpus, its glossary layer,
+corpus for Saudi Arabia --- \nInstruments{} legislative instruments, of which
+\nWithDefsArticle{} have a definitions article that parses cleanly, yielding
+\nTerms{} distinct defined terms carrying \nDefinitions{} definitions.\footnote{The corpus, its glossary layer,
 and the scripts that reproduce every figure in this article are openly
 licensed; see the data availability statement below.} Saudi Arabia is a
 useful test case for reasons beyond data availability. Its legislation was
@@ -112,7 +118,7 @@ instrument, which makes the definitional lexicon unusually legible.
 The article's central finding is negative, and deliberately so. Measured the
 obvious way --- comparing the wording of definitions that share a term ---
 Saudi legislation looks badly fragmented: of the 322 substantive terms that
-more than one instrument defines, 198 (61.5 per cent) are worded divergently.
+more than one instrument defines, \nDivergent{} (\nDivergentShare{} per cent) are worded divergently.
 Read by hand, that number substantially dissolves. Most of the divergence is
 paraphrase around a stable meaning, or homonymy, or a referent that each
 instrument fixes for itself and could not have fixed generally. What survives
@@ -157,7 +163,8 @@ have the meanings assigned to them, unless the context requires
 otherwise'.\footnote{The Arabic formula varies slightly between instruments;
 the closing qualification (\emph{ma lam yaqtadi siyaq al-nass khilaf dhalik})
 is not universal.} There follows a list, sometimes of five terms, sometimes
-of fifty. In the corpus studied here, 214 of 290 instruments carry such an
+of fifty. In the corpus studied here, \nWithDefsArticle{} of \nInstruments{}
+instruments carry such an
 article in a form the parser could read, and the great majority of the
 remainder are short instruments, annexes, or organisational statutes that
 have no occasion for one.
@@ -197,7 +204,7 @@ a drift that nobody decided on.
 No instrument in the corpus performs that function for Saudi
 legislation.\footnote{The Basic Law of Governance (Royal Order A/90,
 27/8/1412H) is constitutional in character and supplies no general
-definitional apparatus. This is a statement about the 290 instruments in the
+definitional apparatus. This is a statement about the \nInstruments{} instruments in the
 corpus, which is not an exhaustive collection of Saudi legislation; see
 section 9.} The consequence is structural rather than accidental: with no
 default layer, every instrument that needs a term must define it, and the
@@ -209,6 +216,7 @@ where the most heavily shared terms are exactly the ones still being defined
 instrument by instrument.
 
 \subsection{What the literature has and has not established}
+\label{sec:lit}
 
 Definitions are a settled topic in the drafting literature, and its received
 positions are largely uncontested: define only what needs defining; do not
@@ -234,8 +242,7 @@ presumption of consistent expression, that a legislature means the same thing
 by the same word, is a settled interpretive canon, and so is its limit: the
 presumption is weak between statutes, and weaker still where the statutes
 serve different purposes.\footnote{\emph{Bennion, Bailey and Norbury on
-Statutory Interpretation} (8th edn, LexisNexis Butterworths 2020) ss 21.3 and
-24.3; Antonin Scalia and Bryan A Garner, \emph{Reading Law: The
+Statutory Interpretation} (8th edn, LexisNexis Butterworths 2020) ss 21.3 and 24.3; Antonin Scalia and Bryan A Garner, \emph{Reading Law: The
 Interpretation of Legal Texts} (Thomson/West 2012) 170--73.} That limit is
 doctrinally sound and it is precisely what makes the empirical question
 interesting: if a court will not presume that `establishment' means the same
@@ -274,14 +281,15 @@ data availability statement.}
 \section{Corpus, glossary and method}
 
 \subsection{The corpus and its glossary layer}
+\label{sec:corpus}
 
-The corpus comprises 290 Saudi legislative instruments --- primary laws,
+The corpus comprises \nInstruments{} Saudi legislative instruments --- primary laws,
 implementing regulations, annexes and organisational statutes --- captured
 from official and officially-sourced texts and recorded at article level. A
 glossary layer parses each instrument's definitions article into
 term--definition pairs, retaining for each pair the term as written, the
 definition text as written, the instrument, and the article it came from. The
-layer yields 1,920 distinct terms carrying 3,318 definitions from 214
+layer yields \nTerms{} distinct terms carrying \nDefinitions{} definitions from \nWithDefsArticle{}
 instruments.
 
 The parse is automatic and its output is not curated. This matters for how
@@ -345,8 +353,9 @@ first two tokens, which is where the genus sits in this drafting register.
 For each substantive term defined by more than one instrument, one definition
 per instrument is taken and pairwise Jaccard similarity computed over
 normalised content tokens. A term is \emph{lexically identical} when its
-worst pair exceeds 0.95, \emph{near-identical} between 0.75 and 0.95, and
-\emph{lexically divergent} below 0.75. Taking the worst pair rather than the
+worst pair exceeds \nThreshIdentical{}, \emph{near-identical} between
+\nThreshNear{} and \nThreshIdentical{}, and
+\emph{lexically divergent} below \nThreshNear{}. Taking the worst pair rather than the
 mean is deliberate: a term is only as consistent as its least consistent
 pair of definitions.
 
@@ -386,20 +395,20 @@ the analysis code so that every assignment can be checked and contested.
 \toprule
 \textbf{Measure} & \textbf{Value} \\
 \midrule
-Distinct defined terms & 1,920 \\
-Definition occurrences & 3,318 \\
-Instruments with a parsed definitions article & 214 \\
+Distinct defined terms & \nTerms{} \\
+Definition occurrences & \nDefinitions{} \\
+Instruments with a parsed definitions article & \nWithDefsArticle{} \\
 \midrule
-Indexical terms & 171 \\
-Substantive terms & 1,749 \\
+Indexical terms & \nIndexicalTerms{} \\
+Substantive terms & \nSubstantiveTerms{} \\
 \midrule
-Terms defined by more than one instrument & 362 \\
-\quad of which indexical & 40 \\
-\quad of which substantive & 322 \\
+Terms defined by more than one instrument & \nShared{} \\
+\quad of which indexical & \nSharedIndexical{} \\
+\quad of which substantive & \nSharedSubstantive{} \\
 \midrule
-Substantive shared terms, lexically identical & 94 \\
-Substantive shared terms, near-identical & 30 \\
-Substantive shared terms, lexically divergent & 198 (61.5\%) \\
+Substantive shared terms, lexically identical & \nIdentical{} \\
+Substantive shared terms, near-identical & \nNearIdentical{} \\
+Substantive shared terms, lexically divergent & \nDivergent{} (\nDivergentShare{}\%) \\
 \bottomrule
 \end{tabular}
 \caption{Definitional structure of the corpus.}
@@ -410,7 +419,8 @@ Substantive shared terms, lexically divergent & 198 (61.5\%) \\
 \centering
 \includegraphics[width=\textwidth]{fig1_funnel.png}
 \caption{From all defined terms to the lexically divergent residue. Each step
-is a filter: 1,920 defined terms, 1,749 of them substantive, 322 of those
+is a filter: \nTerms{} defined terms, \nSubstantiveTerms{} of them substantive,
+\nSharedSubstantive{} of those
 shared by more than one instrument, 198 of which diverge lexically.}
 \label{fig:funnel}
 \end{figure}
@@ -418,8 +428,9 @@ shared by more than one instrument, 198 of which diverge lexically.}
 Table~\ref{tab:funnel} and Figure~\ref{fig:funnel} give the shape of the
 data. Three features deserve comment before any interpretation.
 
-First, \textbf{most defined terms are not shared at all}. Of 1,920 terms,
-1,558 --- 81 per cent --- are defined by exactly one instrument. Saudi
+First, \textbf{most defined terms are not shared at all}. Of \nTerms{} terms,
+\nSingleInstrument{} --- \nSingleShare{} per cent --- are defined by exactly one
+instrument. Saudi
 drafting is overwhelmingly local: each statute builds its own vocabulary,
 and fragmentation, whatever its extent, can only live in the remaining fifth
 of the lexicon. This is worth stating plainly because the opposite impression
@@ -437,7 +448,8 @@ naive pipeline would report exactly that --- would be reporting the
 definitions article convention itself.
 
 Third, \textbf{among substantive shared terms, lexical divergence is the
-norm}: 198 of 322, or 61.5 per cent. This is the figure that a purely
+norm}: \nDivergent{} of \nSharedSubstantive{}, or \nDivergentShare{} per cent.
+This is the figure that a purely
 automatic study would headline. Section 5 and section 6 are an argument that
 it should not be.
 
@@ -589,6 +601,7 @@ to differ in this particular combination is doubtful; nothing suggests the
 question was ever put.
 
 \subsection{\emph{Al-nashat}: activity}
+\label{sec:nashat}
 
 Ten instruments define `activity', and this is the case where the
 classification was most contestable. The environmental family --- five
@@ -610,7 +623,7 @@ work within a field'. The Railway Law has `an activity connected with the
 provision of railway services'. The tenth, the Recruitment and
 Labour-Services Rules, has `the activity the licensee is permitted to
 practise under these Rules' --- an instrument-local definition, and
-another instance of the run-on defect described in section 3.1.
+another instance of the run-on defect described in section~\ref{sec:corpus}.
 
 The environmental definition and the fiscal definitions are doing genuinely
 different jobs: one identifies conduct that triggers environmental control,
@@ -630,6 +643,7 @@ four, because each is lexically divergent and none of them represents a legal
 inconsistency. They fall into four groups.
 
 \subsection{Harmonised: person, licensee, employer}
+\label{sec:harmonised}
 
 `Person' is the extreme case and the most instructive. Twenty-seven
 instruments define it. The wording ranges from `the natural or legal person'
@@ -656,7 +670,7 @@ commercial sense has no application: nothing turns on whether a company is a
 cannot. There is no transaction in which the two definitions could be applied
 to the same subject and yield different answers. On a stricter view this is
 homonymy --- the same label over two concepts --- and it would then belong in
-section 6.4 rather than here. What it is not, on any view, is a conflict of
+section~\ref{sec:homonymy} rather than here. What it is not, on any view, is a conflict of
 the kind `establishment' presents, where two instruments compete to classify
 the same real person.
 
@@ -697,6 +711,7 @@ to be so abstract as to decide nothing. The variation is the definition doing
 its job.
 
 \subsection{Indexical definitions the filter missed}
+\label{sec:missed}
 
 Two of the twelve --- `relevant bodies' (8 instruments) and `supervising
 body' (8) --- are designating definitions that the automatic filter
@@ -731,6 +746,7 @@ a recall estimate on widely shared terms, ten of twelve is around 83 per
 cent, and that is the only recall figure this study can offer.
 
 \subsection{Homonymy: permit}
+\label{sec:homonymy}
 
 `Permit' (\emph{al-tasrih}, 11 instruments) is the one clear case of two
 concepts sharing a label. Seven of the eleven definitions --- the
@@ -756,7 +772,7 @@ it apart from conflict --- which is the whole difficulty.
 \section{What follows for drafting}
 
 The most useful thing this study produces for a drafting body is not the
-61.5 per cent and not the four terms, but the demonstration that the second
+\nDivergentShare{} per cent and not the \nConflicting{} terms, but the demonstration that the second
 number can be obtained at all.
 
 If definitional conflict in a legal system were pervasive, harmonisation
@@ -795,7 +811,8 @@ model of the Commonwealth interpretation acts, supplying default definitions
 for the terms that recur across the system. The corpus makes the candidate
 list computable: `person', defined in 27 instruments with no legal variation
 between them, is the obvious first entry, and the exercise of drafting a
-default definition would surface the two outliers discussed in section 6.1 as
+default definition would surface the two outliers discussed in
+section~\ref{sec:harmonised} as
 express exceptions rather than as silent divergence. That is a substantial
 legislative undertaking, and this article does not argue that Saudi Arabia
 should embark on it. It does suggest that the question is now answerable with
@@ -857,7 +874,7 @@ Four terms is a short enough list to encode as a rule.
 \section{Limitations}
 
 \paragraph{The glossary is parsed, not curated.} Definitions come from an
-automatic parser over definitions articles. Section 3.1 gives two visible
+automatic parser over definitions articles. Section~\ref{sec:corpus} gives two visible
 examples of what that costs: a definition recorded as a row of dots, and a
 definition that runs on into the two that follow it. Terms defined outside
 the definitions article --- in a substantive provision, or in a schedule ---
@@ -866,15 +883,15 @@ should be read as such.
 
 \paragraph{The indexical filter is a heuristic with one recall estimate.} It
 is inspectable, and its misses on the adjudicated sample are reported: two of
-twelve, giving around 83 per cent recall on widely shared terms. It has no
+\nReviewed{}, giving \nFilterRecall{} per cent recall on widely shared terms. It has no
 measured precision, and no evaluation at all against a purpose-built
 hand-labelled sample. Building that sample is the obvious next step for
 anyone extending this work.
 
 \paragraph{The adjudication is single-annotator and small.} Twelve terms were
 classified by one reader. There is no inter-annotator agreement to report;
-the classes involve judgement at the boundaries, and section 5.4 and section
-6.3 identify two places where a different reader could reasonably classify
+the classes involve judgement at the boundaries, and
+sections~\ref{sec:nashat} and~\ref{sec:missed} identify two places where a different reader could reasonably classify
 differently. The finding should be read as a documented and checkable
 reading, not as a measurement.
 
@@ -909,7 +926,7 @@ Definitional fragmentation in Saudi legislation is real, narrow, and
 measurable, and the gap between the second and third of those adjectives is
 where the difficulty lies.
 
-Measured automatically, the system looks fragmented: 61.5 per cent of shared
+Measured automatically, the system looks fragmented: \nDivergentShare{} per cent of shared
 substantive terms are worded divergently. Read by hand, most of that
 divergence turns out to be paraphrase, homonymy, or a referent each
 instrument fixes for itself. Among the twelve terms that the largest number
@@ -955,7 +972,7 @@ Zenodo under the MIT licence
 (\href{https://doi.org/10.5281/zenodo.22019183}{10.5281/zenodo.22019183};
 concept DOI
 \href{https://doi.org/10.5281/zenodo.22019182}{10.5281/zenodo.22019182}).
-The companion citation-network study referred to in section 2.3 is under
+The companion citation-network study referred to in section~\ref{sec:lit} is under
 review; a preprint is available from the same repository.
 
 \paragraph{Legal status.} This article analyses a non-official research

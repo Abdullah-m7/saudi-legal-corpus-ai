@@ -13,6 +13,12 @@
 {\small ORCID: 0009-0001-0832-0995}}
 \address{Abdullah Almohammedi\\Independent Researcher\\Saudi Arabia}
 
+% the letter quotes the manuscript's figures, so it reads them from the
+% same generated file the manuscript does.
+\input{numbers}
+% written by build.py after it counts the submission .docx
+\IfFileExists{wordcount.tex}{\input{wordcount}}{\newcommand{\nWords}{[run build.py]}}
+
 \begin{document}
 \begin{letter}{Professor Constantin Stefanou and Professor Helen Xanthaki\\
 Editors-in-Chief, \emph{Statute Law Review}\\Oxford University Press}
@@ -28,9 +34,10 @@ discussed through examples and never measured: how far a legal system
 actually achieves consistency in the terms its statutes define. It does so
 for Saudi Arabia, using a machine-readable corpus of 290 legislative
 instruments in which every definitions article has been parsed into
-term--definition pairs --- 1,920 distinct terms carrying 3,318 definitions.
+term--definition pairs --- \nTerms{} distinct terms carrying \nDefinitions{}
+definitions.
 
-Its argument is deliberately deflationary. Measured automatically, 61.5 per
+Its argument is deliberately deflationary. Measured automatically, \nDivergentShare{} per
 cent of the substantive terms that more than one instrument defines are
 worded divergently, and a study reporting that figure would look like a
 finding of pervasive incoherence. The article argues that it is not one, and
@@ -51,7 +58,7 @@ be assessed --- and the article sets out which of the four conflicts such an
 instrument would and would not resolve. And it proposes three responses of
 ascending ambition, the least of which requires no legislation at all.
 
-The manuscript is approximately 7{,}972 words including footnotes. It is not
+The manuscript is approximately \nWords{} words including footnotes. It is not
 under consideration elsewhere. Two companion manuscripts drawing on the same
 corpus are under review at other journals --- one describing the corpus as a
 research resource, one analysing its citation network --- and neither

@@ -37,8 +37,8 @@ HERE = Path(__file__).resolve().parent
 SRC = HERE / "main.tex"
 
 TITLE = r"""\begin{center}
-{\Large\bfseries What Counts as an Establishment?\\[2pt]
-Definitional Fragmentation Across Saudi Arabian Legislation\par}
+{\Large\bfseries How Much Do Statutes Disagree?\\[2pt]
+Measuring Definitional Fragmentation Across a Legal System\par}
 \end{center}
 """
 
@@ -185,8 +185,8 @@ def prepare(anon, for_docx):
         # title candidates and concatenates them, so the submission form comes
         # up with the title entered twice. One line in the Word file, two in
         # the typeset PDF where the break looks better.
-        text = text.replace(r"What Counts as an Establishment?\\[2pt]" + "\n",
-                            "What Counts as an Establishment? ")
+        text = text.replace(r"How Much Do Statutes Disagree?\\[2pt]" + "\n",
+                            "How Much Do Statutes Disagree? ")
         # The journal wants the manuscript double-spaced, and figures supplied
         # as separate files rather than embedded in the text.
         text = text.replace("\\onehalfspacing", "\\doublespacing")
@@ -200,6 +200,16 @@ def prepare(anon, for_docx):
                 numbers[label.group(1)] = str(i)
         for i, m in enumerate(re.finditer(r"\\label\{(tab:[^}]*)\}", text), 1):
             numbers[m.group(1)] = str(i)
+        # Section cross-references cannot be counted from the source the way
+        # figures and tables can --- LaTeX numbers them --- so they are read
+        # from the .aux the identified build has just written. Hardcoding
+        # «section 3.1» in prose was the alternative, and it rots silently the
+        # first time a section moves.
+        aux = HERE / "main_identified.aux"
+        if aux.exists():
+            for m in re.finditer(r"\\newlabel\{([^}]*)\}\{\{([^}]*)\}",
+                                 aux.read_text(encoding="utf-8")):
+                numbers.setdefault(m.group(1), m.group(2))
         def deref(m):
             if m.group(1) not in numbers:
                 sys.exit(f"unresolved cross-reference: {m.group(1)}")
@@ -330,6 +340,11 @@ def main():
     print("title page")
     latex("submission_title_page",
           TITLE_PAGE.replace("__WORDCOUNT__", f"{words:,}"))
+    # the cover letter states the same count, so it reads it rather than
+    # repeating it: an earlier letter carried a figure from a stale build.
+    (HERE / "wordcount.tex").write_text(
+        "\\newcommand{\\nWords}{" + f"{words:,}".replace(",", "{,}") + "}\n",
+        encoding="utf-8")
     docx("submission_title_page", "submission_title_page.docx", ref)
 
     print("anonymity audit")

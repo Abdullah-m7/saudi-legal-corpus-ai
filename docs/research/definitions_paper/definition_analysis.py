@@ -206,6 +206,7 @@ def main():
         "corpus": {
             "terms_total": len(terms),
             "definition_occurrences_total": total_occurrences,
+            "instruments_total": glossary.get("total_tracks_in_registry"),
             "instruments_with_a_definitions_article":
                 glossary.get("tracks_with_definitions_article_parsed"),
         },
