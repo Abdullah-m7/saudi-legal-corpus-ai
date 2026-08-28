@@ -33,7 +33,9 @@
 \titleformat{\section}{\normalsize\bfseries\centering}{\thesection.}{0.6em}{}
 \renewcommand{\thesection}{\Roman{section}}
 \titleformat{\subsection}{\normalsize\itshape}{\Alph{subsection}.}{0.6em}{}
-\renewcommand{\thesubsection}{\Alph{subsection}}
+% the heading prints «C.» from titlesec's own label argument above; this
+% controls only what \ref produces, which must name the Part as well.
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
 
 \newif\ifanon
 \anonfalse
@@ -92,6 +94,7 @@ on the first.
 \setcounter{page}{1}
 
 \section{Introduction}
+\label{sec:intro}
 
 A legislature that enacts a code has done something. What it has done is
 usually described in the language of the enactment itself: a rule now exists,
@@ -123,7 +126,8 @@ history.\footnote{Civil Transactions Law, Royal Decree No. M/191 (29/11/1444H)
 \nCivilArticles{} of its articles, each verified against the Ministry of
 Justice's own legal portal.} The same decree amended article~16 of the
 Commercial Courts Law, the provision that fixes what the commercial courts
-may hear.\footnote{Commercial Courts Law, Royal Decree No. M/93 (15/8/1441H)
+may hear --- inserting into it, by name, a paragraph on contracts «provided
+for in the Civil Transactions Law».\footnote{Commercial Courts Law, Royal Decree No. M/93 (15/8/1441H)
 (Saudi Arabia) [hereinafter CCL]\label{fn:ccl}, art.~16, as amended by Royal Decree No.
 M/191 (29/11/1444H). The amendment is not incidental to this Article's
 question: the instrument that created the code also redrew, in the same
@@ -156,12 +160,26 @@ which the amended jurisdiction clause of the first statute points the court
 toward --- has \nCivilShare{} per cent of its \nCivilArticles{}. A legislature
 enacted both. The courts have taken up one.
 
+The obvious reply is that the judges had a lawful alternative. Saudi courts
+are directed by the Basic Law to apply the Islamic Shar\=i`ah together with
+the ruler's regulations, so a judge may resolve a dispute on grounds that
+happen to coincide with an article without naming it. Article~1 of the code
+answers that reply in its own words. It directs that the Law's provisions
+apply to every matter it addresses, in their letter or in their meaning; that
+where no provision applies, the general rules in the closing provisions
+govern; and only then that rules derived from the Shar\=i`ah most consonant
+with the Law apply. The uncodified source is the third step of an enacted
+hierarchy, not a standing alternative --- and the second step is codified too,
+as numbered maxims in article~720. Part~\ref{sec:article-one} sets this out,
+because it is what makes the measurement a question about compliance with an
+enacted provision rather than a comparison between two equally open doors.
+
 Three further results bear on why, and each is designed to close an
 explanation that would otherwise be available. First, the narrowing is not
 imposed by the parties. Segmenting each judgment at its own headings, and
 attributing each citation in the statement of the case to the court or to a
 litigant, shows the court's reasons to be \emph{more} procedural than the
-arguments put to it, not less.\footnote{See \emph{infra} Part IV.C. The
+arguments put to it, not less.\footnote{See \emph{infra} Part~\ref{sub:bench}. The
 attribution step matters: a court reciting the provisions under which it
 convened is not a party raising them, and leaving that narration inside the
 parties' segment flatters the parties' procedural share.} Substantive
@@ -182,14 +200,15 @@ This Article proceeds in five Parts. Part~I sets out what comparative law has
 claimed about codification and transplantation, and why the claim has not been
 tested against adjudication. Part~II describes the Saudi setting: the code,
 the jurisdiction clause, and the publication practice that makes the
-measurement possible. Part~III states the method, including three defects that
-produced confident wrong answers before they were found. Part~IV reports the
-findings. Part~V takes up what follows for comparative law, for legislative
+measurement possible. Part~\ref{sec:method} states the method, including three defects that
+produced confident wrong answers before they were found.
+Part~\ref{sec:findings} reports the findings. Part~\ref{sec:implications} takes up what follows for comparative law, for legislative
 evaluation, and for the courts themselves, and states the limits that bound
 every figure here --- the most important being that this Article measures the
 first years of a code, and a code's first years are not its verdict.
 
 \section{Codification and Its Unmeasured Promise}
+\label{sec:codification}
 
 \subsection{What Enactment Is Taken to Accomplish}
 
@@ -225,6 +244,7 @@ judgments \emph{are} published in full, displacement is an observable fact
 rather than an inference, and that observing it changes what can be said.
 
 \subsection{Transplantation, Irritation, and the Missing Evidence}
+\label{sub:transplant}
 
 The question has been most sharply posed in the literature on legal
 transplants. Watson's position, that borrowing is the ordinary mechanism of
@@ -325,6 +345,7 @@ Saudi Arabia satisfies all three, and will not satisfy the third for
 long. That is the opportunity this Article takes.
 
 \section{The Saudi Setting}
+\label{sec:setting}
 
 \subsection{A Statute Book Built in a Decade}
 
@@ -361,22 +382,102 @@ heard were enacted first, over more than a decade. The instrument governing
 \subsection{The Civil Transactions Law}
 
 The Civil Transactions Law was issued by Royal Decree No. M/191 of
-29/11/1444H. It contains \nCivilArticles{} articles covering obligations,
-contract, and the general principles of civil liability, and it is the first
+29/11/1444H. It contains \nCivilArticles{} articles covering personality,
+obligations, contract, civil liability and real rights, and it is the first
 codification of that field in the Kingdom's modern history.\footnote{CTL,
-\emph{supra} note~\ref{fn:ctl}. The corpus used in this Article holds the full official
-Arabic text of all \nCivilArticles{} articles, cross-checked article by
-article against the Ministry of Justice's legal portal and, where the two
+\emph{supra} note~\ref{fn:ctl}. The corpus used in this Article holds the full
+official Arabic text of all \nCivilArticles{} articles, cross-checked article
+by article against the Ministry of Justice's legal portal and, where the two
 diverged, against the Ministry's own published PDF. The law is unamended:
 every article stands as originally enacted.}
 
-Its enactment did not displace the uncodified sources as a matter of
-constitutional form; the Basic Law's direction to the courts was not amended.
-What the code offers a Saudi judge is an available and authoritative
-statement, in numbered articles, of rules that previously had to be derived.
-Whether judges reason from it is exactly the question this Article measures,
-and it is a real question rather than a rhetorical one, because a judge who
-does not cite the code has not thereby decided unlawfully.
+Two of its provisions matter more to this Article than the rest of the code
+put together, and both are usually passed over.
+
+\subsection{A Code That Claims the Field}
+\label{sec:article-one}
+
+A reader who knows that Saudi courts may decide from an uncodified source will
+reach for an easy explanation of everything reported in Part~\ref{sec:findings}: the judges had
+a lawful alternative and preferred it. Article~1 of the Civil Transactions Law
+forecloses that explanation in its own words.
+
+\begin{quote}
+\singlespacing\small
+The provisions of this Law shall apply to all matters it addresses, in their
+letter or in their meaning. Where no applicable provision is found, the
+general rules set out in the closing provisions shall apply; and where no
+applicable rule is found among those, there shall apply the rules derived from
+the Islamic Shar\=i`ah that are most consonant with this Law.
+
+The application of this Law's provisions is without prejudice to special
+statutory provisions.\footnote{CTL art.~1. Translations from the Arabic in
+this Part are the author's; the Arabic text governs, and the corpus carries it
+in full.}
+\end{quote}
+
+That is a hierarchy of sources, and the code places itself at the top of it.
+The uncodified source is not an alternative standing beside the code: it is
+the third step, reached only after the text has been found not to address the
+matter --- in its letter \emph{or in its meaning}, which is a wide reach ---
+and after the general rules in the closing provisions have also been found
+inapplicable.
+
+Those general rules are the article's second surprise. The closing provisions
+do not gesture at the Shar\=i`ah in the abstract; they codify the classical
+legal maxims themselves, as numbered rules in a single
+article.\footnote{CTL art.~720, applying the maxims «to the extent they do not
+conflict with statutory provisions, having regard to their nature and to the
+conditions and exceptions particular to each». The list runs from \emph{acts
+are judged by their intentions} and \emph{what counts in contracts is
+intention and meaning rather than words and forms} to \emph{custom is
+authoritative} and \emph{designation by custom is as designation by text}.}
+The second tier of the hierarchy is therefore inside the code as well.
+
+The consequence for what follows is precise, and it is the reason this Part is
+here. A judgment that resolves a matter the code addresses without reference
+to the code is not exercising a preserved option. It is departing from the
+order that the code itself lays down. Whether that is happening, and how
+often, is exactly what Part~\ref{sec:findings} measures --- and the measurement is a question
+about compliance with an enacted provision, not a comparison between two
+equally available sources.
+
+Two qualifications keep this from proving too much. Article~1's last sentence
+preserves special statutory provisions, so an instrument dealing specifically
+with a matter continues to govern it. And the code came into force
+\emph{after} it was issued: article~721 gives it effect one hundred and eighty
+days from publication in the Official Gazette, and repeals whatever conflicts
+with it.\footnote{CTL art.~721.} Its commencement therefore falls in the
+course of 1445H rather than in 1444H, which is the date this Article uses when
+it says how long the courts have had the code.
+
+\subsection{The Constitutional Background, and Why It Does Not Dispose of the
+Question}
+
+None of this displaced the constitutional arrangement, and it is worth being
+exact about what that arrangement says. The Basic Law of Governance directs
+the courts to apply the rules of the Islamic Shar\=i`ah, in accordance with
+the Qur'\=an and the Sunna, together with the regulations issued by the ruler
+that do not conflict with them.\footnote{Basic Law of Governance, Royal Order
+No. A/90 (27/8/1412H) (Saudi Arabia), art. 48; \emph{see also} art. 67 (the
+regulatory authority lays down regulations).} An enacted Saudi regulation ---
+a \emph{niz\=am} --- is therefore not a sovereign code in the continental
+sense. It is subordinate law, valid so far as it does not conflict with a
+source the courts are independently directed to apply.
+
+That is what makes uptake a live question here rather than a formality. In a
+system where the code is the source, a court that does not cite it has
+generally not applied it, and the measurement would be near-tautological. In
+this system a court could in principle decide correctly without citing the
+code at all.
+
+But `in principle' is doing less work than it appears, for the reason just
+given: the code's own article~1 tells the judge where to look first, and the
+Basic Law's direction is to the Shar\=i`ah \emph{and} to the ruler's
+regulations, not to a choice between them. The question this Article measures
+is therefore neither trivial nor already answered by the constitutional text.
+It is what the courts in fact do with an instrument that instructs them to
+start with it.
 
 \subsection{The Jurisdiction Clause}
 
@@ -391,19 +492,36 @@ Article 16 is also, by a wide margin, the most-cited single article in the
 entire corpus, appearing \nTopArticleCitations{} times. The courts read their
 own jurisdiction clause constantly.}
 
-So the instrument that created the code, in the same breath, redrew the
-jurisdiction of the courts most likely to apply it. This is not a case in
-which a legislature enacted a code and left the courts to discover it. The
-legislature pointed.
+The amendment is not general. Article~16 lists, in nine paragraphs, the
+disputes the commercial courts may hear --- disputes between merchants arising
+from their commercial dealings, claims against a merchant on commercial
+contracts above a value threshold, actions arising under the Companies Law,
+the Bankruptcy Law and the intellectual property laws, and so on. Into that
+list the decree inserted a paragraph naming the new code:
 
-The pointing also supplies this Article with a denominator that is not of its
+\begin{quote}
+\singlespacing\small
+Disputes arising out of the participation contracts provided for in the Civil
+Transactions Law.\footnote{CCL art. 16(3), as amended. The Arabic reads
+\emph{`uq\=ud al-mush\=arakah al-mans\=us `alayh\=a f\=i niz\=am
+al-mu`\=amal\=at al-madaniyyah}.}
+\end{quote}
+
+So the instrument that created the code wrote the code's name into the
+jurisdiction clause of the courts most likely to apply it, in the same
+breath. This is not a case in which a legislature enacted a code and left the
+courts to discover it. The legislature pointed, by name, in the statute that
+tells these judges what they may hear.
+
+That pointing also supplies this Article with a denominator that is not of its
 own choosing. A natural objection to any measurement of statutory uptake is
 that the denominator is arbitrary: the courts should not be expected to cite
 the whole statute book, only the part relevant to what they hear. Article~16
-answers that objection in the legislature's own words rather than the author's,
-by defining the field the commercial courts are to occupy. Part~IV reports the
-uptake figure under that restricted denominator as well as under the full
-statute book, and the restriction does not rescue the result.
+answers that objection in the legislature's own words rather than the
+author's, by defining the field the commercial courts are to occupy.
+Part~\ref{sec:findings}
+reports the uptake figure under that restricted denominator as well as under
+the full statute book, and the restriction does not rescue the result.
 
 \subsection{A Published Record}
 
@@ -471,7 +589,7 @@ Prefixes attach to the word for ``article'' rather than standing apart, so the
 same reference appears as \emph{al-m\=addah}, \emph{bil-m\=addah},
 \emph{lil-m\=addah}, \emph{wal-m\=addah} and so on, each a single orthographic
 word.\footnote{An early version of the pattern accepted only some of these
-prefixes. See \emph{infra} Part III.F.} Diacritics are optional and appear
+prefixes. See \emph{infra} Part~\ref{sub:defects}.} Diacritics are optional and appear
 irregularly, so a pattern written against unvowelled text fails on the
 minority of judgments that are fully vowelled. And the article number may be a
 numeral in either Arabic-Indic or Western digits, or spelled as a compound
@@ -549,6 +667,7 @@ and, because those recitals are almost entirely procedural, would have made
 the bar look far more procedural than it is.
 
 \subsection{Choosing a Denominator}
+\label{sub:denominator}
 
 The headline figure --- what share of the statute book is ever cited ---
 depends on what counts as the statute book, and the choice can be made to
@@ -585,6 +704,7 @@ procedural share from \nProceduralShare{} to \nDedupProcedural{} per cent. The
 results are not artefacts of republication.
 
 \subsection{Three Defects, and a Fourth Found by Accident}
+\label{sub:defects}
 
 Each of the following produced a confident wrong answer, and none announced
 itself. They are reported because a reader assessing this Article's figures
@@ -630,7 +750,7 @@ Of the \nRegistryArticles{} articles in the registry, \nArticlesCited{} ---
 any judgment in the corpus.
 
 Table~\ref{tab:denominators} reports the figure under all four denominators
-described in Part~III.E, because the objection that the denominator is too
+described in Part~\ref{sub:denominator}, because the objection that the denominator is too
 generous is the first one a reader should make.
 
 \begin{table}[t]
@@ -707,14 +827,15 @@ owe each other, and is the instrument the amended jurisdiction clause of the
 first directs the court toward.
 
 It would be convenient to attribute this to the code's youth. That
-explanation is available and this Article does not exclude it; Part~V returns
-to it. But it does not explain the ordering of the other three rows, which
+explanation is available and this Article does not exclude it;
+Part~\ref{sec:implications} returns to it. But it does not explain the ordering of the other three rows, which
 are not new: the Evidence Law, enacted a year before the code, is at
 \nEvidenceShare{} per cent, and the Bankruptcy Law and Companies Law,
 substantive instruments both, sit between. The gradient runs from procedure
 to substance, not from old to new.
 
 \subsection{The Bench, Not the Bar}
+\label{sub:bench}
 
 The obvious objection to everything above is that the courts cite what they
 are given. If litigants argue procedure, judgments will be procedural, and the
@@ -818,7 +939,7 @@ happen, in the reasoning of courts over years, and it is visible only where
 those courts publish. The transplant literature's disagreements --- whether a
 borrowed rule can travel, whether it irritates its host, whether reception
 conditions determine later effectiveness --- are all disagreements about what
-follows enactment.\footnote{See \emph{supra} Part I.B.} None of them has been
+follows enactment.\footnote{See \emph{supra} Part~\ref{sub:transplant}.} None of them has been
 tested against the courts said to be applying the transplanted law, at the
 level of the provision, because the evidence has not existed.
 
@@ -882,19 +1003,27 @@ sharpened rather than softened by the jurisdiction. A Saudi judge has a source
 of decision that does not depend on any enacted text, and may resolve a
 dispute on grounds that coincide exactly with an article of the code without
 naming the article.\footnote{Basic Law of Governance art. 48; \emph{supra}
-Part II.A.} Every figure here therefore measures citation, which is a
+Part~\ref{sec:article-one}.} Two things narrow the objection without removing
+it. Article~1 of the code directs the judge to the code first, so silent
+application would be departure from an enacted hierarchy rather than the
+exercise of a preserved choice; and the general rules its second tier would
+send him to are themselves codified, in article~720, and are equally citable.
+Every figure here nonetheless measures citation, which is a
 \emph{lower bound} on application. The Article's central comparison survives
 this --- the same judges, writing in the same style, cite the procedural law
 almost exhaustively and the civil code barely at all, and no account of
 silent application explains why silence would fall so unevenly --- but the
 absolute levels should be read as floors.
 
-\paragraph{The code is four years old.} The Civil Transactions Law was issued
-in 1444H and the corpus runs to \nLastYear{}H. A code's first years are not its
-verdict: litigation takes time to arise under new rules, and a judgment given
-in 1445H may concern a contract formed before the code existed. This Article
-reports what uptake looks like in the years immediately following
-codification, which is a different question from what it will look like in
+\paragraph{The code has been in force for about three years.} The Civil
+Transactions Law was issued in 1444H, but it took effect one hundred and
+eighty days after publication, so its commencement falls within
+1445H.\footnote{CTL art.~721; \emph{supra} Part~\ref{sec:article-one}.} The
+corpus runs to \nLastYear{}H. A code's first years are not its verdict:
+litigation takes time to arise under new rules, and a judgment given in 1445H
+may concern a contract formed before the code was in force at all. This
+Article reports what uptake looks like in the years immediately following
+commencement, which is a different question from what it will look like in
 2040, and the reader should not read the second answer out of the first.
 
 \paragraph{The record is what the Ministry publishes, and it is commercial.}
@@ -916,11 +1045,13 @@ reported rather than redistributed.
 
 \paragraph{The segment analysis covers half the corpus.} Only
 \nSegmentedShare{} per cent of judgments carry headings the segmenter can
-find, so the bench-and-bar result in Part~V.C is measured on that half. The
+find, so the bench-and-bar result in Part~\ref{sub:bench} is measured on that
+half. The
 attribution within it is a lexical cue validated by hand on a small sample,
 and is reported as a floor.
 
 \section{Conclusion}
+\label{sec:conclusion}
 
 A legislature enacts a code and a gazette records it. Whether the courts then
 reason from it is a separate fact, and until recently an unobservable one.
