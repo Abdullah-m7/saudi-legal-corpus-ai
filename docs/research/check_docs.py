@@ -23,6 +23,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 NUMBERS = HERE / "applied_law_paper" / "numbers.tex"
+APPEAL = HERE / "appeal_paper" / "numbers.tex"
 CITATOR = HERE / "citator" / "index.json"
 
 EASTERN = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
@@ -36,13 +37,14 @@ def ar_dec(x):
     return f"{float(x):.1f}".replace(".", "٫").translate(EASTERN)
 
 
-def macros():
-    """Every value the manuscript uses, as plain numbers."""
+def macros(*paths):
+    """Every value the manuscripts use, as plain numbers."""
     out = {}
-    text = NUMBERS.read_text(encoding="utf-8")
-    for name, raw in re.findall(r"\\newcommand\{\\(\w+)\}\{([^{}]*(?:\{,\}[^{}]*)*)\}",
-                                text):
-        out[name] = raw.replace("{,}", "").lstrip(".") or raw
+    for path in (paths or (NUMBERS, APPEAL)):
+        text = path.read_text(encoding="utf-8")
+        for name, raw in re.findall(
+                r"\\newcommand\{\\(\w+)\}\{([^{}]*(?:\{,\}[^{}]*)*)\}", text):
+            out[name] = raw.replace("{,}", "").lstrip(".") or raw
     return out
 
 
@@ -61,6 +63,12 @@ def facts():
     # thing anyone re-runs. This one drifted through two corrections while
     # every guard passed, because no guard was pointed at it.
     P = "applied_law_paper/README.md"
+    # The citation file is the repository's front door: it is what a citing
+    # researcher reads and what a stranger quotes. It carried a citator total
+    # from before the citation pattern was corrected -- 99,158 against the
+    # 113,052 the citator actually holds -- and that stale figure reached a
+    # message sent to a practitioner before anyone noticed. Guarded now.
+    F = "../../CITATION.cff"
     return [
         (C, "مدخلات الكشّاف", ar_int(cit["entries"])),
         (C, "أدوات نظامية", ar_int(cit["instruments"])),
@@ -109,6 +117,15 @@ def facts():
         (P, "الوقائع بفاعل الدائرة", ar_dec(m["nRecitalByCourtShare"])),
         (P, "إجرائية ما فاعله الدائرة", ar_dec(m["nRecitalCourtProcedural"])),
         (P, "إجرائية صوت الخصوم", ar_dec(m["nRecitalOtherProcedural"])),
+
+        # CITATION.cff writes its figures in Western digits
+        (F, "مواد الذخيرة التشريعية", f"{int(m['nRegistryArticles']):,}"),
+        (F, "أدوات", f"{int(m['nInstruments']):,}"),
+        (F, "أحكام", f"{int(m['nJudgments']):,}"),
+        (F, "أحكام تحمل استئنافًا", f"{int(m['nAppeals']):,}"),
+        (F, "مدخلات الكشّاف", f"{int(cit['entries']):,}"),
+        (F, "أدوات الكشّاف", f"{int(cit['instruments']):,}"),
+        (F, "مواد الكشّاف", f"{int(cit['articles']):,}"),
     ]
 
 
