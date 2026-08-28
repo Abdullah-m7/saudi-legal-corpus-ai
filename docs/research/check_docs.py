@@ -57,6 +57,10 @@ def facts():
     cit = json.loads(CITATOR.read_text(encoding="utf-8"))
     C = "citator/README.md"
     K = "arabic_paper/applied_law_concept.md"
+    # A paper's own README is the first thing a reader opens and the last
+    # thing anyone re-runs. This one drifted through two corrections while
+    # every guard passed, because no guard was pointed at it.
+    P = "applied_law_paper/README.md"
     return [
         (C, "مدخلات الكشّاف", ar_int(cit["entries"])),
         (C, "أدوات نظامية", ar_int(cit["instruments"])),
@@ -87,6 +91,24 @@ def facts():
         (K, "إجرائية التعليل", ar_dec(m["nReasoningProcedural"])),
         (K, "إجرائية الوقائع", ar_dec(m["nRecitalProcedural"])),
         (K, "الوقائع بفاعل الدائرة", ar_dec(m["nRecitalByCourtShare"])),
+
+        (P, "مواد نظام المحاكم التجارية", ar_int(m["nCCLArticles"])),
+        (P, "حصة نظام المحاكم التجارية", ar_dec(m["nCCLShare"])),
+        (P, "مواد نظام المعاملات المدنية", ar_int(m["nCivilArticles"])),
+        (P, "حصة نظام المعاملات المدنية", ar_dec(m["nCivilShare"])),
+        (P, "الاستشهادات المستخرجة", ar_int(m["nCitations"])),
+        (P, "غير المطابَقة", ar_dec(m["nUnmatchedShare"])),
+        (P, "مواد مستشهَد بها", ar_int(m["nArticlesCited"])),
+        (P, "حصة المواد", ar_dec(m["nArticlesCitedShare"])),
+        (P, "داخل النطاق الضيّق", ar_dec(m["nScopeNarrowShare"])),
+        (P, "أدوات لم تُستشهد", ar_int(m["nInstrumentsNever"])),
+        (P, "الحصة الإجرائية", ar_dec(m["nProceduralShare"])),
+        (P, "أكثر مادة استشهادًا", ar_int(m["nTopArticleCitations"])),
+        (P, "إجرائية التعليل", ar_dec(m["nReasoningProcedural"])),
+        (P, "إجرائية الوقائع", ar_dec(m["nRecitalProcedural"])),
+        (P, "الوقائع بفاعل الدائرة", ar_dec(m["nRecitalByCourtShare"])),
+        (P, "إجرائية ما فاعله الدائرة", ar_dec(m["nRecitalCourtProcedural"])),
+        (P, "إجرائية صوت الخصوم", ar_dec(m["nRecitalOtherProcedural"])),
     ]
 
 

@@ -33,8 +33,10 @@ SUSPECT = re.compile(
     r"(?<![\\A-Za-z0-9])"
     r"(\d{1,3}(?:[,{]\S?,?\}?\d{3})+"      # thousands-separated
     r"|\d+\.\d+"                            # any decimal
-    r"|\d+\s*(?:per cent|%|\\%))"           # any percentage
-)
+    r"|\d+\s*(?:per cent|%|\\%))",          # any percentage
+    re.I)   # «98 Per Cent» in a title is still a measurement: an early cover
+            # letter kept a stale 98 through a rebuild that moved it to 99,
+            # because the pattern was case-sensitive and the title was not.
 
 # Lines that legitimately carry digits: the generated macros are not here, but
 # citations and DOIs are.
