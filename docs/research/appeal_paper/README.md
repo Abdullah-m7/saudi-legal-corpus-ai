@@ -1,7 +1,6 @@
 # الورقة التاسعة — درجتان، نزاعٌ واحد
 
-*Affirmed on the Reasons Below: Appellate Review in 15,383 Published Saudi
-Commercial Judgments.*
+*Measuring Appellate Reason-Giving in Saudi Commercial Courts.*
 
 **الوجهة: International Journal for Court Administration** — تصدر عن الرابطة
 الدولية لإدارة المحاكم، مفتوحة الوصول، بلا رسوم نشر، وتحكيمها مزدوج التعمية.

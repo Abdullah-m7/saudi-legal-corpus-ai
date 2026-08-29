@@ -1,0 +1,102 @@
+% Curriculum vitae, for law-review and journal submissions.
+%
+% Law reviews want a short factual document: education, positions,
+% publications. Everything below the first two sections is verifiable from the
+% public repository; the first two are not, and are marked so the PDF is
+% obviously unfinished until they are filled in. Nothing here is invented.
+\documentclass[11pt]{article}
+\usepackage[letterpaper,top=0.85in,bottom=0.8in,left=0.95in,right=0.95in]{geometry}
+\usepackage{times}\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\usepackage{microtype}\usepackage[hidelinks]{hyperref}\usepackage{enumitem}
+\usepackage{titlesec}\usepackage{xcolor}
+\pagestyle{empty}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\titleformat{\section}{\normalsize\bfseries\scshape}{}{0em}{}
+\titlespacing{\section}{0pt}{0.85em}{0.35em}
+\newcommand{\sectionrule}{\vspace{-0.55em}\noindent\rule{\linewidth}{0.4pt}}
+\titleformat{\section}[block]{\normalsize\bfseries\scshape}{}{0em}{}[\sectionrule]
+
+% Anything this marks is not verifiable from the repository and must be
+% supplied by the author. It is meant to be impossible to miss in the PDF.
+\newcommand{\needs}[1]{\textbf{\textcolor{red}{[SUPPLY: #1]}}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Abdullah Almohammedi}\\[3pt]
+Independent Researcher \quad$\cdot$\quad Kingdom of Saudi Arabia\\
+\texttt{abdullah.m.almohammedi@gmail.com} \quad$\cdot$\quad
+ORCID \href{https://orcid.org/0009-0001-0832-0995}{0009-0001-0832-0995}\\
+\href{https://github.com/Abdullah-m7/saudi-legal-corpus-ai}{github.com/Abdullah-m7/saudi-legal-corpus-ai}
+\end{center}
+
+\section{Education}
+\needs{degrees, institutions, years --- most recent first}
+
+\section{Positions}
+\needs{current and previous roles with dates, or delete this section if none}
+
+\section{Research}
+
+\textbf{The Saudi Legal Corpus.} Sole author and maintainer of an open,
+machine-readable corpus of Saudi law joining two bodies of material at the
+level of the article: 15,855 verified legislative articles across 291
+instruments, and 50,666 judgments published in full text by the Ministry of
+Justice, of which 15,383 carry the appellate decision in the same record. A
+citator links them through 113,052 statutory citations, each matched to the
+article cited and carrying the segment of the judgment it sits in, whether the
+court or a party is speaking, and whether that judgment survived appeal.
+
+\begin{itemize}
+\item Archived on Zenodo, concept DOI
+      \href{https://doi.org/10.5281/zenodo.22019182}{10.5281/zenodo.22019182}.
+\item Every figure in every manuscript below is computed by deposited code
+      from deposited data and typeset from a generated file; checks refuse to
+      build a manuscript that types a figure by hand, to use a result older
+      than the code that produced it, or to let a note drift from the analysis.
+\end{itemize}
+
+\section{Manuscripts under review}
+
+\begin{itemize}
+\item \emph{The Saudi Legal Corpus for AI: An Auditable,
+      Official-Source-Grounded, Article-Level Corpus of Saudi Arabian
+      Legislation}. Language Resources and Evaluation (Springer).
+\item \emph{Vertical Elaboration or Horizontal Integration? A
+      Citation-Network Analysis of Saudi Arabian Legislation}. Artificial
+      Intelligence and Law (Springer).
+\item \emph{Can You Build on the Official Record? Availability, Consistency
+      and Provenance in a State's Published Law}. Data \& Policy (Cambridge
+      University Press).
+\item \emph{What Changes, and Where? Legislative Churn Across Saudi Arabian
+      Legislation}. The Theory and Practice of Legislation (Routledge).
+\item \emph{Ninety-Three Per Cent of a Backlog Is Not a Backlog: Reading a
+      Public Publisher's Own Quality Signal}. Government Information Quarterly
+      (Elsevier), GIQ-D-26-01924.
+\item \needs{The Calendar Gap --- exact title and the venue it is under review
+      at}
+\end{itemize}
+
+\section{Manuscripts completed}
+
+\begin{itemize}
+\item \emph{99 Per Cent of the Procedure, 27 Per Cent of the Code: The Enacted
+      Law and the Applied Law in 50,666 Judgments}.
+\item \emph{Measuring Appellate Reason-Giving in Saudi Commercial Courts}.
+\item \emph{How Much Do Statutes Disagree? Measuring Definitional
+      Fragmentation Across a Legal System}.
+\item \emph{The Code the Courts Do Not Cite: Measuring Uptake After
+      Codification}.
+\end{itemize}
+
+\section{Presentations}
+
+\needs{confirm before including} UNESCO Global Forum on the Ethics of
+Artificial Intelligence (GFEAI 2026), Riyadh, 14--17 September 2026 --- poster,
+at the ICAIRE stand.
+
+\section{Languages}
+
+Arabic (native) \quad$\cdot$\quad English.
+
+\end{document}
