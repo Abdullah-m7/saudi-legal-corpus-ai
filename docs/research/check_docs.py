@@ -84,6 +84,11 @@ def facts():
     # is pasted into a submission box by hand, so its figures leave the
     # repository without passing through a build.
     I = "appeal_paper/submission_kit.md"
+    # The CV goes to journals and to people, and it is the one document
+    # here that describes the corpus outside any manuscript. It carried
+    # 291 instruments for a day after the correction landed everywhere
+    # else.
+    V = "cv/cv.tex"
     return [
         (C, "مدخلات الكشّاف", ar_int(cit["entries"])),
         (C, "أدوات نظامية", ar_int(cit["instruments"])),
@@ -173,6 +178,14 @@ def facts():
             ("الحصة الإجرائية", f"{float(m['nProceduralShare']):.1f}"),
             ("حصة المحاكم التجارية", f"{float(m['nCCLShare']):.1f}"),
             ("حصة المعاملات المدنية", f"{float(m['nCivilShare']):.1f}"),
+        ]],
+
+        *[(V, label, value) for label, value in [
+            ("مواد الذخيرة", f"{int(m['nRegistryArticles']):,}"),
+            ("الأدوات", f"{int(m['nInstruments']):,}"),
+            ("الأحكام", f"{int(m['nJudgments']):,}"),
+            ("قرارات الاستئناف", f"{int(m['nAppeals']):,}"),
+            ("مدخلات الكشّاف", f"{int(cit['entries']):,}"),
         ]],
 
         *[(I, label, value) for label, value in [
