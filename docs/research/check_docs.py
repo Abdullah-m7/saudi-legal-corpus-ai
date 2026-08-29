@@ -24,6 +24,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 NUMBERS = HERE / "applied_law_paper" / "numbers.tex"
 APPEAL = HERE / "appeal_paper" / "numbers.tex"
+DEFS = HERE / "definitions_paper" / "numbers.tex"
 CITATOR = HERE / "citator" / "index.json"
 
 EASTERN = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
@@ -40,7 +41,7 @@ def ar_dec(x):
 def macros(*paths):
     """Every value the manuscripts use, as plain numbers."""
     out = {}
-    for path in (paths or (NUMBERS, APPEAL)):
+    for path in (paths or (NUMBERS, APPEAL, DEFS)):
         text = path.read_text(encoding="utf-8")
         for name, raw in re.findall(
                 r"\\newcommand\{\\(\w+)\}\{([^{}]*(?:\{,\}[^{}]*)*)\}", text):
@@ -69,6 +70,11 @@ def facts():
     # 113,052 the citator actually holds -- and that stale figure reached a
     # message sent to a practitioner before anyone noticed. Guarded now.
     F = "../../CITATION.cff"
+    # The decision map answers «who could act on this, and what decision would
+    # it change» for each finding. It is the one document in the repository a
+    # non-researcher is most likely to read on its own, so its figures are
+    # guarded like everything else.
+    D = "decision_map.md"
     return [
         (C, "مدخلات الكشّاف", ar_int(cit["entries"])),
         (C, "أدوات نظامية", ar_int(cit["instruments"])),
@@ -126,6 +132,22 @@ def facts():
         (F, "مدخلات الكشّاف", f"{int(cit['entries']):,}"),
         (F, "أدوات الكشّاف", f"{int(cit['instruments']):,}"),
         (F, "مواد الكشّاف", f"{int(cit['articles']):,}"),
+
+        (D, "قرارات الاستئناف", ar_int(m["nAppeals"])),
+        (D, "بلا أسباب خاصة", ar_dec(m["nNoReasonsShare"])),
+        (D, "تكتب حين تؤيّد", ar_dec(m["nWroteAffirming"])),
+        (D, "تكتب حين تنقض", ar_dec(m["nWroteReversing"])),
+        (D, "حصة نظام المحاكم التجارية", ar_dec(m["nCCLShare"])),
+        (D, "حصة نظام المعاملات المدنية", ar_dec(m["nCivilShare"])),
+        (D, "أحكام النموذج", ar_int(m["nModelN"])),
+        (D, "نسبة أرجحية الإجرائي", ar_dec(m["nOrProcedural"])),
+        (D, "ألفاظ معرَّفة", ar_int(m["nTerms"])),
+        (D, "أدوات", ar_int(m["nInstruments"])),
+        (D, "حصة المختلف صياغةً", ar_dec(m["nDivergentShare"])),
+        (D, "ألفاظ مشتركة موضوعية", ar_int(m["nSharedSubstantive"])),
+        (D, "مقروءة باليد", ar_int(m["nReviewed"])),
+        (D, "متعارضة", ar_int(m["nConflicting"])),
+        (D, "مدخلات الكشّاف", ar_int(cit["entries"])),
     ]
 
 
