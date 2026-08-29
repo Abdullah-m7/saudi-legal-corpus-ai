@@ -2,6 +2,9 @@
 
 *Measuring Appellate Reason-Giving in Saudi Commercial Courts.*
 
+**قُدِّمت إلى International Journal for Court Administration في ٢٩ أغسطس
+٢٠٢٦، قسم Academic Articles — رقم التقديم `912`.**
+
 **الوجهة: International Journal for Court Administration** — تصدر عن الرابطة
 الدولية لإدارة المحاكم، مفتوحة الوصول، بلا رسوم نشر، وتحكيمها مزدوج التعمية.
 والمتطلّبات مقروءة من صفحتها في ٢٩ أغسطس ٢٠٢٦ ومسجَّلة في `submission_kit.md`.

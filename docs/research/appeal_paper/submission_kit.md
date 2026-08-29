@@ -17,6 +17,17 @@ Read from the journal's own submission page on 29 August 2026.
 | Submit | <https://iacajournal.org> — the black box, upper right |
 | Also required | competing interests declaration · copyright confirmation · affiliations and contact |
 
+## Submitted
+
+**Submitted to the *International Journal for Court Administration* on
+29 August 2026, to the Academic Articles section. Submission ID `912`.**
+Confirmed complete: the portal's «Incomplete» filter returns nothing.
+
+Two files went up. The system offers only Manuscript, Figure and Other, so the
+title page is an `Other` renamed *Title Page (not for reviewers)*, and the
+note to the editor says in terms that it carries the author's name and must
+be withheld.
+
 ## Why here, and not somewhere with a bigger name
 
 This is the right audience, not the fallback one. The article's finding is not
