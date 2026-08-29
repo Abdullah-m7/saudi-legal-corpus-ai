@@ -75,6 +75,11 @@ def facts():
     # non-researcher is most likely to read on its own, so its figures are
     # guarded like everything else.
     D = "decision_map.md"
+    # The submission kit is pasted into a publisher's portal by hand,
+    # so its figures leave the repository without passing through a
+    # build. That makes it the one file where a stale number is
+    # submitted rather than merely written.
+    J = "applied_law_paper/submission_kit.md"
     return [
         (C, "مدخلات الكشّاف", ar_int(cit["entries"])),
         (C, "أدوات نظامية", ar_int(cit["instruments"])),
@@ -148,7 +153,51 @@ def facts():
         (D, "مقروءة باليد", ar_int(m["nReviewed"])),
         (D, "متعارضة", ar_int(m["nConflicting"])),
         (D, "مدخلات الكشّاف", ar_int(cit["entries"])),
+
+        # The JELS kit holds the abstract as plain text, because a portal box
+        # takes plain text and nothing else. That text is copied out of the
+        # compiled PDF, so it is right when written and unguarded afterwards
+        # -- which is exactly how a figure goes stale. Guarded in Western
+        # digits, the way the kit writes them.
+        *[(J, label, value) for label, value in [
+            ("الاستشهادات المستخرجة", f"{int(m['nCitations']):,}"),
+            ("الأحكام", f"{int(m['nJudgments']):,}"),
+            ("مواد الذخيرة", f"{int(m['nRegistryArticles']):,}"),
+            ("الأدوات", f"{int(m['nInstruments']):,}"),
+            ("حصة المواد", f"{float(m['nArticlesCitedShare']):.1f}"),
+            ("النطاق الضيّق", f"{float(m['nScopeNarrowShare']):.1f}"),
+            ("الحصة الإجرائية", f"{float(m['nProceduralShare']):.1f}"),
+            ("حصة المحاكم التجارية", f"{float(m['nCCLShare']):.1f}"),
+            ("حصة المعاملات المدنية", f"{float(m['nCivilShare']):.1f}"),
+        ]],
     ]
+
+
+# A figure can be present and still be wrong when a second, stale figure sits
+# beside it. The check above reads presence only, so it passed for weeks while
+# these notes said «٢٩١ أداة» three lines above «١٨٤ من ٢٩٠». The registry
+# holds 291 tracks, of which 290 are legislative instruments and one is a
+# repository-level closure audit holding no articles; the two words are not
+# interchangeable, and writing 291 instruments overstates the corpus.
+#
+# So a second, negative rule: in the Arabic notes, 291 may appear only where
+# the sentence around it says «مسار». Anywhere else it is the conflation.
+TRACKS_ONLY = ["citator/README.md", "arabic_paper/applied_law_concept.md",
+               "applied_law_paper/README.md", "qadha_outreach/letter_ar.md",
+               "decision_map.md"]
+
+
+def conflations():
+    """Every «٢٩١» in the notes that is not visibly about registry tracks."""
+    out = []
+    for path in TRACKS_ONLY:
+        text = (HERE / path).read_text(encoding="utf-8")
+        for m in re.finditer("٢٩١", text):
+            near = text[max(0, m.start() - 90):m.end() + 90]
+            if "مسار" not in near:
+                line = text.count("\n", 0, m.start()) + 1
+                out.append((path, line, " ".join(near.split())))
+    return out
 
 
 def main():
@@ -164,7 +213,16 @@ def main():
             print(f"  {path}\n    {label}: should read {value}")
         print("\nFix the sentence, not only the number.")
         return 1
-    print(f"all {len(facts())} guarded figures match the analysis")
+    mixed = conflations()
+    if mixed:
+        print(f"{len(mixed)} place(s) call registry tracks instruments:\n")
+        for path, line, near in mixed:
+            print(f"  {path}:{line}\n    …{near}…")
+        print("\n291 is the track count. The instruments are 290; the extra "
+              "track is a closure audit holding no articles.")
+        return 1
+    print(f"all {len(facts())} guarded figures match the analysis, and no "
+          f"note calls 291 tracks 291 instruments")
     return 0
 
 
