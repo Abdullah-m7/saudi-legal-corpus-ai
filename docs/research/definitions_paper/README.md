@@ -134,32 +134,28 @@ the finished Word file rather than estimated.
 
 ## Venue
 
-**Statute Law Review** (Oxford University Press). Its stated objectives are
-the legislative process, law reform, and *the drafting and interpretation of
-legislation*, which is this article's subject. Verified requirements:
+**Notre Dame Journal of Legislation**, through Scholastica, in Bluebook, and
+then further US law reviews under the simultaneous-submission norm. Every
+requirement, every field, and the reasoning for the route are in
+`submission_kit.md`.
 
-| | |
-|---|---|
-| Review model | Double-anonymous, two reviewers; author-suggested reviewers not considered |
-| Length | Article 6,500–10,000 words **including footnotes**; short article 3,000–4,000 |
-| Submission | ScholarOne — `mc.manuscriptcentral.com/statlaw` |
-| Format | Word; anonymised manuscript **and** separate title page, both double-spaced; figures as separate EPS/AI; footnotes per OSCOLA |
-| Frequency | Three issues per year |
+### The venue that rejected it, and the two that were declined
 
-The audience is doctrinal and quantitative work is unusual there, so the
-article leads with the legal question and keeps the pipeline behind it.
+*Statute Law Review* (Oxford) desk-rejected the article on 28 August 2026
+(`STATLAW-2026-147`) without review, suggesting a company-law journal. The
+article is not company law; the likeliest reading is that *establishment* in
+the old title read to a British lawyer as a corporate vehicle. Reframed rather
+than merely retitled.
 
-Alternatives considered:
+*European Journal of Law Reform* is excluded: Constantin Stefanou, who signed
+the Statute Law Review rejection, was its managing editor from 2012 to 2022
+and remains on its advisory board.
 
-- **International Journal of Law and Information Technology** (Oxford) — also
-  ScholarOne, but its scope is AI, IT and cyberspace law. This article is
-  neither; the fit is weaker.
-- **Artificial Intelligence and Law** (Springer) — fits a legal-AI framing,
-  but paper 2 is already under review there.
-- **International Journal of Legal Discourse** (De Gruyter) — legal language.
-
-The earlier Springer/author–date build of this manuscript, before it was
-rewritten at article length for a law journal, is in git history.
+*The Loophole*, the journal of the Commonwealth Association of Legislative
+Counsel, was the earlier choice and remains the fallback. Its readers are
+exactly the drafters this article addresses, but it is not in DOAJ and has no
+impact factor, and one submission there is one chance where a Bluebook
+conversion opens many.
 
 ## Pre-submission checklist
 
