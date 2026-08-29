@@ -40,20 +40,18 @@ TITLE_PAGE = r"""\documentclass[12pt]{article}
 {\large\bfseries Measuring Appellate Reason-Giving in Saudi Commercial Courts}
 
 \vspace{1.4em}
-Abdullah Almohammedi\\
+Abdullah Almohammedi\footnote{Abdullah Almohammedi is an
+independent researcher in Saudi Arabia working on machine-readable corpora of
+Saudi legislation and adjudication. He built the corpus this article measures
+and the citator that joins its two halves at the level of the article. His
+work is published openly, with the code that produces every reported
+figure.}\\
 Independent Researcher, Kingdom of Saudi Arabia\\
 \texttt{abdullah.m.almohammedi@gmail.com}\\
 ORCID: 0009-0001-0832-0995
 \end{center}
 
 \vspace{1.2em}
-\noindent\textbf{Author biography.} Abdullah Almohammedi is an independent
-researcher in Saudi Arabia working on machine-readable corpora of Saudi
-legislation and adjudication. He built the corpus this article measures and
-the citator that joins its two halves at the level of the article. His work is
-published openly, with the code that produces every reported figure.
-
-\vspace{0.8em}
 \noindent\textbf{Competing interests.} None. This work received no funding,
 and the author holds no position in, and no relationship with, the Ministry of
 Justice or any court whose judgments it measures.
@@ -133,12 +131,19 @@ TEXT_PARTS = re.compile(r"^word/(document|footnotes|endnotes|comments|"
                         r"header\d*|footer\d*)\.xml$")
 
 
+# IJCA's limit is 7,000 words *including footnotes*, and this article carries
+# its references in footnotes, so counting the body alone both understates the
+# manuscript and makes the figure declared on the title page untrue. Count
+# what the journal counts.
+COUNTED_PARTS = ("word/document.xml", "word/footnotes.xml")
+
+
 def plain(path, counting=False):
-    """The text of a .docx. `counting` returns the body only, which is what a
-    word limit means; the audit wants everything."""
+    """The text of a .docx. `counting` returns body and footnotes, which is
+    what this journal's word limit means; the audit wants everything."""
     with zipfile.ZipFile(path) as z:
         names = [n for n in z.namelist()
-                 if (n == "word/document.xml" if counting
+                 if (n in COUNTED_PARTS if counting
                      else TEXT_PARTS.match(n))]
         xml = "\n".join(z.read(n).decode("utf-8", "ignore") for n in names)
     xml = re.sub(r"</w:p>", "\n", xml)

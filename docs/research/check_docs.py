@@ -80,6 +80,10 @@ def facts():
     # build. That makes it the one file where a stale number is
     # submitted rather than merely written.
     J = "applied_law_paper/submission_kit.md"
+    # Same reason as J: the IJCA kit holds a Comments-to-the-Editor note that
+    # is pasted into a submission box by hand, so its figures leave the
+    # repository without passing through a build.
+    I = "appeal_paper/submission_kit.md"
     return [
         (C, "مدخلات الكشّاف", ar_int(cit["entries"])),
         (C, "أدوات نظامية", ar_int(cit["instruments"])),
@@ -169,6 +173,11 @@ def facts():
             ("الحصة الإجرائية", f"{float(m['nProceduralShare']):.1f}"),
             ("حصة المحاكم التجارية", f"{float(m['nCCLShare']):.1f}"),
             ("حصة المعاملات المدنية", f"{float(m['nCivilShare']):.1f}"),
+        ]],
+
+        *[(I, label, value) for label, value in [
+            ("قرارات الاستئناف", f"{int(m['nAppeals']):,}"),
+            ("الأزواج المطابَقة", f"{int(m['nPaired']):,}"),
         ]],
     ]
 
