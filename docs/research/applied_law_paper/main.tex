@@ -147,9 +147,13 @@ the case, not less, and drawn from fewer instruments. And amendment activity
 predicts neither citation nor its absence, once the composition of the
 statute book is controlled for.
 
-Three methodological points are reported here rather than left implicit,
+Four methodological points are reported here rather than left implicit,
 because each was a defect that produced confident wrong answers before it was
-found. Matching a citation to an instrument is not string containment: a
+found. The pattern that finds a citation must accept the prefixes Arabic
+attaches to the word for `article'; one that does not misses
+\nPrefixGapShare{} per cent of everything, invisibly, because a citation never
+reached is not a citation failed on (§\ref{sec:extraction}). Matching a
+citation to an instrument is not string containment: a
 regulation's title contains its parent law's title, and a matcher that
 accepts containment in either direction silently misdirected roughly half of
 all citations in an earlier version of this analysis (§\ref{sec:matching}).
@@ -159,7 +163,9 @@ the reasons is not the parties' pleadings: it is written by the court, and at
 least \nRecitalByCourtShare{} per cent of the statutory citations in it sit
 in a sentence whose actor is the court (§\ref{sec:voices}). Each of these
 would change a reported result, and none is visible in the output of a
-matcher that reports only a match rate.
+matcher that reports only a match rate. The first was not found by any check
+run against this corpus at all; it was found by pointing the extractor at a
+document written outside it.
 
 The article proceeds as follows. §\ref{sec:related} places the work in three
 literatures. §\ref{sec:data} describes both corpora and what the publishing
@@ -259,6 +265,7 @@ judgments is present; the structure the publisher promises is not.
 \label{sec:method}
 
 \subsection{Extracting a citation}
+\label{sec:extraction}
 
 A Saudi judgment cites a provision in a stable form: the article, then the
 preposition \emph{min} (`of'), then the name of the instrument. Citations are extracted by matching
@@ -273,6 +280,26 @@ swallows the quotation and matches nothing. Captures are therefore truncated
 at a list of tokens that begin a new syntactic unit --- \emph{al-sadir}
 (`issued by'), \emph{wa-llati nassat} (`which provided'), \emph{ala al-nahw
 al-ati} (`as follows') and others --- before matching is attempted.
+
+The pattern must also accept the prefixes Arabic attaches to the word for
+`article' rather than setting apart: the same reference is written
+\emph{al-maddah}, \emph{bil-maddah}, \emph{lil-maddah}, \emph{wal-maddah},
+each a single orthographic word. An earlier version of this analysis anchored
+on \emph{al-maddah} alone, and so never saw \emph{wafqan lil-maddah}
+(`pursuant to article') or \emph{istinadan lil-maddah} (`relying on
+article') --- among the commonest forms in judicial reasoning. The gap was
+worth \nPrefixGap{} citations, \nPrefixGapShare{} per cent of everything the
+analysis had then counted, and every figure in this article was recomputed
+after the correction.
+
+How it was found is the part worth reporting. No check run against the
+judgments could see it: the match rate was unaffected, because a citation the
+pattern never reaches is not a citation it fails on, and the corpus shares the
+drafting conventions that made those forms rare within it. It surfaced when
+the same extractor was pointed at a document written by a practising lawyer,
+where it silently dropped two of his four articles. Fifty thousand documents
+produced by one institution share that institution's habits, and an instrument
+validated only against them inherits the habits as assumptions.
 
 \subsection{Matching an instrument}
 \label{sec:matching}
