@@ -192,7 +192,12 @@ def build_archive(anon_source):
         if pages != here:
             sys.exit(f"REFUSING: the archive builds {pages} pages, the "
                      f"anonymised manuscript has {here}")
-    print(f"jels_main_manuscript.zip builds standalone to {pages} clean pages")
+        # The portal wants the PDF alongside the .tex, and the only PDF that
+        # cannot disagree with the source uploaded beside it is the one that
+        # source just built. Keep that one, not the sibling.
+        shutil.copy2(tmp / "main.pdf", OUT / "jels_main_manuscript.pdf")
+    print(f"jels_main_manuscript.zip builds standalone to {pages} clean "
+          f"pages, kept as jels_main_manuscript.pdf")
 
 
 def build_title_page():

@@ -136,28 +136,31 @@ JEL codes, if the portal asks: `K40, K41, K10, C81`.
 
 ## 4 · Files — the portal's own slots
 
-Read off the upload screen on 29 August 2026. It is **not** the five-file
-list this kit first assumed, and the difference matters: the portal takes
-**one** Main Manuscript and requires a **separate Title Page in Word** which
-it does not send to reviewers. So the author's identity does not belong in
-the manuscript at all.
+Read off the upload screens on 29 August 2026, in two passes: the second
+screen splits the LaTeX route into two required slots, and it wants the PDF
+as well as the source.
 
 | Slot | Portal says | Upload |
 |---|---|---|
-| **Main Manuscript** | Required · MS Word or LaTeX · **maximum 1** · *"You may bundle LaTeX manuscript files in a single archive"* | `submission/jels_main_manuscript.zip` — the **anonymised** source plus `numbers.tex` |
-| **Title Page** | Required · **MS Word** · maximum 1 · *"The Title Page will not be sent to peer reviewers"* | `submission/title_page.docx` — **identified**: name, address, telephone, ORCID, and every declaration |
-| **Figure** | Optional · image files | **Nothing.** This article has three tables and no figures. |
-| Cover letter | (its own step, not a file slot) | `submission/cover_letter.pdf` |
+| **Main Document – LaTeX File** | Required · `.tex`, `.zip`, `.tar.gz` · *"should not contain Identifying information (authors' names, affiliations, and funding sources)"* | `submission/jels_main_manuscript.zip` |
+| **Anonymized Main Document – LaTeX PDF** | Required · `.pdf` · *"A LaTeX PDF is required if you provide a .tex Main Document"* · same anonymity rule | `submission/jels_main_manuscript.pdf` |
+| **Title Page** | Required · MS Word · maximum 1 · *"The Title Page will not be sent to peer reviewers"* | `submission/title_page.docx` — **identified**, with every declaration |
+| **Figure** | Optional · image files | **Nothing.** Three tables, no figures. |
+| Cover letter | its own step, not a file slot | `submission/cover_letter.pdf` |
 
-`build.py` produces the archive and the title page, and checks each against
-the opposite rule: it extracts the zip into an **empty directory**, compiles
-it there, and refuses to finish unless the result is 16 pages carrying none
-of the nine identifying strings — while the title page is refused unless it
-*does* carry all six of the author's details. A manuscript that builds only
-in its own folder is a manuscript the editor cannot read.
+The PDF in the second slot is not `main_anonymous.pdf`. It is the PDF that
+the uploaded archive itself builds: `build.py` extracts the zip into an empty
+directory, compiles it there, and keeps *that* output. A source and a PDF
+uploaded side by side are a pair the editor will assume correspond; the only
+way they cannot disagree is if one produced the other.
 
-Do not upload `main.pdf`, `main_anonymous.pdf`, or the loose `.tex` files.
-They remain in `submission/` as the author's record.
+`build.py` checks each artefact against the rule that applies to it — the
+archive and its PDF are refused unless they carry none of the nine
+identifying strings and run to 16 pages; the title page is refused unless it
+*does* carry all six of the author's details.
+
+Do not upload `main.pdf` or the loose `.tex` files. They stay in
+`submission/` as the author's record.
 
 ## 5 · Declarations
 
