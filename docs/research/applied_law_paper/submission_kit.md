@@ -82,6 +82,17 @@ codified much of its private and commercial law within a decade while
 publishing commercial judgments in full text, so both sides of the comparison
 exist at article level for one jurisdiction.
 
+## Submitted
+
+**Submitted to the *Journal of Empirical Legal Studies* on 29 August 2026.
+Manuscript ID `4582420`. Status: `In Screening`.** Three files went up -- the
+anonymised LaTeX archive, the PDF that archive builds, and the identified
+title page -- and the reviewer PDF the portal compiled was read page by page
+before it was approved: 18 pages (two of the system's own, then the 16 of the
+manuscript), tables intact, and the data-availability footnote correctly
+reading *"Repository withheld for anonymous review."* The `\ifanon` gate held
+in the publisher's own compilation, not only in ours.
+
 ## Previous submission
 
 Submitted to the *Journal of Legal Analysis* on 27 August 2026

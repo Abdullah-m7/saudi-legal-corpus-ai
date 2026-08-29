@@ -3,7 +3,10 @@
 *99 Per Cent of the Procedure, 27 Per Cent of the Code: The Enacted Law and
 the Applied Law in 50,666 Judgments.*
 
-**الوجهة الحالية: Journal of Empirical Legal Studies** (Wiley، مع كلية الحقوق
+**قُدِّمت إلى Journal of Empirical Legal Studies في ٢٩ أغسطس ٢٠٢٦ — رقم
+المخطوطة `4582420`، والحالة `In Screening`.**
+
+**الوجهة: Journal of Empirical Legal Studies** (Wiley، مع كلية الحقوق
 بجامعة كورنيل) — تحكيمٌ مزدوج التعمية، ولا رسوم تقديم ولا APC على مسار
 الاشتراك.
 
