@@ -26,6 +26,7 @@ NUMBERS = HERE / "applied_law_paper" / "numbers.tex"
 APPEAL = HERE / "appeal_paper" / "numbers.tex"
 DEFS = HERE / "definitions_paper" / "numbers.tex"
 CITATOR = HERE / "citator" / "index.json"
+COVERAGE = HERE / "coverage" / "coverage.json"
 
 EASTERN = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
 
@@ -58,6 +59,7 @@ def article(track, num, field):
 def facts():
     m = macros()
     cit = json.loads(CITATOR.read_text(encoding="utf-8"))
+    cov = json.loads(COVERAGE.read_text(encoding="utf-8"))
     C = "citator/README.md"
     K = "arabic_paper/applied_law_concept.md"
     # A paper's own README is the first thing a reader opens and the last
@@ -146,6 +148,11 @@ def facts():
         (F, "مدخلات الكشّاف", f"{int(cit['entries']):,}"),
         (F, "أدوات الكشّاف", f"{int(cit['instruments']):,}"),
         (F, "مواد الكشّاف", f"{int(cit['articles']):,}"),
+        # CITATION.cff now states the corpus's composition, not only its size.
+        # A citing researcher reads this file; the share is the part that
+        # tells them what the corpus is a corpus of.
+        (F, "حصة المحكمة التجارية", f"{cov['commercialShare']:.2f}"),
+        (F, "الأجسام المؤثِّرة", f"{cov['effectiveBodies']:.2f}"),
 
         (D, "قرارات الاستئناف", ar_int(m["nAppeals"])),
         (D, "بلا أسباب خاصة", ar_dec(m["nNoReasonsShare"])),
