@@ -134,18 +134,30 @@ Saudi Arabia
 
 JEL codes, if the portal asks: `K40, K41, K10, C81`.
 
-## 4 · Files, in upload order
+## 4 · Files — the portal's own slots
 
-| Order | File | Designation |
+Read off the upload screen on 29 August 2026. It is **not** the five-file
+list this kit first assumed, and the difference matters: the portal takes
+**one** Main Manuscript and requires a **separate Title Page in Word** which
+it does not send to reviewers. So the author's identity does not belong in
+the manuscript at all.
+
+| Slot | Portal says | Upload |
 |---|---|---|
-| 1 | `submission/main_anonymous.pdf` | Main Document — **anonymised**, the file reviewers see |
-| 2 | `submission/main.pdf` | Supplementary / full version with author details |
-| 3 | `submission/main.tex` | Source file (LaTeX) |
-| 4 | `submission/numbers.tex` | Source file — `main.tex` will not compile without it |
-| 5 | `submission/cover_letter.pdf` | Cover letter — editors only |
+| **Main Manuscript** | Required · MS Word or LaTeX · **maximum 1** · *"You may bundle LaTeX manuscript files in a single archive"* | `submission/jels_main_manuscript.zip` — the **anonymised** source plus `numbers.tex` |
+| **Title Page** | Required · **MS Word** · maximum 1 · *"The Title Page will not be sent to peer reviewers"* | `submission/title_page.docx` — **identified**: name, address, telephone, ORCID, and every declaration |
+| **Figure** | Optional · image files | **Nothing.** This article has three tables and no figures. |
+| Cover letter | (its own step, not a file slot) | `submission/cover_letter.pdf` |
 
-`numbers.tex` is not optional. It is the file that holds every measurement in
-the article; leave it out and the source Wiley receives does not build.
+`build.py` produces the archive and the title page, and checks each against
+the opposite rule: it extracts the zip into an **empty directory**, compiles
+it there, and refuses to finish unless the result is 16 pages carrying none
+of the nine identifying strings — while the title page is refused unless it
+*does* carry all six of the author's details. A manuscript that builds only
+in its own folder is a manuscript the editor cannot read.
+
+Do not upload `main.pdf`, `main_anonymous.pdf`, or the loose `.tex` files.
+They remain in `submission/` as the author's record.
 
 ## 5 · Declarations
 
