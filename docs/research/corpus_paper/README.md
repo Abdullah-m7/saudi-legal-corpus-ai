@@ -10,6 +10,10 @@ Research Square tracking dashboard (<https://www.researchsquare.com/>), which
 is where these status lines come from; Snapp itself issues no manuscript
 number visible to the author at this stage.
 
+**Preprint: posted through Springer's *In Review* service on 29 August 2026,
+awaiting Research Square prescreen.** The DOI it will carry is not yet
+issued; `../preprint_doi_checklist.md` lists every file that takes it.
+
 | File | Purpose |
 |---|---|
 | `saudi_legal_corpus_resource_paper.md` | The paper draft (English). |
