@@ -206,7 +206,10 @@ def main():
         "corpus": {
             "terms_total": len(terms),
             "definition_occurrences_total": total_occurrences,
-            "instruments_total": glossary.get("total_tracks_in_registry"),
+            # the registry holds one non-legislative track --- a closure audit
+            # carrying no articles --- so the instruments are one fewer
+            "instruments_total": (glossary.get("total_tracks_in_registry") or 0) - 1,
+            "registry_tracks": glossary.get("total_tracks_in_registry"),
             "instruments_with_a_definitions_article":
                 glossary.get("tracks_with_definitions_article_parsed"),
         },

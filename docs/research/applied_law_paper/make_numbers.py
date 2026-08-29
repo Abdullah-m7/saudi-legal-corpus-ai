@@ -92,10 +92,17 @@ def main():
         "nNamed": named,
         "nAnaphoric": anaph,
         "nUnmatchedShare": 100 * (inst["citations"] - matched) / inst["citations"],
-        "nInstruments": arts and 291,
+        # 291 registry tracks, but one of them is a repository-level closure
+        # audit that holds no articles. The instruments are the 290 the article
+        # universe is actually spread over, which the analysis already knows.
+        "nInstruments": len(arts["instrument_sizes"]),
+        "nRegistryTracks": 291,
         "nInstrumentsCited": cited_instruments,
-        "nInstrumentsNever": 291 - cited_instruments,
-        "nInstrumentsCitedShare": 100 * cited_instruments / 291,
+        # against the instruments, not the registry tracks: the closure audit
+        # is not an instrument the courts could have cited
+        "nInstrumentsNever": len(arts["instrument_sizes"]) - cited_instruments,
+        "nInstrumentsCitedShare":
+            100 * cited_instruments / len(arts["instrument_sizes"]),
         "nProceduralShare": 100 * proc / matched,
         "nTopOneShare": 100 * ranked[0] / matched,
         "nTopTenShare": 100 * sum(ranked[:10]) / matched,
