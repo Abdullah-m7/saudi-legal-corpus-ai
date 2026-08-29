@@ -91,6 +91,8 @@ The system provides a box. Paste this:
 ```
 This manuscript is not under consideration anywhere else and has not been published.
 
+Two files are attached. The manuscript is anonymised for double-blind review. The second file, uploaded as "Other" because the system offers no title-page category, is the title page: it carries my name, affiliation, ORCID, biography and competing-interests declaration, and should not go to reviewers.
+
 One note on the DOI checklist item: four of the six references carry DOIs, which are given in both the footnote and the bibliography. Cohen (2015), Washington and Lee Law Review, is not registered with Crossref, and Vogel (2000) is a monograph; neither is omitted by oversight.
 
 On fit: the finding is that three quarters of appellate decisions in this corpus add no reasoning of their own to the published record, and that whether a circuit writes is not independent of what it decides -- the second instance writes far more often when it disturbs than when it affirms. That is a fact about what a publication policy yields, which is why it is offered to this journal rather than to a doctrinal or an economics one. The data are 15,383 published Saudi commercial appellate decisions, 13,924 of them matched to the first-instance judgment they review.
