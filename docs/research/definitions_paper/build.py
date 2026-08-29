@@ -333,9 +333,11 @@ def main():
         prepare(anon=True, for_docx=True), encoding="utf-8")
     ref = double_spaced_reference()
     words = docx("submission_manuscript", "submission_manuscript.docx", ref)
+    # The Loophole's limit, read from CALC's own page on 29 August 2026: no
+    # more than 8,000 words including footnotes, with an abstract under 200.
     print(f"  submission_manuscript.docx: {words} words "
-          f"({'in range' if 6500 <= words <= 10000 else 'OUT OF RANGE'} "
-          f"for a Statute Law Review article)")
+          f"({'within' if words <= 8000 else 'OVER'} "
+          f"The Loophole's 8,000-word limit)")
 
     print("title page")
     latex("submission_title_page",

@@ -31,12 +31,13 @@ Dale Centre for Legislative Studies at IALS and was managing editor of the
 board. EJLR is therefore not the next venue. The editorship of *The Theory and
 Practice of Legislation*, where paper 5 is under review, has not been checked.
 
-**Current target: *The Loophole*,** the journal of the Commonwealth
-Association of Legislative Counsel — practising legislative drafters, which is
-the audience this article's conclusion addresses. Their caps are 8,000 words
-including footnotes and a 200-word abstract; the manuscript is at 7,993 and
-the abstract at 198. Verify the remaining requirements from their own page
-before submitting.
+**Target: *The Loophole*,** the journal of the Commonwealth Association of
+Legislative Counsel — practising legislative drafters, which is the audience
+this article's conclusion addresses. Requirements verified from CALC's own
+page on 29 August 2026 and recorded in `submission_kit.md`: no more than 8,000
+words including footnotes (ours: 7,993), an abstract under 200 (ours: 198),
+MS Word, and email to the Editor in Chief. Non-members are expressly
+encouraged to submit, and no fee is stated.
 
 | File | Purpose |
 |---|---|

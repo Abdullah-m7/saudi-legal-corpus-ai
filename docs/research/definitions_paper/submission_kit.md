@@ -1,143 +1,71 @@
-# Submission kit — *Statute Law Review* (Oxford University Press)
+# Submission kit — *The Loophole* (Commonwealth Association of Legislative Counsel)
 
-Everything needed to submit this article, with the exact text to paste into
-each field. Regenerate the files first:
-
-```
-python3 docs/research/definitions_paper/definition_analysis.py
-python3 docs/research/definitions_paper/make_figures.py
-cd docs/research/definitions_paper && python3 build.py
-pdflatex cover_letter && pdflatex cover_letter
-```
-
-## Where
+Read from CALC's own home page on 29 August 2026, not from memory.
 
 | | |
 |---|---|
-| Journal home | <https://academic.oup.com/slr> |
-| Author guidelines | <https://academic.oup.com/slr/pages/author-guidelines> |
-| **Submission site** | **<https://mc.manuscriptcentral.com/statlaw>** (ScholarOne Manuscripts) |
-| Editors-in-Chief | Professor Constantin Stefanou and Professor Helen Xanthaki |
+| Journal | *The Loophole*, journal of the Commonwealth Association of Legislative Counsel |
+| Scope | «drafting, legal, procedural and management issues relating to the preparation and enactment of legislation» |
+| Who may submit | «CALC members **and others** interested in legislative topics are also encouraged to submit» — no membership required |
+| Length | **No more than 8,000 words including footnotes.** Ours: 7,993 |
+| Abstract | **No more than 200 words.** Ours: 198 |
+| Format | MS Word or compatible, in the style of the template on the CALC home page |
+| Where | **Aleksander Hynnä, Editor in Chief** — `loophole.calc@gmail.com` |
+| Fee | None stated |
+| Schedule | Issues appear through the year; the current one is July 2026 |
 
-ScholarOne accounts are per-publisher, not shared with Springer's Snapp (used
-for papers 1 and 2). Create a new account with the same email and ORCID.
+## House style, taken from the journal's own file
 
-Note that Professor Xanthaki, one of the two Editors-in-Chief, is the author
-of two of the works the article's drafting-literature footnotes rest on
-(*Thornton's Legislative Drafting*, 6th edn, and *Drafting Legislation*).
-That is a sign the article is aimed at the right journal, and it is also a
-reason those two citations had to be exactly right; both were checked against
-the published record.
+CALC publishes each issue as a `.docx` as well as a PDF, so the July 2026
+issue is the style specimen. Inspecting it:
 
-## What to upload
-
-| # | File | ScholarOne file designation |
-|---|---|---|
-| 1 | `submission_manuscript.docx` | Main Document — **anonymised**, double-spaced |
-| 2 | `submission_title_page.docx` | Title Page — identity, declarations, word count |
-| 3 | `fig1_funnel.eps` | Figure |
-| 4 | `fig2_adjudication.eps` | Figure |
-| 5 | `cover_letter.pdf` | Cover Letter |
-
-The journal asks for Word files, figures as separate EPS or AI files rather
-than embedded, and tables in editable form. `build.py` produces all of that:
-it replaces each figure with a `[Figure N near here]` marker plus its
-caption, keeps Table 1 as a real Word table, sets Normal, Body Text and
-Footnote Text to double spacing, and refuses to write the manuscript if any
-identifying string survives into it.
-
-**Do not upload** `main.pdf` (identified) or `main_anon.pdf`. They exist so
-the author can read the typeset article; the journal wants Word.
-
-## Field-by-field
-
-**Type:** Article (6,500–10,000 words including footnotes). This manuscript
-is 7,972 words including footnotes — the figure printed on the title page and
-by `build.py`; re-read it from the build output if the text changes.
-
-**Title:**
-
-```
-What Counts as an Establishment? Definitional Fragmentation Across Saudi Arabian Legislation
-```
-
-**Running head:** Definitional Fragmentation in Saudi Legislation
-
-**Abstract:** paste from `submission_manuscript.docx` (the paragraph under
-*Abstract*). It contains no identifying material.
-
-**Keywords:**
-
-```
-statutory definitions; legislative drafting; interpretation; Saudi Arabia; legal corpora; terminological consistency
-```
-
-**Author:** Abdullah Almohammedi · Independent Researcher ·
-abdullah.m.almohammedi@gmail.com · ORCID 0009-0001-0832-0995
-
-**Suggested reviewers:** none. The journal states that it does not consider
-author-suggested reviewers.
-
-**Review process:** the Editorial Office does an initial assessment, then one
-of the Editors-in-Chief oversees double-anonymous review, normally by two
-reviewers. The journal publishes three issues a year and gives no timeline.
-
-## Declarations screens
-
-| Question | Answer |
+| | |
 |---|---|
-| Funding | None received. |
-| Conflict of interest | None. |
-| Ethics approval | Not applicable — no human participants, no animal subjects, no personal data; published national legislation only. |
-| Data availability | Corpus and analysis code openly archived: DOI 10.5281/zenodo.22019183 (concept DOI 10.5281/zenodo.22019182). |
-| Previously published / preprint | No preprint of this article. Two companion manuscripts on the same corpus are under review at other journals; disclosed in the cover letter and on the title page. |
-| Under consideration elsewhere | No. |
-| Licence | Standard licence (no charge). Choose a Creative Commons licence only if a funder requires it — open access charges apply and there is no funder here. |
+| Page | US Letter, 1-inch margins all round |
+| Body | Times New Roman 12 pt (`Normal`) |
+| Headings | Arial 11 pt (`heading 3`–`heading 5`); a 16 pt Arial `Heading` |
+| Footnotes | 10 pt (`footnote text`) |
+| Named styles | `Abstract`, `Abstract heading`, `Body`, `Centred line` |
 
-## Format rules the build already applies
+Our `.docx` is produced by pandoc through `build.py`. Matching those styles
+exactly is an **open item**: the issue file can be passed to pandoc as a
+reference document, which would carry the page setup and the heading and
+footnote styles across. It has not been done yet, and it should be checked for
+leaked headers and footers if it is.
 
-The journal asks for things the LaTeX source does not encode. `build.py`
-handles each of them, so do not re-do them by hand in Word:
+## What to send
 
-| Requirement | How it is met |
+`python3 build.py` produces everything; `submission/` is git-ignored because
+the identified files carry a postal address and a telephone number.
+
+| File | What it is |
 |---|---|
-| Word files | pandoc, from the same `main.tex` |
-| Double-spaced | Normal, Body Text and Footnote Text styles patched in a pandoc reference document |
-| Times New Roman | the same reference document |
-| No underlines | the Hyperlink style's underline is stripped; the anonymised manuscript has no links at all |
-| Figures separate, not embedded | each figure becomes `[Figure N near here]` plus its caption; EPS files uploaded separately |
-| Tables editable | Table 1 stays a real Word table |
-| Cross-references | `\ref` is resolved to a number before conversion, because it otherwise becomes a broken internal link in Word |
-| Anonymised | the `\ifanon` switch is resolved by the script, then the finished file is searched for identifying strings |
+| `submission_manuscript.docx` | The manuscript. 7,993 words. |
+| `submission_title_page.docx` | Title page with the identifying material. |
+| `cover_letter.pdf` | Addressed to the Editor in Chief. |
+| `fig1_funnel.eps`, `fig2_adjudication.eps` | Figures, separate files. |
 
-## Before clicking submit
+## Why here
 
-- [ ] Re-run `build.py` and confirm it prints **clean** for the anonymity
-      audit and **in range** for the word count.
-- [ ] Open `submission_manuscript.docx` and check the first page is the title
-      and abstract, with no author block.
-- [ ] Check that the footnotes are numbered continuously and rendered as Word
-      footnotes, not as endnotes or plain text.
-- [ ] Confirm both EPS figures open.
-- [ ] Confirm the title page carries the word count that `build.py` reported.
+The article ends where a drafter can act — three responses of ascending
+ambition, the least needing no legislation — and its output is a finite list
+of terms rather than a rate. That is *The Loophole*'s readership exactly:
+practising legislative counsel across the Commonwealth.
 
-## Submitted
+There is also a substantive reason. Saudi Arabia has **no general
+interpretation statute**, which makes it the untreated case against which the
+Commonwealth interpretation acts can be assessed — and the article says which
+of its four conflicts such an instrument would and would not resolve. That
+question belongs to this journal more than to any other.
 
-```
-Statute Law Review — manuscript ID: STATLAW-2026-147   submitted: 20 August 2026
-```
+## Previous submission
 
-Submitted as an **Article** (7,972 words including footnotes), double-anonymous
-review. Five files uploaded: anonymised manuscript, title page, two EPS
-figures, cover letter; the cover letter text was also pasted into the Details
-and Comments box.
+Submitted to *Statute Law Review* on 27 August 2026 (`STATLAW-2026-147`) and
+desk-rejected on 28 August, before review, with a suggestion to try a company
+law journal — which the article is not. See `README.md` for the diagnosis and
+what was changed in response.
 
-The submission proof was audited before submitting: no identifying string
-appears anywhere in its 32 pages — the platform excluded the title page and
-the cover letter from the review proof, as their designations require. All 26
-footnotes rendered as real footnotes, numbered from 1. Both figures rendered
-from EPS at 300 dpi with their captions.
-
-Next: the Editorial Office does an initial assessment, then one of the
-Editors-in-Chief oversees review by (normally) two reviewers. The journal
-publishes three issues a year and gives no timeline.
+**Do not send this to the *European Journal of Law Reform* next.** Constantin
+Stefanou, who signed the rejection, was EJLR's managing editor from 2012 to
+2022 and remains on its advisory board, and he and Helen Xanthaki edit
+*Statute Law Review* jointly from the Sir William Dale Centre at IALS.

@@ -40,7 +40,11 @@ SUSPECT = re.compile(
 
 # Lines that legitimately carry digits: the generated macros are not here, but
 # citations and DOIs are.
-EXEMPT = re.compile(r"zenodo|doi|orcid|github|ukpga|nisi|http", re.I)
+EXEMPT = re.compile(
+    r"zenodo|doi|orcid|github|ukpga|nisi|http"
+    # an OSCOLA or Bluebook pinpoint --- «ss 21.3 and 24.3» in a footnote
+    # citing a treatise --- is a citation, not a result.
+    r"|\bedn\b|\bss?\s\d|LexisNexis|Butterworths", re.I)
 
 
 # A table cell is where a bare integer is a measurement. `129` in prose is
@@ -70,6 +74,42 @@ def check_tables(SRC, lines):
     return bad
 
 
+def generated_values():
+    """Every value numbers.tex carries, as it would be typed in prose.
+
+    The pattern above catches a measurement by its shape --- a separator, a
+    decimal, a percent sign. It cannot catch «290 instruments», because that
+    looks like an article number or a year. But if a bare integer in prose
+    equals a figure the analysis owns, it is that figure, typed. This rule
+    found a cover letter still carrying 290 after the manuscript had been
+    corrected to 291 --- the letter's own guard had passed twice.
+    """
+    src = HERE / "numbers.tex"
+    if not src.exists():
+        return set()
+    out = set()
+    for raw in re.findall(r"\\newcommand\{\\\w+\}\{([^{}]*(?:\{,\}[^{}]*)*)\}",
+                          src.read_text(encoding="utf-8")):
+        plain = raw.replace("{,}", "")
+        if plain.isdigit() and len(plain) >= 3:
+            out.add(plain)
+            out.add(f"{int(plain):,}")
+    return out
+
+
+# «article 721» is a provision's number and «106 J. Pol. Econ.» is a volume,
+# and both can coincide with a real measurement --- the civil code's last
+# article is its 721st, and the corpus cites 106 instruments. A number
+# introduced by an article or section word, or sitting in a citation, is not a
+# result however much it looks like one.
+CITATION_CONTEXT = re.compile(r"\\bjournal\{|\\bbook\{|\\btitle\{")
+NOT_A_RESULT = re.compile(
+    r"(?:art|arts|article|articles|s|ss|sec|secs|section|sections|para|paras|"
+    r"no|nos|number|reg|regs|rule|rules|ch|chs|chapter|clause)\.?~?\s*$", re.I)
+
+BARE = re.compile(r"(?<![\\A-Za-z0-9.,])([\d,]{3,})(?![A-Za-z0-9.])")
+
+
 def check(SRC):
     if not SRC.exists():
         print(f"{SRC.name} does not exist yet --- nothing to check")
@@ -92,6 +132,16 @@ def check(SRC):
                 continue
             bad.append((n, value, line.strip()[:78]))
     bad += check_tables(SRC, lines[start:])
+    owned = generated_values()
+    for n, line in enumerate(lines[start:], start + 1):
+        body = line.split("%")[0]
+        if EXEMPT.search(body):
+            continue
+        if CITATION_CONTEXT.search(body):
+            continue
+        for m in BARE.finditer(body):
+            if m.group(1) in owned and not NOT_A_RESULT.search(body[:m.start()]):
+                bad.append((n, m.group(1), line.strip()[:78]))
     if bad:
         print(f"{len(bad)} typed measurement(s) in {SRC.name} --- use a macro "
               f"from numbers.tex instead:")
