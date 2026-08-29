@@ -167,6 +167,65 @@ FUNCS = {"bidi": _bidi, "tatweel": _tatweel, "digits": _digits,
          "lam_swap": _lam_swap, "brackets": _brackets}
 
 
+# Every rule is a substitution, so a canonical position can be traced back to
+# the raw byte it came from -- if the trace is kept while the substitutions
+# are made. It is kept because the sampling frame itself moves when the layer
+# changes: with the transposition repair off, «املادة» is not the word
+# «المادة» and the frame loses occurrences. An evaluation that anchored items
+# in canonical positions could not then compare two settings of the layer at
+# all, and an evaluation that ignored the problem would silently compare
+# different items.
+
+
+def _trace_translate(text, trace, drop=(), table=None):
+    out, out_trace = [], []
+    for ch, src in zip(text, trace):
+        if ord(ch) in drop or ch in drop:
+            continue
+        out.append(ch.translate(table) if table else ch)
+        out_trace.append(src)
+    return "".join(out), out_trace
+
+
+def _trace_sub(pattern, repl, text, trace):
+    out, out_trace, pos = [], [], 0
+    for m in pattern.finditer(text):
+        out.append(text[pos:m.start()])
+        out_trace.extend(trace[pos:m.start()])
+        piece = m.expand(repl)
+        out.append(piece)
+        # every character of the replacement is attributed to the start of
+        # what it replaced: the repair reorders, so a finer claim would be
+        # a fiction
+        out_trace.extend([trace[m.start()]] * len(piece))
+        pos = m.end()
+    out.append(text[pos:])
+    out_trace.extend(trace[pos:])
+    return "".join(out), out_trace
+
+
+def trace(raw, rules=None):
+    """Canonical text with, for each character, the raw index it came from."""
+    wanted = RULES if rules is None else [r for r in RULES if r in rules]
+    text, tr = raw, list(range(len(raw)))
+    for rule in wanted:
+        if rule == "bidi":
+            text, tr = _trace_translate(text, tr, drop=BIDI_CHARS)
+        elif rule == "tatweel":
+            text, tr = _trace_translate(text, tr, drop=(TATWEEL,))
+        elif rule == "digits":
+            text, tr = _trace_translate(text, tr, table=DIGIT_MAP)
+        elif rule == "lam_swap":
+            diag = lam_swap_diagnosis(text)
+            letters = "".join(c for c, d in diag.items() if d["repair"])
+            if letters:
+                pat = re.compile(BOUNDARY + r"ا([" + letters + r"])ل(?=[ء-ي])")
+                text, tr = _trace_sub(pat, r"ال\1", text, tr)
+        elif rule == "brackets":
+            text, tr = _trace_sub(EMPTY_BRACKET_NUMBER, r"(\2)\1", text, tr)
+    return text, tr
+
+
 def canonicalise(raw, rules=None):
     """Return {raw, canonical, transformations:[{rule, edits}]}."""
     rules = RULES if rules is None else [r for r in RULES if r in rules]

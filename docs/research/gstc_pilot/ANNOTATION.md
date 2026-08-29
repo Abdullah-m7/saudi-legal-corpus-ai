@@ -1,5 +1,8 @@
 # GSTC_DEV — what the hand labels say
 
+See `CROSS_SOURCE.md` for the same reading of MOJ_DEV and for
+what the two institutions do differently.
+
 120 occurrences of «مادة» drawn from five GSTC digests, read one at a time in
 a 1,400-character window and labelled by hand before any GSTC-specific parser
 was written. Every figure below is produced by `dev_profile.py`; none is typed.

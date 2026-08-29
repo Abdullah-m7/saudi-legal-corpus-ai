@@ -149,3 +149,33 @@ class TestScrambledBracketNumbers:
         rec = canonical.canonicalise("المادة ( , )5الفقرة")
         counts = {t["rule"]: t["edits"] for t in rec["transformations"]}
         assert counts["brackets"] == 1
+
+
+class TestOffsetTrace:
+    """A canonical position must be traceable to the raw byte it came from.
+
+    The sampling frame moves when the layer changes -- with the transposition
+    repair off, «املادة» is not «المادة» and occurrences disappear -- so an
+    evaluation anchored in canonical positions cannot compare two settings of
+    the layer, and one that ignores the problem compares different items while
+    reporting a number that looks fine.
+    """
+
+    def test_trace_agrees_with_canonicalise(self):
+        raw = "املادة ( , )5الفقرة ـ (١٢) والأسباب"
+        text, tr = canonical.trace(raw)
+        assert text == canonical.canonicalise(raw)["canonical"]
+        assert len(tr) == len(text)
+
+    def test_every_position_points_into_the_raw_text(self):
+        raw = "المادة ( ، )14 من الالئحة" * 5
+        text, tr = canonical.trace(raw)
+        assert all(0 <= i < len(raw) for i in tr)
+
+    def test_a_disabled_rule_changes_the_text_but_not_the_anchors(self):
+        raw = "المادة ( , )5 من الالئحة"
+        full, tr_full = canonical.trace(raw)
+        without, tr_without = canonical.trace(raw, ["bidi", "digits"])
+        assert full != without
+        # the same raw byte is reachable under both settings
+        assert set(tr_full) & set(tr_without)

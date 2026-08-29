@@ -45,6 +45,17 @@ TENS = {
 
 TEEN_MARK = ("عشرة", "عشر")
 HUNDRED = ("المائة", "المئة", "مائة", "مئة")
+# «المادة الثامنة والستين بعد المئة» is article 168 and «المادة المائتين» is
+# article 200. Both appear in ministry judgments and neither is a variant
+# spelling of anything already listed: «بعد المئة» adds a hundred to what
+# precedes it, and «المائتين» is the dual of a hundred.
+AFTER = ("بعد",)
+TWO_HUNDRED = ("المائتين", "المئتين", "المائتان", "المئتان", "مائتين", "مئتين")
+THREE_PLUS = {"الثلاثمائة": 300, "الثلاثمئة": 300, "الأربعمائة": 400,
+              "الأربعمئة": 400, "الخمسمائة": 500, "الخمسمئة": 500,
+              "الستمائة": 600, "الستمئة": 600, "السبعمائة": 700,
+              "السبعمئة": 700, "الثمانمائة": 800, "الثمانمئة": 800,
+              "التسعمائة": 900, "التسعمئة": 900}
 
 _ALEF = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا"})
 
@@ -70,6 +81,9 @@ TENS_BY_WORD.update({_norm(s).replace("ال", "", 1): v
                      for v, ss in TENS.items() for s in ss})
 TEEN_WORDS = {_norm(w) for w in TEEN_MARK}
 HUNDRED_WORDS = {_norm(w) for w in HUNDRED}
+AFTER_WORDS = {_norm(w) for w in AFTER}
+TWO_HUNDRED_WORDS = {_norm(w) for w in TWO_HUNDRED}
+BIG = {_norm(k): v for k, v in THREE_PLUS.items()}
 
 WORD = re.compile(r"[ء-ي]+")
 
@@ -89,7 +103,7 @@ def parse_ordinal(text):
     if words[0].startswith("و") and words[0][1:] in UNIT_BY_WORD:
         words[0] = words[0][1:]
 
-    total, unit, seen = 0, None, False
+    total, unit, seen, after = 0, None, False, False
     for i, w in enumerate(words):
         base = w[1:] if (w.startswith("و") and
                          (w[1:] in TENS_BY_WORD or w[1:] in HUNDRED_WORDS)) else w
@@ -105,9 +119,21 @@ def parse_ordinal(text):
         elif base in TENS_BY_WORD:
             total += TENS_BY_WORD[base]
             seen = True
+        elif base in AFTER_WORDS:
+            # «بعد» keeps what precedes it and adds the hundreds that follow
+            after = True
+        elif base in TWO_HUNDRED_WORDS:
+            total += 200
+            seen = True
+        elif base in BIG:
+            total += BIG[base]
+            seen = True
         elif base in HUNDRED_WORDS:
-            total += 100 * (unit if unit and unit < 10 else 1)
-            unit = None
+            if after:
+                total += 100
+            else:
+                total += 100 * (unit if unit and unit < 10 else 1)
+                unit = None
             seen = True
         else:
             return None                # an unknown word: refuse
@@ -116,14 +142,34 @@ def parse_ordinal(text):
     return total + (unit or 0)
 
 
+# Every spelling the tables know, with and without the definite article,
+# longest first, and refusing to end inside a word.
+#
+# An earlier version put an optional «ال» in front of the alternation. That
+# looks harmless and is not: «العشرون» has its «ال» stripped by the optional
+# group, the alternation then matches the shorter «عشر» inside what remains,
+# the whole match succeeds, and the engine never backtracks. Article 20 was
+# read as article 10 -- silently, because a match had been found.
+def _spellings():
+    out = set()
+    for group in (UNITS, TENS):
+        for forms in group.values():
+            out.update(forms)
+    out.update(TEEN_MARK)
+    out.update(HUNDRED)
+    out.update(AFTER)
+    out.update(TWO_HUNDRED)
+    out.update(THREE_PLUS)
+    for word in list(out):
+        if word.startswith("ال"):
+            out.add(word[2:])
+    return out
+
+
 ORDINAL_RE = re.compile(
-    r"(?:ال)?(?:أ|ا|إ)?(?:"
-    + "|".join(sorted({re.escape(s) for ss in UNITS.values() for s in ss}
-                      | {re.escape(s) for ss in TENS.values() for s in ss}
-                      | {re.escape(w) for w in TEEN_MARK}
-                      | {re.escape(w) for w in HUNDRED},
-                      key=len, reverse=True))
-    + r")"
+    r"(?:"
+    + "|".join(re.escape(w) for w in sorted(_spellings(), key=len, reverse=True))
+    + r")(?![ء-ي])"
 )
 
 

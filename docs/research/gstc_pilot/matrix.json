@@ -1,0 +1,128 @@
+{
+ "gstc": {
+  "source": "GSTC tax and customs digests",
+  "documents": 5,
+  "frameSize": 3992,
+  "sampled": 120,
+  "splitUnit": "document",
+  "metrics": {
+   "detection": {
+    "correct": 120,
+    "of": 120,
+    "pct": 100.0,
+    "ci95": [
+     96.9,
+     100.0
+    ]
+   },
+   "article": {
+    "correct": 118,
+    "of": 118,
+    "pct": 100.0,
+    "ci95": [
+     96.8,
+     100.0
+    ]
+   },
+   "paragraph": {
+    "correct": 62,
+    "of": 66,
+    "pct": 93.9,
+    "ci95": [
+     85.4,
+     97.6
+    ]
+   },
+   "instrument": {
+    "correct": 95,
+    "of": 118,
+    "pct": 80.5,
+    "ci95": [
+     72.4,
+     86.6
+    ]
+   },
+   "segment": {
+    "correct": 90,
+    "of": 118,
+    "pct": 76.3,
+    "ci95": [
+     67.8,
+     83.0
+    ]
+   },
+   "exact": {
+    "correct": 92,
+    "of": 118,
+    "pct": 78.0,
+    "ci95": [
+     69.7,
+     84.5
+    ]
+   }
+  }
+ },
+ "moj": {
+  "source": "MOJ judgments gateway",
+  "documents": 200,
+  "frameSize": 692,
+  "sampled": 120,
+  "splitUnit": "judgment",
+  "metrics": {
+   "detection": {
+    "correct": 119,
+    "of": 120,
+    "pct": 99.2,
+    "ci95": [
+     95.4,
+     99.9
+    ]
+   },
+   "article": {
+    "correct": 113,
+    "of": 115,
+    "pct": 98.3,
+    "ci95": [
+     93.9,
+     99.5
+    ]
+   },
+   "paragraph": {
+    "correct": 47,
+    "of": 50,
+    "pct": 94.0,
+    "ci95": [
+     83.8,
+     97.9
+    ]
+   },
+   "instrument": {
+    "correct": 86,
+    "of": 115,
+    "pct": 74.8,
+    "ci95": [
+     66.1,
+     81.8
+    ]
+   },
+   "segment": {
+    "correct": 72,
+    "of": 115,
+    "pct": 62.6,
+    "ci95": [
+     53.5,
+     70.9
+    ]
+   },
+   "exact": {
+    "correct": 85,
+    "of": 115,
+    "pct": 73.9,
+    "ci95": [
+     65.2,
+     81.1
+    ]
+   }
+  }
+ }
+}

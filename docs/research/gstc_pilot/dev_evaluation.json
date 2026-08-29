@@ -1,0 +1,344 @@
+{
+ "stages": [
+  "detection",
+  "article",
+  "paragraph",
+  "instrument",
+  "anaphora",
+  "attribution"
+ ],
+ "canonicalRules": "all",
+ "metrics": {
+  "detection": {
+   "correct": 120,
+   "of": 120,
+   "pct": 100.0,
+   "ci95": [
+    96.9,
+    100.0
+   ]
+  },
+  "article": {
+   "correct": 118,
+   "of": 118,
+   "pct": 100.0,
+   "ci95": [
+    96.8,
+    100.0
+   ]
+  },
+  "paragraph": {
+   "correct": 62,
+   "of": 66,
+   "pct": 93.9,
+   "ci95": [
+    85.4,
+    97.6
+   ]
+  },
+  "instrument": {
+   "correct": 95,
+   "of": 118,
+   "pct": 80.5,
+   "ci95": [
+    72.4,
+    86.6
+   ]
+  },
+  "segment": {
+   "correct": 90,
+   "of": 118,
+   "pct": 76.3,
+   "ci95": [
+    67.8,
+    83.0
+   ]
+  },
+  "exact": {
+   "correct": 92,
+   "of": 118,
+   "pct": 78.0,
+   "ci95": [
+    69.7,
+    84.5
+   ]
+  }
+ },
+ "errors": [
+  {
+   "id": "dev-004",
+   "stage": "instrument",
+   "detail": "'قواعد عمل لجان الفصل في' != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "dev-005",
+   "stage": "instrument",
+   "detail": "None != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "dev-008",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-009",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لنظام ضريبة' != 'الالئحة التنفيذية لنظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "dev-010",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لنظام ضريبة' != 'الالئحة التنفيذية لنظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "dev-010",
+   "stage": "segment",
+   "detail": "'facts' != 'quotation'"
+  },
+  {
+   "id": "dev-014",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "dev-022",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "dev-025",
+   "stage": "instrument",
+   "detail": "'قواعد عمل لجان الفصل في المخالفات' != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "dev-025",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "dev-028",
+   "stage": "instrument",
+   "detail": "None != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "dev-029",
+   "stage": "paragraph",
+   "detail": "['8', 'أوال'] != 'أولا; أولا/5; أولا/8'"
+  },
+  {
+   "id": "dev-030",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-033",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لجباية الزكاة في الفقرة (3)من المادة (5)' != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "dev-035",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-038",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "dev-044",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "dev-045",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "dev-046",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-048",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-050",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "dev-052",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-053",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-057",
+   "stage": "instrument",
+   "detail": "None != 'نظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "dev-058",
+   "stage": "instrument",
+   "detail": "'قواعد عمل لجان الفصل في' != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "dev-059",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "dev-062",
+   "stage": "instrument",
+   "detail": "'القرار الوزاري' != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "dev-062",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-063",
+   "stage": "segment",
+   "detail": "'quotation' != 'reasoning'"
+  },
+  {
+   "id": "dev-064",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لنظام الزكاة الصادرة بموجب قرار وزير المالية رقم (2082)' != None"
+  },
+  {
+   "id": "dev-065",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لنظام الزكاة الصادرة بموجب قراروزيراملالية رقم (2082)بتاريخ 01/06' != 'الالئحة التنفيذية لنظام ضريبة الدخل'"
+  },
+  {
+   "id": "dev-071",
+   "stage": "paragraph",
+   "detail": "None != '1; 3'"
+  },
+  {
+   "id": "dev-072",
+   "stage": "instrument",
+   "detail": "'النظام وألغراض تطبيق الاتفاقية والنظام في المملكة' != 'نظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "dev-075",
+   "stage": "paragraph",
+   "detail": "None != '4/أ'"
+  },
+  {
+   "id": "dev-076",
+   "stage": "instrument",
+   "detail": "'نظام ضريبة الدخل' != 'الالئحة التنفيذية لنظام ضريبة الدخل'"
+  },
+  {
+   "id": "dev-076",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "dev-078",
+   "stage": "instrument",
+   "detail": "None != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "dev-081",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام ضريبة الدخل'"
+  },
+  {
+   "id": "dev-086",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "dev-088",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لجباية الزكاة,' != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "dev-090",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لجباية الزكاة على أنه\" :يتكون الوعاء الزكوي بالأسلوب التقديري من ا' != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "dev-093",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-095",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "dev-098",
+   "stage": "paragraph",
+   "detail": "['أوال'] != 'أولا/9'"
+  },
+  {
+   "id": "dev-098",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "dev-099",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-102",
+   "stage": "instrument",
+   "detail": "'نظام المر افعات الشرعية التي نصت' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "dev-103",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "dev-105",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-106",
+   "stage": "instrument",
+   "detail": "None != 'نظام ضريبة الدخل'"
+  },
+  {
+   "id": "dev-107",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "dev-111",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "dev-115",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "dev-117",
+   "stage": "instrument",
+   "detail": "'الئحة تنظيم العمل' != 'لائحة تنظيم العمل الداخلية'"
+  },
+  {
+   "id": "dev-118",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  }
+ ]
+}

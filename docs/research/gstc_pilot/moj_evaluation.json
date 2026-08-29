@@ -1,0 +1,454 @@
+{
+ "stages": [
+  "detection",
+  "article",
+  "paragraph",
+  "instrument",
+  "anaphora",
+  "attribution"
+ ],
+ "canonicalRules": "all",
+ "metrics": {
+  "detection": {
+   "correct": 119,
+   "of": 120,
+   "pct": 99.2,
+   "ci95": [
+    95.4,
+    99.9
+   ]
+  },
+  "article": {
+   "correct": 113,
+   "of": 115,
+   "pct": 98.3,
+   "ci95": [
+    93.9,
+    99.5
+   ]
+  },
+  "paragraph": {
+   "correct": 47,
+   "of": 50,
+   "pct": 94.0,
+   "ci95": [
+    83.8,
+    97.9
+   ]
+  },
+  "instrument": {
+   "correct": 86,
+   "of": 115,
+   "pct": 74.8,
+   "ci95": [
+    66.1,
+    81.8
+   ]
+  },
+  "segment": {
+   "correct": 72,
+   "of": 115,
+   "pct": 62.6,
+   "ci95": [
+    53.5,
+    70.9
+   ]
+  },
+  "exact": {
+   "correct": 85,
+   "of": 115,
+   "pct": 73.9,
+   "ci95": [
+    65.2,
+    81.1
+   ]
+  }
+ },
+ "errors": [
+  {
+   "id": "moj-dev-000",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-001",
+   "stage": "detection miss",
+   "detail": "(1,2)"
+  },
+  {
+   "id": "moj-dev-001",
+   "stage": "instrument",
+   "detail": "None != 'النظام التجاري'"
+  },
+  {
+   "id": "moj-dev-001",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-003",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-005",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-006",
+   "stage": "instrument",
+   "detail": "None != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-007",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية لنظام المحاكم التجارية و' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-007",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-010",
+   "stage": "instrument",
+   "detail": "None != 'نظام الإفلاس'"
+  },
+  {
+   "id": "moj-dev-010",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-013",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-014",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-015",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-016",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-018",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-019",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-020",
+   "stage": "instrument",
+   "detail": "'نظام الإثبات المادة 29' != 'نظام الإثبات'"
+  },
+  {
+   "id": "moj-dev-022",
+   "stage": "instrument",
+   "detail": "None != 'نظام الإثبات'"
+  },
+  {
+   "id": "moj-dev-023",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية لنظام المرافعات الشرعية والتي نصت على:(ترك الخصومة هو تنازل المدع' != 'الالئحة التنفيذية لنظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-dev-023",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-028",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية لنظام المرافعات الشرعية والتي نصت على:(ترك الخصومة هو تنازل المدع' != 'الالئحة التنفيذية لنظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-dev-028",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-032",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-033",
+   "stage": "instrument",
+   "detail": "'لائحة التنفيذية لنظام التنفيذ' != 'الالئحة التنفيذية لنظام التنفيذ'"
+  },
+  {
+   "id": "moj-dev-034",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "moj-dev-037",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-039",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-040",
+   "stage": "instrument",
+   "detail": "None != 'العقد'"
+  },
+  {
+   "id": "moj-dev-040",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-042",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية المعدلة بموجب المرسوم الملكي رقم' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-043",
+   "stage": "instrument",
+   "detail": "'المرسوم الملكي رقم م/1 وتاريخ 22/1/1435ه قد تناول' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-dev-046",
+   "stage": "segment",
+   "detail": "'disposition' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-047",
+   "stage": "paragraph",
+   "detail": "None != '1'"
+  },
+  {
+   "id": "moj-dev-047",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-048",
+   "stage": "instrument",
+   "detail": "'النظام بأن تشمل الطلبات المستعجلة' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-052",
+   "stage": "instrument",
+   "detail": "'الأمر تعديل في عقد التأسيس وهذا لا يجوز' != 'نظام الشركات'"
+  },
+  {
+   "id": "moj-dev-052",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-056",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-057",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-064",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-065",
+   "stage": "segment",
+   "detail": "'quotation' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-066",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-067",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-068",
+   "stage": "segment",
+   "detail": "'disposition' != 'party'"
+  },
+  {
+   "id": "moj-dev-069",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-072",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-073",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-074",
+   "stage": "article",
+   "detail": "28 != None"
+  },
+  {
+   "id": "moj-dev-074",
+   "stage": "paragraph",
+   "detail": "['5'] != None"
+  },
+  {
+   "id": "moj-dev-074",
+   "stage": "instrument",
+   "detail": "'نظام المحاماة ولائحتها التنفيذية المتضمنة أن أتعاب المحامين تنظرها الدائرة' != 'نظام المحاماة'"
+  },
+  {
+   "id": "moj-dev-074",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-075",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية والمتضمنة ما يختص القضاء التجاري بنظره من النزاعات وحصرها' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-076",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-079",
+   "stage": "instrument",
+   "detail": "None != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-082",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-083",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-085",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-086",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية 2- إذا اتفق الأطراف' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-090",
+   "stage": "instrument",
+   "detail": "'نظام ذاته' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-dev-093",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية معنى الارتباط في المادة (75/2) بما' != 'الالئحة التنفيذية لنظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-dev-093",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-dev-097",
+   "stage": "instrument",
+   "detail": "None != 'نظام الإثبات'"
+  },
+  {
+   "id": "moj-dev-099",
+   "stage": "instrument",
+   "detail": "'نظام التحكيم نصت على ألا يقبل' != 'نظام التحكيم'"
+  },
+  {
+   "id": "moj-dev-101",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-102",
+   "stage": "instrument",
+   "detail": "None != 'نظام المحكمة التجارية'"
+  },
+  {
+   "id": "moj-dev-102",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-103",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية لنظام المحاكم التجارية يجب' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-104",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية في المادة السبعون (70)' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-106",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-dev-110",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "moj-dev-112",
+   "stage": "instrument",
+   "detail": "'اللائحة)' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-dev-112",
+   "stage": "segment",
+   "detail": "'reasoning' != 'quotation'"
+  },
+  {
+   "id": "moj-dev-113",
+   "stage": "paragraph",
+   "detail": "None != '2'"
+  },
+  {
+   "id": "moj-dev-113",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الشركات'"
+  },
+  {
+   "id": "moj-dev-113",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-dev-117",
+   "stage": "instrument",
+   "detail": "'نظام الإثبات تنتهي الدائرة الى صحة العقد وحجيته بمواجهة المدعى عليه' != 'نظام الإثبات'"
+  }
+ ]
+}

@@ -43,6 +43,16 @@ ALIASES = {
         "قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية",
     "قواعد وإجراءات عمل اللجان الضريبية":
         "قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية",
+    # ministry judgments abbreviate the procedure law to its distinguishing
+    # word alone: «ال مادة74 مرافعات»
+    "مرافعات": "نظام المرافعات الشرعية",
+    "نظام المحكمة التجارية": "نظام المحكمة التجارية",
+    "لائحة نظام المحاكم التجارية":
+        "اللائحة التنفيذية لنظام المحاكم التجارية",
+    "اللائحة التنفيذية لنظام المحكمة التجارية":
+        "اللائحة التنفيذية لنظام المحاكم التجارية",
+    "نظام الاثبات": "نظام الإثبات",
+    "نظام الافلاس": "نظام الإفلاس",
 }
 
 
@@ -56,15 +66,27 @@ def canonical(name):
     for wrong, right in LAM_ALEF:
         text = text.replace(wrong, right)
     text = SPACES.sub(" ", text).strip()
-    folded = text.translate(_FOLD)
+    folded = "".join(text.split()).translate(_FOLD)
     for alias, target in ALIASES.items():
-        if alias.translate(_FOLD) == folded:
+        if "".join(alias.split()).translate(_FOLD) == folded:
             return target
     # «لائحة جباية الزكاة الصادرة بالقرار الوزاري رقم (2082)» already trimmed;
     # a bare «الالئحة التنفيذية» carries no instrument and is not a name.
-    if folded in {"اللائحه التنفيذيه", "اللائحه", "النظام"}:
+    if folded in {"".join(x.split()).translate(_FOLD)
+                  for x in ("اللائحة التنفيذية", "اللائحة", "النظام")}:
         return None
     return text
+
+
+def _tight(name):
+    """Fold for comparison only: drop every space, fold the alef seats.
+
+    Three of the five development digests insert spaces inside words on
+    justified lines, so «نظام المر افعات الشرعية» and «نظام المرافعات الشرعية»
+    reach a comparison as different strings while being one instrument. The
+    display name keeps its spaces; only the comparison drops them.
+    """
+    return "".join(name.split()).translate(_FOLD)
 
 
 def same(a, b):
@@ -72,4 +94,4 @@ def same(a, b):
     ca, cb = canonical(a), canonical(b)
     if ca is None or cb is None:
         return ca is None and cb is None
-    return ca.translate(_FOLD) == cb.translate(_FOLD)
+    return _tight(ca) == _tight(cb)
