@@ -65,11 +65,20 @@ TITLE_PAGE = r"""\documentclass[11pt]{article}
 \usepackage{url}
 \emergencystretch=4em
 \sloppy
+\input{numbers}
 \begin{document}
 """ + TITLE + r"""
 \vspace{1em}
 """ + BYLINE + r"""
 \vspace{1.5em}
+
+\subsection*{Abstract}
+
+__ABSTRACT__
+
+\subsection*{Keywords}
+
+__KEYWORDS__
 
 \subsection*{Word count}
 
@@ -333,6 +342,24 @@ def archive_text(path):
                           for n in z.namelist())
 
 
+def abstract_and_keywords():
+    """Lift both from main.tex, so the title page cannot drift from the paper.
+
+    ALQ's Attach Files step reads this document to pre-fill the submission
+    form, and its instructions require the title page to carry the abstract
+    and the keywords. Retyping either here would put a second copy of the
+    article's own words in a file nothing checks.
+    """
+    src = SRC.read_text(encoding="utf-8")
+    a = src.index(r"\begin{abstract}") + len(r"\begin{abstract}")
+    b = src.index(r"\end{abstract}")
+    abstract = src[a:b].replace(r"\noindent", "").strip()
+    m = re.search(r"\\textbf\{Keywords:\}(.*?)\n\\vspace", src, re.S)
+    if not m:
+        sys.exit("REFUSING: main.tex has no keywords line to copy")
+    return abstract, " ".join(m.group(1).split())
+
+
 def to_plain(path):
     return subprocess.run(["pandoc", str(path), "-t", "plain"],
                           cwd=HERE, capture_output=True, text=True).stdout
@@ -375,8 +402,11 @@ def main():
     print(f"  submission_manuscript.docx: {words} words including footnotes")
 
     print("title page")
+    abstract, keywords = abstract_and_keywords()
     latex("submission_title_page",
-          TITLE_PAGE.replace("__WORDCOUNT__", f"{words:,}"))
+          TITLE_PAGE.replace("__WORDCOUNT__", f"{words:,}")
+                    .replace("__ABSTRACT__", abstract)
+                    .replace("__KEYWORDS__", keywords))
     # the cover letter states the same count, so it reads it rather than
     # repeating it: an earlier letter carried a figure from a stale build.
     (HERE / "wordcount.tex").write_text(
