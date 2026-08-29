@@ -57,9 +57,25 @@ def normalise(text):
     return stripped.translate(DIGITS), len(text) - len(stripped)
 
 
+def _fingerprint(value):
+    """A stable, non-reversing reference to a hit, so a report never carries it.
+
+    The first version of this scanner put the matched strings in its output,
+    and the output is a committed manifest. Two of twelve tax digests carry an
+    identifier the publisher failed to redact -- in one case a national ID
+    beside a named person, in a document where thirty-three other instances
+    are masked -- so the report itself would have republished exactly what the
+    gate exists to stop.
+    """
+    import hashlib
+    return (f"{len(value)}-char {'digits' if value.isdigit() else 'mixed'} "
+            f"#{hashlib.sha256(value.encode()).hexdigest()[:12]}")
+
+
 def scan(text, name="<text>"):
     clean, bidi_removed = normalise(text)
-    hits = {k: sorted(set(re.findall(p, clean)))[:5] for k, p in PATTERNS.items()}
+    hits = {k: [_fingerprint(v) for v in sorted(set(re.findall(p, clean)))[:5]]
+            for k, p in PATTERNS.items()}
     counts = {k: len(re.findall(p, clean)) for k, p in PATTERNS.items()}
     labels = {lab: clean.count(lab) for lab in LABELS if clean.count(lab)}
     runs = {}

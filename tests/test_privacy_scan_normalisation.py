@@ -57,6 +57,14 @@ class TestBidiNormalisation:
         assert report["clean"] is False
 
 
+class TestReportNeverCarriesTheIdentifier:
+    def test_samples_are_fingerprints_not_values(self):
+        report = privacy_scan.scan("الهوية الوطنية رقم 1023456789")
+        samples = report["samples"]["national_or_iqama_id"]
+        assert samples and all("1023456789" not in s for s in samples)
+        assert samples[0].startswith("10-char digits #")
+
+
 class TestCleanIsMeaningful:
     def test_a_document_with_no_identifiers_is_clean(self):
         report = privacy_scan.scan("المادة (142) من نظام الجمارك الموحد")
