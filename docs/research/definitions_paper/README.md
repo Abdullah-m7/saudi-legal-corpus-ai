@@ -31,6 +31,9 @@ Dale Centre for Legislative Studies at IALS and was managing editor of the
 board. EJLR is therefore not the next venue. The editorship of *The Theory and
 Practice of Legislation*, where paper 5 is under review, has not been checked.
 
+**قُدِّمت إلى *Arab Law Quarterly* في ٢٩ أغسطس ٢٠٢٦ — المرجع
+`ALQS2600172`، ورقم المخطوطة يصدر بعد اجتياز الفحص المكتبي.**
+
 **Target: *Arab Law Quarterly* (Brill).** Double blind, no fees, 7,500–20,000
 words, and a stated subject area — «Studies of legislatures and legislative
 process within the Arab world» — that is this article's subject exactly. The

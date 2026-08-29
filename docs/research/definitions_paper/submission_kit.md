@@ -20,6 +20,30 @@ The journal states that it «encourage[s] submissions from those who are
 underrepresented, including without limitation women and those working in the
 global south generally, and the Arab world in particular».
 
+## Submitted
+
+**Submitted to *Arab Law Quarterly* on 29 August 2026, as an Article.
+Submission reference `ALQS2600172`.** The editorial office has acknowledged
+receipt; a manuscript number follows once the submission clears its checks
+and is assigned to an editor.
+
+Four files went up: the anonymised manuscript, the title page, and the two
+figures as separate EPS. The proof the publisher built was read page by page
+before approval, and the first build was rejected and rebuilt -- see below.
+
+## The defect the proof caught
+
+Two footnotes said «see the data availability statement below». That
+statement is gated on `\ifanon`, correctly, because it carries the repository
+address that names the author -- so in the anonymised manuscript there was
+nothing below, twice, in a paper whose argument rests on its data being
+inspectable.
+
+No guard here could have caught it: the anonymity audit checks what appears,
+and nothing compares a cross-reference against the build that resolves it.
+The publisher's own proof caught it. Both footnotes are now gated too, and the
+anonymised text says where the statement is and why it is not printed.
+
 ## Why here, before the law reviews
 
 Two desk rejections this month came from offering Saudi law to readers with no
