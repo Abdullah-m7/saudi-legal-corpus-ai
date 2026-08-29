@@ -1,29 +1,85 @@
-# Submission kit — US law reviews, beginning with the *Notre Dame Journal of Legislation*
+# Submission kit — *Arab Law Quarterly* (Brill)
 
-Verified from the journal's own pages on 29 August 2026.
+Read from the journal's own Instructions for Authors, revised 24 June 2025.
 
 | | |
 |---|---|
-| Primary target | **Notre Dame Journal of Legislation** (JLEG), Notre Dame Law School |
-| Scope | «analysis and reform of legislation and public policy» — legislative, regulatory and policy matters, from **legislators, policymakers, academics and practitioners**, on issues of local, national **and international** significance |
-| Unsolicited | **Yes.** The only bar is on current law students unaffiliated with Notre Dame |
-| Platform | **Scholastica** (`ndjleg.scholasticahq.com`), or email `ndlsjl@nd.edu` |
-| Citations | ***The Bluebook*, 21st edition** |
-| Schedule | Rolling; two issues a year, spring and autumn |
-| Required | manuscript · **curriculum vitae listing past publications** · **cover letter** |
-| Review | **Not anonymous.** US law reviews read the author's name |
-| Fees | None |
+| Journal | *Arab Law Quarterly* (ALQ), Brill |
+| Scope | «the leading English language scholarly publication on all matters relating to the law and legal systems of the 22 states in the Arab League». Its listed subject areas include, ninth of ten, **«Studies of legislatures and legislative process within the Arab world»** |
+| Review | **Double blind.** A separate title page carries the names and contact details «and will not be accessible to the referees» |
+| Fees | **None.** Subscription journal; no submission fee and no article processing charge |
+| Length | **7,500–20,000 words.** Ours: 8,002 including footnotes |
+| Abstract | **≤ 150 words, one paragraph.** Ours: 139 |
+| Keywords | 3–8. Ours: 6 |
+| Headings | Numbered, three levels, title case, flush left |
+| Citations | **Footnotes, in the journal's own style**, ending with a full stop; `ibid.` and `supra note x`; DOIs where available |
+| Files | Word source files, not PDF only. Figures separate, ≥300 dpi |
+| Submit | Editorial Manager — `editorialmanager.com/alq` |
+
+The journal states that it «encourage[s] submissions from those who are
+underrepresented, including without limitation women and those working in the
+global south generally, and the Arab world in particular».
+
+## Why here, before the law reviews
+
+Two desk rejections this month came from offering Saudi law to readers with no
+stake in it: the *Journal of Legal Analysis* on scope, and *Statute Law
+Review* with a suggestion to try a company-law journal. ALQ's readers are
+defined by that stake.
+
+It also removes the cost the law-review route charges. US law reviews are not
+anonymous and an unaffiliated author is read at a disadvantage; ALQ is double
+blind, so the referee sees the work and not the author line. And there is no
+fee, no waiver to wait for, and no basket of twelve.
+
+**What it costs:** one chance rather than a dozen, months rather than weeks,
+and exclusivity — this manuscript may be at ALQ *or* at law reviews, never
+both.
+
+## What changed for ALQ
+
+**Footnotes.** Twenty-six converted from Bluebook to the journal's house form:
+initials before surnames, single quotation marks for article and chapter
+titles, italics for books and periodicals, `(Place: Publisher, year)`, and
+`supra note x` in place of a bare `supra`. Bluebook's small capitals are gone,
+which the journal's «use italics sparingly … do not use all capital letters»
+rules out anyway.
+
+**Two DOIs added**, verified against Crossref rather than recalled: Katz and
+Bommarito is *Artificial Intelligence and Law* 22(4) (2014): 337–374,
+`10.1007/s10506-014-9160-8`; Coupette and others is *Frontiers in Physics* 9
+(2021), art. 658463, `10.3389/fphy.2021.658463`.
+
+**Place and publisher given only where verified.** Dickerson (Boston: Little,
+Brown) and Scalia and Garner (St. Paul, MN: Thomson/West) were confirmed
+against a bibliographic record; Xanthaki's *Thornton's* and *Bennion* carry
+their publisher without a place, and Xanthaki's 2014 monograph carries
+neither, because those were not confirmed. The journal asks for information
+«as complete as possible», not for a guess.
+
+**The abstract was cut from 207 words to 139**, against a 150-word cap.
+
+**Document properties are now scrubbed and audited.** ALQ requires that «the
+names of these files and the document properties should also be anonymised».
+`build.py` blanks every `docProps` field that can name a person, and the
+anonymity audit now reads **every part of the .docx archive as bytes** rather
+than the rendered text — the projection that let a repository URL hide in a
+footnote part of paper 9.
 
 ## What to upload
 
 | File | |
 |---|---|
-| `main.pdf` | The manuscript, **identified**. 17 pages. |
-| `../cv/cv.pdf` | Required. Complete the four red fields first. |
-| `cover_letter.pdf` | Addressed to the Articles Editors. |
+| `submission_manuscript.docx` | **Anonymised.** 8,002 words including footnotes. |
+| `submission_title_page.docx` | Title, author, contact, abstract, keywords, declarations. Referees never see it. |
+| `fig1_funnel.eps`, `fig2_adjudication.eps` | Separate files, as the journal requires. |
 
-The anonymised Word build that `build.py` still produces is not used here. It
-is kept for the peer-reviewed venues that remain if the law reviews decline.
+## If ALQ declines: US law reviews
+
+The Bluebook build is **commit `09340f9`** in git history, complete and
+checked. The two citation systems cannot coexist in one source, and the
+article cannot be at a peer-reviewed journal and at law reviews at the same
+time — so the Bluebook version waits there rather than in the working tree.
 
 ## The simultaneous-submission rule, which changes everything
 

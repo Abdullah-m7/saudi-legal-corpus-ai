@@ -1,8 +1,13 @@
 % Paper 3 --- definitional fragmentation in Saudi legislation.
-% Full-length article prepared for Statute Law Review (Oxford University
-% Press): 6,500--10,000 words including footnotes, footnote citations,
-% double-anonymous review. Compiles on a plain TeX Live; convert to .docx
-% for submission with the Makefile target in this directory.
+% Prepared for Arab Law Quarterly (Brill): 7,500--20,000 words, an abstract of
+% at most 150 words, 3--8 keywords, numbered headings, footnote citations in
+% the journal's own style, and double-blind review with the identifying
+% material on a separate title page. Requirements read from the journal's
+% Instructions for Authors (revised 24 June 2025).
+%
+% The Bluebook build for US law reviews is commit 09340f9 in git history; the
+% two styles cannot coexist in one source and the article cannot be at a
+% peer-reviewed journal and a law review at the same time.
 \documentclass[11pt]{article}
 \usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
 \usepackage{times}
@@ -10,8 +15,8 @@
 \onehalfspacing
 \usepackage[hidelinks]{hyperref}
 
-% Statute Law Review reviews double-anonymously. Set \anontrue before
-% producing the file that is uploaded to ScholarOne.
+% ALQ reviews double-blind. Set \anontrue before producing the file that is
+% uploaded to Editorial Manager; the title page is a separate document.
 \newif\ifanon
 \anonfalse
 
@@ -37,12 +42,6 @@ Measuring Definitional Fragmentation Across a Legal System}
   \date{}
 \fi
 
-% Bluebook typography, as a US law review sets it: large-and-small caps for
-% books and periodical names, italics for article titles.
-\newcommand{\bbook}[1]{\textsc{#1}}
-\newcommand{\bjournal}[1]{\textsc{#1}}
-\newcommand{\btitle}[1]{\emph{#1}}
-
 \input{numbers}
 
 \begin{document}
@@ -52,24 +51,18 @@ Measuring Definitional Fragmentation Across a Legal System}
 \begin{abstract}
 \noindent
 Drafting manuals agree that a term should carry a stable meaning across a
-legal system, and that definitions should not multiply without reason.
-Whether real systems comply has never been measured: the question has been
-argued from examples, because settling it requires every statutory definition
-in a jurisdiction, extracted from the instrument that made it.
-
-This article supplies that measurement, from a corpus of \nInstruments{} Saudi
-legislative instruments carrying \nTerms{} defined terms and \nDefinitions{}
-definitions --- and argues that the measurement is worth less than the two
-distinctions needed to perform it. The first separates \emph{indexical}
-definitions, where an instrument defines `the Law' as itself, from substantive
-ones; indexical definitions are the most repeated in the corpus and cannot
+legal system. Whether real systems comply has never been measured, because
+settling it requires every statutory definition in a jurisdiction, extracted
+from the instrument that made it. This article supplies that measurement for
+Saudi Arabia --- \nInstruments{} instruments, \nTerms{} defined terms,
+\nDefinitions{} definitions --- and argues that the measurement is worth less
+than the two distinctions needed to perform it. The first separates
+\emph{indexical} definitions, where an instrument defines `the Law' as itself,
+from substantive ones; indexical definitions are the most repeated and cannot
 disagree. The second separates lexical from substantive divergence:
 \nDivergentShare{} per cent of shared substantive terms are worded
 differently, and most of that is paraphrase. Reading the \nReviewed{} most
-widely shared terms across every instrument that defines them yields
-\nConflicting{} genuine conflicts. A sole trader with no employees is an
-\emph{establishment} under the Competition Law and not one under the Labour
-Law; that is a real conflict, and most apparent ones are not. Fragmentation is
+widely shared terms yields \nConflicting{} genuine conflicts. Fragmentation is
 real but narrow, and therefore a tractable target for drafting reform.
 \end{abstract}
 
@@ -93,9 +86,9 @@ an \emph{establishment}
 --- \emph{al-munsha'ah}, a term that recurs throughout Saudi regulatory
 legislation --- depends entirely on which statute is asking. The Competition
 Law defines an establishment as `any natural or legal person carrying on an
-economic activity',\footnote{Competition Law, Royal Decree No. M/75 (29/6/1440H), art. 1 (Saudi Arabia).} which she plainly is. The Labour Law defines it as `any undertaking
+economic activity',\footnote{Competition Law, Royal Decree No. M/75 (29/6/1440H) (Saudi Arabia), art. 1.} which she plainly is. The Labour Law defines it as `any undertaking
 run by a natural or legal person that employs one or more workers for wages,
-of whatever kind',\footnote{Labour Law, Royal Decree No. M/51 (23/8/1426H), art. 2 (Saudi Arabia).} which she plainly is not. Neither definition is defective. Each serves
+of whatever kind',\footnote{Labour Law, Royal Decree No. M/51 (23/8/1426H) (Saudi Arabia), art. 2.} which she plainly is not. Neither definition is defective. Each serves
 its own statute well. Together they mean that a single word, in a single
 legal system, sorts the same person onto opposite sides of a line.
 
@@ -198,7 +191,7 @@ United Kingdom's Interpretation Act 1978, Australia's Acts Interpretation Act
 1901 and Canada's Interpretation Act each supply default meanings for
 recurring terms and default rules for their application, so that a drafter
 who says nothing about `person' or `writing' has nonetheless said something
-definite.\footnote{Interpretation Act 1978, c. 30, \S~5, sch. 1 (UK); Acts Interpretation Act 1901 (Cth) pt 2 div 2 (Austl.); Interpretation Act, R.S.C. 1985, c. I-21, \S~35 (Can.).} The effect is to move a body of definitional content out of
+definite.\footnote{Interpretation Act 1978 (UK), c. 30, s. 5, sch. 1; Acts Interpretation Act 1901 (Cth), pt 2 div 2; Interpretation Act (Canada), RSC 1985, c. I-21, s. 35.} The effect is to move a body of definitional content out of
 individual statutes and into one instrument where it can be maintained --- and
 where a change to it is a legislative act with a visible author, rather than
 a drift that nobody decided on.
@@ -223,14 +216,14 @@ Definitions are a settled topic in the drafting literature, and its received
 positions are largely uncontested: define only what needs defining; do not
 give a term a sense its ordinary meaning will not bear; and do not legislate
 in a definition, because a reader looking for the rule will not look
-there.\footnote{\bbook{Reed Dickerson, The Fundamentals of Legal Drafting} ch. 7 (2d ed. 1986); \bbook{Helen Xanthaki, Thornton's Legislative Drafting} ch. 4 (6th ed. 2022).}
+there.\footnote{R. Dickerson, \emph{The Fundamentals of Legal Drafting} (Boston: Little, Brown, 2d ed. 1986), ch. 7; H. Xanthaki, \emph{Thornton's Legislative Drafting} (Bloomsbury, 6th ed. 2022), ch. 4.}
 Dickerson's warning against the `humpty-dumpty' definition --- the definition
 that assigns a word a meaning its ordinary sense cannot bear, so that the
 statute says one thing and means another --- remains the most cited passage
 on the subject. Xanthaki's later work reframes the drafting question around
 effectiveness, and definitions accordingly become a question of whether the
 reader can find and apply the rule rather than of whether the definition is
-elegant.\footnote{\bbook{Helen Xanthaki, Drafting Legislation: Art and Technology of Rules for Regulation} (2014).}
+elegant.\footnote{H. Xanthaki, \emph{Drafting Legislation: Art and Technology of Rules for Regulation} (2014).}
 
 What this literature addresses is the definition \emph{within} an
 instrument. The question this article asks --- what happens when many
@@ -239,7 +232,7 @@ approached from the other side by statutory interpretation scholarship. The
 presumption of consistent expression, that a legislature means the same thing
 by the same word, is a settled interpretive canon, and so is its limit: the
 presumption is weak between statutes, and weaker still where the statutes
-serve different purposes.\footnote{\bbook{Bennion, Bailey and Norbury on Statutory Interpretation} \S\S~21.3, 24.3 (8th ed. 2020); \bbook{Antonin Scalia \& Bryan A. Garner, Reading Law: The Interpretation of Legal Texts} 170--73 (2012).} That limit is
+serve different purposes.\footnote{\emph{Bennion, Bailey and Norbury on Statutory Interpretation} (LexisNexis, 8th ed. 2020), ss. 21.3, 24.3; A. Scalia \& B.A. Garner, \emph{Reading Law: The Interpretation of Legal Texts} (St. Paul, MN: Thomson/West, 2012), 170--73.} That limit is
 doctrinally sound and it is precisely what makes the empirical question
 interesting: if a court will not presume that `establishment' means the same
 thing in the Competition Law and the Labour Law, then the burden of knowing
@@ -252,11 +245,11 @@ form a machine can read, and that has not been available. The legal
 informatics field has built large legislative corpora --- Pile of Law and
 MultiLegalPile are the best known --- but these are assembled to train
 language models, hold running text rather than structure, and cover no Arab
-jurisdiction.\footnote{Peter Henderson et al., \btitle{Pile of Law: Learning Responsible Data Filtering from the Law and a 256GB Open-Source Legal Dataset} (Neural Info. Processing Sys. Datasets \& Benchmarks Track, 2022); Joel Niklaus et al., \btitle{MultiLegalPile: A 689GB Multilingual Legal Corpus}, in \bjournal{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics} (2024).} Structural standards such as Akoma Ntoso model the architecture of a
+jurisdiction.\footnote{P. Henderson et al., `Pile of Law: Learning Responsible Data Filtering from the Law and a 256GB Open-Source Legal Dataset', in \emph{Advances in Neural Information Processing Systems 35, Datasets and Benchmarks Track} (2022); J. Niklaus et al., `MultiLegalPile: A 689GB Multilingual Legal Corpus', in \emph{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics} (2024).} Structural standards such as Akoma Ntoso model the architecture of a
 legislative document faithfully but do not extract its definitional
-content.\footnote{Monica Palmirani \& Fabio Vitali, \btitle{Akoma-Ntoso for Legal Documents}, in \bbook{Legislative XML for the Semantic Web} 75 (2011).} Quantitative studies of legal systems have concentrated on citation
+content.\footnote{M. Palmirani \& F. Vitali, `Akoma-Ntoso for Legal Documents', in \emph{Legislative XML for the Semantic Web} (2011) 75.} Quantitative studies of legal systems have concentrated on citation
 structure and on document complexity rather than on
-terminology.\footnote{Daniel Martin Katz \& Michael J. Bommarito, \btitle{Measuring the Complexity of the Law: The United States Code}, 22 \bjournal{A.I. \& L.} 337 (2014); Corinna Coupette et al., \btitle{Measuring Law Over Time: A Network Analytical Framework with an Application to Statutes and Regulations in the United States and Germany}, 9 \bjournal{Frontiers in Physics}, art.~658463 (2021).} A companion study analyses the citation network of the same Saudi
+terminology.\footnote{D.M. Katz \& M.J. Bommarito, `Measuring the Complexity of the Law: The United States Code', \emph{Artificial Intelligence and Law} 22(4) (2014): 337--374, doi 10.1007/s10506-014-9160-8; C. Coupette et al., `Measuring Law Over Time: A Network Analytical Framework with an Application to Statutes and Regulations in the United States and Germany', \emph{Frontiers in Physics} 9 (2021): art. 658463, doi 10.3389/fphy.2021.658463.} A companion study analyses the citation network of the same Saudi
 corpus; the present article takes up the complementary question of whether
 the instruments in that network use a common vocabulary.\footnote{On the
 citation network of this corpus, see the companion study referred to in the
@@ -460,7 +453,7 @@ that do not agree.
 The \textbf{competition group} defines it by reference to economic activity
 alone. The Competition Law has `every person of natural or legal capacity
 carrying on an economic activity'; its implementing regulation repeats this
-almost verbatim.\footnote{Competition Law, \emph{supra}, art. 1; Implementing Regulation of the Competition Law, GAC Board Decision No. 337 (25/1/1441H), art. 1 (Saudi Arabia).} The
+almost verbatim.\footnote{Competition Law, supra note 1, art. 1; Implementing Regulation of the Competition Law, GAC Board Decision No. 337 (25/1/1441H), art. 1 (Saudi Arabia).} The
 Implementing Regulation of the Anti-Concealment Law goes further and makes
 the breadth explicit: `everyone practising an economic activity, including
 the sole proprietorship, the company, and any other legal
@@ -471,7 +464,7 @@ The \textbf{labour group} defines it by reference to employment. The Labour
 Law has `every undertaking run by a natural or legal person that employs one
 or more workers for wages, of whatever kind'; the High-Risk Professions Work
 Organization Regulation and the OSH Service Providers Regulation each restate
-this in near-identical terms.\footnote{Labour Law, \emph{supra}, art. 2; High-Risk Professions Work Organization Regulation art. 1; OSH Service Providers Licensing and Accreditation Regulation art. 1 (Saudi Arabia).} An entity with no employees
+this in near-identical terms.\footnote{Labour Law, supra note 2, art. 2; High-Risk Professions Work Organization Regulation art. 1; OSH Service Providers Licensing and Accreditation Regulation art. 1 (Saudi Arabia).} An entity with no employees
 is not an establishment for any of them.
 
 The \textbf{social insurance group} defines it by reference to legal form and

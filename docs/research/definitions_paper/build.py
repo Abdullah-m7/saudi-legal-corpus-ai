@@ -299,6 +299,40 @@ def double_spaced_reference():
     return ref
 
 
+# ALQ requires that "the document properties should also be anonymised", and a
+# .docx carries them in docProps/, which no amount of reading the body will
+# show. So: blank the fields that can name a person, then audit the archive
+# whole -- every part, as bytes -- rather than the rendered text. The appeal
+# paper's audit passed while the repository URL sat in a footnote part; this
+# one does not read a projection of the file, it reads the file.
+PROPERTY_FIELDS = ("dc:creator", "cp:lastModifiedBy", "cp:lastPrinted",
+                   "Company", "Manager")
+
+
+def scrub_properties(path):
+    """Empty every docProps field that could name the author."""
+    with zipfile.ZipFile(path) as z:
+        parts = {n: z.read(n) for n in z.namelist()}
+    for name in ("docProps/core.xml", "docProps/app.xml"):
+        if name not in parts:
+            continue
+        xml = parts[name].decode("utf-8")
+        for field in PROPERTY_FIELDS:
+            xml = re.sub(r"<%s>.*?</%s>" % (field, field),
+                         "<%s></%s>" % (field, field), xml, flags=re.S)
+        parts[name] = xml.encode("utf-8")
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+        for name, data in parts.items():
+            z.writestr(name, data)
+
+
+def archive_text(path):
+    """Every part of the .docx, decoded, so nothing hides in a part."""
+    with zipfile.ZipFile(path) as z:
+        return "\n".join(z.read(n).decode("utf-8", "ignore")
+                          for n in z.namelist())
+
+
 def to_plain(path):
     return subprocess.run(["pandoc", str(path), "-t", "plain"],
                           cwd=HERE, capture_output=True, text=True).stdout
@@ -351,13 +385,15 @@ def main():
     docx("submission_title_page", "submission_title_page.docx", ref)
 
     print("anonymity audit")
-    leaks = [w for w in ("Almohammedi", "abdullah", "orcid", "Abdullah-m7",
-                         "github.com", "zenodo", "0009-0001")
-             if w.lower() in to_plain(HERE / "submission_manuscript.docx"
-                                      ).lower()]
+    scrub_properties(HERE / "submission_manuscript.docx")
+    identity = ("Almohammedi", "abdullah", "orcid", "Abdullah-m7",
+                "github.com", "zenodo", "0009-0001")
+    body = archive_text(HERE / "submission_manuscript.docx").lower()
+    leaks = [w for w in identity if w.lower() in body]
     if leaks:
         sys.exit(f"anonymised manuscript leaks: {leaks}")
-    print("  submission_manuscript.docx: clean")
+    print(f"  submission_manuscript.docx: clean of {len(identity)} strings "
+          f"across every part of the archive, properties included")
 
     for f in ("fig1_funnel.eps", "fig2_adjudication.eps"):
         if not (HERE / f).exists():

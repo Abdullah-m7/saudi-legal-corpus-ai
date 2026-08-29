@@ -31,7 +31,22 @@ Dale Centre for Legislative Studies at IALS and was managing editor of the
 board. EJLR is therefore not the next venue. The editorship of *The Theory and
 Practice of Legislation*, where paper 5 is under review, has not been checked.
 
-**Target: US law reviews, beginning with the *Notre Dame Journal of
+**Target: *Arab Law Quarterly* (Brill).** Double blind, no fees, 7,500–20,000
+words, and a stated subject area — «Studies of legislatures and legislative
+process within the Arab world» — that is this article's subject exactly. The
+manuscript was converted from Bluebook to the journal's own footnote style on
+29 August 2026; requirements and every change are in `submission_kit.md`.
+
+> **Why not the US law reviews first.** They were the plan, and the Bluebook
+> conversion is done and kept at commit `09340f9`. Two things moved ALQ ahead
+> of them: the law reviews are **not anonymous**, which is where an
+> unaffiliated author is read at a disadvantage, and their route runs through
+> Scholastica at \$7.35 per journal. ALQ is double blind and free. The law
+> reviews remain the fallback, and a Scholastica fee waiver has been requested
+> for later work — an unaffiliated author who graduated within 24 months
+> qualifies, for up to 50 free submissions a year.
+
+**Earlier target: US law reviews, beginning with the *Notre Dame Journal of
 Legislation*** — a legislation journal at Notre Dame Law School, taking
 unsolicited work from academics and practitioners through Scholastica, in
 Bluebook. Requirements verified from its own pages and recorded in
