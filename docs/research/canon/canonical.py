@@ -53,9 +53,32 @@ ARABIC_INDIC = "٠١٢٣٤٥٦٧٨٩"
 EXTENDED_ARABIC_INDIC = "۰۱۲۳۴۵۶۷۸۹"
 DIGIT_MAP = str.maketrans(ARABIC_INDIC + EXTENDED_ARABIC_INDIC,
                           "0123456789" * 2)
-CONSONANT = "بتثجحخدذرزسشصضطظعغفقكمنهوي"
+# The letters the transposition test can see. «ل» is excluded on purpose and
+# not for lack of evidence: the correct shape «ال» + «ل» and the transposed
+# shape «ا» + «ل» + «ل» are the same three characters, so the test returns a
+# ratio of exactly 1.0 for it in every document measured, which is an artefact
+# of the test rather than a fact about the text. A rule cannot be gated on a
+# measurement that cannot come out either way.
+#
+# The hamza-carrying alefs were missing from the first version and cost real
+# parses: «المادة السابعة والأربعون» reaches the reader as «واألربعون», where
+# the lam and the hamza-alef are transposed exactly as «الم» is, and an
+# ordinal parser reads only «السابعة» and returns article 7 for article 47.
+# Across the five development digests the correct:swapped ratio for أ is
+# 0.00-0.11 and for إ 0.00-0.03, on thousands of occurrences each.
+#
+# Bare «ا» is included and is the case that shows the gate is doing work
+# rather than rubber-stamping: four of the five digests transpose it (ratios
+# 0.07-0.32) while the customs digest writes it correctly more often than not
+# (2.34), and only the four are repaired.
+CONSONANT = "بتثجحخدذرزسشصضطظعغفقكمنهوياأإآ"
 LAM_CANDIDATE = re.compile(r"ا([" + CONSONANT + r"])ل(?=[ء-ي])")
-EMPTY_BRACKET_NUMBER = re.compile(r"\(\s*\)\s*(\d+)")
+# «المادة (5)، الفقرة» reaches the text layer as «المادة ( , )5الفقرة»: the
+# digits are carried past the closing bracket and whatever punctuation sat
+# after the bracket is carried inside it. The repair puts both back, and is
+# not cosmetic -- in the authorities blocks, where citations are densest, it
+# is the difference between detecting a citation and not.
+EMPTY_BRACKET_NUMBER = re.compile(r"\(\s*([،,;؛]?)\s*\)\s*(\d+)")
 
 RULES = ["bidi", "tatweel", "digits", "lam_swap", "brackets"]
 
@@ -137,7 +160,7 @@ def _lam_swap(text):
 
 def _brackets(text):
     n = len(EMPTY_BRACKET_NUMBER.findall(text))
-    return EMPTY_BRACKET_NUMBER.sub(r"(\1)", text), n
+    return EMPTY_BRACKET_NUMBER.sub(r"(\2)\1", text), n
 
 
 FUNCS = {"bidi": _bidi, "tatweel": _tatweel, "digits": _digits,

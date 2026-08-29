@@ -97,3 +97,55 @@ class TestSourcesAreNotCrossContaminated:
         rec = canonical.canonicalise(text)
         assert rec["canonical"] == text
         assert all(t["edits"] == 0 for t in rec["transformations"])
+
+
+class TestHamzaTransposition:
+    """«الأربعون» reaches the text layer as «األربعون», and it costs parses.
+
+    The lam is carried past the hamza-alef exactly as it is carried past the
+    meem. Before these letters were in the alphabet, «المادة السابعة
+    والأربعون» parsed as article 7, because the ordinal reader stopped at
+    «السابعة» and never saw «واألربعون».
+    """
+
+    def test_hamza_alef_is_in_the_alphabet(self):
+        assert "أ" in canonical.CONSONANT
+        assert "إ" in canonical.CONSONANT
+        assert "آ" in canonical.CONSONANT
+
+    def test_lam_is_excluded_because_the_test_cannot_decide_it(self):
+        # «ال» + «ل» and «ا» + «ل» + «ل» are the same three characters, so the
+        # ratio is 1.0 whatever the document does. A rule must not be gated on
+        # a measurement that cannot come out either way.
+        assert "ل" not in canonical.CONSONANT
+
+    def test_transposed_hamza_is_repaired_when_the_document_shows_it(self):
+        broken = ("األربعون واألسباب واألحكام " * 30) + "الأولى"
+        out = canonical.canonicalise(broken)["canonical"]
+        assert "الأربعون" in out
+        assert "األربعون" not in out
+
+    def test_a_document_that_writes_it_correctly_is_left_alone(self):
+        fine = "الأربعون والأسباب والأحكام " * 30
+        assert canonical.canonicalise(fine)["canonical"] == fine
+
+
+class TestScrambledBracketNumbers:
+    """«المادة (5)، الفقرة» arrives as «المادة ( , )5الفقرة»."""
+
+    def test_digits_are_returned_inside_the_brackets(self):
+        out = canonical.canonicalise("المادة ( , )5الفقرة")["canonical"]
+        assert "(5)" in out
+
+    def test_the_punctuation_is_returned_outside_them(self):
+        out = canonical.canonicalise("المادة ( ، )14الفقرة")["canonical"]
+        assert "(14)،" in out
+
+    def test_an_ordinary_bracketed_number_is_untouched(self):
+        text = "المادة (14) من الالئحة"
+        assert canonical.canonicalise(text)["canonical"] == text
+
+    def test_the_rule_is_counted(self):
+        rec = canonical.canonicalise("المادة ( , )5الفقرة")
+        counts = {t["rule"]: t["edits"] for t in rec["transformations"]}
+        assert counts["brackets"] == 1
