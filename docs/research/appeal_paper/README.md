@@ -3,10 +3,17 @@
 *Affirmed on the Reasons Below: Appellate Review in 15,383 Published Saudi
 Commercial Judgments.*
 
-**الوجهة المقترحة: Journal of Empirical Legal Studies** (Wiley، بالتعاون مع
-كلية الحقوق بجامعة كورنيل) — لا رسوم تقديم ولا APC على مسار الاشتراك.
-والبديل عند الردّ: **International Journal for Court Administration**، مفتوحة
-الوصول بلا رسوم، وأدقّ ملاءمةً لنتيجة امتناع التعليل.
+**الوجهة: International Journal for Court Administration** — تصدر عن الرابطة
+الدولية لإدارة المحاكم، مفتوحة الوصول، بلا رسوم نشر، وتحكيمها مزدوج التعمية.
+والمتطلّبات مقروءة من صفحتها في ٢٩ أغسطس ٢٠٢٦ ومسجَّلة في `submission_kit.md`.
+
+**وليست بديلًا عن JELS — بل الجمهور الصحيح.** نتيجة هذه الورقة ليست فقهية ولا
+اقتصادية: هي واقعةٌ عن **ما تُنتجه سياسة النشر**، ومن يضع سياسة النشر هم
+إداريّو المحاكم. وقرّاء IJCA هم قضاة ومسؤولو محاكم ووزارات عدل.
+
+> **العنوان تغيّر:** كان ثلاث عشرة كلمة، والحدّ عندهم ثمان. صار
+> *Measuring Appellate Reason-Giving in Saudi Commercial Courts* — سبع كلمات،
+> وحجم الذخيرة انتقل إلى الملخّص.
 
 ## من أين جاءت هذه الورقة
 

@@ -18,8 +18,9 @@
 \newif\ifanon
 \anonfalse
 
-\title{Affirmed on the Reasons Below:\\
-Appellate Review in \nAppeals{} Published Saudi Commercial Judgments}
+% IJCA allows the title eight words and no notes in it. The corpus size,
+% which the old title carried, moves into the abstract.
+\title{Measuring Appellate Reason-Giving in Saudi Commercial Courts}
 
 \ifanon
   \author{}
@@ -33,7 +34,7 @@ Appellate Review in \nAppeals{} Published Saudi Commercial Judgments}
 \fi
 
 \begin{document}
-\doublespacing
+\onehalfspacing        % IJCA: 1.5 line spacing
 \maketitle
 
 \begin{abstract}
@@ -533,7 +534,13 @@ that its authority is procedural.
 
 The corpus, the extraction and classification code, the model, and the
 scripts that generate every number in this article are public.\footnote{%
+\ifanon
+Repository withheld for anonymous review: its address names the author. It
+holds the corpus, the analysis code and the replication guide, and will be
+cited in full in the accepted version.
+\else
 Repository: \url{https://github.com/Abdullah-m7/saudi-legal-corpus-ai}.
+\fi
 Every measurement here is generated into a file of macros by
 \texttt{make\_numbers.py} and typeset from it; a check refuses to build a
 manuscript that types one by hand.} Judgments are reproduced as the Ministry
@@ -549,6 +556,22 @@ verified each result against the corpus, and is responsible for the content.
 No measurement in this article is produced by a language model: every number
 is computed by the deposited code from the deposited data.
 
+\ifanon\else
+\section*{Author biography}
+
+Abdullah Almohammedi is an independent researcher in Saudi Arabia working on
+machine-readable corpora of Saudi legislation and adjudication. He built the
+corpus this article measures and the citator that joins its two halves at the
+level of the article. His work is published openly, with the code that
+produces every reported figure.
+
+\section*{Competing interests}
+
+The author declares no competing interests. This work received no funding, and
+the author holds no position in, and no relationship with, the Ministry of
+Justice or any court whose judgments it measures.
+\fi
+
 \section*{References}
 
 \begin{hangparas}{1.5em}{1}
@@ -558,16 +581,20 @@ Comparative Law Approach.'' \emph{Washington and Lee Law Review} 72(2): 483.
 Eisenberg, Theodore. 2004. ``Appeal Rates and Outcomes in Tried and Nontried
 Cases: Further Exploration of Anti-Plaintiff Appellate Outcomes.''
 \emph{Journal of Empirical Legal Studies} 1(3): 659--688.
+\url{https://doi.org/10.1111/j.1740-1461.2004.00019.x}
 
 Priest, George L., and Benjamin Klein. 1984. ``The Selection of Disputes for
 Litigation.'' \emph{Journal of Legal Studies} 13(1): 1--55.
+\url{https://doi.org/10.1086/467732}
 
 Shavell, Steven. 1995. ``The Appeals Process as a Means of Error
 Correction.'' \emph{Journal of Legal Studies} 24(2): 379--426.
+\url{https://doi.org/10.1086/467963}
 
 Siegelman, Peter, and John J. Donohue III. 1990. ``Studying the Iceberg from
 Its Tip: A Comparison of Published and Unpublished Employment Discrimination
 Cases.'' \emph{Law \& Society Review} 24(5): 1133--1170.
+\url{https://doi.org/10.2307/3053664}
 
 Vogel, Frank E. 2000. \emph{Islamic Law and Legal System: Studies of Saudi
 Arabia}. Leiden: Brill.
