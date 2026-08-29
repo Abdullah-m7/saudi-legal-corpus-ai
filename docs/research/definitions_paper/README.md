@@ -31,13 +31,24 @@ Dale Centre for Legislative Studies at IALS and was managing editor of the
 board. EJLR is therefore not the next venue. The editorship of *The Theory and
 Practice of Legislation*, where paper 5 is under review, has not been checked.
 
-**Target: *The Loophole*,** the journal of the Commonwealth Association of
-Legislative Counsel — practising legislative drafters, which is the audience
-this article's conclusion addresses. Requirements verified from CALC's own
-page on 29 August 2026 and recorded in `submission_kit.md`: no more than 8,000
-words including footnotes (ours: 7,993), an abstract under 200 (ours: 198),
-MS Word, and email to the Editor in Chief. Non-members are expressly
-encouraged to submit, and no fee is stated.
+**Target: US law reviews, beginning with the *Notre Dame Journal of
+Legislation*** — a legislation journal at Notre Dame Law School, taking
+unsolicited work from academics and practitioners through Scholastica, in
+Bluebook. Requirements verified from its own pages and recorded in
+`submission_kit.md`.
+
+**The Loophole was the earlier choice and was dropped after a check.** It is
+the journal of the Commonwealth Association of Legislative Counsel, and its
+readers are exactly the drafters this article addresses — but it is **not in
+DOAJ**, has no impact factor, and is a professional rather than an indexed
+academic journal. With nothing yet published, an unindexed line buys less than
+the route that permits **simultaneous submission**: one Bluebook conversion
+opens dozens of law reviews at once, where *The Loophole* is one submission
+and one chance. The Loophole stays as the fallback; it has no window to miss.
+
+> **The cost of this route, stated:** US law reviews are **not anonymous**, and
+> an unaffiliated researcher is at a disadvantage a double-anonymous journal
+> removes. That is being paid deliberately, for the academic line.
 
 | File | Purpose |
 |---|---|

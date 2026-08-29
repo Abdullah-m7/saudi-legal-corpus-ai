@@ -44,7 +44,10 @@ EXEMPT = re.compile(
     r"zenodo|doi|orcid|github|ukpga|nisi|http"
     # an OSCOLA or Bluebook pinpoint --- «ss 21.3 and 24.3» in a footnote
     # citing a treatise --- is a citation, not a result.
-    r"|\bedn\b|\bss?\s\d|LexisNexis|Butterworths", re.I)
+    # a pinpoint in a footnote citing a treatise --- «ss 21.3 and 24.3» in
+    # OSCOLA, «\S\S~21.3, 24.3» in Bluebook --- is a citation, not a result
+    r"|\bedn\b|\bss?\s\d|\\S\\?S?~?\d|LexisNexis|Butterworths"
+    r"|\bed\.\s\d{4}|\(\d{4}\)\.?$", re.I)
 
 
 # A table cell is where a bare integer is a measurement. `129` in prose is

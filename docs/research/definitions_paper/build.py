@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Build the Statute Law Review submission files for this article.
+"""Build the submission files for this article.
 
-The journal wants two Word documents: an anonymised manuscript, double-spaced,
-with figures referenced rather than embedded; and a separate title page
-carrying the author's identity, the declarations, and the total word count.
+Written first for Statute Law Review, which desk-rejected it, and kept intact
+because the anonymised Word build is what a peer-reviewed journal will want if
+the law reviews decline. **US law reviews are not anonymous**: for the Notre
+Dame Journal of Legislation and its peers the file to upload is the identified
+`main.pdf`, with the CV and the cover letter beside it. Nothing here needs to
+change for that; the anonymised copy is simply not used.
 
 `main.tex` is the single source. It carries an \\ifanon switch that pdfLaTeX
 honours, but pandoc --- which produces the .docx --- does not evaluate TeX
@@ -333,11 +336,9 @@ def main():
         prepare(anon=True, for_docx=True), encoding="utf-8")
     ref = double_spaced_reference()
     words = docx("submission_manuscript", "submission_manuscript.docx", ref)
-    # The Loophole's limit, read from CALC's own page on 29 August 2026: no
-    # more than 8,000 words including footnotes, with an abstract under 200.
-    print(f"  submission_manuscript.docx: {words} words "
-          f"({'within' if words <= 8000 else 'OVER'} "
-          f"The Loophole's 8,000-word limit)")
+    # US law reviews state no word limit and run long; the count is reported
+    # because the cover letter quotes it, not because a cap binds.
+    print(f"  submission_manuscript.docx: {words} words including footnotes")
 
     print("title page")
     latex("submission_title_page",

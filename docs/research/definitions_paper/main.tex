@@ -37,6 +37,12 @@ Measuring Definitional Fragmentation Across a Legal System}
   \date{}
 \fi
 
+% Bluebook typography, as a US law review sets it: large-and-small caps for
+% books and periodical names, italics for article titles.
+\newcommand{\bbook}[1]{\textsc{#1}}
+\newcommand{\bjournal}[1]{\textsc{#1}}
+\newcommand{\btitle}[1]{\emph{#1}}
+
 \input{numbers}
 
 \begin{document}
@@ -87,11 +93,9 @@ an \emph{establishment}
 --- \emph{al-munsha'ah}, a term that recurs throughout Saudi regulatory
 legislation --- depends entirely on which statute is asking. The Competition
 Law defines an establishment as `any natural or legal person carrying on an
-economic activity',\footnote{Competition Law (Royal Decree M/75, 29/6/1440H)
-art 1.} which she plainly is. The Labour Law defines it as `any undertaking
+economic activity',\footnote{Competition Law, Royal Decree No. M/75 (29/6/1440H), art. 1 (Saudi Arabia).} which she plainly is. The Labour Law defines it as `any undertaking
 run by a natural or legal person that employs one or more workers for wages,
-of whatever kind',\footnote{Labour Law (Royal Decree M/51, 23/8/1426H) art
-2.} which she plainly is not. Neither definition is defective. Each serves
+of whatever kind',\footnote{Labour Law, Royal Decree No. M/51 (23/8/1426H), art. 2 (Saudi Arabia).} which she plainly is not. Neither definition is defective. Each serves
 its own statute well. Together they mean that a single word, in a single
 legal system, sorts the same person onto opposite sides of a line.
 
@@ -194,16 +198,13 @@ United Kingdom's Interpretation Act 1978, Australia's Acts Interpretation Act
 1901 and Canada's Interpretation Act each supply default meanings for
 recurring terms and default rules for their application, so that a drafter
 who says nothing about `person' or `writing' has nonetheless said something
-definite.\footnote{Interpretation Act 1978, s 5 and sch 1; Acts
-Interpretation Act 1901 (Cth), pt 2 div 2; Interpretation Act, RSC 1985, c
-I-21, s 35.} The effect is to move a body of definitional content out of
+definite.\footnote{Interpretation Act 1978, c. 30, \S~5, sch. 1 (UK); Acts Interpretation Act 1901 (Cth) pt 2 div 2 (Austl.); Interpretation Act, R.S.C. 1985, c. I-21, \S~35 (Can.).} The effect is to move a body of definitional content out of
 individual statutes and into one instrument where it can be maintained --- and
 where a change to it is a legislative act with a visible author, rather than
 a drift that nobody decided on.
 
 No instrument in the corpus performs that function for Saudi
-legislation.\footnote{The Basic Law of Governance (Royal Order A/90,
-27/8/1412H) is constitutional in character and supplies no general
+legislation.\footnote{The Basic Law of Governance, Royal Order No. A/90 (27/8/1412H) (Saudi Arabia), is constitutional in character and supplies no general
 definitional apparatus. This is a statement about the \nInstruments{} instruments in the
 corpus, which is not an exhaustive collection of Saudi legislation; see
 section 9.} The consequence is structural rather than accidental: with no
@@ -222,17 +223,14 @@ Definitions are a settled topic in the drafting literature, and its received
 positions are largely uncontested: define only what needs defining; do not
 give a term a sense its ordinary meaning will not bear; and do not legislate
 in a definition, because a reader looking for the rule will not look
-there.\footnote{Reed Dickerson, \emph{The Fundamentals of Legal Drafting}
-(2nd edn, Little, Brown 1986) ch 7; Helen Xanthaki, \emph{Thornton's
-Legislative Drafting} (6th edn, Bloomsbury Professional 2022) ch 4.}
+there.\footnote{\bbook{Reed Dickerson, The Fundamentals of Legal Drafting} ch. 7 (2d ed. 1986); \bbook{Helen Xanthaki, Thornton's Legislative Drafting} ch. 4 (6th ed. 2022).}
 Dickerson's warning against the `humpty-dumpty' definition --- the definition
 that assigns a word a meaning its ordinary sense cannot bear, so that the
 statute says one thing and means another --- remains the most cited passage
 on the subject. Xanthaki's later work reframes the drafting question around
 effectiveness, and definitions accordingly become a question of whether the
 reader can find and apply the rule rather than of whether the definition is
-elegant.\footnote{Helen Xanthaki, \emph{Drafting Legislation: Art and
-Technology of Rules for Regulation} (Hart 2014).}
+elegant.\footnote{\bbook{Helen Xanthaki, Drafting Legislation: Art and Technology of Rules for Regulation} (2014).}
 
 What this literature addresses is the definition \emph{within} an
 instrument. The question this article asks --- what happens when many
@@ -241,9 +239,7 @@ approached from the other side by statutory interpretation scholarship. The
 presumption of consistent expression, that a legislature means the same thing
 by the same word, is a settled interpretive canon, and so is its limit: the
 presumption is weak between statutes, and weaker still where the statutes
-serve different purposes.\footnote{\emph{Bennion, Bailey and Norbury on
-Statutory Interpretation} (8th edn, LexisNexis Butterworths 2020) ss 21.3 and 24.3; Antonin Scalia and Bryan A Garner, \emph{Reading Law: The
-Interpretation of Legal Texts} (Thomson/West 2012) 170--73.} That limit is
+serve different purposes.\footnote{\bbook{Bennion, Bailey and Norbury on Statutory Interpretation} \S\S~21.3, 24.3 (8th ed. 2020); \bbook{Antonin Scalia \& Bryan A. Garner, Reading Law: The Interpretation of Legal Texts} 170--73 (2012).} That limit is
 doctrinally sound and it is precisely what makes the empirical question
 interesting: if a court will not presume that `establishment' means the same
 thing in the Competition Law and the Labour Law, then the burden of knowing
@@ -256,23 +252,11 @@ form a machine can read, and that has not been available. The legal
 informatics field has built large legislative corpora --- Pile of Law and
 MultiLegalPile are the best known --- but these are assembled to train
 language models, hold running text rather than structure, and cover no Arab
-jurisdiction.\footnote{Peter Henderson and others, `Pile of Law: Learning
-Responsible Data Filtering from the Law and a 256GB Open-Source Legal
-Dataset' (NeurIPS 2022, Datasets and Benchmarks Track); Joel Niklaus and
-others, `MultiLegalPile: A 689GB Multilingual Legal Corpus' (Proceedings of
-the 62nd Annual Meeting of the Association for Computational Linguistics,
-2024).} Structural standards such as Akoma Ntoso model the architecture of a
+jurisdiction.\footnote{Peter Henderson et al., \btitle{Pile of Law: Learning Responsible Data Filtering from the Law and a 256GB Open-Source Legal Dataset} (Neural Info. Processing Sys. Datasets \& Benchmarks Track, 2022); Joel Niklaus et al., \btitle{MultiLegalPile: A 689GB Multilingual Legal Corpus}, in \bjournal{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics} (2024).} Structural standards such as Akoma Ntoso model the architecture of a
 legislative document faithfully but do not extract its definitional
-content.\footnote{Monica Palmirani and Fabio Vitali, `Akoma-Ntoso for Legal
-Documents' in \emph{Legislative XML for the Semantic Web} (Springer 2011)
-75.} Quantitative studies of legal systems have concentrated on citation
+content.\footnote{Monica Palmirani \& Fabio Vitali, \btitle{Akoma-Ntoso for Legal Documents}, in \bbook{Legislative XML for the Semantic Web} 75 (2011).} Quantitative studies of legal systems have concentrated on citation
 structure and on document complexity rather than on
-terminology.\footnote{Daniel Martin Katz and Michael J Bommarito, `Measuring
-the Complexity of the Law: The United States Code' (2014) 22 Artificial
-Intelligence and Law 337; Corinna Coupette and others, `Measuring Law Over
-Time: A Network Analytical Framework with an Application to Statutes and
-Regulations in the United States and Germany' (2021) 9 Frontiers in Physics
-658463.} A companion study analyses the citation network of the same Saudi
+terminology.\footnote{Daniel Martin Katz \& Michael J. Bommarito, \btitle{Measuring the Complexity of the Law: The United States Code}, 22 \bjournal{A.I. \& L.} 337 (2014); Corinna Coupette et al., \btitle{Measuring Law Over Time: A Network Analytical Framework with an Application to Statutes and Regulations in the United States and Germany}, 9 \bjournal{Frontiers in Physics}, art.~658463 (2021).} A companion study analyses the citation network of the same Saudi
 corpus; the present article takes up the complementary question of whether
 the instruments in that network use a common vocabulary.\footnote{On the
 citation network of this corpus, see the companion study referred to in the
@@ -476,30 +460,24 @@ that do not agree.
 The \textbf{competition group} defines it by reference to economic activity
 alone. The Competition Law has `every person of natural or legal capacity
 carrying on an economic activity'; its implementing regulation repeats this
-almost verbatim.\footnote{Competition Law art 1; Implementing Regulation of
-the Competition Law (GAC Board Decision 337, 25/1/1441H) art 1.} The
+almost verbatim.\footnote{Competition Law, \emph{supra}, art. 1; Implementing Regulation of the Competition Law, GAC Board Decision No. 337 (25/1/1441H), art. 1 (Saudi Arabia).} The
 Implementing Regulation of the Anti-Concealment Law goes further and makes
 the breadth explicit: `everyone practising an economic activity, including
 the sole proprietorship, the company, and any other legal
-form'.\footnote{Implementing Regulation of the Anti-Concealment Law, issued
-under art 19 of the Anti-Concealment Law (Royal Decree M/4, 1/1/1442H) art
-1.} The drafter of that instrument evidently anticipated the argument that a
+form'.\footnote{Implementing Regulation of the Anti-Concealment Law, issued under art. 19 of the Anti-Concealment Law, Royal Decree No. M/4 (1/1/1442H), art. 1 (Saudi Arabia).} The drafter of that instrument evidently anticipated the argument that a
 sole proprietorship is not an establishment, and closed it.
 
 The \textbf{labour group} defines it by reference to employment. The Labour
 Law has `every undertaking run by a natural or legal person that employs one
 or more workers for wages, of whatever kind'; the High-Risk Professions Work
 Organization Regulation and the OSH Service Providers Regulation each restate
-this in near-identical terms.\footnote{Labour Law art 2; High-Risk
-Professions Work Organization Regulation art 1; OSH Service Providers
-Licensing and Accreditation Regulation art 1.} An entity with no employees
+this in near-identical terms.\footnote{Labour Law, \emph{supra}, art. 2; High-Risk Professions Work Organization Regulation art. 1; OSH Service Providers Licensing and Accreditation Regulation art. 1 (Saudi Arabia).} An entity with no employees
 is not an establishment for any of them.
 
 The \textbf{social insurance group} defines it by reference to legal form and
 identity: `the legal entity through which the employer conducts his activity,
 and which bears his name or the trade name of that activity'.\footnote{
-Implementing Regulation of the Social Insurance Law (Ministerial Resolution
-230/\emph{ta'minat}, 26/12/1445H) art 1; the legacy regulation carries the
+Implementing Regulation of the Social Insurance Law, Ministerial Resolution No. 230/\emph{ta'minat} (26/12/1445H), art. 1 (Saudi Arabia); the legacy regulation carries the
 same wording.} This is a third thing again --- neither activity nor headcount
 but the vehicle.
 
@@ -535,15 +513,11 @@ Transaction Tax Law each define the Kingdom as `the territory of the Kingdom
 of Saudi Arabia, including the areas outside the territorial waters over
 whose waters, seabed, subsoil and natural resources the Kingdom of Saudi
 Arabia exercises sovereign rights and jurisdiction under its own law and
-international law'.\footnote{Value Added Tax Law (Royal Decree M/113,
-2/11/1438H) art 1; Real Estate Transaction Tax Law (Royal Decree M/84,
-19/3/1446H) art 1.} The Income Tax Law reaches the same result by a longer
+international law'.\footnote{Value Added Tax Law, Royal Decree No. M/113 (2/11/1438H), art. 1 (Saudi Arabia); Real Estate Transaction Tax Law, Royal Decree No. M/84 (19/3/1446H), art. 1 (Saudi Arabia).} The Income Tax Law reaches the same result by a longer
 route, adding airspace and the Kingdom's rights in the Saudi--Kuwaiti Divided
-Zone.\footnote{Income Tax Law (Royal Decree M/1, 15/1/1425H) art 1.} The
+Zone.\footnote{Income Tax Law, Royal Decree No. M/1 (15/1/1425H), art. 1 (Saudi Arabia).} The
 Zakat Collection Implementing Regulation has simply `the territory of the
-Kingdom of Saudi Arabia', without the maritime extension.\footnote{Zakat
-Collection Implementing Regulation (Minister of Finance Resolution 1007,
-19/8/1445H) art 1.}
+Kingdom of Saudi Arabia', without the maritime extension.\footnote{Zakat Collection Implementing Regulation, Minister of Finance Resolution No. 1007 (19/8/1445H), art. 1 (Saudi Arabia).}
 
 What makes this instructive is that the four expansive definitions are not
 scattered: they are exactly the four fiscal instruments in the set. The
@@ -571,16 +545,13 @@ administration, it can occur anywhere.
 Thirteen instruments define `consumer', and unlike `establishment' the
 divergence here is not two or three camps but a spread. The Credit
 Information Law has `the natural or legal person having credit
-dealings'.\footnote{Credit Information Law (Royal Decree M/37, 5/7/1429H) art
-1.} The Electricity Law and its regulation have `every person supplied with
+dealings'.\footnote{Credit Information Law, Royal Decree No. M/37 (5/7/1429H), art. 1 (Saudi Arabia).} The Electricity Law and its regulation have `every person supplied with
 electrical service for his own consumption'; the Water Law has `every person
 who uses water for his own consumption'. The E-Commerce Law has `the person dealing
 in electronic commerce with a view to obtaining the products or services
-which the service provider makes available'.\footnote{E-Commerce Law (Royal
-Decree M/126, 7/11/1440H) art 1.} The Payment Systems and Services Law has
+which the service provider makes available'.\footnote{E-Commerce Law, Royal Decree No. M/126 (7/11/1440H), art. 1 (Saudi Arabia).} The Payment Systems and Services Law has
 `the person to whom the ultimate benefit of payment services is
-directed'.\footnote{Payment Systems and Services Law (Royal Decree M/26,
-22/3/1443H) art 1.} The Product Safety Law has `a natural or legal person who
+directed'.\footnote{Payment Systems and Services Law, Royal Decree No. M/26 (22/3/1443H), art. 1 (Saudi Arabia).} The Product Safety Law has `a natural or legal person who
 uses a product'. The Dry Gas and LPG Distribution Law defines the consumer as
 `the residential consumer or the commercial consumer' --- a definition by
 enumeration that presupposes two further terms.
@@ -607,11 +578,10 @@ Ten instruments define `activity', and this is the case where the
 classification was most contestable. The environmental family --- five
 implementing regulations sharing near-verbatim wording --- has `any project,
 or industrial, commercial or service facility, or works, or other activities
-expected to have environmental effects'.\footnote{Implementing regulations
-made under the Environmental Law (Royal Decree M/165, 19/11/1441H): the Air
+expected to have environmental effects'.\footnote{Implementing regulations made under the Environmental Law, Royal Decree No. M/165 (19/11/1441H) (Saudi Arabia): the Air
 Quality Regulation, the Environmental Fees Regulation, the Environmental
 Inspection and Audit Regulation, the Environmental Permits Regulation and
-the Environmental Service Providers Regulation, art 1 in each. The
+the Environmental Service Providers Regulation, art. 1 in each. The
 Environmental Law itself does not define the term.}
 The Income Tax Law has `commercial activity in all its forms, or professional
 or craft activity or any similar activity, intended to realise profit,
@@ -756,12 +726,10 @@ to recycling facilities before they obtain their licences --- close to that
 family but not the same thing. The Agriculture Regulation has a one-off
 ministerial permission for temporary agricultural operations. The Civil Aviation Law has something else entirely: `permission
 for an aircraft to cross the Kingdom's airspace or land at one of its
-airports for commercial or diplomatic purposes'.\footnote{Civil Aviation Law
-(Royal Decree M/44, 18/7/1426H) art 1.} The Telecommunications and
+airports for commercial or diplomatic purposes'.\footnote{Civil Aviation Law, Royal Decree No. M/44 (18/7/1426H), art. 1 (Saudi Arabia).} The Telecommunications and
 Information Technology Act has a third thing: a registration issued to a
 provider located outside the Kingdom that offers services into
-it.\footnote{Telecommunications and Information Technology Act (Royal Decree
-M/106, 2/11/1443H) art 1.}
+it.\footnote{Telecommunications and Information Technology Act, Royal Decree No. M/106 (2/11/1443H), art. 1 (Saudi Arabia).}
 
 An overflight clearance and an environmental pre-commencement document have
 nothing in common except the Arabic word. That is a feature of natural
