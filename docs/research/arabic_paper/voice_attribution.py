@@ -33,12 +33,52 @@ import collections
 import json
 import random
 import re
+import unicodedata
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 
+# Two representation faults were found by reading whole judgments
+# (gstc_pilot/MOJ_ARTICLE_GOLD.md) and a candidate third source
+# (gstc_pilot/SOURCE_C.md), after the held-out evaluations were run and
+# reported. Neither is a matching rule; both are the text arriving as
+# something other than the characters it renders as.
+#
+#   presentation forms   «ﺍﻟﻤﺎﺩﺓ» is six codepoints in U+FB50..U+FEFF, not the
+#                        string «المادة». A document written in them reads
+#                        downstream as one that cites nothing. 30.2 per cent
+#                        of ministry judgments carry some.
+#   combining marks      «المادَّة» with a shadda is the same word, and is not
+#                        the same string. 234 citations corpus-wide were lost
+#                        to that one mark; 99.4 per cent of judgments carry
+#                        marks somewhere.
+#
+# CITE is made tolerant of marks directly, because a caller that forgets to
+# normalise should not silently lose citations. Presentation forms cannot be
+# absorbed into a pattern -- every letter is a different codepoint -- so a
+# caller that reads sources other than the ministry API must call normalise()
+# and then work on the normalised string throughout, since stripping
+# characters moves every offset after them.
+PRESENTATION = re.compile(r"[\uFB50-\uFDFF\uFE70-\uFEFE]")
+MARKS = re.compile(r"[\u064B-\u0652\u0670\u0653-\u0655]")
+TATWEEL = "\u0640"
+
+
+def normalise(text):
+    """Presentation forms to letters, marks and tatweel away. Same rules as
+    canon/canonical.py, for callers that read raw text rather than the
+    canonical record."""
+    text = PRESENTATION.sub(
+        lambda m: unicodedata.normalize("NFKC", m.group(0)), text)
+    return MARKS.sub("", text.replace(TATWEEL, ""))
+
+
+_M = r"[\u064B-\u0652\u0670\u0653-\u0655]*"     # marks, anywhere, any number
+# marks after the final letter too: «المادةُ» is attested
+_HEAD = ("م" + _M + "ا" + _M + "د" + _M + "[ةه]" + _M)
+
 CITE = re.compile(
-    r"(?<![ء-ي])(?:ال|لل|بال|كال|فال|وال|ول|بل|ب|ل|و)?ماد[ةه]"
+    r"(?<![ء-ي])(?:ال|لل|بال|كال|فال|وال|ول|بل|ب|ل|و)?" + _HEAD +
     r"\s*\(?\s*([^\)\n]{1,40}?)\s*\)?\s*من\s+"
     r"((?:نظام|لائحة|النظام|اللائحة)[^\.،؛\n\)]{0,60})")
 

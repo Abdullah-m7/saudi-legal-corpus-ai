@@ -16,6 +16,12 @@ instrument. Each form below breaks one of those.
 
 Nothing here changes the parser. It is a measurement.
 
+Re-run under parser v2, which repaired two of the seven: the head noun may now
+carry combining marks, and canonicalisation maps Arabic Presentation Forms.
+Rows the current parser recovers are reported as recovered rather than
+missed, so this table always says what the code in front of the reader
+actually does.
+
     python3 citation_forms.py
 """
 import collections
@@ -100,6 +106,10 @@ def main():
             c["pluralArticles"] += len(nums)
             c["pluralArticlesUnseen"] += len(nums - singles)
 
+        # v2's CITE tolerates marks on the head noun, so a bracket the
+        # pattern now reaches is not a blind spot any more. Asking the pattern
+        # is more honest than assuming either way.
+        covered = [(m.start(), m.end()) for m in V.CITE.finditer(t)]
         for m in BARE.finditer(t):
             before = t[max(0, m.start() - 60):m.start()]
             if IMMED.search(before):
@@ -110,6 +120,8 @@ def main():
             stripped = MARKS.sub("", before)
             if IMMED.search(stripped) or ANYHEAD.search(stripped):
                 c["headNounDiacritics"] += 1
+                if any(a <= m.start() < b for a, b in covered):
+                    c["headNounDiacriticsRecovered"] += 1
             elif TRUNC.search(before.rstrip()) or TRUNC.search(stripped.rstrip()):
                 c["headNounTruncated"] += 1
             else:
@@ -143,7 +155,8 @@ def main():
         ("later members of an enumerated list, «(51) و (56) و …»",
          c["listContinuation"], c["listContinuation"]),
         ("head noun carrying Arabic diacritics, «المادَّة»",
-         c["headNounDiacritics"], c["headNounDiacritics"]),
+         c["headNounDiacritics"],
+         c["headNounDiacritics"] - c["headNounDiacriticsRecovered"]),
         ("head noun truncated to «الماد»",
          c["headNounTruncated"], c["headNounTruncated"]),
         ("bracketed number with no head noun, «(1/29) من نظام الإثبات»",

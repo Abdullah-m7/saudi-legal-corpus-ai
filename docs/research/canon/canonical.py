@@ -7,7 +7,7 @@ arrive as PDF text carrying bidi control characters, justification kashida,
 and a systematic transposition of the definite article. Repairing those inside
 a scraper hides them; repairing them here makes them measurable.
 
-FIVE RULES, AND THE FOURTH IS THE DANGEROUS ONE
+SEVEN RULES, AND THE SIXTH IS THE DANGEROUS ONE
 -----------------------------------------------
 Each transformation is deterministic, individually switchable, individually
 counted, and asserted not to change legal meaning. Raw text is never
@@ -19,6 +19,24 @@ list of what ran with how many edits each.
               around it, which breaks any pattern spanning the two.
 
   tatweel     strip U+0640. It is a justification glyph, not a letter.
+
+  presentation
+              map the Arabic Presentation Forms blocks, U+FB50..U+FDFF and
+              U+FE70..U+FEFF, back to the letters they render. A PDF whose
+              producer wrote the shaped glyphs rather than the characters
+              yields «ﺍﻟﻤﺎﺩﺓ», which is not the string «المادة» and matches no
+              pattern in this project: such a document reads downstream as one
+              that cites nothing at all. Six of the eight securities-committee
+              bulletins in SOURCE_C.md are written this way, and 30.2 per cent
+              of ministry judgments carry at least some of it. NFKC is applied
+              per character and only inside those two blocks, so nothing else
+              in the text is renormalised.
+
+  marks       strip the Arabic combining marks U+064B..U+0652, U+0670 and
+              U+0653..U+0655. They are vocalisation, not spelling. «المادَّة»
+              with a shadda is the same word as «المادة» and 234 citations
+              corpus-wide were lost to that one mark. 99.4 per cent of
+              ministry judgments carry marks somewhere.
 
   digits      Arabic-Indic ٠-٩ and Extended Arabic-Indic ۰-۹ to 0-9. The code
               points differ; the numbers do not.
@@ -80,7 +98,22 @@ LAM_CANDIDATE = re.compile(r"ا([" + CONSONANT + r"])ل(?=[ء-ي])")
 # is the difference between detecting a citation and not.
 EMPTY_BRACKET_NUMBER = re.compile(r"\(\s*([،,;؛]?)\s*\)\s*(\d+)")
 
-RULES = ["bidi", "tatweel", "digits", "lam_swap", "brackets"]
+# Presentation forms are mapped before lam_swap, because a document written in
+# them has no «ال» sequences for the transposition test to count and would be
+# diagnosed as unbroken. Marks are stripped before it for the same reason: a
+# shadda between the alif and the lam hides the article from the gate.
+RULES = ["bidi", "tatweel", "presentation", "marks", "digits", "lam_swap",
+         "brackets"]
+
+# U+FB50..U+FDFF and U+FE70..U+FEFF. U+FE00..U+FE0F (variation selectors) and
+# U+FEFF (the byte-order mark) are left to the mark and bidi rules; NFKC maps
+# the rest to the letters they render, and a ligature such as «ﻻ» expands to
+# two characters, which is why this rule can lengthen the text.
+PRESENTATION = re.compile(r"[\uFB50-\uFDFF\uFE70-\uFEFE]")
+# vocalisation and the dagger alif. U+0653..U+0655 are the hamza carriers
+# written above or below an alif, which are decoration on a letter already
+# present.
+MARKS = re.compile(r"[\u064B-\u0652\u0670\u0653-\u0655]")
 
 
 def _bidi(text):
@@ -90,6 +123,20 @@ def _bidi(text):
 
 def _tatweel(text):
     out = text.replace(TATWEEL, "")
+    return out, len(text) - len(out)
+
+
+def _presentation(text):
+    """Shaped glyphs back to letters, one character at a time."""
+    n = len(PRESENTATION.findall(text))
+    if not n:
+        return text, 0
+    return PRESENTATION.sub(
+        lambda m: unicodedata.normalize("NFKC", m.group(0)), text), n
+
+
+def _marks(text):
+    out = MARKS.sub("", text)
     return out, len(text) - len(out)
 
 
@@ -163,8 +210,9 @@ def _brackets(text):
     return EMPTY_BRACKET_NUMBER.sub(r"(\2)\1", text), n
 
 
-FUNCS = {"bidi": _bidi, "tatweel": _tatweel, "digits": _digits,
-         "lam_swap": _lam_swap, "brackets": _brackets}
+FUNCS = {"bidi": _bidi, "tatweel": _tatweel, "presentation": _presentation,
+         "marks": _marks, "digits": _digits, "lam_swap": _lam_swap,
+         "brackets": _brackets}
 
 
 # Every rule is a substitution, so a canonical position can be traced back to

@@ -179,3 +179,59 @@ class TestOffsetTrace:
         assert full != without
         # the same raw byte is reachable under both settings
         assert set(tr_full) & set(tr_without)
+
+
+class TestPresentationForms:
+    """A PDF that writes the shaped glyphs is not writing the letters.
+
+    Six of the eight securities-committee bulletins in SOURCE_C.md are encoded
+    in the Arabic Presentation Forms blocks, and 30.2 per cent of ministry
+    judgments carry some of it. Before this rule existed, such a document
+    yielded zero citations and read downstream as one that cites nothing --
+    the worst kind of failure, because it is silent and looks like data.
+    """
+
+    SHAPED = "ﺍﻟﻤﺎﺩﺓ (٢٩) ﻣﻦ ﻧﻈﺎﻡ ﺍﻹﺛﺒﺎﺕ"
+
+    def test_shaped_glyphs_become_letters(self):
+        out = canonical.canonicalise(self.SHAPED)["canonical"]
+        assert "المادة" in out
+        assert "نظام" in out
+
+    def test_the_rule_is_switchable_and_counted(self):
+        edits = {t["rule"]: t["edits"]
+                 for t in canonical.canonicalise(self.SHAPED)["transformations"]}
+        assert edits["presentation"] == 18
+        without = canonical.canonicalise(
+            self.SHAPED, rules=["bidi", "digits"])["canonical"]
+        assert "المادة" not in without
+
+    def test_ordinary_arabic_is_untouched(self):
+        plain = "المادة (29) من نظام الإثبات"
+        assert canonical.canonicalise(plain)["canonical"] == plain
+
+
+class TestCombiningMarks:
+    """A shadda is vocalisation, not spelling.
+
+    «المادَّة» is the same word as «المادة» and was a different string. 234
+    citations corpus-wide were lost to that one mark.
+    """
+
+    def test_shadda_on_the_head_noun_is_stripped(self):
+        assert "المادة" in canonical.canonicalise(
+            "المادَّة (69) من نظام الإفلاس")["canonical"]
+
+    def test_fatha_kasra_damma_sukun_and_dagger_alif(self):
+        for marked in ("المَادة", "المِادة", "المُادة", "المْادة", "المٰادة"):
+            assert "المادة" in canonical.canonicalise(marked)["canonical"]
+
+    def test_marks_do_not_hide_the_transposition_gate(self):
+        # a document written with «املادة» and a shadda must still be
+        # diagnosed as transposed, which needs the marks gone first
+        raw = ("امَلادة (1) من الالئحة " * 60)
+        out = canonical.canonicalise(raw)["canonical"]
+        assert "المادة" in out
+
+    def test_a_word_that_is_not_the_head_noun_is_unharmed(self):
+        assert canonical.canonicalise("عمادة الكلية")["canonical"] == "عمادة الكلية"

@@ -119,6 +119,33 @@ The suspicion was correct in direction — the bound adds 59 % to the appellate
 side against 57 % to the first-instance side — and immaterial in size. The
 gap moves one-tenth of a point.
 
+## Parser v2: two representation repairs, and no claim moves
+
+Two defects found after the held-out sets were opened — Arabic Presentation
+Forms, and combining marks on the head noun — are now repaired and frozen as
+parser v2 (`gstc_pilot/PARSER_V2.md`). No held-out set was re-opened: 27.7,
+68.8 and 60.9 per cent exact stay attached to v1, the code that produced them.
+Every corpus analysis that depends on `CITE` was re-run.
+
+| figure the papers quote | v1 | v2 | move |
+|---|---:|---:|---:|
+| citations found, whole corpus | 121,207 | 123,535 | +2,328 (+1.9 %) |
+| procedural share, all text | 89.2 % | 89.3 % | +0.1 pt |
+| procedural share, court's reasons | 94.5 % | 94.5 % | 0 |
+| distinct articles, all text | 1,849 | 1,854 | +5 |
+| share of the statute book, all text | 11.66 % | 11.69 % | +0.03 pt |
+| share of the statute book, court's reasons | 5.71 % | 5.71 % | 0 |
+| appellate vs first-instance procedural gap | +2.36 pt | +2.34 pt | −0.02 pt |
+
+`check_docs.py` re-run after all of it: **all 77 guarded figures still
+match**. Every move is below the precision at which the papers state their
+numbers. `NO_CHANGE` for Papers 7–10 on this axis, and the classification
+above is untouched.
+
+The article-level gold returns *identical* v1 and v2 figures — precision
+88.1 %, recall 67.6 % — because none of its 32 hand-read judgments carries a
+mark or a shaped glyph inside a citation.
+
 ## Classification, and why not stronger
 
 Nothing here says a published number is **wrong**. Every one of them is a

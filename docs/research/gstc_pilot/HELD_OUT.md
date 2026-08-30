@@ -7,6 +7,26 @@ layer unchanged at labelling and at scoring.
 
 The two answer different questions, and they answer them differently.
 
+## Every number on this page belongs to parser v1
+
+Two representation defects were found **after** all three sets had been
+opened and reported — Arabic Presentation Forms and combining marks on the
+head noun — by reading whole judgments (`MOJ_ARTICLE_GOLD.md`) and by
+assessing a candidate third source (`SOURCE_C.md`). Both are now repaired,
+and the repaired layer is frozen as **v2**; the layer these numbers were
+measured against is archived as `frozen_history/v1-8f55561bc215.json`.
+
+**No set was re-opened to validate v2, and none of the figures below is
+restated for it.** A held-out number belongs to the code that produced it.
+Re-scoring a spent set against repaired code would produce a number that is
+neither held out nor comparable, and would spend the set to learn something
+about two deterministic representation fixes that regression tests establish
+directly (`tests/test_canonicalisation.py`, `tests/test_citation_forms.py`).
+
+So: 27.7, 68.8 and 60.9 per cent exact are **v1 measurements, and are
+historical**. v2 will be evaluated by the next genuinely unseen source, or by
+a fresh held-out set built for it — not by these.
+
 ## GSTC_TEST_FROZEN — opened at freeze `3412fdf`
 
 | stage | development | held out | |
