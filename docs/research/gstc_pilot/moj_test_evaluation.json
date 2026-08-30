@@ -1,0 +1,559 @@
+{
+ "stages": [
+  "detection",
+  "article",
+  "paragraph",
+  "instrument",
+  "anaphora",
+  "attribution"
+ ],
+ "canonicalRules": "all",
+ "metrics": {
+  "detection": {
+   "correct": 114,
+   "of": 120,
+   "pct": 95.0,
+   "ci95": [
+    89.5,
+    97.7
+   ]
+  },
+  "article": {
+   "correct": 106,
+   "of": 112,
+   "pct": 94.6,
+   "ci95": [
+    88.8,
+    97.5
+   ]
+  },
+  "paragraph": {
+   "correct": 29,
+   "of": 34,
+   "pct": 85.3,
+   "ci95": [
+    69.9,
+    93.6
+   ]
+  },
+  "instrument": {
+   "correct": 78,
+   "of": 112,
+   "pct": 69.6,
+   "ci95": [
+    60.6,
+    77.4
+   ]
+  },
+  "segment": {
+   "correct": 59,
+   "of": 112,
+   "pct": 52.7,
+   "ci95": [
+    43.5,
+    61.7
+   ]
+  },
+  "exact": {
+   "correct": 77,
+   "of": 112,
+   "pct": 68.8,
+   "ci95": [
+    59.7,
+    76.6
+   ]
+  }
+ },
+ "errors": [
+  {
+   "id": "moj-test-001",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-004",
+   "stage": "instrument",
+   "detail": "'النظام الجزائي للتزوير عليها' != 'النظام الجزائي للتزوير'"
+  },
+  {
+   "id": "moj-test-004",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-test-005",
+   "stage": "detection miss",
+   "detail": "(90 - 244)"
+  },
+  {
+   "id": "moj-test-005",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-005",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-006",
+   "stage": "paragraph",
+   "detail": "None != '1; 2'"
+  },
+  {
+   "id": "moj-test-006",
+   "stage": "instrument",
+   "detail": "None != 'نظام الشركات'"
+  },
+  {
+   "id": "moj-test-007",
+   "stage": "instrument",
+   "detail": "'نظام المرافعات الشرعية (' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-007",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "moj-test-008",
+   "stage": "instrument",
+   "detail": "'نظام المذكور على أنه يجوز لذوي' != 'نظام الأسماء التجارية'"
+  },
+  {
+   "id": "moj-test-008",
+   "stage": "segment",
+   "detail": "None != 'quotation'"
+  },
+  {
+   "id": "moj-test-010",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-011",
+   "stage": "instrument",
+   "detail": "None != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-012",
+   "stage": "detection miss",
+   "detail": "(76)"
+  },
+  {
+   "id": "moj-test-012",
+   "stage": "instrument",
+   "detail": "None != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-012",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-015",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-016",
+   "stage": "instrument",
+   "detail": "'قرار وزير العدل رقم (8344) وتاريخ 26 / 10 / 1441ه في المادة الحادية والخمسين' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-017",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-018",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "moj-test-019",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-020",
+   "stage": "instrument",
+   "detail": "'العقد محل الدعوى' != 'العقد'"
+  },
+  {
+   "id": "moj-test-022",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية من أنه' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-023",
+   "stage": "instrument",
+   "detail": "'نظام المرافعات الشرعية ولائحتها التنفيذية' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-024",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-025",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-026",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية لنظام المحاكم التجارية وعن صحة التوزيع الداخلي' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-026",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-030",
+   "stage": "instrument",
+   "detail": "None != 'العقد'"
+  },
+  {
+   "id": "moj-test-030",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-031",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-032",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-033",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-033",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-037",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-test-038",
+   "stage": "instrument",
+   "detail": "None != 'نظام الإثبات'"
+  },
+  {
+   "id": "moj-test-038",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-039",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-042",
+   "stage": "instrument",
+   "detail": "'نظام المرافعات ولوائحها التنفيذية' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-042",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-043",
+   "stage": "segment",
+   "detail": "'disposition' != 'party'"
+  },
+  {
+   "id": "moj-test-047",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-049",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-053",
+   "stage": "detection miss",
+   "detail": "(20-3)"
+  },
+  {
+   "id": "moj-test-053",
+   "stage": "paragraph",
+   "detail": "None != '3'"
+  },
+  {
+   "id": "moj-test-053",
+   "stage": "instrument",
+   "detail": "None != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-053",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-054",
+   "stage": "instrument",
+   "detail": "None != 'اتفاقية إنشاء صندوق الاستثمار'"
+  },
+  {
+   "id": "moj-test-055",
+   "stage": "instrument",
+   "detail": "'نظام الشركات' != 'نظام الشركات القديم'"
+  },
+  {
+   "id": "moj-test-055",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-060",
+   "stage": "detection miss",
+   "detail": "(97)"
+  },
+  {
+   "id": "moj-test-060",
+   "stage": "instrument",
+   "detail": "None != 'نظام الإثبات'"
+  },
+  {
+   "id": "moj-test-060",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-063",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-065",
+   "stage": "paragraph",
+   "detail": "['2'] != '1; 2'"
+  },
+  {
+   "id": "moj-test-065",
+   "stage": "instrument",
+   "detail": "'النظام إذا كانت قيمة المطالبة الأصلية لا تزيد' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-065",
+   "stage": "segment",
+   "detail": "'reasoning' != 'quotation'"
+  },
+  {
+   "id": "moj-test-066",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-070",
+   "stage": "instrument",
+   "detail": "'نظام المرافعات الشرعية المبينة لاختصاصات المحاكم العامة' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-071",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-072",
+   "stage": "instrument",
+   "detail": "'اللائحة)' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-072",
+   "stage": "segment",
+   "detail": "'reasoning' != 'quotation'"
+  },
+  {
+   "id": "moj-test-073",
+   "stage": "instrument",
+   "detail": "'اللائحة)' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-073",
+   "stage": "segment",
+   "detail": "'reasoning' != 'quotation'"
+  },
+  {
+   "id": "moj-test-075",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية في المادة (36) بجميع فقراتها' != 'نظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-075",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-076",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-077",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-079",
+   "stage": "paragraph",
+   "detail": "['2،'] != None"
+  },
+  {
+   "id": "moj-test-079",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-test-081",
+   "stage": "instrument",
+   "detail": "'نظام المحاماة-' != 'نظام المحاماة'"
+  },
+  {
+   "id": "moj-test-081",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-085",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-test-087",
+   "stage": "segment",
+   "detail": "None != 'disposition'"
+  },
+  {
+   "id": "moj-test-093",
+   "stage": "instrument",
+   "detail": "'نظام المحكمة التجارية وبناءً' != 'نظام المحكمة التجارية'"
+  },
+  {
+   "id": "moj-test-095",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-096",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-098",
+   "stage": "instrument",
+   "detail": "'نظام الإثبات' != 'الأدلة الإجرائية لنظام الإثبات'"
+  },
+  {
+   "id": "moj-test-100",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "moj-test-101",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-102",
+   "stage": "instrument",
+   "detail": "'نظام المرافعات الشرعية لالتماس إعادة النظر' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "moj-test-105",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-106",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية لنظام المحاكم التجارية بحضور محمد أحمد محمد آل مردف سعودي الجنسية بموجب سجل مدني رقم (' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-106",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-108",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-109",
+   "stage": "detection miss",
+   "detail": "(خامسا)"
+  },
+  {
+   "id": "moj-test-109",
+   "stage": "instrument",
+   "detail": "None != 'العقد'"
+  },
+  {
+   "id": "moj-test-109",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "moj-test-112",
+   "stage": "detection miss",
+   "detail": "(العاشرة: أوامر التغيير و الأعمال الإضافية)"
+  },
+  {
+   "id": "moj-test-112",
+   "stage": "paragraph",
+   "detail": "None != '1'"
+  },
+  {
+   "id": "moj-test-112",
+   "stage": "instrument",
+   "detail": "None != 'العقد'"
+  },
+  {
+   "id": "moj-test-112",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "moj-test-113",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-117",
+   "stage": "instrument",
+   "detail": "'اللائحة التنفيذية وبعد دراسة القضية' != 'الالئحة التنفيذية لنظام المحاكم التجارية'"
+  },
+  {
+   "id": "moj-test-117",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "moj-test-118",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "moj-test-119",
+   "stage": "instrument",
+   "detail": "'نظام المحاكم التجارية المبني' != 'نظام المحاكم التجارية'"
+  }
+ ]
+}

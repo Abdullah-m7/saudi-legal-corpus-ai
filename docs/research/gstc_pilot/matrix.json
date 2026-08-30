@@ -1,6 +1,7 @@
 {
  "gstc": {
   "source": "GSTC tax and customs digests",
+  "status": "development",
   "documents": 5,
   "frameSize": 3992,
   "sampled": 120,
@@ -62,8 +63,73 @@
    }
   }
  },
+ "gstc_test": {
+  "source": "GSTC tax and customs digests",
+  "status": "NO LONGER HELD OUT -- informed the name-frequency fix; the held-out estimate was 27.7 exact at freeze 3412fdf",
+  "documents": 5,
+  "frameSize": 5418,
+  "sampled": 120,
+  "splitUnit": "document",
+  "metrics": {
+   "detection": {
+    "correct": 110,
+    "of": 120,
+    "pct": 91.7,
+    "ci95": [
+     85.3,
+     95.4
+    ]
+   },
+   "article": {
+    "correct": 95,
+    "of": 112,
+    "pct": 84.8,
+    "ci95": [
+     77.0,
+     90.3
+    ]
+   },
+   "paragraph": {
+    "correct": 31,
+    "of": 56,
+    "pct": 55.4,
+    "ci95": [
+     42.4,
+     67.6
+    ]
+   },
+   "instrument": {
+    "correct": 60,
+    "of": 112,
+    "pct": 53.6,
+    "ci95": [
+     44.4,
+     62.5
+    ]
+   },
+   "segment": {
+    "correct": 67,
+    "of": 112,
+    "pct": 59.8,
+    "ci95": [
+     50.6,
+     68.4
+    ]
+   },
+   "exact": {
+    "correct": 55,
+    "of": 112,
+    "pct": 49.1,
+    "ci95": [
+     40.0,
+     58.2
+    ]
+   }
+  }
+ },
  "moj": {
   "source": "MOJ judgments gateway",
+  "status": "development",
   "documents": 200,
   "frameSize": 692,
   "sampled": 120,
@@ -121,6 +187,70 @@
     "ci95": [
      65.2,
      81.1
+    ]
+   }
+  }
+ },
+ "moj_test": {
+  "source": "MOJ judgments gateway",
+  "status": "held out; opened once at freeze 8f55561",
+  "documents": 200,
+  "frameSize": 795,
+  "sampled": 120,
+  "splitUnit": "judgment",
+  "metrics": {
+   "detection": {
+    "correct": 114,
+    "of": 120,
+    "pct": 95.0,
+    "ci95": [
+     89.5,
+     97.7
+    ]
+   },
+   "article": {
+    "correct": 106,
+    "of": 112,
+    "pct": 94.6,
+    "ci95": [
+     88.8,
+     97.5
+    ]
+   },
+   "paragraph": {
+    "correct": 29,
+    "of": 34,
+    "pct": 85.3,
+    "ci95": [
+     69.9,
+     93.6
+    ]
+   },
+   "instrument": {
+    "correct": 78,
+    "of": 112,
+    "pct": 69.6,
+    "ci95": [
+     60.6,
+     77.4
+    ]
+   },
+   "segment": {
+    "correct": 59,
+    "of": 112,
+    "pct": 52.7,
+    "ci95": [
+     43.5,
+     61.7
+    ]
+   },
+   "exact": {
+    "correct": 77,
+    "of": 112,
+    "pct": 68.8,
+    "ci95": [
+     59.7,
+     76.6
     ]
    }
   }

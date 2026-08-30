@@ -162,3 +162,39 @@ class TestAttribution:
     def test_ordinary_text_is_not_a_quotation(self):
         text = "وعليه رفضت الهيئة اعتراض المدعية استنادا للمادة (20) من الالئحة"
         assert not grammar.in_quotation(text, len(text) - 10)
+
+
+class TestNameFrequencyBeatsNameLength:
+    """The gazetteer picks a name by how often the corpus says it.
+
+    Both length rules fail, in opposite directions. Longest-match lets a name
+    that ran on into the next clause certify the next over-run. Shortest-match
+    trims a name to a fragment of itself wherever one instrument's name begins
+    another's -- «نظام الجمارك» is attested cleanly, inside «الالئحة
+    التنفيذية لنظام الجمارك», and it begins «نظام الجمارك الموحد». That cost
+    24 of 112 citations on a held-out set, and neither development set could
+    have shown it.
+    """
+
+    def _stock(self, pairs):
+        return {grammar._fold(name): (name, count) for name, count in pairs}
+
+    def test_a_fragment_loses_to_the_full_name(self):
+        stock = self._stock([("نظام الجمارك", 4),
+                             ("نظام الجمارك الموحد", 300)])
+        text = "نظام الجمارك الموحد الصادر بالمرسوم"
+        assert grammar.resolve_name(text, 0, len(text), stock) == \
+            "نظام الجمارك الموحد"
+
+    def test_an_over_run_loses_to_the_name(self):
+        stock = self._stock([("نظام المحاكم التجارية", 300),
+                             ("نظام المحاكم التجارية والمحددة بخمسة عشر", 2)])
+        text = "نظام المحاكم التجارية والمحددة بخمسة عشر يوما"
+        assert grammar.resolve_name(text, 0, len(text), stock) == \
+            "نظام المحاكم التجارية"
+
+    def test_a_wrapped_name_is_still_rejoined(self):
+        stock = self._stock([("قواعد عمل لجان الفصل في المخالفات والمنازعات", 50)])
+        text = "قواعد عمل لجان الفصل في\nالمخالفات والمنازعات الضريبية"
+        got = grammar.resolve_name(text, 0, 23, stock)
+        assert got == "قواعد عمل لجان الفصل في المخالفات والمنازعات"

@@ -105,8 +105,22 @@ Only in the committees' digests:
 - three distinct per-document text-layer faults: glyph substitution, spaces
   inserted inside words, glyphs dropped.
 
-## Rules of use
+## Both held-out sets have now been opened
 
-Both TEST sets stay closed. `gstc_test_frozen.json` (5 documents, frame 5,418)
-and `moj_test_frozen.json` (200 judgments, frame 795) are opened once, after
-the code is frozen and its commit recorded, and not before.
+Once each, after `freeze.py` recorded the layer, and the two answer
+differently. See `HELD_OUT.md`.
+
+    ministry judgments   development 73.9  ->  held out 68.8   intervals overlap
+    committee digests    development 78.0  ->  held out 27.7   intervals disjoint
+
+On ministry judgments the grammar generalises. On the committees' digests the
+development number did not transfer, for one nameable reason: one instrument's
+name is a proper prefix of another's, and neither development set contained
+such a collision. Four of the five held-out documents are customs digests;
+one of the five development documents is.
+
+The figure to quote for ministry judgments is **68.8 per cent exact**. For the
+committees' digests there is no figure to quote yet: five documents cannot
+carry the variety of two tribunals with three text-layer faults between them,
+and a held-out estimate for a publisher needs held-out documents of that
+publisher, in numbers.

@@ -522,30 +522,33 @@ def resolve_name(text, start, fallback_end, stock, reach=150):
     span = re.split(r'[،؛."”\u061b]', span)[0]
     if span.count("\n") > 1:                  # at most one wrapped line
         span = span[:span.find("\n", span.find("\n") + 1)]
-    # The SHORTEST attested prefix, not the longest. A name that ran on into
-    # the next clause is itself attested somewhere -- the corpus repeats its
-    # own mistakes -- so taking the longest match lets one over-run certify
-    # the next. The shortest attested prefix is the name the corpus states
-    # most tersely, which is the name.
+    # Among the names the corpus attests that *begin* this span, take the one
+    # it attests most often; break ties by the shorter.
     #
-    # It also still repairs a wrapped name, because the truncated half is
-    # never attested on its own: matches that end at a line break are kept
-    # out of the inventory, so the shortest attested prefix of «الالئحة
-    # التنفيذية لنظام ضريبة / القيمة المضافة» is the whole of it.
-    best = None
+    # Frequency, not length, because both length rules fail and they fail in
+    # opposite directions. Longest-match lets a name that ran on into the next
+    # clause -- itself attested -- certify the next over-run: 82.2 per cent on
+    # the digests it was written for, 39.1 on ministry judgments.
+    # Shortest-match trims a name to a fragment of itself wherever one
+    # instrument's name begins another's: «نظام الجمارك» is attested cleanly,
+    # inside «الالئحة التنفيذية لنظام الجمارك», and it begins «نظام الجمارك
+    # الموحد», which cost 24 of 112 held-out citations. Neither development
+    # set contained such a collision, so neither could show it.
+    #
+    # What separates the two cases is not how long the names are but how often
+    # the corpus says them. An over-run is said once or twice; a name is said
+    # hundreds of times.
+    candidates = []
     if stock:
         for end in range(1, len(span) + 1):
             if end < len(span) and span[end] not in " \n\r":
                 continue
             key = _fold(span[:end])
             entry = stock.get(key)
-            # attested more than once. A name the corpus states cleanly only
-            # once may be one broken line rather than a name -- «نظام المر
-            # افعات», where justification put a space inside the word -- and
-            # the shortest-prefix rule would otherwise prefer exactly that.
             if entry and entry[1] >= MIN_ATTESTATIONS and key not in GENERIC:
-                best = " ".join(span[:end].split())
-                break
+                candidates.append((entry[1], -end,
+                                   " ".join(span[:end].split())))
+    best = max(candidates)[2] if candidates else None
     if best:
         return best
     # nothing attested begins this span. Fall back to what the terminators
