@@ -21,7 +21,7 @@ and not a different measurement that happens to disagree.
 | **8** | procedural share **89.2 %** | **94.5 %** | +5.3 pt | as above | same | **WORDING_TIGHTENING** |
 | **10** | articles cited at least once: **11.7 %** of the statute book | **5.71 %** | −6.0 pt, a halving | the central quantity of Paper 10 | **not submitted** (HILJ window Sept–Nov) | **CENTRAL_CLAIM_AFFECTED** — fix before submission, free |
 | **10** | reasoning-only procedural share 94.5 %, 68 instruments | unchanged | 0 | already computed and reported by this paper | — | **NO_CHANGE** |
-| **9** | appellate 95.6 % procedural vs first instance 93.2 %, p < .001 | not recomputed by voice | — | a uniform +5.3 pt shift would not move a *difference*; a non-uniform one might | not submitted | **NOT_YET_MEASURED** — do not assume NO_CHANGE |
+| **9** | appellate 95.6 % procedural vs first instance 93.2 %, p < .001 | 95.5 vs 93.2 under the permissive bound; gap +2.4 → +2.3 | −0.1 pt | now measured on both exposures, see below | not submitted | **NO_CHANGE** — was NOT_YET_MEASURED |
 | **7** | shares the same measurements | same deltas as 8 and 10 | — | Arabic concept, no manuscript to correct | concept only | **NUMERIC_REVISION** before drafting |
 | all | citation extractor accuracy: 68.8 % exact, held out, ministry judgments | unchanged | 0 | GSTC_TEST2 measures a *different* source | — | **NO_CHANGE** |
 | all | — | committees' digests: **60.9 %** exact [55.8, 65.7], zero-shot | new | bounds any future claim about the committees; no paper makes one | — | **NO_CHANGE** to 7–10 |
@@ -87,6 +87,37 @@ alone. For the Bankruptcy Law almost the whole fall is in the first step —
 bankruptcy judgments largely do not carry the three headings — and that is
 selection, not the parties' voice. For every other instrument the larger fall
 is in the second step.
+
+## Paper 9 was exposed twice, and survives both
+
+The `NOT_YET_MEASURED` above was right to refuse `NO_CHANGE` on assumption.
+Two things could have moved a *difference* between two levels of court, and
+both have now been checked.
+
+**Voice.** Paper 9 turns out to have been in the court's own voice from the
+start: `appeal_vs_first.py` confines each level to the span between
+«الأسباب:» and «حكمت الدائرة» of that level's own judgment, segmented
+document by document. The recomputation that moved Paper 8's figures moved
+ALL_TEXT numbers into COURT_REASONING_ONLY, and Paper 9 was already there.
+Re-running it reproduces 93.2 and 95.6 exactly.
+
+**The extractor's blind spots.** A uniform miss rate cannot move a
+difference, but there was a specific reason to expect a non-uniform one: an
+appellate bench restates the instrument named below and then refers back to
+it — «من ذات النظام» — and anaphoric back-reference is exactly the form
+`V.CITE` misses. If appellate reasons carry more of it, the two levels are
+being counted on unequal footing. `appeal_bound.py` re-runs the paired design
+unchanged with the permissive pattern added:
+
+| level         | published citations | with the bound | procedural, published | procedural, bound |
+| ------------- | ------------------: | -------------: | --------------------: | ----------------: |
+| first instance |              4,397 |          6,898 |                93.2 % |            93.2 % |
+| appeal         |              2,219 |          3,529 |                95.6 % |            95.5 % |
+| **gap**        |                  — |              — |            **+2.4 pt** |       **+2.3 pt** |
+
+The suspicion was correct in direction — the bound adds 59 % to the appellate
+side against 57 % to the first-instance side — and immaterial in size. The
+gap moves one-tenth of a point.
 
 ## Classification, and why not stronger
 
