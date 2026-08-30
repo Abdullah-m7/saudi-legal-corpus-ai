@@ -38,7 +38,8 @@ from splits import FRAME, RAW                            # noqa: E402
 
 SETS = {"gstc": HERE / "gstc_dev.json", "moj": HERE / "moj_dev.json",
         "gstc_test": HERE / "gstc_test_frozen.json",
-        "moj_test": HERE / "moj_test_frozen.json"}
+        "moj_test": HERE / "moj_test_frozen.json",
+        "gstc_test2": HERE / "gstc_test2_frozen.json"}
 DEV = SETS["gstc"]
 
 

@@ -28,6 +28,7 @@ SETS = {
     "gstc_test": HERE / "gstc_test_frozen.json",
     "moj_dev": HERE / "moj_dev.json",
     "moj_test": HERE / "moj_test_frozen.json",
+    "gstc_test2": HERE / "gstc_test2_frozen.json",
 }
 WIDE = 650
 

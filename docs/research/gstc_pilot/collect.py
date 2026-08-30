@@ -138,18 +138,33 @@ def main():
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--pilot", type=int, default=0,
                     help="fetch this many digests, smallest file number first")
+    ap.add_argument("--rest", action="store_true",
+                    help="fetch every offered digest not already in the "
+                         "manifest, and merge. The privacy gate runs on each "
+                         "before anything about it is kept, exactly as for "
+                         "the pilot; a digest that fails it stays in the "
+                         "manifest marked unclean and is never sampled.")
     a = ap.parse_args()
 
     urls, listing_attempts = listing()
-    if a.list or not a.pilot:
+    if a.list or not (a.pilot or a.rest):
         print(f"{len(urls)} digests offered by the landing page")
         for u in urls:
             print("  ", u)
         return
 
     RAW.mkdir(exist_ok=True)
-    records, refused = [], []
-    for url in urls[: a.pilot]:
+    have = {}
+    if a.rest and MANIFEST.exists():
+        have = {r["file"]: r
+                for r in json.loads(MANIFEST.read_text(encoding="utf-8"))
+                ["records"]}
+    wanted = [u for u in urls if u.rsplit("/", 1)[-1] not in have] \
+        if a.rest else urls[: a.pilot]
+    records, refused = list(have.values()), [
+        r["file"] for r in have.values()
+        if r.get("retrieved") and not r["privacy"]["clean"]]
+    for url in wanted:
         name = url.rsplit("/", 1)[-1]
         pdf = RAW / name
         print(f"{name} …", end=" ", flush=True)
@@ -198,12 +213,19 @@ def main():
         "records": records,
         "allOfferedUrls": urls,
     }
+    out["records"].sort(key=lambda r: r["file"])
     MANIFEST.write_text(json.dumps(out, ensure_ascii=False, indent=1),
                         encoding="utf-8")
     print(f"\n{out['digestsRetrieved']}/{out['digestsAttempted']} retrieved, "
-          f"{len(refused)} refused on privacy, manifest written")
+          f"{len(refused)} unclean on privacy, manifest written")
+    # The pilot refused to proceed at all on a privacy hit, because the
+    # question then was whether to collect from this source. That question is
+    # settled; the question now is which digests may be sampled, and an
+    # unclean digest answers it by being excluded from every split. It stays
+    # in the manifest so the exclusion is a recorded fact rather than a
+    # missing row.
     if refused:
-        sys.exit("REFUSING to proceed: privacy patterns matched")
+        print("unclean, excluded from all sampling: " + ", ".join(sorted(refused)))
 
 
 if __name__ == "__main__":
