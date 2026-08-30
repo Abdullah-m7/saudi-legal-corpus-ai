@@ -48,10 +48,19 @@ ANAPHORA = re.compile(r"هذا\s+النظام|هذه\s+الالئحة|هذه\s+�
                       r"|المشار\s+إلي|آنف")
 
 
+# The frame is defined on canonicalised text, but canonicalising fifty
+# thousand judgments to *choose* a sample of twenty is minutes of regex for a
+# decision that does not need that precision. Ministry judgments are typed
+# text, not scanned: the transposed definite article that makes
+# canonicalisation necessary for the committees' PDFs is rare here, so the raw
+# count is used for stratification and the canonical text only for the
+# judgments actually drawn.
+RAW_FRAME = re.compile(r"(?:^|[^ء-ي])(?:ال|لل|بال|كال|فال|وال|ول|بل|ب|ل|و)?ماد[ةه]")
+
+
 def profile(rec):
     text = rec.get("text") or ""
-    canon = trace(text)[0]
-    n = len(FRAME.findall(canon))
+    n = len(RAW_FRAME.findall(text))
     instruments = len(set(m.group(2).strip()[:40] for m in V.CITE.finditer(text)))
     spans = V.segments(text, rec.get("sections"))
     lens = {v: 0 for v in ("recital", "reasoning", "operative")}
@@ -61,7 +70,7 @@ def profile(rec):
     shape = ("reasons-heavy" if lens["reasoning"] > lens["recital"]
              else "recital-heavy")
     return {"citations": n, "instruments": instruments,
-            "anaphora": bool(ANAPHORA.search(canon)), "shape": shape,
+            "anaphora": bool(ANAPHORA.search(text)), "shape": shape,
             "segmentable": any(v != "unknown" for _, _, v in spans),
             "chars": len(text), "year": (rec.get("judgmentDate") or
                                          rec.get("year") or "")}
