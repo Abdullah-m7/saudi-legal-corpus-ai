@@ -1,0 +1,61 @@
+set: gstc_test2   400 items, 368 gold citations
+
+DETECTION
+  precision      348/348   100.0  [98.9, 100.0]
+  recall         348/368    94.6  [91.8, 96.5]
+  true negatives 32/32   100.0  [89.3, 100.0]
+
+INSTRUMENT, BY WHAT THE PARSER DID
+  answered, right                         248    67.4%
+  answered, wrong instrument               30     8.2%
+     of which: right name, wrong span      19     5.2%
+     of which: a different instrument      11     3.0%
+  abstained, correctly                      1     0.3%
+  abstained, unnecessarily                 69    18.8%
+  missed the citation entirely             20     5.4%
+
+  UNRESOLVED RATE 88/366 = 24.0%   (gold names an instrument, parser declines)
+
+SELECTIVE ACCURACY  (article + paragraph + instrument all right)
+  coverage                75.5%   (278 of 368 citations answered)
+  accuracy when answered  79.9%    79.9  [74.7, 84.1]
+  accuracy over all       60.6%    60.6  [55.5, 65.5]
+
+BY STRATUM
+  stratum                     n   exact  coverage  when answered
+  customs                    75   74.7%     82.7%          90.3%
+  excise                     74   55.4%     74.3%          74.5%
+  income tax                 72   52.8%     70.8%          74.5%
+  tax, mixed (incl. VAT)     71   74.6%     87.3%          83.9%
+  zakat                      76   46.1%     63.2%          72.9%
+
+BY DOCUMENT
+  document                                  n   exact  coverage
+  CustomsDefenses2024.pdf                  75   74.7%     82.7%
+  izv.pdf                                  74   55.4%     74.3%
+  56.pdf                                   46   45.7%     63.0%
+  PrinciplesTaxAppealCommittees2024.pdf    43   72.1%     83.7%
+  TaxCommitteesPleas2024.pdf               28   78.6%     92.9%
+  2024-Incometax-Decisions.pdf             26   65.4%     84.6%
+  222.pdf                                  23   47.8%     65.2%
+  2024-Zakat-Decisions-1.pdf               20   25.0%     30.0%
+  8.pdf                                    16   50.0%     68.8%
+  2024-Zakat-Decisions-2.pdf               13   76.9%    100.0%
+  ZakatDefenses2024.pdf                     4   25.0%     75.0%
+
+BY SEGMENT (gold)
+  segment                     n   exact  segment right
+  reasoning                 150   68.7%          76.7%
+  authorities                92   64.1%          93.5%
+  party                      89   50.6%          34.8%
+  quotation                  17   47.1%          88.2%
+  summary                    11   54.5%          54.5%
+  disposition                 9   22.2%         100.0%
+
+BY HOW THE INSTRUMENT IS RECOVERABLE (gold)
+  instrumentSource            n  instrument right
+  local                     323             73.1%
+  anaphora                   29             37.9%
+  preceding                  12              0.0%
+  list_trailing               2             50.0%
+  absent                      2              0.0%

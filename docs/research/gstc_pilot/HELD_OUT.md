@@ -76,10 +76,42 @@ The practical consequence for this project: **a held-out estimate for a
 publisher requires held-out documents of that publisher, in numbers.** A
 document-level split over five documents tells you honestly that you do not
 know; it cannot tell you what the number is. The figure to quote for ministry
-judgments is 68.8 per cent exact. For the committees' digests there is no
-figure to quote yet — 27.7 is a lower bound from a superseded layer, 49.1 is a
-development number, and the honest statement is that the estimate awaits a
-larger collection.
+judgments is 68.8 per cent exact. For the committees' digests there was no
+figure to quote until GSTC_TEST2.
+
+## GSTC_TEST2_FROZEN — opened at freeze `8f55561`
+
+Twelve documents, 400 items, five subject strata, and a sampling frame defined
+on the text rather than on any parser's output. Opened once, on 2026-08-30,
+after `freeze.py --check` reported the parser unchanged. Full report in
+`TEST2.md`; the summary:
+
+| stage | GSTC_TEST (burned) | **GSTC_TEST2** | MOJ_TEST |
+|---|---|---|---|
+| detection | 91.7 | **95.0** [92.4, 96.7] | 95.0 |
+| article | 84.8 | **87.0** [83.1, 90.0] | 94.6 |
+| paragraph | 55.4 | **67.5** [61.2, 73.3] | 85.3 |
+| instrument | 53.6 | **67.9** [63.0, 72.5] | 69.6 |
+| segment | 59.8 | **71.2** [66.4, 75.6] | 52.7 |
+| **exact** | 49.1 | **60.9** [55.8, 65.7] | 68.8 |
+
+**The figure to quote for the Zakat, Tax and Customs committees' published
+digests is 60.9 per cent exact, 95 per cent CI [55.8, 65.7].** It is a
+zero-shot number: no development set was built from any of these twelve
+documents, and no parser file moved between the freeze and the score.
+
+The interval is 9.9 points wide against the previous 16, which is what the
+sample was sized for. Read selectively — the frame this system is actually
+built for — it answers 75.5 per cent of citations and is right 79.9 per cent
+of the time when it answers, and names a *different* instrument on 3.0 per
+cent of all citations.
+
+### Now burned
+
+GSTC_TEST2 has been opened and scored. It is a diagnostic set from here on.
+Three repairs it identified are recorded in `TEST2.md` as pre-declared and
+deliberately unmade; they are to be developed on DEV and tested on a TEST3
+built from documents none of these results have touched.
 
 ## What was measured and what was not
 
