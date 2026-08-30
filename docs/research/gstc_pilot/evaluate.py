@@ -36,7 +36,9 @@ from numerals import parse_ordinal                       # noqa: E402
 from instruments import same as same_instrument          # noqa: E402
 from splits import FRAME, RAW                            # noqa: E402
 
-SETS = {"gstc": HERE / "gstc_dev.json", "moj": HERE / "moj_dev.json"}
+SETS = {"gstc": HERE / "gstc_dev.json", "moj": HERE / "moj_dev.json",
+        "gstc_test": HERE / "gstc_test_frozen.json",
+        "moj_test": HERE / "moj_test_frozen.json"}
 DEV = SETS["gstc"]
 
 
@@ -114,7 +116,7 @@ def load_dev(rules=None):
     for item in dev["items"]:
         doc = item["doc"]
         if doc not in cache:
-            text, tr = trace(raw_texts[doc], rules)
+            text, tr = traced(raw_texts[doc], rules)
             back = {}
             for i, raw_i in enumerate(tr):
                 back.setdefault(raw_i, i)
@@ -129,6 +131,17 @@ def load_dev(rules=None):
 
 
 _PARSED = {}
+_TRACED = {}
+
+
+def traced(raw, rules):
+    """trace() is O(characters) in Python and the ablation re-traces the same
+    documents once per condition. Cached on the text and the rule set."""
+    key = (hashlib.sha256(raw.encode("utf-8")).hexdigest(),
+           tuple(rules) if rules is not None else "all")
+    if key not in _TRACED:
+        _TRACED[key] = trace(raw, rules)
+    return _TRACED[key]
 
 
 _GAZETTEER = {}
@@ -139,7 +152,7 @@ def gazetteer_for(texts, rules, key):
     if key not in _GAZETTEER:
         names = {}
         for raw in texts.values():
-            canon, _ = trace(raw, rules)
+            canon, _ = traced(raw, rules)
             names.update(grammar.inventory(canon))
         _GAZETTEER[key] = names
     return _GAZETTEER[key]

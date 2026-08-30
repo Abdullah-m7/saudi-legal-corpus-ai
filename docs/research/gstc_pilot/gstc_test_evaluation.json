@@ -1,0 +1,899 @@
+{
+ "stages": [
+  "detection",
+  "article",
+  "paragraph",
+  "instrument",
+  "anaphora",
+  "attribution"
+ ],
+ "canonicalRules": "all",
+ "metrics": {
+  "detection": {
+   "correct": 110,
+   "of": 120,
+   "pct": 91.7,
+   "ci95": [
+    85.3,
+    95.4
+   ]
+  },
+  "article": {
+   "correct": 95,
+   "of": 112,
+   "pct": 84.8,
+   "ci95": [
+    77.0,
+    90.3
+   ]
+  },
+  "paragraph": {
+   "correct": 31,
+   "of": 56,
+   "pct": 55.4,
+   "ci95": [
+    42.4,
+    67.6
+   ]
+  },
+  "instrument": {
+   "correct": 33,
+   "of": 112,
+   "pct": 29.5,
+   "ci95": [
+    21.8,
+    38.5
+   ]
+  },
+  "segment": {
+   "correct": 67,
+   "of": 112,
+   "pct": 59.8,
+   "ci95": [
+    50.6,
+    68.4
+   ]
+  },
+  "exact": {
+   "correct": 31,
+   "of": 112,
+   "pct": 27.7,
+   "ci95": [
+    20.2,
+    36.6
+   ]
+  }
+ },
+ "errors": [
+  {
+   "id": "test-001",
+   "stage": "article",
+   "detail": "6 != 31"
+  },
+  {
+   "id": "test-001",
+   "stage": "paragraph",
+   "detail": "None != '6'"
+  },
+  {
+   "id": "test-001",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الجمارك'"
+  },
+  {
+   "id": "test-002",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-002",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-003",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-003",
+   "stage": "segment",
+   "detail": "'quotation' != 'reasoning'"
+  },
+  {
+   "id": "test-004",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-006",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-007",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-008",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-008",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-010",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-010",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "test-011",
+   "stage": "instrument",
+   "detail": "'نظام تهريبا الجمارك الموحد' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-011",
+   "stage": "segment",
+   "detail": "'reasoning' != 'facts'"
+  },
+  {
+   "id": "test-013",
+   "stage": "article",
+   "detail": "143 != 142"
+  },
+  {
+   "id": "test-013",
+   "stage": "instrument",
+   "detail": "None != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-015",
+   "stage": "detection miss",
+   "detail": "(/8/53ب)"
+  },
+  {
+   "id": "test-015",
+   "stage": "paragraph",
+   "detail": "None != '8/ب'"
+  },
+  {
+   "id": "test-015",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-015",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "test-016",
+   "stage": "article",
+   "detail": "6 != 31"
+  },
+  {
+   "id": "test-016",
+   "stage": "paragraph",
+   "detail": "None != '6'"
+  },
+  {
+   "id": "test-016",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-017",
+   "stage": "instrument",
+   "detail": "'نظام المرافعات' != 'نظام المرافعات الشرعية'"
+  },
+  {
+   "id": "test-018",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "test-019",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-020",
+   "stage": "paragraph",
+   "detail": "['ً'] != 'ثانيا'"
+  },
+  {
+   "id": "test-020",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-021",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-022",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-024",
+   "stage": "instrument",
+   "detail": "None != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-025",
+   "stage": "detection miss",
+   "detail": "( /1 سادسا)"
+  },
+  {
+   "id": "test-025",
+   "stage": "paragraph",
+   "detail": "None != 'سادسا'"
+  },
+  {
+   "id": "test-025",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-025",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "test-026",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-027",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-027",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-028",
+   "stage": "instrument",
+   "detail": "'قواعد عمل لجان الفصل' != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "test-028",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-029",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-031",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-032",
+   "stage": "instrument",
+   "detail": "'الاتفاقية الموحدة لضريبة القيمة المضافة' != 'الاتفاقية الموحدة لضريبة القيمة المضافة لدول مجلس التعاون'"
+  },
+  {
+   "id": "test-033",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-033",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-034",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-035",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-037",
+   "stage": "instrument",
+   "detail": "'الاتفاقية الموحدة لضريبة القيمة المضافة' != 'الاتفاقية الموحدة لضريبة القيمة المضافة لدول مجلس التعاون'"
+  },
+  {
+   "id": "test-038",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لنظام الضريبة' != 'الالئحة التنفيذية لنظام الضريبة الانتقائية'"
+  },
+  {
+   "id": "test-039",
+   "stage": "instrument",
+   "detail": "'نظام ضريبة الدخل الخاصة بالأرباح أو' != 'نظام ضريبة الدخل'"
+  },
+  {
+   "id": "test-041",
+   "stage": "article",
+   "detail": "1 != 70"
+  },
+  {
+   "id": "test-041",
+   "stage": "paragraph",
+   "detail": "None != '1'"
+  },
+  {
+   "id": "test-041",
+   "stage": "instrument",
+   "detail": "'المرسوم الملكي رقم (م' != 'الالئحة التنفيذية لنظام المرافعات الشرعية'"
+  },
+  {
+   "id": "test-042",
+   "stage": "paragraph",
+   "detail": "None != 'ثانيا/1'"
+  },
+  {
+   "id": "test-042",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-043",
+   "stage": "instrument",
+   "detail": "'الاتفاقية الموحدة لضريبة القيمة المضافة' != 'الاتفاقية الموحدة لضريبة القيمة المضافة لدول مجلس التعاون'"
+  },
+  {
+   "id": "test-044",
+   "stage": "instrument",
+   "detail": "'نظام الأساس للمعهد' != 'النظام الأساس للمعهد'"
+  },
+  {
+   "id": "test-044",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-045",
+   "stage": "paragraph",
+   "detail": "None != 'أولا/6'"
+  },
+  {
+   "id": "test-045",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-045",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-046",
+   "stage": "detection miss",
+   "detail": "(/8/53أ)"
+  },
+  {
+   "id": "test-046",
+   "stage": "paragraph",
+   "detail": "None != '8/أ'"
+  },
+  {
+   "id": "test-046",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-046",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "test-047",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية لنظام الضريبة الانتقائية تنص على ما يلي( :يجب أن يتضمن' != 'الالئحة التنفيذية لنظام الضريبة الانتقائية'"
+  },
+  {
+   "id": "test-047",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "test-048",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-048",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-049",
+   "stage": "paragraph",
+   "detail": "None != '2; 5'"
+  },
+  {
+   "id": "test-049",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-050",
+   "stage": "instrument",
+   "detail": "'قواعد عمل اللجان' != 'قواعد عمل اللجان الزكوية والضريبية والجمركية'"
+  },
+  {
+   "id": "test-051",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-052",
+   "stage": "article",
+   "detail": "4 != 5"
+  },
+  {
+   "id": "test-052",
+   "stage": "paragraph",
+   "detail": "None != '4'"
+  },
+  {
+   "id": "test-052",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-053",
+   "stage": "detection miss",
+   "detail": "( 145الفقرة الثانية والخامسة)"
+  },
+  {
+   "id": "test-053",
+   "stage": "paragraph",
+   "detail": "None != '2; 5'"
+  },
+  {
+   "id": "test-053",
+   "stage": "instrument",
+   "detail": "None != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-053",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "test-054",
+   "stage": "segment",
+   "detail": "'summary' != 'reasoning'"
+  },
+  {
+   "id": "test-056",
+   "stage": "instrument",
+   "detail": "'نظام ضريبية القيمة المضافة' != 'نظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-056",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-057",
+   "stage": "detection miss",
+   "detail": "(2)/3"
+  },
+  {
+   "id": "test-057",
+   "stage": "paragraph",
+   "detail": "None != '2'"
+  },
+  {
+   "id": "test-057",
+   "stage": "instrument",
+   "detail": "None != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "test-057",
+   "stage": "segment",
+   "detail": "None != 'authorities'"
+  },
+  {
+   "id": "test-058",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-060",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-060",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-061",
+   "stage": "instrument",
+   "detail": "'النظام وألغراض تطبيق الاتفاقية والنظام في المملكة' != 'نظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-064",
+   "stage": "article",
+   "detail": "6 != 31"
+  },
+  {
+   "id": "test-064",
+   "stage": "paragraph",
+   "detail": "None != '6'"
+  },
+  {
+   "id": "test-064",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الجمارك'"
+  },
+  {
+   "id": "test-067",
+   "stage": "detection miss",
+   "detail": "(/4البند أولا)"
+  },
+  {
+   "id": "test-067",
+   "stage": "paragraph",
+   "detail": "None != 'البند أولا'"
+  },
+  {
+   "id": "test-067",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-067",
+   "stage": "segment",
+   "detail": "None != 'authorities'"
+  },
+  {
+   "id": "test-068",
+   "stage": "instrument",
+   "detail": "'نظام ضريبة القيمة المضافةً' != 'نظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-068",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "test-069",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-070",
+   "stage": "instrument",
+   "detail": "'قرار والقوائم المالية في الموعد النظامي المحدد في المادة (17)من الًلئحة الزكوية' != 'الالئحة الزكوية'"
+  },
+  {
+   "id": "test-073",
+   "stage": "segment",
+   "detail": "'party' != 'reasoning'"
+  },
+  {
+   "id": "test-074",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-075",
+   "stage": "instrument",
+   "detail": "None != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "test-075",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-076",
+   "stage": "instrument",
+   "detail": "'الاتفاقية الموحدة لضريبية القيمة المضافة لدول مجلس التعاون' != 'الاتفاقية الموحدة لضريبة القيمة المضافة لدول مجلس التعاون'"
+  },
+  {
+   "id": "test-076",
+   "stage": "segment",
+   "detail": "'quotation' != 'party'"
+  },
+  {
+   "id": "test-077",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-078",
+   "stage": "instrument",
+   "detail": "None != 'قواعد حساب زكاة مكلفي التقديري'"
+  },
+  {
+   "id": "test-078",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-082",
+   "stage": "paragraph",
+   "detail": "None != '9; 9/أ; 9/ب'"
+  },
+  {
+   "id": "test-083",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-086",
+   "stage": "paragraph",
+   "detail": "None != 'أولا/5'"
+  },
+  {
+   "id": "test-086",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-087",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "test-088",
+   "stage": "paragraph",
+   "detail": "None != 'رابعا; خامسا'"
+  },
+  {
+   "id": "test-088",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-088",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-089",
+   "stage": "article",
+   "detail": "6 != 31"
+  },
+  {
+   "id": "test-089",
+   "stage": "paragraph",
+   "detail": "None != '6'"
+  },
+  {
+   "id": "test-089",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-091",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-092",
+   "stage": "paragraph",
+   "detail": "['5'] != '5; 9'"
+  },
+  {
+   "id": "test-092",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-092",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-093",
+   "stage": "detection miss",
+   "detail": "(23)"
+  },
+  {
+   "id": "test-093",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام ضريبة الدخل'"
+  },
+  {
+   "id": "test-093",
+   "stage": "segment",
+   "detail": "None != 'authorities'"
+  },
+  {
+   "id": "test-095",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية المنظمة لجباية الزكاة'"
+  },
+  {
+   "id": "test-096",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-097",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية المنظمة لجباية الزكاة'"
+  },
+  {
+   "id": "test-099",
+   "stage": "instrument",
+   "detail": "'الالئحة التنفيذية للنظام' != 'الالئحة التنفيذية لنظام الضريبة الانتقائية'"
+  },
+  {
+   "id": "test-101",
+   "stage": "instrument",
+   "detail": "'قواعد عمل لجان الفصل في' != 'قواعد عمل لجان الفصل في المخالفات والمنازعات الضريبية'"
+  },
+  {
+   "id": "test-102",
+   "stage": "instrument",
+   "detail": "'الاتفاقية الموحدة لضريبة القيمة المضافة' != 'الاتفاقية الموحدة لضريبة القيمة المضافة لدول مجلس التعاون'"
+  },
+  {
+   "id": "test-103",
+   "stage": "paragraph",
+   "detail": "None != '1/ب'"
+  },
+  {
+   "id": "test-103",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-104",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-104",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-105",
+   "stage": "paragraph",
+   "detail": "['ّ'] != 'ب'"
+  },
+  {
+   "id": "test-105",
+   "stage": "instrument",
+   "detail": "'نظام ضريبة الدخل' != 'الالئحة التنفيذية لنظام ضريبة الدخل'"
+  },
+  {
+   "id": "test-105",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-106",
+   "stage": "instrument",
+   "detail": "None != 'الاتفاقية الموحدة لضريبة القيمة المضافة لدول مجلس التعاون'"
+  },
+  {
+   "id": "test-107",
+   "stage": "detection miss",
+   "detail": "رقم (67)"
+  },
+  {
+   "id": "test-107",
+   "stage": "instrument",
+   "detail": "None != 'نظام ضريبة الدخل'"
+  },
+  {
+   "id": "test-107",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  },
+  {
+   "id": "test-108",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-108",
+   "stage": "segment",
+   "detail": "'facts' != 'reasoning'"
+  },
+  {
+   "id": "test-109",
+   "stage": "segment",
+   "detail": "'reasoning' != 'party'"
+  },
+  {
+   "id": "test-110",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-111",
+   "stage": "paragraph",
+   "detail": "None != '4; 5'"
+  },
+  {
+   "id": "test-111",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-113",
+   "stage": "detection miss",
+   "detail": "(42)"
+  },
+  {
+   "id": "test-113",
+   "stage": "paragraph",
+   "detail": "None != '1'"
+  },
+  {
+   "id": "test-113",
+   "stage": "instrument",
+   "detail": "None != 'نظام ضريبة القيمة المضافة'"
+  },
+  {
+   "id": "test-113",
+   "stage": "segment",
+   "detail": "None != 'party'"
+  },
+  {
+   "id": "test-114",
+   "stage": "instrument",
+   "detail": "'نظام الجمارك' != 'نظام الجمارك الموحد'"
+  },
+  {
+   "id": "test-114",
+   "stage": "segment",
+   "detail": "'reasoning' != 'facts'"
+  },
+  {
+   "id": "test-117",
+   "stage": "paragraph",
+   "detail": "['أوال', '4والفقرة'] != 'أولا/4; أولا/5'"
+  },
+  {
+   "id": "test-117",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لجباية الزكاة'"
+  },
+  {
+   "id": "test-117",
+   "stage": "segment",
+   "detail": "'facts' != 'party'"
+  },
+  {
+   "id": "test-119",
+   "stage": "detection miss",
+   "detail": "السابعة"
+  },
+  {
+   "id": "test-119",
+   "stage": "instrument",
+   "detail": "None != 'الالئحة التنفيذية لنظام البيانات التجارية'"
+  },
+  {
+   "id": "test-119",
+   "stage": "segment",
+   "detail": "None != 'reasoning'"
+  }
+ ]
+}
