@@ -215,6 +215,39 @@ recovers them:
    in نظام المعاملات المدنية. A hand-verified instance of the 1.2%
    out-of-range bucket `applied_articles.py` reports.
 
+## Does any of this move a published claim?
+
+No, and that is measured rather than assumed. `coverage_sensitivity.py`
+re-counts the whole corpus with a deliberately permissive pattern that
+accepts all seven forms and resolves anaphora to the last instrument named.
+It recovers **64,123 citations, 55 per cent again on top of the 116,216 the
+published pattern finds**, and the published claims barely move:
+
+|                                  | published | permissive bound |     move |
+| -------------------------------- | --------: | ---------------: | -------: |
+| citations                        |   116,216 |          180,339 |   +55 %  |
+| procedural share of citations    |    89.2 % |           89.7 % | +0.5 pt |
+| top-10 instruments' share        |    96.9 % |           96.9 % |       0 |
+| distinct articles ever cited     |     1,849 |            1,981 |    +132 |
+| share of the statute book cited  |   11.66 % |          12.49 % | +0.83 pt |
+
+The published column is recomputed in the same pass and reproduces
+`UPTAKE.md`'s ALL_TEXT column to the digit, so the two are comparable.
+
+Sixty-four thousand recovered citations add one hundred and thirty-two
+articles — one new article per 486 recoveries. That is the finding, and it is
+structural: the forms the pattern misses are overwhelmingly *back-references*
+to an instrument the judgment has already named, so they land on instruments
+and articles that are already in the count. An extractor blind to a quarter
+of a judgment's citations can still measure the shape of the citation
+distribution correctly, because what it is blind to is the repetition rather
+than the range.
+
+That is a defence of the papers' numbers and an indictment of nothing except
+the recall figure itself, which is the one number this work does move: on
+whole judgments the pipeline sees about two citations in three, not the
+95 per cent a frame-selected sample suggests.
+
 ## What is not claimed
 
 - These 32 judgments are Ministry of Justice commercial judgments. Nothing

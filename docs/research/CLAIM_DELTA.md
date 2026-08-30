@@ -25,6 +25,48 @@ and not a different measurement that happens to disagree.
 | **7** | shares the same measurements | same deltas as 8 and 10 | — | Arabic concept, no manuscript to correct | concept only | **NUMERIC_REVISION** before drafting |
 | all | citation extractor accuracy: 68.8 % exact, held out, ministry judgments | unchanged | 0 | GSTC_TEST2 measures a *different* source | — | **NO_CHANGE** |
 | all | — | committees' digests: **60.9 %** exact [55.8, 65.7], zero-shot | new | bounds any future claim about the committees; no paper makes one | — | **NO_CHANGE** to 7–10 |
+| all | the extractor sees every citation worth counting | it misses **64,123** more, 55 % again on top of the 116,216 it finds | +55 % in volume | but see the sensitivity bound below: composition barely moves | — | **NO_CHANGE** to 7–10 |
+
+## The extractor's blind spots do not move the claims
+
+Reading 32 whole judgments (`gstc_pilot/MOJ_ARTICLE_GOLD.md`) found seven
+citation forms `V.CITE` never matches, chief among them «المادة (59) من ذات
+اللائحة» — a modifier between «من» and the instrument word defeats the
+pattern outright, and `match_instruments`' anaphora resolver is never
+reached. `coverage_sensitivity.py` puts an upper bound on what that costs, by
+re-counting the corpus with a deliberately permissive pattern that accepts
+all seven forms and resolves anaphora to the last instrument named:
+
+|                                  | published | permissive bound |     move |
+| -------------------------------- | --------: | ---------------: | -------: |
+| citations                        |   116,216 |          180,339 | **+55 %** |
+| instruments ever cited           |       106 |              107 |       +1 |
+| procedural share of citations    |    89.2 % |           89.7 % | +0.5 pt |
+| top-10 instruments' share        |    96.9 % |           96.9 % |       0 |
+| distinct articles ever cited     |     1,849 |            1,981 |    +132 |
+| share of the statute book cited  |   11.66 % |          12.49 % | +0.83 pt |
+
+The published column is not a re-statement: it is recomputed here from the
+corpus in the same pass and reproduces `UPTAKE.md`'s ALL_TEXT column to the
+digit — 116,216 citations, 89.2 %, 1,849 articles, 11.66 %.
+
+**Fifty-five per cent more citations move the concentration claims by half a
+point and the coverage claim by eight-tenths of one.** The reason is
+structural rather than lucky: the forms the pattern misses are overwhelmingly
+anaphoric back-references — «ذات النظام», «هذه اللائحة», «لائحته
+التنفيذية», the second member of a list — and a back-reference points at an
+instrument the judgment has *already* named. The arithmetic is stark: 64,123
+recovered citations add **132** articles that were not already counted, one
+new article per 486 recovered citations. The missing citations are missing
+where the counted ones already are.
+
+So this is `NO_CHANGE` for Papers 7–10, and it is a stronger `NO_CHANGE` than
+"we did not check". Paper 10's `CENTRAL_CLAIM_AFFECTED` above stands on its
+own footing: it comes from the *voice* filter, which removes citations, and
+this bound only adds them. The two move the same figure in opposite
+directions, and neither cancels the other — 11.66 % becomes 5.71 % when
+parties' citations are dropped, and at most 12.49 % when the missed forms are
+added back.
 
 ## Every instrument, three columns
 
