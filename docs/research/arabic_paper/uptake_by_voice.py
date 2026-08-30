@@ -115,6 +115,13 @@ def main():
                 round(100 * distinct / covered, 1) if covered else 0.0,
             "byInstrument": {k: c.get(k, 0) for k in NAMED},
             "articlesByInstrument": {k: len(arts[col].get(k, ())) for k in NAMED},
+            # the share of each instrument's own articles that this column
+            # ever reaches. This is the unit the uptake claim is made in, and
+            # it has only ever been published for column one.
+            "articleShareByInstrument": {
+                k: (round(100 * len(arts[col].get(k, ())) / size[k], 1)
+                    if k in size else None) for k in NAMED},
+            "articleCountByInstrument": {k: size.get(k) for k in NAMED},
         }
 
     (HERE / "uptake_by_voice_results.json").write_text(
@@ -147,6 +154,14 @@ def main():
             f"{out['columns'][c]['articlesByInstrument'][k]:>8}"
             for c in COLUMNS))
     print(f"\n(second number in each cell is distinct articles cited)")
+    print(f"\n{'instrument':{w}}{'articles':>10}" +
+          "".join(f"{c[:20]:>24}" for c in COLUMNS))
+    for k in NAMED:
+        n_art = out["columns"]["ALL_TEXT"]["articleCountByInstrument"][k]
+        print(f"{k:{w}}{(n_art if n_art else '?'):>10}" + "".join(
+            f"{(str(out['columns'][c]['articleShareByInstrument'][k]) + '%'):>24}"
+            for c in COLUMNS))
+    print("\n(share of the instrument's own articles that the column reaches)")
 
 
 if __name__ == "__main__":
