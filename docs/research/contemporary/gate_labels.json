@@ -1,0 +1,44 @@
+{
+ "note": "Hand labels for gate.py sample, seed 71. Read once, after the design in gate.py was frozen. 'ok' means the assignment shown on the sheet was correct.",
+ "arm1": {
+  "fiqh.book":         {"n": 9, "ok": 9, "wrong": []},
+  "fiqh.unattributed": {"n": 9, "ok": 9, "wrong": []},
+  "statute.possessive":{"n": 9, "ok": 8,
+    "wrong": [{"id": "1019", "why": "«العقد المبرم بين الطرفين - المرفق في النظام - والمتضمن في مادته: (الخامسة)»: «النظام» here is the court's electronic filing system, not a statute, so the referent test resolved a contract article to a statute"}]}
+ },
+ "arm2": {
+  "court_reasoning": {"n": 12, "ok": 12, "wrong": []},
+  "party_argument":  {"n": 12, "ok": 10,
+    "wrong": [{"id": "2055", "why": "the appellate circuit speaking in the recital, read as a party because «وكيل المدعية» stood nearer"},
+              {"id": "2057", "why": "the court narrating what a party relied on, then evaluating it"}]},
+  "recital":         {"n": 12, "ok": 7,
+    "wrong": [{"id": "2068", "why": "a party's pleading, no cue near the mention"},
+              {"id": "2069", "why": "«الأسانيد الشرعية» — the claimant's own list of authorities"},
+              {"id": "2070", "why": "the claim form's numbered grounds"},
+              {"id": "2071", "why": "the claim form's numbered grounds"},
+              {"id": "2073", "why": "one party answering the other"}]},
+  "operative":       {"n": 12, "ok": 8,
+    "wrong": [{"id": "2041", "why": "reasoning content placed after «حكمت الدائرة» by the segmenter"},
+              {"id": "2043", "why": "the citation precedes «نص الحكم» and is reasoning"},
+              {"id": "2044", "why": "reasoning content, segmenter artefact"},
+              {"id": "2049", "why": "costs reasoning, segmenter artefact"}]}
+ },
+ "arm3": {
+  "contract/court_reasoning":   {"n": 8, "ok": 8, "note": "several are the court reading or narrating the parties' contract inside its reasons; that inflates the court's already tiny contract share rather than deflating it"},
+  "contract/party_argument":    {"n": 8, "ok": 8},
+  "custom/court_reasoning":     {"n": 8, "ok": 8},
+  "custom/party_argument":      {"n": 8, "ok": 8},
+  "legal_maxim/court_reasoning":{"n": 8, "ok": 8},
+  "legal_maxim/party_argument": {"n": 8, "ok": 8},
+  "fiqh_source/court_reasoning":{"n": 8, "ok": 8},
+  "fiqh_source/party_argument": {"n": 8, "ok": 8},
+  "statute/court_reasoning":    {"n": 8, "ok": 8},
+  "statute/party_argument":     {"n": 8, "ok": 8}
+ },
+ "verdict": {
+  "arm1": "PASS  9/9, 9/9, 8/9 against a threshold of 7/9 each",
+  "arm2": "FAIL  37/48 = 77.1% against a pre-declared 85% overall. The two buckets the claim contrasts both pass their own thresholds: court_reasoning 12/12 = 100%, party_argument 10/12 = 83%. The failure is entirely in recital (7/12) and operative (8/12).",
+  "arm3": "PASS  80/80. Every one of the five contrasts keeps its direction and its cells are clean.",
+  "consequence": "The cue-based party column is an UNDER-COUNT of party speech, not a contamination of the court column: five of twelve recital mentions were party pleadings the cue missed, and four of them were statute or maxim. The claim is therefore not patched and not withdrawn on the strength of one specification; it is re-run under both, and stands only if it survives both."
+ }
+}

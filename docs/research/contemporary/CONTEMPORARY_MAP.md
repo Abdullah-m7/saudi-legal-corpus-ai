@@ -78,30 +78,46 @@ sample. The last two are known extractor gaps recorded in
 
 ## 3 · Court against party: they do not speak the same legal language
 
-Share of all authority mentions, contemporary_3y, quoted passages excluded:
+**This section was rewritten after the validation gate (`gate.py`, seed 71).
+Three of the nine contrasts in its first version did not survive and are
+withdrawn.** What the gate found is in `GATE.md`; what survives is here.
 
-| authority | the bench's own reasons | a party's argument | ratio |
-|---|---:|---:|---|
-| statute | 70.6 % | 55.2 % | 1.3× court |
-| **contract** | **0.9 %** | **14.9 %** | **16× party** |
-| fiqh, named source | 14.8 % | 8.1 % | 1.8× court |
-| **legal maxim** | 1.1 % | 4.6 % | **4× party** |
-| **custom** | 0.9 % | 3.8 % | **4× party** |
-| hadith | 6.0 % | 8.3 % | 1.4× party |
-| Qur'an | 2.5 % | 3.7 % | 1.5× party |
-| judicial principle | 1.5 % | 1.0 % | 1.5× court |
-| discretion named | 1.7 % | 0.6 % | 3× court |
+The gate showed the cue-based party column under-counts party speech: five of
+twelve recital mentions were pleadings with no cue near them. So the contrast
+is computed under two specifications and only what survives both is claimed.
 
-The divergence is not a matter of degree. **A litigant argues from the
-contract, from maxims and from custom; the bench answers from the statute,
-from named fiqh, and from its own discretion.** The contract is the single
-sharpest split in the corpus: it is 15 per cent of what parties invoke and
-under 1 per cent of what courts do.
+  STRICT  party = a recital mention with a party cue. High precision, low recall.
+  WIDE    party = every recital mention. High recall, low precision — it sweeps
+          in the court's own narration of the facts.
 
-That has a methodological consequence for every citation study of this
-corpus, including this project's own earlier papers: an all-text count is not
-a diluted picture of judicial reasoning, it is a blend of two different
-languages, and the contract and the maxim are almost entirely the parties'.
+contemporary_3y, court reasoning = 62,256 mentions, party strict = 10,283,
+party wide = 30,486:
+
+| authority | court | party STRICT | ratio | party WIDE | ratio | survives? |
+|---|---:|---:|---:|---:|---:|---|
+| **contract** | 0.86 % | 14.83 % | **17.2×** | 10.03 % | **11.7×** | ✅ |
+| **legal maxim** | 1.08 % | 4.64 % | **4.3×** | 3.10 % | **2.9×** | ✅ |
+| **custom** | 0.94 % | 3.79 % | **4.0×** | 2.69 % | **2.9×** | ✅ |
+| **fiqh, named** | 14.78 % | 8.10 % | **0.55×** | 6.09 % | **0.41×** | ✅ court |
+| **discretion** | 1.72 % | 0.55 % | **0.32×** | 0.36 % | **0.21×** | ✅ court |
+| **judicial principle** | 1.54 % | 1.00 % | 0.65× | 0.78 % | 0.51× | ✅ court |
+| statute | 70.60 % | 55.11 % | 0.78× | 69.03 % | 0.98× | ❌ withdrawn |
+| Qur'an | 2.46 % | 3.69 % | 1.50× | 2.25 % | 0.91× | ❌ withdrawn |
+| hadith | 6.01 % | 8.29 % | 1.38× | 5.67 % | 0.94× | ❌ withdrawn |
+
+**Six of nine contrasts survive both specifications and three do not.** The
+three that fail are the ones the first version of this file over-claimed:
+statute, Qur'an and hadith are used at indistinguishable rates by both sides
+once the whole pleadings segment is counted. They are the negative controls
+this result needed and did not have.
+
+What survives is sharper for having lost them. **A litigant argues from the
+parties' own contract, from maxims of fiqh and from commercial custom; the
+bench answers from named fiqh, from what the courts have settled, and from
+its own discretion.** Scripture is shared vocabulary. Statute is shared
+vocabulary. The contract is not: it is 15 per cent of what litigants invoke
+under the strict reading, 10 per cent under the wide one, and under 1 per cent
+of what courts do either way.
 
 ## 4 · Hybrid reasoning: the codes joined the fiqh
 
@@ -226,6 +242,72 @@ Three restrictions, all structural:
 With those held: the committees' authority structure is nearly purely
 statutory where the courts' is not. It is stated as a difference between two
 publishers' *records*, and it is not a claim about the Saudi judiciary.
+
+## 7b · The operational statutory core
+
+The smallest set of articles carrying a given share of the **bench's own**
+statutory citations:
+
+| view | 50 % | 75 % | 90 % | distinct articles |
+|---|---:|---:|---:|---:|
+| contemporary_5y | 7 | 39 | 113 | 974 |
+| contemporary_3y | **7** | 34 | 108 | 929 |
+| post_Evidence | 7 | 39 | 112 | 969 |
+| post_CTL | **6** | 27 | 91 | 615 |
+
+By year, the core tightens: **11 articles carried half of adjudication in
+1443, then 7, then 6, then 5.** Membership is stable at the top — Commercial
+Courts Law arts. 16 and 30 are first and second in every year — and it moves
+at the edge:
+
+```
+1443  CCL·16  CCL·30  LTR·58  SPL·76  LTR·11  CCL·42
+1444  CCL·16  CCL·30  EVID·29 SPL·76  CCL·78  LTR·164
+1445  CCL·16  CCL·30  EVID·29 LTR·164 EVID·21 CCL·78
+1446  CCL·16  EVID·29 CCL·30  LTR·164 EVID·21 CCL·78
+```
+
+**Evidence Law art. 29 is absent from the 1443 top ten and is third in 1444.**
+The Evidence Law's decree is م/43 of 26/05/1443. A new statute reached the
+operational core inside about one year.
+
+The Civil Transactions Law did not. Its decree is م/191 of 29/11/1444; its
+first appearance anywhere in a year's top ten is art. 120 at rank eight in
+1446, and it is nowhere near the 50 per cent core. Two years after the
+largest substantive codification in the country's history, adjudication still
+runs on procedure.
+
+This measures **adjudicatory visibility and nothing else.** An article that
+is never cited is not thereby unimportant: it may be so clear that nobody
+litigates it, or govern transactions that never reach a commercial court.
+
+## 7c · The shape of hybrid reasoning
+
+Judgments with reasons, by what the bench invokes, court reasoning only:
+
+| year | statute only | non-statute only | hybrid | none | n |
+|---|---:|---:|---:|---:|---:|
+| 1443 | 54.8 % | 7.0 % | 21.2 % | 17.1 % | 3,161 |
+| 1444 | 52.6 % | 6.6 % | 27.6 % | 13.2 % | 16,435 |
+| 1445 | 54.8 % | 4.1 % | 31.8 % | 9.3 % | 5,982 |
+| 1446 | 59.0 % | 4.1 % | 28.2 % | 8.8 % | 1,209 |
+
+Within hybrid judgments, which non-statutory family the bench reaches for:
+
+| year | named fiqh | hadith | Qur'an | judicial principle | maxim | custom |
+|---|---:|---:|---:|---:|---:|---:|
+| 1443 | 62.3 % | 31.1 % | 14.9 % | 15.4 % | 9.3 % | 9.0 % |
+| 1444 | 60.4 % | 32.5 % | 17.3 % | 12.0 % | 6.7 % | 6.3 % |
+| 1445 | 57.3 % | 30.2 % | 15.1 % | 14.3 % | 7.0 % | 8.7 % |
+| 1446 | 52.8 % | 39.9 % | 20.8 % | 10.3 % | 5.6 % | 7.6 % |
+
+And two thirds to three quarters of hybrid judgments combine statute with
+exactly **one** non-statutory family (66–73 %), not with a spread of them.
+
+**Contemporary Saudi hybrid reasoning has a definite shape: one statute plus
+one jurist.** It is not a syncretic blend of sources; it is a procedural
+statutory basis with a single named fiqh authority attached, most often on
+the question of who bears the cost of the litigation.
 
 ## 9 · What this map does not establish
 
