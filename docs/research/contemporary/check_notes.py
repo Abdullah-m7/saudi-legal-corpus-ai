@@ -32,6 +32,7 @@ def facts():
     rg, hr = J("rag_gap_results.json"), J("hybrid_roles_gold.json")
     tl, ec = J("twolayers_results.json"), J("ecology_results.json")
     tr, af = J("traceability_results.json"), J("adjudicative_function_gold.json")
+    ins, ief = J("instruments_results.json"), J("instrument_effect_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
     W = ov["conditional"]["wide"]
     y, seam = hy["years"], hy["seams"]
@@ -229,6 +230,55 @@ def facts():
          ["TRACEABILITY.md"]),
         ("fully traceable judgments",
          f"{tr['perJudgment']['fullyTraceablePct']}", ["TRACEABILITY.md"]),
+        # --- the code-ecology programme
+        ("arbitration hybrid", f"{ins['ecology']['arbitration_law']['hybridPct']}",
+         ["ECOLOGIES.md"]),
+        ("law practice hybrid",
+         f"{ins['ecology']['law_practice_law']['hybridPct']}", ["ECOLOGIES.md"]),
+        ("law practice concentration",
+         f"{ins['ecology']['law_practice_law']['top10ConcentrationPct']}",
+         ["ECOLOGIES.md"]),
+        ("largest profile distance",
+         f"{max(ins['profileDistance'].values())}", ["ECOLOGIES.md"]),
+        ("between-instrument variance",
+         f"{ins['varianceDecomposition']['byInstrument']['betweenSharePct']}",
+         ["ECOLOGIES.md"]),
+        ("within-instrument variance",
+         f"{ins['varianceDecomposition']['byInstrument']['withinSharePct']}",
+         ["ECOLOGIES.md"]),
+        ("arbitration article sd",
+         f"{ins['varianceDecomposition']['perInstrument']['arbitration_law']['sdPct']}",
+         ["ECOLOGIES.md"]),
+        ("arbitration standardised",
+         f"{ief['stratified']['byInstrument']['arbitration_law']['standardisedPct']}",
+         ["ECOLOGIES.md"]),
+        ("CCL+arbitration both",
+         f"{ief['coCitation']['pairs']['commercial_courts_law | arbitration_law']['bothPct']}",
+         ["ECOLOGIES.md"]),
+        ("SPL+law practice both",
+         f"{ief['coCitation']['pairs']['sharia_procedure_law | law_practice_law']['bothPct']}",
+         ["ECOLOGIES.md"]),
+        ("arbitration marginal within CCL",
+         f"{ief['marginalEffect']['byInstrument']['arbitration_law']['withinCCL_marginalPts']}",
+         ["ECOLOGIES.md"]),
+        ("leave-one-out MAE",
+         f"{ief['leaveOneInstrumentOut']['meanAbsoluteErrorPts']}",
+         ["ECOLOGIES.md"]),
+        ("leave-one-out null",
+         f"{ief['leaveOneInstrumentOut']['nullMeanAbsoluteErrorPts']}",
+         ["ECOLOGIES.md"]),
+        ("arbitration named-source share",
+         f"{ins['ecology']['arbitration_law']['supplementaryNamedSourcePct']}",
+         ["ECOLOGIES.md"]),
+        ("evidence 1446 hybrid",
+         f"{ins['stability']['evidence_law']['1446']['hybridPct']}",
+         ["ECOLOGIES.md"]),
+        ("CTL party strict hybrid",
+         f"{ins['voices']['civil_transactions_law']['party_strict']['hybridPct']}",
+         ["ECOLOGIES.md"]),
+        ("CTL party wide named fiqh",
+         f"{ins['voices']['civil_transactions_law']['party_wide']['named_fiqh']}",
+         ["ECOLOGIES.md"]),
     ]
     return out
 

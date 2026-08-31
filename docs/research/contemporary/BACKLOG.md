@@ -142,3 +142,27 @@ The ten questions the asset is meant to answer, and where each now stands:
 | 8 | how much judicial authority is independently traceable | answered, as components | `TRACEABILITY.md` |
 | 9 | what does statute-only legal AI miss | answered as coverage bounds | `TRACEABILITY.md` §1 |
 | 10 | what changes when new judgments arrive | mechanism built, never yet run on a real second batch | `monitor.py --delta` |
+
+## After the ecology programme
+
+The instrument effect is described rather than dissolved:
+**PARTIALLY_EXPLAINED**. It is not citation load, not the crude case mix, and
+not the text of the code; one extreme (the Law of Practice) decomposes into a
+single fee article, and the other (Arbitration) does not decompose at all. See
+`ECOLOGIES.md`; the paper decision is in `CLAIM_ECOLOGIES.md` — WRITE, not
+drafted.
+
+| capability | state | where |
+|---|---|---|
+| which Saudi codes are mostly statute-contained | answered: arbitration 4.1 %, bankruptcy 3.5 %, companies 15.8 | `code_ecology.csv` |
+| which are routinely supplemented | answered: law practice 59.4 %, implementing regulation 44.8 | `code_ecology.csv` |
+| by what authority | answered as composition vectors, with distances | `instruments_results.json` |
+| court-driven or party-driven | answered, and it splits on procedural against substantive | `instruments_results.json` voices |
+| does the mix change over time | answered: yes, materially, within three years | `instruments_results.json` stability |
+| which code creates the highest statute-only retrieval risk | answered, code by code with intervals | `instruments_results.json` retrievalRisk |
+| which supplementary authorities are traceable | answered per code, 11.1 % to 69.9 | `code_ecology.csv` |
+| can code features explain the differences | **answered no**: leave-one-instrument-out MAE 15.3 against a null of 17.2 | `instrument_effect_results.json` |
+
+The open question the programme leaves is the one it could not reach with this
+corpus: why an arbitration dispute is reasoned without fiqh and a fee dispute
+with it, when the same chambers hear both under the same procedural law.
