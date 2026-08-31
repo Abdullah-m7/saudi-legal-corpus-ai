@@ -33,6 +33,7 @@ def facts():
     tl, ec = J("twolayers_results.json"), J("ecology_results.json")
     tr, af = J("traceability_results.json"), J("adjudicative_function_gold.json")
     ins, ief = J("instruments_results.json"), J("instrument_effect_results.json")
+    ai = J("article_instrument_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
     W = ov["conditional"]["wide"]
     y, seam = hy["years"], hy["seams"]
@@ -278,6 +279,40 @@ def facts():
          ["ECOLOGIES.md"]),
         ("CTL party wide named fiqh",
          f"{ins['voices']['civil_transactions_law']['party_wide']['named_fiqh']}",
+         ["ECOLOGIES.md"]),
+        # --- the article-level test of the instrument effect
+        ("instrument variance share",
+         f"{ai['varianceRanking']['instrument']['betweenSharePct']}",
+         ["ECOLOGIES.md"]),
+        ("instrument excess over chance",
+         f"{ai['varianceRanking']['instrument']['excessPts']}",
+         ["ECOLOGIES.md", "CLAIM_ECOLOGIES.md"]),
+        ("instrument chance share",
+         f"{ai['varianceRanking']['instrument']['chanceSharePct']}",
+         ["ECOLOGIES.md"]),
+        ("article scheme chance share",
+         f"{ai['sequential']['chanceShares']['articleProperties']}",
+         ["ECOLOGIES.md"]),
+        ("article scheme share",
+         f"{ai['sequential']['articlePropertiesFirst']['articleShare']}",
+         ["ECOLOGIES.md"]),
+        ("instrument added to residual",
+         f"{ai['sequential']['articlePropertiesFirst']['instrumentShareOfResidual']}",
+         ["ECOLOGIES.md", "CLAIM_ECOLOGIES.md"]),
+        ("cross-code matched gap",
+         f"{ai['functionMatchedPairs']['crossCodeMedianGapPts']}",
+         ["ECOLOGIES.md", "CLAIM_ECOLOGIES.md"]),
+        ("same-code matched gap",
+         f"{ai['functionMatchedPairs']['sameCodeMedianGapPts']}",
+         ["ECOLOGIES.md", "CLAIM_ECOLOGIES.md"]),
+        ("dispute-deciding same-code gap",
+         f"{ai['functionMatchedPairs']['byFunction']['DISPUTE_DECISION']['sameCodeMedianGapPts']}",
+         ["ECOLOGIES.md", "CLAIM_ECOLOGIES.md"]),
+        ("year share of article-year cells",
+         f"{ai['varianceRanking']['year (article-year cells)']['betweenSharePct']}",
+         ["ECOLOGIES.md"]),
+        ("instrument share of article-year cells",
+         f"{ai['varianceRanking']['instrument (same article-year cells)']['betweenSharePct']}",
          ["ECOLOGIES.md"]),
     ]
     return out

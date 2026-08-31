@@ -48,11 +48,18 @@ the comparison possible; the object is general.
 
 ## What would defeat it
 
-- **Within-code variance.** Three quarters of the variance in article-level
-  supplementation is *inside* codes, not between them. A referee is entitled
-  to ask why the code is the unit at all, and the answer has to be that the
-  code-level regularity survives the controls in 2–4 above, not that it is
-  large relative to article variation. It is not.
+- ~~**Within-code variance.**~~ **Answered.** Three quarters of the variance
+  in article-level supplementation is inside codes, which looked like the
+  strongest objection: the ecology might be nothing but the mix of article
+  types each code contains. Tested and rejected. Chance-corrected, instrument
+  identity carries as much as a 34-cell article scheme (+18.9 against +18.1)
+  with a quarter of the cells; it adds 14.9 per cent of the residual after
+  article properties are fitted first; and two articles doing the same
+  adjudicative work in the same citation band differ by a median 20.4 points
+  across codes against 11.0 within one — 19.8 against 7.4 among
+  dispute-deciding articles. The code is a defensible unit. What remains true
+  is that it is not the *only* unit: article properties explain as much again,
+  and the two are largely orthogonal.
 - **One extreme is one article.** 256 of the Law of Practice's 345 judgments
   are its fee provision. Any claim that rests on the top of the range rests on
   a single open-textured standard.
@@ -75,7 +82,10 @@ reasoned judgment.
 
 ## Decision
 
-**WRITE, and not yet.** The four conditions set for a second paper are met:
+**WRITE, and not yet — but the case is materially stronger than when this
+file was opened.** The objection that would have sunk it, that the ecology is
+just the article mix, has been tested and rejected. The four conditions set
+for a second paper are met:
 the effect is strong, it is not trivial composition, the mixes genuinely
 differ, and the novelty survives a literature check that found the object
 (statute books compared against each other) absent from a literature that

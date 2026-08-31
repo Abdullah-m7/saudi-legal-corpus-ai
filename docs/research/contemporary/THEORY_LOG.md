@@ -63,3 +63,37 @@ in a way the second is not. Tested in `TWO_LAYERS.md`.
 articles**, made on a different question, and the confusion matrix between the
 two is reported rather than hidden: if the new labels were the old labels under
 a new name, that matrix would say so and the new theory would deserve nothing.
+
+---
+
+## T3 · The code effect is the article mix
+
+**HYPOTHESIS.** Three quarters of the variance in article supplementation sits
+inside codes, and a code is only its articles. So the between-code differences
+— arbitration at 4.1 per cent, the Law of Practice at 59.4 — could be entirely
+composition: each book contains a different mix of the kinds of provision that
+attract supplementation, and "code ecology" would then be a restatement of the
+article-level facts under a misleading name.
+
+**TEST.** 134 articles cited in at least thirty judgments. First, variance
+shares corrected for chance, because a scheme with 34 cells explains more than
+one with 8 for arithmetic reasons alone. Then a sequential fit in both orders.
+Then function-matched, citation-matched pairs of articles in different codes,
+against the same construction inside one code.
+
+**FAILURE.** Chance-corrected, instrument identity carries as much as the
+whole article-property scheme (+18.9 against +18.1) with a quarter of the
+cells. Fitted second, it still adds 14.9 per cent of the residual. And two
+articles doing the same adjudicative work in the same citation band differ by
+a median 20.4 points across codes against 11.0 within one — 19.8 against 7.4
+among dispute-deciding articles.
+
+**WHAT SURVIVED.** Article properties matter as much as the code does, and the
+two are largely orthogonal: fitting the code first leaves the article
+contribution untouched. Neither is the whole story and neither reduces to the
+other.
+
+**CONSEQUENCE.** The instrument effect moves from PARTIALLY_EXPLAINED to
+IRREDUCIBLE_WITH_CURRENT_DATA. Every reduction available in this corpus —
+citation load, case mix, code text, article composition — has now been tested
+and none of them absorbs it.

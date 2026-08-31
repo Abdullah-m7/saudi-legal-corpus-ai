@@ -1,0 +1,257 @@
+{
+ "window": "contemporary_5y, articles cited in >= 30 judgments",
+ "articles": 134,
+ "articlesWithText": 123,
+ "grandMeanPct": 27.2,
+ "sequential": {
+  "articlePropertiesFirst": {
+   "articleShare": 44.8,
+   "instrumentShareOfResidual": 14.9
+  },
+  "instrumentFirst": {
+   "instrumentShare": 24.5,
+   "articleShareOfResidual": 44.8
+  },
+  "note": "article properties are the adjudicative function, the citation band, whether the article's own text carries open-textured vocabulary, and whether it is longer than the corpus median. Groups are cells of that cross, so the share is inflated by cell count and is comparable between the two orders, not against zero.",
+  "articles": 123,
+  "articleCells": 34,
+  "instrumentGroups": 8,
+  "chanceShares": {
+   "articleProperties": 26.7,
+   "instrument": 5.6,
+   "note": "mean between-share achieved by the same cell sizes on shuffled article rates, over 400 shuffles. Subtract it from the observed share to compare schemes of different size."
+  }
+ },
+ "varianceRanking": {
+  "instrument": {
+   "groups": 8,
+   "betweenSharePct": 24.5,
+   "chanceSharePct": 5.6,
+   "excessPts": 18.9
+  },
+  "years since commencement": {
+   "groups": 7,
+   "betweenSharePct": 21.0,
+   "chanceSharePct": 4.8,
+   "excessPts": 16.2
+  },
+  "adjudicative function": {
+   "groups": 4,
+   "betweenSharePct": 16.6,
+   "chanceSharePct": 2.4,
+   "excessPts": 14.2
+  },
+  "instrument (same article-year cells)": {
+   "chanceSharePct": null,
+   "excessPts": null,
+   "groups": 13,
+   "betweenSharePct": 13.5
+  },
+  "citation band": {
+   "groups": 4,
+   "betweenSharePct": 12.1,
+   "chanceSharePct": 2.3,
+   "excessPts": 9.8
+  },
+  "year (article-year cells)": {
+   "chanceSharePct": null,
+   "excessPts": null,
+   "groups": 5,
+   "betweenSharePct": 4.2
+  },
+  "open-textured vocabulary": {
+   "groups": 2,
+   "betweenSharePct": 1.7,
+   "chanceSharePct": 0.8,
+   "excessPts": 0.9
+  },
+  "has a party citation at all": {
+   "groups": 2,
+   "betweenSharePct": 0.8,
+   "chanceSharePct": 0.8,
+   "excessPts": 0.0
+  },
+  "article longer than median": {
+   "groups": 2,
+   "betweenSharePct": 0.3,
+   "chanceSharePct": 0.8,
+   "excessPts": -0.5
+  }
+ },
+ "functionMatchedPairs": {
+  "note": "pairs of articles doing the same adjudicative work, in the same citation band, in DIFFERENT codes -- and, as the control, the same construction inside ONE code. If the code carries something, the cross-code gap should be the larger.",
+  "crossCodePairs": 722,
+  "crossCodeMedianGapPts": 20.4,
+  "crossCodeMeanGapPts": 21.8,
+  "sameCodePairs": 289,
+  "sameCodeMedianGapPts": 11.0,
+  "sameCodeMeanGapPts": 16.9,
+  "byFunction": {
+   "INSTITUTIONAL_OPERATION": {
+    "crossCodePairs": 610,
+    "crossCodeMedianGapPts": 20.4,
+    "sameCodePairs": 235,
+    "sameCodeMedianGapPts": 14.8
+   },
+   "DISPUTE_DECISION": {
+    "crossCodePairs": 97,
+    "crossCodeMedianGapPts": 19.8,
+    "sameCodePairs": 48,
+    "sameCodeMedianGapPts": 7.4
+   },
+   "MIXED": {
+    "crossCodePairs": 15,
+    "crossCodeMedianGapPts": 19.7,
+    "sameCodePairs": 6,
+    "sameCodeMedianGapPts": 13.7
+   }
+  },
+  "widest": [
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "commercial_courts_implementing_regulation:58",
+    "aN": 374,
+    "aPct": 1.1,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 70.6
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "commercial_courts_implementing_regulation:59",
+    "aN": 171,
+    "aPct": 1.8,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 69.9
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_implementing_regulation:8",
+    "aN": 72,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:128",
+    "bN": 116,
+    "bPct": 69.0,
+    "absGapPts": 69.0
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_implementing_regulation:104",
+    "aN": 70,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:128",
+    "bN": 116,
+    "bPct": 69.0,
+    "absGapPts": 69.0
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_law:21",
+    "aN": 79,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:128",
+    "bN": 116,
+    "bPct": 69.0,
+    "absGapPts": 69.0
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "arbitration_law:8",
+    "aN": 184,
+    "aPct": 2.7,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 68.9
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "commercial_courts_implementing_regulation:16",
+    "aN": 177,
+    "aPct": 3.4,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 68.2
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_implementing_regulation:8",
+    "aN": 72,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:73",
+    "bN": 97,
+    "bPct": 68.0,
+    "absGapPts": 68.0
+   }
+  ],
+  "narrowest": [
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:5",
+    "aN": 45,
+    "aPct": 0.0,
+    "b": "bankruptcy_law:7",
+    "bN": 38,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:5",
+    "aN": 45,
+    "aPct": 0.0,
+    "b": "commercial_courts_implementing_regulation:37",
+    "bN": 45,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:55",
+    "aN": 32,
+    "aPct": 0.0,
+    "b": "bankruptcy_law:7",
+    "bN": 38,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:55",
+    "aN": 32,
+    "aPct": 0.0,
+    "b": "commercial_courts_implementing_regulation:37",
+    "bN": 45,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "bankruptcy_law:7",
+    "aN": 38,
+    "aPct": 0.0,
+    "b": "commercial_courts_implementing_regulation:37",
+    "bN": 45,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   }
+  ]
+ }
+}

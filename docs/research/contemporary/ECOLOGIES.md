@@ -6,8 +6,8 @@ against dispute-decision. Knowing which statute book an article belongs to
 predicts how a court will reason around it better than any of them. This
 session treats that as the phenomenon rather than the explanation.
 
-**The verdict is PARTIALLY_EXPLAINED, and the part that is explained is
-mostly what the effect is *not*.** It is not an artefact of citation load, it
+**The verdict is IRREDUCIBLE_WITH_CURRENT_DATA**, and what is established is
+mostly what the effect is *not*. It is not an artefact of citation load, it
 is not the case mix in the crude sense, and it is not predictable from any
 measurable property of the code's own text. What it is, on the evidence here,
 is a stable difference in how the disputes governed by each code are reasoned
@@ -287,16 +287,81 @@ run several codes at once whose relationships to non-statutory authority
 differ by more than an order of magnitude, that the difference is not
 reducible to the codes' texts, and that it moves within three years.
 
+## 10b · And it is not the mix of articles inside the code
+
+Section 5 left the strongest objection standing. Three quarters of the
+variance in supplementation is *inside* codes, and a code is nothing but its
+articles, so the whole effect could be composition: perhaps the Arbitration
+Law simply contains the kinds of provision nobody supplements and the Law of
+Practice the kinds everybody does. That is now tested at the article level,
+on the 134 articles cited in at least thirty judgments.
+
+**A grouping with more cells explains more by chance**, and the article scheme
+— adjudicative function × citation band × open-textured vocabulary × length —
+has 34 cells against the instrument's 8. So every share is reported beside
+what the same cell sizes achieve on shuffled rates:
+
+| grouping | groups | observed | chance | excess |
+|---|---:|---:|---:|---:|
+| **instrument** | 8 | 24.5 % | 5.6 | **+18.9** |
+| years since commencement | 7 | 21.0 % | 4.8 | +16.2 |
+| adjudicative function | 4 | 16.6 % | 2.4 | +14.2 |
+| citation band | 4 | 12.1 % | 2.3 | +9.8 |
+| open-textured vocabulary | 2 | 1.7 % | 0.8 | +0.9 |
+| whether any litigant ever cites it | 2 | 0.8 % | 0.8 | +0.0 |
+| article longer than the median | 2 | 0.3 % | 0.8 | −0.5 |
+| the four article properties together | 34 | 44.8 % | 26.7 | +18.1 |
+
+On a like-for-like basis **instrument identity carries as much as the entire
+article-property scheme**, +18.9 against +18.1, with a quarter of the cells.
+And it is not absorbed by them: fitting article properties first and asking
+what the code adds to the residual gives **14.9 per cent**, while fitting the
+code first leaves the article properties' contribution untouched at 44.8. The
+two are largely orthogonal. Years since commencement is a code-level property
+and is collinear with the code itself, so it is not a separate finding.
+
+The direct test is cleaner still. Take two articles doing the **same
+adjudicative work** in the **same citation band**, and compare them:
+
+| | pairs | median gap |
+|---|---:|---:|
+| across two different codes | 722 | **20.4 pts** |
+| inside one code | 289 | **11.0 pts** |
+| institutional-operation articles, across / within | 610 / 235 | 20.4 / 14.8 |
+| dispute-deciding articles, across / within | 97 / 48 | 19.8 / **7.4** |
+
+**Two provisions doing the same job differ nearly twice as much when they sit
+in different statute books.** Among dispute-deciding articles the ratio is
+almost three to one. Whatever the code carries, it is not the kinds of article
+it contains.
+
+One last comparison settles the ranking the programme has been circling.
+Splitting the same articles into article-year cells, the year a judgment was
+written explains **4.2 per cent** of the variation and the code it cites
+explains **13.5 per cent** on those identical cells. Between-code variation is
+larger than between-year, larger than between-function, larger than
+between-citation-band, and larger than anything the two speaker
+specifications produce.
+
 ## 11 · Verdict
 
-**PARTIALLY_EXPLAINED.**
+**IRREDUCIBLE_WITH_CURRENT_DATA.** The previous reading of this evidence was
+PARTIALLY_EXPLAINED, and it is revised here because the last available
+reduction was tested and failed: the effect is not the mix of articles inside
+the code. After every observable feature — of the article and of the code —
+instrument identity remains the largest single organising variable in the
+data.
 
-Explained: the effect is not exposure (standardisation moves nothing), not
+Ruled out: the effect is not exposure (standardisation moves nothing), not
 crude case mix (the marginal effects survive conditioning on a fixed
 procedural posture and the co-citation pattern is dominant, not averaging),
 and not the text (leave-one-instrument-out barely beats the grand mean, and
 the one strong textual correlation has the wrong sign). One extreme is
 decomposed completely: the Law of Practice is one fee article.
+
+Also ruled out, and this is the new one: **article composition**. Instrument
+identity survives article properties with its chance-corrected share intact,
+and function-matched pairs differ twice as much across codes as within one.
 
 Unexplained: why an arbitration dispute is reasoned without fiqh and a fee
 dispute is reasoned with it, when both are heard by the same chambers under
