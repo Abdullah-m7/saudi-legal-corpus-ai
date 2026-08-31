@@ -417,3 +417,57 @@ both a clock and corpus use, the median gap between first court citation and
 legal effective date is **28 quarters**. Corpus arrival is not a proxy for
 legal commencement and never was; for most instruments it is the quarter a
 1442-onwards commercial corpus first happened to cite a law from the 1420s.
+
+---
+
+## T9 · One stationary process
+
+**HYPOTHESIS.** Not stated anywhere, which is why it lasted. Every programme in
+this repository computed rank autocorrelations, survival rates, transition
+latencies, detector baselines and forecast folds as though a single
+data-generating process produced the whole window — so that a latency measured
+once was a latency in general, and a baseline frozen once described the system
+rather than a period of it.
+
+**TEST.** Five independent metric families over 22 series — publication,
+docket, statutory salience, authority ecology and the authority-adjacent
+formula layer — scanned with four transparent change-point methods and scored
+against a permutation null built from each series' own values. Then the whole
+battery pointed at 200 shuffled redraws of itself, to measure what it reports
+when there is nothing to report.
+
+**WHAT FAILED.** The assumption. 12 of 22 metrics carry a significant break
+against a null metric-level rate of 0.11, and the corpus produces **6
+multi-layer candidate quarters** where 200 shuffles never produced more than 3.
+`OBSERVED_EXCEEDS_EVERY_NULL_DRAW`. The corpus is not one stationary process,
+and every frozen result in this repository therefore describes the period it
+was measured on rather than the system.
+
+`LINEAR_TRANSITION_ASSUMPTION_REJECTED`. All previous results are preserved and
+re-read as **regime-conditional baselines**; nothing is rewritten.
+
+**WHAT DID NOT SURVIVE EITHER — the regime story.** The six candidates form one
+contiguous block, 1443Q3 to 1444Q4, and DOCKET appears in five of them. Asked
+whether any candidate survives removing the two families that describe what
+gets *published* rather than what courts *do*: **none of six.** Not one
+candidate break is supported by two of statutory, ecology and formula on their
+own. What is detectably non-stationary here is the observation system.
+
+So the answer is neither "one trajectory" nor "institutional regimes": a
+publication regime change, and no institutional regime change in legal content
+separable from it.
+
+**AND THE HOPE THAT WENT WITH IT.** Targets marked NOT FORECASTABLE were
+supposed to be *not forecastable across regimes* but stable within them. Tested
+with rolling origins where the break is re-detected on the history alone,
+segmentation wins on **0 of 22** series against last-value.
+`REGIME_SEGMENTATION_DOES_NOT_IMPROVE_FORECASTS`. NOT FORECASTABLE stays.
+
+**WHAT SURVIVED.** A frozen instrument that was not available before:
+`REGIME_DETECTOR_ERA_1`, with its methods, alpha, seed and escalation rule
+fixed before any future quarter exists, and its false-alarm behaviour measured
+rather than assumed. It detects before it looks up an event, it records breaks
+with no event and events with no break, and its thresholds cannot be moved
+after a result. What it cannot do is separate a change in Saudi adjudication
+from a change in what Saudi adjudication publishes — and until a publication
+date exists per judgment, that limit is structural.

@@ -1082,6 +1082,58 @@ def clock_release():
     }
 
 
+def regime_release():
+    """Every forecast in this ledger becomes regime-conditional."""
+    r = J("regimes_results.json")
+    coh = r["phase24_coherence"]
+    return {
+        "what": "REGIME-CONDITIONAL REINTERPRETATION. The ledger is not "
+                "rewritten. Every forecast, bet, detector and transition "
+                "signature already recorded is re-read as a within-regime "
+                "baseline, and future scoring carries an explicit regime "
+                "assumption.",
+        "correction": r["correction"],
+        "REGIME_ASSUMPTION": "no material detected regime break before target "
+                             "maturity, where 'detected' means "
+                             "REGIME_DETECTOR_ERA_1 fires, and that detector "
+                             "was frozen before any future quarter exists",
+        "statuses": ["SCORED", "REGIME_BREAK_BEFORE_TARGET", "VOID_DATA_SHIFT",
+                     "OPEN"],
+        "antiAbuseRule": "REGIME_BREAK_BEFORE_TARGET is defined by the frozen "
+                         "detector, never by whether a forecast was going to "
+                         "miss. It may not be used to excuse a bad forecast, "
+                         "and a forecast already scored is not rescored under "
+                         "it.",
+        "forecastModes": r["phase9_10_forecastModes"],
+        "branchingFutures": r["phase11_branchingFutures"],
+        "evidenceThatTheAssumptionIsNeeded": {
+            "metricsTested": coh["metricsTested"],
+            "metricsWithASignificantBreak":
+                coh["metricsWithAnySignificantMethod"],
+            "observedMultiLayerQuarters":
+                coh["likeForLikeAgainstTheNull"]["observedMultiLayerQuarters"],
+            "nullMaxInAnyDraw":
+                coh["likeForLikeAgainstTheNull"]["nullMaxInAnyDraw"],
+            "verdict": coh["likeForLikeAgainstTheNull"]["verdict"]},
+        "andTheLimitOnIt": {
+            "candidatesSurvivingWithoutTheObservationSystem":
+                coh["candidatesSurvivingWithoutTheObservationSystem"],
+            "reading": "no candidate regime break in legal content is "
+                       "separable from the publication regime, so the "
+                       "assumption is real but its trigger is currently "
+                       "dominated by what gets published."},
+        "withinRegimeForecastability": {
+            "verdict": r["phase15_withinRegimeForecastability"]["verdict"],
+            "seriesTested":
+                r["phase15_withinRegimeForecastability"]["seriesTested"],
+            "note": "segmentation does not rescue any target. NOT "
+                    "FORECASTABLE stays NOT FORECASTABLE."},
+        "S_D_F": r["correction"]["S_D_F_status"],
+        "TRANSITION_BET_001": "REFUSED, and no further legal-clock event is "
+                              "promoted merely to reach four examples.",
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -1230,6 +1282,8 @@ def main():
         old["transitionRelease"] = transition_release()
     if "clockRelease" not in old:
         old["clockRelease"] = clock_release()
+    if "regimeRelease" not in old:
+        old["regimeRelease"] = regime_release()
     if "horizonRelease" not in old:
         old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:

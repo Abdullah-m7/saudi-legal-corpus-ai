@@ -1,0 +1,564 @@
+{
+ "what": "REGIME_DETECTOR_ERA_1. The contract for deciding that the data-generating process has changed, with the false-alarm behaviour it was calibrated against.",
+ "era": "REGIME_DETECTOR_ERA_1",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "bdf661baec2b3a0f33dc1deb163de28fb66cae6d",
+ "codeHash": {
+  "regimes.py": "11f860c15b25"
+ },
+ "contract": {
+  "era": "REGIME_DETECTOR_ERA_1",
+  "question": "has the process generating these observations materially changed?",
+  "families": [
+   "PUBLICATION",
+   "DOCKET",
+   "STATUTORY",
+   "ECOLOGY",
+   "FORMULA"
+  ],
+  "methods": [
+   "CUSUM",
+   "PAGE_HINKLEY",
+   "PIECEWISE_LEVEL",
+   "PIECEWISE_TREND"
+  ],
+  "significance": {
+   "alpha": 0.05,
+   "null": "permutation of the series' own values, fixed seed",
+   "permutations": 2000,
+   "seed": 20260831
+  },
+  "minimumSegment": 3,
+  "escalation": {
+   "NO_DETECTABLE_BREAK": "no method significant",
+   "WATCH": "significant in one metric family only",
+   "REGIME_CANDIDATE": "significant in two or more independent families at the same quarter, plus or minus one"
+  },
+  "calibratedFalseAlarm": {
+   "metricFalseAlarmRate": 0.11,
+   "multiLayerFalseAlarmRate": 0.31,
+   "measuredOn": "200 permuted redraws of the whole battery"
+  },
+  "observedNow": {
+   "multiLayerCandidates": [
+    "1444Q2",
+    "1443Q4",
+    "1444Q1",
+    "1444Q3",
+    "1443Q3",
+    "1444Q4"
+   ],
+   "singleFamilyWatches": [
+    "1445Q2",
+    "1446Q2"
+   ]
+  },
+  "prospectiveRules": [
+   "a candidate detected in a future quarter is recorded permanently, whether or not an event is later found for it",
+   "thresholds, methods, alpha and the seed are frozen here and are never retuned after seeing a result",
+   "an UNEXPLAINED_REGIME_BREAK stays unexplained; resemblance to an expectation is not evidence",
+   "a verified institutional or AI event with no detected break is recorded as EVENT_WITH_NO_OBSERVABLE_REGIME_BREAK, which is a result"
+  ],
+  "doesNotTouch": "PROSPECTIVE_DETECTOR_ERA_1, DOCTRINAL_DETECTOR_ERA_2 and FORMULA_DETECTOR_ERA_1 are untouched. This era asks a different question of different objects."
+ },
+ "seriesTested": {
+  "DOCKET": [
+   "damagesClaim",
+   "default",
+   "expert",
+   "feesClaim",
+   "proofDispute",
+   "settlement"
+  ],
+  "ECOLOGY": [
+   "hybridRate",
+   "namedFiqhShare",
+   "sourceHHI",
+   "traceability"
+  ],
+  "FORMULA": [
+   "courtFormulaShare",
+   "formulaInnovationRate",
+   "formulaShareOfMentions",
+   "top10FormulaConcentration"
+  ],
+  "PUBLICATION": [
+   "judgments",
+   "medianReasonChars",
+   "shareAppeal",
+   "shareWithReasons"
+  ],
+  "STATUTORY": [
+   "coreTurnover",
+   "courtArticleHHI",
+   "courtBarTop50Overlap",
+   "top50Share"
+  ]
+ },
+ "falseAlarm": {
+  "draws": 200,
+  "metricsPerDraw": 22,
+  "meanMetricsFiringPerDraw": 2.42,
+  "metricFalseAlarmRate": 0.11,
+  "drawsProducingAMultiLayerCandidate": 62,
+  "multiLayerFalseAlarmRate": 0.31,
+  "meanMultiLayerQuartersPerDraw": 0.365,
+  "maxMultiLayerQuartersInADraw": 3,
+  "innerPermutationsInThisCalibration": 200,
+  "innerPermutationCaveat": "the null calibration runs 200 inner permutations where the observed scan runs 2000. A coarser p-value is a noisier one, which if anything inflates the null firing rate, so this calibration is conservative rather than flattering.",
+  "reading": "the multi-layer false-alarm rate is the number that decides whether a two-family agreement means anything. If shuffled series produce multi-layer candidates as often as the real ones do, the coherence rule is not evidence."
+ },
+ "observedCoherence": {
+  "rule": "a candidate regime break needs significant detections in at least two INDEPENDENT metric families. One family is a WATCH, and one noisy metric is nothing.",
+  "families": [
+   "PUBLICATION",
+   "DOCKET",
+   "STATUTORY",
+   "ECOLOGY",
+   "FORMULA"
+  ],
+  "multiLayerCandidates": [
+   {
+    "quarter": "1444Q2",
+    "families": [
+     "DOCKET",
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "FORMULA.formulaShareOfMentions",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 3,
+    "metricCount": 3,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1443Q4",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "DOCKET.expert",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q1",
+    "families": [
+     "DOCKET",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "PUBLICATION.judgments",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 8,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "STATUTORY.courtArticleHHI",
+     "STATUTORY.top50Share"
+    ],
+    "familyCount": 2,
+    "metricCount": 3,
+    "detections": 4,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1443Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.expert",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q4",
+    "families": [
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "FORMULA.top10FormulaConcentration",
+     "PUBLICATION.judgments"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   }
+  ],
+  "candidatesSurvivingWithoutTheObservationSystem": [],
+  "observationSystemConfound": "PUBLICATION and DOCKET describe what gets published, not what courts do. A candidate supported only by those two, or by one of them plus one content family, is a candidate about the observation system. A candidate supported by two of STATUTORY, ECOLOGY and FORMULA would be about legal content, and those are listed separately.",
+  "metricsTested": 22,
+  "metricsWithAnySignificantMethod": 12,
+  "byFamily": {
+   "DOCKET": {
+    "metricsTested": 6,
+    "metricsFiring": 5,
+    "breakCandidates": 5,
+    "share": 0.8333
+   },
+   "ECOLOGY": {
+    "metricsTested": 4,
+    "metricsFiring": 0,
+    "breakCandidates": 0,
+    "share": 0.0
+   },
+   "FORMULA": {
+    "metricsTested": 4,
+    "metricsFiring": 3,
+    "breakCandidates": 1,
+    "share": 0.75
+   },
+   "PUBLICATION": {
+    "metricsTested": 4,
+    "metricsFiring": 2,
+    "breakCandidates": 2,
+    "share": 0.5
+   },
+   "STATUTORY": {
+    "metricsTested": 4,
+    "metricsFiring": 2,
+    "breakCandidates": 1,
+    "share": 0.5
+   }
+  },
+  "stationaryFamilies": [
+   "ECOLOGY"
+  ],
+  "stationaryFamiliesReading": "a family in which NO metric carries a significant break is the part of the corpus that a single data-generating process still describes. It is reported as prominently as the families that move, because it bounds what the non-stationarity is about.",
+  "metricLevelDetectionRate": 0.5455,
+  "expectedUnderTheNull": 0.05,
+  "clustering": [
+   "1443Q3",
+   "1443Q4",
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4"
+  ],
+  "note": "four methods are run per metric, so the per-metric chance of at least one significant result under the null is well above ALPHA. The comparison that matters is the metric-level detection rate against what four correlated tests at ALPHA would produce, which the false-alarm section measures directly rather than assuming.",
+  "likeForLikeAgainstTheNull": {
+   "observedMultiLayerQuarters": 6,
+   "nullMeanPerDraw": 0.365,
+   "nullMaxInAnyDraw": 3,
+   "nullDraws": 200,
+   "verdict": "OBSERVED_EXCEEDS_EVERY_NULL_DRAW",
+   "reading": "this is the comparison that decides whether the corpus is one stationary process. It compares the number of multi-layer candidate QUARTERS observed against the number produced by shuffling the same series, which is the only fair comparison."
+  }
+ },
+ "observedCandidates": [
+  {
+   "quarter": "1444Q2",
+   "families": [
+    "DOCKET",
+    "FORMULA",
+    "PUBLICATION"
+   ],
+   "metrics": [
+    "DOCKET.damagesClaim",
+    "FORMULA.formulaShareOfMentions",
+    "PUBLICATION.medianReasonChars"
+   ],
+   "familyCount": 3,
+   "metricCount": 3,
+   "detections": 5,
+   "class": "MULTI_LAYER_REGIME_CANDIDATE",
+   "contentFamilies": [
+    "FORMULA"
+   ],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1443Q4",
+   "families": [
+    "DOCKET",
+    "STATUTORY"
+   ],
+   "metrics": [
+    "DOCKET.default",
+    "DOCKET.expert",
+    "DOCKET.proofDispute",
+    "DOCKET.settlement",
+    "STATUTORY.courtArticleHHI"
+   ],
+   "familyCount": 2,
+   "metricCount": 5,
+   "detections": 5,
+   "class": "MULTI_LAYER_REGIME_CANDIDATE",
+   "contentFamilies": [
+    "STATUTORY"
+   ],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1444Q1",
+   "families": [
+    "DOCKET",
+    "PUBLICATION"
+   ],
+   "metrics": [
+    "DOCKET.damagesClaim",
+    "DOCKET.proofDispute",
+    "DOCKET.settlement",
+    "PUBLICATION.judgments",
+    "PUBLICATION.medianReasonChars"
+   ],
+   "familyCount": 2,
+   "metricCount": 5,
+   "detections": 8,
+   "class": "MULTI_LAYER_REGIME_CANDIDATE",
+   "contentFamilies": [],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1444Q3",
+   "families": [
+    "DOCKET",
+    "STATUTORY"
+   ],
+   "metrics": [
+    "DOCKET.default",
+    "STATUTORY.courtArticleHHI",
+    "STATUTORY.top50Share"
+   ],
+   "familyCount": 2,
+   "metricCount": 3,
+   "detections": 4,
+   "class": "MULTI_LAYER_REGIME_CANDIDATE",
+   "contentFamilies": [
+    "STATUTORY"
+   ],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1443Q3",
+   "families": [
+    "DOCKET",
+    "STATUTORY"
+   ],
+   "metrics": [
+    "DOCKET.expert",
+    "STATUTORY.courtArticleHHI"
+   ],
+   "familyCount": 2,
+   "metricCount": 2,
+   "detections": 2,
+   "class": "MULTI_LAYER_REGIME_CANDIDATE",
+   "contentFamilies": [
+    "STATUTORY"
+   ],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1444Q4",
+   "families": [
+    "FORMULA",
+    "PUBLICATION"
+   ],
+   "metrics": [
+    "FORMULA.top10FormulaConcentration",
+    "PUBLICATION.judgments"
+   ],
+   "familyCount": 2,
+   "metricCount": 2,
+   "detections": 2,
+   "class": "MULTI_LAYER_REGIME_CANDIDATE",
+   "contentFamilies": [
+    "FORMULA"
+   ],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1445Q2",
+   "families": [
+    "FORMULA"
+   ],
+   "metrics": [
+    "FORMULA.formulaInnovationRate"
+   ],
+   "familyCount": 1,
+   "metricCount": 1,
+   "detections": 2,
+   "class": "SINGLE_FAMILY_WATCH",
+   "contentFamilies": [
+    "FORMULA"
+   ],
+   "survivesWithoutObservationSystem": false
+  },
+  {
+   "quarter": "1446Q2",
+   "families": [
+    "FORMULA"
+   ],
+   "metrics": [
+    "FORMULA.formulaInnovationRate"
+   ],
+   "familyCount": 1,
+   "metricCount": 1,
+   "detections": 1,
+   "class": "SINGLE_FAMILY_WATCH",
+   "contentFamilies": [
+    "FORMULA"
+   ],
+   "survivesWithoutObservationSystem": false
+  }
+ ],
+ "crossReference": {
+  "discipline": "breaks are detected from the data first. The registry is consulted afterwards. No break was chosen because an event sits near it.",
+  "UNEXPLAINED_REGIME_BREAK": [
+   {
+    "quarter": "1444Q2",
+    "families": [
+     "DOCKET",
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "FORMULA.formulaShareOfMentions",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 3,
+    "metricCount": 3,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": []
+   },
+   {
+    "quarter": "1444Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "STATUTORY.courtArticleHHI",
+     "STATUTORY.top50Share"
+    ],
+    "familyCount": 2,
+    "metricCount": 3,
+    "detections": 4,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": []
+   },
+   {
+    "quarter": "1446Q2",
+    "families": [
+     "FORMULA"
+    ],
+    "metrics": [
+     "FORMULA.formulaInnovationRate"
+    ],
+    "familyCount": 1,
+    "metricCount": 1,
+    "detections": 1,
+    "class": "SINGLE_FAMILY_WATCH",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": []
+   }
+  ],
+  "EVENT_WITH_NO_OBSERVABLE_REGIME_BREAK": [
+   {
+    "event_id": "LSIG-0001",
+    "quarter": "1443Q1",
+    "event_type": "LEGISLATIVE_PACKAGE",
+    "corpus_linkability": "1443Q1 for the Law of Evidence; 1445Q1 for the Civil Transactions Law, as first observed in this corpus"
+   },
+   {
+    "event_id": "LSIG-0002",
+    "quarter": "1443Q1",
+    "event_type": "LEGISLATIVE_PACKAGE",
+    "corpus_linkability": "1443Q1"
+   }
+  ],
+  "eventsWithACorpusQuarter": 5,
+  "note": "a nearby event is a coincidence in time at quarter resolution and is never an explanation. An event with no break is a valid result and is listed in full."
+ },
+ "withinRegimeForecastability": {
+  "verdict": "REGIME_SEGMENTATION_DOES_NOT_IMPROVE_FORECASTS",
+  "seriesTested": 22,
+  "seriesWhereSegmentationWins": []
+ },
+ "retrievalAgeing": {
+  "medianDisplacementPerQuarter": 22.0,
+  "stepsTouchingACandidateBreak": 7,
+  "medianAtCandidateBreaks": 22.0,
+  "medianAwayFromCandidateBreaks": 24.0,
+  "verdict": "INSUFFICIENT_TO_COMPARE",
+  "policyReading": "an event- or regime-triggered refresh only earns its place if decay is materially worse around breaks than between them. Where the comparison cannot be made, the periodic policy stands."
+ },
+ "correction": {
+  "withdrawn": "the working assumption that Saudi law-in-action is one stationary process, so that a latency measured once is a latency in general",
+  "replacedBy": "REGIME-CONDITIONAL BASELINES. Every frozen result in this repository keeps its numbers and loses its universality: it describes the period it was measured on.",
+  "PAST_LATENCY_IS_NOT_FUTURE_LAW": true,
+  "S_D_F_status": "OBSERVED_IN_TWO_CALIBRATION_EVENTS, and nothing more. It was already shown to be an artefact of an early clock; it is now additionally denied the status of a general law.",
+  "TRANSITION_BET_001": "REFUSED, and no further legal-clock event is promoted merely to reach four examples."
+ },
+ "whatThisDoesNotTouch": "PROSPECTIVE_DETECTOR_ERA_1, DOCTRINAL_DETECTOR_ERA_2, FORMULA_DETECTOR_ERA_1, the transition eras and the legal clock era. All are untouched and all are now read as within-regime baselines.",
+ "whatWouldMoveThis": "nothing about this file. A future candidate break is recorded against this contract, not by editing it."
+}

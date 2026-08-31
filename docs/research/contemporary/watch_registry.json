@@ -158,6 +158,43 @@
    ],
    "status": "OPEN",
    "priority": 1
+  },
+  {
+   "trigger_id": "REGIME_CANDIDATE_IN_A_FUTURE_QUARTER",
+   "condition": "REGIME_DETECTOR_ERA_1 escalates a future quarter to REGIME_CANDIDATE -- significant detections in two or more independent metric families at the same quarter, plus or minus one",
+   "checkBy": "regimes.py against frozen/regime_detector_era_1.json; thresholds, methods, alpha and seed are frozen and are not retuned",
+   "action": [
+    "record the candidate permanently, whether or not an event is later found for it",
+    "test whether it survives removing the PUBLICATION and DOCKET families; if it does not, it is a publication regime candidate",
+    "only THEN consult institutional_event_registry.json; a nearby event is a coincidence in time, never an explanation",
+    "mark any open forecast whose target matures after it as REGIME_BREAK_BEFORE_TARGET, and never use that status to excuse a miss"
+   ],
+   "status": "OPEN",
+   "priority": 1
+  },
+  {
+   "trigger_id": "CONTENT_ANCHORED_REGIME_CANDIDATE",
+   "condition": "a candidate break supported by two of STATUTORY, ECOLOGY and FORMULA without publication or docket support; the baseline today is zero of six",
+   "checkBy": "regimes_results.json phase24_coherence.candidatesSurvivingWithoutTheObservationSystem",
+   "action": [
+    "build the regime signature vector for the segments it defines",
+    "build the code and article ecology vintages, whose schema is already recorded and which are deliberately not built today",
+    "re-run the within-regime forecastability test on the new segmentation"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "PUBLICATION_DATE_PER_JUDGMENT_BECOMES_AVAILABLE",
+   "condition": "either institution exposes a publication date per judgment",
+   "checkBy": "the corpus metadata and the publisher's schema",
+   "action": [
+    "separate decision-to-publication lag from legal change, which is the single structural limit on the regime programme",
+    "re-run regimes.py; a content-anchored candidate may become separable from the publication regime for the first time",
+    "revisit FORECASTING_LIMITS entries that name this field"
+   ],
+   "status": "OPEN",
+   "priority": 1
   }
  ]
 }

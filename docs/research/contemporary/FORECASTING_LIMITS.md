@@ -182,6 +182,39 @@ for the same laws are S1 and local. Neither access failure is evidence that the
 source is unavailable, and neither was worked around. *Lifted by:* a working
 route to the gazette.
 
+**Every result in this repository is a REGIME-CONDITIONAL BASELINE.** The
+corpus is not one stationary process: 12 of 22 series across five independent
+metric families carry a significant break, and the corpus produces 6
+multi-layer candidate quarters where 200 permuted redraws never produced more
+than 3. No frozen number is wrong; each describes the period it was measured
+on rather than the system. *Lifted by:* nothing — this is a property of the
+subject, not a gap in the data.
+
+**But the non-stationarity cannot be separated from the publication regime.**
+The six candidates form one contiguous block and none of them survives removing
+the publication and docket families. There is currently no candidate regime
+break in legal content that is independent of what got published. *Lifted by:*
+a publication date per judgment, which neither institution publishes — the same
+missing field that blocks the decision-to-publication lag.
+
+**Regime segmentation does not rescue any forecast.** The hope was that targets
+marked NOT FORECASTABLE were not forecastable *across* regimes but stable
+within them. Rolling origin, break re-detected on the history alone at each
+origin, no retrospective leakage: segmentation wins on 0 of 22 series against
+last-value. NOT FORECASTABLE stays.
+
+**A regime-triggered retrieval refresh does not earn its place either.** Median
+top-50 displacement is 22.0 per quarter at candidate-break steps against 24.0
+away from them, on 7 steps — `INSUFFICIENT_TO_COMPARE`, and pointing the wrong
+way. Periodic refresh stands, for the third time and the same reason:
+staleness is a clock.
+
+**The Ministry of Justice leadership variable cannot be tested here at all.** A
+bounded official lookup found no change of holder inside the corpus window, and
+the Najiz courts platform launched before the window opens. The most-discussed
+regime variable in any account of Saudi legal change has no in-window
+variation to test.
+
 ## Calibration refused
 
 **Probabilities on entrant forecasts: RANK_ONLY.** Fold-to-fold precision for

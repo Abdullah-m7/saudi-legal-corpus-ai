@@ -47,6 +47,7 @@ def facts():
     trz = J("transition_results.json")
     clz = J("clocks_results.json")
     e2z = J("transition_era2_results.json")
+    rgz = J("regimes_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -844,8 +845,55 @@ def facts():
         ("entrant lift doctrinal",
          f"{dfz['phase25_entrantForecastability']['liftOverBaseRate']}", DF),
     ] + formula_facts(fmz) + transition_facts(trz) \
-      + clock_facts(clz, e2z)
+      + clock_facts(clz, e2z) + regime_facts(rgz)
     return out
+
+
+def regime_facts(r):
+    """REGIMES.md. The regime-aware correction."""
+    RG = ["REGIMES.md"]
+    coh, fa = r["phase24_coherence"], r["phase21_falseAlarm"]
+    ll = coh["likeForLikeAgainstTheNull"]
+    w = r["phase15_withinRegimeForecastability"]
+    ra = r["phase16_regimeAwareRetrievalAgeing"]
+    x = r["phase7_8_crossReference"]
+    return [
+        ("metrics tested", f"{coh['metricsTested']}", RG),
+        ("metrics firing", f"{coh['metricsWithAnySignificantMethod']}", RG),
+        ("metric detection rate", f"{coh['metricLevelDetectionRate']}", RG),
+        ("docket firing", f"{coh['byFamily']['DOCKET']['metricsFiring']}", RG),
+        ("docket share", f"{coh['byFamily']['DOCKET']['share']}", RG),
+        ("formula share", f"{coh['byFamily']['FORMULA']['share']}", RG),
+        ("ecology firing", f"{coh['byFamily']['ECOLOGY']['metricsFiring']}", RG),
+        ("ecology share", f"{coh['byFamily']['ECOLOGY']['share']}", RG),
+        ("statutory share", f"{coh['byFamily']['STATUTORY']['share']}", RG),
+        ("metric false alarm", f"{fa['metricFalseAlarmRate']}", RG),
+        ("mean metrics firing null", f"{fa['meanMetricsFiringPerDraw']}", RG),
+        ("multi layer false alarm", f"{fa['multiLayerFalseAlarmRate']}", RG),
+        ("null mean multi layer quarters",
+         f"{fa['meanMultiLayerQuartersPerDraw']}", RG),
+        ("null max multi layer quarters",
+         f"{fa['maxMultiLayerQuartersInADraw']}", RG),
+        ("null draws", f"{fa['draws']}", RG),
+        ("observed multi layer quarters",
+         f"{ll['observedMultiLayerQuarters']}", RG),
+        ("like for like verdict", f"{ll['verdict']}", RG),
+        ("forecast series tested", f"{w['seriesTested']}", RG),
+        ("forecast verdict", f"{w['verdict']}", RG),
+        ("retrieval median displacement",
+         f"{ra['medianDisplacementPerQuarter']}", RG),
+        ("retrieval at breaks", f"{ra['medianAtCandidateBreaks']}", RG),
+        ("retrieval away from breaks", f"{ra['medianAwayFromCandidateBreaks']}",
+         RG),
+        ("retrieval steps near", f"{ra['stepsTouchingACandidateBreak']}", RG),
+        ("retrieval verdict", f"{ra['verdict']}", RG),
+        ("vintage verdict", f"{r['phase17_18_ecologyVintages']['verdict']}", RG),
+        ("ai evaluable", f"{r['phase18_19_aiEvents']['evaluable']}", RG),
+        ("ai verdict", f"{r['phase18_19_aiEvents']['verdict']}", RG),
+        ("unexplained breaks", f"{len(x['UNEXPLAINED_REGIME_BREAK'])}", RG),
+        ("events with no break",
+         f"{len(x['EVENT_WITH_NO_OBSERVABLE_REGIME_BREAK'])}", RG),
+    ]
 
 
 def clock_facts(c, e):

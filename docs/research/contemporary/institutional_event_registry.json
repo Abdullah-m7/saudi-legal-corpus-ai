@@ -1,0 +1,354 @@
+{
+ "what": "INSTITUTIONAL EVENT REGISTRY. Events that could in principle change the process generating this corpus, recorded with their timing and nothing else.",
+ "noCausalLabel": "no row asserts that an event changed anything. The registry is consulted AFTER a break is detected, never before.",
+ "noPersonalAttribution": "leadership is recorded as institutional context. No row names an individual as the cause of any pattern, and no individual is modelled.",
+ "leadershipCoverage": {
+  "boundedLookup": "official Saudi sources only, restricted to institutions represented in this corpus",
+  "ministryOfJustice": "the Minister of Justice was appointed in 1436H and no change of holder was found inside the corpus window by this lookup, so ministerial change is NOT an available regime variable here at all",
+  "digitalPlatform": "the Najiz courts platform launched in 2019, before the window opens, so its introduction is not an in-window event either",
+  "restructuring": "the bounded lookup found no in-window jurisdiction transfer or ministry restructuring affecting the commercial courts",
+  "consequence": "the in-window institutional events available to this analysis are statutory commencements, the 2021 legislative package announcement, and the AI and infrastructure events already registered. That is a limit on what can be tested, and it is reported rather than filled with speculation.",
+  "sources": [
+   "https://www.moj.gov.sa/ar/Pages/Leadership.aspx",
+   "https://www.spa.gov.sa/1915423",
+   "https://www.scj.gov.sa/"
+  ]
+ },
+ "events": [
+  {
+   "event_id": "LSIG-0001",
+   "date": "2021-02-08",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "LEGISLATIVE_PACKAGE",
+   "title": "Announcement of four new laws reforming the judicial institutions: Personal Status, Civil Transactions, Penal ",
+   "verified_official_source": "S2_OFFICIAL_AGENCY_REPORT",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2021-02-08",
+   "effective_at": "STAGGERED_PER_LAW",
+   "corpus_linkability": "1443Q1 for the Law of Evidence; 1445Q1 for the Civil Transactions Law, as first observed in this corpus",
+   "confidence": "S2_OFFICIAL_AGENCY_REPORT",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "LSIG-0002",
+   "date": "2021-02-08",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "LEGISLATIVE_PACKAGE",
+   "title": "Law of Evidence enters observable use",
+   "verified_official_source": "S2_OFFICIAL_AGENCY_REPORT",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2021-02-08",
+   "effective_at": "1443",
+   "corpus_linkability": "1443Q1",
+   "confidence": "S2_OFFICIAL_AGENCY_REPORT",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "LSIG-0003",
+   "date": "2021-02-08",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "LEGISLATIVE_PACKAGE",
+   "title": "Civil Transactions Law enters observable use",
+   "verified_official_source": "S2_OFFICIAL_AGENCY_REPORT",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2021-02-08",
+   "effective_at": "1445",
+   "corpus_linkability": "1445Q1",
+   "confidence": "S2_OFFICIAL_AGENCY_REPORT",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "LSIG-0004",
+   "date": "2026-04-15",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "LEGISLATIVE_PACKAGE",
+   "title": "A new Enforcement Law welcomed by the Minister of Justice as part of legal modernisation",
+   "verified_official_source": "S2_OFFICIAL_AGENCY_REPORT",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2026-04-15",
+   "effective_at": "UNKNOWN",
+   "corpus_linkability": "UNKNOWN: enforcement output is not published as reasoned judgments and is not in this corpus",
+   "confidence": "S2_OFFICIAL_AGENCY_REPORT",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "LSIG-0005",
+   "date": "2026",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "INSTITUTIONAL",
+   "title": "Board of Grievances principles for the use of AI systems",
+   "verified_official_source": "S1_PRIMARY_OFFICIAL",
+   "affected_workflow": "unknown",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2026",
+   "effective_at": "2026",
+   "corpus_linkability": "NOT_OBSERVABLE: the Board is not in this corpus",
+   "confidence": "S1_PRIMARY_OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "LSIG-0006",
+   "date": "2025-02-04",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "INSTITUTIONAL",
+   "title": "Ministry of Justice Virtual Enforcement Court launched",
+   "verified_official_source": "S1_PRIMARY_OFFICIAL",
+   "affected_workflow": "unknown",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2025-02-04",
+   "effective_at": "2025-02-04",
+   "corpus_linkability": "NOT_OBSERVABLE: enforcement output is not in this corpus",
+   "confidence": "S1_PRIMARY_OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "LSIG-0007",
+   "date": "2024",
+   "institution": "Saudi legislature / Ministry of Justice",
+   "event_type": "INSTITUTIONAL",
+   "title": "Board of Grievances publishes the administrative judgments collection for 1444 AH",
+   "verified_official_source": "S3_RELIABLE_SECONDARY_CONFIRMATION",
+   "affected_workflow": "unknown",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY"
+   ],
+   "known_at": "2024",
+   "effective_at": "NOT_APPLICABLE",
+   "corpus_linkability": "NOT_ACQUIRED",
+   "confidence": "S3_RELIABLE_SECONDARY_CONFIRMATION",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "COMMENCE-evidence_law",
+   "date": "1443-12-07H",
+   "institution": "Saudi legislature",
+   "event_type": "STATUTORY_COMMENCEMENT",
+   "title": "نظام الإثبات",
+   "verified_official_source": "C3_EXACT_EFFECTIVE_DATE",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY",
+    "FORMULA"
+   ],
+   "known_at": "1443-05-26H",
+   "effective_at": "1443-12-07H",
+   "corpus_linkability": "1443Q4",
+   "confidence": "C3_EXACT_EFFECTIVE_DATE",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "COMMENCE-civil_transactions_law",
+   "date": "1445-06-04H",
+   "institution": "Saudi legislature",
+   "event_type": "STATUTORY_COMMENCEMENT",
+   "title": null,
+   "verified_official_source": "C3_EXACT_EFFECTIVE_DATE",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY",
+    "FORMULA"
+   ],
+   "known_at": "1444-11-29H",
+   "effective_at": "1445-06-04H",
+   "corpus_linkability": "1445Q2",
+   "confidence": "C3_EXACT_EFFECTIVE_DATE",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "COMMENCE-judicial_costs_law",
+   "date": null,
+   "institution": "Saudi legislature",
+   "event_type": "STATUTORY_COMMENCEMENT",
+   "title": "نظام التكاليف القضائية",
+   "verified_official_source": "C2_APPROX_QUARTER",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY",
+    "FORMULA"
+   ],
+   "known_at": "1443-02-10H",
+   "effective_at": null,
+   "corpus_linkability": null,
+   "confidence": "C2_APPROX_QUARTER",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "COMMENCE-commercial_courts_law",
+   "date": null,
+   "institution": "Saudi legislature",
+   "event_type": "STATUTORY_COMMENCEMENT",
+   "title": "نظام المحاكم التجارية",
+   "verified_official_source": "C2_APPROX_QUARTER",
+   "affected_workflow": "adjudication",
+   "possible_observable_layers": [
+    "STATUTORY",
+    "ECOLOGY",
+    "FORMULA"
+   ],
+   "known_at": "1441-08-15H",
+   "effective_at": null,
+   "corpus_linkability": null,
+   "confidence": "C2_APPROX_QUARTER",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0001",
+   "date": "2024-01",
+   "institution": "SDAIA (Saudi Data and Artificial Intelligence Authority)",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "Generative Artificial Intelligence Principles for Government Entities, first version, January 2024; later an A",
+   "verified_official_source": "OFFICIAL",
+   "affected_workflow": "governance",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2024-01",
+   "effective_at": "UNKNOWN",
+   "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "confidence": "OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0002",
+   "date": "2024-03",
+   "institution": "Board of Grievances with Elm",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "the «مساعد» (Musaed) knowledge-assistant programme: a data-sharing agreement to use an intelligent knowledge a",
+   "verified_official_source": "OFFICIAL",
+   "affected_workflow": "legal research",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2024-03",
+   "effective_at": "UNKNOWN",
+   "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+   "confidence": "OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0003",
+   "date": "2024",
+   "institution": "Board of Grievances",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "the knowledge assistant (المساعد المعرفي) placed among the top five in the Digital Government Award 2024 for b",
+   "verified_official_source": "REPUTABLE_SECONDARY",
+   "affected_workflow": "decision support",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2024",
+   "effective_at": "2024",
+   "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+   "confidence": "REPUTABLE_SECONDARY",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0004",
+   "date": "2025-02-04",
+   "institution": "Ministry of Justice",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "the Virtual Enforcement Court: on the Ministry's own page, enforcement requests are completed from filing to t",
+   "verified_official_source": "OFFICIAL",
+   "affected_workflow": "enforcement",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2025-02-04",
+   "effective_at": "2025-02-04",
+   "corpus_linkability": "L2_INSTITUTION_MATCH",
+   "confidence": "OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0005",
+   "date": "2026",
+   "institution": "Board of Grievances",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "Principles for the Use of Artificial Intelligence Systems: a binding internal document applying to every Board",
+   "verified_official_source": "OFFICIAL",
+   "affected_workflow": "governance",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2026",
+   "effective_at": "not applicable",
+   "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+   "confidence": "OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0006",
+   "date": "2026-06",
+   "institution": "Board of Grievances with Elm",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "a cooperation agreement to develop the administrative enforcement platform (منصة التنفيذ الإدارية) and to expa",
+   "verified_official_source": "REPUTABLE_SECONDARY",
+   "affected_workflow": "judicial administration",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2026-06",
+   "effective_at": "UNKNOWN",
+   "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "confidence": "REPUTABLE_SECONDARY",
+   "prospective_or_backfilled": "BACKFILLED"
+  },
+  {
+   "event_id": "ADOPT-0007",
+   "date": "2026-07-21",
+   "institution": "Board of Grievances with HUMAIN",
+   "event_type": "AI_DEPLOYMENT",
+   "title": "the President of the Board received a delegation from HUMAIN, a PIF artificial-intelligence company, to explor",
+   "verified_official_source": "OFFICIAL",
+   "affected_workflow": "UNKNOWN",
+   "possible_observable_layers": [
+    "ECOLOGY",
+    "FORMULA",
+    "STATUTORY"
+   ],
+   "known_at": "2026-07-21",
+   "effective_at": "not applicable",
+   "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "confidence": "OFFICIAL",
+   "prospective_or_backfilled": "BACKFILLED"
+  }
+ ]
+}

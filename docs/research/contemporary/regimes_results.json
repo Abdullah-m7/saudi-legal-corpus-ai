@@ -1,0 +1,2820 @@
+{
+ "what": "REGIME-AWARE SAUDI LEGAL FORESIGHT. Whether one data-generating process describes this corpus, or several separated by structural breaks.",
+ "correction": {
+  "withdrawn": "the working assumption that Saudi law-in-action is one stationary process, so that a latency measured once is a latency in general",
+  "replacedBy": "REGIME-CONDITIONAL BASELINES. Every frozen result in this repository keeps its numbers and loses its universality: it describes the period it was measured on.",
+  "PAST_LATENCY_IS_NOT_FUTURE_LAW": true,
+  "S_D_F_status": "OBSERVED_IN_TWO_CALIBRATION_EVENTS, and nothing more. It was already shown to be an artefact of an early clock; it is now additionally denied the status of a general law.",
+  "TRANSITION_BET_001": "REFUSED, and no further legal-clock event is promoted merely to reach four examples."
+ },
+ "phase2_regimeConcept": {
+  "definition": "a period during which the major observable institutional conditions relevant to the legal data-generating process remain materially unchanged",
+  "notAPoliticalInterpretation": true,
+  "candidateRegimeVariables": [
+   "leadership change where legally relevant",
+   "judicial structural reform",
+   "ministry restructuring",
+   "jurisdiction transfer",
+   "major procedural reform",
+   "publication-policy change",
+   "digital-platform change",
+   "verified AI deployment",
+   "national reform programme",
+   "large legislative package",
+   "institutional merger",
+   "workflow redesign"
+  ],
+  "recordFirstTestLater": true
+ },
+ "phase3_eventRegistry": {
+  "file": "institutional_event_registry.json",
+  "events": 18,
+  "leadershipCoverage": {
+   "boundedLookup": "official Saudi sources only, restricted to institutions represented in this corpus",
+   "ministryOfJustice": "the Minister of Justice was appointed in 1436H and no change of holder was found inside the corpus window by this lookup, so ministerial change is NOT an available regime variable here at all",
+   "digitalPlatform": "the Najiz courts platform launched in 2019, before the window opens, so its introduction is not an in-window event either",
+   "restructuring": "the bounded lookup found no in-window jurisdiction transfer or ministry restructuring affecting the commercial courts",
+   "consequence": "the in-window institutional events available to this analysis are statutory commencements, the 2021 legislative package announcement, and the AI and infrastructure events already registered. That is a limit on what can be tested, and it is reported rather than filled with speculation.",
+   "sources": [
+    "https://www.moj.gov.sa/ar/Pages/Leadership.aspx",
+    "https://www.spa.gov.sa/1915423",
+    "https://www.scj.gov.sa/"
+   ]
+  }
+ },
+ "phase5_seriesTested": {
+  "DOCKET": [
+   "damagesClaim",
+   "default",
+   "expert",
+   "feesClaim",
+   "proofDispute",
+   "settlement"
+  ],
+  "ECOLOGY": [
+   "hybridRate",
+   "namedFiqhShare",
+   "sourceHHI",
+   "traceability"
+  ],
+  "FORMULA": [
+   "courtFormulaShare",
+   "formulaInnovationRate",
+   "formulaShareOfMentions",
+   "top10FormulaConcentration"
+  ],
+  "PUBLICATION": [
+   "judgments",
+   "medianReasonChars",
+   "shareAppeal",
+   "shareWithReasons"
+  ],
+  "STATUTORY": [
+   "coreTurnover",
+   "courtArticleHHI",
+   "courtBarTop50Overlap",
+   "top50Share"
+  ]
+ },
+ "phase5_6_scan": {
+  "DOCKET": {
+   "damagesClaim": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.25,
+     0.163,
+     0.2486,
+     0.272,
+     0.3003,
+     0.3598,
+     0.3488,
+     0.3665,
+     0.4058,
+     0.3911,
+     0.4309,
+     0.4263,
+     0.408,
+     0.4241
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.6008,
+      "atIndex": 5,
+      "p": 0.0005,
+      "null95": 1.2169,
+      "nullMedian": 0.7309,
+      "significant": true,
+      "breakAt": "1444Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 3.4896,
+      "atIndex": 4,
+      "p": 0.002,
+      "null95": 2.832,
+      "nullMedian": 1.7832,
+      "significant": true,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.7972,
+      "atIndex": 5,
+      "p": 0.0005,
+      "null95": 0.4758,
+      "nullMedian": 0.1746,
+      "significant": true,
+      "breakAt": "1444Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.422,
+      "atIndex": 5,
+      "p": 0.2694,
+      "null95": 0.6012,
+      "nullMedian": 0.3239,
+      "significant": false,
+      "breakAt": "1444Q2"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "default": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.4183,
+     0.3859,
+     0.3655,
+     0.3743,
+     0.4154,
+     0.3917,
+     0.4302,
+     0.4405,
+     0.4442,
+     0.4141,
+     0.4265,
+     0.4322,
+     0.4187,
+     0.4487
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.4618,
+      "atIndex": 6,
+      "p": 0.0105,
+      "null95": 1.2,
+      "nullMedian": 0.7264,
+      "significant": true,
+      "breakAt": "1444Q3"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 3.2209,
+      "atIndex": 3,
+      "p": 0.024,
+      "null95": 2.9898,
+      "nullMedian": 1.879,
+      "significant": true,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.6232,
+      "atIndex": 6,
+      "p": 0.013,
+      "null95": 0.4765,
+      "nullMedian": 0.1742,
+      "significant": true,
+      "breakAt": "1444Q3"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.4953,
+      "atIndex": 4,
+      "p": 0.1469,
+      "null95": 0.5992,
+      "nullMedian": 0.3156,
+      "significant": false,
+      "breakAt": "1444Q1"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "expert": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.0673,
+     0.0761,
+     0.0529,
+     0.1124,
+     0.0775,
+     0.1189,
+     0.102,
+     0.1126,
+     0.109,
+     0.1278,
+     0.0961,
+     0.1048,
+     0.1028,
+     0.0781
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.1705,
+      "atIndex": 5,
+      "p": 0.057,
+      "null95": 1.1857,
+      "nullMedian": 0.7301,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.8181,
+      "atIndex": 2,
+      "p": 0.0495,
+      "null95": 2.8181,
+      "nullMedian": 1.8724,
+      "significant": true,
+      "breakAt": "1443Q3"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.565,
+      "atIndex": 3,
+      "p": 0.0165,
+      "null95": 0.4544,
+      "nullMedian": 0.1706,
+      "significant": true,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.514,
+      "atIndex": 10,
+      "p": 0.1169,
+      "null95": 0.6015,
+      "nullMedian": 0.3096,
+      "significant": false,
+      "breakAt": "1445Q3"
+     }
+    },
+    "significantMethods": [
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "feesClaim": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.3365,
+     0.1522,
+     0.1614,
+     0.2572,
+     0.2533,
+     0.2799,
+     0.2424,
+     0.2338,
+     0.2513,
+     0.2374,
+     0.2453,
+     0.2542,
+     0.227,
+     0.192
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.5916,
+      "atIndex": 1,
+      "p": 0.7501,
+      "null95": 1.1339,
+      "nullMedian": 0.7096,
+      "significant": false,
+      "breakAt": "1443Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.6022,
+      "atIndex": 2,
+      "p": 0.1354,
+      "null95": 2.6022,
+      "nullMedian": 1.7134,
+      "significant": false,
+      "breakAt": "1443Q3"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0584,
+      "atIndex": 3,
+      "p": 0.908,
+      "null95": 0.3967,
+      "nullMedian": 0.1718,
+      "significant": false,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.185,
+      "atIndex": 4,
+      "p": 0.8536,
+      "null95": 0.6033,
+      "nullMedian": 0.3209,
+      "significant": false,
+      "breakAt": "1444Q1"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "proofDispute": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.274,
+     0.2663,
+     0.1531,
+     0.2496,
+     0.3174,
+     0.3869,
+     0.3755,
+     0.3568,
+     0.3778,
+     0.338,
+     0.3646,
+     0.2839,
+     0.3574,
+     0.3371
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.3831,
+      "atIndex": 4,
+      "p": 0.0035,
+      "null95": 1.1483,
+      "nullMedian": 0.7381,
+      "significant": true,
+      "breakAt": "1444Q1"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 3.1751,
+      "atIndex": 3,
+      "p": 0.0065,
+      "null95": 2.8676,
+      "nullMedian": 2.1367,
+      "significant": true,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.6696,
+      "atIndex": 4,
+      "p": 0.0035,
+      "null95": 0.4426,
+      "nullMedian": 0.1817,
+      "significant": true,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.5947,
+      "atIndex": 4,
+      "p": 0.0625,
+      "null95": 0.6163,
+      "nullMedian": 0.3376,
+      "significant": false,
+      "breakAt": "1444Q1"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "settlement": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.2308,
+     0.2337,
+     0.2226,
+     0.2182,
+     0.2919,
+     0.3262,
+     0.2903,
+     0.272,
+     0.3136,
+     0.3247,
+     0.3348,
+     0.3086,
+     0.3252,
+     0.3058
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.5519,
+      "atIndex": 4,
+      "p": 0.004,
+      "null95": 1.2115,
+      "nullMedian": 0.7501,
+      "significant": true,
+      "breakAt": "1444Q1"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 3.8066,
+      "atIndex": 3,
+      "p": 0.006,
+      "null95": 3.0246,
+      "nullMedian": 1.885,
+      "significant": true,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.8429,
+      "atIndex": 4,
+      "p": 0.002,
+      "null95": 0.4799,
+      "nullMedian": 0.1812,
+      "significant": true,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.6409,
+      "atIndex": 4,
+      "p": 0.0295,
+      "null95": 0.5977,
+      "nullMedian": 0.3101,
+      "significant": true,
+      "breakAt": "1444Q1"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL",
+     "PIECEWISE_TREND"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   }
+  },
+  "ECOLOGY": {
+   "hybridRate": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.2359,
+     0.4038,
+     0.4341,
+     0.3895,
+     0.3627,
+     0.3768,
+     0.4065,
+     0.4123,
+     0.379,
+     0.355,
+     0.3458,
+     0.3732
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.824,
+      "atIndex": 1,
+      "p": 0.3763,
+      "null95": 1.0322,
+      "nullMedian": 0.7622,
+      "significant": false,
+      "breakAt": "1443Q4"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.3544,
+      "atIndex": 0,
+      "p": 0.9475,
+      "null95": 2.4187,
+      "nullMedian": 2.3544,
+      "significant": false,
+      "breakAt": "1443Q3"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0323,
+      "atIndex": 3,
+      "p": 0.9905,
+      "null95": 0.4125,
+      "nullMedian": 0.1799,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.4519,
+      "atIndex": 4,
+      "p": 0.3878,
+      "null95": 0.6951,
+      "nullMedian": 0.3925,
+      "significant": false,
+      "breakAt": "1444Q3"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "namedFiqhShare": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.0736,
+     0.1563,
+     0.1728,
+     0.1424,
+     0.1309,
+     0.1304,
+     0.1535,
+     0.1377,
+     0.116,
+     0.1053,
+     0.1039,
+     0.1316
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.6875,
+      "atIndex": 8,
+      "p": 0.5242,
+      "null95": 1.1684,
+      "nullMedian": 0.7159,
+      "significant": false,
+      "breakAt": "1445Q3"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 1.7195,
+      "atIndex": 2,
+      "p": 0.4408,
+      "null95": 2.6084,
+      "nullMedian": 1.6975,
+      "significant": false,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.1773,
+      "atIndex": 8,
+      "p": 0.5037,
+      "null95": 0.5047,
+      "nullMedian": 0.1783,
+      "significant": false,
+      "breakAt": "1445Q3"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.3902,
+      "atIndex": 4,
+      "p": 0.4088,
+      "null95": 0.6599,
+      "nullMedian": 0.3486,
+      "significant": false,
+      "breakAt": "1444Q3"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "sourceHHI": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.147108,
+     0.129436,
+     0.125207,
+     0.124297,
+     0.132975,
+     0.141596,
+     0.125398,
+     0.126971,
+     0.136212,
+     0.122296,
+     0.130925,
+     0.172814
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.8147,
+      "atIndex": 11,
+      "p": 0.3348,
+      "null95": 1.0813,
+      "nullMedian": 0.7402,
+      "significant": false,
+      "breakAt": "1446Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.3222,
+      "atIndex": 11,
+      "p": 0.939,
+      "null95": 2.7458,
+      "nullMedian": 2.3222,
+      "significant": false,
+      "breakAt": "1446Q2"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0998,
+      "atIndex": 9,
+      "p": 0.8516,
+      "null95": 0.4428,
+      "nullMedian": 0.1781,
+      "significant": false,
+      "breakAt": "1445Q4"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.4014,
+      "atIndex": 8,
+      "p": 0.4778,
+      "null95": 0.7104,
+      "nullMedian": 0.3895,
+      "significant": false,
+      "breakAt": "1445Q3"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "traceability": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   }
+  },
+  "FORMULA": {
+   "courtFormulaShare": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.3245,
+     0.3608,
+     0.3249,
+     0.331,
+     0.2821,
+     0.2871,
+     0.3217,
+     0.3289,
+     0.3694,
+     0.3803,
+     0.2746,
+     0.3021
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.6318,
+      "atIndex": 10,
+      "p": 0.5832,
+      "null95": 1.2302,
+      "nullMedian": 0.6983,
+      "significant": false,
+      "breakAt": "1446Q1"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.129,
+      "atIndex": 9,
+      "p": 0.1874,
+      "null95": 2.6075,
+      "nullMedian": 1.8032,
+      "significant": false,
+      "breakAt": "1445Q4"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0609,
+      "atIndex": 4,
+      "p": 0.8931,
+      "null95": 0.5525,
+      "nullMedian": 0.1764,
+      "significant": false,
+      "breakAt": "1444Q3"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.4448,
+      "atIndex": 8,
+      "p": 0.2804,
+      "null95": 0.6397,
+      "nullMedian": 0.3429,
+      "significant": false,
+      "breakAt": "1445Q3"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "formulaInnovationRate": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.9184,
+     0.8839,
+     0.9095,
+     0.8882,
+     0.8503,
+     0.8604,
+     0.8402,
+     0.7904,
+     0.7945,
+     0.7779,
+     0.776,
+     0.6519
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.412,
+      "atIndex": 7,
+      "p": 0.003,
+      "null95": 1.1423,
+      "nullMedian": 0.7172,
+      "significant": true,
+      "breakAt": "1445Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.3913,
+      "atIndex": 11,
+      "p": 0.021,
+      "null95": 2.3893,
+      "nullMedian": 1.9581,
+      "significant": true,
+      "breakAt": "1446Q2"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.6836,
+      "atIndex": 7,
+      "p": 0.003,
+      "null95": 0.4957,
+      "nullMedian": 0.1894,
+      "significant": true,
+      "breakAt": "1445Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.3688,
+      "atIndex": 8,
+      "p": 0.4618,
+      "null95": 0.679,
+      "nullMedian": 0.3509,
+      "significant": false,
+      "breakAt": "1445Q3"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "formulaShareOfMentions": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.2682,
+     0.3284,
+     0.2776,
+     0.2371,
+     0.2046,
+     0.2028,
+     0.2171,
+     0.2326,
+     0.2528,
+     0.2637,
+     0.1682,
+     0.2294
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.1072,
+      "atIndex": 3,
+      "p": 0.0565,
+      "null95": 1.1106,
+      "nullMedian": 0.7388,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.3353,
+      "atIndex": 2,
+      "p": 0.051,
+      "null95": 2.3353,
+      "nullMedian": 1.7891,
+      "significant": false,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.5448,
+      "atIndex": 3,
+      "p": 0.0185,
+      "null95": 0.4794,
+      "nullMedian": 0.1881,
+      "significant": true,
+      "breakAt": "1444Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.3233,
+      "atIndex": 6,
+      "p": 0.5612,
+      "null95": 0.6802,
+      "nullMedian": 0.3544,
+      "significant": false,
+      "breakAt": "1445Q1"
+     }
+    },
+    "significantMethods": [
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "WEAK_SINGLE_METHOD"
+   },
+   "top10FormulaConcentration": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.1223,
+     0.1425,
+     0.1012,
+     0.0811,
+     0.0628,
+     0.0681,
+     0.0627,
+     0.0684,
+     0.1004,
+     0.105,
+     0.0796,
+     0.1314
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.9223,
+      "atIndex": 3,
+      "p": 0.2264,
+      "null95": 1.2157,
+      "nullMedian": 0.7206,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.2727,
+      "atIndex": 7,
+      "p": 0.0865,
+      "null95": 2.7584,
+      "nullMedian": 1.6026,
+      "significant": false,
+      "breakAt": "1445Q2"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.3781,
+      "atIndex": 3,
+      "p": 0.1454,
+      "null95": 0.5067,
+      "nullMedian": 0.18,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.7363,
+      "atIndex": 5,
+      "p": 0.019,
+      "null95": 0.642,
+      "nullMedian": 0.3343,
+      "significant": true,
+      "breakAt": "1444Q4"
+     }
+    },
+    "significantMethods": [
+     "PIECEWISE_TREND"
+    ],
+    "verdict": "WEAK_SINGLE_METHOD"
+   }
+  },
+  "PUBLICATION": {
+   "judgments": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     208,
+     184,
+     1078,
+     1691,
+     4196,
+     5356,
+     3696,
+     3187,
+     2634,
+     1432,
+     905,
+     1011,
+     652,
+     448
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.8608,
+      "atIndex": 9,
+      "p": 0.3063,
+      "null95": 1.1959,
+      "nullMedian": 0.7309,
+      "significant": false,
+      "breakAt": "1445Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 3.5874,
+      "atIndex": 7,
+      "p": 0.0065,
+      "null95": 2.9522,
+      "nullMedian": 1.8014,
+      "significant": true,
+      "breakAt": "1444Q4"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.2305,
+      "atIndex": 9,
+      "p": 0.3303,
+      "null95": 0.5006,
+      "nullMedian": 0.1817,
+      "significant": false,
+      "breakAt": "1445Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.9157,
+      "atIndex": 4,
+      "p": 0.001,
+      "null95": 0.5934,
+      "nullMedian": 0.3179,
+      "significant": true,
+      "breakAt": "1444Q1"
+     }
+    },
+    "significantMethods": [
+     "PAGE_HINKLEY",
+     "PIECEWISE_TREND"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "medianReasonChars": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     1143,
+     1357,
+     1161,
+     1293,
+     1372,
+     1539,
+     1510,
+     1586,
+     1626,
+     1589,
+     1670,
+     1675,
+     1677,
+     1687
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.6357,
+      "atIndex": 5,
+      "p": 0.0005,
+      "null95": 1.2178,
+      "nullMedian": 0.7224,
+      "significant": true,
+      "breakAt": "1444Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 3.6201,
+      "atIndex": 4,
+      "p": 0.004,
+      "null95": 3.0463,
+      "nullMedian": 1.795,
+      "significant": true,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.8324,
+      "atIndex": 5,
+      "p": 0.0005,
+      "null95": 0.4754,
+      "nullMedian": 0.1772,
+      "significant": true,
+      "breakAt": "1444Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.494,
+      "atIndex": 5,
+      "p": 0.1514,
+      "null95": 0.6137,
+      "nullMedian": 0.3107,
+      "significant": false,
+      "breakAt": "1444Q2"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "shareAppeal": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "shareWithReasons": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.0,
+      "atIndex": null,
+      "p": 1.0,
+      "null95": 0.0,
+      "nullMedian": 0.0,
+      "significant": false,
+      "breakAt": null
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   }
+  },
+  "STATUTORY": {
+   "coreTurnover": {
+    "n": 13,
+    "periods": [
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.5915,
+     0.4848,
+     0.3607,
+     0.5714,
+     0.3607,
+     0.3333,
+     0.3871,
+     0.3607,
+     0.3333,
+     0.4615,
+     0.3333,
+     0.3871,
+     0.4127
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.1591,
+      "atIndex": 4,
+      "p": 0.059,
+      "null95": 1.226,
+      "nullMedian": 0.7091,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.1793,
+      "atIndex": 3,
+      "p": 0.2309,
+      "null95": 3.3058,
+      "nullMedian": 1.7043,
+      "significant": false,
+      "breakAt": "1444Q1"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.4852,
+      "atIndex": 4,
+      "p": 0.0545,
+      "null95": 0.4885,
+      "nullMedian": 0.169,
+      "significant": false,
+      "breakAt": "1444Q2"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.3753,
+      "atIndex": 4,
+      "p": 0.3743,
+      "null95": 0.6656,
+      "nullMedian": 0.3241,
+      "significant": false,
+      "breakAt": "1444Q2"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "courtArticleHHI": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.059734,
+     0.058318,
+     0.038185,
+     0.063446,
+     0.069379,
+     0.064003,
+     0.071859,
+     0.07186,
+     0.082439,
+     0.071447,
+     0.063184,
+     0.067756,
+     0.072528,
+     0.082034
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 1.2181,
+      "atIndex": 6,
+      "p": 0.0105,
+      "null95": 1.1011,
+      "nullMedian": 0.7403,
+      "significant": true,
+      "breakAt": "1444Q3"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.6999,
+      "atIndex": 2,
+      "p": 0.0025,
+      "null95": 2.5245,
+      "nullMedian": 2.2151,
+      "significant": true,
+      "breakAt": "1443Q3"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.5345,
+      "atIndex": 3,
+      "p": 0.0055,
+      "null95": 0.413,
+      "nullMedian": 0.1752,
+      "significant": true,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.3197,
+      "atIndex": 10,
+      "p": 0.5607,
+      "null95": 0.6307,
+      "nullMedian": 0.3453,
+      "significant": false,
+      "breakAt": "1445Q3"
+     }
+    },
+    "significantMethods": [
+     "CUSUM",
+     "PAGE_HINKLEY",
+     "PIECEWISE_LEVEL"
+    ],
+    "verdict": "BREAK_CANDIDATE"
+   },
+   "courtBarTop50Overlap": {
+    "n": 12,
+    "periods": [
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.1646,
+     0.1059,
+     0.1765,
+     0.1905,
+     0.2195,
+     0.2195,
+     0.1905,
+     0.2195,
+     0.1494,
+     0.1905,
+     0.1494,
+     0.1163
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.7188,
+      "atIndex": 8,
+      "p": 0.4788,
+      "null95": 1.1861,
+      "nullMedian": 0.7075,
+      "significant": false,
+      "breakAt": "1445Q3"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.1145,
+      "atIndex": 7,
+      "p": 0.2579,
+      "null95": 2.6089,
+      "nullMedian": 1.5339,
+      "significant": false,
+      "breakAt": "1445Q2"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.1938,
+      "atIndex": 8,
+      "p": 0.4518,
+      "null95": 0.529,
+      "nullMedian": 0.177,
+      "significant": false,
+      "breakAt": "1445Q3"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.624,
+      "atIndex": 4,
+      "p": 0.07,
+      "null95": 0.6588,
+      "nullMedian": 0.3229,
+      "significant": false,
+      "breakAt": "1444Q3"
+     }
+    },
+    "significantMethods": [],
+    "verdict": "NO_DETECTABLE_BREAK"
+   },
+   "top50Share": {
+    "n": 14,
+    "periods": [
+     "1443Q1",
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1444Q4",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "values": [
+     0.9161,
+     0.9377,
+     0.8836,
+     0.8501,
+     0.8361,
+     0.8116,
+     0.8145,
+     0.8241,
+     0.8391,
+     0.8515,
+     0.8517,
+     0.8955,
+     0.8824,
+     0.917
+    ],
+    "methods": {
+     "CUSUM": {
+      "statistic": 0.9733,
+      "atIndex": 3,
+      "p": 0.1834,
+      "null95": 1.2019,
+      "nullMedian": 0.7216,
+      "significant": false,
+      "breakAt": "1443Q4"
+     },
+     "PAGE_HINKLEY": {
+      "statistic": 2.6214,
+      "atIndex": 8,
+      "p": 0.0565,
+      "null95": 2.9718,
+      "nullMedian": 1.6648,
+      "significant": false,
+      "breakAt": "1445Q1"
+     },
+     "PIECEWISE_LEVEL": {
+      "statistic": 0.4019,
+      "atIndex": 3,
+      "p": 0.098,
+      "null95": 0.4775,
+      "nullMedian": 0.1776,
+      "significant": false,
+      "breakAt": "1443Q4"
+     },
+     "PIECEWISE_TREND": {
+      "statistic": 0.9103,
+      "atIndex": 6,
+      "p": 0.0005,
+      "null95": 0.5796,
+      "nullMedian": 0.3082,
+      "significant": true,
+      "breakAt": "1444Q3"
+     }
+    },
+    "significantMethods": [
+     "PIECEWISE_TREND"
+    ],
+    "verdict": "WEAK_SINGLE_METHOD"
+   }
+  }
+ },
+ "phase24_coherence": {
+  "rule": "a candidate regime break needs significant detections in at least two INDEPENDENT metric families. One family is a WATCH, and one noisy metric is nothing.",
+  "families": [
+   "PUBLICATION",
+   "DOCKET",
+   "STATUTORY",
+   "ECOLOGY",
+   "FORMULA"
+  ],
+  "candidates": [
+   {
+    "quarter": "1444Q2",
+    "families": [
+     "DOCKET",
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "FORMULA.formulaShareOfMentions",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 3,
+    "metricCount": 3,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1443Q4",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "DOCKET.expert",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q1",
+    "families": [
+     "DOCKET",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "PUBLICATION.judgments",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 8,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "STATUTORY.courtArticleHHI",
+     "STATUTORY.top50Share"
+    ],
+    "familyCount": 2,
+    "metricCount": 3,
+    "detections": 4,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1443Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.expert",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q4",
+    "families": [
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "FORMULA.top10FormulaConcentration",
+     "PUBLICATION.judgments"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1445Q2",
+    "families": [
+     "FORMULA"
+    ],
+    "metrics": [
+     "FORMULA.formulaInnovationRate"
+    ],
+    "familyCount": 1,
+    "metricCount": 1,
+    "detections": 2,
+    "class": "SINGLE_FAMILY_WATCH",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1446Q2",
+    "families": [
+     "FORMULA"
+    ],
+    "metrics": [
+     "FORMULA.formulaInnovationRate"
+    ],
+    "familyCount": 1,
+    "metricCount": 1,
+    "detections": 1,
+    "class": "SINGLE_FAMILY_WATCH",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   }
+  ],
+  "multiLayerCandidates": [
+   {
+    "quarter": "1444Q2",
+    "families": [
+     "DOCKET",
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "FORMULA.formulaShareOfMentions",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 3,
+    "metricCount": 3,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1443Q4",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "DOCKET.expert",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q1",
+    "families": [
+     "DOCKET",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "PUBLICATION.judgments",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 8,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "STATUTORY.courtArticleHHI",
+     "STATUTORY.top50Share"
+    ],
+    "familyCount": 2,
+    "metricCount": 3,
+    "detections": 4,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1443Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.expert",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false
+   },
+   {
+    "quarter": "1444Q4",
+    "families": [
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "FORMULA.top10FormulaConcentration",
+     "PUBLICATION.judgments"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false
+   }
+  ],
+  "candidatesSurvivingWithoutTheObservationSystem": [],
+  "observationSystemConfound": "PUBLICATION and DOCKET describe what gets published, not what courts do. A candidate supported only by those two, or by one of them plus one content family, is a candidate about the observation system. A candidate supported by two of STATUTORY, ECOLOGY and FORMULA would be about legal content, and those are listed separately.",
+  "metricsTested": 22,
+  "metricsWithAnySignificantMethod": 12,
+  "byFamily": {
+   "DOCKET": {
+    "metricsTested": 6,
+    "metricsFiring": 5,
+    "breakCandidates": 5,
+    "share": 0.8333
+   },
+   "ECOLOGY": {
+    "metricsTested": 4,
+    "metricsFiring": 0,
+    "breakCandidates": 0,
+    "share": 0.0
+   },
+   "FORMULA": {
+    "metricsTested": 4,
+    "metricsFiring": 3,
+    "breakCandidates": 1,
+    "share": 0.75
+   },
+   "PUBLICATION": {
+    "metricsTested": 4,
+    "metricsFiring": 2,
+    "breakCandidates": 2,
+    "share": 0.5
+   },
+   "STATUTORY": {
+    "metricsTested": 4,
+    "metricsFiring": 2,
+    "breakCandidates": 1,
+    "share": 0.5
+   }
+  },
+  "stationaryFamilies": [
+   "ECOLOGY"
+  ],
+  "stationaryFamiliesReading": "a family in which NO metric carries a significant break is the part of the corpus that a single data-generating process still describes. It is reported as prominently as the families that move, because it bounds what the non-stationarity is about.",
+  "metricLevelDetectionRate": 0.5455,
+  "expectedUnderTheNull": 0.05,
+  "clustering": [
+   "1443Q3",
+   "1443Q4",
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4"
+  ],
+  "note": "four methods are run per metric, so the per-metric chance of at least one significant result under the null is well above ALPHA. The comparison that matters is the metric-level detection rate against what four correlated tests at ALPHA would produce, which the false-alarm section measures directly rather than assuming.",
+  "likeForLikeAgainstTheNull": {
+   "observedMultiLayerQuarters": 6,
+   "nullMeanPerDraw": 0.365,
+   "nullMaxInAnyDraw": 3,
+   "nullDraws": 200,
+   "verdict": "OBSERVED_EXCEEDS_EVERY_NULL_DRAW",
+   "reading": "this is the comparison that decides whether the corpus is one stationary process. It compares the number of multi-layer candidate QUARTERS observed against the number produced by shuffling the same series, which is the only fair comparison."
+  }
+ },
+ "phase21_falseAlarm": {
+  "draws": 200,
+  "metricsPerDraw": 22,
+  "meanMetricsFiringPerDraw": 2.42,
+  "metricFalseAlarmRate": 0.11,
+  "drawsProducingAMultiLayerCandidate": 62,
+  "multiLayerFalseAlarmRate": 0.31,
+  "meanMultiLayerQuartersPerDraw": 0.365,
+  "maxMultiLayerQuartersInADraw": 3,
+  "innerPermutationsInThisCalibration": 200,
+  "innerPermutationCaveat": "the null calibration runs 200 inner permutations where the observed scan runs 2000. A coarser p-value is a noisier one, which if anything inflates the null firing rate, so this calibration is conservative rather than flattering.",
+  "reading": "the multi-layer false-alarm rate is the number that decides whether a two-family agreement means anything. If shuffled series produce multi-layer candidates as often as the real ones do, the coherence rule is not evidence."
+ },
+ "phase7_8_crossReference": {
+  "discipline": "breaks are detected from the data first. The registry is consulted afterwards. No break was chosen because an event sits near it.",
+  "UNEXPLAINED_REGIME_BREAK": [
+   {
+    "quarter": "1444Q2",
+    "families": [
+     "DOCKET",
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "FORMULA.formulaShareOfMentions",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 3,
+    "metricCount": 3,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": []
+   },
+   {
+    "quarter": "1444Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "STATUTORY.courtArticleHHI",
+     "STATUTORY.top50Share"
+    ],
+    "familyCount": 2,
+    "metricCount": 3,
+    "detections": 4,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": []
+   },
+   {
+    "quarter": "1446Q2",
+    "families": [
+     "FORMULA"
+    ],
+    "metrics": [
+     "FORMULA.formulaInnovationRate"
+    ],
+    "familyCount": 1,
+    "metricCount": 1,
+    "detections": 1,
+    "class": "SINGLE_FAMILY_WATCH",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": []
+   }
+  ],
+  "BREAK_WITH_A_NEARBY_EVENT": [
+   {
+    "quarter": "1443Q4",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.default",
+     "DOCKET.expert",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 5,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": [
+     "COMMENCE-evidence_law"
+    ]
+   },
+   {
+    "quarter": "1444Q1",
+    "families": [
+     "DOCKET",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "DOCKET.damagesClaim",
+     "DOCKET.proofDispute",
+     "DOCKET.settlement",
+     "PUBLICATION.judgments",
+     "PUBLICATION.medianReasonChars"
+    ],
+    "familyCount": 2,
+    "metricCount": 5,
+    "detections": 8,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": [
+     "COMMENCE-evidence_law"
+    ]
+   },
+   {
+    "quarter": "1443Q3",
+    "families": [
+     "DOCKET",
+     "STATUTORY"
+    ],
+    "metrics": [
+     "DOCKET.expert",
+     "STATUTORY.courtArticleHHI"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "STATUTORY"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": [
+     "COMMENCE-evidence_law"
+    ]
+   },
+   {
+    "quarter": "1444Q4",
+    "families": [
+     "FORMULA",
+     "PUBLICATION"
+    ],
+    "metrics": [
+     "FORMULA.top10FormulaConcentration",
+     "PUBLICATION.judgments"
+    ],
+    "familyCount": 2,
+    "metricCount": 2,
+    "detections": 2,
+    "class": "MULTI_LAYER_REGIME_CANDIDATE",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": [
+     "LSIG-0003"
+    ]
+   },
+   {
+    "quarter": "1445Q2",
+    "families": [
+     "FORMULA"
+    ],
+    "metrics": [
+     "FORMULA.formulaInnovationRate"
+    ],
+    "familyCount": 1,
+    "metricCount": 1,
+    "detections": 2,
+    "class": "SINGLE_FAMILY_WATCH",
+    "contentFamilies": [
+     "FORMULA"
+    ],
+    "survivesWithoutObservationSystem": false,
+    "nearbyEvents": [
+     "LSIG-0003",
+     "COMMENCE-civil_transactions_law"
+    ]
+   }
+  ],
+  "EVENT_WITH_NO_OBSERVABLE_REGIME_BREAK": [
+   {
+    "event_id": "LSIG-0001",
+    "quarter": "1443Q1",
+    "event_type": "LEGISLATIVE_PACKAGE",
+    "corpus_linkability": "1443Q1 for the Law of Evidence; 1445Q1 for the Civil Transactions Law, as first observed in this corpus"
+   },
+   {
+    "event_id": "LSIG-0002",
+    "quarter": "1443Q1",
+    "event_type": "LEGISLATIVE_PACKAGE",
+    "corpus_linkability": "1443Q1"
+   }
+  ],
+  "eventsWithACorpusQuarter": 5,
+  "note": "a nearby event is a coincidence in time at quarter resolution and is never an explanation. An event with no break is a valid result and is listed in full."
+ },
+ "phase15_withinRegimeForecastability": {
+  "design": "rolling origin from the sixth observation. The break used at each origin is detected on the history alone and must clear the same permutation bar, so there is no retrospective segmentation leakage.",
+  "baseline": "LAST, the predictor nothing in this repository has beaten",
+  "series": {
+   "DOCKET.damagesClaim": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.024556,
+     "MEAN_ALL": 0.098058,
+     "MEAN_SINCE_BREAK": 0.057453
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -1.3397
+   },
+   "DOCKET.default": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.018656,
+     "MEAN_ALL": 0.023851,
+     "MEAN_SINCE_BREAK": 0.020148
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.08
+   },
+   "DOCKET.expert": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.0176,
+     "MEAN_ALL": 0.019428,
+     "MEAN_SINCE_BREAK": 0.019311
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0972
+   },
+   "DOCKET.feesClaim": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.020344,
+     "MEAN_ALL": 0.017099,
+     "MEAN_SINCE_BREAK": 0.017099
+    },
+    "best": "MEAN_ALL",
+    "segmentationHelps": false,
+    "skillOverLast": 0.1595
+   },
+   "DOCKET.proofDispute": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.040167,
+     "MEAN_ALL": 0.063144,
+     "MEAN_SINCE_BREAK": 0.042787
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0652
+   },
+   "DOCKET.settlement": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.023722,
+     "MEAN_ALL": 0.045147,
+     "MEAN_SINCE_BREAK": 0.026049
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0981
+   },
+   "ECOLOGY.hybridRate": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.0205,
+     "MEAN_ALL": 0.02068,
+     "MEAN_SINCE_BREAK": 0.02068
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0088
+   },
+   "ECOLOGY.namedFiqhShare": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.014414,
+     "MEAN_ALL": 0.015066,
+     "MEAN_SINCE_BREAK": 0.015066
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0452
+   },
+   "ECOLOGY.sourceHHI": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.014295,
+     "MEAN_ALL": 0.011355,
+     "MEAN_SINCE_BREAK": 0.011355
+    },
+    "best": "MEAN_ALL",
+    "segmentationHelps": false,
+    "skillOverLast": 0.2057
+   },
+   "ECOLOGY.traceability": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.0,
+     "MEAN_ALL": 0.0,
+     "MEAN_SINCE_BREAK": 0.0
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": null
+   },
+   "FORMULA.courtFormulaShare": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.033057,
+     "MEAN_ALL": 0.033596,
+     "MEAN_SINCE_BREAK": 0.033596
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0163
+   },
+   "FORMULA.formulaInnovationRate": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.0324,
+     "MEAN_ALL": 0.083666,
+     "MEAN_SINCE_BREAK": 0.056766
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.752
+   },
+   "FORMULA.formulaShareOfMentions": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.031343,
+     "MEAN_ALL": 0.0325,
+     "MEAN_SINCE_BREAK": 0.036267
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.1571
+   },
+   "FORMULA.top10FormulaConcentration": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.0186,
+     "MEAN_ALL": 0.024334,
+     "MEAN_SINCE_BREAK": 0.027913
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.5007
+   },
+   "PUBLICATION.judgments": {
+    "folds": 9,
+    "mae": {
+     "LAST": 697.777778,
+     "MEAN_ALL": 1473.319973,
+     "MEAN_SINCE_BREAK": 1765.992195
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -1.5309
+   },
+   "PUBLICATION.medianReasonChars": {
+    "folds": 9,
+    "mae": {
+     "LAST": 49.666667,
+     "MEAN_ALL": 231.111375,
+     "MEAN_SINCE_BREAK": 129.830952
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -1.614
+   },
+   "PUBLICATION.shareAppeal": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.0,
+     "MEAN_ALL": 0.0,
+     "MEAN_SINCE_BREAK": 0.0
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": null
+   },
+   "PUBLICATION.shareWithReasons": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.0,
+     "MEAN_ALL": 0.0,
+     "MEAN_SINCE_BREAK": 0.0
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": null
+   },
+   "STATUTORY.coreTurnover": {
+    "folds": 8,
+    "mae": {
+     "LAST": 0.05885,
+     "MEAN_ALL": 0.068119,
+     "MEAN_SINCE_BREAK": 0.08154
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.3856
+   },
+   "STATUTORY.courtArticleHHI": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.00688,
+     "MEAN_ALL": 0.009584,
+     "MEAN_SINCE_BREAK": 0.007814
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -0.1358
+   },
+   "STATUTORY.courtBarTop50Overlap": {
+    "folds": 7,
+    "mae": {
+     "LAST": 0.034771,
+     "MEAN_ALL": 0.034198,
+     "MEAN_SINCE_BREAK": 0.037354
+    },
+    "best": "MEAN_ALL",
+    "segmentationHelps": false,
+    "skillOverLast": -0.0743
+   },
+   "STATUTORY.top50Share": {
+    "folds": 9,
+    "mae": {
+     "LAST": 0.017344,
+     "MEAN_ALL": 0.035574,
+     "MEAN_SINCE_BREAK": 0.044162
+    },
+    "best": "LAST",
+    "segmentationHelps": false,
+    "skillOverLast": -1.5462
+   }
+  },
+  "seriesWhereSegmentationWins": [],
+  "seriesTested": 22,
+  "verdict": "REGIME_SEGMENTATION_DOES_NOT_IMPROVE_FORECASTS",
+  "caution": "beating a mean is not beating persistence. A series where MEAN_SINCE_BREAK beats MEAN_ALL but not LAST has not become forecastable; it has become less badly described by a mean."
+ },
+ "phase16_regimeAwareRetrievalAgeing": {
+  "perStep": [
+   {
+    "from": "1443Q1",
+    "to": "1443Q3",
+    "top50DisplacedPct": 34.0,
+    "quarters": 2
+   },
+   {
+    "from": "1443Q3",
+    "to": "1443Q4",
+    "top50DisplacedPct": 22.0,
+    "quarters": 1
+   },
+   {
+    "from": "1443Q4",
+    "to": "1444Q1",
+    "top50DisplacedPct": 40.0,
+    "quarters": 1
+   },
+   {
+    "from": "1444Q1",
+    "to": "1444Q2",
+    "top50DisplacedPct": 22.0,
+    "quarters": 1
+   },
+   {
+    "from": "1444Q2",
+    "to": "1444Q3",
+    "top50DisplacedPct": 20.0,
+    "quarters": 1
+   },
+   {
+    "from": "1444Q3",
+    "to": "1444Q4",
+    "top50DisplacedPct": 24.0,
+    "quarters": 1
+   },
+   {
+    "from": "1444Q4",
+    "to": "1445Q1",
+    "top50DisplacedPct": 22.0,
+    "quarters": 1
+   },
+   {
+    "from": "1445Q1",
+    "to": "1445Q4",
+    "top50DisplacedPct": 26.0,
+    "quarters": 3
+   },
+   {
+    "from": "1445Q4",
+    "to": "1446Q1",
+    "top50DisplacedPct": 24.0,
+    "quarters": 1
+   }
+  ],
+  "medianDisplacementPerQuarter": 22.0,
+  "stepsTouchingACandidateBreak": 7,
+  "medianAtCandidateBreaks": 22.0,
+  "medianAwayFromCandidateBreaks": 24.0,
+  "verdict": "INSUFFICIENT_TO_COMPARE",
+  "policyReading": "an event- or regime-triggered refresh only earns its place if decay is materially worse around breaks than between them. Where the comparison cannot be made, the periodic policy stands."
+ },
+ "phase17_18_ecologyVintages": {
+  "verdict": "NO_SEGMENTS_SUPPORTED",
+  "why": "not one candidate break survives removing the PUBLICATION and DOCKET families, so every segmentation available here is anchored in the observation system. Cutting code and article ecologies at those quarters would label a change in what got published as a change in how codes behave, which is the storytelling this programme exists to avoid.",
+  "whatWouldBuildThem": "a candidate supported by two of STATUTORY, ECOLOGY and FORMULA without publication or docket support",
+  "schemaIfEverBuilt": [
+   "article_id or code_id",
+   "regime_id",
+   "authority mix",
+   "court/bar mix",
+   "companion set",
+   "rank",
+   "traceability"
+  ]
+ },
+ "phase18_19_aiEvents": {
+  "events": [
+   {
+    "event_id": "ADOPT-0001",
+    "institution": "SDAIA (Saudi Data and Artificial Intelligence Authority)",
+    "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   },
+   {
+    "event_id": "ADOPT-0002",
+    "institution": "Board of Grievances with Elm",
+    "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   },
+   {
+    "event_id": "ADOPT-0003",
+    "institution": "Board of Grievances",
+    "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   },
+   {
+    "event_id": "ADOPT-0004",
+    "institution": "Ministry of Justice",
+    "corpus_linkability": "L2_INSTITUTION_MATCH",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   },
+   {
+    "event_id": "ADOPT-0005",
+    "institution": "Board of Grievances",
+    "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   },
+   {
+    "event_id": "ADOPT-0006",
+    "institution": "Board of Grievances with Elm",
+    "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   },
+   {
+    "event_id": "ADOPT-0007",
+    "institution": "Board of Grievances with HUMAIN",
+    "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+    "hasACorpusQuarter": false,
+    "associatedBreak": null,
+    "verdict": "NOT_EVALUABLE_NO_CORPUS_LINK"
+   }
+  ],
+  "evaluable": 0,
+  "anyAssociatedWithADetectedBreak": false,
+  "verdict": "NO_AI_EVENT_CAN_BE_ASSOCIATED_WITH_AN_OBSERVABLE_BREAK",
+  "why": "no adoption event reaches the adjudicatory workflow this corpus observes, so none has a corpus quarter to align with a break. That is a statement about linkability, not about whether the deployments changed anything.",
+  "theRevisedAIQuestion": "not 'will AI make concentration rise' but 'does a verified deployment coincide with a detectable transition into a new authority-use regime, and which layers define it'. AI_DEPLOYMENT with NO_REGIME_BREAK is an equally reportable answer.",
+  "forbidden": "a regime break is never evidence of AI, and an AI event is never a reason to look harder for a break."
+ },
+ "phase25_regimeDetectorEra1": {
+  "era": "REGIME_DETECTOR_ERA_1",
+  "question": "has the process generating these observations materially changed?",
+  "families": [
+   "PUBLICATION",
+   "DOCKET",
+   "STATUTORY",
+   "ECOLOGY",
+   "FORMULA"
+  ],
+  "methods": [
+   "CUSUM",
+   "PAGE_HINKLEY",
+   "PIECEWISE_LEVEL",
+   "PIECEWISE_TREND"
+  ],
+  "significance": {
+   "alpha": 0.05,
+   "null": "permutation of the series' own values, fixed seed",
+   "permutations": 2000,
+   "seed": 20260831
+  },
+  "minimumSegment": 3,
+  "escalation": {
+   "NO_DETECTABLE_BREAK": "no method significant",
+   "WATCH": "significant in one metric family only",
+   "REGIME_CANDIDATE": "significant in two or more independent families at the same quarter, plus or minus one"
+  },
+  "calibratedFalseAlarm": {
+   "metricFalseAlarmRate": 0.11,
+   "multiLayerFalseAlarmRate": 0.31,
+   "measuredOn": "200 permuted redraws of the whole battery"
+  },
+  "observedNow": {
+   "multiLayerCandidates": [
+    "1444Q2",
+    "1443Q4",
+    "1444Q1",
+    "1444Q3",
+    "1443Q3",
+    "1444Q4"
+   ],
+   "singleFamilyWatches": [
+    "1445Q2",
+    "1446Q2"
+   ]
+  },
+  "prospectiveRules": [
+   "a candidate detected in a future quarter is recorded permanently, whether or not an event is later found for it",
+   "thresholds, methods, alpha and the seed are frozen here and are never retuned after seeing a result",
+   "an UNEXPLAINED_REGIME_BREAK stays unexplained; resemblance to an expectation is not evidence",
+   "a verified institutional or AI event with no detected break is recorded as EVENT_WITH_NO_OBSERVABLE_REGIME_BREAK, which is a result"
+  ],
+  "doesNotTouch": "PROSPECTIVE_DETECTOR_ERA_1, DOCTRINAL_DETECTOR_ERA_2 and FORMULA_DETECTOR_ERA_1 are untouched. This era asks a different question of different objects."
+ },
+ "phase9_10_forecastModes": {
+  "MODE_A_WITHIN_REGIME": "what happens next if institutional conditions remain materially unchanged. Every existing forecast is now read this way and carries the assumption explicitly.",
+  "MODE_B_REGIME_SHIFT_SCENARIO": "what observable patterns would be consistent with a specified verified institutional transition. Conditional, unscored, and kept apart from Mode A.",
+  "scoresAreNotMixed": true,
+  "REGIME_ASSUMPTION": "no material detected regime break before target maturity",
+  "statusesAddedToTheLedger": [
+   "SCORED",
+   "REGIME_BREAK_BEFORE_TARGET",
+   "VOID_DATA_SHIFT",
+   "OPEN"
+  ],
+  "antiAbuseRule": "REGIME_BREAK_BEFORE_TARGET is defined by the frozen detector above, not by whether a forecast was going to miss. It may never be used to excuse a bad forecast, and the detector was frozen before any future quarter exists."
+ },
+ "phase11_branchingFutures": {
+  "branches": [
+   "CURRENT_REGIME_CONTINUES",
+   "NEW_MAJOR_CODE",
+   "VERIFIED_BAR_AI",
+   "VERIFIED_BENCH_AI",
+   "PUBLICATION_REGIME_CHANGE",
+   "MAJOR_INSTITUTIONAL_RESTRUCTURING"
+  ],
+  "probabilities": "NONE. No calibration supports them, and a conditional pathway without a base rate gets no number."
+ },
+ "phase20_regimeSignature": {
+  "vectorFields": [
+   "articleConcentration",
+   "sourceConcentration",
+   "formulaConcentration",
+   "courtBarOverlap",
+   "hybridRate",
+   "traceability",
+   "coreTurnover",
+   "retrievalAgeingRate",
+   "docketMix",
+   "publicationMix"
+  ],
+  "noQualityScore": "a regime is described by a vector. There is no single number for how good a regime is, and none is computed.",
+  "built": false
+ },
+ "phase27_taxonomy": [
+  "NORMAL_VARIATION",
+  "GRADUAL_CHANGE",
+  "NEW_LAW_TRANSITION",
+  "INSTITUTIONAL_REGIME_SHIFT",
+  "PUBLICATION_REGIME_SHIFT",
+  "AI_ASSOCIATED_REGIME_SHIFT",
+  "UNEXPLAINED_STRUCTURAL_BREAK"
+ ],
+ "phase28_paperPolicy": "no new paper. This is a correction to the instrument. A methodological paper becomes arguable only if a future regime break is detected prospectively under these frozen rules.",
+ "phase26_existingWorkPreserved": {
+  "rewritten": "nothing",
+  "reinterpreted": [
+   "FORECAST_LEDGER forecasts",
+   "transition signatures era 1 and era 2",
+   "the legal clock layer",
+   "all detector eras"
+  ],
+  "as": "within-regime baselines"
+ },
+ "standingLimitations": [
+  "14 to 18 quarters. Change-point detection on that many points is weak, and the false-alarm calibration is the only thing that makes a detection readable at all.",
+  "the corpus window contains NO Ministry of Justice leadership change and no in-window restructuring this lookup could find, so the most-discussed regime variable cannot be tested here.",
+  "publication instability is itself a candidate regime variable and a confound for every other family.",
+  "nothing here is causal, and no event in the registry is offered as the reason for any break."
+ ]
+}

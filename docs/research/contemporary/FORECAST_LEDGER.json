@@ -1299,5 +1299,65 @@
    "note": "the denominator is dominated by old laws whose commencement predates the window, so these are base rates for VISIBILITY in a commercial corpus, not for uptake after a new law."
   },
   "creditRule": "every clock is BACKFILLED: recorded after the commencement it describes. A clock may calibrate a method; it is never foresight."
+ },
+ "regimeRelease": {
+  "what": "REGIME-CONDITIONAL REINTERPRETATION. The ledger is not rewritten. Every forecast, bet, detector and transition signature already recorded is re-read as a within-regime baseline, and future scoring carries an explicit regime assumption.",
+  "correction": {
+   "withdrawn": "the working assumption that Saudi law-in-action is one stationary process, so that a latency measured once is a latency in general",
+   "replacedBy": "REGIME-CONDITIONAL BASELINES. Every frozen result in this repository keeps its numbers and loses its universality: it describes the period it was measured on.",
+   "PAST_LATENCY_IS_NOT_FUTURE_LAW": true,
+   "S_D_F_status": "OBSERVED_IN_TWO_CALIBRATION_EVENTS, and nothing more. It was already shown to be an artefact of an early clock; it is now additionally denied the status of a general law.",
+   "TRANSITION_BET_001": "REFUSED, and no further legal-clock event is promoted merely to reach four examples."
+  },
+  "REGIME_ASSUMPTION": "no material detected regime break before target maturity, where 'detected' means REGIME_DETECTOR_ERA_1 fires, and that detector was frozen before any future quarter exists",
+  "statuses": [
+   "SCORED",
+   "REGIME_BREAK_BEFORE_TARGET",
+   "VOID_DATA_SHIFT",
+   "OPEN"
+  ],
+  "antiAbuseRule": "REGIME_BREAK_BEFORE_TARGET is defined by the frozen detector, never by whether a forecast was going to miss. It may not be used to excuse a bad forecast, and a forecast already scored is not rescored under it.",
+  "forecastModes": {
+   "MODE_A_WITHIN_REGIME": "what happens next if institutional conditions remain materially unchanged. Every existing forecast is now read this way and carries the assumption explicitly.",
+   "MODE_B_REGIME_SHIFT_SCENARIO": "what observable patterns would be consistent with a specified verified institutional transition. Conditional, unscored, and kept apart from Mode A.",
+   "scoresAreNotMixed": true,
+   "REGIME_ASSUMPTION": "no material detected regime break before target maturity",
+   "statusesAddedToTheLedger": [
+    "SCORED",
+    "REGIME_BREAK_BEFORE_TARGET",
+    "VOID_DATA_SHIFT",
+    "OPEN"
+   ],
+   "antiAbuseRule": "REGIME_BREAK_BEFORE_TARGET is defined by the frozen detector above, not by whether a forecast was going to miss. It may never be used to excuse a bad forecast, and the detector was frozen before any future quarter exists."
+  },
+  "branchingFutures": {
+   "branches": [
+    "CURRENT_REGIME_CONTINUES",
+    "NEW_MAJOR_CODE",
+    "VERIFIED_BAR_AI",
+    "VERIFIED_BENCH_AI",
+    "PUBLICATION_REGIME_CHANGE",
+    "MAJOR_INSTITUTIONAL_RESTRUCTURING"
+   ],
+   "probabilities": "NONE. No calibration supports them, and a conditional pathway without a base rate gets no number."
+  },
+  "evidenceThatTheAssumptionIsNeeded": {
+   "metricsTested": 22,
+   "metricsWithASignificantBreak": 12,
+   "observedMultiLayerQuarters": 6,
+   "nullMaxInAnyDraw": 3,
+   "verdict": "OBSERVED_EXCEEDS_EVERY_NULL_DRAW"
+  },
+  "andTheLimitOnIt": {
+   "candidatesSurvivingWithoutTheObservationSystem": [],
+   "reading": "no candidate regime break in legal content is separable from the publication regime, so the assumption is real but its trigger is currently dominated by what gets published."
+  },
+  "withinRegimeForecastability": {
+   "verdict": "REGIME_SEGMENTATION_DOES_NOT_IMPROVE_FORECASTS",
+   "seriesTested": 22,
+   "note": "segmentation does not rescue any target. NOT FORECASTABLE stays NOT FORECASTABLE."
+  },
+  "S_D_F": "OBSERVED_IN_TWO_CALIBRATION_EVENTS, and nothing more. It was already shown to be an artefact of an early clock; it is now additionally denied the status of a general law.",
+  "TRANSITION_BET_001": "REFUSED, and no further legal-clock event is promoted merely to reach four examples."
  }
 }
