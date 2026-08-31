@@ -479,5 +479,118 @@
    }
   ],
   "F3_notIssuedFor": "every other target. One reasoned forecast that can be scored cleanly is worth more than five that cannot."
+ },
+ "preregistrations": [
+  {
+   "id": "bog_judicial_research_ai@preregistered",
+   "what": "A preregistered analysis plan for the Board of Grievances judicial-research AI deployment, frozen BEFORE any data exists. It is not a forecast and carries no probability; it is the set of choices that would otherwise be made after seeing the answer.",
+   "status": "DORMANT_AWAITING_DATA",
+   "triggerConditions": [
+    "a Board of Grievances judgment collection covering 1445 AH or later is published, creating post-deployment observations",
+    "AND a permitted, machine-readable acquisition route exists, or the publisher grants one",
+    "AND decision dates are present and classified DATE_VALID"
+   ],
+   "designName": "EVENT_ALIGNED_OBSERVATIONAL_DESIGN",
+   "designNameRule": "the phrase 'natural experiment' is not used, and the word 'caused' is not used, unless the event class reaches E4 with variation in treatment timing evidenced officially.",
+   "exposure": {
+    "population": "Board of Grievances judges and judicial researchers",
+    "treatmentIsNotBinary": "the registry records an event VERSION sequence: partnership (2024-03), deployed and awarded (2024), governance policy (2026). Treatment intensity changes at each, and the analysis aligns on the DEPLOYMENT date where verified, not the announcement.",
+    "unverified": "how many judges used it, how often, in which courts, and whether use was optional or integrated. None of that is established by any source we could read, so exposure is institution-level and is labelled that way."
+   },
+   "primaryOutcomes": [
+    "named vs generic source share",
+    "source entropy and effective number of sources",
+    "top-1, top-3 and top-5 authority concentration",
+    "rare-source and long-tail authority use",
+    "new source entrants and entrant survival",
+    "citation resolution and article specificity",
+    "doctrinal companion set persistence and concentration",
+    "precedent or principle citation diversity, if identities are exposed",
+    "source-template concentration"
+   ],
+   "outcomesDeliberatelyExcluded": [
+    "disposition and outcome mix: not in the deployed workflow",
+    "reasons length on its own: it moves with publication policy",
+    "anything about an individual judge",
+    "anything inferred from writing style"
+   ],
+   "competingHypotheses": {
+    "HOMOGENISATION": {
+     "mechanism": "retrieval surfaces the same top-ranked sources repeatedly",
+     "predicts": [
+      "authority HHI rises",
+      "source entropy falls",
+      "top-k concentration rises",
+      "source and template reuse rises"
+     ]
+    },
+    "DISCOVERY": {
+     "mechanism": "retrieval lowers the cost of reaching the long tail",
+     "predicts": [
+      "source entropy rises",
+      "rare-source use rises",
+      "new source entrants rise",
+      "top-k dominance falls"
+     ]
+    },
+    "TRACEABILITY": {
+     "mechanism": "assisted lookup makes a citation resolvable",
+     "predicts": [
+      "named source share rises",
+      "generic and unresolved authority falls"
+     ]
+    },
+    "NULL": {
+     "mechanism": "no measurable discontinuity beyond the existing trend and the publication composition",
+     "predicts": [
+      "no level shift and no trend change survives the placebo dates"
+     ]
+    },
+    "noneIsPrivileged": "HOMOGENISATION and DISCOVERY predict opposite signs on the same statistics. TRACEABILITY is orthogonal to both and can move with either. NULL is a live outcome and is not a failure."
+   },
+   "specification": {
+    "model": "segmented series: baseline level, pre-event trend, post-event level shift, post-event trend change",
+    "granularity": "quarterly, and monthly only if volume supports it. Sparse periods are not segmented.",
+    "eventWindows": [
+     "sharp date",
+     "plus or minus one quarter",
+     "plus or minus two quarters"
+    ],
+    "windowRule": "if the conclusion depends on one exact announcement day, it is reported as weak.",
+    "placebo": "event dates drawn from every pre-period quarter. If many placebo dates reproduce the result, the event reading is weakened and that is reported, not buried.",
+    "confoundsCheckedFirst": [
+     "publication volume and selection",
+     "decision-to-publication lag if both dates ever exist",
+     "text-length composition",
+     "case-type composition",
+     "court composition",
+     "pre-trend",
+     "other reforms in the window",
+     "extraction-method changes"
+    ],
+    "reportingRule": "with no credible counterfactual the language is POST-DEPLOYMENT SHIFT, TEMPORAL ASSOCIATION or EVENT-ALIGNED CHANGE. Never causal effect."
+   },
+   "comparisonSeries": {
+    "series": "Ministry of Justice commercial judgments, this repository's existing corpus",
+    "label": "EXTERNAL COMPARISON SERIES",
+    "notAControl": "different institution, domain, publication policy and code mix. Difference-in-differences is permitted only if pre-trends and measurement comparability are demonstrated first; otherwise side-by-side trends only.",
+    "knownProblem": "the comparison series is not compositionally stable across the observed window, which is measured in foresight_results.json publicationProfile."
+   },
+   "transportTestsToRunFirst": [
+    "statutory citation detection",
+    "article resolution",
+    "non-statutory authority detection",
+    "source identity resolution",
+    "named vs generic fiqh",
+    "traceability components",
+    "section and speaker structure, only if the documents support it"
+   ],
+   "transportRule": "if the documents do not separate voices with confidence, NO speaker labels are produced. Decision-level authority use, source traceability, concentration, identity and template concentration are measured instead. The science follows observability."
+  }
+ ],
+ "bogForecastFeasibility": {
+  "verdict": "INFEASIBLE",
+  "why": "no Board of Grievances data exists in this repository and none could be lawfully acquired. A forecast needs a series to forecast from.",
+  "whatWouldMakeItFeasible": "any complete Board period at all, at which point the targets are already specified in the preregistration above."
  }
 }

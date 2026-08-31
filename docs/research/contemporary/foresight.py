@@ -40,6 +40,7 @@ COMPANIONS = HERE / "companion_layer.jsonl.gz"
 BACKFILL = HERE / "companion_layer_backfill.jsonl.gz"
 INSTREG = HERE.parents[2] / "data" / "corpus_registry" / "corpus_registry.json"
 DATES = HERE / "judgment_dates.json.gz"
+DOCKET = HERE / "docket_layer.jsonl.gz"
 OUT = HERE / "foresight_results.json"
 
 # 1442Q1 .. 1446Q2. The tail is excluded for publication lag, not for taste:
@@ -761,6 +762,79 @@ def instrument_validity(S, dates):
     }
 
 
+def publication_profile():
+    """Before any doctrinal outcome, does the PUBLISHED SET itself move?
+
+    AI can change what gets published, how fast, and which cases are selected,
+    without changing a line of reasoning. Those shifts would show up in every
+    doctrinal series as if they were doctrine. So they are measured first and
+    reported first.
+
+    One thing that cannot be measured: the decision-to-publication lag. The
+    corpus carries a decision date and our own retrieval timestamp, and no
+    publication date at all, for either institution. That is recorded as
+    NOT_AVAILABLE rather than approximated from the retrieval date.
+    """
+    if not DOCKET.exists():
+        return {"verdict": "NO_DOCKET_LAYER"}
+    with gzip.open(DATES, "rt", encoding="utf-8") as fh:
+        dates = {k: tuple(v) for k, v in json.load(fh)["dates"].items()}
+    per = defaultdict(list)
+    with gzip.open(DOCKET, "rt", encoding="utf-8") as fh:
+        for line in fh:
+            r = json.loads(line)
+            if "_schema" in r:
+                continue
+            d = dates.get(r["j"])
+            if not d:
+                continue
+            q = (d[0], (d[1] - 1) // 3 + 1)
+            if q in PKEY:
+                per[q].append(r)
+    FAM = ("feesClaim", "damagesClaim", "expert", "arbitrationPlea",
+           "proofDispute", "settlement", "default")
+    rows = []
+    for p_ in P:
+        rs = per.get(p_, [])
+        if len(rs) < 100:
+            continue
+        n = len(rs)
+        lens = sorted(r["reasonChars"] for r in rs)
+        rows.append({
+            "period": LBL[PKEY[p_]], "judgments": n,
+            "medianReasonChars": lens[n // 2],
+            "shareWithReasons": round(
+                sum(1 for r in rs if r["reasonChars"] > 0) / n, 4),
+            "shareAppeal": round(sum(1 for r in rs if r.get("appeal")) / n, 4),
+            **{f"share_{k}": round(sum(1 for r in rs if r.get(k)) / n, 4)
+               for k in FAM},
+        })
+    if len(rows) < 4:
+        return {"verdict": "INSUFFICIENT_TEMPORAL_DEPTH"}
+
+    def swing(key):
+        vals = [r[key] for r in rows]
+        return {"min": min(vals), "max": max(vals),
+                "first": vals[0], "last": vals[-1],
+                "maxQuarterOnQuarterChange": round(
+                    max(abs(b - a) for a, b in zip(vals, vals[1:])), 4)}
+    return {
+        "periods": len(rows), "byPeriod": rows,
+        "compositionSwings": {k: swing(k) for k in
+                              ["medianReasonChars", "shareWithReasons",
+                               "shareAppeal"] + [f"share_{k}" for k in FAM]},
+        "decisionToPublicationLag": {
+            "verdict": "NOT_AVAILABLE",
+            "why": "the corpus carries a decision date and our own retrieval "
+                   "timestamp. No publication date is held for any judgment, "
+                   "so the lag cannot be computed and is not approximated.",
+        },
+        "warning": "a shift in any of these near a deployment date is a "
+                   "publication-regime confound and must be reported BEFORE "
+                   "any doctrinal outcome, not alongside it.",
+    }
+
+
 def main():
     rows, dates, excluded = load()
     S = build(rows)
@@ -849,6 +923,7 @@ def main():
     res["retrievalDecay"] = decay(S, comp)
     res["companionPersistence"] = companion_backtest(comp, 3)
     res["newCodeUptake"] = uptake(S)
+    res["publicationProfile"] = publication_profile()
     res["speakerAwareRetrieval"] = speaker_aware(S)
     res["temporalMisalignment"] = misalignment(S, comp)
     res["instrumentTemporalValidity"] = instrument_validity(S, dates)

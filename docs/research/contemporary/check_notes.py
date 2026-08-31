@@ -39,6 +39,7 @@ def facts():
     fl = J("FORECAST_LEDGER.json")
     reg, rad = J("adoption_registry.json"), J("ai_radar_results.json")
     b2, amap = J("ai_baseline_v2_results.json"), J("ai_transition_map.json")
+    xm, bau = J("ai_exposure_matrix_results.json"), J("bog_access_audit.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -650,6 +651,34 @@ def facts():
          f"{aib['G_uptakeVelocity']['shareFirstSeenInCourtVoice']}", AT),
         ("articles with both first uses, in the AI note",
          f"{aib['G_uptakeVelocity']['articlesWithBothFirstUsesObserved']}", AT),
+        # --- the Board of Grievances access audit
+    ]
+    BA = ["BOG_ACCESS.md"]
+    PUB = fo["publicationProfile"]["compositionSwings"]
+    out += [
+        ("bog access verdict", bau["verdict"], BA),
+        ("event class", xm["eventClass"], BA),
+        ("event studies feasible", f"{xm['eventStudiesFeasible']}", BA),
+        ("matrix rows", f"{len(xm['matrix'])}", BA),
+        ("forecasts tagged by channel", f"{xm['forecastsTagged']}", BA),
+        ("publication periods", f"{fo['publicationProfile']['periods']}", BA),
+        ("median reasons length, first",
+         f"{PUB['medianReasonChars']['first']}", BA),
+        ("median reasons length, last",
+         f"{PUB['medianReasonChars']['last']}", BA),
+        ("median reasons length, max move",
+         f"{PUB['medianReasonChars']['maxQuarterOnQuarterChange']}", BA),
+        ("fees claims, first", f"{PUB['share_feesClaim']['first']}", BA),
+        ("fees claims, last", f"{PUB['share_feesClaim']['last']}", BA),
+        ("fees claims, max move",
+         f"{PUB['share_feesClaim']['maxQuarterOnQuarterChange']}", BA),
+        ("damages claims, first", f"{PUB['share_damagesClaim']['first']}", BA),
+        ("damages claims, last", f"{PUB['share_damagesClaim']['last']}", BA),
+        ("proof disputes, max move",
+         f"{PUB['share_proofDispute']['maxQuarterOnQuarterChange']}", BA),
+        ("radar L3, in the access note", f"{rad['L3_count']}", BA),
+        ("judgments scanned, in the access note",
+         f"{rad['judgmentsScanned']:,}", BA),
     ]
     return out
 

@@ -280,6 +280,17 @@ this corpus, one is L2 with the right institution and the wrong workflow, and
 none is L3. The map's function today is to stop a future session from running
 an event study it is not entitled to run.
 
+## 9. The second corpus, attempted and refused
+
+The obvious next move — acquire the Board of Grievances corpus so the one
+verified judicial deployment becomes observable — was attempted as an official
+access audit and stopped at the gate. See `BOG_ACCESS.md`. Two independent
+blockers: every Board route including `robots.txt` is unreadable from here, so
+no crawl is permissible; and the Board's published collections end at 1444 AH,
+before the deployment, so there are no post-deployment judgments to observe
+even with perfect access. The study is classified **E0_CHRONOLOGY_ONLY** and
+the analysis plan is preregistered dormant against a trigger.
+
 ## What can and cannot be linked today
 
 **Can be:** chronology. Which system entered which institution, when, through

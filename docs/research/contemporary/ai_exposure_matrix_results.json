@@ -1,0 +1,320 @@
+{
+ "what": "AI-EXPOSURE MATRIX: the bridge between the adoption registry and the legal corpus. One row per verified event, carried through to whether any study is feasible.",
+ "rule": "an outcome may be read as possibly AI-related only if the deployment is in ITS channel. A deployment in enforcement never explains a movement in bench citation behaviour.",
+ "eventClassLadder": {
+  "E0_CHRONOLOGY_ONLY": "a verified event exists and is dated; no outcome series for the exposed population exists",
+  "E1_OBSERVABLE_POST_SHIFT": "an outcome series exists for the exposed population and covers periods after the event",
+  "E2_VALID_INTERRUPTED_SERIES": "enough complete periods before and after to estimate level and trend, with placebo dates available",
+  "E3_COMPARISON_SUPPORTED": "a defensible comparison series with comparable pre-trends",
+  "E4_QUASI_EXPERIMENTAL": "variation in treatment timing or intensity across units, evidenced officially",
+  "E5_CAUSAL_IDENTIFICATION_STRONG": "identification that survives the obvious confounds"
+ },
+ "eventClass": "E0_CHRONOLOGY_ONLY",
+ "eventClassChecks": {
+  "E1_needs_outcome_series_for_exposed_population": false,
+  "E1_reason": "the exposed population is Board of Grievances judges and researchers. No outcome series exists for them: the corpus does not contain that institution and acquisition is blocked, and the Board's own published collections end at 1444 AH, before the deployment.",
+  "E2_needs_complete_pre_and_post_periods": false,
+  "E2_reason": "there are no post-deployment periods to have.",
+  "E3_needs_comparable_comparison_series": false,
+  "E3_reason": "the Ministry of Justice commercial corpus is an EXTERNAL COMPARISON SERIES, not a control: different institution, domain, publication policy and code mix. Its own composition is not stable across the window, which would defeat a difference-in-differences even if the treated series existed.",
+  "E4_needs_variation_in_timing_or_intensity": false,
+  "E4_reason": "no official evidence of phased deployment across courts, chambers or user groups was found. Manufacturing untreated controls is forbidden."
+ },
+ "eventClassNotSkipped": "E1 fails, so E2 to E5 are not evaluated on their merits and are not claimed.",
+ "matrix": [
+  {
+   "institution": "SDAIA (Saudi Data and Artificial Intelligence Authority)",
+   "workflow": "governance",
+   "channel": "GOVERNMENT_REGULATORY_LEGAL_WORK",
+   "event_id": "ADOPT-0001",
+   "deployment_status": "GOVERNANCE",
+   "deploymentDate": "UNKNOWN",
+   "announcementDate": "2024-01",
+   "exposedPopulation": "all government entities",
+   "corpusAvailableForThatPopulation": "NO",
+   "observableOutcomes": [],
+   "corpusLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "frozenBaselineAvailable": "NO",
+   "baselineIsForTheWrongInstitution": false,
+   "forecastIssued": [],
+   "eventStudyFeasible": false
+  },
+  {
+   "institution": "Board of Grievances with Elm",
+   "workflow": "legal research",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "event_id": "ADOPT-0002",
+   "deployment_status": "PARTNERSHIP",
+   "deploymentDate": "UNKNOWN",
+   "announcementDate": "2024-03",
+   "exposedPopulation": "Board of Grievances judges and researchers, per the reporting",
+   "corpusAvailableForThatPopulation": "NO: the Board of Grievances is not in this repository and could not be acquired (see bog_access_audit.json)",
+   "observableOutcomes": [
+    "named vs generic source share",
+    "source entropy and effective count",
+    "top-k authority concentration",
+    "rare-source and long-tail use",
+    "citation resolution and specificity",
+    "doctrinal companion concentration",
+    "precedent or principle citation diversity"
+   ],
+   "corpusLinkability": "L1_EXTERNAL_OUTCOME",
+   "frozenBaselineAvailable": "YES",
+   "baselineIsForTheWrongInstitution": true,
+   "forecastIssued": [
+    "companion_top3_sets@1446Q2",
+    "ctl_court_share@1446Q2"
+   ],
+   "eventStudyFeasible": false
+  },
+  {
+   "institution": "Board of Grievances",
+   "workflow": "decision support",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "event_id": "ADOPT-0003",
+   "deployment_status": "DEPLOYED",
+   "deploymentDate": "2024",
+   "announcementDate": "2024",
+   "exposedPopulation": "Board of Grievances personnel",
+   "corpusAvailableForThatPopulation": "NO: the Board of Grievances is not in this repository and could not be acquired (see bog_access_audit.json)",
+   "observableOutcomes": [
+    "named vs generic source share",
+    "source entropy and effective count",
+    "top-k authority concentration",
+    "rare-source and long-tail use",
+    "citation resolution and specificity",
+    "doctrinal companion concentration",
+    "precedent or principle citation diversity"
+   ],
+   "corpusLinkability": "L1_EXTERNAL_OUTCOME",
+   "frozenBaselineAvailable": "YES",
+   "baselineIsForTheWrongInstitution": true,
+   "forecastIssued": [
+    "companion_top3_sets@1446Q2",
+    "ctl_court_share@1446Q2"
+   ],
+   "eventStudyFeasible": false
+  },
+  {
+   "institution": "Ministry of Justice",
+   "workflow": "enforcement",
+   "channel": "ENFORCEMENT",
+   "event_id": "ADOPT-0004",
+   "deployment_status": "DEPLOYED",
+   "deploymentDate": "2025-02-04",
+   "announcementDate": "2025-02-04",
+   "exposedPopulation": "enforcement judges and enforcement applicants",
+   "corpusAvailableForThatPopulation": "NO: enforcement output is not published as reasoned judgments",
+   "observableOutcomes": [
+    "enforcement workflow outcomes"
+   ],
+   "corpusLinkability": "L2_INSTITUTION_MATCH",
+   "frozenBaselineAvailable": "NO",
+   "baselineIsForTheWrongInstitution": false,
+   "forecastIssued": [],
+   "eventStudyFeasible": false
+  },
+  {
+   "institution": "Board of Grievances",
+   "workflow": "governance",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "event_id": "ADOPT-0005",
+   "deployment_status": "GOVERNANCE",
+   "deploymentDate": "not applicable",
+   "announcementDate": "2026",
+   "exposedPopulation": "all Board of Grievances personnel using AI systems",
+   "corpusAvailableForThatPopulation": "NO: the Board of Grievances is not in this repository and could not be acquired (see bog_access_audit.json)",
+   "observableOutcomes": [
+    "named vs generic source share",
+    "source entropy and effective count",
+    "top-k authority concentration",
+    "rare-source and long-tail use",
+    "citation resolution and specificity",
+    "doctrinal companion concentration",
+    "precedent or principle citation diversity"
+   ],
+   "corpusLinkability": "L1_EXTERNAL_OUTCOME",
+   "frozenBaselineAvailable": "YES",
+   "baselineIsForTheWrongInstitution": true,
+   "forecastIssued": [
+    "companion_top3_sets@1446Q2",
+    "ctl_court_share@1446Q2"
+   ],
+   "eventStudyFeasible": false
+  },
+  {
+   "institution": "Board of Grievances with Elm",
+   "workflow": "judicial administration",
+   "channel": "COURT_ADMINISTRATION",
+   "event_id": "ADOPT-0006",
+   "deployment_status": "PARTNERSHIP",
+   "deploymentDate": "UNKNOWN",
+   "announcementDate": "2026-06",
+   "exposedPopulation": "UNKNOWN",
+   "corpusAvailableForThatPopulation": "NO: the Board of Grievances is not in this repository and could not be acquired (see bog_access_audit.json)",
+   "observableOutcomes": [
+    "publication volume",
+    "disposition mix",
+    "reasons length",
+    "decision-to-publication lag"
+   ],
+   "corpusLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "frozenBaselineAvailable": "NO",
+   "baselineIsForTheWrongInstitution": true,
+   "forecastIssued": [],
+   "eventStudyFeasible": false
+  },
+  {
+   "institution": "Board of Grievances with HUMAIN",
+   "workflow": "UNKNOWN",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "event_id": "ADOPT-0007",
+   "deployment_status": "DISCUSSION",
+   "deploymentDate": "not applicable",
+   "announcementDate": "2026-07-21",
+   "exposedPopulation": "none",
+   "corpusAvailableForThatPopulation": "NO: the Board of Grievances is not in this repository and could not be acquired (see bog_access_audit.json)",
+   "observableOutcomes": [
+    "named vs generic source share",
+    "source entropy and effective count",
+    "top-k authority concentration",
+    "rare-source and long-tail use",
+    "citation resolution and specificity",
+    "doctrinal companion concentration",
+    "precedent or principle citation diversity"
+   ],
+   "corpusLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "frozenBaselineAvailable": "YES",
+   "baselineIsForTheWrongInstitution": true,
+   "forecastIssued": [
+    "companion_top3_sets@1446Q2",
+    "ctl_court_share@1446Q2"
+   ],
+   "eventStudyFeasible": false
+  }
+ ],
+ "eventStudiesFeasible": 0,
+ "channelOutcomes": {
+  "BENCH_JUDICIAL_RESEARCH": [
+   "named vs generic source share",
+   "source entropy and effective count",
+   "top-k authority concentration",
+   "rare-source and long-tail use",
+   "citation resolution and specificity",
+   "doctrinal companion concentration",
+   "precedent or principle citation diversity"
+  ],
+  "BAR_ADVOCACY": [
+   "party article diversity",
+   "party doctrinal-source diversity",
+   "new-code uptake latency",
+   "party-to-court lead-lag",
+   "party-side template concentration",
+   "court-party article overlap"
+  ],
+  "COURT_ADMINISTRATION": [
+   "publication volume",
+   "disposition mix",
+   "reasons length",
+   "decision-to-publication lag"
+  ],
+  "ENFORCEMENT": [
+   "enforcement workflow outcomes"
+  ],
+  "GOVERNMENT_REGULATORY_LEGAL_WORK": [],
+  "PUBLIC_LEGAL_SERVICES": [],
+  "LEGAL_KNOWLEDGE_INFRASTRUCTURE": [
+   "what the bench and bar cite, indirectly"
+  ]
+ },
+ "forecastChannelTags": {
+  "companion_top3_sets@1446Q2": {
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "workflow": "legal research",
+   "observable": "doctrinal companion concentration",
+   "linkability": "L0_NO_OBSERVABLE_OUTCOME"
+  },
+  "court_party_top20_jaccard@1446Q2": {
+   "channel": "BAR_ADVOCACY",
+   "workflow": "legal research",
+   "observable": "court-party article overlap",
+   "linkability": "L0_NO_OBSERVABLE_OUTCOME"
+  },
+  "ctl_court_share@1446Q2": {
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "workflow": "legal research",
+   "observable": "new-code uptake",
+   "linkability": "L0_NO_OBSERVABLE_OUTCOME"
+  },
+  "operational_core_top50@1446Q2": {
+   "channel": "LEGAL_KNOWLEDGE_INFRASTRUCTURE",
+   "workflow": "retrieval",
+   "observable": "statutory visibility",
+   "linkability": "L0_NO_OBSERVABLE_OUTCOME"
+  },
+  "retrieval_coverage_h1@1446Q2": {
+   "channel": "LEGAL_KNOWLEDGE_INFRASTRUCTURE",
+   "workflow": "retrieval",
+   "observable": "retrieval universe coverage",
+   "linkability": "NOT_AN_AI_TARGET"
+  },
+  "speaker_aware_retrieval@1446Q2": {
+   "channel": "LEGAL_KNOWLEDGE_INFRASTRUCTURE",
+   "workflow": "retrieval",
+   "observable": "recall against speaker contamination",
+   "linkability": "NOT_AN_AI_TARGET"
+  },
+  "temporal_misalignment_h1@1446Q2": {
+   "channel": "LEGAL_KNOWLEDGE_INFRASTRUCTURE",
+   "workflow": "retrieval",
+   "observable": "snapshot staleness",
+   "linkability": "NOT_AN_AI_TARGET"
+  }
+ },
+ "forecastsIssued": 7,
+ "forecastsTagged": 7,
+ "publicationRegimeStability": {
+  "periods": 14,
+  "medianReasonChars": {
+   "min": 1143,
+   "max": 1687,
+   "first": 1143,
+   "last": 1687,
+   "maxQuarterOnQuarterChange": 214
+  },
+  "share_feesClaim": {
+   "min": 0.1522,
+   "max": 0.3365,
+   "first": 0.3365,
+   "last": 0.192,
+   "maxQuarterOnQuarterChange": 0.1843
+  },
+  "share_damagesClaim": {
+   "min": 0.163,
+   "max": 0.4309,
+   "first": 0.25,
+   "last": 0.4241,
+   "maxQuarterOnQuarterChange": 0.087
+  },
+  "decisionToPublicationLag": "NOT_AVAILABLE",
+  "verdict": "THE PUBLISHED SET IS NOT COMPOSITIONALLY STABLE",
+  "why": "median reasons length and the claim mix both move substantially across the window. Any event-aligned comparison in this corpus would be fighting that first, and it is reported before any doctrinal outcome rather than beside one."
+ },
+ "aiAsSubjectOfLaw": {
+  "mojCommercial": {
+   "judgmentsScanned": 50666,
+   "L3": 0
+  },
+  "bogAdministrative": {
+   "verdict": "NOT_SCANNED",
+   "why": "administrative law is where AI as a subject of law would plausibly appear first -- automated government decisions, public-sector algorithms, procurement, automated eligibility. The radar is ready to run on it unchanged. There is no corpus to run it on."
+  }
+ },
+ "whatWouldChangeTheClassification": [
+  "a Board of Grievances collection covering 1445 or later, which would create post-deployment publication",
+  "a permitted machine-readable route to the Board's collections",
+  "official evidence of phased deployment across courts, which would open E4 rather than E2",
+  "a verified AI deployment inside the Ministry of Justice COMMERCIAL courts, which would raise an event to L3 in a corpus this repository already holds"
+ ],
+ "accessAuditVerdict": "ACCESS_BLOCKED"
+}
