@@ -44,6 +44,7 @@ def facts():
     ld, lsr = J("leading_results.json"), J("legal_signal_registry.json")
     dfz = J("diffusion_results.json")
     fmz = J("formula_analysis_results.json")
+    trz = J("transition_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -840,7 +841,92 @@ def facts():
          f"{dfz['phase25_entrantForecastability']['baseRate']}", DF),
         ("entrant lift doctrinal",
          f"{dfz['phase25_entrantForecastability']['liftOverBaseRate']}", DF),
-    ] + formula_facts(fmz)
+    ] + formula_facts(fmz) + transition_facts(trz)
+    return out
+
+
+def transition_facts(t):
+    """TRANSITIONS.md. The multi-layer sequencing programme."""
+    TR = ["TRANSITIONS.md"]
+    ph = t["phase4_publicationHealth"]
+    sig = {s["event_id"]: s for s in t["phase20_21_signatures"]}
+    E, C = sig["LSIG-0002"], sig["LSIG-0003"]
+    an = t["phase7_8_transitionAnatomy"]
+    cmp_ = t["phase17_crossEventComparison"]
+    ps = t["phase19_pseudoEventControls"]
+    ei = t["phase29_31_earlyIndicators"]
+    ff = t["phase9_formulaFirstTest"]
+    up = t["phase14_uptakeCalibration"]
+    ea = {r["article"]: r for r in an["LSIG-0002"]["articles"]["rows"]}
+    ca = {r["article"]: r for r in an["LSIG-0003"]["articles"]["rows"]}
+    ecj = an["LSIG-0002"]["byQuarter"]["courtJudgments"]
+    out = [
+        ("arrivals without a clock", f"{up['arrivalsConsidered']}", TR),
+        ("publication flags 1444Q2", f"{ph['flagsPerQuarter']['1444Q2']}", TR),
+        ("publication flags 1444Q4", f"{ph['flagsPerQuarter']['1444Q4']}", TR),
+        ("evidence window flag mean",
+         f"{E['publicationHealthAtT0']['meanFlagsPerQuarterInWindow']}", TR),
+        ("ctl window flag mean",
+         f"{C['publicationHealthAtT0']['meanFlagsPerQuarterInWindow']}", TR),
+    ]
+    for lbl, s_ in (("evidence", E), ("ctl", C)):
+        for k, v in sorted(s_["latencies"].items()):
+            if v is not None:
+                out.append((f"{lbl} {k}", f"{v}", TR))
+    out += [
+        ("evidence formula new",
+         f"{E['formulaUptakeMix']['A_newlyObservedFormulas']}", TR),
+        ("evidence formula carried",
+         f"{E['formulaUptakeMix']['B_carriedFromOlderLaw']}", TR),
+        ("ctl formula new",
+         f"{C['formulaUptakeMix']['A_newlyObservedFormulas']}", TR),
+        ("ctl formula carried",
+         f"{C['formulaUptakeMix']['B_carriedFromOlderLaw']}", TR),
+        ("ctl formula carried never elsewhere",
+         f"{C['formulaUptakeMix']['C_carriedButNeverSeenBesideAnotherInstrument']}",
+         TR),
+        ("evidence provenance system wide",
+         f"{E['companionProvenance']['ALREADY_PRESENT_SYSTEM_WIDE']}", TR),
+        ("evidence provenance new",
+         f"{E['companionProvenance']['NEW_CODE_LOCAL_OR_GLOBALLY_NEW']}", TR),
+        ("ctl provenance system wide",
+         f"{C['companionProvenance']['ALREADY_PRESENT_SYSTEM_WIDE']}", TR),
+        ("evidence repeated sources",
+         f"{cmp_['companionCharacterByEvent']['LSIG-0002']['repeatedSources']}",
+         TR),
+        ("evidence named share",
+         f"{cmp_['companionCharacterByEvent']['LSIG-0002']['namedShare']}", TR),
+        ("ctl repeated sources",
+         f"{cmp_['companionCharacterByEvent']['LSIG-0003']['repeatedSources']}",
+         TR),
+        ("ctl named share",
+         f"{cmp_['companionCharacterByEvent']['LSIG-0003']['namedShare']}", TR),
+        ("evidence article 29 citations", f"{ea[29]['courtCitations']}", TR),
+        ("ctl article 120 citations", f"{ca[120]['courtCitations']}", TR),
+        ("evidence judgments 1444Q1", f"{ecj['1444Q1']}", TR),
+        ("evidence judgments 1443Q4", f"{ecj['1443Q4']}", TR),
+        ("pseudo events", f"{ps['pseudoEvents']}", TR),
+        ("pseudo staged share", f"{ps['stagedVectorShare']}", TR),
+        ("pseudo ecology shift fp",
+         f"{ps['shiftCriteriaFalsePositives']['L5_ECOLOGY_SHIFT']['rate']}", TR),
+        ("early units", f"{ei['units']}", TR),
+        ("early court baseline lift",
+         f"{ei['rules']['reachedTop50']['COURT_SHARE_BASELINE']['lift']}", TR),
+        ("early formula lift",
+         f"{ei['rules']['reachedTop50']['FORMULA_ACTIVITY']['lift']}", TR),
+        ("early companion lift",
+         f"{ei['rules']['reachedTop50']['COMPANION_AT_ARRIVAL']['lift']}", TR),
+        ("early base rate",
+         f"{ei['rules']['reachedTop50']['COURT_SHARE_BASELINE']['baseRate']}",
+         TR),
+        ("formula first verdict", f"{ff['verdict']}", TR),
+        ("evidence named fiqh 1444Q1",
+         f"{an['LSIG-0002']['byQuarter']['namedFiqhRate']['1444Q1']}", TR),
+        ("evidence named fiqh 1446Q1",
+         f"{an['LSIG-0002']['byQuarter']['namedFiqhRate']['1446Q1']}", TR),
+        ("ctl named fiqh peak",
+         f"{an['LSIG-0003']['byQuarter']['namedFiqhRate']['1445Q4']}", TR),
+    ]
     return out
 
 

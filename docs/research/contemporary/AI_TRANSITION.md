@@ -303,6 +303,30 @@ judiciary; the Ministry's deployment is in enforcement; the corpus is
 published commercial adjudication. An event study on any of them would be an
 event study on the wrong output.
 
+## 10. Observability matrix v2: what each event will be tested against
+
+Every verified adoption event now carries four more columns, written before any
+of them is testable: an **expected first layer**, its expected secondaries, a
+**falsifier**, and a six-quarter minimum observable horizon frozen now.
+
+| channel | expected first layer | falsifier |
+|---|---|---|
+| judicial research AI | authority ecology, doctrinal companion | only statutory ranking moves |
+| judicial drafting AI | authority-adjacent formula | formula stays in bounds while source diversity moves first |
+| bar research AI | party statutory visibility | party use stays in bounds while the court's moves |
+| court-administration AI | the observation system | none needed: it predicts no doctrinal shift by default |
+
+Seven verified events map to these channels; **none is testable today**, since
+none reaches `L3_WORKFLOW_MATCH`. That is recorded as the matrix's most
+important column rather than worked around.
+
+And the reference they will be compared against exists now: two ordinary
+new-law transitions in `TRANSITIONS.md`, with statute and ecology moving at
+T=0, the doctrinal companion at +2 in both, and the wording layer **last**.
+Whether an AI-linked transition looks like that is the question; nothing about
+a signature may ever be used to identify AI, and an externally verified
+adoption event reaching this workflow remains necessary.
+
 ## Standing limitations
 
 - The registry is a bounded search run once, not a maintained news archive.

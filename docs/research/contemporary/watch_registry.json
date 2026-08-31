@@ -109,6 +109,31 @@
    ],
    "status": "OPEN",
    "priority": 3
+  },
+  {
+   "trigger_id": "THIRD_CALIBRATION_TRANSITION",
+   "condition": "a legislative instrument with a KNOWN legal clock -- an announcement date and an effective date independent of this corpus -- arrives in the window and reaches at least 200 court judgments",
+   "checkBy": "legal_signal_registry.json against horizon_results.json's new-law monitor; two events qualify today",
+   "action": [
+    "run transition.py; the third signature joins the library",
+    "re-read TRANSITION_BET_001: four transitions sharing an ordering would earn it, two do not",
+    "do NOT re-freeze frozen/three_layer_baseline.json; a third event opens a new era"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "AI_EVENT_REACHES_L3_WORKFLOW_MATCH",
+   "condition": "an adoption-registry event reaches L3_WORKFLOW_MATCH or above -- a verified deployment inside the adjudicatory workflow this corpus observes",
+   "checkBy": "adoption_registry.json corpus_linkability, and transition_results.json phase34_observabilityMatrixV2, where every event already carries its expected first layer and its falsifier",
+   "action": [
+    "register a PROSPECTIVE transition object BEFORE observable_from",
+    "freeze the six-quarter evaluation horizon at registration and never extend it",
+    "score CONSISTENT_WITH or INCONSISTENT_WITH the channel hypothesis; never AI_DETECTED_FROM_TEXT",
+    "if no expected layer moves inside the horizon, record NO_OBSERVABLE_SHIFT_WITHIN_HORIZON, which is a result"
+   ],
+   "status": "OPEN",
+   "priority": 1
   }
  ]
 }

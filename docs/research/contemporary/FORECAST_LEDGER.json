@@ -1095,5 +1095,82 @@
    "whyNotABet": "median cohort support is 14 formulas per fold and one fold is zero. Court origin is the consistent one -- 8 folds of 8 above a lift of one -- and its mean lift is 1.4634, which is too small to bet on.",
    "status": "recorded, not issued"
   }
+ },
+ "transitionRelease": {
+  "what": "MULTI-LAYER LEGAL TRANSITION SEQUENCING. What an ordinary legal transition looks like across eight observable layers, so a future AI-linked transition can be compared against it.",
+  "TRANSITION_BET_001": {
+   "status": "REFUSED",
+   "candidateShape": "for the next prospectively captured major law, statutory visibility will precede stable doctrinal-companion formation",
+   "whyRefused": [
+    "the calibration sample is 2 events, both backfilled",
+    "the two events do not share a first-moving layer set",
+    "the negative control produces a staged latency vector in 0.0 of 15 pseudo-events once retrieval staleness is set aside, and retrieval staleness itself fires in 1.0 of them with no event at all",
+    "no early layer predicts a late one above the court-citation baseline: {\"reachedTop50\": \"FORMULA_ADDS_NOTHING_ABOVE_COURT_CITATION\", \"sustained\": \"FORMULA_ADDS_ABOVE_COURT_CITATION_LOW_SUPPORT\"}"
+   ],
+   "whatWouldEarnIt": "four or more calibration transitions with known legal clocks sharing an ordering, and a negative control that does not reproduce it.",
+   "firstMovingLayerByEvent": {
+    "LSIG-0002": [
+     "core_latency",
+     "court_latency",
+     "ecology_latency"
+    ],
+    "LSIG-0003": [
+     "court_latency",
+     "ecology_latency",
+     "party_latency"
+    ]
+   },
+   "note": "the candidate is TRUE in both calibration events and is refused anyway. Two backfilled observations agreeing is not a calibration."
+  },
+  "referenceSignatures": {
+   "LSIG-0002": {
+    "instrument": "evidence_law",
+    "observable_from": "1443Q1",
+    "capture": "BACKFILLED_CALIBRATION",
+    "latencies": {
+     "party_latency": 4,
+     "court_latency": 0,
+     "formula_latency": 2,
+     "ecology_latency": 0,
+     "companion_latency": 2,
+     "core_latency": 0,
+     "retrieval_latency": null
+    }
+   },
+   "LSIG-0003": {
+    "instrument": "civil_transactions_law",
+    "observable_from": "1445Q1",
+    "capture": "BACKFILLED_CALIBRATION",
+    "latencies": {
+     "party_latency": 0,
+     "court_latency": 0,
+     "formula_latency": 3,
+     "ecology_latency": 0,
+     "companion_latency": 2,
+     "core_latency": 2,
+     "retrieval_latency": 3
+    }
+   }
+  },
+  "negativeControl": {
+   "pseudoEvents": 15,
+   "stagedVectorShare": 0.0,
+   "retrievalStalenessFalsePositiveRate": 1.0,
+   "verdict": "BATTERY_DISCRIMINATES_ARRIVALS_ONLY",
+   "limit": "the control separates ARRIVALS from non-arrivals, not events from non-events."
+  },
+  "formulaFirstHypothesis": {
+   "verdict": "FORMULA_LAYER_MOVES_AFTER_STATUTORY_VISIBILITY",
+   "consequence": "the withdrawn prospective claim now has evidence against its ordinary-transition analogue. It remains a hypothesis about AI, not a finding."
+  },
+  "refreshTriggerUnchanged": {
+   "trigger": "TOP50_DISPLACEMENT",
+   "why": [
+    "only 1 event has an evaluable pre-event snapshot, so there is nothing to backtest against",
+    "retrieval staleness fires in 1.0 of pseudo-events with no legal event at all, so it is a clock, not an event signal, and an 'earlier' trigger would be earlier than nothing",
+    "the existing TOP50_DISPLACEMENT trigger is frozen in REPOSITORY_BET_001 and is not replaced without a backtest that beats it"
+   ]
+  },
+  "creditRule": "every event here is BACKFILLED_CALIBRATION. None may ever be reported as foresight."
  }
 }

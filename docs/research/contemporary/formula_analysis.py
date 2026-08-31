@@ -327,6 +327,12 @@ def source_masking(rows):
                 len(circ_shells) // 2] if circ_shells else None),
         "topMultiSourceShells": top,
         "verdict": verdict,
+        "verdictMeans": "AT THE CURRENT EXACT-FINGERPRINT RESOLUTION, no "
+                        "circulating formula is observed with more than one "
+                        "canonical authority identity. Near-family "
+                        "equivalence is unresolved, so this is an absence of "
+                        "observation and not a demonstration that a "
+                        "source-independent shell cannot exist.",
         "reading": "a circulating shell that carries only one source is a "
                    "recurring passage about that source. A shell carrying "
                    "several is a judicial form of words into which different "
@@ -1603,18 +1609,17 @@ def ai_hypotheses(conc, trav, var, imp, det):
             "frozenBaselines": {
                 "introductionFrameShareOfMentions": None,
                 "quotationOpenedShareOfMentions": None},
-            "whyThisOrderIsPlausibleAndUntested": "PHASE 4 found that "
-                                                  "circulating formulas are "
-                                                  "source-bound, so the shell "
-                                                  "and the source are not "
-                                                  "currently independent "
-                                                  "layers in this corpus. If "
-                                                  "they are not independent, "
-                                                  "this hypothesis may not be "
-                                                  "separable from PHASE 28, "
-                                                  "and that is recorded now "
-                                                  "rather than discovered "
-                                                  "later.",
+            "whyThisOrderIsPlausibleAndUntested": "at the current exact-"
+                                                  "fingerprint resolution no "
+                                                  "circulating formula "
+                                                  "carries a second canonical "
+                                                  "authority identity, so "
+                                                  "shell and source cannot be "
+                                                  "told apart here and this "
+                                                  "hypothesis may not be "
+                                                  "separable from PHASE 28. "
+                                                  "Recorded now rather than "
+                                                  "discovered later.",
             "scoredBy": "the same detector era, on the quotation and frame "
                         "shares, once they have four scorable quarters of "
                         "history.",
@@ -1922,6 +1927,36 @@ def main():
                 "OBSERVATORY. What is actually recurring when a legal formula "
                 "reappears, and what that means for a control that removed "
                 "recurring wording wholesale.",
+        "scopeCorrections": {
+            "recordedAt": "the transition-sequencing programme",
+            "changesNoNumber": True,
+            "1_unitName": "AUTHORITY-ADJACENT RECURRING FORMULA. The unit is "
+                          "an exact normalised +-90 character window around an "
+                          "authority mention. It is NOT a representation of a "
+                          "judgment's language, and no finding here is about "
+                          "judicial writing in general.",
+            "2_prospectiveClaimWithdrawn": {
+                "withdrawn": "if AI changes Saudi legal reasoning, the "
+                             "wording layer will move first",
+                "permitted": "among the three measured layers, "
+                             "authority-adjacent recurring formulas show the "
+                             "greatest historical mobility. Whether this "
+                             "layer responds first to future AI adoption is a "
+                             "prospective hypothesis.",
+                "why": "historical mobility is not a statement about response "
+                       "to a future event, and the two were conflated."},
+            "3_inseparabilityNarrowed": {
+                "withdrawn": "source and formula are inseparable",
+                "permitted": "at the current exact-fingerprint resolution, no "
+                             "circulating formula is observed with more than "
+                             "one canonical authority identity",
+                "unresolved": "near-family equivalence. A shell differing by "
+                              "one surviving word is a different fingerprint "
+                              "here, and the family grouping that would catch "
+                              "it is unstable (PHASE 3). Answer E of the "
+                              "original list -- the citation shell -- is "
+                              "UNOBSERVED, not disproved."},
+        },
         "terminology": {
             "RECURRING_LEGAL_FORMULA": "a wording fingerprint observed in "
                                        "several judgments. Neutral by "

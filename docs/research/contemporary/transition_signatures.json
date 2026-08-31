@@ -1,0 +1,208 @@
+{
+ "what": "TRANSITION SIGNATURE LIBRARY. One row per legal transition with a known clock, its layer latencies, and its capture class. The permanent asset of this programme.",
+ "captureClasses": {
+  "BACKFILLED_CALIBRATION": "recorded after the transition was observable. Calibrates a method; never foresight.",
+  "PROSPECTIVE": "recorded before observable_from. None yet."
+ },
+ "thresholds": {
+  "TOP50_DISPLACEMENT_PCT": 30.0,
+  "REPEATED_SOURCE_JUDGMENTS": 2,
+  "CONCENTRATION_SHIFT": 0.15,
+  "MIN_COURT_CITES_FOR_LAYER": 5,
+  "HORIZON_QUARTERS": 6,
+  "provenance": "fixed once, before any post-period was read, and applied identically to every event and every pseudo-event. Nothing is tuned per law."
+ },
+ "referenceSignatures": {
+  "NEW_CODE": {
+   "eventsSupporting": [
+    "LSIG-0002",
+    "LSIG-0003"
+   ],
+   "n": 2,
+   "status": "PROVISIONAL_TWO_EVENTS",
+   "layerOrderObserved": null
+  },
+  "MAJOR_AMENDMENT": {
+   "n": 0,
+   "status": "NO_QUALIFYING_EVENT",
+   "why": "no amendment in the window carries an article-version mapping or a verifiable commencement date"
+  },
+  "PUBLICATION_SHIFT": {
+   "n": 0,
+   "status": "NOT_CONSTRUCTED",
+   "why": "publication health is layer zero and vetoes analysis rather than forming a signature of its own"
+  },
+  "DOCKET_SHIFT": {
+   "n": 0,
+   "status": "NOT_CONSTRUCTED"
+  },
+  "NO_EVENT": {
+   "n": 15,
+   "status": "CONSTRUCTED_FROM_PSEUDO_EVENTS",
+   "meanLayersFiring": 7.0,
+   "allZeroLatencyVectorShare": 0.0,
+   "stagedVectorShareExcludingRetrieval": 0.0,
+   "shiftCriteriaFalsePositives": {
+    "L5_ECOLOGY_SHIFT": {
+     "events": 10,
+     "rate": 0.6667
+    },
+    "L8_RETRIEVAL_STALENESS": {
+     "events": 15,
+     "rate": 1.0
+    }
+   },
+   "verdict": "BATTERY_DISCRIMINATES_ARRIVALS_ONLY"
+  }
+ },
+ "signatures": [
+  {
+   "event_id": "LSIG-0002",
+   "event_type": "A_LEGISLATIVE",
+   "instrument": "evidence_law",
+   "known_at": "2021-02-08",
+   "effective_at": "1443",
+   "observable_from": "1443Q1",
+   "clockQuality": "LEGAL_EFFECTIVE_YEAR",
+   "publicationHealthAtT0": {
+    "unstableQuartersInWindow": [
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3"
+    ],
+    "compositionFlagsInWindow": 22,
+    "meanFlagsPerQuarterInWindow": 3.67,
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "the publication-health rule fires on every quarter-to-quarter step in this corpus, so it is a caveat on every latency here rather than a veto on any one event. The flag count is comparable BETWEEN events and is reported for that purpose: a lower mean means a calmer observation regime, not a cleaner transition."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 4,
+    "court_latency": 0,
+    "formula_latency": 2,
+    "ecology_latency": 0,
+    "companion_latency": 2,
+    "core_latency": 0,
+    "retrieval_latency": null
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "NOT_EVALUABLE"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 1965,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 0
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 18,
+    "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 10
+   },
+   "statuteFormulaDoctrineOrder": "S->D->F",
+   "repeatedSources": [
+    "B.INSAF",
+    "B.KASHSHAF",
+    "B.MAJMU_FATAWA",
+    "B.MUGHNI",
+    "B.MUNTAHA",
+    "B.ZAD",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "H.ABU_DAWUD",
+    "H.BAYHAQI",
+    "H.BUKHARI",
+    "H.MUSLIM",
+    "H.MUTTAFAQ",
+    "J.IBN_QAYYIM",
+    "J.IBN_QUDAMA",
+    "J.IBN_TAYMIYYA",
+    "M.ADA_MUHAKKAMA",
+    "M.ASL_UQUD",
+    "M.BARAA",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6
+  },
+  {
+   "event_id": "LSIG-0003",
+   "event_type": "A_LEGISLATIVE",
+   "instrument": "civil_transactions_law",
+   "known_at": "2021-02-08",
+   "effective_at": "1445",
+   "observable_from": "1445Q1",
+   "clockQuality": "LEGAL_EFFECTIVE_YEAR",
+   "publicationHealthAtT0": {
+    "unstableQuartersInWindow": [
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "compositionFlagsInWindow": 19,
+    "meanFlagsPerQuarterInWindow": 2.11,
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "the publication-health rule fires on every quarter-to-quarter step in this corpus, so it is a caveat on every latency here rather than a veto on any one event. The flag count is comparable BETWEEN events and is reported for that purpose: a lower mean means a calmer observation regime, not a cleaner transition."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 0,
+    "court_latency": 0,
+    "formula_latency": 3,
+    "ecology_latency": 0,
+    "companion_latency": 2,
+    "core_latency": 2,
+    "retrieval_latency": 3
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 109,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 7
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 21
+   },
+   "statuteFormulaDoctrineOrder": "S->D->F",
+   "repeatedSources": [
+    "B.KASHSHAF",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "J.IBN_TAYMIYYA",
+    "M.ASL_UQUD",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6
+  }
+ ]
+}

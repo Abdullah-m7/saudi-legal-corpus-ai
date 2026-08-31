@@ -15,6 +15,25 @@ measurement says what it is.
 **It turns out the control does not identify wording at all.** That is this
 file's headline, and it is a correction to this repository's own claim.
 
+> **SCOPE CORRECTIONS, entered after the transition-sequencing programme.**
+> Three narrowings, and not one of them changes a number.
+>
+> 1. The unit is an **AUTHORITY-ADJACENT RECURRING FORMULA**: an exact
+>    normalised ±90-character window around an authority mention. It is *not* a
+>    representation of a judgment's language, and nothing here is a finding
+>    about judicial writing in general. The full term is used wherever
+>    precision matters.
+> 2. "The wording layer will move first if AI changes Saudi legal reasoning"
+>    is withdrawn. Historical mobility is not a prediction about response to a
+>    future event. Section 10 states what was measured; the prospective form
+>    is a hypothesis and is registered as one.
+> 3. "Source and formula are inseparable" overstates the measurement. The
+>    measured statement is: **at the current exact-fingerprint resolution, no
+>    circulating formula is observed with more than one canonical authority
+>    identity.** Near-family equivalence remains unresolved — the family layer
+>    that would catch a shell varying by one word was built and found
+>    unstable.
+
 ---
 
 ## 0. What one fingerprint scientifically is
@@ -58,11 +77,15 @@ seventeen.
 
 **Zero of the 218 circulating formulas carry more than one canonical source.**
 
-`RECURRENCE_IS_LARGELY_SOURCE_BOUND`. There is no judicial shell in this corpus
-that recurs ten times and receives different authorities. When a legal formula
-reappears, the authority reappears with it. Answer C and answer D of the
-original list — source quotation and judicial paraphrase *of a particular
-source* — not answer E, the citation shell.
+`RECURRENCE_IS_LARGELY_SOURCE_BOUND`, read at exactly its measured meaning:
+**at the current exact-fingerprint resolution, no circulating formula is
+observed with more than one canonical authority identity.** Near-family
+equivalence is unresolved — a shell differing by one surviving word is a
+different fingerprint here, and the family layer that would have caught it is
+unstable (section 1). At this resolution the corpus shows answer C and answer D
+of the original list — source quotation and judicial paraphrase *of a
+particular source* — with answer E, the citation shell, **unobserved rather
+than disproved**.
 
 ## 3. Article formula, code formula, or neither?
 
@@ -297,8 +320,9 @@ Their series, alarm budgets and pending scores stand exactly as frozen.
   (the wording layer is untouched and the sources move), and **H_NO_CHANGE**,
   which wins by default.
 - **H_SHELL_STANDARDISATION** — AI changes *how* authority is introduced before
-  it changes *which*. Recorded with its own problem: section 2 found the shell
-  and the source are not separable layers in this corpus, so this hypothesis
+  it changes *which*. Recorded with its own problem: at the current
+  fingerprint resolution no circulating formula carries a second authority
+  identity, so shell and source cannot be told apart here, and this hypothesis
   may not be distinguishable from the first. Better to write that down now than
   discover it later.
 - **H_REINFORCEMENT** — retrieval concentrates the source layer further. Stated
@@ -340,9 +364,11 @@ paper.
 
 **All three, but they are not independent, and one of them barely moves.**
 
-The authority and the formulation travel together — zero circulating formulas
-carry a second source, so there is no separable "wording that spreads by
-itself" in this corpus. The legal proposition is present but is the smallest
+The authority and the formulation travel together at the resolution measured
+— zero circulating formulas carry a second canonical authority identity, so no
+"wording that spreads by itself" is observed here. Near-family equivalence is
+unresolved, so this is an absence of observation, not a demonstrated
+impossibility. The legal proposition is present but is the smallest
 measured class: 9 of 218 formulas are doctrinal-rule wording and 5 are
 procedural. What recurs most is how a court *introduces* an authority — 46
 introduction frames and 43 quotation formulas of 218.
@@ -353,11 +379,14 @@ part that turns over.
 
 > If AI eventually changes Saudi legal reasoning, which layer moves first?
 
-**The wording layer, on the bench side, and it is already the mobile one.**
-That is where the variance is, where the innovation rate sits at 0.88392, and
-where a drafting tool acts directly. Doctrine would move last: 34 identities at
-0.937 persistence with zero upward mobility is not a layer a retrieval tool
-displaces quietly.
+**This file cannot answer that, and the answer it first gave is withdrawn.**
+What is measured here is historical mobility, not response to a future event.
+The permitted statement is: *among the three measured layers,
+authority-adjacent recurring formulas show the greatest historical mobility;
+whether this layer responds first to future AI adoption is a prospective
+hypothesis.* The innovation rate sits at 0.88392 and doctrine at 0.937
+persistence with zero upward mobility — both are descriptions of the past.
+Ordering around an actual transition is tested in `TRANSITIONS.md`.
 
 Two cautions attached to that answer. First, this repository would see a
 wording shift as a detector alarm, and it could not attribute it — no adoption

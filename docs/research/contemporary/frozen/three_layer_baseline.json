@@ -1,0 +1,755 @@
+{
+ "what": "The three measured layers as inputs, and the first two transition signatures measured through them. The reference a future transition -- AI-linked or not -- is compared against.",
+ "era": "TRANSITION_ERA_1",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "c88a0a3c54977b836c73cf383f421a204aa043cf",
+ "codeHash": {
+  "transition.py": "cf3534e6aa60",
+  "formula.py": "dcc4f0256bf6",
+  "companions.py": "af828b14930b"
+ },
+ "scopeCorrections": {
+  "1_terminology": "AUTHORITY-ADJACENT RECURRING FORMULA is the unit's name wherever precision matters: an exact normalised +-90 character window around an authority mention, not a representation of a judgment's language.",
+  "2_prospectiveClaimWithdrawn": {
+   "withdrawn": "if AI changes Saudi legal reasoning, the wording layer will move first",
+   "permitted": "among the three measured layers, authority-adjacent recurring formulas show the greatest historical mobility. Whether this layer responds first to future AI adoption is a prospective hypothesis."
+  },
+  "3_inseparabilityNarrowed": {
+   "withdrawn": "source and formula are inseparable",
+   "permitted": "at the current exact-fingerprint resolution, no circulating formula is observed with more than one canonical authority identity",
+   "unresolved": "near-family equivalence"
+  },
+  "noNumberChanged": true
+ },
+ "threeLayerBaselines": {
+  "source": "quoted from existing frozen results. NOTHING is recomputed here and no metric is combined into a score.",
+  "STATUTORY_LAYER": {
+   "rankAutocorrelation": 0.6541,
+   "topDecilePersistence": 0.7023,
+   "bottomHalfMobility": 0.0017,
+   "firstMoverTypology": {
+    "BAR_FIRST": {
+     "n": 94,
+     "meanSurvivalShare": 0.2897,
+     "reachedTop100Share": 0.2234
+    },
+    "BAR_ONLY": {
+     "n": 221,
+     "meanSurvivalShare": 0.0,
+     "reachedTop100Share": 0.0
+    },
+    "COURT_FIRST": {
+     "n": 295,
+     "meanSurvivalShare": 0.4659,
+     "reachedTop100Share": 0.4915
+    },
+    "COURT_ONLY": {
+     "n": 439,
+     "meanSurvivalShare": 0.1337,
+     "reachedTop100Share": 0.1139
+    },
+    "SAME_PERIOD": {
+     "n": 108,
+     "meanSurvivalShare": 0.3392,
+     "reachedTop100Share": 0.287
+    }
+   },
+   "newEntrantBehaviour": {
+    "instrumentsArrivingInWindow": 60,
+    "reachedTop50": 8,
+    "medianQuartersToTop50": 2
+   },
+   "limitations": [
+    "universe about 2,000 cited articles",
+    "left-censored instruments excluded"
+   ]
+  },
+  "DOCTRINAL_LAYER": {
+   "rankAutocorrelation": 0.8954,
+   "topQuartilePersistence": 0.937,
+   "bottomHalfMobility": 0.0,
+   "survivalByFirstMover": {
+    "BAR_FIRST": {
+     "n": 14,
+     "survive1q": 0.2727,
+     "survive1q_n": 11,
+     "survive2q": 0.4615,
+     "survive2q_n": 13,
+     "survive4q": 0.5,
+     "survive4q_n": 14,
+     "persistentShare": 0.2857
+    },
+    "BAR_ONLY": {
+     "n": 10,
+     "survive1q": 0.0,
+     "survive1q_n": 10,
+     "survive2q": 0.0,
+     "survive2q_n": 10,
+     "survive4q": 0.0,
+     "survive4q_n": 10,
+     "persistentShare": 0.0
+    },
+    "COURT_FIRST": {
+     "n": 51,
+     "survive1q": 0.7174,
+     "survive1q_n": 46,
+     "survive2q": 0.8,
+     "survive2q_n": 50,
+     "survive4q": 0.8627,
+     "survive4q_n": 51,
+     "persistentShare": 0.5882
+    },
+    "COURT_ONLY": {
+     "n": 30,
+     "survive1q": 0.5714,
+     "survive1q_n": 28,
+     "survive2q": 0.7,
+     "survive2q_n": 30,
+     "survive4q": 0.8667,
+     "survive4q_n": 30,
+     "persistentShare": 0.1333
+    },
+    "SAME_PERIOD": {
+     "n": 12,
+     "survive1q": 0.7273,
+     "survive1q_n": 11,
+     "survive2q": 0.75,
+     "survive2q_n": 12,
+     "survive4q": 0.8333,
+     "survive4q_n": 12,
+     "persistentShare": 0.4167
+    }
+   },
+   "companionFormationLatency": {
+    "n": 48,
+    "median": 3,
+    "p25": 2,
+    "p75": 4,
+    "distribution": {
+     "1": 11,
+     "2": 10,
+     "3": 8,
+     "4": 8,
+     "5": 6,
+     "6": 2,
+     "7": 1,
+     "8": 2
+    }
+   },
+   "sourceDiffusion": {
+    "BOOK": {
+     "n": 8,
+     "medianToSecondCode": 5,
+     "medianToSecondCity": 2,
+     "medianToBothVoices": 4,
+     "meanCodesEver": 5.5,
+     "meanCitiesEver": 7.38
+    },
+    "CUSTOM": {
+     "n": 1,
+     "medianToSecondCode": 1,
+     "medianToSecondCity": 1,
+     "medianToBothVoices": 1,
+     "meanCodesEver": 15.0,
+     "meanCitiesEver": 13.0
+    },
+    "HADITH_SOURCE": {
+     "n": 10,
+     "medianToSecondCode": 4,
+     "medianToSecondCity": 1,
+     "medianToBothVoices": 2,
+     "meanCodesEver": 3.3,
+     "meanCitiesEver": 5.7
+    },
+    "JUDICIAL_PRACTICE": {
+     "n": 1,
+     "medianToSecondCode": 4,
+     "medianToSecondCity": 1,
+     "medianToBothVoices": 5,
+     "meanCodesEver": 13.0,
+     "meanCitiesEver": 11.0
+    },
+    "JURIST": {
+     "n": 4,
+     "medianToSecondCode": 5,
+     "medianToSecondCity": 2,
+     "medianToBothVoices": 3,
+     "meanCodesEver": 8.75,
+     "meanCitiesEver": 10.5
+    },
+    "MAXIM": {
+     "n": 6,
+     "medianToSecondCode": 6,
+     "medianToSecondCity": 4,
+     "medianToBothVoices": 2,
+     "meanCodesEver": 6.5,
+     "meanCitiesEver": 7.5
+    },
+    "MAXIM_LABEL": {
+     "n": 1,
+     "medianToSecondCode": 2,
+     "medianToSecondCity": 0,
+     "medianToBothVoices": 1,
+     "meanCodesEver": 9.0,
+     "meanCitiesEver": 11.0
+    },
+    "SCRIPTURE": {
+     "n": 2,
+     "medianToSecondCode": 1,
+     "medianToSecondCity": 2,
+     "medianToBothVoices": 1,
+     "meanCodesEver": 16.5,
+     "meanCitiesEver": 16.0
+    },
+    "UNATTRIBUTED_FIQH": {
+     "n": 1,
+     "medianToSecondCode": 2,
+     "medianToSecondCity": 1,
+     "medianToBothVoices": 4,
+     "meanCodesEver": 16.0,
+     "meanCitiesEver": 16.0
+    }
+   },
+   "limitations": [
+    "28 canonical identities; every count is a floor",
+    "six or seven matched pairs in every arm"
+   ]
+  },
+  "FORMULA_LAYER": {
+   "unitName": "AUTHORITY-ADJACENT RECURRING FORMULA",
+   "mobilityCirculatingOnly": {
+    "steps": 9,
+    "rankAutocorrelation": 0.2194,
+    "topDecilePersistence": 0.3921,
+    "bottomHalfToTopDecileMobility": 0.0379,
+    "universeSize": 218,
+    "perStep": [
+     {
+      "from": "1443Q1",
+      "to": "1443Q3",
+      "universe": 60,
+      "topDecilePersistence": 0.0,
+      "bottomHalfToTopDecile": 0.1
+     },
+     {
+      "from": "1443Q3",
+      "to": "1443Q4",
+      "universe": 97,
+      "topDecilePersistence": 0.3333,
+      "bottomHalfToTopDecile": 0.0
+     },
+     {
+      "from": "1443Q4",
+      "to": "1444Q1",
+      "universe": 155,
+      "topDecilePersistence": 0.4,
+      "bottomHalfToTopDecile": 0.0
+     },
+     {
+      "from": "1444Q1",
+      "to": "1444Q2",
+      "universe": 184,
+      "topDecilePersistence": 0.6667,
+      "bottomHalfToTopDecile": 0.0326
+     },
+     {
+      "from": "1444Q2",
+      "to": "1444Q3",
+      "universe": 182,
+      "topDecilePersistence": 0.5556,
+      "bottomHalfToTopDecile": 0.0549
+     },
+     {
+      "from": "1444Q3",
+      "to": "1444Q4",
+      "universe": 180,
+      "topDecilePersistence": 0.4444,
+      "bottomHalfToTopDecile": 0.0444
+     },
+     {
+      "from": "1444Q4",
+      "to": "1445Q1",
+      "universe": 175,
+      "topDecilePersistence": 0.4118,
+      "bottomHalfToTopDecile": 0.0341
+     },
+     {
+      "from": "1445Q1",
+      "to": "1445Q4",
+      "universe": 153,
+      "topDecilePersistence": 0.4667,
+      "bottomHalfToTopDecile": 0.0519
+     },
+     {
+      "from": "1445Q4",
+      "to": "1446Q1",
+      "universe": 85,
+      "topDecilePersistence": 0.25,
+      "bottomHalfToTopDecile": 0.0233
+     }
+    ]
+   },
+   "mobilityAllFormulas": {
+    "rankAutocorrelation": -0.2834,
+    "topDecilePersistence": 0.1869,
+    "bottomHalfToTopDecileMobility": 0.1232,
+    "universeSize": 14958
+   },
+   "concentration": {
+    "ALL": {
+     "mentions": 25213,
+     "distinctFormulas": 14958,
+     "top10Share": 0.0652,
+     "top50Share": 0.1354,
+     "herfindahl": 0.000767,
+     "entropyBits": 12.8584,
+     "singletonShare": 0.84
+    },
+    "COURT": {
+     "mentions": 18670,
+     "distinctFormulas": 9309,
+     "top10Share": 0.088,
+     "top50Share": 0.1824,
+     "herfindahl": 0.001366,
+     "entropyBits": 11.9356,
+     "singletonShare": 0.7969
+    },
+    "BAR": {
+     "mentions": 6543,
+     "distinctFormulas": 5705,
+     "top10Share": 0.0142,
+     "top50Share": 0.0544,
+     "herfindahl": 0.000241,
+     "entropyBits": 12.3398,
+     "singletonShare": 0.9167
+    },
+    "CIRCULATING_ONLY": {
+     "mentions": 5981,
+     "distinctFormulas": 218,
+     "top10Share": 0.2747,
+     "top50Share": 0.5708,
+     "herfindahl": 0.012518,
+     "entropyBits": 7.1346,
+     "singletonShare": 0.0
+    },
+    "PROCEDURAL_GROUP": {
+     "mentions": 813,
+     "distinctFormulas": 13,
+     "top10Share": 0.9557,
+     "top50Share": 1.0,
+     "herfindahl": 0.224883,
+     "entropyBits": 2.7282,
+     "singletonShare": 0.0
+    },
+    "DOCTRINAL_GROUP": {
+     "mentions": 1599,
+     "distinctFormulas": 70,
+     "top10Share": 0.4078,
+     "top50Share": 0.858,
+     "herfindahl": 0.029197,
+     "entropyBits": 5.6881,
+     "singletonShare": 0.0
+    },
+    "courtVersusBarDiversity": {
+     "rarefactionSampleSize": 6543,
+     "courtExpectedDistinct": 3967.15,
+     "barExpectedDistinct": 5705.0,
+     "note": "expected distinct formulas in a sample of the same size, computed analytically. A raw distinct count would mostly report that the bench writes more."
+    }
+   },
+   "detectorBaselines": {
+    "courtFormulaShare": 0.32452,
+    "formulaInnovationRate": 0.88392,
+    "formulaShareOfMentions": 0.23711,
+    "top10FormulaConcentration": 0.10123
+   },
+   "limitations": [
+    "exact-fingerprint resolution only; near-family equivalence unresolved",
+    "an exact normalised +-90 character window around an authority mention, not a representation of a judgment's language"
+   ]
+  },
+  "noCompositeScore": "the three layers are kept apart. A single mobility index over universes of 34, 2,000 and 15,000 objects would be a number with no referent."
+ },
+ "layerStack": {
+  "L0_OBSERVATION_SYSTEM": "publication health. Runs first and can veto everything above it.",
+  "L2_BAR_STATUTORY_VISIBILITY": "party citation of the instrument",
+  "L3_COURT_STATUTORY_VISIBILITY": "court citation",
+  "L4_AUTHORITY_ADJACENT_FORMULA": "recurring wording beside an authority, locally attached to the instrument",
+  "L5_AUTHORITY_ECOLOGY": "hybrid rate, named fiqh, traceability",
+  "L6_DOCTRINAL_COMPANION": "first repeated non-statutory source",
+  "L7_OPERATIONAL_CORE": "top-100 and top-50 court articles",
+  "L8_RETRIEVAL_STATE": "displacement of a frozen pre-event top-50 snapshot",
+  "isNotACausalChain": "the numbering is a measurement stack. No layer is expected to precede another and the analysis does not assume it.",
+  "thresholds": {
+   "TOP50_DISPLACEMENT_PCT": 30.0,
+   "REPEATED_SOURCE_JUDGMENTS": 2,
+   "CONCENTRATION_SHIFT": 0.15,
+   "MIN_COURT_CITES_FOR_LAYER": 5,
+   "HORIZON_QUARTERS": 6,
+   "provenance": "fixed once, before any post-period was read, and applied identically to every event and every pseudo-event. Nothing is tuned per law."
+  }
+ },
+ "uptakeRule": {
+  "arrivalsConsidered": 59,
+  "chosenRepeatedRule": "R1_twoDistinctScorableQuarters",
+  "chosenSustainedRule": "S2_halfOfScorableQuartersSinceFirst",
+  "candidateRules": {
+   "R1_twoDistinctScorableQuarters": {
+    "instruments": 59,
+    "satisfied": 39,
+    "share": 0.661
+   },
+   "S1_threeConsecutiveScorableQuarters": {
+    "instruments": 59,
+    "satisfied": 23,
+    "share": 0.3898
+   },
+   "S2_halfOfScorableQuartersSinceFirst": {
+    "instruments": 59,
+    "satisfied": 28,
+    "share": 0.4746
+   },
+   "S3_fourDistinctScorableQuarters": {
+    "instruments": 59,
+    "satisfied": 23,
+    "share": 0.3898
+   }
+  }
+ },
+ "signatures": [
+  {
+   "event_id": "LSIG-0002",
+   "event_type": "A_LEGISLATIVE",
+   "instrument": "evidence_law",
+   "known_at": "2021-02-08",
+   "effective_at": "1443",
+   "observable_from": "1443Q1",
+   "clockQuality": "LEGAL_EFFECTIVE_YEAR",
+   "publicationHealthAtT0": {
+    "unstableQuartersInWindow": [
+     "1443Q2",
+     "1443Q3",
+     "1443Q4",
+     "1444Q1",
+     "1444Q2",
+     "1444Q3"
+    ],
+    "compositionFlagsInWindow": 22,
+    "meanFlagsPerQuarterInWindow": 3.67,
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "the publication-health rule fires on every quarter-to-quarter step in this corpus, so it is a caveat on every latency here rather than a veto on any one event. The flag count is comparable BETWEEN events and is reported for that purpose: a lower mean means a calmer observation regime, not a cleaner transition."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 4,
+    "court_latency": 0,
+    "formula_latency": 2,
+    "ecology_latency": 0,
+    "companion_latency": 2,
+    "core_latency": 0,
+    "retrieval_latency": null
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "NOT_EVALUABLE"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 1965,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 0
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 18,
+    "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 10
+   },
+   "statuteFormulaDoctrineOrder": "S->D->F",
+   "repeatedSources": [
+    "B.INSAF",
+    "B.KASHSHAF",
+    "B.MAJMU_FATAWA",
+    "B.MUGHNI",
+    "B.MUNTAHA",
+    "B.ZAD",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "H.ABU_DAWUD",
+    "H.BAYHAQI",
+    "H.BUKHARI",
+    "H.MUSLIM",
+    "H.MUTTAFAQ",
+    "J.IBN_QAYYIM",
+    "J.IBN_QUDAMA",
+    "J.IBN_TAYMIYYA",
+    "M.ADA_MUHAKKAMA",
+    "M.ASL_UQUD",
+    "M.BARAA",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6
+  },
+  {
+   "event_id": "LSIG-0003",
+   "event_type": "A_LEGISLATIVE",
+   "instrument": "civil_transactions_law",
+   "known_at": "2021-02-08",
+   "effective_at": "1445",
+   "observable_from": "1445Q1",
+   "clockQuality": "LEGAL_EFFECTIVE_YEAR",
+   "publicationHealthAtT0": {
+    "unstableQuartersInWindow": [
+     "1444Q1",
+     "1444Q2",
+     "1444Q3",
+     "1445Q1",
+     "1445Q2",
+     "1445Q3",
+     "1445Q4",
+     "1446Q1",
+     "1446Q2"
+    ],
+    "compositionFlagsInWindow": 19,
+    "meanFlagsPerQuarterInWindow": 2.11,
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "the publication-health rule fires on every quarter-to-quarter step in this corpus, so it is a caveat on every latency here rather than a veto on any one event. The flag count is comparable BETWEEN events and is reported for that purpose: a lower mean means a calmer observation regime, not a cleaner transition."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 0,
+    "court_latency": 0,
+    "formula_latency": 3,
+    "ecology_latency": 0,
+    "companion_latency": 2,
+    "core_latency": 2,
+    "retrieval_latency": 3
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 109,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 7
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 21
+   },
+   "statuteFormulaDoctrineOrder": "S->D->F",
+   "repeatedSources": [
+    "B.KASHSHAF",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "J.IBN_TAYMIYYA",
+    "M.ASL_UQUD",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6
+  }
+ ],
+ "negativeControl": {
+  "pseudoEvents": 15,
+  "instruments": [
+   "commercial_courts_law",
+   "sharia_procedure_law",
+   "commercial_courts_implementing_regulation"
+  ],
+  "trivialFirstVisibilityRate": {
+   "L2_BAR_STATUTORY_VISIBILITY": 1.0,
+   "L3_COURT_STATUTORY_VISIBILITY": 1.0,
+   "L4_AUTHORITY_ADJACENT_FORMULA": 1.0,
+   "L5_AUTHORITY_ECOLOGY": 1.0,
+   "L6_DOCTRINAL_COMPANION": 1.0,
+   "L7_OPERATIONAL_CORE": 1.0,
+   "L8_RETRIEVAL_STATE": 1.0
+  },
+  "trivialityNote": "a rate of 1.0 for a FIRST_VISIBILITY layer is the expected and correct result: the instrument was already visible. It means the layer cannot be used as a transition detector for a mature instrument, which is stated rather than hidden.",
+  "allZeroLatencyVectorShare": 0.0,
+  "stagedVectorShare": 0.0,
+  "stagedVectorShareExcludingRetrieval": 0.0,
+  "shiftCriteriaFalsePositives": {
+   "L5_ECOLOGY_SHIFT": {
+    "events": 10,
+    "rate": 0.6667
+   },
+   "L8_RETRIEVAL_STALENESS": {
+    "events": 15,
+    "rate": 1.0
+   }
+  },
+  "meanLayersFiringPerPseudoEvent": 7.0,
+  "verdict": "BATTERY_DISCRIMINATES_ARRIVALS_ONLY",
+  "howToReadIt": "the two real transitions are ARRIVALS and their latency vectors are staged. If pseudo-events on mature instruments almost never produce a staged vector once retrieval staleness is set aside, then the staging in the real events is not an artefact of the criteria. If they do, it is."
+ },
+ "formulaFirstTest": {
+  "byEvent": [
+   {
+    "event_id": "LSIG-0002",
+    "instrument": "evidence_law",
+    "formulaLatency": 2,
+    "courtStatutoryLatency": 0,
+    "relation": "AFTER",
+    "newlyObservedFormulas": 1965,
+    "carriedFromOlderLaw": 4,
+    "carriedNeverSeenBesideAnother": 0,
+    "leftTruncationWarning": "the pre-T0 window is only 4 quarter(s) of corpus, so 'newly observed' is inflated: a formula circulating for years before the corpus begins is newly observed here. The count is a ceiling on innovation, not a measure of it."
+   },
+   {
+    "event_id": "LSIG-0003",
+    "instrument": "civil_transactions_law",
+    "formulaLatency": 3,
+    "courtStatutoryLatency": 0,
+    "relation": "AFTER",
+    "newlyObservedFormulas": 109,
+    "carriedFromOlderLaw": 4,
+    "carriedNeverSeenBesideAnother": 7,
+    "leftTruncationWarning": null
+   }
+  ],
+  "verdict": "FORMULA_LAYER_MOVES_AFTER_STATUTORY_VISIBILITY",
+  "consequence": "the withdrawn claim -- that the wording layer would move first -- is not supported by either ordinary transition available. Greater historical MOBILITY of the formula layer does not make it the EARLIER layer around an actual legal change. The prospective form of the claim remains a hypothesis and is now a hypothesis with evidence against its ordinary-transition analogue.",
+  "whatThisDoesNotShow": "nothing here is about AI. An AI-driven transition need not resemble a new-law transition, and PHASE 39's question is precisely whether it does."
+ },
+ "speedBands": {
+  "bands": {
+   "party_latency": {
+    "events": 2,
+    "min": 0,
+    "max": 4,
+    "band": "0-4Q"
+   },
+   "court_latency": {
+    "events": 2,
+    "min": 0,
+    "max": 0,
+    "band": "0-0Q"
+   },
+   "formula_latency": {
+    "events": 2,
+    "min": 2,
+    "max": 3,
+    "band": "2-3Q"
+   },
+   "ecology_latency": {
+    "events": 2,
+    "min": 0,
+    "max": 0,
+    "band": "0-0Q"
+   },
+   "companion_latency": {
+    "events": 2,
+    "min": 2,
+    "max": 2,
+    "band": "2-2Q"
+   },
+   "core_latency": {
+    "events": 2,
+    "min": 0,
+    "max": 2,
+    "band": "0-2Q"
+   },
+   "retrieval_latency": {
+    "events": 1,
+    "min": 3,
+    "max": 3,
+    "band": "3-3Q"
+   }
+  },
+  "eventsContributing": 2,
+  "warning": "TWO events. A band read off two observations is a range, not a distribution, and FASTER_THAN_BASELINE cannot be said of a future transition until the library holds enough events to have a baseline. The bands are recorded so that a future session inherits them rather than inventing them."
+ },
+ "aiChannelHypotheses": {
+  "JUDICIAL_RESEARCH_AI": {
+   "expected_first_layer": [
+    "L5_AUTHORITY_ECOLOGY",
+    "L6_DOCTRINAL_COMPANION"
+   ],
+   "expected_secondary_layers": [
+    "L4_AUTHORITY_ADJACENT_FORMULA",
+    "L7_OPERATIONAL_CORE"
+   ],
+   "expectedSignals": [
+    "source diversity",
+    "traceability",
+    "long-tail authority",
+    "companion concentration"
+   ],
+   "falsifier": "a verified judicial-research AI deployment becomes corpus-linkable, the evaluation horizon passes, and the only layer outside its frozen bounds is statutory ranking. SOURCE_FIRST then loses.",
+   "minimumObservableHorizonQuarters": 6
+  },
+  "JUDICIAL_DRAFTING_AI": {
+   "expected_first_layer": [
+    "L4_AUTHORITY_ADJACENT_FORMULA"
+   ],
+   "expected_secondary_layers": [
+    "L5_AUTHORITY_ECOLOGY"
+   ],
+   "expectedSignals": [
+    "formula concentration",
+    "variant distribution",
+    "innovation rate"
+   ],
+   "falsifier": "a verified judicial drafting-AI deployment becomes corpus-linkable and the authority-adjacent formula layer stays inside its frozen bounds while source diversity moves first. FORMULA_FIRST then loses.",
+   "minimumObservableHorizonQuarters": 6
+  },
+  "BAR_RESEARCH_AI": {
+   "expected_first_layer": [
+    "L2_BAR_STATUTORY_VISIBILITY"
+   ],
+   "expected_secondary_layers": [
+    "L3_COURT_STATUTORY_VISIBILITY"
+   ],
+   "expectedSignals": [
+    "party article and source use before court visibility"
+   ],
+   "falsifier": "a verified bar-side deployment becomes linkable and party-side use stays inside its bounds while the court's moves. BAR_FIRST then loses. The statutory first-mover result already finds the bar does not lead, so this hypothesis starts behind.",
+   "minimumObservableHorizonQuarters": 6
+  },
+  "COURT_ADMIN_AI": {
+   "expected_first_layer": [
+    "L0_OBSERVATION_SYSTEM"
+   ],
+   "expected_secondary_layers": [],
+   "expectedSignals": [
+    "publication volume, composition and reasons length"
+   ],
+   "falsifier": "none needed: this channel predicts NO doctrinal shift by default, and a doctrinal shift following it is evidence against the default rather than for the channel.",
+   "minimumObservableHorizonQuarters": 6
+  }
+ },
+ "identificationRule": {
+  "rule": "A TRANSITION SIGNATURE NEVER IDENTIFIES AI.",
+  "permitted": [
+   "CONSISTENT_WITH a pre-registered channel hypothesis",
+   "INCONSISTENT_WITH it"
+  ],
+  "forbidden": [
+   "AI_DETECTED_FROM_TEXT",
+   "a formula-first transition means AI",
+   "a source-diversity shift means AI"
+  ],
+  "necessaryCondition": "an externally verified adoption event that reaches the workflow this corpus observes. The registry currently holds none at L3_WORKFLOW_MATCH."
+ },
+ "evaluationHorizonQuarters": 6,
+ "whatThisFreezes": "the bounds, the thresholds, the layer criteria and the two calibration signatures. NOT the detectors of any earlier era, which are untouched.",
+ "whatWouldMoveThis": "a third calibration transition with a known legal clock. It gets its own era; this file is not rewritten."
+}

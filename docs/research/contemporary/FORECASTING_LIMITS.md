@@ -99,6 +99,13 @@ is not evidence about wording. The binding limit was always the six pairs.
 series, two models. The best mean skill is +0.0275 with a worst fold of
 −1.564.
 
+**The wording layer is not the early layer.** Its historical mobility is the
+highest of the three measured layers, and in both available transitions it
+moves AFTER statutory visibility — latency 2 against 0, and 3 against 0 — and
+predicts later top-50 entry at lift 1.3571 against the court-citation
+baseline's 3.7582. Mobility and earliness are different properties and had been
+conflated. Recorded as T7 in `THEORY_LOG.md`.
+
 **Formula persistence is a near miss, not a signal.** The largest lift this
 repository has measured on rolling folds — 10.7077 mean over 7 folds, for a
 formula observed in more than one city in its first scorable quarter — fires
@@ -113,6 +120,36 @@ Features read over the whole window — the cities or codes a formula EVER
 reached — are the outcome restated. Every feature in the published version is
 read from the first scorable quarter only. Noted here because the leaking
 version looked like the best result in the repository.
+
+**Legal transitions available for calibration: TWO.** Both backfilled. The
+Law of Evidence and the Civil Transactions Law are the only events with a legal
+clock independent of the corpus, a linkable instrument and enough court use.
+Fifty-nine other instruments arrive inside the window and not one carries a
+verifiable known_at or effective_at, so their T=0 would have to be read off the
+first citation — which is the outcome. *Lifted by:* registry metadata that does
+not exist yet, or time.
+
+**The publication-health gate cannot act as a veto.** Written to reject a
+transition read under a moving observation system, it fires on 12 of 13
+quarter-to-quarter steps. A veto that rejects everything is not a veto, so it
+is demoted to a standing caveat on every latency in `TRANSITIONS.md` — and
+deliberately NOT loosened, because loosening a control until it permits the
+result is how a control stops being one. *Lifted by:* a publication date, which
+neither institution publishes.
+
+**The transition negative control separates arrivals, not events.** Fifteen
+pseudo-events on mature instruments never produce a staged latency vector,
+which makes the two real signatures readable. But what it demonstrates is that
+an arriving instrument looks different from a settled one, not that a legal
+event looks different from no event. A pseudo-arrival control would settle it
+and no instrument in this corpus can provide one, because a pseudo-arrival
+needs a clock. *Lifted by:* the same registry metadata.
+
+**Retrieval staleness is a clock, not a signal.** It fires in 15 of 15
+pseudo-events with no legal event at all. `TOP50_DISPLACEMENT` is retained as
+the refresh trigger and the proposal to warn earlier from formula or companion
+movement is HOLD: there is one event with an evaluable pre-event snapshot, and
+earlier-than-a-clock is not earlier-than-a-signal.
 
 ## Calibration refused
 

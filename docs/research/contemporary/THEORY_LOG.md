@@ -327,3 +327,48 @@ hashing takes the corpus from 14958 fingerprints to 14941, and **zero** of the
 218 circulating formulas carry a second canonical source. In this corpus there
 is no such thing as a source-independent recurring formula. That is why answer
 E of the original list — the citation shell — is not in the taxonomy's results.
+
+---
+
+## T7 · The wording layer as the early layer
+
+**HYPOTHESIS.** The authority-adjacent recurring formula layer is the most
+mobile of the three measured layers — rank autocorrelation 0.2194 against
+0.6541 for articles and 0.8954 for doctrine — so it is the layer that would
+move first when the legal system changes, and therefore the layer to watch for
+an AI transition.
+
+**TEST.** Two real transitions with legal clocks independent of the corpus: the
+Law of Evidence, observable from 1443Q1, and the Civil Transactions Law, from
+1445Q1. Eight layers, criteria fixed before any post-period was read and
+applied identically to both events and to fifteen pseudo-events.
+
+**WHAT FAILED.** The formula layer moves **after** statutory visibility in both
+transitions: latency 2 against 0 for the Law of Evidence, 3 against 0 for the
+Civil Transactions Law. It is also the **last** layer to move in the Civil
+Transactions Law's signature. The ordering in both is `S→D→F` — statute, then
+doctrine, then wording.
+
+`FORMULA_LAYER_MOVES_AFTER_STATUTORY_VISIBILITY`. Greater historical mobility
+does not make a layer the earlier one, and the two properties had been
+conflated. And the follow-through: formula activity at an instrument's arrival
+predicts later top-50 entry at lift 1.3571 against 3.7582 for the court
+citations it would have to beat, so the layer buys no forecasting value either.
+`FORMULA_ACTIVITY_IS_DESCRIPTIVE_ONLY`.
+
+**WHAT SURVIVED.** The mobility measurement itself, unchanged, and the
+prospective claim in its narrowed form: *among the three measured layers,
+authority-adjacent recurring formulas show the greatest historical mobility;
+whether this layer responds first to future AI adoption is a prospective
+hypothesis.* An AI-driven transition need not resemble a new-law transition —
+that is exactly what the frozen channel hypotheses exist to test — but it can
+no longer be assumed to be led by wording on the strength of a mobility
+statistic.
+
+**AND ONE CONTROL THAT DID ITS JOB TWICE.** Fifteen pseudo-events on mature
+instruments produce a staged latency vector in 0.0 of cases, which is what
+makes the two real signatures readable. The same control shows retrieval
+staleness firing in 15 of 15 pseudo-events with no legal event at all:
+**a frozen retrieval snapshot ages on a clock, not on events.** Any proposal to
+use a legal signal as an early refresh warning has to beat a clock, and the
+candidate was put on HOLD for exactly that reason.

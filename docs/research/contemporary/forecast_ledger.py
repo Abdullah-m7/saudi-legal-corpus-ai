@@ -987,6 +987,54 @@ def formula_release():
     }
 
 
+def transition_release():
+    """The multi-layer transition programme: one refused bet, one reference."""
+    t = J("transition_results.json")
+    sig = {x["event_id"]: x for x in t["phase20_21_signatures"]}
+    b = t["phase36_bet"]
+    ps = t["phase19_pseudoEventControls"]
+    return {
+        "what": "MULTI-LAYER LEGAL TRANSITION SEQUENCING. What an ordinary "
+                "legal transition looks like across eight observable layers, "
+                "so a future AI-linked transition can be compared against it.",
+        "TRANSITION_BET_001": {
+            "status": b["decision"],
+            "candidateShape": b["candidateShape"],
+            "whyRefused": b["why"],
+            "whatWouldEarnIt": b["whatWouldEarnIt"],
+            "firstMovingLayerByEvent": b["firstMovingLayerByEvent"],
+            "note": "the candidate is TRUE in both calibration events and is "
+                    "refused anyway. Two backfilled observations agreeing is "
+                    "not a calibration."},
+        "referenceSignatures": {
+            eid: {"instrument": x["instrument"],
+                  "observable_from": x["observable_from"],
+                  "capture": x["capture"],
+                  "latencies": x["latencies"]}
+            for eid, x in sorted(sig.items())},
+        "negativeControl": {
+            "pseudoEvents": ps["pseudoEvents"],
+            "stagedVectorShare": ps["stagedVectorShare"],
+            "retrievalStalenessFalsePositiveRate":
+                ps["shiftCriteriaFalsePositives"]
+                ["L8_RETRIEVAL_STALENESS"]["rate"],
+            "verdict": ps["verdict"],
+            "limit": "the control separates ARRIVALS from non-arrivals, not "
+                     "events from non-events."},
+        "formulaFirstHypothesis": {
+            "verdict": t["phase9_formulaFirstTest"]["verdict"],
+            "consequence": "the withdrawn prospective claim now has evidence "
+                           "against its ordinary-transition analogue. It "
+                           "remains a hypothesis about AI, not a finding."},
+        "refreshTriggerUnchanged": {
+            "trigger": "TOP50_DISPLACEMENT",
+            "why": t["phase32_33_retrievalSequence"][
+                "phase33_earlyRefreshWarning"]["why"]},
+        "creditRule": "every event here is BACKFILLED_CALIBRATION. None may "
+                      "ever be reported as foresight.",
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -1131,6 +1179,8 @@ def main():
         old["bets"] = bets()
     if "formulaRelease" not in old:
         old["formulaRelease"] = formula_release()
+    if "transitionRelease" not in old:
+        old["transitionRelease"] = transition_release()
     if "horizonRelease" not in old:
         old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:
