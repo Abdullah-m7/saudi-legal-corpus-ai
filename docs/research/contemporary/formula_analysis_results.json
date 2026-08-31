@@ -1,0 +1,2959 @@
+{
+ "what": "RECURRING LEGAL FORMULA AND REASONING-DIFFUSION OBSERVATORY. What is actually recurring when a legal formula reappears, and what that means for a control that removed recurring wording wholesale.",
+ "terminology": {
+  "RECURRING_LEGAL_FORMULA": "a wording fingerprint observed in several judgments. Neutral by construction: it may be boilerplate, it may be the carrier of a legal proposition, and the word TEMPLATE is not used because it presumes the first.",
+  "notCopying": "recurrence is co-occurrence of wording, never copying or influence.",
+  "notCausal": "no phase in this file makes or implies a causal claim."
+ },
+ "phase1_frozenStartingPoint": {
+  "file": "frozen/doctrinal_diffusion_era_1.json",
+  "statement": "the apparent COURT_FIRST doctrinal advantage largely disappears after removing recurring wording fingerprints",
+  "whatWasNotEstablished": "that the recurring wording is boilerplate, or that it caused the effect."
+ },
+ "phase2_unitSpecification": {
+  "definition": "SHA-1, first 12 hex characters, of a normalised window of +-90 characters around the matched authority string.",
+  "normalisation": [
+   "diacritics and tatweel removed",
+   "whitespace collapsed to single spaces",
+   "orthography folded: أ إ آ -> ا, ى -> ي, ة -> ه",
+   "every character outside [Arabic letter, space] deleted -- so DIGITS AND PUNCTUATION ARE REMOVED",
+   "every word of 1 or 2 characters removed -- so most particles, conjunctions and prepositions are gone",
+   "no stemming, no stop-word list beyond the length filter"
+  ],
+  "contextRadius": 90,
+  "minimumLength": "none. A window is hashed however short it is; the observed token count is reported below rather than enforced.",
+  "windowTokens": {
+   "median": 29,
+   "p10": 26,
+   "p90": 33,
+   "min": 16,
+   "max": 38,
+   "under5Tokens": 0.0
+  },
+  "authorityTokensIncluded": true,
+  "authorityTokensNote": "the matched authority string sits inside the window, so the existing unit is SOURCE_PRESERVING: two mentions of different sources cannot share a fingerprint unless the source names normalise identically.",
+  "articleNumbersPreserved": "PARTIALLY, and this was not obvious. Numeric article references die with the digits. ARABIC-SPELLED ordinals -- «المادة الثانية عشرة» -- are ordinary words and survive.",
+  "codeNamesPreserved": true,
+  "courtNamesRemoved": "NOT removed by rule. Nothing strips a court or city name; they survive if they fall in the window.",
+  "numericNormalisation": "none needed -- numbers are deleted, not normalised.",
+  "punctuation": "deleted, so a sentence boundary inside the window is invisible and a fingerprint may straddle two sentences.",
+  "exactOrNearExact": "EXACT. A cryptographic hash has no neighbourhood; one different surviving word is a different fingerprint. No near-duplicate grouping existed before this pass.",
+  "citationsInWindow": {
+   "mentionsWithAStatutoryCitationInWindow": 778,
+   "share": 0.0309,
+   "citationsPerWindow": {
+    "0": 24435,
+    "1": 775,
+    "2": 3
+   },
+   "instrumentTitleBounded": 0.5327,
+   "boundingNote": "CITE's instrument capture runs greedily to the next punctuation, so the code mask bounds the title at a fixed stop-word list. The share above is how often that bounding fired."
+  },
+  "whatOneFingerprintIs": "a claim that two passages, after losing their numbers, punctuation and short words, are the SAME ~25-word neighbourhood of an authority. It is a statement about wording. It is not a statement about meaning, and it is not evidence that one passage was copied from another.",
+  "whyThisMattersForTheFrozenControl": "the de-boilerplating control removed mentions on this criterion alone. Whether that removed noise or signal is the question the rest of this file asks."
+ },
+ "phase3_exactVersusFamily": {
+  "exactFormulas": 218,
+  "mentionsInCirculatingFormulas": 5981,
+  "grouping": {
+   "threshold60": {
+    "families": 132,
+    "exactFormulasGrouped": 50,
+    "largestFamily": 7,
+    "familiesLargerThanOne": 50
+   },
+   "threshold70": {
+    "families": 142,
+    "exactFormulasGrouped": 47,
+    "largestFamily": 6,
+    "familiesLargerThanOne": 47
+   },
+   "threshold80": {
+    "families": 167,
+    "exactFormulasGrouped": 39,
+    "largestFamily": 6,
+    "familiesLargerThanOne": 39
+   }
+  },
+  "stability": {
+   "pairsAt70": 130,
+   "shareSurvivingAt80": 0.5462,
+   "shareAlreadyTogetherAt60": 1.0,
+   "verdict": "FAMILY_GROUPING_UNSTABLE_USE_EXACT_ONLY"
+  },
+  "decision": "every downstream phase uses EXACT formulas. Near-exact grouping was built, tested and set aside because it does not survive a change of threshold, which is the honest outcome of a fuzzy-grouping check rather than a reason to pick a threshold and proceed.",
+  "method": "banded minhash (8 bands of 4) over token 3-shingles, seeded and deterministic; no embedding model."
+ },
+ "phase4_sourceMasking": {
+  "distinctFormulas": {
+   "sourcePreserving": 14958,
+   "sourceMasked": 14941
+  },
+  "circulatingFormulas": {
+   "sourcePreserving": 218,
+   "sourceMasked": 218
+  },
+  "circulatingShells": 218,
+  "shellsWithMoreThanOneSource": 0,
+  "shellsWithMoreThanOneSourceShare": 0.0,
+  "mentionsInMultiSourceShells": 0,
+  "medianSourcesPerCirculatingShell": 1,
+  "topMultiSourceShells": [],
+  "verdict": "RECURRENCE_IS_LARGELY_SOURCE_BOUND",
+  "reading": "a circulating shell that carries only one source is a recurring passage about that source. A shell carrying several is a judicial form of words into which different authorities are placed. The two are different objects and the de-boilerplating control removed both.",
+  "notCopying": "two judgments sharing a shell is co-occurrence of wording. No claim is made that either was written from the other, or from a common draft."
+ },
+ "phase5_articleAndCodeMasking": {
+  "distinctFingerprintsByMask": {
+   "tmpl": 14958,
+   "tmplS": 14941,
+   "tmplA": 14958,
+   "tmplC": 14958,
+   "tmplX": 14941
+  },
+  "distinctFingerprintsByMaskCitationWindowsOnly": {
+   "tmpl": 406,
+   "tmplA": 406,
+   "tmplC": 406,
+   "tmplX": 406
+  },
+  "collapseFromArticleMask": 0.0,
+  "collapseFromCodeMask": 0.0,
+  "collapseFromAllMasks": 0.0011,
+  "circulatingFormulaLocus": {
+   "ARTICLE_FORMULA": 42,
+   "CODE_FORMULA": 50,
+   "GENERAL_JUDICIAL_FORMULA": 69,
+   "NO_LOCAL_CODE": 57
+  },
+  "reading": "the article mask can only collapse fingerprints that differ by an ARABIC-SPELLED ordinal, because digits were already gone. Its collapse rate is therefore a direct measure of how much of the recurring wording is tied to a specific article rather than to a code or to nothing.",
+  "note": "locus classification uses the observed spread of a formula over codes and articles, which is independent of the masks and does not inherit their bounding rule."
+ },
+ "phase6_taxonomy": {
+  "priorityOrder": [
+   "AUTHORITY_QUOTATION",
+   "BURDEN_PRESUMPTION",
+   "COMPENSATION_HARM",
+   "CONTRACT",
+   "JURISDICTION",
+   "PROCEDURAL_OPERATION",
+   "DISPOSITION",
+   "FACT_RECITAL",
+   "DOCTRINAL_RULE",
+   "AUTHORITY_INTRODUCTION_FRAME",
+   "GENERIC_REASONING",
+   "AMBIGUOUS"
+  ],
+  "assignedBeforeMerging": {
+   "AMBIGUOUS": 73,
+   "AUTHORITY_INTRODUCTION_FRAME": 4585,
+   "AUTHORITY_QUOTATION": 4188,
+   "BURDEN_PRESUMPTION": 2243,
+   "COMPENSATION_HARM": 2646,
+   "CONTRACT": 1625,
+   "DISPOSITION": 927,
+   "DOCTRINAL_RULE": 1358,
+   "FACT_RECITAL": 436,
+   "GENERIC_REASONING": 6162,
+   "JURISDICTION": 366,
+   "PROCEDURAL_OPERATION": 604
+  },
+  "markerCoFiring": {
+   "AUTHORITY_INTRODUCTION_FRAME|BURDEN_PRESUMPTION": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|COMPENSATION_HARM": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|CONTRACT": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|DISPOSITION": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|DOCTRINAL_RULE": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|FACT_RECITAL": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|JURISDICTION": 0.0,
+   "AUTHORITY_INTRODUCTION_FRAME|PROCEDURAL_OPERATION": 0.0,
+   "BURDEN_PRESUMPTION|AUTHORITY_INTRODUCTION_FRAME": 0.5109,
+   "BURDEN_PRESUMPTION|COMPENSATION_HARM": 0.0776,
+   "BURDEN_PRESUMPTION|CONTRACT": 0.0557,
+   "BURDEN_PRESUMPTION|DISPOSITION": 0.0223,
+   "BURDEN_PRESUMPTION|DOCTRINAL_RULE": 0.2198,
+   "BURDEN_PRESUMPTION|FACT_RECITAL": 0.0143,
+   "BURDEN_PRESUMPTION|JURISDICTION": 0.0004,
+   "BURDEN_PRESUMPTION|PROCEDURAL_OPERATION": 0.0062,
+   "COMPENSATION_HARM|AUTHORITY_INTRODUCTION_FRAME": 0.3254,
+   "COMPENSATION_HARM|BURDEN_PRESUMPTION": 0.0,
+   "COMPENSATION_HARM|CONTRACT": 0.0578,
+   "COMPENSATION_HARM|DISPOSITION": 0.1073,
+   "COMPENSATION_HARM|DOCTRINAL_RULE": 0.2933,
+   "COMPENSATION_HARM|FACT_RECITAL": 0.0223,
+   "COMPENSATION_HARM|JURISDICTION": 0.0011,
+   "COMPENSATION_HARM|PROCEDURAL_OPERATION": 0.0087,
+   "CONTRACT|AUTHORITY_INTRODUCTION_FRAME": 0.3058,
+   "CONTRACT|BURDEN_PRESUMPTION": 0.0,
+   "CONTRACT|COMPENSATION_HARM": 0.0,
+   "CONTRACT|DISPOSITION": 0.0517,
+   "CONTRACT|DOCTRINAL_RULE": 0.176,
+   "CONTRACT|FACT_RECITAL": 0.0418,
+   "CONTRACT|JURISDICTION": 0.0,
+   "CONTRACT|PROCEDURAL_OPERATION": 0.0135,
+   "DISPOSITION|AUTHORITY_INTRODUCTION_FRAME": 0.1974,
+   "DISPOSITION|BURDEN_PRESUMPTION": 0.0,
+   "DISPOSITION|COMPENSATION_HARM": 0.0,
+   "DISPOSITION|CONTRACT": 0.0,
+   "DISPOSITION|DOCTRINAL_RULE": 0.1909,
+   "DISPOSITION|FACT_RECITAL": 0.069,
+   "DISPOSITION|JURISDICTION": 0.0,
+   "DISPOSITION|PROCEDURAL_OPERATION": 0.0,
+   "DOCTRINAL_RULE|AUTHORITY_INTRODUCTION_FRAME": 0.282,
+   "DOCTRINAL_RULE|BURDEN_PRESUMPTION": 0.0,
+   "DOCTRINAL_RULE|COMPENSATION_HARM": 0.0,
+   "DOCTRINAL_RULE|CONTRACT": 0.0,
+   "DOCTRINAL_RULE|DISPOSITION": 0.0,
+   "DOCTRINAL_RULE|FACT_RECITAL": 0.0,
+   "DOCTRINAL_RULE|JURISDICTION": 0.0,
+   "DOCTRINAL_RULE|PROCEDURAL_OPERATION": 0.0,
+   "FACT_RECITAL|AUTHORITY_INTRODUCTION_FRAME": 0.2271,
+   "FACT_RECITAL|BURDEN_PRESUMPTION": 0.0,
+   "FACT_RECITAL|COMPENSATION_HARM": 0.0,
+   "FACT_RECITAL|CONTRACT": 0.0,
+   "FACT_RECITAL|DISPOSITION": 0.0,
+   "FACT_RECITAL|DOCTRINAL_RULE": 0.078,
+   "FACT_RECITAL|JURISDICTION": 0.0,
+   "FACT_RECITAL|PROCEDURAL_OPERATION": 0.0,
+   "JURISDICTION|AUTHORITY_INTRODUCTION_FRAME": 0.0109,
+   "JURISDICTION|BURDEN_PRESUMPTION": 0.0,
+   "JURISDICTION|COMPENSATION_HARM": 0.0,
+   "JURISDICTION|CONTRACT": 0.0,
+   "JURISDICTION|DISPOSITION": 0.0027,
+   "JURISDICTION|DOCTRINAL_RULE": 0.0109,
+   "JURISDICTION|FACT_RECITAL": 0.0,
+   "JURISDICTION|PROCEDURAL_OPERATION": 0.0,
+   "PROCEDURAL_OPERATION|AUTHORITY_INTRODUCTION_FRAME": 0.707,
+   "PROCEDURAL_OPERATION|BURDEN_PRESUMPTION": 0.0,
+   "PROCEDURAL_OPERATION|COMPENSATION_HARM": 0.0,
+   "PROCEDURAL_OPERATION|CONTRACT": 0.0,
+   "PROCEDURAL_OPERATION|DISPOSITION": 0.0166,
+   "PROCEDURAL_OPERATION|DOCTRINAL_RULE": 0.4023,
+   "PROCEDURAL_OPERATION|FACT_RECITAL": 0.0166,
+   "PROCEDURAL_OPERATION|JURISDICTION": 0.0
+  },
+  "mergesPerformed": [],
+  "mergeRule": "two classes merge when at least 70 per cent of each one's mentions also carry the other's marker. A taxonomy that cannot separate two classes should not report them as separate.",
+  "classes": {
+   "AMBIGUOUS": 73,
+   "AUTHORITY_INTRODUCTION_FRAME": 4585,
+   "AUTHORITY_QUOTATION": 4188,
+   "BURDEN_PRESUMPTION": 2243,
+   "COMPENSATION_HARM": 2646,
+   "CONTRACT": 1625,
+   "DISPOSITION": 927,
+   "DOCTRINAL_RULE": 1358,
+   "FACT_RECITAL": 436,
+   "GENERIC_REASONING": 6162,
+   "JURISDICTION": 366,
+   "PROCEDURAL_OPERATION": 604
+  },
+  "ambiguousShare": 0.0029,
+  "genericShare": 0.2444,
+  "markerLists": {
+   "BURDEN": [
+    "الأصل براءة",
+    "البينة",
+    "القرينة",
+    "اليمين",
+    "براءة الذمة",
+    "عبء الإثبات",
+    "على المدعي"
+   ],
+   "CONTRACT": [
+    "الإخلال",
+    "الاتفاق",
+    "الالتزام",
+    "التعاقد",
+    "الشرط الجزائي",
+    "العقد",
+    "الفسخ"
+   ],
+   "DISPOSITION": [
+    "إلزام",
+    "المنطوق",
+    "انتهت الدائرة",
+    "ترى الدائرة",
+    "حكمت",
+    "رفض الدعوى",
+    "لذا تحكم"
+   ],
+   "DOCTRINAL": [
+    "الأصل",
+    "القاعدة",
+    "لا يجوز",
+    "مقتضى",
+    "من المستقر",
+    "ومن المقرر",
+    "يجب على",
+    "يشترط"
+   ],
+   "FACT_RECITAL": [
+    "أقام المدعي",
+    "أقامت المدعية",
+    "بتاريخ",
+    "بمبلغ",
+    "سند لأمر",
+    "طلبت المدعية",
+    "فاتورة",
+    "قيدت"
+   ],
+   "FRAME": [
+    "استناداً إلى",
+    "جاء في",
+    "ذكر",
+    "راجع",
+    "عملاً بـ",
+    "قال",
+    "كما في",
+    "نص على",
+    "ورد في",
+    "وقد جاء في",
+    "ومن المقرر فقهاً"
+   ],
+   "HARM": [
+    "التعويض",
+    "الضرر",
+    "الضمان",
+    "العطل",
+    "الفائت",
+    "الكسب الفائت",
+    "جبر الضرر"
+   ],
+   "JURISDICTION": [
+    "الاختصاص",
+    "الولاية",
+    "عدم اختصاص",
+    "مكانياً",
+    "نوعياً"
+   ],
+   "PROCEDURAL": [
+    "الإحالة",
+    "الاستئناف",
+    "التبليغ",
+    "الجلسة",
+    "الدفع بعدم",
+    "الشكلية",
+    "القيد",
+    "اللائحة الجوابية",
+    "المرافعة",
+    "الميعاد",
+    "شطب",
+    "نظر الدعوى"
+   ]
+  },
+  "whatThisIsNot": "keyword presence in a 180-character neighbourhood. It is not a reading of the passage and no class here is a claim about what the court decided."
+ },
+ "phase6_formulaClasses": {
+  "circulatingFormulasClassified": 218,
+  "byClass": {
+   "AUTHORITY_INTRODUCTION_FRAME": 46,
+   "AUTHORITY_QUOTATION": 43,
+   "BURDEN_PRESUMPTION": 21,
+   "COMPENSATION_HARM": 36,
+   "CONTRACT": 4,
+   "DISPOSITION": 5,
+   "DOCTRINAL_RULE": 9,
+   "FACT_RECITAL": 1,
+   "GENERIC_REASONING": 46,
+   "JURISDICTION": 2,
+   "PROCEDURAL_OPERATION": 5
+  },
+  "modalClassPurity": {
+   "median": 1.0,
+   "p10": 0.8333,
+   "shareFullyPure": 0.8303
+  },
+  "note": "a fingerprint fixes the window's long words but not its short ones, so two mentions of one formula can differ in a marker. Purity reports how often that happens rather than hiding it."
+ },
+ "phase7_quotationVersusJudicialWording": {
+  "allMentions": {
+   "INTRODUCTORY_FRAME": 8197,
+   "JUDICIAL_WORDING": 12828,
+   "QUOTATION_IN_NEIGHBOURHOOD": 1296,
+   "SOURCE_QUOTATION_OPENED": 2892
+  },
+  "mentionsInCirculatingFormulas": {
+   "INTRODUCTORY_FRAME": 2598,
+   "JUDICIAL_WORDING": 2344,
+   "QUOTATION_IN_NEIGHBOURHOOD": 292,
+   "SOURCE_QUOTATION_OPENED": 747
+  },
+  "circulatingFormulasWithMixedStatus": 40,
+  "circulatingFormulasWithMixedStatusShare": 0.1835,
+  "byFormulaClass": {
+   "AUTHORITY_INTRODUCTION_FRAME": {
+    "INTRODUCTORY_FRAME": 1481,
+    "SOURCE_QUOTATION_OPENED": 22
+   },
+   "AUTHORITY_QUOTATION": {
+    "INTRODUCTORY_FRAME": 86,
+    "JUDICIAL_WORDING": 42,
+    "QUOTATION_IN_NEIGHBOURHOOD": 245,
+    "SOURCE_QUOTATION_OPENED": 694
+   },
+   "BURDEN_PRESUMPTION": {
+    "INTRODUCTORY_FRAME": 363,
+    "JUDICIAL_WORDING": 117,
+    "QUOTATION_IN_NEIGHBOURHOOD": 8,
+    "SOURCE_QUOTATION_OPENED": 4
+   },
+   "COMPENSATION_HARM": {
+    "INTRODUCTORY_FRAME": 234,
+    "JUDICIAL_WORDING": 497,
+    "QUOTATION_IN_NEIGHBOURHOOD": 10,
+    "SOURCE_QUOTATION_OPENED": 26
+   },
+   "CONTRACT": {
+    "INTRODUCTORY_FRAME": 54,
+    "JUDICIAL_WORDING": 153,
+    "QUOTATION_IN_NEIGHBOURHOOD": 19
+   },
+   "DISPOSITION": {
+    "INTRODUCTORY_FRAME": 35,
+    "JUDICIAL_WORDING": 51,
+    "QUOTATION_IN_NEIGHBOURHOOD": 2
+   },
+   "DOCTRINAL_RULE": {
+    "INTRODUCTORY_FRAME": 25,
+    "JUDICIAL_WORDING": 84,
+    "QUOTATION_IN_NEIGHBOURHOOD": 5
+   },
+   "FACT_RECITAL": {
+    "JUDICIAL_WORDING": 36
+   },
+   "GENERIC_REASONING": {
+    "JUDICIAL_WORDING": 998,
+    "SOURCE_QUOTATION_OPENED": 1
+   },
+   "JURISDICTION": {
+    "JUDICIAL_WORDING": 338
+   },
+   "PROCEDURAL_OPERATION": {
+    "INTRODUCTORY_FRAME": 320,
+    "JUDICIAL_WORDING": 28,
+    "QUOTATION_IN_NEIGHBOURHOOD": 3
+   }
+  },
+  "limitation": "quotation is detected from quotation characters and a frame keyword, not from comparing the passage to a source text. An unmarked quotation reads as judicial wording here and there is no way to find it without the sources, which this repository does not hold."
+ },
+ "phase8_sourceFormulaCoupling": {
+  "circulatingFormulas": 218,
+  "sourcesCarryingACirculatingFormula": 20,
+  "archetypes": {
+   "MANY_FORMULAS_ONE_SOURCE": 215,
+   "ONE_TO_ONE": 3
+  },
+  "formulasPerSource": {
+   "median": 5,
+   "max": 53
+  },
+  "sourcesPerFormula": {
+   "median": 1,
+   "max": 1
+  },
+  "topSourcesByFormulaCount": [
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "formulas": 53
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "formulas": 50
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "formulas": 33
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "formulas": 14
+   },
+   {
+    "source": "B.KASHSHAF",
+    "formulas": 12
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "formulas": 11
+   },
+   {
+    "source": "B.INSAF",
+    "formulas": 7
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "formulas": 7
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "formulas": 5
+   },
+   {
+    "source": "M.DARAR_YUZAL",
+    "formulas": 5
+   }
+  ],
+  "reading": "ONE_TO_ONE is a source with one recurring passage. MANY_FORMULAS_ONE_SOURCE is a source the courts phrase several settled ways. ONE_FORMULA_MANY_SOURCES is a shell. The mix decides whether removing formulas removes wording or removes sources."
+ },
+ "phase9_classSpecificAblation": {
+  "baselineVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT",
+  "allRemovedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING",
+  "singleClassRemovalsThatReproduceTheFlip": [],
+  "arms": {
+   "NONE_REMOVED": {
+    "mentionsRemoved": 0,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_CIRCULATING_REMOVED": {
+    "mentionsRemoved": 5981,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_AUTHORITY_INTRODUCTION_FRAME_REMOVED": {
+    "mentionsRemoved": 1503,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 52,
+      "survive1q": 0.6957,
+      "survive2q": 0.7843,
+      "survive4q": 0.8654,
+      "persistentShare": 0.5962
+     },
+     "BAR_FIRST": {
+      "n": 13,
+      "survive1q": 0.3,
+      "survive2q": 0.5833,
+      "survive4q": 0.6154,
+      "persistentShare": 0.3846
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_AUTHORITY_INTRODUCTION_FRAME_REMOVED": {
+    "mentionsRemoved": 4478,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.78,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ONLY_AUTHORITY_QUOTATION_REMOVED": {
+    "mentionsRemoved": 1067,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6739,
+      "survive2q": 0.78,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5686
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_AUTHORITY_QUOTATION_REMOVED": {
+    "mentionsRemoved": 4914,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 52,
+      "survive1q": 0.6522,
+      "survive2q": 0.7843,
+      "survive4q": 0.8654,
+      "persistentShare": 0.5577
+     },
+     "BAR_FIRST": {
+      "n": 13,
+      "survive1q": 0.3,
+      "survive2q": 0.5833,
+      "survive4q": 0.6154,
+      "persistentShare": 0.3846
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ONLY_BURDEN_PRESUMPTION_REMOVED": {
+    "mentionsRemoved": 492,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_BURDEN_PRESUMPTION_REMOVED": {
+    "mentionsRemoved": 5489,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6522,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 13,
+      "survive1q": 0.3,
+      "survive2q": 0.5833,
+      "survive4q": 0.6154,
+      "persistentShare": 0.3846
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_COMPENSATION_HARM_REMOVED": {
+    "mentionsRemoved": 767,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5686
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_COMPENSATION_HARM_REMOVED": {
+    "mentionsRemoved": 5214,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5294
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_CONTRACT_REMOVED": {
+    "mentionsRemoved": 226,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_CONTRACT_REMOVED": {
+    "mentionsRemoved": 5755,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 52,
+      "survive1q": 0.6304,
+      "survive2q": 0.7647,
+      "survive4q": 0.8462,
+      "persistentShare": 0.5192
+     },
+     "BAR_FIRST": {
+      "n": 13,
+      "survive1q": 0.3,
+      "survive2q": 0.5833,
+      "survive4q": 0.6154,
+      "persistentShare": 0.3846
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_DISPOSITION_REMOVED": {
+    "mentionsRemoved": 88,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_DISPOSITION_REMOVED": {
+    "mentionsRemoved": 5893,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5294
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_DOCTRINAL_RULE_REMOVED": {
+    "mentionsRemoved": 114,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_DOCTRINAL_RULE_REMOVED": {
+    "mentionsRemoved": 5867,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_FACT_RECITAL_REMOVED": {
+    "mentionsRemoved": 36,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_FACT_RECITAL_REMOVED": {
+    "mentionsRemoved": 5945,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_GENERIC_REASONING_REMOVED": {
+    "mentionsRemoved": 999,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6957,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5686
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_GENERIC_REASONING_REMOVED": {
+    "mentionsRemoved": 4982,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6739,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5294
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_JURISDICTION_REMOVED": {
+    "mentionsRemoved": 338,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_JURISDICTION_REMOVED": {
+    "mentionsRemoved": 5643,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   },
+   "ONLY_PROCEDURAL_OPERATION_REMOVED": {
+    "mentionsRemoved": 351,
+    "eligibleUnits": 117,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.7174,
+      "survive2q": 0.8,
+      "survive4q": 0.8627,
+      "persistentShare": 0.5882
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.2727,
+      "survive2q": 0.4615,
+      "survive4q": 0.5,
+      "persistentShare": 0.2857
+     }
+    },
+    "matchedPairs": 6,
+    "matchedVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT"
+   },
+   "ALL_EXCEPT_PROCEDURAL_OPERATION_REMOVED": {
+    "mentionsRemoved": 5630,
+    "eligibleUnits": 115,
+    "survival": {
+     "COURT_FIRST": {
+      "n": 51,
+      "survive1q": 0.6304,
+      "survive2q": 0.76,
+      "survive4q": 0.8431,
+      "persistentShare": 0.5098
+     },
+     "BAR_FIRST": {
+      "n": 14,
+      "survive1q": 0.3636,
+      "survive2q": 0.6154,
+      "survive4q": 0.6429,
+      "persistentShare": 0.4286
+     }
+    },
+    "matchedPairs": 7,
+    "matchedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING"
+   }
+  },
+  "interpretationRule": "written before the numbers were read. If the flip reproduces when only PROCEDURAL_OPERATION or AUTHORITY_QUOTATION wording is removed, the frozen control removed boilerplate. If it reproduces only when DOCTRINAL_RULE wording is removed, the control removed legal propositions and the flip is an artefact of the removal criterion. If it reproduces for every class, the flip is about VOLUME rather than about wording, and the criterion is not identifying anything.",
+  "whyNotJustDeleteEverything": "deleting all repetitive wording in the name of de-boilerplating can delete a real signal. That is the risk this phase exists to measure."
+ },
+ "phase9b_volumeControl": {
+  "seed": 20260831,
+  "circulatingFormulas": 218,
+  "mentionsInThem": 5981,
+  "arms": {
+   "remove25pct": {
+    "draws": 20,
+    "meanMentionsRemoved": 1527.2,
+    "flipShare": 0.1,
+    "matchedPairs": {
+     "min": 6,
+     "max": 7,
+     "median": 6
+    }
+   },
+   "remove50pct": {
+    "draws": 20,
+    "meanMentionsRemoved": 3017.1,
+    "flipShare": 0.3,
+    "matchedPairs": {
+     "min": 6,
+     "max": 7,
+     "median": 7
+    }
+   },
+   "remove75pct": {
+    "draws": 20,
+    "meanMentionsRemoved": 4514.0,
+    "flipShare": 0.7,
+    "matchedPairs": {
+     "min": 6,
+     "max": 7,
+     "median": 7
+    }
+   },
+   "remove90pct": {
+    "draws": 20,
+    "meanMentionsRemoved": 5407.1,
+    "flipShare": 0.9,
+    "matchedPairs": {
+     "min": 6,
+     "max": 7,
+     "median": 7
+    }
+   }
+  },
+  "question": "does a random removal of the same size flip the verdict as often as a targeted one?"
+ },
+ "phase10_11_formulaFirstMoverAndSurvival": {
+  "GLOBAL_ALL_FORMULAS": {
+   "units": 14958,
+   "eligible": 1089,
+   "typology": {
+    "BAR_FIRST": 3,
+    "BAR_ONLY": 98,
+    "COURT_FIRST": 22,
+    "COURT_ONLY": 942,
+    "SAME_PERIOD": 24
+   },
+   "survival": {
+    "BAR_FIRST": {
+     "n": 3,
+     "survive1q": null,
+     "survive1q_n": 2,
+     "survive2q": null,
+     "survive2q_n": 2,
+     "survive4q": null,
+     "survive4q_n": 3,
+     "persistentShare": 0.0
+    },
+    "BAR_ONLY": {
+     "n": 98,
+     "survive1q": 0.0,
+     "survive1q_n": 79,
+     "survive2q": 0.0,
+     "survive2q_n": 80,
+     "survive4q": 0.0,
+     "survive4q_n": 98,
+     "persistentShare": 0.0
+    },
+    "COURT_FIRST": {
+     "n": 22,
+     "survive1q": 0.5333,
+     "survive1q_n": 15,
+     "survive2q": 0.6842,
+     "survive2q_n": 19,
+     "survive4q": 0.6818,
+     "survive4q_n": 22,
+     "persistentShare": 0.4091
+    },
+    "COURT_ONLY": {
+     "n": 942,
+     "survive1q": 0.6415,
+     "survive1q_n": 848,
+     "survive2q": 0.7922,
+     "survive2q_n": 871,
+     "survive4q": 0.8694,
+     "survive4q_n": 942,
+     "persistentShare": 0.241
+    },
+    "SAME_PERIOD": {
+     "n": 24,
+     "survive1q": 0.1,
+     "survive1q_n": 20,
+     "survive2q": 0.1,
+     "survive2q_n": 20,
+     "survive4q": 0.125,
+     "survive4q_n": 24,
+     "persistentShare": 0.0417
+    }
+   }
+  },
+  "GLOBAL_CIRCULATING": {
+   "units": 218,
+   "eligible": 195,
+   "typology": {
+    "BAR_ONLY": 1,
+    "COURT_FIRST": 10,
+    "COURT_ONLY": 183,
+    "SAME_PERIOD": 1
+   },
+   "survival": {
+    "BAR_ONLY": {
+     "n": 1,
+     "survive1q": null,
+     "survive1q_n": 0,
+     "survive2q": null,
+     "survive2q_n": 1,
+     "survive4q": null,
+     "survive4q_n": 1,
+     "persistentShare": 0.0
+    },
+    "COURT_FIRST": {
+     "n": 10,
+     "survive1q": 0.6667,
+     "survive1q_n": 6,
+     "survive2q": 0.8,
+     "survive2q_n": 10,
+     "survive4q": 1.0,
+     "survive4q_n": 10,
+     "persistentShare": 0.8
+    },
+    "COURT_ONLY": {
+     "n": 183,
+     "survive1q": 0.8452,
+     "survive1q_n": 168,
+     "survive2q": 0.9375,
+     "survive2q_n": 176,
+     "survive4q": 0.9891,
+     "survive4q_n": 183,
+     "persistentShare": 0.7486
+    },
+    "SAME_PERIOD": {
+     "n": 1,
+     "survive1q": null,
+     "survive1q_n": 1,
+     "survive2q": null,
+     "survive2q_n": 1,
+     "survive4q": null,
+     "survive4q_n": 1,
+     "persistentShare": 0.0
+    }
+   }
+  },
+  "crossVoiceRecurrence": {
+   "BAR_TO_COURT": {
+    "n": 1,
+    "crossed": 0,
+    "crossedShare": 0.0,
+    "within1q": 0.0,
+    "within2q": 0.0,
+    "within4q": 0.0,
+    "medianLagQuarters": null
+   },
+   "COURT_TO_BAR": {
+    "n": 193,
+    "crossed": 10,
+    "crossedShare": 0.0518,
+    "within1q": 0.0052,
+    "within2q": 0.0207,
+    "within4q": 0.0259,
+    "medianLagQuarters": 6
+   },
+   "NEVER_CROSSED": {
+    "n": 184,
+    "byType": {
+     "BAR_ONLY": 1,
+     "COURT_ONLY": 183
+    }
+   },
+   "dominantDirection": "BIDIRECTIONAL_OR_INDEPENDENT",
+   "note": "CROSS-VOICE FORMULA RECURRENCE. A formula first observed in one voice and later observed in the other is a recurrence of wording across voices. It is not copying, not influence, and not evidence that either side read the other."
+  },
+  "CODE_LOCAL_CIRCULATING": {
+   "units": 264,
+   "eligible": 148,
+   "typology": {
+    "COURT_FIRST": 2,
+    "COURT_ONLY": 145,
+    "SAME_PERIOD": 1
+   },
+   "survival": {
+    "COURT_FIRST": {
+     "n": 2,
+     "survive1q": null,
+     "survive1q_n": 1,
+     "survive2q": null,
+     "survive2q_n": 2,
+     "survive4q": null,
+     "survive4q_n": 2,
+     "persistentShare": 1.0
+    },
+    "COURT_ONLY": {
+     "n": 145,
+     "survive1q": 0.6512,
+     "survive1q_n": 129,
+     "survive2q": 0.7836,
+     "survive2q_n": 134,
+     "survive4q": 0.9172,
+     "survive4q_n": 145,
+     "persistentShare": 0.4621
+    },
+    "SAME_PERIOD": {
+     "n": 1,
+     "survive1q": null,
+     "survive1q_n": 1,
+     "survive2q": null,
+     "survive2q_n": 1,
+     "survive4q": null,
+     "survive4q_n": 1,
+     "persistentShare": 0.0
+    }
+   }
+  },
+  "ARTICLE_LOCAL_CIRCULATING": {
+   "units": 502,
+   "eligible": 195,
+   "typology": {
+    "COURT_FIRST": 3,
+    "COURT_ONLY": 191,
+    "SAME_PERIOD": 1
+   },
+   "survival": {
+    "COURT_FIRST": {
+     "n": 3,
+     "survive1q": null,
+     "survive1q_n": 2,
+     "survive2q": null,
+     "survive2q_n": 3,
+     "survive4q": null,
+     "survive4q_n": 3,
+     "persistentShare": 0.6667
+    },
+    "COURT_ONLY": {
+     "n": 191,
+     "survive1q": 0.6607,
+     "survive1q_n": 168,
+     "survive2q": 0.7647,
+     "survive2q_n": 170,
+     "survive4q": 0.8115,
+     "survive4q_n": 191,
+     "persistentShare": 0.356
+    },
+    "SAME_PERIOD": {
+     "n": 1,
+     "survive1q": null,
+     "survive1q_n": 1,
+     "survive2q": null,
+     "survive2q_n": 1,
+     "survive4q": null,
+     "survive4q_n": 1,
+     "persistentShare": 0.0
+    }
+   }
+  }
+ },
+ "phase13_15_formulaTravel": {
+  "formulas": 218,
+  "overall": {
+   "medianCities": 1,
+   "medianCodes": 1,
+   "medianArticles": 2,
+   "medianQuartersToSecondCity": 2,
+   "medianQuartersToSecondCode": 2,
+   "medianQuartersToSecondArticle": 1,
+   "reachedBothVoicesShare": 0.0505
+  },
+  "byClass": {
+   "AUTHORITY_INTRODUCTION_FRAME": {
+    "n": 46,
+    "medianCities": 1,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": 2,
+    "medianQuartersToSecondCode": 2,
+    "reachedBothVoices": 4,
+    "reachedBothVoicesShare": 0.087
+   },
+   "AUTHORITY_QUOTATION": {
+    "n": 43,
+    "medianCities": 2,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": 2,
+    "medianQuartersToSecondCode": 1,
+    "reachedBothVoices": 0,
+    "reachedBothVoicesShare": 0.0
+   },
+   "BURDEN_PRESUMPTION": {
+    "n": 21,
+    "medianCities": 2,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": 1,
+    "medianQuartersToSecondCode": 2,
+    "reachedBothVoices": 0,
+    "reachedBothVoicesShare": 0.0
+   },
+   "COMPENSATION_HARM": {
+    "n": 36,
+    "medianCities": 1,
+    "medianCodes": 0,
+    "medianArticles": 0,
+    "medianQuartersToSecondCity": 1,
+    "medianQuartersToSecondCode": 1,
+    "reachedBothVoices": 4,
+    "reachedBothVoicesShare": 0.1111
+   },
+   "CONTRACT": {
+    "n": 4,
+    "medianCities": 4,
+    "medianCodes": 2,
+    "medianArticles": 5,
+    "medianQuartersToSecondCity": 4,
+    "medianQuartersToSecondCode": 4,
+    "reachedBothVoices": 0,
+    "reachedBothVoicesShare": 0.0
+   },
+   "DISPOSITION": {
+    "n": 5,
+    "medianCities": 3,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": 2,
+    "medianQuartersToSecondCode": 2,
+    "reachedBothVoices": 1,
+    "reachedBothVoicesShare": 0.2
+   },
+   "DOCTRINAL_RULE": {
+    "n": 9,
+    "medianCities": 1,
+    "medianCodes": 1,
+    "medianArticles": 3,
+    "medianQuartersToSecondCity": 2,
+    "medianQuartersToSecondCode": 0,
+    "reachedBothVoices": 0,
+    "reachedBothVoicesShare": 0.0
+   },
+   "FACT_RECITAL": {
+    "n": 1,
+    "medianCities": 1,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": null,
+    "medianQuartersToSecondCode": null,
+    "reachedBothVoices": 0,
+    "reachedBothVoicesShare": 0.0
+   },
+   "GENERIC_REASONING": {
+    "n": 46,
+    "medianCities": 1,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": 2,
+    "medianQuartersToSecondCode": 2,
+    "reachedBothVoices": 1,
+    "reachedBothVoicesShare": 0.0217
+   },
+   "JURISDICTION": {
+    "n": 2,
+    "medianCities": 4,
+    "medianCodes": 1,
+    "medianArticles": 3,
+    "medianQuartersToSecondCity": 8,
+    "medianQuartersToSecondCode": null,
+    "reachedBothVoices": 0,
+    "reachedBothVoicesShare": 0.0
+   },
+   "PROCEDURAL_OPERATION": {
+    "n": 5,
+    "medianCities": 1,
+    "medianCodes": 1,
+    "medianArticles": 2,
+    "medianQuartersToSecondCity": 3,
+    "medianQuartersToSecondCode": 3,
+    "reachedBothVoices": 1,
+    "reachedBothVoicesShare": 0.2
+   }
+  },
+  "note": "counted on SCORABLE quarters only, so a formula whose second city falls in an immature quarter is not credited with it."
+ },
+ "phase16_18_19_variation": {
+  "sourceFormulaSetStability": {
+   "sourcesInBothHalves": 19,
+   "medianJaccardEarlyVersusLate": 0.8333,
+   "sourcesWithIdenticalFormulaSets": 7,
+   "cutQuarter": "1444Q3",
+   "reading": "a Jaccard near 1 means the courts keep phrasing a source the same way; near 0 means the recurring wording around it has changed. Neither is called evolution and no direction is attributed to anyone."
+  },
+  "innovationByQuarter": [
+   {
+    "quarter": "1443Q3",
+    "formulasPresent": 380,
+    "firstObservedHere": 374,
+    "innovationRate": 0.9842
+   },
+   {
+    "quarter": "1443Q4",
+    "formulasPresent": 827,
+    "firstObservedHere": 748,
+    "innovationRate": 0.9045
+   },
+   {
+    "quarter": "1444Q1",
+    "formulasPresent": 2442,
+    "firstObservedHere": 2226,
+    "innovationRate": 0.9115
+   },
+   {
+    "quarter": "1444Q2",
+    "formulasPresent": 3193,
+    "firstObservedHere": 2842,
+    "innovationRate": 0.8901
+   },
+   {
+    "quarter": "1444Q3",
+    "formulasPresent": 2365,
+    "firstObservedHere": 2013,
+    "innovationRate": 0.8512
+   },
+   {
+    "quarter": "1444Q4",
+    "formulasPresent": 2213,
+    "firstObservedHere": 1904,
+    "innovationRate": 0.8604
+   },
+   {
+    "quarter": "1445Q1",
+    "formulasPresent": 2240,
+    "firstObservedHere": 1882,
+    "innovationRate": 0.8402
+   },
+   {
+    "quarter": "1445Q4",
+    "formulasPresent": 716,
+    "firstObservedHere": 588,
+    "innovationRate": 0.8212
+   },
+   {
+    "quarter": "1446Q1",
+    "formulasPresent": 558,
+    "firstObservedHere": 446,
+    "innovationRate": 0.7993
+   }
+  ],
+  "meanInnovationRate": 0.8736,
+  "innovationCaveat": "the first scorable quarter is dropped because every formula is new in it by construction, and the remaining rates are still left-truncated by the start of the corpus.",
+  "articleSubstitutionInsideFormulas": {
+   "circulatingFormulasBesideMoreThanOneArticle": 126,
+   "medianQuartersToSecondArticle": 1
+  }
+ },
+ "phase17_sourceSubstitution": {
+  "circulatingShells": 218,
+  "shellsReceivingMoreThanOneSource": 0,
+  "medianQuartersToSecondSource": null,
+  "verdict": "NO_SOURCE_SUBSTITUTION_OBSERVED",
+  "note": "this phase can only report what PHASE 4 found. A shell that never carries a second source cannot substitute one, and a count of zero here is a consequence of that, not an independent finding."
+ },
+ "phase20_21_concentration": {
+  "ALL": {
+   "mentions": 25213,
+   "distinctFormulas": 14958,
+   "top10Share": 0.0652,
+   "top50Share": 0.1354,
+   "herfindahl": 0.000767,
+   "entropyBits": 12.8584,
+   "singletonShare": 0.84
+  },
+  "COURT": {
+   "mentions": 18670,
+   "distinctFormulas": 9309,
+   "top10Share": 0.088,
+   "top50Share": 0.1824,
+   "herfindahl": 0.001366,
+   "entropyBits": 11.9356,
+   "singletonShare": 0.7969
+  },
+  "BAR": {
+   "mentions": 6543,
+   "distinctFormulas": 5705,
+   "top10Share": 0.0142,
+   "top50Share": 0.0544,
+   "herfindahl": 0.000241,
+   "entropyBits": 12.3398,
+   "singletonShare": 0.9167
+  },
+  "CIRCULATING_ONLY": {
+   "mentions": 5981,
+   "distinctFormulas": 218,
+   "top10Share": 0.2747,
+   "top50Share": 0.5708,
+   "herfindahl": 0.012518,
+   "entropyBits": 7.1346,
+   "singletonShare": 0.0
+  },
+  "PROCEDURAL_GROUP": {
+   "mentions": 813,
+   "distinctFormulas": 13,
+   "top10Share": 0.9557,
+   "top50Share": 1.0,
+   "herfindahl": 0.224883,
+   "entropyBits": 2.7282,
+   "singletonShare": 0.0
+  },
+  "DOCTRINAL_GROUP": {
+   "mentions": 1599,
+   "distinctFormulas": 70,
+   "top10Share": 0.4078,
+   "top50Share": 0.858,
+   "herfindahl": 0.029197,
+   "entropyBits": 5.6881,
+   "singletonShare": 0.0
+  },
+  "courtVersusBarDiversity": {
+   "rarefactionSampleSize": 6543,
+   "courtExpectedDistinct": 3967.15,
+   "barExpectedDistinct": 5705.0,
+   "note": "expected distinct formulas in a sample of the same size, computed analytically. A raw distinct count would mostly report that the bench writes more."
+  },
+  "classGrouping": {
+   "PROCEDURAL_GROUP": [
+    "DISPOSITION",
+    "FACT_RECITAL",
+    "JURISDICTION",
+    "PROCEDURAL_OPERATION"
+   ],
+   "DOCTRINAL_GROUP": [
+    "BURDEN_PRESUMPTION",
+    "COMPENSATION_HARM",
+    "CONTRACT",
+    "DOCTRINAL_RULE"
+   ],
+   "excluded": [
+    "AMBIGUOUS",
+    "AUTHORITY_INTRODUCTION_FRAME",
+    "AUTHORITY_QUOTATION",
+    "GENERIC_REASONING"
+   ]
+  },
+  "frozen": "this table is the baseline a later era is compared against. It is computed on the whole window and is not re-derived when the window grows."
+ },
+ "phase22_threeLayerMobility": {
+  "formulaLayer": {
+   "steps": 9,
+   "rankAutocorrelation": -0.2834,
+   "topDecilePersistence": 0.1869,
+   "bottomHalfToTopDecileMobility": 0.1232,
+   "universeSize": 14958,
+   "perStep": [
+    {
+     "from": "1443Q1",
+     "to": "1443Q3",
+     "universe": 499,
+     "topDecilePersistence": 0.0612,
+     "bottomHalfToTopDecile": 0.108
+    },
+    {
+     "from": "1443Q3",
+     "to": "1443Q4",
+     "universe": 1142,
+     "topDecilePersistence": 0.2544,
+     "bottomHalfToTopDecile": 0.0771
+    },
+    {
+     "from": "1443Q4",
+     "to": "1444Q1",
+     "universe": 3091,
+     "topDecilePersistence": 0.1845,
+     "bottomHalfToTopDecile": 0.0543
+    },
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "universe": 5334,
+     "topDecilePersistence": 0.2289,
+     "bottomHalfToTopDecile": 0.1252
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "universe": 5273,
+     "topDecilePersistence": 0.2144,
+     "bottomHalfToTopDecile": 0.1403
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "universe": 4366,
+     "topDecilePersistence": 0.1858,
+     "bottomHalfToTopDecile": 0.1461
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "universe": 4235,
+     "topDecilePersistence": 0.1962,
+     "bottomHalfToTopDecile": 0.1435
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q4",
+     "universe": 2870,
+     "topDecilePersistence": 0.1498,
+     "bottomHalfToTopDecile": 0.1631
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "universe": 1214,
+     "topDecilePersistence": 0.2066,
+     "bottomHalfToTopDecile": 0.1516
+    }
+   ]
+  },
+  "formulaLayerCirculatingOnly": {
+   "steps": 9,
+   "rankAutocorrelation": 0.2194,
+   "topDecilePersistence": 0.3921,
+   "bottomHalfToTopDecileMobility": 0.0379,
+   "universeSize": 218,
+   "perStep": [
+    {
+     "from": "1443Q1",
+     "to": "1443Q3",
+     "universe": 60,
+     "topDecilePersistence": 0.0,
+     "bottomHalfToTopDecile": 0.1
+    },
+    {
+     "from": "1443Q3",
+     "to": "1443Q4",
+     "universe": 97,
+     "topDecilePersistence": 0.3333,
+     "bottomHalfToTopDecile": 0.0
+    },
+    {
+     "from": "1443Q4",
+     "to": "1444Q1",
+     "universe": 155,
+     "topDecilePersistence": 0.4,
+     "bottomHalfToTopDecile": 0.0
+    },
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "universe": 184,
+     "topDecilePersistence": 0.6667,
+     "bottomHalfToTopDecile": 0.0326
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "universe": 182,
+     "topDecilePersistence": 0.5556,
+     "bottomHalfToTopDecile": 0.0549
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "universe": 180,
+     "topDecilePersistence": 0.4444,
+     "bottomHalfToTopDecile": 0.0444
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "universe": 175,
+     "topDecilePersistence": 0.4118,
+     "bottomHalfToTopDecile": 0.0341
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q4",
+     "universe": 153,
+     "topDecilePersistence": 0.4667,
+     "bottomHalfToTopDecile": 0.0519
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "universe": 85,
+     "topDecilePersistence": 0.25,
+     "bottomHalfToTopDecile": 0.0233
+    }
+   ]
+  },
+  "articlesAndDoctrineFromFrozenEra": {
+   "articles": {
+    "rankAutocorrelation": 0.6541,
+    "topDecilePersistence": 0.7023,
+    "bottomHalfMobility": 0.0017,
+    "universeSize": "about 2,000 cited articles"
+   },
+   "doctrinalSources": {
+    "rankAutocorrelation": 0.8954,
+    "topQuartilePersistence": 0.937,
+    "bottomHalfMobility": 0.0,
+    "universeSize": 34
+   },
+   "comparabilityWarning": "the two universes differ by two orders of magnitude, so persistence is measured on a decile for articles and a quartile for sources. The numbers are NOT directly comparable and the direction is all that is read from them.",
+   "reading": "doctrinal rank autocorrelation 0.8954 against articles' 0.6541"
+  },
+  "whichToRead": "the CIRCULATING-ONLY row is the comparable one. The full formula universe is 84 per cent singletons, so its rank autocorrelation is dominated by wording that appears once and never again -- a real fact about the layer, but not a mobility statistic that can sit beside a 34-identity doctrinal universe.",
+  "comparabilityWarning": "three universes of very different size: about 2,000 articles, 34 doctrinal identities, and roughly 15,000 formulas of which 218 recur. Persistence at a decile means something different in each. Only the DIRECTION is read, and even that is read cautiously."
+ },
+ "phase24_codeFormulaDependence": {
+  "byCode": {
+   "commercial_courts_law": {
+    "mentions": 3343,
+    "inCirculatingFormula": 1096,
+    "formulaDependence": 0.3278,
+    "distinctSources": 30,
+    "distinctFormulas": 1862,
+    "sourcesLostIfCirculatingRemoved": 0
+   },
+   "evidence_law": {
+    "mentions": 2845,
+    "inCirculatingFormula": 461,
+    "formulaDependence": 0.162,
+    "distinctSources": 28,
+    "distinctFormulas": 1969,
+    "sourcesLostIfCirculatingRemoved": 0
+   },
+   "commercial_courts_implementing_regulation": {
+    "mentions": 2158,
+    "inCirculatingFormula": 877,
+    "formulaDependence": 0.4064,
+    "distinctSources": 25,
+    "distinctFormulas": 983,
+    "sourcesLostIfCirculatingRemoved": 2
+   },
+   "sharia_procedure_law": {
+    "mentions": 977,
+    "inCirculatingFormula": 93,
+    "formulaDependence": 0.0952,
+    "distinctSources": 24,
+    "distinctFormulas": 673,
+    "sourcesLostIfCirculatingRemoved": 0
+   },
+   "companies_law": {
+    "mentions": 193,
+    "inCirculatingFormula": 42,
+    "formulaDependence": 0.2176,
+    "distinctSources": 16,
+    "distinctFormulas": 106,
+    "sourcesLostIfCirculatingRemoved": 0
+   },
+   "law_practice_law": {
+    "mentions": 133,
+    "inCirculatingFormula": 3,
+    "formulaDependence": 0.0226,
+    "distinctSources": 18,
+    "distinctFormulas": 107,
+    "sourcesLostIfCirculatingRemoved": 0
+   },
+   "civil_transactions_law": {
+    "mentions": 132,
+    "inCirculatingFormula": 4,
+    "formulaDependence": 0.0303,
+    "distinctSources": 21,
+    "distinctFormulas": 120,
+    "sourcesLostIfCirculatingRemoved": 0
+   }
+  },
+  "spread": {
+   "min": 0.0226,
+   "max": 0.4064,
+   "codesReported": 7
+  },
+  "reading": "a code whose non-statutory environment is mostly recurring wording is a code where the de-boilerplating control removes most of the evidence. That is a property of the measurement, not of the code.",
+  "minimumMentions": 50
+ },
+ "phase25_companionReinterpretation": {
+  "companionPairsClassified": 114,
+  "byClass": {
+   "ARTICLE_ASSOCIATED": 6,
+   "CODE_ASSOCIATED": 44,
+   "FORMULA_ASSOCIATED_SOURCE_ENVIRONMENT": 7,
+   "GENERIC_FIELD": 42,
+   "MIXED": 5,
+   "SOURCE_QUOTATION_REUSE": 10
+  },
+  "thresholds": {
+   "minMentions": 5,
+   "formulaAssociated": "formulaShare >= 0.5 and topFormulaShare >= 0.3",
+   "quotationReuse": "quotationShare >= 0.5",
+   "articleAssociated": "top article >= 0.6 of the pair's article-bearing mentions",
+   "genericField": "formulaShare < 0.2 and distinct formulas >= 0.8 of mentions"
+  },
+  "reading": "DOCTRINE.md called these doctrinal companions of a code. Some of them are: a source the code's disputes genuinely reach for. Others are one recurring passage counted many times. The classification separates the two without asserting that either is legally significant.",
+  "top": [
+   {
+    "code": "commercial_courts_law",
+    "source": "GENERIC.fiqh.unattributed",
+    "mentions": 937,
+    "judgments": 879,
+    "formulaShare": 0.6233,
+    "quotationShare": 0.0363,
+    "topFormulaShare": 0.333,
+    "class": "FORMULA_ASSOCIATED_SOURCE_ENVIRONMENT"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "GENERIC.hadith.untraced",
+    "mentions": 751,
+    "judgments": 715,
+    "formulaShare": 0.2956,
+    "quotationShare": 0.3169,
+    "topFormulaShare": 0.0586,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "GENERIC.hadith.untraced",
+    "mentions": 590,
+    "judgments": 521,
+    "formulaShare": 0.1814,
+    "quotationShare": 0.2458,
+    "topFormulaShare": 0.0322,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "GENERIC.fiqh.unattributed",
+    "mentions": 574,
+    "judgments": 472,
+    "formulaShare": 0.3571,
+    "quotationShare": 0.0226,
+    "topFormulaShare": 0.1603,
+    "class": "MIXED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "J.IBN_TAYMIYYA",
+    "mentions": 500,
+    "judgments": 345,
+    "formulaShare": 0.562,
+    "quotationShare": 0.174,
+    "topFormulaShare": 0.186,
+    "class": "MIXED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "GENERIC.quran.citation",
+    "mentions": 469,
+    "judgments": 463,
+    "formulaShare": 0.2026,
+    "quotationShare": 0.1493,
+    "topFormulaShare": 0.081,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "GENERIC.fiqh.unattributed",
+    "mentions": 469,
+    "judgments": 408,
+    "formulaShare": 0.0959,
+    "quotationShare": 0.0469,
+    "topFormulaShare": 0.0469,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "GENERIC.principle.settled",
+    "mentions": 343,
+    "judgments": 334,
+    "formulaShare": 0.1983,
+    "quotationShare": 0.0175,
+    "topFormulaShare": 0.102,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "B.KASHSHAF",
+    "mentions": 316,
+    "judgments": 305,
+    "formulaShare": 0.6234,
+    "quotationShare": 0.1487,
+    "topFormulaShare": 0.3892,
+    "class": "FORMULA_ASSOCIATED_SOURCE_ENVIRONMENT"
+   },
+   {
+    "code": "evidence_law",
+    "source": "GENERIC.quran.citation",
+    "mentions": 301,
+    "judgments": 285,
+    "formulaShare": 0.0233,
+    "quotationShare": 0.0598,
+    "topFormulaShare": 0.0266,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "GENERIC.hadith.untraced",
+    "mentions": 290,
+    "judgments": 194,
+    "formulaShare": 0.3172,
+    "quotationShare": 0.2345,
+    "topFormulaShare": 0.1034,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "B.KASHSHAF",
+    "mentions": 281,
+    "judgments": 277,
+    "formulaShare": 0.1174,
+    "quotationShare": 0.0605,
+    "topFormulaShare": 0.0356,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "sharia_procedure_law",
+    "source": "GENERIC.hadith.untraced",
+    "mentions": 267,
+    "judgments": 232,
+    "formulaShare": 0.1573,
+    "quotationShare": 0.2135,
+    "topFormulaShare": 0.0637,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "GENERIC.custom.trade",
+    "mentions": 236,
+    "judgments": 218,
+    "formulaShare": 0.2119,
+    "quotationShare": 0.0169,
+    "topFormulaShare": 0.1949,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "sharia_procedure_law",
+    "source": "GENERIC.fiqh.unattributed",
+    "mentions": 225,
+    "judgments": 213,
+    "formulaShare": 0.0044,
+    "quotationShare": 0.0978,
+    "topFormulaShare": 0.0356,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "J.IBN_TAYMIYYA",
+    "mentions": 188,
+    "judgments": 113,
+    "formulaShare": 0.25,
+    "quotationShare": 0.3138,
+    "topFormulaShare": 0.0426,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "sharia_procedure_law",
+    "source": "GENERIC.quran.citation",
+    "mentions": 186,
+    "judgments": 183,
+    "formulaShare": 0.1613,
+    "quotationShare": 0.1667,
+    "topFormulaShare": 0.0806,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "GENERIC.custom.trade",
+    "mentions": 171,
+    "judgments": 154,
+    "formulaShare": 0.0526,
+    "quotationShare": 0.0175,
+    "topFormulaShare": 0.0351,
+    "class": "GENERIC_FIELD"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "B.KASHSHAF",
+    "mentions": 150,
+    "judgments": 149,
+    "formulaShare": 0.0933,
+    "quotationShare": 0.2467,
+    "topFormulaShare": 0.0333,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "J.IBN_TAYMIYYA",
+    "mentions": 147,
+    "judgments": 81,
+    "formulaShare": 0.5714,
+    "quotationShare": 0.1497,
+    "topFormulaShare": 0.1088,
+    "class": "MIXED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "GENERIC.principle.settled",
+    "mentions": 122,
+    "judgments": 121,
+    "formulaShare": 0.1721,
+    "quotationShare": 0.0492,
+    "topFormulaShare": 0.0738,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "GENERIC.principle.settled",
+    "mentions": 105,
+    "judgments": 104,
+    "formulaShare": 0.0857,
+    "quotationShare": 0.0095,
+    "topFormulaShare": 0.0857,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "B.INSAF",
+    "mentions": 95,
+    "judgments": 95,
+    "formulaShare": 0.2947,
+    "quotationShare": 0.3158,
+    "topFormulaShare": 0.2421,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "J.IBN_QAYYIM",
+    "mentions": 95,
+    "judgments": 95,
+    "formulaShare": 0.2947,
+    "quotationShare": 0.2105,
+    "topFormulaShare": 0.1789,
+    "class": "CODE_ASSOCIATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "B.MAJMU_FATAWA",
+    "mentions": 85,
+    "judgments": 84,
+    "formulaShare": 0.3529,
+    "quotationShare": 0.4353,
+    "topFormulaShare": 0.1529,
+    "class": "MIXED"
+   }
+  ]
+ },
+ "phase26_formulaForecastability": {
+  "units": 12114,
+  "baseRate": 0.022,
+  "features": {
+   "courtOrigin": {
+    "n": 7769,
+    "precision": 0.0336
+   },
+   "multiCity": {
+    "n": 119,
+    "precision": 0.2521
+   },
+   "multiCode": {
+    "n": 20,
+    "precision": 0.2
+   },
+   "firstQuarterJudgmentsAtLeast3": {
+    "n": 410,
+    "precision": 0.1902
+   }
+  },
+  "bestFeature": "multiCity",
+  "liftOverBaseRate": 11.4591,
+  "rollingOriginFolds": [
+   {
+    "cohort": "1443Q1",
+    "units": 125,
+    "baseRate": 0.088,
+    "courtOrigin": {
+     "n": 97,
+     "precision": 0.1134,
+     "lift": 1.2887
+    },
+    "multiCity": {
+     "n": 0,
+     "precision": null,
+     "lift": null
+    },
+    "multiCode": {
+     "n": 0,
+     "precision": null,
+     "lift": null
+    }
+   },
+   {
+    "cohort": "1443Q3",
+    "units": 374,
+    "baseRate": 0.1043,
+    "courtOrigin": {
+     "n": 291,
+     "precision": 0.134,
+     "lift": 1.2852
+    },
+    "multiCity": {
+     "n": 6,
+     "precision": 0.6667,
+     "lift": 6.3932
+    },
+    "multiCode": {
+     "n": 0,
+     "precision": null,
+     "lift": null
+    }
+   },
+   {
+    "cohort": "1443Q4",
+    "units": 748,
+    "baseRate": 0.0548,
+    "courtOrigin": {
+     "n": 631,
+     "precision": 0.065,
+     "lift": 1.1854
+    },
+    "multiCity": {
+     "n": 8,
+     "precision": 0.5,
+     "lift": 9.122
+    },
+    "multiCode": {
+     "n": 0,
+     "precision": null,
+     "lift": null
+    }
+   },
+   {
+    "cohort": "1444Q1",
+    "units": 2226,
+    "baseRate": 0.0265,
+    "courtOrigin": {
+     "n": 1729,
+     "precision": 0.0341,
+     "lift": 1.2874
+    },
+    "multiCity": {
+     "n": 44,
+     "precision": 0.2727,
+     "lift": 10.2897
+    },
+    "multiCode": {
+     "n": 7,
+     "precision": 0.1429,
+     "lift": 5.3898
+    }
+   },
+   {
+    "cohort": "1444Q2",
+    "units": 2842,
+    "baseRate": 0.0151,
+    "courtOrigin": {
+     "n": 1729,
+     "precision": 0.0249,
+     "lift": 1.6437
+    },
+    "multiCity": {
+     "n": 14,
+     "precision": 0.2143,
+     "lift": 14.1628
+    },
+    "multiCode": {
+     "n": 3,
+     "precision": 0.3333,
+     "lift": 22.031
+    }
+   },
+   {
+    "cohort": "1444Q3",
+    "units": 2013,
+    "baseRate": 0.0139,
+    "courtOrigin": {
+     "n": 1202,
+     "precision": 0.0225,
+     "lift": 1.6149
+    },
+    "multiCity": {
+     "n": 9,
+     "precision": 0.2222,
+     "lift": 15.9762
+    },
+    "multiCode": {
+     "n": 1,
+     "precision": 0.0,
+     "lift": 0.0
+    }
+   },
+   {
+    "cohort": "1444Q4",
+    "units": 1904,
+    "baseRate": 0.0063,
+    "courtOrigin": {
+     "n": 1104,
+     "precision": 0.0109,
+     "lift": 1.7246
+    },
+    "multiCity": {
+     "n": 23,
+     "precision": 0.0,
+     "lift": 0.0
+    },
+    "multiCode": {
+     "n": 5,
+     "precision": 0.2,
+     "lift": 31.7333
+    }
+   },
+   {
+    "cohort": "1445Q1",
+    "units": 1882,
+    "baseRate": 0.0175,
+    "courtOrigin": {
+     "n": 986,
+     "precision": 0.0294,
+     "lift": 1.6774
+    },
+    "multiCity": {
+     "n": 15,
+     "precision": 0.3333,
+     "lift": 19.0101
+    },
+    "multiCode": {
+     "n": 4,
+     "precision": 0.25,
+     "lift": 14.2576
+    }
+   }
+  ],
+  "foldSummary": {
+   "courtOrigin": {
+    "foldsWithSupport": 8,
+    "meanLift": 1.4634,
+    "worstLift": 1.1854,
+    "foldsAboveOne": 8,
+    "medianCohortSupport": 1104
+   },
+   "multiCity": {
+    "foldsWithSupport": 7,
+    "meanLift": 10.7077,
+    "worstLift": 0.0,
+    "foldsAboveOne": 6,
+    "medianCohortSupport": 14
+   },
+   "multiCode": {
+    "foldsWithSupport": 5,
+    "meanLift": 14.6823,
+    "worstLift": 0.0,
+    "foldsAboveOne": 4,
+    "medianCohortSupport": 3
+   }
+  },
+  "verdicts": {
+   "courtOrigin": "WEAK_BUT_CONSISTENT_ON_FOLDS",
+   "multiCity": "SIGNAL_ON_FOLDS_LOW_SUPPORT",
+   "multiCode": "SIGNAL_ON_FOLDS_LOW_SUPPORT"
+  },
+  "verdict": "SIGNAL_ON_FOLDS_LOW_SUPPORT",
+  "supportGate": "a fold whose feature fires on a handful of formulas cannot carry a lift of ten. The gate is a median cohort support of 20; multiCity does not pass it and is reported as low support rather than as skill.",
+  "featuresAreFirstQuarterOnly": true,
+  "leakageNote": "features read from the whole window -- cities or codes a formula EVER reached -- give a lift above 20 and are worthless, because reaching a second code is the outcome restated. Only the first scorable quarter is used.",
+  "temporalFolds": "NONE. Every unit is scored on the whole remaining window, so this is a single-sample ranking check and not a backtest. It cannot be reported as forecasting skill, whatever the lift."
+ },
+ "phase27_formulaDetectorEra1": {
+  "era": "FORMULA_DETECTOR_ERA_1",
+  "contract": {
+   "baseline": "rolling median of prior scorable periods",
+   "spread": "MAD x 1.4826, floored at max(1e-4, 0.05 x |baseline|)",
+   "threshold": 3.0,
+   "confirmation": 2,
+   "inheritedFrom": "PROSPECTIVE_DETECTOR_ERA_1, unchanged"
+  },
+  "metrics": {
+   "courtFormulaShare": {
+    "currentState": "NORMAL",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.32452
+   },
+   "formulaInnovationRate": {
+    "currentState": "WATCH",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.88392
+   },
+   "formulaShareOfMentions": {
+    "currentState": "NORMAL",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.23711
+   },
+   "top10FormulaConcentration": {
+    "currentState": "NORMAL",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.10123
+   }
+  },
+  "independence": "Era 1 and Era 2 of the earlier detectors are untouched: their series, alarm budgets and pending scores stand exactly as frozen. This era shares their CONTRACT and none of their history, so their measured alarm rate does not transfer to it."
+ },
+ "phase28_31_aiHypotheses": {
+  "phase28_homogenisation": {
+   "hypothesis": "H_FORMULA_HOMOGENISATION. If drafting assistance is adopted in adjudication, recurring formulas concentrate: entropy falls, top-10 share rises, innovation rate falls.",
+   "competing": [
+    {
+     "name": "H_FORMULA_VARIATION",
+     "claim": "a generative tool produces MORE distinct phrasings, not fewer: entropy rises and the innovation rate rises."
+    },
+    {
+     "name": "H_FORMULA_DISCOVERY",
+     "claim": "the formula layer is untouched and what moves is which sources appear, not how they are phrased."
+    },
+    {
+     "name": "H_NO_CHANGE",
+     "claim": "nothing moves outside the detector's alarm budget. This is the default and it wins by default."
+    }
+   ],
+   "frozenBaselines": {
+    "entropyBits": 12.8584,
+    "herfindahl": 0.000767,
+    "top10Share": 0.0652,
+    "meanInnovationRate": 0.8736
+   },
+   "scoredBy": "FORMULA_DETECTOR_ERA_1 on top10FormulaConcentration and formulaInnovationRate. A confirmed shift in the stated direction scores the hypothesis; a confirmed shift in the other direction scores the competitor; no confirmed shift scores H_NO_CHANGE.",
+   "cannotBeAttributed": "a confirmed shift would be a change in the corpus. Attributing it to AI would need an adoption event at L3_WORKFLOW_MATCH, and the registry holds none."
+  },
+  "phase29_sourceShellStandardisation": {
+   "hypothesis": "H_SHELL_STANDARDISATION. AI changes HOW authority is introduced before it changes WHICH authority is used: the introduction-frame and quotation classes move before the source distribution does.",
+   "frozenBaselines": {
+    "introductionFrameShareOfMentions": 0.3251,
+    "quotationOpenedShareOfMentions": 0.1147
+   },
+   "whyThisOrderIsPlausibleAndUntested": "PHASE 4 found that circulating formulas are source-bound, so the shell and the source are not currently independent layers in this corpus. If they are not independent, this hypothesis may not be separable from PHASE 28, and that is recorded now rather than discovered later.",
+   "scoredBy": "the same detector era, on the quotation and frame shares, once they have four scorable quarters of history."
+  },
+  "phase30_judicialResearchReinforcement": {
+   "hypothesis": "H_REINFORCEMENT. A retrieval tool trained on this record would surface the sources the record already favours, so concentration in the SOURCE layer rises rather than falls.",
+   "frozenBaselines": {
+    "doctrinalRankAutocorrelation": 0.8954,
+    "doctrinalTopQuartilePersistence": 0.937,
+    "doctrinalBottomHalfMobility": 0.0,
+    "formulaRankAutocorrelation": 0.2194
+   },
+   "note": "the doctrinal layer is already at 0.937 persistence with zero upward mobility, so this hypothesis proposes to concentrate something with very little room left. That is a reason to doubt it, and it is stated as such."
+  },
+  "phase31_advocacyFormulaImport": {
+   "hypothesis": "H_ADVOCACY_IMPORT. A bar-side drafting tool increases the share of court-voice mentions sitting in formulas first observed in the bar's voice.",
+   "frozenBaseline": {
+    "circulatingFormulasFirstObservedInBarVoice": 1,
+    "ofWhichLaterObservedInCourtVoice": 0,
+    "shareOfCourtMentionsInSuchFormulas": 0.0,
+    "medianQuartersToCourtVoice": null,
+    "reading": "a small number by construction: only 5.5 per cent of circulating formulas appear in both voices at all. This is the baseline an advocacy-side drafting tool would have to move.",
+    "notInfluence": "a formula observed in the bar's voice and later in the court's is an ordering of observations. It is not evidence that the court took it from the bar."
+   },
+   "scoredBy": "a detector armed on that share once it has four scorable quarters. It is NOT armed now: the base rate is small enough that the dispersion floor would dominate, which is exactly the failure the positive control exposed in the first detector era."
+  },
+  "standingRule": "no retrospective AI attribution. Nothing measured before an adoption event is evidence about that event, and nothing in this file is offered as such."
+ },
+ "phase32_35_contaminationAndRetrieval": {
+  "phase32_rawVersusAdjustedFrequency": {
+   "sources": 34,
+   "totalRawMentions": 25213,
+   "totalAdjusted": 19450,
+   "overallInflation": 1.296,
+   "maxSourceInflation": 2.429,
+   "table": [
+    {
+     "source": "GENERIC.hadith.untraced",
+     "rawSupport": 5009,
+     "formulaAdjustedSupport": 4088,
+     "inflation": 1.225
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "rawSupport": 4783,
+     "formulaAdjustedSupport": 3601,
+     "inflation": 1.328
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "rawSupport": 3129,
+     "formulaAdjustedSupport": 1660,
+     "inflation": 1.885
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "rawSupport": 2406,
+     "formulaAdjustedSupport": 2083,
+     "inflation": 1.155
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "rawSupport": 1516,
+     "formulaAdjustedSupport": 1397,
+     "inflation": 1.085
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "rawSupport": 1359,
+     "formulaAdjustedSupport": 1075,
+     "inflation": 1.264
+    },
+    {
+     "source": "B.KASHSHAF",
+     "rawSupport": 1344,
+     "formulaAdjustedSupport": 997,
+     "inflation": 1.348
+    },
+    {
+     "source": "B.INSAF",
+     "rawSupport": 884,
+     "formulaAdjustedSupport": 413,
+     "inflation": 2.14
+    },
+    {
+     "source": "GENERIC.maxim.named",
+     "rawSupport": 696,
+     "formulaAdjustedSupport": 635,
+     "inflation": 1.096
+    },
+    {
+     "source": "M.DARAR_YUZAL",
+     "rawSupport": 573,
+     "formulaAdjustedSupport": 476,
+     "inflation": 1.204
+    },
+    {
+     "source": "H.MUTTAFAQ",
+     "rawSupport": 497,
+     "formulaAdjustedSupport": 485,
+     "inflation": 1.025
+    },
+    {
+     "source": "B.MAJMU_FATAWA",
+     "rawSupport": 490,
+     "formulaAdjustedSupport": 336,
+     "inflation": 1.458
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "rawSupport": 393,
+     "formulaAdjustedSupport": 376,
+     "inflation": 1.045
+    },
+    {
+     "source": "J.MUHAMMAD_B_IBRAHIM",
+     "rawSupport": 386,
+     "formulaAdjustedSupport": 326,
+     "inflation": 1.184
+    },
+    {
+     "source": "B.MUGHNI",
+     "rawSupport": 363,
+     "formulaAdjustedSupport": 332,
+     "inflation": 1.093
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "rawSupport": 247,
+     "formulaAdjustedSupport": 211,
+     "inflation": 1.171
+    },
+    {
+     "source": "H.ABU_DAWUD",
+     "rawSupport": 213,
+     "formulaAdjustedSupport": 88,
+     "inflation": 2.42
+    },
+    {
+     "source": "M.ASL_UQUD",
+     "rawSupport": 205,
+     "formulaAdjustedSupport": 205,
+     "inflation": 1.0
+    },
+    {
+     "source": "M.BARAA",
+     "rawSupport": 179,
+     "formulaAdjustedSupport": 179,
+     "inflation": 1.0
+    },
+    {
+     "source": "B.MUNTAHA",
+     "rawSupport": 126,
+     "formulaAdjustedSupport": 105,
+     "inflation": 1.2
+    },
+    {
+     "source": "H.TIRMIDHI",
+     "rawSupport": 103,
+     "formulaAdjustedSupport": 80,
+     "inflation": 1.288
+    },
+    {
+     "source": "M.ADA_MUHAKKAMA",
+     "rawSupport": 95,
+     "formulaAdjustedSupport": 95,
+     "inflation": 1.0
+    },
+    {
+     "source": "H.BUKHARI",
+     "rawSupport": 49,
+     "formulaAdjustedSupport": 49,
+     "inflation": 1.0
+    },
+    {
+     "source": "H.MUSLIM",
+     "rawSupport": 38,
+     "formulaAdjustedSupport": 38,
+     "inflation": 1.0
+    },
+    {
+     "source": "B.RAWD",
+     "rawSupport": 33,
+     "formulaAdjustedSupport": 33,
+     "inflation": 1.0
+    },
+    {
+     "source": "M.YAQIN",
+     "rawSupport": 19,
+     "formulaAdjustedSupport": 19,
+     "inflation": 1.0
+    },
+    {
+     "source": "H.BAYHAQI",
+     "rawSupport": 17,
+     "formulaAdjustedSupport": 7,
+     "inflation": 2.429
+    },
+    {
+     "source": "H.AHMAD",
+     "rawSupport": 14,
+     "formulaAdjustedSupport": 14,
+     "inflation": 1.0
+    },
+    {
+     "source": "M.KHARAJ",
+     "rawSupport": 14,
+     "formulaAdjustedSupport": 14,
+     "inflation": 1.0
+    },
+    {
+     "source": "B.ZAD",
+     "rawSupport": 13,
+     "formulaAdjustedSupport": 13,
+     "inflation": 1.0
+    },
+    {
+     "source": "H.IBN_MAJA",
+     "rawSupport": 10,
+     "formulaAdjustedSupport": 10,
+     "inflation": 1.0
+    },
+    {
+     "source": "B.MATALIB",
+     "rawSupport": 7,
+     "formulaAdjustedSupport": 7,
+     "inflation": 1.0
+    },
+    {
+     "source": "H.NASAI",
+     "rawSupport": 2,
+     "formulaAdjustedSupport": 2,
+     "inflation": 1.0
+    },
+    {
+     "source": "H.DARAQUTNI",
+     "rawSupport": 1,
+     "formulaAdjustedSupport": 1,
+     "inflation": 1.0
+    }
+   ]
+  },
+  "phase33_effectiveIndependentContexts": {
+   "definition": "RAW SUPPORT is mentions. FORMULA-ADJUSTED SUPPORT counts each circulating formula once for a source and every other mention once. It is a floor on independent contexts, not an estimate of them.",
+   "note": "this does not claim the recurring passages are copies. It claims they are not independent evidence, which is a weaker and safer statement."
+  },
+  "phase34_retrievalRanking": {
+   "rankChangesAtLeastOnePlace": 21,
+   "largestDisplacements": [
+    {
+     "source": "H.BAYHAQI",
+     "places": 5
+    },
+    {
+     "source": "H.ABU_DAWUD",
+     "places": 4
+    },
+    {
+     "source": "B.INSAF",
+     "places": 3
+    },
+    {
+     "source": "H.MUTTAFAQ",
+     "places": -2
+    },
+    {
+     "source": "M.ADA_MUHAKKAMA",
+     "places": -2
+    },
+    {
+     "source": "B.MAJMU_FATAWA",
+     "places": 1
+    },
+    {
+     "source": "B.MATALIB",
+     "places": -1
+    },
+    {
+     "source": "B.MUGHNI",
+     "places": -1
+    }
+   ],
+   "top10Stability": 0.9,
+   "enteringTop10UnderDeduplication": [
+    "H.MUTTAFAQ"
+   ],
+   "leavingTop10UnderDeduplication": [
+    "B.INSAF"
+   ]
+  },
+  "phase35_temporalAgeing": {
+   "series": [
+    {
+     "quarter": "1443Q1",
+     "rawMentions": 141,
+     "formulaAdjusted": 130,
+     "ratio": 1.0846
+    },
+    {
+     "quarter": "1443Q3",
+     "rawMentions": 507,
+     "formulaAdjusted": 423,
+     "ratio": 1.1986
+    },
+    {
+     "quarter": "1443Q4",
+     "rawMentions": 1340,
+     "formulaAdjusted": 989,
+     "ratio": 1.3549
+    },
+    {
+     "quarter": "1444Q1",
+     "rawMentions": 3991,
+     "formulaAdjusted": 3030,
+     "ratio": 1.3172
+    },
+    {
+     "quarter": "1444Q2",
+     "rawMentions": 5238,
+     "formulaAdjusted": 4156,
+     "ratio": 1.2603
+    },
+    {
+     "quarter": "1444Q3",
+     "rawMentions": 3265,
+     "formulaAdjusted": 2741,
+     "ratio": 1.1912
+    },
+    {
+     "quarter": "1444Q4",
+     "rawMentions": 2924,
+     "formulaAdjusted": 2479,
+     "ratio": 1.1795
+    },
+    {
+     "quarter": "1445Q1",
+     "rawMentions": 3012,
+     "formulaAdjusted": 2497,
+     "ratio": 1.2062
+    },
+    {
+     "quarter": "1445Q4",
+     "rawMentions": 952,
+     "formulaAdjusted": 770,
+     "ratio": 1.2364
+    },
+    {
+     "quarter": "1446Q1",
+     "rawMentions": 666,
+     "formulaAdjusted": 606,
+     "ratio": 1.099
+    }
+   ],
+   "correlationRawVersusAdjusted": 0.9976,
+   "inflationTrend": {
+    "first": 1.0846,
+    "last": 1.099
+   },
+   "reading": "if the two series move together, formula de-duplication changes the LEVEL of apparent support and not its shape over time."
+  }
+ },
+ "phase36_vintages": {
+  "cohorts": [
+   {
+    "vintage": "1443Q1",
+    "formulas": 125,
+    "circulating": 13,
+    "laterMatureQuarters": 9,
+    "survivedWithin4Quarters": 0.224,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1443Q3",
+    "formulas": 374,
+    "circulating": 47,
+    "laterMatureQuarters": 8,
+    "survivedWithin4Quarters": 0.2834,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1443Q4",
+    "formulas": 748,
+    "circulating": 40,
+    "laterMatureQuarters": 7,
+    "survivedWithin4Quarters": 0.2126,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1444Q1",
+    "formulas": 2226,
+    "circulating": 56,
+    "laterMatureQuarters": 6,
+    "survivedWithin4Quarters": 0.1195,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1444Q2",
+    "formulas": 2842,
+    "circulating": 30,
+    "laterMatureQuarters": 5,
+    "survivedWithin4Quarters": 0.0742,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1444Q3",
+    "formulas": 2013,
+    "circulating": 12,
+    "laterMatureQuarters": 4,
+    "survivedWithin4Quarters": 0.0452,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1444Q4",
+    "formulas": 1904,
+    "circulating": 10,
+    "laterMatureQuarters": 3,
+    "survivedWithin4Quarters": 0.0425,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1445Q1",
+    "formulas": 1882,
+    "circulating": 7,
+    "laterMatureQuarters": 2,
+    "survivedWithin4Quarters": 0.0175,
+    "rightCensored": false
+   },
+   {
+    "vintage": "1445Q4",
+    "formulas": 588,
+    "circulating": 3,
+    "laterMatureQuarters": 1,
+    "survivedWithin4Quarters": 0.0238,
+    "rightCensored": true
+   },
+   {
+    "vintage": "1446Q1",
+    "formulas": 446,
+    "circulating": 0,
+    "laterMatureQuarters": 0,
+    "survivedWithin4Quarters": null,
+    "rightCensored": true
+   }
+  ],
+  "note": "the last cohorts are right-censored by construction and are marked rather than dropped, so nobody reads the final vintage as a collapse in formula survival."
+ },
+ "phase37_asset": {
+  "file": "formula_diffusion_asset.json",
+  "rows": 218
+ },
+ "phase38_flowMap": {
+  "layers": {
+   "ARTICLE": 901,
+   "SOURCE": 34,
+   "FORMULA": 14958,
+   "CIRCULATING_FORMULA": 218
+  },
+  "relations": {
+   "ARTICLE_SOURCE": 2195,
+   "ARTICLE_FORMULA": 502,
+   "SOURCE_FORMULA": 218
+  },
+  "observedTransitions": "counted co-occurrences within one judgment and within a +-500 character locality window. Nothing here is a path, a flow, or a route.",
+  "forbidden": [
+   "caused",
+   "influenced",
+   "copied",
+   "spread to",
+   "adopted from",
+   "propagated",
+   "diffused into"
+  ],
+  "note": "the word FLOW in this function's name describes the picture a reader draws, not a mechanism this repository measured."
+ },
+ "decisions": {
+  "phase23_causalLanguage": {
+   "rule": "no causal language anywhere in this programme",
+   "bannedFormulations": [
+    "templates caused the effect",
+    "the formula spread from X to Y",
+    "the court copied the formula",
+    "AI standardised judicial wording"
+   ],
+   "permittedFormulations": [
+    "the fingerprint recurs in N judgments",
+    "it is first observed in quarter Q in voice V",
+    "removing it changes the measured verdict"
+   ]
+  },
+  "phase39_watches": [
+   {
+    "id": "WATCH_FORMULA_SHELL",
+    "target": "the first circulating formula observed carrying a SECOND canonical source",
+    "baseline": 0,
+    "why": "PHASE 4 found zero. A single one would be the first observation of a judicial shell that is genuinely source-independent, and it changes what the de-boilerplating control removes.",
+    "probability": "none, by design"
+   },
+   {
+    "id": "WATCH_FORMULA_FAMILY_STABILITY",
+    "target": "near-exact formula grouping becoming stable across thresholds 0.6 to 0.8",
+    "baseline": 0.5462,
+    "why": "the family layer was built and set aside. More data may make it stable, and if it does, every exact-only count here is a floor.",
+    "probability": "none, by design"
+   },
+   {
+    "id": "WATCH_ONE_TO_ONE_COUPLING",
+    "target": "ONE_FORMULA_MANY_SOURCES appearing at all in the coupling archetypes",
+    "baseline": 0,
+    "why": "the same question as the first watch, counted at the coupling level rather than the shell level, so a change shows up in whichever is measured first.",
+    "probability": "none, by design"
+   }
+  ],
+  "phase40_bet": {
+   "id": "REPOSITORY_BET_003",
+   "candidate": "that the class of recurring wording, rather than the quantity removed, decides the de-boilerplated doctrinal verdict.",
+   "decision": "REFUSED",
+   "why": [
+    "no single formula class reproduces the flip",
+    "a random removal of the same size flips the verdict in 0.9 of draws",
+    "every arm's matched comparison rests on 6 or 7 pairs",
+    "the candidate is a claim about WORDING CLASS, and the measurement cannot distinguish class from quantity at this corpus size"
+   ],
+   "whatWouldEarnIt": "a matched comparison with at least 30 pairs, which needs more corpus, not more analysis.",
+   "keptBecauseRefused": "the refusal is the record. A later session that finds this attractive should read this entry before placing it."
+  },
+  "phase40_nearMiss": {
+   "id": "NEAR_MISS_FORMULA_PERSISTENCE",
+   "what": "the closest thing to a forecastable signal this programme has produced: a formula observed in more than one CITY in its first scorable quarter persists at 0.2521 against a base rate of 0.022, mean fold lift 10.7077 over 7 rolling-origin folds.",
+   "whyNotABet": "median cohort support is 14 formulas per fold and one fold is zero. Court origin is the consistent one -- 8 folds of 8 above a lift of one -- and its mean lift is 1.4634, which is too small to bet on.",
+   "status": "recorded, not issued"
+  },
+  "phase41_paper": {
+   "criteria": {
+    "A_newMeasuredObject": true,
+    "B_negativeResultThatCorrectsAPublishedClaim": false,
+    "C_methodOthersCanReuse": true,
+    "D_resultSurvivesItsOwnControls": true
+   },
+   "decision": "ASSET_ONLY_FOR_NOW",
+   "why": "the programme's strongest output is a NEGATIVE methodological result -- a de-boilerplating control that does not identify boilerplate -- resting on a matched comparison of six or seven pairs. That is worth publishing as a method note only if the pair count grows. Criterion B fails because nothing here corrects a published claim; the claim it corrects is this repository's own, and correcting yourself in your own repository is not a paper.",
+   "whatWouldChangeIt": "30 or more matched pairs, or a second corpus in which the same fingerprint construction reproduces the class taxonomy."
+  },
+  "phase42_assetGoal": {
+   "goal": "the durable artefact is not this analysis. It is formula.py plus the fingerprint asset: a reproducible, text-free unit of recurring legal wording that another corpus can recompute and join.",
+   "whatItEnables": [
+    "de-duplicating a training or retrieval corpus by legal formula rather than by document",
+    "measuring how much of an apparent doctrinal trend is one passage counted many times",
+    "a class taxonomy that needs no model and no human labelling"
+   ],
+   "whatItDoesNotEnable": [
+    "recovering any judgment text",
+    "identifying a court, a judge or a party",
+    "any claim that one judgment was written from another"
+   ]
+  },
+  "headlineVerdict": "FLIP_TRACKS_REMOVAL_VOLUME_NOT_WORDING_CLASS"
+ },
+ "standingLimitations": [
+  "28 canonical identities. Every source-level count is a floor.",
+  "the fingerprint is exact-match only; near-exact grouping was tested and is not stable at this corpus size.",
+  "quotation is detected from quotation characters, not by comparing text to a source.",
+  "the matched doctrinal comparison rests on 6 or 7 pairs in every arm, which is the binding constraint on the whole programme.",
+  "only about 3 per cent of authority windows contain a statutory citation, so the article and code masks act on a small sub-population and their collapse rates are not a general statement about legal wording."
+ ]
+}

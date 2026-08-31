@@ -87,12 +87,22 @@ everything:
 | matched verdict | court-first advantage | **BAR_FIRST_NOT_WORSE** |
 
 **The matched verdict flips.** The gap narrows from both ends and the matched
-comparison no longer favours the bench. A meaningful part of the court-first
-doctrinal advantage travels with circulating judicial wording rather than with
-the authority itself.
+comparison no longer favours the bench.
 
 That is the second control doing its job, and it is why no bet was placed on
 this result.
+
+> **CORRECTION, entered after the recurring-formula programme.** This section
+> originally continued: *"A meaningful part of the court-first doctrinal
+> advantage travels with circulating judicial wording rather than with the
+> authority itself."* That sentence is withdrawn. The numbers above are
+> unchanged and frozen in `frozen/doctrinal_diffusion_era_1.json`; what was
+> wrong was the reading. Deleting each class of recurring wording separately
+> flips nothing, and deleting a *random* set of the same size flips the verdict
+> in 0.9 of seeded draws — so the control identifies how much evidence leaves,
+> not what kind of wording leaves. Every arm rests on six or seven matched
+> pairs, which was always the binding constraint. See `FORMULA.md` sections 7
+> and 8, and T6 in `THEORY_LOG.md`.
 
 ## 5. Which direction does authority cross?
 
@@ -240,9 +250,10 @@ By different routes, and the kind matters:
   article comes first, 48 to 1, with a median latency of three quarters.
 
 The honest summary: in this corpus the bench is where authority becomes
-visible first, for statutes clearly and for doctrine partly; but a large share
-of what looks like doctrinal leadership is a formula circulating among courts,
-and neither voice systematically hands doctrine to the other.
+visible first, for statutes clearly and for doctrine partly; the doctrinal half
+of that does not survive a control that removes a quarter of the evidence, and
+the follow-up programme showed the control cannot tell which quarter; and
+neither voice systematically hands doctrine to the other.
 
 ## What this implies for the two AI pathways
 
@@ -258,11 +269,13 @@ would be doing so on the most rigid layer in the system: doctrinal rank
 autocorrelation 0.8954, top-quartile persistence 0.937, zero upward mobility.
 If AI changes what the bench reaches for, it has to displace that.
 
-And one mechanism deserves its own name, because section 4 and section 8 point
-at it together: whatever propagates court-first doctrinal advantage is
-substantially **circulating wording**, single-code and single-voice. An AI
-drafting or research tool that spreads formulations would act on that channel
-before it acted on doctrine.
+And one channel deserves its own name, because section 4 and section 8 point
+at it together: circulating wording is single-code and single-voice, and an AI
+drafting or research tool that spread formulations would act on that channel
+before it acted on doctrine. **What cannot be said** — and an earlier version
+of this paragraph said it — is that circulating wording is what propagates the
+court-first doctrinal advantage. The follow-up programme tested that directly
+and it does not hold; see the correction in section 4.
 
 ## Standing limitations
 

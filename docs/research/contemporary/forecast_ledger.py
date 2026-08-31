@@ -923,6 +923,70 @@ def doctrinal_release():
     }
 
 
+def formula_release():
+    """PHASE 40 of the recurring-formula programme: one refused bet.
+
+    A SEPARATE section. The ledger is append-only and doctrinalRelease is
+    already written, so the reinterpretation of its second refusal reason is
+    recorded here rather than edited into it.
+    """
+    fa = J("formula_analysis_results.json")
+    ab = fa["phase9_classSpecificAblation"]
+    vol = fa["phase9b_volumeControl"]["arms"]["remove90pct"]
+    fs = fa["phase26_formulaForecastability"]["foldSummary"]
+    return {
+        "what": "RECURRING LEGAL FORMULA programme. What the "
+                "de-boilerplating control in doctrinalRelease actually "
+                "removed, and one bet refused on the answer.",
+        "REPOSITORY_BET_003": {
+            "status": "REFUSED",
+            "candidateShape": "the CLASS of recurring wording, rather than "
+                              "the quantity of it removed, decides the "
+                              "de-boilerplated doctrinal first-mover verdict",
+            "evidence": {
+                "singleClassAblationsRun": len(
+                    [k for k in ab["arms"] if k.startswith("ONLY_")]),
+                "singleClassRemovalsThatReproduceTheFlip":
+                    ab["singleClassRemovalsThatReproduceTheFlip"],
+                "randomRemovalFlipShareAt90Percent": vol["flipShare"],
+                "matchedPairsRange": [vol["matchedPairs"]["min"],
+                                      vol["matchedPairs"]["max"]]},
+            "whyRefused": [
+                "NO CLASS REPRODUCES IT: every single-class ablation leaves "
+                "the matched verdict where it started.",
+                "RANDOM REMOVAL DOES: removing a random 90 per cent of "
+                f"circulating formulas flips it in {vol['flipShare']} of 20 "
+                "seeded draws, so the flip tracks how much data leaves "
+                "rather than what kind of wording leaves.",
+                "THE COMPARISON IS SIX PAIRS WIDE: every arm's matched test "
+                "rests on 6 or 7 pairs, which is the binding constraint on "
+                "the whole question.",
+                "NOT FORECASTABLE EITHER: the consistent fold signal is weak "
+                f"(court origin, mean lift {fs['courtOrigin']['meanLift']} "
+                f"over {fs['courtOrigin']['foldsWithSupport']} folds) and the "
+                "large one is thin (multi-city, median cohort support "
+                f"{fs['multiCity']['medianCohortSupport']}). Neither is a "
+                "bet."],
+            "whatWouldEarnIt": "a matched comparison with at least 30 pairs. "
+                               "That needs more corpus, not more analysis.",
+            "note": "this refusal is worth more than the bet would have "
+                    "been: it converts a suggestive control into a known "
+                    "limitation of the control."},
+        "readingOfREPOSITORY_BET_002": {
+            "unchanged": "BET_002 stays REFUSED and its entry is not edited.",
+            "whatMoved": "its second reason -- that the result does not "
+                         "survive de-boilerplating -- is weaker than it "
+                         "looked. The flip is real and reproduces under "
+                         "random removal of the same size, so it does not "
+                         "show that circulating wording carried the "
+                         "advantage. The first and fourth reasons, six "
+                         "matched pairs and no temporal folds, are untouched "
+                         "and are sufficient on their own.",
+        },
+        "nearMiss": fa["decisions"]["phase40_nearMiss"],
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -1065,6 +1129,8 @@ def main():
         old["doctrinalRelease"] = doctrinal_release()
     if "bets" not in old:
         old["bets"] = bets()
+    if "formulaRelease" not in old:
+        old["formulaRelease"] = formula_release()
     if "horizonRelease" not in old:
         old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:

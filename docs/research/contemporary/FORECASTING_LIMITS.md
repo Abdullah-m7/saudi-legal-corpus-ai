@@ -82,12 +82,37 @@ REPOSITORY_BET_002 was refused on it.
 unmatched contrast is the largest in the programme — court-first sources
 persist at 0.5882 against bar-first 0.2857 — and it fails both controls:
 matching leaves 6 pairs, and removing circulating wording flips the matched
-verdict to BAR_FIRST_NOT_WORSE_AFTER_MATCHING. A meaningful part of what looks
-like doctrinal leadership is a formula circulating among courts.
+verdict to BAR_FIRST_NOT_WORSE_AFTER_MATCHING.
+
+**CORRECTED, and the correction matters.** The sentence that stood here — that
+a meaningful part of the apparent doctrinal leadership is a formula circulating
+among courts — read more into the second control than it can carry. Eleven
+single-class ablations of the recurring wording were run and none reproduces
+the flip; a *random* removal of the same size flips it in 0.9 of seeded draws.
+The control removes a quarter of the evidence and a six-pair comparison moves
+when it does, whatever leaves. Verdict
+`FLIP_TRACKS_REMOVAL_VOLUME_NOT_WORDING_CLASS`. The flip stands as a fact; it
+is not evidence about wording. The binding limit was always the six pairs.
+*Lifted by:* thirty matched pairs, which needs more corpus.
 
 **No model beats persistence on any scalar series.** Fourteen folds, six
 series, two models. The best mean skill is +0.0275 with a worst fold of
 −1.564.
+
+**Formula persistence is a near miss, not a signal.** The largest lift this
+repository has measured on rolling folds — 10.7077 mean over 7 folds, for a
+formula observed in more than one city in its first scorable quarter — fires
+on a median of 14 formulas per fold and one fold is zero. The consistent
+feature, court origin, is positive on 8 folds of 8 and its mean lift is 1.4634.
+Neither was issued. Recorded as NEAR_MISS_FORMULA_PERSISTENCE in the ledger so
+a future session with more data knows exactly where to look. *Lifted by:* fold
+cohorts of at least 20.
+
+**And an earlier draft of that test had a lift above 20, from leakage.**
+Features read over the whole window — the cities or codes a formula EVER
+reached — are the outcome restated. Every feature in the published version is
+read from the first scorable quarter only. Noted here because the leaking
+version looked like the best result in the repository.
 
 ## Calibration refused
 

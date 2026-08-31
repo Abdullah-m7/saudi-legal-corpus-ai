@@ -1,0 +1,241 @@
+{
+ "what": "The recurring-legal-formula layer as first measured: the unit, the concentration baseline, the detector era's armed metrics, and the ablation result that reinterprets the frozen de-boilerplating control.",
+ "era": "FORMULA_ERA_1",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "8de4d3004ace6d908c27addaec18c8132ad53ec0",
+ "codeHash": {
+  "formula.py": "dcc4f0256bf6",
+  "formula_analysis.py": "564f308186c4"
+ },
+ "unit": {
+  "definition": "SHA-1, first 12 hex characters, of a normalised window of +-90 characters around the matched authority string.",
+  "contextRadius": 90,
+  "exactOrNearExact": "EXACT. A cryptographic hash has no neighbourhood; one different surviving word is a different fingerprint. No near-duplicate grouping existed before this pass.",
+  "articleNumbersPreserved": "PARTIALLY, and this was not obvious. Numeric article references die with the digits. ARABIC-SPELLED ordinals -- «المادة الثانية عشرة» -- are ordinary words and survive.",
+  "windowTokens": {
+   "median": 29,
+   "p10": 26,
+   "p90": 33,
+   "min": 16,
+   "max": 38,
+   "under5Tokens": 0.0
+  }
+ },
+ "circulatingFormulas": 218,
+ "familyGroupingVerdict": "FAMILY_GROUPING_UNSTABLE_USE_EXACT_ONLY",
+ "sourceMaskingVerdict": "RECURRENCE_IS_LARGELY_SOURCE_BOUND",
+ "multiSourceShells": 0,
+ "taxonomy": {
+  "AUTHORITY_INTRODUCTION_FRAME": 46,
+  "AUTHORITY_QUOTATION": 43,
+  "BURDEN_PRESUMPTION": 21,
+  "COMPENSATION_HARM": 36,
+  "CONTRACT": 4,
+  "DISPOSITION": 5,
+  "DOCTRINAL_RULE": 9,
+  "FACT_RECITAL": 1,
+  "GENERIC_REASONING": 46,
+  "JURISDICTION": 2,
+  "PROCEDURAL_OPERATION": 5
+ },
+ "concentration": {
+  "ALL": {
+   "mentions": 25213,
+   "distinctFormulas": 14958,
+   "top10Share": 0.0652,
+   "top50Share": 0.1354,
+   "herfindahl": 0.000767,
+   "entropyBits": 12.8584,
+   "singletonShare": 0.84
+  },
+  "COURT": {
+   "mentions": 18670,
+   "distinctFormulas": 9309,
+   "top10Share": 0.088,
+   "top50Share": 0.1824,
+   "herfindahl": 0.001366,
+   "entropyBits": 11.9356,
+   "singletonShare": 0.7969
+  },
+  "BAR": {
+   "mentions": 6543,
+   "distinctFormulas": 5705,
+   "top10Share": 0.0142,
+   "top50Share": 0.0544,
+   "herfindahl": 0.000241,
+   "entropyBits": 12.3398,
+   "singletonShare": 0.9167
+  },
+  "CIRCULATING_ONLY": {
+   "mentions": 5981,
+   "distinctFormulas": 218,
+   "top10Share": 0.2747,
+   "top50Share": 0.5708,
+   "herfindahl": 0.012518,
+   "entropyBits": 7.1346,
+   "singletonShare": 0.0
+  },
+  "PROCEDURAL_GROUP": {
+   "mentions": 813,
+   "distinctFormulas": 13,
+   "top10Share": 0.9557,
+   "top50Share": 1.0,
+   "herfindahl": 0.224883,
+   "entropyBits": 2.7282,
+   "singletonShare": 0.0
+  },
+  "DOCTRINAL_GROUP": {
+   "mentions": 1599,
+   "distinctFormulas": 70,
+   "top10Share": 0.4078,
+   "top50Share": 0.858,
+   "herfindahl": 0.029197,
+   "entropyBits": 5.6881,
+   "singletonShare": 0.0
+  },
+  "courtVersusBarDiversity": {
+   "rarefactionSampleSize": 6543,
+   "courtExpectedDistinct": 3967.15,
+   "barExpectedDistinct": 5705.0,
+   "note": "expected distinct formulas in a sample of the same size, computed analytically. A raw distinct count would mostly report that the bench writes more."
+  }
+ },
+ "mobility": {
+  "formulaCirculatingOnly": {
+   "steps": 9,
+   "rankAutocorrelation": 0.2194,
+   "topDecilePersistence": 0.3921,
+   "bottomHalfToTopDecileMobility": 0.0379,
+   "universeSize": 218,
+   "perStep": [
+    {
+     "from": "1443Q1",
+     "to": "1443Q3",
+     "universe": 60,
+     "topDecilePersistence": 0.0,
+     "bottomHalfToTopDecile": 0.1
+    },
+    {
+     "from": "1443Q3",
+     "to": "1443Q4",
+     "universe": 97,
+     "topDecilePersistence": 0.3333,
+     "bottomHalfToTopDecile": 0.0
+    },
+    {
+     "from": "1443Q4",
+     "to": "1444Q1",
+     "universe": 155,
+     "topDecilePersistence": 0.4,
+     "bottomHalfToTopDecile": 0.0
+    },
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "universe": 184,
+     "topDecilePersistence": 0.6667,
+     "bottomHalfToTopDecile": 0.0326
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "universe": 182,
+     "topDecilePersistence": 0.5556,
+     "bottomHalfToTopDecile": 0.0549
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "universe": 180,
+     "topDecilePersistence": 0.4444,
+     "bottomHalfToTopDecile": 0.0444
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "universe": 175,
+     "topDecilePersistence": 0.4118,
+     "bottomHalfToTopDecile": 0.0341
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q4",
+     "universe": 153,
+     "topDecilePersistence": 0.4667,
+     "bottomHalfToTopDecile": 0.0519
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "universe": 85,
+     "topDecilePersistence": 0.25,
+     "bottomHalfToTopDecile": 0.0233
+    }
+   ]
+  },
+  "formulaAll": {
+   "rankAutocorrelation": -0.2834,
+   "topDecilePersistence": 0.1869,
+   "bottomHalfToTopDecileMobility": 0.1232,
+   "universeSize": 14958
+  }
+ },
+ "detectorEra": {
+  "era": "FORMULA_DETECTOR_ERA_1",
+  "contract": {
+   "baseline": "rolling median of prior scorable periods",
+   "spread": "MAD x 1.4826, floored at max(1e-4, 0.05 x |baseline|)",
+   "threshold": 3.0,
+   "confirmation": 2,
+   "inheritedFrom": "PROSPECTIVE_DETECTOR_ERA_1, unchanged"
+  },
+  "metrics": {
+   "courtFormulaShare": {
+    "currentState": "NORMAL",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.32452
+   },
+   "formulaInnovationRate": {
+    "currentState": "WATCH",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.88392
+   },
+   "formulaShareOfMentions": {
+    "currentState": "NORMAL",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.23711
+   },
+   "top10FormulaConcentration": {
+    "currentState": "NORMAL",
+    "periodsEvaluated": 5,
+    "signals": [],
+    "confirmedShifts": [],
+    "alarmRatePerEvaluablePeriod": 0.0,
+    "baselineLastValue": 0.10123
+   }
+  },
+  "independence": "Era 1 and Era 2 of the earlier detectors are untouched: their series, alarm budgets and pending scores stand exactly as frozen. This era shares their CONTRACT and none of their history, so their measured alarm rate does not transfer to it."
+ },
+ "ablation": {
+  "baselineVerdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT",
+  "allRemovedVerdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING",
+  "singleClassRemovalsThatReproduceTheFlip": [],
+  "randomRemovalFlipShares": {
+   "remove25pct": 0.1,
+   "remove50pct": 0.3,
+   "remove75pct": 0.7,
+   "remove90pct": 0.9
+  },
+  "verdict": "FLIP_TRACKS_REMOVAL_VOLUME_NOT_WORDING_CLASS"
+ },
+ "whatThisDoesNotFreeze": "the frozen doctrinal diffusion era. Its numbers stand exactly as they were; what changes is what the de-boilerplating control is understood to have measured."
+}

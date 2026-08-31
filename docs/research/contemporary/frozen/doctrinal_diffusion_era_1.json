@@ -1,0 +1,458 @@
+{
+ "what": "The DOCTRINAL first-mover result, its two controls, and the wording-fingerprint description that the de-boilerplating control rests on. Frozen before the recurring-formula programme, which may change how the fingerprints are understood but may not change these numbers.",
+ "era": "DOCTRINAL_DIFFUSION_ERA_1",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "8de4d3004ace6d908c27addaec18c8132ad53ec0",
+ "unit": "(canonical non-statutory identity, code) pair, code-local",
+ "codeHash": {
+  "diffusion.py": "941858dffc39",
+  "companions.py": "af828b14930b"
+ },
+ "eligibility": {
+  "rule": [
+   "appears more than once",
+   "first quarter is not the collection edge",
+   "first quarter is mature",
+   "at least one mature follow-up quarter exists",
+   "identity is canonical, not a raw string"
+  ],
+  "levels": [
+   {
+    "level": "GLOBAL",
+    "units": 34,
+    "eligible": 14,
+    "excluded": 20,
+    "exclusionReasons": {
+     "appearsMoreThanOnce": 1,
+     "firstQuarterIsMature": 19
+    }
+   },
+   {
+    "level": "CODE",
+    "units": 237,
+    "eligible": 117,
+    "excluded": 120,
+    "exclusionReasons": {
+     "appearsMoreThanOnce": 79,
+     "firstQuarterIsMature": 50,
+     "firstQuarterNotCollectionEdge": 3,
+     "hasFollowUp": 10
+    }
+   },
+   {
+    "level": "ARTICLE",
+    "units": 2195,
+    "eligible": 676,
+    "excluded": 1519,
+    "exclusionReasons": {
+     "appearsMoreThanOnce": 1452,
+     "firstQuarterIsMature": 245,
+     "firstQuarterNotCollectionEdge": 23,
+     "hasFollowUp": 104
+    }
+   }
+  ]
+ },
+ "typologyCodeLocal": {
+  "BAR_FIRST": 14,
+  "BAR_ONLY": 10,
+  "COURT_FIRST": 51,
+  "COURT_ONLY": 30,
+  "SAME_PERIOD": 12
+ },
+ "survivalCodeLocal": {
+  "BAR_FIRST": {
+   "n": 14,
+   "survive1q": 0.2727,
+   "survive1q_n": 11,
+   "survive2q": 0.4615,
+   "survive2q_n": 13,
+   "survive4q": 0.5,
+   "survive4q_n": 14,
+   "persistentShare": 0.2857
+  },
+  "BAR_ONLY": {
+   "n": 10,
+   "survive1q": 0.0,
+   "survive1q_n": 10,
+   "survive2q": 0.0,
+   "survive2q_n": 10,
+   "survive4q": 0.0,
+   "survive4q_n": 10,
+   "persistentShare": 0.0
+  },
+  "COURT_FIRST": {
+   "n": 51,
+   "survive1q": 0.7174,
+   "survive1q_n": 46,
+   "survive2q": 0.8,
+   "survive2q_n": 50,
+   "survive4q": 0.8627,
+   "survive4q_n": 51,
+   "persistentShare": 0.5882
+  },
+  "COURT_ONLY": {
+   "n": 30,
+   "survive1q": 0.5714,
+   "survive1q_n": 28,
+   "survive2q": 0.7,
+   "survive2q_n": 30,
+   "survive4q": 0.8667,
+   "survive4q_n": 30,
+   "persistentShare": 0.1333
+  },
+  "SAME_PERIOD": {
+   "n": 12,
+   "survive1q": 0.7273,
+   "survive1q_n": 11,
+   "survive2q": 0.75,
+   "survive2q_n": 12,
+   "survive4q": 0.8333,
+   "survive4q_n": 12,
+   "persistentShare": 0.4167
+  }
+ },
+ "matched": {
+  "barFirstEligible": 14,
+  "courtFirstEligible": 51,
+  "matchedPairs": 6,
+  "survive1q": {
+   "pairs": 4,
+   "verdict": "LOW_SUPPORT"
+  },
+  "survive2q": {
+   "pairs": 6,
+   "meanBarFirstMinusCourtFirst": -0.4167,
+   "barFirstBetterPairs": 0,
+   "signTestShare": 0.0
+  },
+  "survive4q": {
+   "pairs": 6,
+   "meanBarFirstMinusCourtFirst": -0.25,
+   "barFirstBetterPairs": 0,
+   "signTestShare": 0.0
+  },
+  "verdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT",
+  "supportWarning": "matching on code, source type and support band leaves very few pairs. The unmatched contrast is large; the matched contrast rests on 6 pairs and is reported as such."
+ },
+ "deBoilerplated": {
+  "circulatingFingerprintsRemoved": 218,
+  "typology": {
+   "BAR_FIRST": 14,
+   "BAR_ONLY": 10,
+   "COURT_FIRST": 51,
+   "COURT_ONLY": 29,
+   "SAME_PERIOD": 11
+  },
+  "survival": {
+   "BAR_FIRST": {
+    "n": 14,
+    "survive1q": 0.3636,
+    "survive1q_n": 11,
+    "survive2q": 0.6154,
+    "survive2q_n": 13,
+    "survive4q": 0.6429,
+    "survive4q_n": 14,
+    "persistentShare": 0.4286
+   },
+   "BAR_ONLY": {
+    "n": 10,
+    "survive1q": 0.0,
+    "survive1q_n": 10,
+    "survive2q": 0.0,
+    "survive2q_n": 10,
+    "survive4q": 0.0,
+    "survive4q_n": 10,
+    "persistentShare": 0.0
+   },
+   "COURT_FIRST": {
+    "n": 51,
+    "survive1q": 0.6304,
+    "survive1q_n": 46,
+    "survive2q": 0.76,
+    "survive2q_n": 50,
+    "survive4q": 0.8431,
+    "survive4q_n": 51,
+    "persistentShare": 0.5098
+   },
+   "COURT_ONLY": {
+    "n": 29,
+    "survive1q": 0.5926,
+    "survive1q_n": 27,
+    "survive2q": 0.7241,
+    "survive2q_n": 29,
+    "survive4q": 0.8621,
+    "survive4q_n": 29,
+    "persistentShare": 0.1379
+   },
+   "SAME_PERIOD": {
+    "n": 11,
+    "survive1q": 0.7,
+    "survive1q_n": 10,
+    "survive2q": 0.7273,
+    "survive2q_n": 11,
+    "survive4q": 0.8182,
+    "survive4q_n": 11,
+    "persistentShare": 0.3636
+   }
+  },
+  "matched": {
+   "barFirstEligible": 14,
+   "courtFirstEligible": 51,
+   "matchedPairs": 7,
+   "survive1q": {
+    "pairs": 4,
+    "verdict": "LOW_SUPPORT"
+   },
+   "survive2q": {
+    "pairs": 7,
+    "meanBarFirstMinusCourtFirst": 0.0714,
+    "barFirstBetterPairs": 1,
+    "signTestShare": 0.1429
+   },
+   "survive4q": {
+    "pairs": 7,
+    "meanBarFirstMinusCourtFirst": -0.0714,
+    "barFirstBetterPairs": 1,
+    "signTestShare": 0.1429
+   },
+   "verdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING",
+   "supportWarning": "matching on code, source type and support band leaves very few pairs. The unmatched contrast is large; the matched contrast rests on 7 pairs and is reported as such."
+  }
+ },
+ "crossing": {
+  "BAR_TO_COURT": {
+   "n": 24,
+   "crossed": 14,
+   "crossedShare": 0.5833,
+   "within1q": 0.1667,
+   "within2q": 0.3333,
+   "within4q": 0.375,
+   "medianLagQuarters": 2
+  },
+  "COURT_TO_BAR": {
+   "n": 81,
+   "crossed": 51,
+   "crossedShare": 0.6296,
+   "within1q": 0.1852,
+   "within2q": 0.3086,
+   "within4q": 0.5185,
+   "medianLagQuarters": 3
+  },
+  "NEVER_CROSSED": {
+   "n": 40,
+   "byType": {
+    "BAR_ONLY": 10,
+    "COURT_ONLY": 30
+   }
+  },
+  "dominantDirection": "BIDIRECTIONAL_OR_INDEPENDENT",
+  "note": "CROSS-VOICE LOCAL ADOPTION. A source crossing from one voice to the other beside the same code is a measurable transition and is not evidence that either side influenced the other."
+ },
+ "articleSourceOrder": {
+  "articlesConsidered": 764,
+  "byState": {
+   "ARTICLE_FIRST": 48,
+   "NO_COMPANION": 697,
+   "SAME_PERIOD": 18,
+   "SOURCE_FIRST": 1
+  },
+  "companionFormationLatency": {
+   "n": 48,
+   "median": 3,
+   "p25": 2,
+   "p75": 4,
+   "distribution": {
+    "1": 11,
+    "2": 10,
+    "3": 8,
+    "4": 8,
+    "5": 6,
+    "6": 2,
+    "7": 1,
+    "8": 2
+   }
+  },
+  "note": "the previous session called this unmeasurable for want of depth. With the 1442-1443 backfill it is measurable, thinly. NO_COMPANION is the majority state and that is the finding: most articles never acquire a locally attached non-statutory authority at all."
+ },
+ "wordingFingerprints": {
+  "circulatingFingerprints": 218,
+  "minJudgments": 10,
+  "medianCities": 2,
+  "medianCodes": 1,
+  "medianQuartersPresent": 6,
+  "appearInBothVoices": 12,
+  "appearInBothVoicesShare": 0.055,
+  "top": [
+   {
+    "fingerprint": "951673bc667b",
+    "judgments": 312,
+    "firstQuarter": "1442Q2",
+    "lastQuarter": "1446Q2",
+    "quartersSpanned": 17,
+    "quartersPresent": 14,
+    "cities": 4,
+    "codes": 1,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "eda2a8c5600b",
+    "judgments": 264,
+    "firstQuarter": "1442Q4",
+    "lastQuarter": "1446Q1",
+    "quartersSpanned": 14,
+    "quartersPresent": 13,
+    "cities": 5,
+    "codes": 5,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "46f3af9c443d",
+    "judgments": 191,
+    "firstQuarter": "1442Q2",
+    "lastQuarter": "1445Q2",
+    "quartersSpanned": 13,
+    "quartersPresent": 9,
+    "cities": 2,
+    "codes": 1,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "a3c6b24bfd71",
+    "judgments": 153,
+    "firstQuarter": "1443Q3",
+    "lastQuarter": "1445Q3",
+    "quartersSpanned": 9,
+    "quartersPresent": 9,
+    "cities": 3,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "e45c5c14945e",
+    "judgments": 151,
+    "firstQuarter": "1442Q4",
+    "lastQuarter": "1445Q4",
+    "quartersSpanned": 13,
+    "quartersPresent": 12,
+    "cities": 1,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "2c455de1fc47",
+    "judgments": 136,
+    "firstQuarter": "1442Q4",
+    "lastQuarter": "1445Q4",
+    "quartersSpanned": 13,
+    "quartersPresent": 12,
+    "cities": 1,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "06fed89965cf",
+    "judgments": 123,
+    "firstQuarter": "1443Q4",
+    "lastQuarter": "1445Q4",
+    "quartersSpanned": 9,
+    "quartersPresent": 8,
+    "cities": 2,
+    "codes": 1,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "3151073925b6",
+    "judgments": 109,
+    "firstQuarter": "1443Q4",
+    "lastQuarter": "1445Q2",
+    "quartersSpanned": 7,
+    "quartersPresent": 7,
+    "cities": 2,
+    "codes": 2,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "235a5f30d695",
+    "judgments": 104,
+    "firstQuarter": "1443Q2",
+    "lastQuarter": "1446Q2",
+    "quartersSpanned": 13,
+    "quartersPresent": 13,
+    "cities": 4,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "0bc761bf4685",
+    "judgments": 97,
+    "firstQuarter": "1443Q1",
+    "lastQuarter": "1445Q2",
+    "quartersSpanned": 10,
+    "quartersPresent": 10,
+    "cities": 4,
+    "codes": 4,
+    "voices": [
+     "court"
+    ]
+   }
+  ],
+  "question": "is some authority diffusion actually the diffusion of judicial wording? A formula present in both voices and many cities is a circulating form of words, whatever authority it carries."
+ },
+ "sourceMobility": {
+  "steps": 9,
+  "rankAutocorrelation": 0.8954,
+  "topQuartilePersistence": 0.937,
+  "bottomHalfToTopQuartileMobility": 0.0,
+  "universeSize": 34,
+  "note": "the doctrinal universe has 28 identities against roughly 2,000 articles, so a decile is meaningless and a quartile is used. The two mobility figures are NOT directly comparable for that reason, and the comparison below says so."
+ },
+ "statuteVsDoctrine": {
+  "articles": {
+   "rankAutocorrelation": 0.6541,
+   "topDecilePersistence": 0.7023,
+   "bottomHalfMobility": 0.0017,
+   "universeSize": "about 2,000 cited articles"
+  },
+  "doctrinalSources": {
+   "rankAutocorrelation": 0.8954,
+   "topQuartilePersistence": 0.937,
+   "bottomHalfMobility": 0.0,
+   "universeSize": 34
+  },
+  "comparabilityWarning": "the two universes differ by two orders of magnitude, so persistence is measured on a decile for articles and a quartile for sources. The numbers are NOT directly comparable and the direction is all that is read from them.",
+  "reading": "doctrinal rank autocorrelation 0.8954 against articles' 0.6541"
+ },
+ "entrantForecastability": {
+  "n": 114,
+  "baseRate": 0.3772,
+  "features": {
+   "firstVoices": 0.3721,
+   "courtOrigin": 0.4419
+  },
+  "bestFeature": "courtOrigin",
+  "liftOverBaseRate": 1.17,
+  "verdict": "NO_USABLE_SIGNAL_USE_DETECT_OR_WATCH",
+  "temporalFolds": "NOT RUN: with 114 eligible units across the whole window there are not enough per-quarter cohorts to build rolling folds. This is a single-sample ranking check, not a backtest, and it may not support a forecast."
+ },
+ "theOpenQuestion": "The de-boilerplating control removed every mention whose +-90 character wording fingerprint recurs in ten or more judgments. It is NOT established that those fingerprints are boilerplate. A recurring form of words may be the observable carrier of a stable legal proposition, in which case the control removed signal rather than noise. The flip is a fact; its interpretation is not.",
+ "whatWouldMoveThis": "New data, or a demonstration that the fingerprint unit was mis-specified. Neither is a reason to overwrite this file: a later era gets its own."
+}

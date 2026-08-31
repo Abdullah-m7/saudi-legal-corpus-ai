@@ -281,3 +281,49 @@ cited by a court. The recommendation is withdrawn; the forecast that measured
 it is reframed rather than voided, because its definition was valid before any
 outcome and voiding it for an inconvenient reading is precisely what the
 ledger forbids.
+
+---
+
+## T6 · The de-boilerplating control
+
+**HYPOTHESIS.** Removing every mention whose ±90-character wording fingerprint
+recurs in ten or more judgments removes *boilerplate*, so the doctrinal
+first-mover result computed without it is the honest one. The previous session
+reported the flip to `BAR_FIRST_NOT_WORSE_AFTER_MATCHING` on exactly that
+reading, and wrote in `DIFFUSION.md` that "a meaningful part of what looks like
+doctrinal leadership is a formula circulating among courts."
+
+**TEST.** Build the wording layer properly and take the control apart. A
+mechanical class taxonomy over the 218 circulating formulas — keyword markers,
+fixed priority, a merge rule for classes the markers cannot separate, no model
+and no labels. Then delete **one class at a time** and re-run the first-mover
+result. Then, because none of them flipped it, delete a **random** set of the
+same size, twenty seeded draws at four levels.
+
+**WHAT FAILED.** Not one of eleven single-class ablations reproduces the flip —
+not procedural wording, not quotation formulas, not doctrinal-rule wording.
+Random removal of 90 per cent of circulating formulas flips it in **0.9** of
+draws; at 75 per cent, 0.7; at 50 per cent, 0.3. Every arm's matched comparison
+rests on **6 or 7 pairs**. The control was removing a quantity of evidence, not
+a kind of wording, and a six-pair comparison moves when a quarter of the
+evidence leaves regardless of what leaves.
+
+`FLIP_TRACKS_REMOVAL_VOLUME_NOT_WORDING_CLASS`.
+
+**WHAT SURVIVED.** The frozen numbers, untouched — the flip is real and
+reproducible. What is withdrawn is the *interpretation* placed on it. The
+sentence quoted above is corrected in `DIFFUSION.md` and `FORMULA.md`: the
+de-boilerplating control does not show that circulating wording carried the
+court-first doctrinal advantage, because it does not distinguish wording from
+volume at this corpus size. REPOSITORY_BET_002 stays refused on its other two
+reasons, six matched pairs and no temporal folds, which were always the binding
+ones.
+
+**AND ONE THING THE PROGRAMME EXPECTED AND DID NOT FIND.** The whole
+methodological centre of the follow-up was the possibility that a *judicial
+shell* recurs and receives different authorities — that the wording layer and
+the source layer are separable. Masking the matched authority string before
+hashing takes the corpus from 14958 fingerprints to 14941, and **zero** of the
+218 circulating formulas carry a second canonical source. In this corpus there
+is no such thing as a source-independent recurring formula. That is why answer
+E of the original list — the citation shell — is not in the taxonomy's results.

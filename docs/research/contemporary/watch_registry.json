@@ -76,6 +76,39 @@
    ],
    "status": "OPEN",
    "priority": 1
+  },
+  {
+   "trigger_id": "FORMULA_SHELL_RECEIVES_SECOND_SOURCE",
+   "condition": "a recurring legal formula (a wording fingerprint in ten or more judgments) is observed carrying a SECOND canonical non-statutory source, after source masking",
+   "checkBy": "re-run formula_analysis.py and read phase4_sourceMasking.shellsWithMoreThanOneSource; the frozen baseline is 0",
+   "action": [
+    "re-read PHASE 4: a source-independent judicial shell would be a different object from what is measured now",
+    "re-run the class ablation, because the removal criterion would then be removing shells as well as passages",
+    "record it as an observation of wording, never as evidence that any court took a formula from anywhere"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "FORMULA_FAMILY_GROUPING_BECOMES_STABLE",
+   "condition": "near-exact formula grouping holds across minhash Jaccard thresholds 0.6 to 0.8, at or above 0.6 pair survival",
+   "checkBy": "phase3_exactVersusFamily.stability.shareSurvivingAt80 in formula_analysis_results.json; the frozen baseline is 0.5462",
+   "action": [
+    "report every exact-formula count in the frozen baseline as a floor",
+    "re-run PHASES 4 to 9 at the family level and compare, without replacing the exact-level numbers"
+   ],
+   "status": "OPEN",
+   "priority": 3
+  },
+  {
+   "trigger_id": "ONE_FORMULA_MANY_SOURCES_APPEARS",
+   "condition": "the coupling archetypes contain any ONE_FORMULA_MANY_SOURCES unit",
+   "checkBy": "phase8_sourceFormulaCoupling.archetypes; the frozen baseline is 0 against 215 MANY_FORMULAS_ONE_SOURCE",
+   "action": [
+    "treat it as the coupling-level form of FORMULA_SHELL_RECEIVES_SECOND_SOURCE and follow that trigger"
+   ],
+   "status": "OPEN",
+   "priority": 3
   }
  ]
 }

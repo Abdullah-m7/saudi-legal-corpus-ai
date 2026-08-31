@@ -43,6 +43,7 @@ def facts():
     hz, dt = J("horizon_results.json"), J("detectors_results.json")
     ld, lsr = J("leading_results.json"), J("legal_signal_registry.json")
     dfz = J("diffusion_results.json")
+    fmz = J("formula_analysis_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -839,8 +840,187 @@ def facts():
          f"{dfz['phase25_entrantForecastability']['baseRate']}", DF),
         ("entrant lift doctrinal",
          f"{dfz['phase25_entrantForecastability']['liftOverBaseRate']}", DF),
-    ]
+    ] + formula_facts(fmz)
     return out
+
+
+def formula_facts(f):
+    """FORMULA.md. The recurring-legal-formula programme."""
+    FM = ["FORMULA.md"]
+    u, fam = f["phase2_unitSpecification"], f["phase3_exactVersusFamily"]
+    p4, p5 = f["phase4_sourceMasking"], f["phase5_articleAndCodeMasking"]
+    tax, fcl = f["phase6_taxonomy"], f["phase6_formulaClasses"]
+    p7, p8 = f["phase7_quotationVersusJudicialWording"], \
+        f["phase8_sourceFormulaCoupling"]
+    ab, vol = f["phase9_classSpecificAblation"], f["phase9b_volumeControl"]
+    fm = f["phase10_11_formulaFirstMoverAndSurvival"]
+    tr, va = f["phase13_15_formulaTravel"], f["phase16_18_19_variation"]
+    co, mo = f["phase20_21_concentration"], f["phase22_threeLayerMobility"]
+    dep, cmp_ = f["phase24_codeFormulaDependence"], \
+        f["phase25_companionReinterpretation"]
+    fo, det = f["phase26_formulaForecastability"], \
+        f["phase27_formulaDetectorEra1"]
+    cn = f["phase32_35_contaminationAndRetrieval"]
+    imp = f["phase28_31_aiHypotheses"]["phase31_advocacyFormulaImport"][
+        "frozenBaseline"]
+    cx = fm["crossVoiceRecurrence"]
+    return [
+        ("formula window median tokens", f"{u['windowTokens']['median']}", FM),
+        ("formula window p10", f"{u['windowTokens']['p10']}", FM),
+        ("formula window p90", f"{u['windowTokens']['p90']}", FM),
+        ("citation window share",
+         f"{u['citationsInWindow']['share']}", FM),
+        ("circulating formulas", f"{fam['exactFormulas']}", FM),
+        ("mentions in circulating formulas",
+         f"{fam['mentionsInCirculatingFormulas']}", FM),
+        ("family pairs at 0.7", f"{fam['stability']['pairsAt70']}", FM),
+        ("family survival at 0.8",
+         f"{fam['stability']['shareSurvivingAt80']}", FM),
+        ("distinct formulas source preserving",
+         f"{p4['distinctFormulas']['sourcePreserving']}", FM),
+        ("distinct formulas source masked",
+         f"{p4['distinctFormulas']['sourceMasked']}", FM),
+        ("collapse from all masks", f"{p5['collapseFromAllMasks']}", FM),
+        ("general judicial formula",
+         f"{p5['circulatingFormulaLocus']['GENERAL_JUDICIAL_FORMULA']}", FM),
+        ("no local code", f"{p5['circulatingFormulaLocus']['NO_LOCAL_CODE']}",
+         FM),
+        ("code formula", f"{p5['circulatingFormulaLocus']['CODE_FORMULA']}",
+         FM),
+        ("article formula",
+         f"{p5['circulatingFormulaLocus']['ARTICLE_FORMULA']}", FM),
+        ("formula ambiguous share", f"{tax['ambiguousShare']}", FM),
+        ("formula generic share", f"{tax['genericShare']}", FM),
+        ("formula class frame",
+         f"{fcl['byClass']['AUTHORITY_INTRODUCTION_FRAME']}", FM),
+        ("formula class quotation",
+         f"{fcl['byClass']['AUTHORITY_QUOTATION']}", FM),
+        ("formula class harm", f"{fcl['byClass']['COMPENSATION_HARM']}", FM),
+        ("formula class burden", f"{fcl['byClass']['BURDEN_PRESUMPTION']}", FM),
+        ("formula class doctrinal", f"{fcl['byClass']['DOCTRINAL_RULE']}", FM),
+        ("formula class procedural",
+         f"{fcl['byClass']['PROCEDURAL_OPERATION']}", FM),
+        ("modal class purity", f"{fcl['modalClassPurity']['shareFullyPure']}",
+         FM),
+        ("circulating frame mentions",
+         f"{p7['mentionsInCirculatingFormulas']['INTRODUCTORY_FRAME']}", FM),
+        ("circulating judicial wording mentions",
+         f"{p7['mentionsInCirculatingFormulas']['JUDICIAL_WORDING']}", FM),
+        ("circulating quotation opened",
+         f"{p7['mentionsInCirculatingFormulas']['SOURCE_QUOTATION_OPENED']}",
+         FM),
+        ("mixed quotation status share",
+         f"{p7['circulatingFormulasWithMixedStatusShare']}", FM),
+        ("many formulas one source",
+         f"{p8['archetypes']['MANY_FORMULAS_ONE_SOURCE']}", FM),
+        ("one to one coupling", f"{p8['archetypes']['ONE_TO_ONE']}", FM),
+        ("ibn taymiyya formulas",
+         f"{p8['topSourcesByFormulaCount'][0]['formulas']}", FM),
+        ("ablation frame removed",
+         f"{ab['arms']['ONLY_AUTHORITY_INTRODUCTION_FRAME_REMOVED']['mentionsRemoved']}",
+         FM),
+        ("ablation quotation removed",
+         f"{ab['arms']['ONLY_AUTHORITY_QUOTATION_REMOVED']['mentionsRemoved']}",
+         FM),
+        ("ablation generic removed",
+         f"{ab['arms']['ONLY_GENERIC_REASONING_REMOVED']['mentionsRemoved']}",
+         FM),
+        ("ablation harm removed",
+         f"{ab['arms']['ONLY_COMPENSATION_HARM_REMOVED']['mentionsRemoved']}",
+         FM),
+        ("ablation burden removed",
+         f"{ab['arms']['ONLY_BURDEN_PRESUMPTION_REMOVED']['mentionsRemoved']}",
+         FM),
+        ("ablation procedural removed",
+         f"{ab['arms']['ONLY_PROCEDURAL_OPERATION_REMOVED']['mentionsRemoved']}",
+         FM),
+        ("ablation doctrinal removed",
+         f"{ab['arms']['ONLY_DOCTRINAL_RULE_REMOVED']['mentionsRemoved']}", FM),
+        ("volume flip 25", f"{vol['arms']['remove25pct']['flipShare']}", FM),
+        ("volume flip 50", f"{vol['arms']['remove50pct']['flipShare']}", FM),
+        ("volume flip 75", f"{vol['arms']['remove75pct']['flipShare']}", FM),
+        ("volume flip 90", f"{vol['arms']['remove90pct']['flipShare']}", FM),
+        ("eligible circulating formulas",
+         f"{fm['GLOBAL_CIRCULATING']['eligible']}", FM),
+        ("court to bar formula crossing", f"{cx['COURT_TO_BAR']['crossedShare']}",
+         FM),
+        ("court to bar formula lag",
+         f"{cx['COURT_TO_BAR']['medianLagQuarters']}", FM),
+        ("formula second city quarters",
+         f"{tr['overall']['medianQuartersToSecondCity']}", FM),
+        ("formula both voices share",
+         f"{tr['overall']['reachedBothVoicesShare']}", FM),
+        ("source formula jaccard",
+         f"{va['sourceFormulaSetStability']['medianJaccardEarlyVersusLate']}",
+         FM),
+        ("sources in both halves",
+         f"{va['sourceFormulaSetStability']['sourcesInBothHalves']}", FM),
+        ("formula entropy all", f"{co['ALL']['entropyBits']}", FM),
+        ("formula top10 all", f"{co['ALL']['top10Share']}", FM),
+        ("formula top10 circulating",
+         f"{co['CIRCULATING_ONLY']['top10Share']}", FM),
+        ("formula top10 procedural",
+         f"{co['PROCEDURAL_GROUP']['top10Share']}", FM),
+        ("procedural distinct formulas",
+         f"{co['PROCEDURAL_GROUP']['distinctFormulas']}", FM),
+        ("court expected distinct",
+         f"{co['courtVersusBarDiversity']['courtExpectedDistinct']}", FM),
+        ("bar expected distinct",
+         f"{co['courtVersusBarDiversity']['barExpectedDistinct']}", FM),
+        ("formula rank autocorrelation",
+         f"{mo['formulaLayerCirculatingOnly']['rankAutocorrelation']}", FM),
+        ("formula top decile persistence",
+         f"{mo['formulaLayerCirculatingOnly']['topDecilePersistence']}", FM),
+        ("formula bottom half mobility",
+         f"{mo['formulaLayerCirculatingOnly']['bottomHalfToTopDecileMobility']}",
+         FM),
+        ("formula dependence min", f"{dep['spread']['min']}", FM),
+        ("formula dependence max", f"{dep['spread']['max']}", FM),
+        ("companion pairs classified", f"{cmp_['companionPairsClassified']}",
+         FM),
+        ("companion code associated", f"{cmp_['byClass']['CODE_ASSOCIATED']}",
+         FM),
+        ("companion generic field", f"{cmp_['byClass']['GENERIC_FIELD']}", FM),
+        ("companion quotation reuse",
+         f"{cmp_['byClass']['SOURCE_QUOTATION_REUSE']}", FM),
+        ("companion formula associated",
+         f"{cmp_['byClass']['FORMULA_ASSOCIATED_SOURCE_ENVIRONMENT']}", FM),
+        ("formula base rate", f"{fo['baseRate']}", FM),
+        ("formula units", f"{fo['units']}", FM),
+        ("multi city precision", f"{fo['features']['multiCity']['precision']}",
+         FM),
+        ("court origin fold lift",
+         f"{fo['foldSummary']['courtOrigin']['meanLift']}", FM),
+        ("multi city fold lift",
+         f"{fo['foldSummary']['multiCity']['meanLift']}", FM),
+        ("multi code fold lift",
+         f"{fo['foldSummary']['multiCode']['meanLift']}", FM),
+        ("multi city cohort support",
+         f"{fo['foldSummary']['multiCity']['medianCohortSupport']}", FM),
+        ("formula share baseline",
+         f"{det['metrics']['formulaShareOfMentions']['baselineLastValue']}",
+         FM),
+        ("court formula share baseline",
+         f"{det['metrics']['courtFormulaShare']['baselineLastValue']}", FM),
+        ("formula concentration baseline",
+         f"{det['metrics']['top10FormulaConcentration']['baselineLastValue']}",
+         FM),
+        ("formula innovation baseline",
+         f"{det['metrics']['formulaInnovationRate']['baselineLastValue']}", FM),
+        ("bar origin circulating formulas",
+         f"{imp['circulatingFormulasFirstObservedInBarVoice']}", FM),
+        ("overall inflation",
+         f"{cn['phase32_rawVersusAdjustedFrequency']['overallInflation']}", FM),
+        ("max source inflation",
+         f"{cn['phase32_rawVersusAdjustedFrequency']['maxSourceInflation']}",
+         FM),
+        ("rank changes under dedup",
+         f"{cn['phase34_retrievalRanking']['rankChangesAtLeastOnePlace']}", FM),
+        ("top10 stability under dedup",
+         f"{cn['phase34_retrievalRanking']['top10Stability']}", FM),
+        ("raw versus adjusted correlation",
+         f"{cn['phase35_temporalAgeing']['correlationRawVersusAdjusted']}", FM),
+    ]
 
 
 def main():
