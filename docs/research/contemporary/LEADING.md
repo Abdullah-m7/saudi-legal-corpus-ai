@@ -280,9 +280,17 @@ The chain they are built to trace, end to end:
 > external event → early legal signal → advocacy → court visibility →
 > operational core → doctrinal companion → future retrieval state
 
-Not every event traverses every stage. Measuring which do is the point, and
-this session established that at least one stage of that chain — advocacy to
-court visibility — does not carry the traffic the chain assumes.
+Not every event traverses every stage. Measuring which do is the point.
+
+**Scope of what this session established, stated exactly.** In the published
+Saudi commercial adjudication observed here, party-side use of STATUTORY
+PROVISIONS does not generally lead their later appearance in court reasoning;
+provisions first observed in the court's voice are more persistent than
+provisions first observed in the bar's voice. An earlier draft generalised
+that to "advocacy is not the route by which new authority enters judicial
+reasoning". The tests were on statutory articles only. Doctrinal authority —
+jurists, books, maxims, settled practice — was untested at the time and is the
+subject of `DIFFUSION.md`. No figure changes.
 
 ## Standing limitations
 

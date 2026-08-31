@@ -999,5 +999,67 @@
    "whyMilestonesNotCounts": "the interesting question when AI reaches the courts is not how many cases there are. It is how the legal system absorbs the issue: which statute anchors it first, which authority accompanies it, whether a companion forms. Each milestone is frozen as it happens rather than narrated after twenty cases.",
    "immutable": true
   }
+ },
+ "doctrinalRelease": {
+  "release": "DOCTRINAL_1",
+  "cutoff": "1446Q2",
+  "created_at": "2026-08-31",
+  "eraDecision": {
+   "DOCTRINAL_DETECTOR_ERA_2": "JUSTIFIED_AND_ARMED",
+   "why": "era 1's novelty detector works on a source appearing beside a code and knows nothing about WHICH VOICE it appeared in. The doctrinal first-mover result shows that voice is the informative part: court-first code-local sources persist at 0.5882 against bar-first 0.2857. A detector that ignores it is measuring the wrong thing.",
+   "independence": "ERA 1 IS NOT TOUCHED. Its detectors stay armed, its historical alarm budget stands, and its false alarms and misses will still be scored. Era 2 is a separate object with its own record.",
+   "detector": {
+    "detector_id": "code_local_first_mover_composition@1446Q2",
+    "metric": "share of newly eligible code-local source units in a quarter whose first observation is in the court's voice",
+    "baselineAtCutoff": 0.4359,
+    "contract": "the ERA 1 contract shape -- rolling median, scaled MAD, threshold 3, confirmation at two consecutive scorable periods, scorable quarters only -- applied to a NEW metric. The contract is reused; the era is separate because the metric is new and untested.",
+    "whatWouldFire": "a quarter in which the balance of new code-local doctrinal sources tips toward the bar's voice, or hard toward the court's",
+    "whyItMatters": "if a research tool ever changes who finds doctrine first, this is the series it moves.",
+    "status": "ARMED_UNTESTED",
+    "honestCaveat": "this detector has NO historical replay: it is a new metric armed today. Era 1's alarm rate does not transfer to it."
+   }
+  },
+  "watchTargets": [
+   {
+    "watch_id": "first_bar_first_source_crossing_within_1q@1446Q2",
+    "definition": "a code-local doctrinal source first observed in the party voice that appears in the court's voice beside the same code within one quarter",
+    "baseline": "0.1667 of bar-origin units cross within one quarter; the median lag is 2 quarters",
+    "probability": null,
+    "why": "the fastest observable form of the advocacy pathway. If a bar-side research tool ever mattered, this is where it would show first."
+   },
+   {
+    "watch_id": "first_persistent_new_ccir_companion@1446Q2",
+    "definition": "a source newly observed beside the Commercial Courts Implementing Regulation that reaches PERSISTENT",
+    "baseline": "one such event in the observed window: منتهى الإرادات, first seen 1444Q3",
+    "probability": null,
+    "why": "the CCIR is the most named-source-dense code and the one whose companion set is VARIABLE rather than STABLE."
+   },
+   {
+    "watch_id": "first_global_novel_source@1446Q2",
+    "definition": "a canonical identity observed for the first time anywhere in the corpus, not merely beside a new code",
+    "baseline": "5 global-novelty units against 112 code-local ones",
+    "probability": null,
+    "why": "an AI-discovery hypothesis is about the long tail. This watch separates a source new to the SYSTEM from a known source arriving beside a new code, which is the distinction that hypothesis lives or dies on.",
+    "hardLimit": "bounded by the extractor's 28 identities. A source outside that vocabulary can never fire this."
+   }
+  ],
+  "REPOSITORY_BET_002": {
+   "status": "REFUSED",
+   "candidateShape": "court-first doctrinal sources are more likely than bar-first sources to remain visible four quarters later",
+   "unmatchedEvidence": {
+    "courtFirstSurvive4q": 0.8627,
+    "barFirstSurvive4q": 0.5,
+    "courtFirstPersistent": 0.5882,
+    "barFirstPersistent": 0.2857
+   },
+   "whyRefused": [
+    "MATCHING SUPPORT IS TOO THIN: matching on code, source type and support band leaves 6 pairs. A bet resting on six pairs is a bet on noise.",
+    "IT DOES NOT SURVIVE DE-BOILERPLATING: with circulating wording removed the matched verdict flips to BAR_FIRST_NOT_WORSE_AFTER_MATCHING, and the persistence gap narrows from 0.5882 against 0.2857 to 0.5098 against 0.4286.",
+    "NO FORECASTABILITY: persistence cannot be predicted from emergence features. The best feature reaches lift 1.17 over a base rate of 0.3772, which is not a signal.",
+    "NO TEMPORAL FOLDS: 114 eligible units across the whole window do not support rolling cohorts, so nothing here was backtested in the sense the ledger requires."
+   ],
+   "whatWouldEarnIt": "more code-local units, a matched comparison with at least 20 pairs, and a de-boilerplated result pointing the same way.",
+   "note": "the repository gains more by refusing this bet than by placing it. The unmatched contrast is the largest in the programme and it is precisely the kind of result that dissolves under the two controls that matter."
+  }
  }
 }

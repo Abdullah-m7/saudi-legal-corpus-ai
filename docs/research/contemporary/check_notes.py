@@ -42,6 +42,7 @@ def facts():
     xm, bau = J("ai_exposure_matrix_results.json"), J("bog_access_audit.json")
     hz, dt = J("horizon_results.json"), J("detectors_results.json")
     ld, lsr = J("leading_results.json"), J("legal_signal_registry.json")
+    dfz = J("diffusion_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -780,6 +781,64 @@ def facts():
         ("refresh due window",
          ld["phase21_refreshWindow"]["REFRESH_DUE_WINDOW"], L),
         ("calibration verdict", ld["phase26_calibration"]["verdict"], L),
+        # --- the authority diffusion observatory
+    ]
+    DF = ["DIFFUSION.md"]
+    SVc = dfz["phase5_6_survivalByFirstMover"]["CODE"]
+    DBz = dfz["phase16_deBoilerplated"]
+    CRz, ASz = dfz["phase8_9_10_crossing"], dfz["phase11_12_articleSourceOrder"]
+    MBz, TPz = dfz["phase20_sourceMobility"], dfz["phase17_templatePropagation"]
+    KDz = dfz["phase13_14_18_19_milestones"]["byKind"]
+    out += [
+        ("code units", f"{dfz['eligibility']['levels'][1]['units']}", DF),
+        ("code eligible", f"{dfz['eligibility']['levels'][1]['eligible']}", DF),
+        ("article units", f"{dfz['eligibility']['levels'][2]['units']}", DF),
+        ("article eligible", f"{dfz['eligibility']['levels'][2]['eligible']}", DF),
+        ("court-first units", f"{dfz['phase3_typology']['CODE']['COURT_FIRST']}", DF),
+        ("bar-first units", f"{dfz['phase3_typology']['CODE']['BAR_FIRST']}", DF),
+        ("court-first survive 1q", f"{SVc['COURT_FIRST']['survive1q']}", DF),
+        ("court-first survive 4q", f"{SVc['COURT_FIRST']['survive4q']}", DF),
+        ("court-first persistent", f"{SVc['COURT_FIRST']['persistentShare']}", DF),
+        ("bar-first survive 1q", f"{SVc['BAR_FIRST']['survive1q']}", DF),
+        ("bar-first survive 4q", f"{SVc['BAR_FIRST']['survive4q']}", DF),
+        ("bar-first persistent", f"{SVc['BAR_FIRST']['persistentShare']}", DF),
+        ("matched pairs", f"{dfz['phase7_matched']['matchedPairs']}", DF),
+        ("deboiler fingerprints", f"{DBz['circulatingFingerprintsRemoved']}", DF),
+        ("deboiler court-first 1q",
+         f"{DBz['survival']['COURT_FIRST']['survive1q']}", DF),
+        ("deboiler bar-first 1q",
+         f"{DBz['survival']['BAR_FIRST']['survive1q']}", DF),
+        ("deboiler court-first persistent",
+         f"{DBz['survival']['COURT_FIRST']['persistentShare']}", DF),
+        ("deboiler bar-first persistent",
+         f"{DBz['survival']['BAR_FIRST']['persistentShare']}", DF),
+        ("bar to bench crossed share",
+         f"{CRz['BAR_TO_COURT']['crossedShare']}", DF),
+        ("bench to bar crossed share",
+         f"{CRz['COURT_TO_BAR']['crossedShare']}", DF),
+        ("bar to bench within 4q", f"{CRz['BAR_TO_COURT']['within4q']}", DF),
+        ("bench to bar within 4q", f"{CRz['COURT_TO_BAR']['within4q']}", DF),
+        ("no companion", f"{ASz['byState']['NO_COMPANION']}", DF),
+        ("article first", f"{ASz['byState']['ARTICLE_FIRST']}", DF),
+        ("companion latency median",
+         f"{ASz['companionFormationLatency']['median']}", DF),
+        ("companion latency n", f"{ASz['companionFormationLatency']['n']}", DF),
+        ("maxim to second code", f"{KDz['MAXIM']['medianToSecondCode']}", DF),
+        ("maxim to second city", f"{KDz['MAXIM']['medianToSecondCity']}", DF),
+        ("jurist codes ever", f"{KDz['JURIST']['meanCodesEver']}", DF),
+        ("book codes ever", f"{KDz['BOOK']['meanCodesEver']}", DF),
+        ("template both voices share", f"{TPz['appearInBothVoicesShare']}", DF),
+        ("doctrinal rank autocorrelation", f"{MBz['rankAutocorrelation']}", DF),
+        ("doctrinal top quartile persistence",
+         f"{MBz['topQuartilePersistence']}", DF),
+        ("code local novelty",
+         f"{dfz['phase24_noveltyKind']['byClass']['CODE_LOCAL_NOVELTY']}", DF),
+        ("global novelty",
+         f"{dfz['phase24_noveltyKind']['byClass']['GLOBAL_NOVELTY']}", DF),
+        ("entrant base rate doctrinal",
+         f"{dfz['phase25_entrantForecastability']['baseRate']}", DF),
+        ("entrant lift doctrinal",
+         f"{dfz['phase25_entrantForecastability']['liftOverBaseRate']}", DF),
     ]
     return out
 

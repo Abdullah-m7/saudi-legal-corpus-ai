@@ -803,6 +803,126 @@ def bets():
     }
 
 
+def doctrinal_release():
+    """PHASE 27, 31, 32: era 2, three watches, and a refused bet."""
+    df = J("diffusion_results.json")
+    sv = df["phase5_6_survivalByFirstMover"]["CODE"]
+    mt, db = df["phase7_matched"], df["phase16_deBoilerplated"]
+    ty = df["phase3_typology"]["CODE"]
+    ef = df["phase25_entrantForecastability"]
+    court_first_share = round(ty.get("COURT_FIRST", 0) / sum(ty.values()), 4)
+    return {
+        "release": "DOCTRINAL_1", "cutoff": CUTOFF, "created_at": CREATED,
+        "eraDecision": {
+            "DOCTRINAL_DETECTOR_ERA_2": "JUSTIFIED_AND_ARMED",
+            "why": "era 1's novelty detector works on a source appearing "
+                   "beside a code and knows nothing about WHICH VOICE it "
+                   "appeared in. The doctrinal first-mover result shows that "
+                   "voice is the informative part: court-first code-local "
+                   f"sources persist at {sv['COURT_FIRST']['persistentShare']} "
+                   f"against bar-first {sv['BAR_FIRST']['persistentShare']}. A "
+                   "detector that ignores it is measuring the wrong thing.",
+            "independence": "ERA 1 IS NOT TOUCHED. Its detectors stay armed, "
+                            "its historical alarm budget stands, and its "
+                            "false alarms and misses will still be scored. "
+                            "Era 2 is a separate object with its own record.",
+            "detector": {
+                "detector_id": f"code_local_first_mover_composition@{CUTOFF}",
+                "metric": "share of newly eligible code-local source units in "
+                          "a quarter whose first observation is in the court's "
+                          "voice",
+                "baselineAtCutoff": court_first_share,
+                "contract": "the ERA 1 contract shape -- rolling median, "
+                            "scaled MAD, threshold 3, confirmation at two "
+                            "consecutive scorable periods, scorable quarters "
+                            "only -- applied to a NEW metric. The contract is "
+                            "reused; the era is separate because the metric "
+                            "is new and untested.",
+                "whatWouldFire": "a quarter in which the balance of new "
+                                 "code-local doctrinal sources tips toward "
+                                 "the bar's voice, or hard toward the court's",
+                "whyItMatters": "if a research tool ever changes who finds "
+                                "doctrine first, this is the series it moves.",
+                "status": "ARMED_UNTESTED",
+                "honestCaveat": "this detector has NO historical replay: it "
+                                "is a new metric armed today. Era 1's alarm "
+                                "rate does not transfer to it."}},
+        "watchTargets": [
+            {"watch_id": f"first_bar_first_source_crossing_within_1q@{CUTOFF}",
+             "definition": "a code-local doctrinal source first observed in "
+                           "the party voice that appears in the court's voice "
+                           "beside the same code within one quarter",
+             "baseline": f"{df['phase8_9_10_crossing']['BAR_TO_COURT']['within1q']} "
+                         "of bar-origin units cross within one quarter; the "
+                         "median lag is "
+                         f"{df['phase8_9_10_crossing']['BAR_TO_COURT']['medianLagQuarters']} "
+                         "quarters",
+             "probability": None,
+             "why": "the fastest observable form of the advocacy pathway. If "
+                    "a bar-side research tool ever mattered, this is where it "
+                    "would show first."},
+            {"watch_id": f"first_persistent_new_ccir_companion@{CUTOFF}",
+             "definition": "a source newly observed beside the Commercial "
+                           "Courts Implementing Regulation that reaches "
+                           "PERSISTENT",
+             "baseline": "one such event in the observed window: منتهى "
+                         "الإرادات, first seen 1444Q3",
+             "probability": None,
+             "why": "the CCIR is the most named-source-dense code and the one "
+                    "whose companion set is VARIABLE rather than STABLE."},
+            {"watch_id": f"first_global_novel_source@{CUTOFF}",
+             "definition": "a canonical identity observed for the first time "
+                           "anywhere in the corpus, not merely beside a new "
+                           "code",
+             "baseline": f"{df['phase24_noveltyKind']['byClass'].get('GLOBAL_NOVELTY', 0)} "
+                         "global-novelty units against "
+                         f"{df['phase24_noveltyKind']['byClass'].get('CODE_LOCAL_NOVELTY', 0)} "
+                         "code-local ones",
+             "probability": None,
+             "why": "an AI-discovery hypothesis is about the long tail. This "
+                    "watch separates a source new to the SYSTEM from a known "
+                    "source arriving beside a new code, which is the "
+                    "distinction that hypothesis lives or dies on.",
+             "hardLimit": "bounded by the extractor's 28 identities. A source "
+                          "outside that vocabulary can never fire this."}],
+        "REPOSITORY_BET_002": {
+            "status": "REFUSED",
+            "candidateShape": "court-first doctrinal sources are more likely "
+                              "than bar-first sources to remain visible four "
+                              "quarters later",
+            "unmatchedEvidence": {
+                "courtFirstSurvive4q": sv["COURT_FIRST"]["survive4q"],
+                "barFirstSurvive4q": sv["BAR_FIRST"]["survive4q"],
+                "courtFirstPersistent": sv["COURT_FIRST"]["persistentShare"],
+                "barFirstPersistent": sv["BAR_FIRST"]["persistentShare"]},
+            "whyRefused": [
+                "MATCHING SUPPORT IS TOO THIN: matching on code, source type "
+                f"and support band leaves {mt['matchedPairs']} pairs. A bet "
+                "resting on six pairs is a bet on noise.",
+                "IT DOES NOT SURVIVE DE-BOILERPLATING: with circulating "
+                "wording removed the matched verdict flips to "
+                f"{db['matched']['verdict']}, and the persistence gap narrows "
+                f"from {sv['COURT_FIRST']['persistentShare']} against "
+                f"{sv['BAR_FIRST']['persistentShare']} to "
+                f"{db['survival']['COURT_FIRST']['persistentShare']} against "
+                f"{db['survival']['BAR_FIRST']['persistentShare']}.",
+                "NO FORECASTABILITY: persistence cannot be predicted from "
+                "emergence features. The best feature reaches lift "
+                f"{ef.get('liftOverBaseRate')} over a base rate of "
+                f"{ef.get('baseRate')}, which is not a signal.",
+                "NO TEMPORAL FOLDS: 114 eligible units across the whole "
+                "window do not support rolling cohorts, so nothing here was "
+                "backtested in the sense the ledger requires."],
+            "whatWouldEarnIt": "more code-local units, a matched comparison "
+                               "with at least 20 pairs, and a de-boilerplated "
+                               "result pointing the same way.",
+            "note": "the repository gains more by refusing this bet than by "
+                    "placing it. The unmatched contrast is the largest in the "
+                    "programme and it is precisely the kind of result that "
+                    "dissolves under the two controls that matter."},
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -941,6 +1061,8 @@ def main():
         old["watchTargets"] = WATCH
     if "forecasterTournament" not in old:
         old["forecasterTournament"] = tournament()
+    if "doctrinalRelease" not in old:
+        old["doctrinalRelease"] = doctrinal_release()
     if "bets" not in old:
         old["bets"] = bets()
     if "horizonRelease" not in old:

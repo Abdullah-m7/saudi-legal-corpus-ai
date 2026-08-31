@@ -1,0 +1,1329 @@
+{
+ "what": "AUTHORITY DISCOVERY AND DIFFUSION OBSERVATORY. Who makes a doctrinal authority visible first, beside which code, and what becomes of it.",
+ "firstMeans": {
+  "FIRST_OBSERVED_IN_THIS_CORPUS": "the earliest quarter the extractor saw the identity",
+  "FIRST_OBSERVED_BESIDE_CODE": "the earliest quarter it was attached to that instrument",
+  "FIRST_OBSERVED_BESIDE_ARTICLE": "the same, for an article",
+  "FIRST_OBSERVED_IN_COURT_VOICE": "earliest court-voice quarter",
+  "FIRST_OBSERVED_IN_PARTY_VOICE": "earliest party-voice quarter",
+  "notDiscovery": "the word discovery is not used. Nothing here is a claim about when a jurist entered Saudi law."
+ },
+ "rows": 25213,
+ "eligibility": {
+  "rule": [
+   "appears more than once",
+   "first quarter is not the collection edge",
+   "first quarter is mature",
+   "at least one mature follow-up quarter exists",
+   "identity is canonical, not a raw string"
+  ],
+  "levels": [
+   {
+    "level": "GLOBAL",
+    "units": 34,
+    "eligible": 14,
+    "excluded": 20,
+    "exclusionReasons": {
+     "appearsMoreThanOnce": 1,
+     "firstQuarterIsMature": 19
+    }
+   },
+   {
+    "level": "CODE",
+    "units": 237,
+    "eligible": 117,
+    "excluded": 120,
+    "exclusionReasons": {
+     "appearsMoreThanOnce": 79,
+     "firstQuarterIsMature": 50,
+     "firstQuarterNotCollectionEdge": 3,
+     "hasFollowUp": 10
+    }
+   },
+   {
+    "level": "ARTICLE",
+    "units": 2195,
+    "eligible": 676,
+    "excluded": 1519,
+    "exclusionReasons": {
+     "appearsMoreThanOnce": 1452,
+     "firstQuarterIsMature": 245,
+     "firstQuarterNotCollectionEdge": 23,
+     "hasFollowUp": 104
+    }
+   }
+  ]
+ },
+ "phase3_typology": {
+  "GLOBAL": {
+   "BAR_FIRST": 4,
+   "COURT_FIRST": 6,
+   "COURT_ONLY": 1,
+   "SAME_PERIOD": 3
+  },
+  "CODE": {
+   "BAR_FIRST": 14,
+   "BAR_ONLY": 10,
+   "COURT_FIRST": 51,
+   "COURT_ONLY": 30,
+   "SAME_PERIOD": 12
+  },
+  "ARTICLE": {
+   "BAR_FIRST": 22,
+   "BAR_ONLY": 41,
+   "COURT_FIRST": 109,
+   "COURT_ONLY": 482,
+   "SAME_PERIOD": 22
+  }
+ },
+ "phase5_6_survivalByFirstMover": {
+  "CODE": {
+   "BAR_FIRST": {
+    "n": 14,
+    "survive1q": 0.2727,
+    "survive1q_n": 11,
+    "survive2q": 0.4615,
+    "survive2q_n": 13,
+    "survive4q": 0.5,
+    "survive4q_n": 14,
+    "persistentShare": 0.2857
+   },
+   "BAR_ONLY": {
+    "n": 10,
+    "survive1q": 0.0,
+    "survive1q_n": 10,
+    "survive2q": 0.0,
+    "survive2q_n": 10,
+    "survive4q": 0.0,
+    "survive4q_n": 10,
+    "persistentShare": 0.0
+   },
+   "COURT_FIRST": {
+    "n": 51,
+    "survive1q": 0.7174,
+    "survive1q_n": 46,
+    "survive2q": 0.8,
+    "survive2q_n": 50,
+    "survive4q": 0.8627,
+    "survive4q_n": 51,
+    "persistentShare": 0.5882
+   },
+   "COURT_ONLY": {
+    "n": 30,
+    "survive1q": 0.5714,
+    "survive1q_n": 28,
+    "survive2q": 0.7,
+    "survive2q_n": 30,
+    "survive4q": 0.8667,
+    "survive4q_n": 30,
+    "persistentShare": 0.1333
+   },
+   "SAME_PERIOD": {
+    "n": 12,
+    "survive1q": 0.7273,
+    "survive1q_n": 11,
+    "survive2q": 0.75,
+    "survive2q_n": 12,
+    "survive4q": 0.8333,
+    "survive4q_n": 12,
+    "persistentShare": 0.4167
+   }
+  },
+  "ARTICLE": {
+   "BAR_FIRST": {
+    "n": 22,
+    "survive1q": 0.1,
+    "survive1q_n": 20,
+    "survive2q": 0.381,
+    "survive2q_n": 21,
+    "survive4q": 0.6818,
+    "survive4q_n": 22,
+    "persistentShare": 0.0455
+   },
+   "BAR_ONLY": {
+    "n": 41,
+    "survive1q": 0.0,
+    "survive1q_n": 36,
+    "survive2q": 0.0,
+    "survive2q_n": 36,
+    "survive4q": 0.0,
+    "survive4q_n": 41,
+    "persistentShare": 0.0
+   },
+   "COURT_FIRST": {
+    "n": 109,
+    "survive1q": 0.4653,
+    "survive1q_n": 101,
+    "survive2q": 0.5943,
+    "survive2q_n": 106,
+    "survive4q": 0.6789,
+    "survive4q_n": 109,
+    "persistentShare": 0.4128
+   },
+   "COURT_ONLY": {
+    "n": 482,
+    "survive1q": 0.5866,
+    "survive1q_n": 433,
+    "survive2q": 0.7696,
+    "survive2q_n": 447,
+    "survive4q": 0.8817,
+    "survive4q_n": 482,
+    "persistentShare": 0.2676
+   },
+   "SAME_PERIOD": {
+    "n": 22,
+    "survive1q": 0.35,
+    "survive1q_n": 20,
+    "survive2q": 0.5,
+    "survive2q_n": 20,
+    "survive4q": 0.5,
+    "survive4q_n": 22,
+    "persistentShare": 0.1364
+   }
+  },
+  "GLOBAL": {
+   "BAR_FIRST": {
+    "n": 4,
+    "survive1q": null,
+    "survive1q_n": 2,
+    "survive2q": null,
+    "survive2q_n": 4,
+    "survive4q": null,
+    "survive4q_n": 4,
+    "persistentShare": 0.5
+   },
+   "COURT_FIRST": {
+    "n": 6,
+    "survive1q": null,
+    "survive1q_n": 4,
+    "survive2q": 0.6667,
+    "survive2q_n": 6,
+    "survive4q": 1.0,
+    "survive4q_n": 6,
+    "persistentShare": 0.5
+   },
+   "COURT_ONLY": {
+    "n": 1,
+    "survive1q": null,
+    "survive1q_n": 1,
+    "survive2q": null,
+    "survive2q_n": 1,
+    "survive4q": null,
+    "survive4q_n": 1,
+    "persistentShare": 0.0
+   },
+   "SAME_PERIOD": {
+    "n": 3,
+    "survive1q": null,
+    "survive1q_n": 0,
+    "survive2q": null,
+    "survive2q_n": 3,
+    "survive4q": null,
+    "survive4q_n": 3,
+    "persistentShare": 0.6667
+   }
+  }
+ },
+ "phase7_matched": {
+  "barFirstEligible": 14,
+  "courtFirstEligible": 51,
+  "matchedPairs": 6,
+  "survive1q": {
+   "pairs": 4,
+   "verdict": "LOW_SUPPORT"
+  },
+  "survive2q": {
+   "pairs": 6,
+   "meanBarFirstMinusCourtFirst": -0.4167,
+   "barFirstBetterPairs": 0,
+   "signTestShare": 0.0
+  },
+  "survive4q": {
+   "pairs": 6,
+   "meanBarFirstMinusCourtFirst": -0.25,
+   "barFirstBetterPairs": 0,
+   "signTestShare": 0.0
+  },
+  "verdict": "COURT_FIRST_ADVANTAGE_SURVIVES_BUT_LOW_SUPPORT",
+  "supportWarning": "matching on code, source type and support band leaves very few pairs. The unmatched contrast is large; the matched contrast rests on 6 pairs and is reported as such."
+ },
+ "phase16_deBoilerplated": {
+  "circulatingFingerprintsRemoved": 218,
+  "typology": {
+   "BAR_FIRST": 14,
+   "BAR_ONLY": 10,
+   "COURT_FIRST": 51,
+   "COURT_ONLY": 29,
+   "SAME_PERIOD": 11
+  },
+  "survival": {
+   "BAR_FIRST": {
+    "n": 14,
+    "survive1q": 0.3636,
+    "survive1q_n": 11,
+    "survive2q": 0.6154,
+    "survive2q_n": 13,
+    "survive4q": 0.6429,
+    "survive4q_n": 14,
+    "persistentShare": 0.4286
+   },
+   "BAR_ONLY": {
+    "n": 10,
+    "survive1q": 0.0,
+    "survive1q_n": 10,
+    "survive2q": 0.0,
+    "survive2q_n": 10,
+    "survive4q": 0.0,
+    "survive4q_n": 10,
+    "persistentShare": 0.0
+   },
+   "COURT_FIRST": {
+    "n": 51,
+    "survive1q": 0.6304,
+    "survive1q_n": 46,
+    "survive2q": 0.76,
+    "survive2q_n": 50,
+    "survive4q": 0.8431,
+    "survive4q_n": 51,
+    "persistentShare": 0.5098
+   },
+   "COURT_ONLY": {
+    "n": 29,
+    "survive1q": 0.5926,
+    "survive1q_n": 27,
+    "survive2q": 0.7241,
+    "survive2q_n": 29,
+    "survive4q": 0.8621,
+    "survive4q_n": 29,
+    "persistentShare": 0.1379
+   },
+   "SAME_PERIOD": {
+    "n": 11,
+    "survive1q": 0.7,
+    "survive1q_n": 10,
+    "survive2q": 0.7273,
+    "survive2q_n": 11,
+    "survive4q": 0.8182,
+    "survive4q_n": 11,
+    "persistentShare": 0.3636
+   }
+  },
+  "matched": {
+   "barFirstEligible": 14,
+   "courtFirstEligible": 51,
+   "matchedPairs": 7,
+   "survive1q": {
+    "pairs": 4,
+    "verdict": "LOW_SUPPORT"
+   },
+   "survive2q": {
+    "pairs": 7,
+    "meanBarFirstMinusCourtFirst": 0.0714,
+    "barFirstBetterPairs": 1,
+    "signTestShare": 0.1429
+   },
+   "survive4q": {
+    "pairs": 7,
+    "meanBarFirstMinusCourtFirst": -0.0714,
+    "barFirstBetterPairs": 1,
+    "signTestShare": 0.1429
+   },
+   "verdict": "BAR_FIRST_NOT_WORSE_AFTER_MATCHING",
+   "supportWarning": "matching on code, source type and support band leaves very few pairs. The unmatched contrast is large; the matched contrast rests on 7 pairs and is reported as such."
+  }
+ },
+ "phase8_9_10_crossing": {
+  "BAR_TO_COURT": {
+   "n": 24,
+   "crossed": 14,
+   "crossedShare": 0.5833,
+   "within1q": 0.1667,
+   "within2q": 0.3333,
+   "within4q": 0.375,
+   "medianLagQuarters": 2
+  },
+  "COURT_TO_BAR": {
+   "n": 81,
+   "crossed": 51,
+   "crossedShare": 0.6296,
+   "within1q": 0.1852,
+   "within2q": 0.3086,
+   "within4q": 0.5185,
+   "medianLagQuarters": 3
+  },
+  "NEVER_CROSSED": {
+   "n": 40,
+   "byType": {
+    "BAR_ONLY": 10,
+    "COURT_ONLY": 30
+   }
+  },
+  "dominantDirection": "BIDIRECTIONAL_OR_INDEPENDENT",
+  "note": "CROSS-VOICE LOCAL ADOPTION. A source crossing from one voice to the other beside the same code is a measurable transition and is not evidence that either side influenced the other."
+ },
+ "phase11_12_articleSourceOrder": {
+  "articlesConsidered": 764,
+  "byState": {
+   "ARTICLE_FIRST": 48,
+   "NO_COMPANION": 697,
+   "SAME_PERIOD": 18,
+   "SOURCE_FIRST": 1
+  },
+  "companionFormationLatency": {
+   "n": 48,
+   "median": 3,
+   "p25": 2,
+   "p75": 4,
+   "distribution": {
+    "1": 11,
+    "2": 10,
+    "3": 8,
+    "4": 8,
+    "5": 6,
+    "6": 2,
+    "7": 1,
+    "8": 2
+   }
+  },
+  "note": "the previous session called this unmeasurable for want of depth. With the 1442-1443 backfill it is measurable, thinly. NO_COMPANION is the majority state and that is the finding: most articles never acquire a locally attached non-statutory authority at all."
+ },
+ "phase13_14_18_19_milestones": {
+  "sources": [
+   {
+    "source": "B.INSAF",
+    "kind": "BOOK",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 5,
+    "toSecondCode": 5,
+    "toThirdCode": 6,
+    "toSecondCity": 2,
+    "toBothVoices": 6,
+    "codesEver": 6,
+    "citiesEver": 9,
+    "articlesEver": 61,
+    "judgmentsEver": 868
+   },
+   {
+    "source": "B.KASHSHAF",
+    "kind": "BOOK",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 0,
+    "toSecondArticle": 4,
+    "toSecondCode": 4,
+    "toThirdCode": 5,
+    "toSecondCity": 0,
+    "toBothVoices": 4,
+    "codesEver": 9,
+    "citiesEver": 11,
+    "articlesEver": 126,
+    "judgmentsEver": 1229
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "kind": "BOOK",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 6,
+    "toSecondCode": 6,
+    "toThirdCode": 6,
+    "toSecondCity": 4,
+    "toBothVoices": 6,
+    "codesEver": 10,
+    "citiesEver": 10,
+    "articlesEver": 56,
+    "judgmentsEver": 459
+   },
+   {
+    "source": "B.MATALIB",
+    "kind": "BOOK",
+    "firstQuarter": "1444Q2",
+    "toSecondJudgment": 2,
+    "toSecondArticle": null,
+    "toSecondCode": null,
+    "toThirdCode": null,
+    "toSecondCity": 2,
+    "toBothVoices": 3,
+    "codesEver": 0,
+    "citiesEver": 2,
+    "articlesEver": 0,
+    "judgmentsEver": 5
+   },
+   {
+    "source": "B.MUGHNI",
+    "kind": "BOOK",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 1,
+    "toSecondCode": 7,
+    "toThirdCode": 8,
+    "toSecondCity": 1,
+    "toBothVoices": 4,
+    "codesEver": 10,
+    "citiesEver": 11,
+    "articlesEver": 54,
+    "judgmentsEver": 330
+   },
+   {
+    "source": "B.MUNTAHA",
+    "kind": "BOOK",
+    "firstQuarter": "1442Q3",
+    "toSecondJudgment": 2,
+    "toSecondArticle": 5,
+    "toSecondCode": 5,
+    "toThirdCode": 6,
+    "toSecondCity": 2,
+    "toBothVoices": 7,
+    "codesEver": 4,
+    "citiesEver": 7,
+    "articlesEver": 21,
+    "judgmentsEver": 124
+   },
+   {
+    "source": "B.RAWD",
+    "kind": "BOOK",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 2,
+    "toSecondCode": 3,
+    "toThirdCode": 11,
+    "toSecondCity": 3,
+    "toBothVoices": 1,
+    "codesEver": 3,
+    "citiesEver": 8,
+    "articlesEver": 8,
+    "judgmentsEver": 29
+   },
+   {
+    "source": "B.ZAD",
+    "kind": "BOOK",
+    "firstQuarter": "1444Q1",
+    "toSecondJudgment": 0,
+    "toSecondArticle": 0,
+    "toSecondCode": 0,
+    "toThirdCode": null,
+    "toSecondCity": null,
+    "toBothVoices": null,
+    "codesEver": 2,
+    "citiesEver": 1,
+    "articlesEver": 4,
+    "judgmentsEver": 13
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "kind": "CUSTOM",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 1,
+    "toSecondCode": 1,
+    "toThirdCode": 4,
+    "toSecondCity": 1,
+    "toBothVoices": 1,
+    "codesEver": 15,
+    "citiesEver": 13,
+    "articlesEver": 162,
+    "judgmentsEver": 1157
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "kind": "UNATTRIBUTED_FIQH",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 0,
+    "toSecondArticle": 1,
+    "toSecondCode": 2,
+    "toThirdCode": 3,
+    "toSecondCity": 1,
+    "toBothVoices": 4,
+    "codesEver": 16,
+    "citiesEver": 16,
+    "articlesEver": 326,
+    "judgmentsEver": 3686
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "kind": "SCRIPTURE",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 1,
+    "toSecondCode": 1,
+    "toThirdCode": 3,
+    "toSecondCity": 1,
+    "toBothVoices": 1,
+    "codesEver": 19,
+    "citiesEver": 18,
+    "articlesEver": 376,
+    "judgmentsEver": 3986
+   },
+   {
+    "source": "GENERIC.maxim.named",
+    "kind": "MAXIM_LABEL",
+    "firstQuarter": "1442Q2",
+    "toSecondJudgment": 0,
+    "toSecondArticle": 2,
+    "toSecondCode": 2,
+    "toThirdCode": 4,
+    "toSecondCity": 0,
+    "toBothVoices": 1,
+    "codesEver": 9,
+    "citiesEver": 11,
+    "articlesEver": 104,
+    "judgmentsEver": 599
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "kind": "JUDICIAL_PRACTICE",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 4,
+    "toSecondCode": 4,
+    "toThirdCode": 6,
+    "toSecondCity": 1,
+    "toBothVoices": 5,
+    "codesEver": 13,
+    "citiesEver": 11,
+    "articlesEver": 140,
+    "judgmentsEver": 1286
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "kind": "SCRIPTURE",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 1,
+    "toSecondCode": 1,
+    "toThirdCode": 2,
+    "toSecondCity": 2,
+    "toBothVoices": 1,
+    "codesEver": 14,
+    "citiesEver": 14,
+    "articlesEver": 203,
+    "judgmentsEver": 2170
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q3",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 1,
+    "toSecondCode": 1,
+    "toThirdCode": 2,
+    "toSecondCity": 1,
+    "toBothVoices": 1,
+    "codesEver": 4,
+    "citiesEver": 6,
+    "articlesEver": 21,
+    "judgmentsEver": 212
+   },
+   {
+    "source": "H.AHMAD",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 4,
+    "toSecondArticle": 7,
+    "toSecondCode": 7,
+    "toThirdCode": null,
+    "toSecondCity": 4,
+    "toBothVoices": 5,
+    "codesEver": 2,
+    "citiesEver": 8,
+    "articlesEver": 3,
+    "judgmentsEver": 13
+   },
+   {
+    "source": "H.BAYHAQI",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q2",
+    "toSecondJudgment": 3,
+    "toSecondArticle": 3,
+    "toSecondCode": 4,
+    "toThirdCode": null,
+    "toSecondCity": 3,
+    "toBothVoices": 8,
+    "codesEver": 2,
+    "citiesEver": 4,
+    "articlesEver": 4,
+    "judgmentsEver": 17
+   },
+   {
+    "source": "H.BUKHARI",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q3",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 3,
+    "toSecondCode": 3,
+    "toThirdCode": 4,
+    "toSecondCity": 1,
+    "toBothVoices": 1,
+    "codesEver": 4,
+    "citiesEver": 7,
+    "articlesEver": 6,
+    "judgmentsEver": 42
+   },
+   {
+    "source": "H.DARAQUTNI",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1444Q2",
+    "toSecondJudgment": null,
+    "toSecondArticle": null,
+    "toSecondCode": null,
+    "toThirdCode": null,
+    "toSecondCity": null,
+    "toBothVoices": null,
+    "codesEver": 1,
+    "citiesEver": 1,
+    "articlesEver": 1,
+    "judgmentsEver": 1
+   },
+   {
+    "source": "H.IBN_MAJA",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 4,
+    "toSecondArticle": 7,
+    "toSecondCode": 7,
+    "toThirdCode": 7,
+    "toSecondCity": 4,
+    "toBothVoices": 4,
+    "codesEver": 3,
+    "citiesEver": 5,
+    "articlesEver": 3,
+    "judgmentsEver": 9
+   },
+   {
+    "source": "H.MUSLIM",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q3",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 3,
+    "toSecondCode": 3,
+    "toThirdCode": 3,
+    "toSecondCity": 1,
+    "toBothVoices": 1,
+    "codesEver": 3,
+    "citiesEver": 6,
+    "articlesEver": 6,
+    "judgmentsEver": 36
+   },
+   {
+    "source": "H.MUTTAFAQ",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1442Q2",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 4,
+    "toSecondCode": 6,
+    "toThirdCode": 7,
+    "toSecondCity": 1,
+    "toBothVoices": 2,
+    "codesEver": 9,
+    "citiesEver": 10,
+    "articlesEver": 56,
+    "judgmentsEver": 427
+   },
+   {
+    "source": "H.NASAI",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1444Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": null,
+    "toSecondCode": null,
+    "toThirdCode": null,
+    "toSecondCity": null,
+    "toBothVoices": 1,
+    "codesEver": 1,
+    "citiesEver": 1,
+    "articlesEver": 1,
+    "judgmentsEver": 2
+   },
+   {
+    "source": "H.TIRMIDHI",
+    "kind": "HADITH_SOURCE",
+    "firstQuarter": "1443Q3",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 1,
+    "toSecondCode": 2,
+    "toThirdCode": 2,
+    "toSecondCity": 1,
+    "toBothVoices": 2,
+    "codesEver": 4,
+    "citiesEver": 9,
+    "articlesEver": 15,
+    "judgmentsEver": 103
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "kind": "JURIST",
+    "firstQuarter": "1442Q2",
+    "toSecondJudgment": 3,
+    "toSecondArticle": 3,
+    "toSecondCode": 6,
+    "toThirdCode": 7,
+    "toSecondCity": 3,
+    "toBothVoices": 3,
+    "codesEver": 5,
+    "citiesEver": 9,
+    "articlesEver": 53,
+    "judgmentsEver": 234
+   },
+   {
+    "source": "J.IBN_QUDAMA",
+    "kind": "JURIST",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 0,
+    "toSecondArticle": 0,
+    "toSecondCode": 0,
+    "toThirdCode": 2,
+    "toSecondCity": 1,
+    "toBothVoices": 6,
+    "codesEver": 9,
+    "citiesEver": 11,
+    "articlesEver": 56,
+    "judgmentsEver": 365
+   },
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "kind": "JURIST",
+    "firstQuarter": "1442Q1",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 3,
+    "toSecondCode": 3,
+    "toThirdCode": 6,
+    "toSecondCity": 1,
+    "toBothVoices": 1,
+    "codesEver": 12,
+    "citiesEver": 11,
+    "articlesEver": 118,
+    "judgmentsEver": 1849
+   },
+   {
+    "source": "J.MUHAMMAD_B_IBRAHIM",
+    "kind": "JURIST",
+    "firstQuarter": "1442Q3",
+    "toSecondJudgment": 1,
+    "toSecondArticle": 4,
+    "toSecondCode": 5,
+    "toThirdCode": 6,
+    "toSecondCity": 2,
+    "toBothVoices": 2,
+    "codesEver": 9,
+    "citiesEver": 11,
+    "articlesEver": 29,
+    "judgmentsEver": 315
+   },
+   {
+    "source": "M.ADA_MUHAKKAMA",
+    "kind": "MAXIM",
+    "firstQuarter": "1442Q3",
+    "toSecondJudgment": 2,
+    "toSecondArticle": 6,
+    "toSecondCode": 6,
+    "toThirdCode": 7,
+    "toSecondCity": 2,
+    "toBothVoices": 2,
+    "codesEver": 5,
+    "citiesEver": 8,
+    "articlesEver": 18,
+    "judgmentsEver": 88
+   },
+   {
+    "source": "M.ASL_UQUD",
+    "kind": "MAXIM",
+    "firstQuarter": "1442Q2",
+    "toSecondJudgment": 5,
+    "toSecondArticle": 6,
+    "toSecondCode": 6,
+    "toThirdCode": 6,
+    "toSecondCity": 5,
+    "toBothVoices": 6,
+    "codesEver": 9,
+    "citiesEver": 8,
+    "articlesEver": 55,
+    "judgmentsEver": 187
+   },
+   {
+    "source": "M.BARAA",
+    "kind": "MAXIM",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 2,
+    "toSecondArticle": 3,
+    "toSecondCode": 3,
+    "toThirdCode": 4,
+    "toSecondCity": 2,
+    "toBothVoices": 0,
+    "codesEver": 8,
+    "citiesEver": 8,
+    "articlesEver": 31,
+    "judgmentsEver": 162
+   },
+   {
+    "source": "M.DARAR_YUZAL",
+    "kind": "MAXIM",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 0,
+    "toSecondArticle": 1,
+    "toSecondCode": 1,
+    "toThirdCode": 3,
+    "toSecondCity": 0,
+    "toBothVoices": 0,
+    "codesEver": 12,
+    "citiesEver": 11,
+    "articlesEver": 71,
+    "judgmentsEver": 536
+   },
+   {
+    "source": "M.KHARAJ",
+    "kind": "MAXIM",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 4,
+    "toSecondArticle": 5,
+    "toSecondCode": 6,
+    "toThirdCode": 10,
+    "toSecondCity": 4,
+    "toBothVoices": 5,
+    "codesEver": 3,
+    "citiesEver": 5,
+    "articlesEver": 5,
+    "judgmentsEver": 13
+   },
+   {
+    "source": "M.YAQIN",
+    "kind": "MAXIM",
+    "firstQuarter": "1443Q1",
+    "toSecondJudgment": 4,
+    "toSecondArticle": 10,
+    "toSecondCode": 10,
+    "toThirdCode": null,
+    "toSecondCity": 4,
+    "toBothVoices": 0,
+    "codesEver": 2,
+    "citiesEver": 5,
+    "articlesEver": 2,
+    "judgmentsEver": 18
+   }
+  ],
+  "byKind": {
+   "BOOK": {
+    "n": 8,
+    "medianToSecondCode": 5,
+    "medianToSecondCity": 2,
+    "medianToBothVoices": 4,
+    "meanCodesEver": 5.5,
+    "meanCitiesEver": 7.38
+   },
+   "CUSTOM": {
+    "n": 1,
+    "medianToSecondCode": 1,
+    "medianToSecondCity": 1,
+    "medianToBothVoices": 1,
+    "meanCodesEver": 15.0,
+    "meanCitiesEver": 13.0
+   },
+   "HADITH_SOURCE": {
+    "n": 10,
+    "medianToSecondCode": 4,
+    "medianToSecondCity": 1,
+    "medianToBothVoices": 2,
+    "meanCodesEver": 3.3,
+    "meanCitiesEver": 5.7
+   },
+   "JUDICIAL_PRACTICE": {
+    "n": 1,
+    "medianToSecondCode": 4,
+    "medianToSecondCity": 1,
+    "medianToBothVoices": 5,
+    "meanCodesEver": 13.0,
+    "meanCitiesEver": 11.0
+   },
+   "JURIST": {
+    "n": 4,
+    "medianToSecondCode": 5,
+    "medianToSecondCity": 2,
+    "medianToBothVoices": 3,
+    "meanCodesEver": 8.75,
+    "meanCitiesEver": 10.5
+   },
+   "MAXIM": {
+    "n": 6,
+    "medianToSecondCode": 6,
+    "medianToSecondCity": 4,
+    "medianToBothVoices": 2,
+    "meanCodesEver": 6.5,
+    "meanCitiesEver": 7.5
+   },
+   "MAXIM_LABEL": {
+    "n": 1,
+    "medianToSecondCode": 2,
+    "medianToSecondCity": 0,
+    "medianToBothVoices": 1,
+    "meanCodesEver": 9.0,
+    "meanCitiesEver": 11.0
+   },
+   "SCRIPTURE": {
+    "n": 2,
+    "medianToSecondCode": 1,
+    "medianToSecondCity": 2,
+    "medianToBothVoices": 1,
+    "meanCodesEver": 16.5,
+    "meanCitiesEver": 16.0
+   },
+   "UNATTRIBUTED_FIQH": {
+    "n": 1,
+    "medianToSecondCode": 2,
+    "medianToSecondCity": 1,
+    "medianToBothVoices": 4,
+    "meanCodesEver": 16.0,
+    "meanCitiesEver": 16.0
+   }
+  },
+  "note": "milestones are a SET, not a ladder. A source can reach three codes without ever reaching both voices, and the states are recorded independently for that reason."
+ },
+ "phase17_templatePropagation": {
+  "circulatingFingerprints": 218,
+  "minJudgments": 10,
+  "medianCities": 2,
+  "medianCodes": 1,
+  "medianQuartersPresent": 6,
+  "appearInBothVoices": 12,
+  "appearInBothVoicesShare": 0.055,
+  "top": [
+   {
+    "fingerprint": "951673bc667b",
+    "judgments": 312,
+    "firstQuarter": "1442Q2",
+    "lastQuarter": "1446Q2",
+    "quartersSpanned": 17,
+    "quartersPresent": 14,
+    "cities": 4,
+    "codes": 1,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "eda2a8c5600b",
+    "judgments": 264,
+    "firstQuarter": "1442Q4",
+    "lastQuarter": "1446Q1",
+    "quartersSpanned": 14,
+    "quartersPresent": 13,
+    "cities": 5,
+    "codes": 5,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "46f3af9c443d",
+    "judgments": 191,
+    "firstQuarter": "1442Q2",
+    "lastQuarter": "1445Q2",
+    "quartersSpanned": 13,
+    "quartersPresent": 9,
+    "cities": 2,
+    "codes": 1,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "a3c6b24bfd71",
+    "judgments": 153,
+    "firstQuarter": "1443Q3",
+    "lastQuarter": "1445Q3",
+    "quartersSpanned": 9,
+    "quartersPresent": 9,
+    "cities": 3,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "e45c5c14945e",
+    "judgments": 151,
+    "firstQuarter": "1442Q4",
+    "lastQuarter": "1445Q4",
+    "quartersSpanned": 13,
+    "quartersPresent": 12,
+    "cities": 1,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "2c455de1fc47",
+    "judgments": 136,
+    "firstQuarter": "1442Q4",
+    "lastQuarter": "1445Q4",
+    "quartersSpanned": 13,
+    "quartersPresent": 12,
+    "cities": 1,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "06fed89965cf",
+    "judgments": 123,
+    "firstQuarter": "1443Q4",
+    "lastQuarter": "1445Q4",
+    "quartersSpanned": 9,
+    "quartersPresent": 8,
+    "cities": 2,
+    "codes": 1,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "3151073925b6",
+    "judgments": 109,
+    "firstQuarter": "1443Q4",
+    "lastQuarter": "1445Q2",
+    "quartersSpanned": 7,
+    "quartersPresent": 7,
+    "cities": 2,
+    "codes": 2,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "235a5f30d695",
+    "judgments": 104,
+    "firstQuarter": "1443Q2",
+    "lastQuarter": "1446Q2",
+    "quartersSpanned": 13,
+    "quartersPresent": 13,
+    "cities": 4,
+    "codes": 3,
+    "voices": [
+     "court"
+    ]
+   },
+   {
+    "fingerprint": "0bc761bf4685",
+    "judgments": 97,
+    "firstQuarter": "1443Q1",
+    "lastQuarter": "1445Q2",
+    "quartersSpanned": 10,
+    "quartersPresent": 10,
+    "cities": 4,
+    "codes": 4,
+    "voices": [
+     "court"
+    ]
+   }
+  ],
+  "question": "is some authority diffusion actually the diffusion of judicial wording? A formula present in both voices and many cities is a circulating form of words, whatever authority it carries."
+ },
+ "phase20_sourceMobility": {
+  "steps": 9,
+  "rankAutocorrelation": 0.8954,
+  "topQuartilePersistence": 0.937,
+  "bottomHalfToTopQuartileMobility": 0.0,
+  "universeSize": 34,
+  "note": "the doctrinal universe has 28 identities against roughly 2,000 articles, so a decile is meaningless and a quartile is used. The two mobility figures are NOT directly comparable for that reason, and the comparison below says so."
+ },
+ "phase24_noveltyKind": {
+  "units": 117,
+  "byClass": {
+   "CODE_LOCAL_NOVELTY": 112,
+   "GLOBAL_NOVELTY": 5
+  },
+  "why": "an AI-discovery hypothesis is about the long tail -- sources new to the system. Code-companion formation is about a known source arriving beside a new code. They are different claims and are counted apart.",
+  "rows": [
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "code": "arbitration_law",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "B.KASHSHAF",
+    "code": "commercial_courts_implementing_regulation",
+    "codeLocalFirst": "1443Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "code": "evidence_law",
+    "codeLocalFirst": "1443Q4",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "code": "evidence_law",
+    "codeLocalFirst": "1443Q4",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "code": "commercial_courts_law",
+    "codeLocalFirst": "1443Q4",
+    "globalFirst": "1443Q3",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "code": "evidence_law",
+    "codeLocalFirst": "1444Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "code": "evidence_law",
+    "codeLocalFirst": "1444Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "code": "evidence_law",
+    "codeLocalFirst": "1444Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "code": "sharia_procedure_law",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "B.MUGHNI",
+    "code": "sharia_procedure_law",
+    "codeLocalFirst": "1443Q4",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "J.IBN_QUDAMA",
+    "code": "evidence_law",
+    "codeLocalFirst": "1444Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "M.ASL_UQUD",
+    "code": "evidence_law",
+    "codeLocalFirst": "1443Q4",
+    "globalFirst": "1442Q2",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "code": "companies_law",
+    "codeLocalFirst": "1443Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "code": "commercial_courts_law",
+    "codeLocalFirst": "1443Q4",
+    "globalFirst": "1442Q2",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "B.INSAF",
+    "code": "commercial_courts_implementing_regulation",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "code": "commercial_courts_implementing_regulation",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "code": "companies_law",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "code": "commercial_courts_law",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "code": "commercial_courts_law",
+    "codeLocalFirst": "1443Q1",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "code": "companies_law",
+    "codeLocalFirst": "1443Q3",
+    "globalFirst": "1442Q1",
+    "class": "CODE_LOCAL_NOVELTY"
+   }
+  ]
+ },
+ "phase25_entrantForecastability": {
+  "n": 114,
+  "baseRate": 0.3772,
+  "features": {
+   "firstVoices": 0.3721,
+   "courtOrigin": 0.4419
+  },
+  "bestFeature": "courtOrigin",
+  "liftOverBaseRate": 1.17,
+  "verdict": "NO_USABLE_SIGNAL_USE_DETECT_OR_WATCH",
+  "temporalFolds": "NOT RUN: with 114 eligible units across the whole window there are not enough per-quarter cohorts to build rolling folds. This is a single-sample ranking check, not a backtest, and it may not support a forecast."
+ },
+ "phase21_statuteVsDoctrine": {
+  "articles": {
+   "rankAutocorrelation": 0.6541,
+   "topDecilePersistence": 0.7023,
+   "bottomHalfMobility": 0.0017,
+   "universeSize": "about 2,000 cited articles"
+  },
+  "doctrinalSources": {
+   "rankAutocorrelation": 0.8954,
+   "topQuartilePersistence": 0.937,
+   "bottomHalfMobility": 0.0,
+   "universeSize": 34
+  },
+  "comparabilityWarning": "the two universes differ by two orders of magnitude, so persistence is measured on a decile for articles and a quartile for sources. The numbers are NOT directly comparable and the direction is all that is read from them.",
+  "reading": "doctrinal rank autocorrelation 0.8954 against articles' 0.6541"
+ },
+ "phase35_asset": {
+  "rows": 237,
+  "file": "authority_diffusion.json"
+ },
+ "phase36_flowModel": {
+  "relations": [
+   "OBSERVED_BEFORE",
+   "OBSERVED_AFTER",
+   "CO_OCCURS",
+   "CROSSES_VOICE",
+   "DIFFUSES_TO"
+  ],
+  "forbidden": "CAUSES, INFLUENCES, LEADS_TO",
+  "observedTransitions": {
+   "ARTICLE_BEFORE_ITS_COMPANION": 48,
+   "COMPANION_BEFORE_ITS_ARTICLE": 1,
+   "ARTICLE_WITH_NO_COMPANION": 697,
+   "SOURCE_CROSSES_BAR_TO_COURT": 14,
+   "SOURCE_CROSSES_COURT_TO_BAR": 51
+  },
+  "note": "stages are stored as observed orderings between timestamped appearances. Nothing in this model is an arrow of causation."
+ }
+}

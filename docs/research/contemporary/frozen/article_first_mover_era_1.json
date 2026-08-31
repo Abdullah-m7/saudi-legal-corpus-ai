@@ -1,0 +1,116 @@
+{
+ "what": "The STATUTORY-ARTICLE first-mover result and the negative cohort test, frozen as the baseline against which the doctrinal question is asked. Not to be re-analysed until future data exists.",
+ "era": "ARTICLE_FIRST_MOVER_ERA_1",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "47768df54d4343b1a8be777780797201e25de476",
+ "unit": "statutory (instrument, article) pair",
+ "firstMoverTypology": {
+  "BAR_FIRST": {
+   "n": 94,
+   "meanSurvivalShare": 0.2897,
+   "reachedTop100Share": 0.2234
+  },
+  "BAR_ONLY": {
+   "n": 221,
+   "meanSurvivalShare": 0.0,
+   "reachedTop100Share": 0.0
+  },
+  "COURT_FIRST": {
+   "n": 295,
+   "meanSurvivalShare": 0.4659,
+   "reachedTop100Share": 0.4915
+  },
+  "COURT_ONLY": {
+   "n": 439,
+   "meanSurvivalShare": 0.1337,
+   "reachedTop100Share": 0.1139
+  },
+  "SAME_PERIOD": {
+   "n": 108,
+   "meanSurvivalShare": 0.3392,
+   "reachedTop100Share": 0.287
+  }
+ },
+ "articlesTyped": 1173,
+ "negativeResult": {
+  "name": "NO_BAR_DISCOVERY_SIGNAL_AFTER_MATCHING",
+  "cohort": {
+   "treatedTotal": 84,
+   "controlPool": 971,
+   "matchedTreated": 70,
+   "h1": {
+    "pairs": 70,
+    "meanTreatedCourtShare": 0.001084,
+    "meanMatchedControl": 0.000622,
+    "meanDifference": 0.000462,
+    "sd": 0.002282,
+    "positivePairs": 30,
+    "signTestShare": 0.4286
+   },
+   "h2": {
+    "pairs": 65,
+    "meanTreatedCourtShare": 0.001058,
+    "meanMatchedControl": 0.000674,
+    "meanDifference": 0.000384,
+    "sd": 0.002191,
+    "positivePairs": 22,
+    "signTestShare": 0.3385
+   },
+   "h4": {
+    "pairs": 52,
+    "meanTreatedCourtShare": 0.001579,
+    "meanMatchedControl": 0.000694,
+    "meanDifference": 0.000885,
+    "sd": 0.002954,
+    "positivePairs": 16,
+    "signTestShare": 0.3077
+   },
+   "verdict": "NO_BAR_DISCOVERY_SIGNAL_AFTER_MATCHING",
+   "horizonsSurviving": []
+  },
+  "aggregateLeadLag": {
+   "ALL": {
+    "folds": 11,
+    "meanPartialR": -0.0107,
+    "worst": -0.186,
+    "best": 0.1758,
+    "foldsPositive": 4,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "COMMERCIAL_COURTS_LAW": {
+    "folds": 11,
+    "meanPartialR": 0.0197,
+    "worst": -0.3752,
+    "best": 0.4116,
+    "foldsPositive": 7,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "CORE_ARTICLES_TOP_50": {
+    "folds": 11,
+    "meanPartialR": -0.0051,
+    "worst": -0.1734,
+    "best": 0.219,
+    "foldsPositive": 5,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "EVIDENCE_LAW": {
+    "folds": 8,
+    "meanPartialR": -0.0233,
+    "worst": -0.1518,
+    "best": 0.096,
+    "foldsPositive": 3,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "RARE_ARTICLES_BOTTOM_HALF": {
+    "folds": 11,
+    "meanPartialR": 0.0638,
+    "worst": -0.2275,
+    "best": 0.4082,
+    "foldsPositive": 7,
+    "verdict": "PARTY_ADDS"
+   }
+  }
+ },
+ "scope": "party-side use of STATUTORY PROVISIONS does not generally lead their later appearance in court reasoning; provisions first observed in the court's voice are more persistent than provisions first observed in the bar's voice. Nothing here is about doctrinal authority.",
+ "immutability": "re-analysis requires future data. A different method on the same window produces a new era, and this one is still reported."
+}

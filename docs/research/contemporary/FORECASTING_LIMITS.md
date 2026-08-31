@@ -71,6 +71,20 @@ co-citation breadth, new-instrument flag. None improved mean precision by two
 points while improving a majority of folds. `COURT_SHARE_REMAINS_THE_RULE`,
 and the three-feature additive rule is *worse* than its own best ingredient.
 
+**Doctrinal persistence is not forecastable.** Base rate 0.3772; the best
+emergence feature reaches lift 1.17. And with 114 eligible code-local units
+across the whole window there are not enough per-quarter cohorts to build
+rolling folds at all, so what was run is a single-sample ranking check rather
+than a backtest. Verdict `NO_USABLE_SIGNAL_USE_DETECT_OR_WATCH`, and
+REPOSITORY_BET_002 was refused on it.
+
+**The doctrinal court-first advantage does not survive de-boilerplating.** The
+unmatched contrast is the largest in the programme — court-first sources
+persist at 0.5882 against bar-first 0.2857 — and it fails both controls:
+matching leaves 6 pairs, and removing circulating wording flips the matched
+verdict to BAR_FIRST_NOT_WORSE_AFTER_MATCHING. A meaningful part of what looks
+like doctrinal leadership is a formula circulating among courts.
+
 **No model beats persistence on any scalar series.** Fourteen folds, six
 series, two models. The best mean skill is +0.0275 with a worst fold of
 −1.564.
