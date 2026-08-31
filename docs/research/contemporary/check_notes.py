@@ -35,6 +35,7 @@ def facts():
     ins, ief = J("instruments_results.json"), J("instrument_effect_results.json")
     ai = J("article_instrument_results.json")
     dk = J("docket_test_results.json")
+    lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
     W = ov["conditional"]["wide"]
     y, seam = hy["years"], hy["seams"]
@@ -373,6 +374,33 @@ def facts():
         ("corpus longest band",
          f"{dk['byReasonsLengthBand']['corpus']['3']}",
          ["DOCKET.md", "THEORY_LOG.md", "CLAIM_ECOLOGIES.md"]),
+        # --- the locality construct check and the prediction test
+        ("locality related overall",
+         f"{lg['withinW500']['overall']['relatedPct']}",
+         ["DOCKET.md", "THEORY_LOG.md", "CLAIM_ECOLOGIES.md"]),
+        ("locality related, evidence",
+         f"{lg['withinW500']['evidence_law']['relatedPct']}",
+         ["DOCKET.md", "THEORY_LOG.md", "CLAIM_ECOLOGIES.md"]),
+        ("locality related, commercial courts",
+         f"{lg['withinW500']['commercial_courts_law']['relatedPct']}",
+         ["DOCKET.md", "THEORY_LOG.md", "CLAIM_ECOLOGIES.md"]),
+        ("locality unrelated, commercial courts",
+         f"{lg['withinW500']['commercial_courts_law']['unrelatedPct']}",
+         ["DOCKET.md"]),
+        ("brier grand mean",
+         f"{dm['brier']['grandMeanOnly']}",
+         ["DOCKET.md", "CLAIM_ECOLOGIES.md"]),
+        ("brier docket only",
+         f"{dm['brier']['model0_docketOnly']}",
+         ["DOCKET.md", "CLAIM_ECOLOGIES.md"]),
+        ("brier docket plus codes",
+         f"{dm['brier']['model1_docketPlusCodes']}",
+         ["DOCKET.md", "CLAIM_ECOLOGIES.md"]),
+        ("codes share of improvement",
+         f"{dm['improvement']['relativeShareOfTotalImprovementPct']}",
+         ["DOCKET.md", "THEORY_LOG.md", "CLAIM_ECOLOGIES.md"]),
+        ("arbitration adjustment",
+         f"{dm['codeAdjustments']['arbitration_law']}", ["DOCKET.md"]),
     ]
     return out
 

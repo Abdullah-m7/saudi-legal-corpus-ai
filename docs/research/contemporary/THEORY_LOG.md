@@ -143,3 +143,14 @@ as over-claiming.
 **CONSEQUENCE.** Frame decision C — CODE_EFFECT_SURVIVES_DOCKET. The stronger
 D holds for the Evidence Law and cannot be established generally, because the
 negative case is never observed beside another code in the same paragraph.
+
+**ADDENDUM, after the construct check and the prediction test.** Two things
+were added later and both matter. Reading 63 citation neighbourhoods showed
+the ±500 window is a poor absolute measure of "the same reasoning
+proposition" — 42.9 per cent related overall — but a strongly asymmetric one:
+60.0 per cent related beside an Evidence Law citation against 23.1 beside a
+Commercial Courts Law citation, so correcting for relatedness widens the
+contrast rather than closing it. And a held-out prediction test put the
+docket's share of the improvement over a grand mean at 87.2 per cent against
+the codes' 12.8. The code effect is real, survives every control, and is the
+smaller organising variable for predicting any single judgment.

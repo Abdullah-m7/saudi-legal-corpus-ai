@@ -8,8 +8,12 @@ simply be invoked in different kinds of dispute. This is that test.
 explains a real and in one case large part of the spread, and the differences
 between codes survive standardising to a common docket, matching judgments
 that look alike, and holding reasons length fixed. The stronger claim (D)
-holds for the Evidence Law and cannot be established generally — the negative
-case is untestable inside a judgment and the positive extreme reverses.
+holds for the Evidence Law — and the construct check on the measurement unit
+shows that contrast is a *lower* bound — but it cannot be established
+generally: the negative case is untestable inside a judgment and the positive
+extreme reverses. And the honest counterweight is that in a prediction test
+the docket carries 87.2 per cent of the improvement over a grand mean and the
+codes 12.8. Those answer different questions and both are reported.
 
 ## 1 · What the corpus can actually see about a dispute
 
@@ -186,6 +190,69 @@ citations sit nearer the fiqh than the Commercial Courts Law's in three
 quarters of them at ±500 characters and three fifths at the sentence-block
 level. Same dispute, same chamber, same paragraph budget — and the two codes
 sit at different distances from the non-statutory authority in the room.
+
+## 6b · Does "near" mean "about the same thing"?
+
+Section 6 rests on a measurement decision — that a fiqh mention within N
+characters of a statutory citation belongs to the same piece of reasoning —
+and that decision was made by sensitivity analysis alone. Agreement between
+windows is not the same as the windows measuring what they claim to. So 63
+citation neighbourhoods were drawn from 20 judgments citing both codes, and
+the passages were read: **is the nearest non-statutory authority part of the
+same reasoning proposition as this statutory citation?**
+
+Of the 28 that fall inside ±500 characters:
+
+| | n | related | ambiguous | unrelated |
+|---|---:|---:|---:|---:|
+| all | 28 | **42.9 %** | 17.9 % | 39.3 % |
+| beside an Evidence Law citation | 15 | **60.0 %** | 26.7 % | 13.3 % |
+| beside a Commercial Courts Law citation | 13 | **23.1 %** | 7.7 % | 69.2 % |
+
+**As an absolute measure the window is poor** — fewer than half the pairs
+inside it are clearly one proposition — and the local rates in section 6 must
+not be read as rates of connected reasoning.
+
+**But the error is not symmetric, and it runs against the finding.** Beside a
+procedural article the nearby fiqh is usually about something else: art. 16
+confers jurisdiction and the nearest authority, three hundred characters
+later, is كشاف القناع on مماطلة for the fee claim at the end of the judgment.
+Beside an Evidence Law article it is usually the same point: «استقر العرف
+التجاري على اعتبار أن التوقيع على الفواتير… دلالة على استلام ما جاء في
+مضمونها» sits against art. 29 on the weight of a signed document, and the
+hadith «لو يعطى الناس بدعواهم» restates art. 3 in the same sentence.
+
+Correcting for relatedness would therefore **widen** the Evidence-over-
+Commercial-Courts gap, not close it. The reported contrast is a lower bound.
+
+## 6c · How much does the code add once the case is known?
+
+Standardisation and matching compare codes to each other. The prediction
+question is different: given a judgment, how much better can its
+supplementation be anticipated from the codes it cites, over what the kind of
+case already says? Two models fitted as group means on half the judgments and
+scored on the other half, with a cluster bootstrap over judgments because one
+judgment supplies the outcome for every code it cites.
+
+| model | Brier | improvement |
+|---|---:|---:|
+| grand mean only | 0.20576 | — |
+| **MODEL 0** — docket stratum alone | 0.18093 | +0.02483 |
+| **MODEL 1** — docket plus the codes cited | 0.17728 | **+0.00364** (95 % CI +0.00236 to +0.00499) |
+
+The code adjustments are real, ordered as the rest of the programme would
+predict, and span twenty-five points: law practice +0.095, implementing
+regulation +0.083, evidence +0.047, commercial courts +0.046, sharia procedure
+−0.000, companies −0.1037, bankruptcy −0.1518, arbitration -0.1547, civil
+transactions −0.1602.
+
+**And they are the smaller part of the story: the codes carry 12.8 per cent
+of the total improvement over the grand mean, the docket the other 87.2.**
+This is the strongest single limitation on the claim, and it is not in tension
+with sections 3 to 6. Those ask how two codes differ; this asks how well a
+judgment can be anticipated. The kind of case is the better predictor of a
+judgment. The statute book is still the thing that differs between two codes
+in the same case.
 
 ## 7 · What kills parts of the claim
 

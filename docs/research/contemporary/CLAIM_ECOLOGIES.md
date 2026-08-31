@@ -106,10 +106,16 @@ nine recent codes through the same commercial chambers inside five years.
 
 ## STRONGEST EVIDENCE
 
-1. **Within-judgment.** In 2,137 judgments citing both, the Evidence Law's own
-   citations sit nearer non-statutory authority than the Commercial Courts
-   Law's in 74.9 per cent at ±500 characters and 60.8 at the sentence block.
-   Dispute, chamber, year, parties and document are fixed by construction.
+1. **Within-judgment, and it is a lower bound.** In 2,137 judgments citing
+   both, the Evidence Law's own citations sit nearer non-statutory authority
+   than the Commercial Courts Law's in 74.9 per cent at ±500 characters and
+   60.8 at the sentence block; dispute, chamber, year, parties and document
+   are fixed by construction. Reading 63 of those neighbourhoods shows the
+   window is a poor absolute measure — 42.9 per cent of pairs inside ±500 are
+   clearly one proposition — but asymmetrically so: 60.0 per cent related
+   beside an Evidence Law citation against 23.1 beside a Commercial Courts Law
+   one. The mechanical measure credits procedural articles with fiqh that
+   belongs to the costs claim, so correcting for relatedness widens the gap.
 2. **The code, not the subject matter.** Citing the Evidence Law adds about
    fourteen points of supplementation whether or not the recital shows a proof
    dispute; a proof dispute without the code adds four and a half.
@@ -134,14 +140,21 @@ nine recent codes through the same commercial chambers inside five years.
 3. **One large code is mostly docket.** The implementing regulation loses 15.8
    points to standardisation and its within-judgment lead over the Commercial
    Courts Law is 74.0 per cent at ±500 and 50.4 — chance — at the block level.
-4. **The dispute is nearly as strong.** Chance-corrected, docket stratum
-   (+12.20) against set of codes cited (+14.83).
+4. **The dispute is the larger predictor of a judgment.** Chance-corrected,
+   docket stratum (+12.20) against set of codes cited (+14.83) — and in a
+   held-out prediction test the docket carries 87.2 per cent of the
+   improvement over a grand mean against the codes' 12.8 (Brier 0.20576 →
+   0.18093 → 0.17728, the code step significant at 95 % CI +0.00236 to
+   +0.00499). Between two codes in one case the statute book is what differs;
+   for anticipating any single judgment, the kind of case is what matters.
 5. **Ecologies move.** Evidence falls 46.0 → 30.9 per cent across four years;
    Companies 49.3 → 9.8.
 
 ## ALTERNATIVE EXPLANATIONS TESTED
 
-Citation exposure; enacted-text features (nine, leave-one-out MAE 15.3 against
+Citation exposure; docket composition on nine validated recital features, by
+standardisation, matching, length banding and a two-model prediction test;
+enacted-text features (nine, leave-one-out MAE 15.3 against
 a null of 17.2); age; domain; procedural against substantive (eta² 0.005);
 statutory completeness; institutional-operation against dispute-decision;
 article composition; matched legal function; year (0.16 per cent of

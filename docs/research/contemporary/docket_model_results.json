@@ -1,0 +1,39 @@
+{
+ "window": [
+  1444,
+  1445,
+  1446
+ ],
+ "judgments": 23626,
+ "trainJudgments": 11813,
+ "testJudgments": 11813,
+ "strataFitted": 70,
+ "grandMeanHybrid": 0.2844,
+ "brier": {
+  "grandMeanOnly": 0.20576,
+  "model0_docketOnly": 0.18093,
+  "model1_docketPlusCodes": 0.17728
+ },
+ "improvement": {
+  "docketOverGrandMean": 0.02483,
+  "codesOverDocket": 0.00364,
+  "codesOverDocketCI95": [
+   0.00236,
+   0.00499
+  ],
+  "bootstrap": "cluster bootstrap over held-out judgments, 400 replications",
+  "relativeShareOfTotalImprovementPct": 12.8
+ },
+ "codeAdjustments": {
+  "law_practice_law": 0.0951,
+  "commercial_courts_implementing_regulation": 0.0827,
+  "evidence_law": 0.0465,
+  "commercial_courts_law": 0.0457,
+  "sharia_procedure_law": -0.0003,
+  "companies_law": -0.1037,
+  "bankruptcy_law": -0.1518,
+  "arbitration_law": -0.1547,
+  "civil_transactions_law": -0.1602
+ },
+ "note": "Brier score, lower is better. The code adjustments are mean residuals from the docket-only model on the training half; they are descriptive, and a judgment citing several codes receives the sum of them."
+}
