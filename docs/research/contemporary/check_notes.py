@@ -48,6 +48,8 @@ def facts():
     clz = J("clocks_results.json")
     e2z = J("transition_era2_results.json")
     rgz = J("regimes_results.json")
+    ncz = J("nowcast_results.json")
+    ftz = J("futures_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -845,7 +847,82 @@ def facts():
         ("entrant lift doctrinal",
          f"{dfz['phase25_entrantForecastability']['liftOverBaseRate']}", DF),
     ] + formula_facts(fmz) + transition_facts(trz) \
-      + clock_facts(clz, e2z) + regime_facts(rgz)
+      + clock_facts(clz, e2z) + regime_facts(rgz) \
+      + nowcast_facts(ncz, ftz)
+    return out
+
+
+def nowcast_facts(n, f):
+    """NOWCAST.md. The current-state and foresight programme."""
+    NC = ["NOWCAST.md"]
+    c = n["part1_currentState"]["CURRENT_12_MONTHS"]
+    m = n["part11_14_momentum"]
+    fc = n["part15_forecasts"]
+    ar = n["part18_retrievalArchitectures"]["architectures"]
+    inst = {r["instrument"]: r for r in c["mostVisibleInstruments"]}
+    comp = {r["source"]: r for r in c["doctrinalCompanions"]}
+    out = [
+        ("current period", f"{n['part1_windows']['CURRENT_MATURE_PERIOD'][0]}", NC),
+        ("current judgments", f"{c['judgmentsWithCourtAuthority']}", NC),
+        ("current court citations", f"{c['courtStatutoryCitations']}", NC),
+        ("ccl citations", f"{inst['commercial_courts_law']['courtCitations']}", NC),
+        ("ccl share", f"{inst['commercial_courts_law']['share']}", NC),
+        ("evidence citations", f"{inst['evidence_law']['courtCitations']}", NC),
+        ("evidence share", f"{inst['evidence_law']['share']}", NC),
+        ("ccir citations",
+         f"{inst['commercial_courts_implementing_regulation']['courtCitations']}",
+         NC),
+        ("ccir share",
+         f"{inst['commercial_courts_implementing_regulation']['share']}", NC),
+        ("spl citations", f"{inst['sharia_procedure_law']['courtCitations']}", NC),
+        ("spl share", f"{inst['sharia_procedure_law']['share']}", NC),
+        ("arbitration share", f"{inst['arbitration_law']['share']}", NC),
+        ("ctl share", f"{inst['civil_transactions_law']['share']}", NC),
+        ("top50 share", f"{c['operationalCore']['top50Share']}", NC),
+        ("top100 share", f"{c['operationalCore']['top100Share']}", NC),
+        ("article hhi", f"{c['operationalCore']['articleHHI']}", NC),
+        ("distinct articles", f"{c['operationalCore']['distinctArticlesCited']}",
+         NC),
+        ("court bar overlap", f"{c['courtVersusBar']['top50Overlap']}", NC),
+        ("party court ratio",
+         f"{c['courtVersusBar']['partyToCourtCitationRatio']}", NC),
+        ("hybrid rate", f"{c['hybridReasoning']['hybridRate']}", NC),
+        ("named fiqh rate", f"{c['hybridReasoning']['namedFiqhRate']}", NC),
+        ("nonstat per judgment",
+         f"{c['hybridReasoning']['nonStatutoryMentionsPerJudgment']}", NC),
+        ("traceability now", f"{c['traceability']}", NC),
+        ("distinct sources now", f"{c['sourceConcentration']['distinctSources']}",
+         NC),
+        ("source hhi now", f"{c['sourceConcentration']['sourceHHI']}", NC),
+        ("formula mentions now", f"{c['formulaLayer']['mentions']}", NC),
+        ("distinct formulas now", f"{c['formulaLayer']['distinctFormulas']}", NC),
+        ("circulating share now", f"{c['formulaLayer']['circulatingShare']}", NC),
+        ("companion unattributed",
+         f"{comp['GENERIC.fiqh.unattributed']['share']}", NC),
+        ("companion hadith", f"{comp['GENERIC.hadith.untraced']['share']}", NC),
+        ("companion ibn taymiyya", f"{comp['J.IBN_TAYMIYYA']['share']}", NC),
+        ("companion quran", f"{comp['GENERIC.quran.citation']['share']}", NC),
+        ("companion kashshaf", f"{comp['B.KASHSHAF']['share']}", NC),
+        ("six month forecast", f"{fc['SIX_MONTH']['forecast']}", NC),
+        ("twelve month base", f"{fc['TWELVE_MONTH']['backtest']['baseRate']}", NC),
+        ("twelve month precision",
+         f"{fc['TWELVE_MONTH']['backtest']['precisionOfATop20List']}", NC),
+        ("twelve month lift", f"{fc['TWELVE_MONTH']['backtest']['lift']}", NC),
+        ("ai issue families", f"{f['part6_9_aiLawMap']['issueFamilies']}", NC),
+        ("ai anchors", f"{f['part7_anchorMap']['anchors']}", NC),
+        ("ai explicit anchors",
+         f"{f['part7_anchorMap']['explicitRuleAnchors']}", NC),
+        ("pressure signals", f"{f['part2_4_pressureMap']['signals']}", NC),
+    ]
+    for k in ("articleMomentum", "codeMomentum", "doctrinalMomentum"):
+        key = [x for x in m if x.endswith(k)][0]
+        for cls, v in sorted(m[key]["counts"].items()):
+            out.append((f"{k} {cls}", f"{v}", NC))
+    for k, v in sorted(ar.items()):
+        out.append((f"arch {k} cov", f"{v['meanCitationCoverage']}", NC))
+        out.append((f"arch {k} drift", f"{v['coverageDrift']}", NC))
+    for cls, v in sorted(f["part6_9_aiLawMap"]["gapClasses"].items()):
+        out.append((f"gap {cls}", f"{v}", NC))
     return out
 
 

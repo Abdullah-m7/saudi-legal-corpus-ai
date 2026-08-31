@@ -1359,5 +1359,310 @@
   },
   "S_D_F": "OBSERVED_IN_TWO_CALIBRATION_EVENTS, and nothing more. It was already shown to be an artefact of an early clock; it is now additionally denied the status of a general law.",
   "TRANSITION_BET_001": "REFUSED, and no further legal-clock event is promoted merely to reach four examples."
+ },
+ "nowcastRelease": {
+  "what": "SAUDI LEGAL NOWCAST AND FORESIGHT. Forecasts issued from the current endpoint, with the expectations frozen beside them.",
+  "issuedAt": "1446Q1",
+  "observationLag": "the latest mature quarter is 1446Q1, approximately 2024-07-08G. Every statement here is CURRENT-AS-PUBLISHED, not current-as-decided, and the gap between the two is not measurable because no publication date exists per judgment.",
+  "SIX_MONTH": {
+   "target": "share of the current top-50 court articles still in the top-50 two mature quarters later",
+   "backtest": {
+    "folds": 5,
+    "meanHoldRate": 0.672
+   },
+   "forecast": 0.672,
+   "scoringRule": "compare the realised hold rate at the second mature quarter after 1446Q1 against this value; the forecast is wrong if it misses by more than 0.10.",
+   "status": "ISSUED",
+   "regimeAssumption": "no material detected regime break before target maturity, per REGIME_DETECTOR_ERA_1"
+  },
+  "TWELVE_MONTH": {
+   "target": "which articles outside the current top-50 enter it",
+   "backtest": {
+    "folds": 5,
+    "baseRate": 0.045,
+    "precisionOfATop20List": 0.31,
+    "lift": 6.8889
+   },
+   "probabilities": "NONE. RANK_ONLY, as the forecasting programme already established: fold-to-fold precision varies too widely for a calibrated number.",
+   "status": "ISSUED_AS_RANKED_LIST",
+   "regimeAssumption": "no material detected regime break before target maturity"
+  },
+  "TWELVE_MONTH_rankedList": [
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "article": 56,
+    "cumulativeCourtCitations": 116
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "article": 90,
+    "cumulativeCourtCitations": 116
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 35,
+    "cumulativeCourtCitations": 112
+   },
+   {
+    "instrument": "evidence_law",
+    "article": 97,
+    "cumulativeCourtCitations": 109
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 66,
+    "cumulativeCourtCitations": 109
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 128,
+    "cumulativeCourtCitations": 107
+   },
+   {
+    "instrument": "evidence_law",
+    "article": 98,
+    "cumulativeCourtCitations": 105
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 41,
+    "cumulativeCourtCitations": 105
+   },
+   {
+    "instrument": "evidence_law",
+    "article": 105,
+    "cumulativeCourtCitations": 103
+   },
+   {
+    "instrument": "trade_names_law",
+    "article": 9,
+    "cumulativeCourtCitations": 101
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "article": 215,
+    "cumulativeCourtCitations": 100
+   },
+   {
+    "instrument": "evidence_law",
+    "article": 92,
+    "cumulativeCourtCitations": 100
+   },
+   {
+    "instrument": "commercial_courts_law",
+    "article": 215,
+    "cumulativeCourtCitations": 99
+   },
+   {
+    "instrument": "evidence_law",
+    "article": 16,
+    "cumulativeCourtCitations": 99
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 78,
+    "cumulativeCourtCitations": 98
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "article": 240,
+    "cumulativeCourtCitations": 94
+   },
+   {
+    "instrument": "arbitration_law",
+    "article": 51,
+    "cumulativeCourtCitations": 85
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 11,
+    "cumulativeCourtCitations": 84
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "article": 243,
+    "cumulativeCourtCitations": 83
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "article": 73,
+    "cumulativeCourtCitations": 83
+   }
+  ],
+  "TWENTY_FOUR_MONTH": {
+   "status": "ABSTAIN",
+   "why": "the corpus holds ten mature quarters. A 24-month horizon is eight of them, so a backtest would have at most two non-overlapping folds. Temporal depth does not justify the horizon and no forecast is issued at it."
+  },
+  "regimeAssumption": "no material detected regime break before target maturity, scored against REGIME_DETECTOR_ERA_1. A break changes the STATUS; it never excuses a miss.",
+  "branches": [
+   {
+    "id": "F0",
+    "name": "CURRENT_CONDITIONS_CONTINUE",
+    "expect_first": "nothing outside the frozen detector bounds",
+    "metrics": [
+     "all armed detector series"
+    ],
+    "falsifier": "any REGIME_CANDIDATE or confirmed detector shift",
+    "data_needed": "none; this is the default and it wins by default"
+   },
+   {
+    "id": "F1",
+    "name": "MAJOR_NEW_LAW_OR_REGULATORY_PACKAGE",
+    "expect_first": "court statutory visibility of the new instrument in the first mature quarter at or after its commencement",
+    "metrics": [
+     "instrument court share",
+     "top-100 entry",
+     "article HHI"
+    ],
+    "falsifier": "commencement passes and the instrument stays absent for three mature quarters",
+    "data_needed": "a verified commencement date, which the legal clock layer now produces"
+   },
+   {
+    "id": "F2",
+    "name": "VERIFIED_BAR_LEGAL_AI_ADOPTION",
+    "expect_first": "party-side long-tail statutory use and party source diversity",
+    "metrics": [
+     "party article breadth",
+     "party source diversity",
+     "court/bar top-50 overlap",
+     "formula concentration in the bar's voice"
+    ],
+    "falsifier": "verified bar adoption with party-side breadth inside its historical bounds while the court's moves",
+    "data_needed": "an adoption event at L3_WORKFLOW_MATCH, of which there are currently none"
+   },
+   {
+    "id": "F3",
+    "name": "VERIFIED_BENCH_JUDICIAL_RESEARCH_AI",
+    "expect_first": "court source diversity and traceability",
+    "metrics": [
+     "named-source share",
+     "source HHI",
+     "long-tail doctrine",
+     "companion structure",
+     "formula concentration"
+    ],
+    "falsifier": "verified bench adoption and only statutory ranking moves",
+    "data_needed": "the same linkability, in the observed forum"
+   },
+   {
+    "id": "F4",
+    "name": "AI_BECOMES_A_MATERIAL_SUBJECT_OF_LITIGATION",
+    "expect_first": "the first-case capture schema fires",
+    "metrics": [
+     "AI radar L3 count",
+     "digital-evidence article visibility"
+    ],
+    "falsifier": "none needed; this branch is observed or it is not",
+    "data_needed": "one qualifying judgment"
+   },
+   {
+    "id": "F5",
+    "name": "PUBLICATION_OR_DATA_ACCESS_CHANGE",
+    "expect_first": "the publication and docket families, which are already the least stationary part of the corpus",
+    "metrics": [
+     "judgments per quarter",
+     "median reasons length",
+     "claim-family mix"
+    ],
+    "falsifier": "an access change with the publication family inside its bounds",
+    "data_needed": "none; this branch is the one the corpus is best able to see, and least able to distinguish from legal change"
+   },
+   {
+    "id": "F6",
+    "name": "MAJOR_INSTITUTIONAL_RESTRUCTURING",
+    "expect_first": "jurisdiction-sensitive docket composition",
+    "metrics": [
+     "claim-family mix",
+     "court-type mix",
+     "instrument mix"
+    ],
+    "falsifier": "restructuring with no docket movement",
+    "data_needed": "an official restructuring event, of which the bounded lookup found none in the observed window"
+   }
+  ],
+  "aiHypothesisTournament": {
+   "hypotheses": [
+    {
+     "id": "H1",
+     "name": "HOMOGENISATION",
+     "claim": "AI concentrates authorities and formulations",
+     "metrics": [
+      "source HHI",
+      "top-10 formula concentration",
+      "article HHI"
+     ],
+     "falsifier": "verified adoption with concentration flat or falling",
+     "required_linkability": "L3_WORKFLOW_MATCH"
+    },
+    {
+     "id": "H2",
+     "name": "DISCOVERY",
+     "claim": "AI expands the long tail",
+     "metrics": [
+      "distinct sources",
+      "distinct articles",
+      "rare-article share"
+     ],
+     "falsifier": "verified adoption with the long tail flat or shrinking",
+     "required_linkability": "L3_WORKFLOW_MATCH"
+    },
+    {
+     "id": "H3",
+     "name": "TRACEABILITY",
+     "claim": "AI increases named and retrievable authority",
+     "metrics": [
+      "named-identity share of court non-statutory mentions"
+     ],
+     "falsifier": "verified adoption with the named share flat or falling",
+     "required_linkability": "L3_WORKFLOW_MATCH"
+    },
+    {
+     "id": "H4",
+     "name": "GENERIC_DRAFTING",
+     "claim": "AI increases generic legal language",
+     "metrics": [
+      "GENERIC_REASONING formula class share",
+      "generic-identity share"
+     ],
+     "falsifier": "verified adoption with the generic share flat or falling",
+     "required_linkability": "L3_WORKFLOW_MATCH"
+    },
+    {
+     "id": "H5",
+     "name": "NO_MATERIAL_CHANGE",
+     "claim": "nothing measurable moves",
+     "metrics": [
+      "all of the above"
+     ],
+     "falsifier": "any confirmed shift in an expected layer",
+     "required_linkability": "L3_WORKFLOW_MATCH",
+     "note": "this is the default and it wins by default"
+    },
+    {
+     "id": "H6",
+     "name": "CHANNEL_DEPENDENT",
+     "claim": "bar AI and bench AI produce different changes",
+     "metrics": [
+      "every metric above, split by voice"
+     ],
+     "falsifier": "both channels adopted and the voice split shows the same movement",
+     "required_linkability": "two separately verified events, one per channel"
+    }
+   ],
+   "noWinnerToday": true,
+   "allRequire": "an adoption event at L3_WORKFLOW_MATCH, of which the registry holds none"
+  },
+  "aiBaseline": {
+   "aiMaterialDisputesInCorpus": 0,
+   "source": "ai_radar_results.json, L3 rule",
+   "explicitAIProvisionsFoundInHeldTexts": 5,
+   "reading": "Saudi law already permits AI in the procedures of the very forum this corpus observes, while the corpus contains no dispute in which AI is material. Permission is present; consequence is untested."
+  },
+  "firstCaseReadiness": {
+   "armed": true,
+   "baselineAtDefinition": "zero AI-material disputes in the observed corpus. The schema is armed against a base rate of zero, which is the point."
+  },
+  "prospectiveCaptureRule": "from this entry onward, an event recorded BEFORE its observable_from is PROSPECTIVE and everything already held is BACKFILLED. The class is computed from timestamps, never declared.",
+  "frozenAt": "frozen/nowcast_era_1.json"
  }
 }

@@ -1,0 +1,398 @@
+{
+ "what": "LEGAL PRESSURE MAP. What is exerting pressure on the current system. Not a prediction.",
+ "statusClasses": {
+  "OBSERVED": "measured in this corpus or quoted from an enacted text this repository holds",
+  "EXPECTED": "follows from an OBSERVED fact plus a stated legal or institutional mechanism",
+  "SPECULATIVE": "neither"
+ },
+ "neverMixed": true,
+ "horizons": {
+  "NOW": "0-6 months",
+  "NEAR": "6-12 months",
+  "MID": "12-24 months",
+  "LONG": "24+ months",
+  "aHorizonIsNotAForecast": "it says when an observable consequence could plausibly emerge, with no probability attached"
+ },
+ "byStatus": {
+  "OBSERVED": 21
+ },
+ "byHorizon": {
+  "NEAR": 3,
+  "NOW": 18
+ },
+ "signals": [
+  {
+   "signal_id": "CUR-2026-001",
+   "title": "2026 designated the Year of Artificial Intelligence; SDAIA issues guidelines to unify national effort",
+   "date": "2026-03",
+   "domain": "AI governance",
+   "institution": "SDAIA / Council of Ministers",
+   "source": "https://www.spa.gov.sa/en/N2546742",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [],
+   "observable_evidence": "an official state announcement; no corpus observable follows from it directly",
+   "possible_legal_consequence": "increased institutional AI adoption across government, including justice bodies",
+   "consequence_status": "EXPECTED",
+   "confidence": "HIGH_ON_THE_EVENT_NONE_ON_THE_CONSEQUENCE"
+  },
+  {
+   "signal_id": "CUR-2026-002",
+   "title": "SDAIA opens public consultation on a draft Responsible AI policy via the Istitlaa platform",
+   "date": "2026-04",
+   "domain": "AI governance",
+   "institution": "SDAIA",
+   "source": "https://www.spa.gov.sa/en/N2551533",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NEAR",
+   "affected_statutes": [],
+   "observable_evidence": "a named draft instrument under official consultation",
+   "possible_legal_consequence": "a binding or advisory AI policy instrument; if binding and breached, a regulatory rather than commercial forum would see it first",
+   "consequence_status": "EXPECTED",
+   "confidence": "HIGH_ON_THE_CONSULTATION"
+  },
+  {
+   "signal_id": "CUR-2026-003",
+   "title": "SDAIA issues rules governing personal data protection licensing and accreditation",
+   "date": "2026",
+   "domain": "data protection",
+   "institution": "SDAIA",
+   "source": "https://spa.gov.sa/en/N2517131",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "pdpl_law"
+   ],
+   "observable_evidence": "a licensing regime around the Personal Data Protection Law",
+   "possible_legal_consequence": "a compliance market and an enforcement channel; disputes would surface in a regulatory forum before a commercial one",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEDIUM"
+  },
+  {
+   "signal_id": "CUR-2026-004",
+   "title": "Personal Data Protection Law committees to impose penalties on confirmed violations",
+   "date": "2026",
+   "domain": "data protection",
+   "institution": "SDAIA",
+   "source": "https://spa.gov.sa/en/N2489505",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "pdpl_law"
+   ],
+   "observable_evidence": "an operating penalty mechanism",
+   "possible_legal_consequence": "the first data-protection disputes with a decided record; NOT in this corpus, whose forum is commercial adjudication",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEDIUM"
+  },
+  {
+   "signal_id": "CUR-2026-005",
+   "title": "Law permitting non-Saudi ownership of real estate enters into force 22 January 2026",
+   "date": "2026-01-22",
+   "domain": "real estate / commercial",
+   "institution": "REGA",
+   "source": "https://spa.gov.sa/en/N2496274",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NEAR",
+   "affected_statutes": [],
+   "observable_evidence": "an instrument in force with a stated date",
+   "possible_legal_consequence": "new transaction volume, and eventually new dispute families; whether any of it reaches published commercial adjudication is unknown",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEDIUM"
+  },
+  {
+   "signal_id": "CUR-2026-006",
+   "title": "Labour Law amendments: 38 articles revised, 7 omitted, 2 added",
+   "date": "2025",
+   "domain": "labour",
+   "institution": "Ministry of Human Resources and Social Development",
+   "source": "https://www.hrsd.gov.sa/en/media-center/news/060720242",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "labor_law"
+   ],
+   "observable_evidence": "an amendment package in force; the Labour Law is cited only 12 times in this corpus, so its visibility here is minimal",
+   "possible_legal_consequence": "labour disputes are not the commercial forum's docket; observable uptake here is unlikely",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEDIUM"
+  },
+  {
+   "signal_id": "CUR-2026-007",
+   "title": "New Enforcement Law welcomed by the Minister of Justice",
+   "date": "2026-04-15",
+   "domain": "enforcement",
+   "institution": "Ministry of Justice",
+   "source": "https://www.spa.gov.sa/en/N2560642",
+   "source_type": "S1_OFFICIAL_STATE_AGENCY",
+   "status": "OBSERVED",
+   "horizon": "NEAR",
+   "affected_statutes": [
+    "enforcement_law"
+   ],
+   "observable_evidence": "already carried as LSIG-0004 in the legal signal registry",
+   "possible_legal_consequence": "enforcement output is not published as reasoned judgments, so this corpus cannot observe its uptake",
+   "consequence_status": "OBSERVED_LIMIT",
+   "confidence": "HIGH"
+  },
+  {
+   "signal_id": "CUR-CORPUS-criminal_procedure_law",
+   "title": "criminal_procedure_law rising in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "criminal_procedure_law"
+   ],
+   "observable_evidence": "court citations 4 -> 14 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-arbitration_implementing_regulation",
+   "title": "arbitration_implementing_regulation rising in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "arbitration_implementing_regulation"
+   ],
+   "observable_evidence": "court citations 22 -> 45 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-basic_law_of_governance",
+   "title": "basic_law_of_governance rising in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "basic_law_of_governance"
+   ],
+   "observable_evidence": "court citations 3 -> 6 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-arbitration_law",
+   "title": "arbitration_law rising in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "arbitration_law"
+   ],
+   "observable_evidence": "court citations 201 -> 378 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-commercial_papers_law",
+   "title": "commercial_papers_law rising in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "commercial_papers_law"
+   ],
+   "observable_evidence": "court citations 5 -> 7 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-labor_law",
+   "title": "labor_law rising in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "labor_law"
+   ],
+   "observable_evidence": "court citations 5 -> 5 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-civil_transactions_law",
+   "title": "civil_transactions_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "civil_transactions_law"
+   ],
+   "observable_evidence": "court citations 0 -> 270 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-CORPUS-implementing_regulations_general",
+   "title": "implementing_regulations_general newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "implementing_regulations_general"
+   ],
+   "observable_evidence": "court citations 0 -> 7 between adjacent four-quarter windows",
+   "possible_legal_consequence": "further visibility, doctrinal companion formation, or neither",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-ART-civil_transactions_law-120",
+   "title": "article 120 of civil_transactions_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "civil_transactions_law"
+   ],
+   "observable_evidence": "69 court citations in the current window, none in the preceding one",
+   "possible_legal_consequence": "entry into the operational core",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-ART-civil_transactions_law-720",
+   "title": "article 720 of civil_transactions_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "civil_transactions_law"
+   ],
+   "observable_evidence": "40 court citations in the current window, none in the preceding one",
+   "possible_legal_consequence": "entry into the operational core",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-ART-civil_transactions_law-107",
+   "title": "article 107 of civil_transactions_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "civil_transactions_law"
+   ],
+   "observable_evidence": "17 court citations in the current window, none in the preceding one",
+   "possible_legal_consequence": "entry into the operational core",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-ART-civil_transactions_law-17",
+   "title": "article 17 of civil_transactions_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "civil_transactions_law"
+   ],
+   "observable_evidence": "9 court citations in the current window, none in the preceding one",
+   "possible_legal_consequence": "entry into the operational core",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-ART-companies_law-243",
+   "title": "article 243 of companies_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "companies_law"
+   ],
+   "observable_evidence": "9 court citations in the current window, none in the preceding one",
+   "possible_legal_consequence": "entry into the operational core",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  },
+  {
+   "signal_id": "CUR-ART-civil_transactions_law-28",
+   "title": "article 28 of civil_transactions_law newly visible in the court's voice",
+   "date": "1446Q1",
+   "domain": "commercial adjudication",
+   "institution": "commercial courts",
+   "source": "measured in this corpus",
+   "source_type": "S1_OWN_MEASUREMENT",
+   "status": "OBSERVED",
+   "horizon": "NOW",
+   "affected_statutes": [
+    "civil_transactions_law"
+   ],
+   "observable_evidence": "8 court citations in the current window, none in the preceding one",
+   "possible_legal_consequence": "entry into the operational core",
+   "consequence_status": "EXPECTED",
+   "confidence": "MEASURED_ON_TWO_WINDOWS_ONLY"
+  }
+ ],
+ "recorded_at": "2026-08-31"
+}

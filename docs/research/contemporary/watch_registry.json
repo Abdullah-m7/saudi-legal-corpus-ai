@@ -195,6 +195,52 @@
    ],
    "status": "OPEN",
    "priority": 1
+  },
+  {
+   "trigger_id": "FIRST_AI_MATERIAL_DISPUTE",
+   "condition": "the AI radar's L3 rule returns a judgment in which an AI system is material to the dispute, not merely mentioned. The baseline at arming is zero.",
+   "checkBy": "ai_radar_results.json against a refreshed corpus",
+   "action": [
+    "capture it against the FIRST-AI-CASE schema in ai_law_map.json, which was fixed before the first case existed",
+    "record which anchor family absorbed it and whether the anchor was OBSERVED_ADEQUATE, OBSERVED_STRAINED or UNRESOLVED",
+    "never infer AI involvement from writing style, never predict the outcome, never name a judge, party or firm"
+   ],
+   "status": "OPEN",
+   "priority": 1
+  },
+  {
+   "trigger_id": "COURT_VOICE_CITES_AN_AI_PERMISSION_ARTICLE",
+   "condition": "a court-voice citation of any of the four explicit AI permission articles: CCL implementing regulation art. 24, the Evidence Law procedural manuals art. 23, the Notarisation implementing regulation art. 20, or the Enforcement Providers regulation art. 16",
+   "checkBy": "the statutory citation layer against ai_law_map.json anchors",
+   "action": [
+    "record it as the first observable use of an AI anchor in the forum's own reasoning",
+    "check whether it is procedural permission or a consequence question, which is the distinction the anchor map turns on"
+   ],
+   "status": "OPEN",
+   "priority": 1
+  },
+  {
+   "trigger_id": "SDAIA_RESPONSIBLE_AI_POLICY_ISSUED",
+   "condition": "the draft Responsible AI policy now under public consultation (CUR-2026-002) is issued in binding or advisory form",
+   "checkBy": "SDAIA and the Istitlaa platform",
+   "action": [
+    "add it to the legal clock layer if it carries a commencement rule",
+    "re-read the AI anchor map: an issued policy may move families currently classed UNCLEAR or NO_OBVIOUS_ANCHOR",
+    "do NOT treat issuance as an observable corpus event; its forum is regulatory"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "CTL_ENTERS_THE_OPERATIONAL_CORE",
+   "condition": "any Civil Transactions Law article enters the court's top-50 cited articles in a mature quarter; it is currently newly visible at 0.0181 of court citations",
+   "checkBy": "nowcast.py current state and momentum",
+   "action": [
+    "record the milestone on the live legal change chain",
+    "check whether a doctrinal companion formed before or after it, storing the milestone without assuming an ordering"
+   ],
+   "status": "OPEN",
+   "priority": 2
   }
  ]
 }

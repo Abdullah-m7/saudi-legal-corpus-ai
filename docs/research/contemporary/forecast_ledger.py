@@ -1134,6 +1134,41 @@ def regime_release():
     }
 
 
+def nowcast_release():
+    """The forecasts issued from the current endpoint, and what they assume."""
+    n = J("nowcast_results.json")
+    f = J("futures_results.json")
+    fc = n["part15_forecasts"]
+    return {
+        "what": "SAUDI LEGAL NOWCAST AND FORESIGHT. Forecasts issued from the "
+                "current endpoint, with the expectations frozen beside them.",
+        "issuedAt": fc["issuedAt"],
+        "observationLag": n["part1_windows"]["observationLag"],
+        "SIX_MONTH": fc["SIX_MONTH"],
+        "TWELVE_MONTH": {k: v for k, v in fc["TWELVE_MONTH"].items()
+                         if k != "rankedList"},
+        "TWELVE_MONTH_rankedList": fc["TWELVE_MONTH"]["rankedList"],
+        "TWENTY_FOUR_MONTH": fc["TWENTY_FOUR_MONTH"],
+        "regimeAssumption": "no material detected regime break before target "
+                            "maturity, scored against REGIME_DETECTOR_ERA_1. "
+                            "A break changes the STATUS; it never excuses a "
+                            "miss.",
+        "branches": f["part5_16_branches"],
+        "aiHypothesisTournament": f["part17_hypothesisTournament"],
+        "aiBaseline": f["part16_aiBaseline"],
+        "firstCaseReadiness": {
+            "armed": True,
+            "baselineAtDefinition":
+                f["part8_firstCaseReadiness"]["baseline_at_definition"]},
+        "prospectiveCaptureRule": "from this entry onward, an event recorded "
+                                  "BEFORE its observable_from is PROSPECTIVE "
+                                  "and everything already held is BACKFILLED. "
+                                  "The class is computed from timestamps, "
+                                  "never declared.",
+        "frozenAt": "frozen/nowcast_era_1.json",
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -1284,6 +1319,8 @@ def main():
         old["clockRelease"] = clock_release()
     if "regimeRelease" not in old:
         old["regimeRelease"] = regime_release()
+    if "nowcastRelease" not in old:
+        old["nowcastRelease"] = nowcast_release()
     if "horizonRelease" not in old:
         old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:

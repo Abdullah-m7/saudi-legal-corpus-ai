@@ -9,6 +9,47 @@ Nothing here is a to-do list. Several of these will never be liftable.
 
 ---
 
+## The mission changed, and what that means for this file
+
+The repository is now a **Saudi Legal Nowcast and Foresight Observatory**.
+Reconstructing the past is no longer the programme; history is baseline,
+calibration and negative control. Every refusal below stands, and each is now
+read as a limit on what can be said about the present and the future rather
+than as an unfinished historical task.
+
+**PUBLICATION TIMING IS A PERMANENT STANDING LIMITATION, NOT A RESEARCH
+PROGRAMME.** No publication date exists per judgment in either institution's
+metadata. Decision-to-publication lag cannot be separated from legal change;
+the observation system is the least stationary part of the corpus and confounds
+every content series computed over it; and no candidate regime break survives
+removing it. This was pursued as far as it could go and is now recorded and
+set aside. Reconstructing historical publication dates, historical commencement
+dates for old instruments, further historical regime breaks, or explanations
+for individual past quarters is **explicitly out of scope**.
+
+**THE OBSERVATION LAG IS THE BINDING LIMIT ON EVERY "NOW" STATEMENT.** The
+latest mature quarter is 1446Q1, roughly 2024-07. Everything the observatory
+calls current is current-as-published, not current-as-decided. *Lifted by:* the
+publisher, not by analysis.
+
+**THE FORUM BOUNDS EVERY AI QUESTION.** This corpus is published Ministry of
+Justice commercial adjudication. The two most active current AI frontiers — AI
+governance and data protection — are regulatory, so their first disputes will
+not appear here however well the instrument is armed. Absence from this corpus
+is absence from this record, never absence from Saudi law.
+
+**AND ONE DEFECT FOUND WHILE BUILDING THE NOWCAST, RECORDED RATHER THAN
+BURIED.** The mention layer's resolution field covers statute citations only,
+so a "traceability" measure computed from it over non-statutory mentions is
+identically zero. The nowcast now measures traceability on the companion
+layer, which carries the named-versus-generic distinction, and reports 0.3846.
+The regime programme's ECOLOGY family included the degenerate version as one of
+its four metrics, so its "0 of 4 breaks" result rests on three live metrics and
+one that could not have fired. The frozen regime era keeps its numbers, which
+are exactly what was computed; this correction changes how they are read.
+
+---
+
 ## Structural limits
 
 **Temporal depth.** Eighteen hijri quarters, ten of them SCORABLE. Every fold

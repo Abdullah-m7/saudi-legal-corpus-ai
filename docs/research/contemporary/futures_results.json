@@ -1,0 +1,611 @@
+{
+ "what": "SAUDI LEGAL FORESIGHT. Current pressure, the legal frontier, and where AI would land if it arrived in the observed forum.",
+ "recorded_at": "2026-08-31",
+ "threeKindsOfStatement": {
+  "OBSERVED": "measured in this corpus or quoted from an enacted text this repository holds",
+  "EXPECTED": "follows from an OBSERVED fact plus a stated legal or institutional mechanism",
+  "SPECULATIVE": "neither"
+ },
+ "part2_4_pressureMap": {
+  "file": "legal_pressure_map.json",
+  "signals": 21,
+  "byStatus": {
+   "OBSERVED": 21
+  },
+  "byHorizon": {
+   "NEAR": 3,
+   "NOW": 18
+  }
+ },
+ "part3_currentOfficialSignalPass": {
+  "signals": 7,
+  "sourcesUsed": [
+   "S1_OFFICIAL_STATE_AGENCY"
+  ],
+  "boundedBy": "official state sources only; stopped once a high-value current set existed. No news archive, no historical completion.",
+  "items": [
+   {
+    "signal_id": "CUR-2026-001",
+    "title": "2026 designated the Year of Artificial Intelligence; SDAIA issues guidelines to unify national effort",
+    "date": "2026-03",
+    "domain": "AI governance",
+    "institution": "SDAIA / Council of Ministers",
+    "source": "https://www.spa.gov.sa/en/N2546742",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NOW",
+    "affected_statutes": [],
+    "observable_evidence": "an official state announcement; no corpus observable follows from it directly",
+    "possible_legal_consequence": "increased institutional AI adoption across government, including justice bodies",
+    "consequence_status": "EXPECTED",
+    "confidence": "HIGH_ON_THE_EVENT_NONE_ON_THE_CONSEQUENCE"
+   },
+   {
+    "signal_id": "CUR-2026-002",
+    "title": "SDAIA opens public consultation on a draft Responsible AI policy via the Istitlaa platform",
+    "date": "2026-04",
+    "domain": "AI governance",
+    "institution": "SDAIA",
+    "source": "https://www.spa.gov.sa/en/N2551533",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NEAR",
+    "affected_statutes": [],
+    "observable_evidence": "a named draft instrument under official consultation",
+    "possible_legal_consequence": "a binding or advisory AI policy instrument; if binding and breached, a regulatory rather than commercial forum would see it first",
+    "consequence_status": "EXPECTED",
+    "confidence": "HIGH_ON_THE_CONSULTATION"
+   },
+   {
+    "signal_id": "CUR-2026-003",
+    "title": "SDAIA issues rules governing personal data protection licensing and accreditation",
+    "date": "2026",
+    "domain": "data protection",
+    "institution": "SDAIA",
+    "source": "https://spa.gov.sa/en/N2517131",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NOW",
+    "affected_statutes": [
+     "pdpl_law"
+    ],
+    "observable_evidence": "a licensing regime around the Personal Data Protection Law",
+    "possible_legal_consequence": "a compliance market and an enforcement channel; disputes would surface in a regulatory forum before a commercial one",
+    "consequence_status": "EXPECTED",
+    "confidence": "MEDIUM"
+   },
+   {
+    "signal_id": "CUR-2026-004",
+    "title": "Personal Data Protection Law committees to impose penalties on confirmed violations",
+    "date": "2026",
+    "domain": "data protection",
+    "institution": "SDAIA",
+    "source": "https://spa.gov.sa/en/N2489505",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NOW",
+    "affected_statutes": [
+     "pdpl_law"
+    ],
+    "observable_evidence": "an operating penalty mechanism",
+    "possible_legal_consequence": "the first data-protection disputes with a decided record; NOT in this corpus, whose forum is commercial adjudication",
+    "consequence_status": "EXPECTED",
+    "confidence": "MEDIUM"
+   },
+   {
+    "signal_id": "CUR-2026-005",
+    "title": "Law permitting non-Saudi ownership of real estate enters into force 22 January 2026",
+    "date": "2026-01-22",
+    "domain": "real estate / commercial",
+    "institution": "REGA",
+    "source": "https://spa.gov.sa/en/N2496274",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NEAR",
+    "affected_statutes": [],
+    "observable_evidence": "an instrument in force with a stated date",
+    "possible_legal_consequence": "new transaction volume, and eventually new dispute families; whether any of it reaches published commercial adjudication is unknown",
+    "consequence_status": "EXPECTED",
+    "confidence": "MEDIUM"
+   },
+   {
+    "signal_id": "CUR-2026-006",
+    "title": "Labour Law amendments: 38 articles revised, 7 omitted, 2 added",
+    "date": "2025",
+    "domain": "labour",
+    "institution": "Ministry of Human Resources and Social Development",
+    "source": "https://www.hrsd.gov.sa/en/media-center/news/060720242",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NOW",
+    "affected_statutes": [
+     "labor_law"
+    ],
+    "observable_evidence": "an amendment package in force; the Labour Law is cited only 12 times in this corpus, so its visibility here is minimal",
+    "possible_legal_consequence": "labour disputes are not the commercial forum's docket; observable uptake here is unlikely",
+    "consequence_status": "EXPECTED",
+    "confidence": "MEDIUM"
+   },
+   {
+    "signal_id": "CUR-2026-007",
+    "title": "New Enforcement Law welcomed by the Minister of Justice",
+    "date": "2026-04-15",
+    "domain": "enforcement",
+    "institution": "Ministry of Justice",
+    "source": "https://www.spa.gov.sa/en/N2560642",
+    "source_type": "S1_OFFICIAL_STATE_AGENCY",
+    "status": "OBSERVED",
+    "horizon": "NEAR",
+    "affected_statutes": [
+     "enforcement_law"
+    ],
+    "observable_evidence": "already carried as LSIG-0004 in the legal signal registry",
+    "possible_legal_consequence": "enforcement output is not published as reasoned judgments, so this corpus cannot observe its uptake",
+    "consequence_status": "OBSERVED_LIMIT",
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ "part5_16_branches": [
+  {
+   "id": "F0",
+   "name": "CURRENT_CONDITIONS_CONTINUE",
+   "expect_first": "nothing outside the frozen detector bounds",
+   "metrics": [
+    "all armed detector series"
+   ],
+   "falsifier": "any REGIME_CANDIDATE or confirmed detector shift",
+   "data_needed": "none; this is the default and it wins by default"
+  },
+  {
+   "id": "F1",
+   "name": "MAJOR_NEW_LAW_OR_REGULATORY_PACKAGE",
+   "expect_first": "court statutory visibility of the new instrument in the first mature quarter at or after its commencement",
+   "metrics": [
+    "instrument court share",
+    "top-100 entry",
+    "article HHI"
+   ],
+   "falsifier": "commencement passes and the instrument stays absent for three mature quarters",
+   "data_needed": "a verified commencement date, which the legal clock layer now produces"
+  },
+  {
+   "id": "F2",
+   "name": "VERIFIED_BAR_LEGAL_AI_ADOPTION",
+   "expect_first": "party-side long-tail statutory use and party source diversity",
+   "metrics": [
+    "party article breadth",
+    "party source diversity",
+    "court/bar top-50 overlap",
+    "formula concentration in the bar's voice"
+   ],
+   "falsifier": "verified bar adoption with party-side breadth inside its historical bounds while the court's moves",
+   "data_needed": "an adoption event at L3_WORKFLOW_MATCH, of which there are currently none"
+  },
+  {
+   "id": "F3",
+   "name": "VERIFIED_BENCH_JUDICIAL_RESEARCH_AI",
+   "expect_first": "court source diversity and traceability",
+   "metrics": [
+    "named-source share",
+    "source HHI",
+    "long-tail doctrine",
+    "companion structure",
+    "formula concentration"
+   ],
+   "falsifier": "verified bench adoption and only statutory ranking moves",
+   "data_needed": "the same linkability, in the observed forum"
+  },
+  {
+   "id": "F4",
+   "name": "AI_BECOMES_A_MATERIAL_SUBJECT_OF_LITIGATION",
+   "expect_first": "the first-case capture schema fires",
+   "metrics": [
+    "AI radar L3 count",
+    "digital-evidence article visibility"
+   ],
+   "falsifier": "none needed; this branch is observed or it is not",
+   "data_needed": "one qualifying judgment"
+  },
+  {
+   "id": "F5",
+   "name": "PUBLICATION_OR_DATA_ACCESS_CHANGE",
+   "expect_first": "the publication and docket families, which are already the least stationary part of the corpus",
+   "metrics": [
+    "judgments per quarter",
+    "median reasons length",
+    "claim-family mix"
+   ],
+   "falsifier": "an access change with the publication family inside its bounds",
+   "data_needed": "none; this branch is the one the corpus is best able to see, and least able to distinguish from legal change"
+  },
+  {
+   "id": "F6",
+   "name": "MAJOR_INSTITUTIONAL_RESTRUCTURING",
+   "expect_first": "jurisdiction-sensitive docket composition",
+   "metrics": [
+    "claim-family mix",
+    "court-type mix",
+    "instrument mix"
+   ],
+   "falsifier": "restructuring with no docket movement",
+   "data_needed": "an official restructuring event, of which the bounded lookup found none in the observed window"
+  }
+ ],
+ "part6_9_aiLawMap": {
+  "file": "ai_law_map.json",
+  "issueFamilies": 17,
+  "gapClasses": {
+   "ANALOGICAL_ENTRY_POINT": 1,
+   "EXPLICIT_RULE": 2,
+   "GENERAL_RULE": 4,
+   "NO_OBVIOUS_ANCHOR": 2,
+   "PROCEDURAL_ONLY_ENTRY": 3,
+   "UNCLEAR": 5
+  }
+ },
+ "part7_anchorMap": {
+  "anchors": 7,
+  "explicitRuleAnchors": 5,
+  "allQuotedFromLocalOfficialTexts": true
+ },
+ "part8_firstCaseReadiness": {
+  "what": "FIRST-AI-CASE READINESS. The capture schema is defined BEFORE the first validated AI-material dispute appears, so the first one is recorded against a fixed template rather than described after the fact.",
+  "trigger": "a judgment in this corpus in which an AI system is material to the dispute, not merely mentioned. Materiality is decided by the AI radar's existing L3 rule, which currently returns zero.",
+  "capture_fields": [
+   "date",
+   "quarter",
+   "city",
+   "court_type",
+   "domain",
+   "ai_issue_family (from the emerging AI law map)",
+   "party_legal_anchors (instrument, article)",
+   "court_legal_anchors (instrument, article)",
+   "evidence_law_involvement (which articles)",
+   "civil_transactions_law_involvement",
+   "non_statutory_authority_used",
+   "new_doctrinal_source (identity not previously in the canon)",
+   "new_statutory_interpretation (an article not previously court-cited)",
+   "court_versus_bar_divergence",
+   "traceability_of_the_authority_used",
+   "authority_adjacent_formula_novelty",
+   "was_the_existing_anchor_sufficient (OBSERVED_ADEQUATE / OBSERVED_STRAINED / UNRESOLVED)"
+  ],
+  "forbidden": [
+   "inferring AI involvement from writing style",
+   "treating a mention of AI as an AI-material dispute",
+   "predicting the outcome of the case",
+   "naming a judge, a party or a firm"
+  ],
+  "baseline_at_definition": "zero AI-material disputes in the observed corpus. The schema is armed against a base rate of zero, which is the point."
+ },
+ "part10_aiComponents": {
+  "noSingleScore": "no AI readiness index is computed. A single number would hide which component moved, and we do not yet know which components matter.",
+  "components": {
+   "regulatory_pressure": {
+    "state": "RISING",
+    "evidence": [
+     "CUR-2026-001",
+     "CUR-2026-002",
+     "CUR-2026-003",
+     "CUR-2026-004"
+    ],
+    "status": "OBSERVED"
+   },
+   "litigation_observability": {
+    "state": "ZERO",
+    "evidence": "no AI-material dispute in the corpus",
+    "status": "OBSERVED"
+   },
+   "statutory_anchor_availability": {
+    "state": "PROCEDURAL_ONLY",
+    "evidence": "four explicit permission articles, no substantive liability rule in the texts held",
+    "status": "OBSERVED"
+   },
+   "evidence_complexity": {
+    "state": "OPEN_CATEGORY",
+    "evidence": "ANCH-EVID-54 item 7 and ANCH-CCL-55's delegation of verification means",
+    "status": "OBSERVED"
+   },
+   "liability_ambiguity": {
+    "state": "UNRESOLVED_IN_TEXTS_HELD",
+    "evidence": "no liability-allocation wording for autonomous acts in the instruments this repository holds",
+    "status": "OBSERVED_LIMIT"
+   },
+   "institutional_ai_adoption": {
+    "state": "VERIFIED_BUT_NOT_LINKABLE",
+    "evidence": "seven adoption events, none at L3_WORKFLOW_MATCH",
+    "status": "OBSERVED"
+   },
+   "court_data_observability": {
+    "state": "LAGGING",
+    "evidence": "the latest mature quarter is roughly two years behind the session clock and no publication date exists per judgment",
+    "status": "OBSERVED"
+   }
+  }
+ },
+ "part17_hypothesisTournament": {
+  "hypotheses": [
+   {
+    "id": "H1",
+    "name": "HOMOGENISATION",
+    "claim": "AI concentrates authorities and formulations",
+    "metrics": [
+     "source HHI",
+     "top-10 formula concentration",
+     "article HHI"
+    ],
+    "falsifier": "verified adoption with concentration flat or falling",
+    "required_linkability": "L3_WORKFLOW_MATCH"
+   },
+   {
+    "id": "H2",
+    "name": "DISCOVERY",
+    "claim": "AI expands the long tail",
+    "metrics": [
+     "distinct sources",
+     "distinct articles",
+     "rare-article share"
+    ],
+    "falsifier": "verified adoption with the long tail flat or shrinking",
+    "required_linkability": "L3_WORKFLOW_MATCH"
+   },
+   {
+    "id": "H3",
+    "name": "TRACEABILITY",
+    "claim": "AI increases named and retrievable authority",
+    "metrics": [
+     "named-identity share of court non-statutory mentions"
+    ],
+    "falsifier": "verified adoption with the named share flat or falling",
+    "required_linkability": "L3_WORKFLOW_MATCH"
+   },
+   {
+    "id": "H4",
+    "name": "GENERIC_DRAFTING",
+    "claim": "AI increases generic legal language",
+    "metrics": [
+     "GENERIC_REASONING formula class share",
+     "generic-identity share"
+    ],
+    "falsifier": "verified adoption with the generic share flat or falling",
+    "required_linkability": "L3_WORKFLOW_MATCH"
+   },
+   {
+    "id": "H5",
+    "name": "NO_MATERIAL_CHANGE",
+    "claim": "nothing measurable moves",
+    "metrics": [
+     "all of the above"
+    ],
+    "falsifier": "any confirmed shift in an expected layer",
+    "required_linkability": "L3_WORKFLOW_MATCH",
+    "note": "this is the default and it wins by default"
+   },
+   {
+    "id": "H6",
+    "name": "CHANNEL_DEPENDENT",
+    "claim": "bar AI and bench AI produce different changes",
+    "metrics": [
+     "every metric above, split by voice"
+    ],
+    "falsifier": "both channels adopted and the voice split shows the same movement",
+    "required_linkability": "two separately verified events, one per channel"
+   }
+  ],
+  "noWinnerToday": true,
+  "allRequire": "an adoption event at L3_WORKFLOW_MATCH, of which the registry holds none"
+ },
+ "part20_frontier": {
+  "states": [
+   "RECENTLY_EFFECTIVE",
+   "COMING_INTO_FORCE",
+   "UNDER_OFFICIAL_CONSULTATION",
+   "ANNOUNCED",
+   "IMPLEMENTATION_PENDING"
+  ],
+  "items": [
+   {
+    "item": "2026 designated the Year of Artificial Intelligence; SDAIA issues guidelines to unify national effort",
+    "state": "ANNOUNCED",
+    "date": "2026-03",
+    "domain": "AI governance",
+    "source": "https://www.spa.gov.sa/en/N2546742",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "HIGH",
+    "dataObservability": "NOT_OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-001"
+   },
+   {
+    "item": "Personal Data Protection Law committees to impose penalties on confirmed violations",
+    "state": "ANNOUNCED",
+    "date": "2026",
+    "domain": "data protection",
+    "source": "https://spa.gov.sa/en/N2489505",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "HIGH",
+    "dataObservability": "OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-004"
+   },
+   {
+    "item": "SDAIA issues rules governing personal data protection licensing and accreditation",
+    "state": "ANNOUNCED",
+    "date": "2026",
+    "domain": "data protection",
+    "source": "https://spa.gov.sa/en/N2517131",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "HIGH",
+    "dataObservability": "OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-003"
+   },
+   {
+    "item": "SDAIA opens public consultation on a draft Responsible AI policy via the Istitlaa platform",
+    "state": "UNDER_OFFICIAL_CONSULTATION",
+    "date": "2026-04",
+    "domain": "AI governance",
+    "source": "https://www.spa.gov.sa/en/N2551533",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "HIGH",
+    "dataObservability": "NOT_OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-002"
+   },
+   {
+    "item": "Labour Law amendments: 38 articles revised, 7 omitted, 2 added",
+    "state": "RECENTLY_EFFECTIVE",
+    "date": "2025",
+    "domain": "labour",
+    "source": "https://www.hrsd.gov.sa/en/media-center/news/060720242",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "LOW",
+    "dataObservability": "OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-006"
+   },
+   {
+    "item": "Law permitting non-Saudi ownership of real estate enters into force 22 January 2026",
+    "state": "RECENTLY_EFFECTIVE",
+    "date": "2026-01-22",
+    "domain": "real estate / commercial",
+    "source": "https://spa.gov.sa/en/N2496274",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "LOW",
+    "dataObservability": "NOT_OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-005"
+   },
+   {
+    "item": "New Enforcement Law welcomed by the Minister of Justice",
+    "state": "RECENTLY_EFFECTIVE",
+    "date": "2026-04-15",
+    "domain": "enforcement",
+    "source": "https://www.spa.gov.sa/en/N2560642",
+    "relevanceToObservedCommercialAdjudication": "LOW",
+    "aiRelevance": "LOW",
+    "dataObservability": "OBSERVABLE_IN_THIS_CORPUS",
+    "signal_id": "CUR-2026-007"
+   }
+  ],
+  "rankedBy": [
+   "relevance to observed commercial adjudication",
+   "AI relevance",
+   "data observability"
+  ],
+  "notForecast": "the frontier says where change is most likely to originate. It does not forecast any item.",
+  "honestSummary": "the two most active current frontiers -- AI governance and data protection -- are the two least observable in this corpus, because their forum is regulatory rather than commercial adjudication."
+ },
+ "part21_disputeFrontier": {
+  "families": [
+   {
+    "family": "AI evidence authenticity",
+    "current_evidence": "explicit digital-evidence categories with verification delegated to a regulation; zero disputes observed",
+    "anchors": [
+     "ANCH-EVID-54",
+     "ANCH-CCL-55"
+    ],
+    "first_signal": "an authenticity challenge to digital material",
+    "watch": "digital-evidence articles rising in the court's voice",
+    "status": "EXPECTED"
+   },
+   {
+    "family": "Automated contracting",
+    "current_evidence": "the Civil Transactions Law is newly operational and rising; no AI-specific wording",
+    "anchors": [],
+    "first_signal": "a consent or authority dispute over a machine-generated act",
+    "watch": "CTL formation articles rising with electronic-evidence articles",
+    "status": "SPECULATIVE"
+   },
+   {
+    "family": "Data liability",
+    "current_evidence": "an operating PDPL penalty mechanism outside this corpus",
+    "anchors": [
+     "ANCH-SDAIA-ORG"
+    ],
+    "first_signal": "a PDPL penalty decision",
+    "watch": "NOT_OBSERVABLE_HERE",
+    "status": "EXPECTED"
+   },
+   {
+    "family": "AI professional duty",
+    "current_evidence": "four articles permitting professional AI use, none addressing consequence",
+    "anchors": [
+     "ANCH-EVID-PROC-23",
+     "ANCH-CCL-REG-24",
+     "ANCH-TAWTHEEQ-REG-20",
+     "ANCH-ENF-PROV-16"
+    ],
+    "first_signal": "a challenge to an AI-assisted procedural step",
+    "watch": "court-voice citation of any permission article",
+    "status": "EXPECTED"
+   },
+   {
+    "family": "Algorithmic public decisions",
+    "current_evidence": "SDAIA regulatory competence; administrative forum",
+    "anchors": [
+     "ANCH-SDAIA-ORG"
+    ],
+    "first_signal": "an administrative claim",
+    "watch": "NOT_OBSERVABLE_HERE",
+    "status": "SPECULATIVE"
+   },
+   {
+    "family": "Platform and intermediary liability",
+    "current_evidence": "none in this corpus",
+    "anchors": [],
+    "first_signal": "a claim against an intermediary for automated conduct",
+    "watch": "e-commerce or telecommunications articles rising",
+    "status": "SPECULATIVE"
+   },
+   {
+    "family": "Cross-border data and AI service contracts",
+    "current_evidence": "PDPL licensing and accreditation rules",
+    "anchors": [
+     "ANCH-SDAIA-ORG"
+    ],
+    "first_signal": "a commercial claim naming a data-transfer obligation",
+    "watch": "PDPL articles appearing in the commercial forum at all",
+    "status": "SPECULATIVE"
+   }
+  ],
+  "max": 10,
+  "listed": 7,
+  "notGuaranteed": "these are candidate families with stated evidence, not predicted disputes."
+ },
+ "part22_surpriseReadiness": {
+  "what": "UNKNOWN-UNKNOWN WATCH. The project must be able to discover a future it did not name.",
+  "notAClassifier": true,
+  "rule": "any recurring legal concept, statutory instrument or non-statutory identity that is NOT in a known family and that crosses the support threshold used elsewhere in this repository -- observed in at least ten judgments, in at least two mature quarters -- opens a SURPRISE_LEDGER entry.",
+  "appliesTo": [
+   "instrument track ids not previously court-cited",
+   "canonical non-statutory identities outside the 28-identity canon, which currently surface as RAW strings",
+   "authority-adjacent formula classes not in the mechanical taxonomy"
+  ],
+  "discipline": "the entry is opened FIRST and the explanation is searched for afterwards. An entry with no explanation stays UNKNOWN, and resemblance to an expectation is never evidence.",
+  "ledger": "SURPRISE_LEDGER.json"
+ },
+ "part23_liveChain": {
+  "what": "LIVE LEGAL CHANGE CHAIN. From this commit onward, an event captured PROSPECTIVELY records milestones as they occur.",
+  "milestones": [
+   "SIGNAL",
+   "FIRST_OBSERVABLE_USE",
+   "PARTY_USE",
+   "COURT_USE",
+   "DOCTRINAL_COMPANION",
+   "OPERATIONAL_CORE",
+   "RETRIEVAL_IMPACT"
+  ],
+  "orderingIsNotRequired": "the milestones are stored, not sequenced. The transition programme already showed that an apparent ordering can be an artefact of when the clock was started.",
+  "captureClass": "computed from recorded_at against the event's observable_from, never declared. An event recorded after its observable_from is BACKFILLED and can never be reported as foresight.",
+  "currentProspectiveEntries": 0,
+  "why": "every event this repository holds was recorded after the fact. The chain starts empty on purpose, and that is the point of defining it now."
+ },
+ "part16_aiBaseline": {
+  "aiMaterialDisputesInCorpus": 0,
+  "source": "ai_radar_results.json, L3 rule",
+  "explicitAIProvisionsFoundInHeldTexts": 5,
+  "reading": "Saudi law already permits AI in the procedures of the very forum this corpus observes, while the corpus contains no dispute in which AI is material. Permission is present; consequence is untested."
+ },
+ "standingLimitations": [
+  "the forum. This corpus is published Ministry of Justice commercial adjudication. The two most active current AI frontiers -- AI governance and data protection -- are regulatory, so their first disputes will not appear here.",
+  "the observation lag. The latest mature quarter is roughly two years behind the session clock.",
+  "nothing in the anchor map asserts that an instrument applies. It records where the system would have to absorb a problem, quoted from the text.",
+  "no probability is attached to any branch, horizon or hypothesis."
+ ]
+}
