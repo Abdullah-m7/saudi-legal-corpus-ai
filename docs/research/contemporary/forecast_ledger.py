@@ -707,6 +707,102 @@ def horizon_release():
     }
 
 
+def bets():
+    """PHASE 27-28: one wager and one watch, chosen on backtest not appetite."""
+    ld, fs = J("leading_results.json"), J("foresight_results.json")
+    rw = ld["phase21_refreshWindow"]
+    rad = J("ai_radar_results.json")
+    return {
+        "REPOSITORY_BET_001": {
+            "created_at": CREATED, "data_cutoff": CUTOFF, "status": "OPEN",
+            "target": "a legal retrieval snapshot frozen at 1446Q2 needs "
+                      "rebuilding within ONE quarter, and the trigger that "
+                      "fires is RANK DISPLACEMENT, not missing content",
+            "prediction": {
+                "REFRESH_DUE_WINDOW": rw["REFRESH_DUE_WINDOW"],
+                "drivingTrigger": rw["drivingTrigger"],
+                "orderingClaim": "TOP50_DISPLACEMENT crosses before RANK_GAP, "
+                                 "which crosses before CONTENT_GAP"},
+            "baseline": "the intuitive maintenance policy: refresh when "
+                        "content coverage drops, which these folds put at "
+                        "four quarters",
+            "backtest": {"folds": [r["folds"] for r in rw["profile"]],
+                         "profile": rw["profile"]},
+            "whyThisOne": [
+                "OBSERVABLE: every quantity is computed from the corpus, no "
+                "external event required",
+                "SCORABLE: the thresholds are numbers fixed here",
+                "NO LEAKAGE: the snapshot is frozen at the cutoff",
+                "MEANINGFUL IF RIGHT: it says a Saudi legal retrieval system "
+                "must rebuild its RANKING quarterly, which is four times more "
+                "often than a coverage-driven policy would",
+                "INFORMATIVE IF WRONG: if displacement stays under 30 per "
+                "cent for two quarters, recall-based maintenance is "
+                "vindicated and the ranking result was a small-sample "
+                "artefact",
+                "STRONG BASELINE: the comparison is the policy most systems "
+                "actually use"],
+            "notChosen": {
+                "rare-article bar discovery": "the cohort test killed it this "
+                                              "session; betting on it now "
+                                              "would be betting on a dead "
+                                              "signal",
+                "new-law uptake": "needs an arrival that has not happened",
+                "companion persistence": "already an issued forecast"},
+            "scoring_rule": "at the first SCORABLE quarter after 1446Q2: "
+                            "compute top-50 displacement, rank gap and "
+                            "content gap for the frozen snapshot. The bet "
+                            "WINS if displacement is at or above 30 per cent "
+                            "while content gap is below 10 per cent; it LOSES "
+                            "if displacement is below 30 per cent; it is "
+                            "INDETERMINATE if both cross together.",
+            "immutable": True},
+        "AI_WATCH_001": {
+            "created_at": CREATED, "data_cutoff": CUTOFF, "status": "OPEN",
+            "target": "FIRST_VALIDATED_AI_L3_LEGAL_ISSUE: the first judgment "
+                      "in this corpus where an artificial-intelligence or "
+                      "algorithmic feature is materially part of the legal "
+                      "question",
+            "baseline": f"{rad['L3_count']} of {rad['judgmentsScanned']:,} "
+                        "judgments scanned",
+            "probability": None,
+            "whyNoProbability": "a rare emerging event with no base rate. A "
+                                "number here would be invented.",
+            "whyThisOneOverTheAlternative": (
+                "the alternative was FIRST_VERIFIED_MOJ_COMMERCIAL_RESEARCH_"
+                "AI_DEPLOYMENT. That is more consequential and less "
+                "observable: it depends on an external announcement this "
+                "repository has no systematic way to see. The L3 watch runs "
+                "on a corpus already held, with a classifier already frozen, "
+                "so it can actually fire."),
+            "recordOnOccurrence": [
+                "date, court and city", "the court's own words, quoted",
+                "the concept family that matched",
+                "which codes and articles are cited beside it",
+                "whether the Evidence Law appears",
+                "whether the Civil Transactions Law appears",
+                "court voice or party voice",
+                "whether any novel doctrinal companion appears",
+                "disposition type if observable"],
+            "escalation": ["FIRST_CASE", "FIRST_STATUTORY_ANCHOR",
+                           "FIRST_REPEATED_ARTICLE",
+                           "FIRST_NONSTATUTORY_AUTHORITY",
+                           "FIRST_DOCTRINAL_COMPANION",
+                           "FIRST_RECURRING_PATTERN",
+                           "FIRST_OPERATIONAL_CORE_ENTRY"],
+            "whyMilestonesNotCounts": "the interesting question when AI "
+                                      "reaches the courts is not how many "
+                                      "cases there are. It is how the legal "
+                                      "system absorbs the issue: which "
+                                      "statute anchors it first, which "
+                                      "authority accompanies it, whether a "
+                                      "companion forms. Each milestone is "
+                                      "frozen as it happens rather than "
+                                      "narrated after twenty cases.",
+            "immutable": True},
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -845,6 +941,8 @@ def main():
         old["watchTargets"] = WATCH
     if "forecasterTournament" not in old:
         old["forecasterTournament"] = tournament()
+    if "bets" not in old:
+        old["bets"] = bets()
     if "horizonRelease" not in old:
         old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:

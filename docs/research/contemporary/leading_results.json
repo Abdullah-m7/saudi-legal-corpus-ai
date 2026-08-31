@@ -1,0 +1,745 @@
+{
+ "what": "SAUDI LEGAL LEADING-INDICATOR OBSERVATORY: the layer that sits before the judgment corpus in time.",
+ "doesNotTouch": "PROSPECTIVE_DETECTOR_ERA_1 is frozen. No detector is retuned, no threshold moved, no issued forecast changed, and the maturity rule is used as it stands.",
+ "phase7_featureAblation": {
+  "folds": 10,
+  "courtShareAlone": 0.2857,
+  "candidates": [
+   {
+    "feature": "coCitationBreadth",
+    "meanPrecision": 0.2857,
+    "deltaVsCourtShareAlone": 0.0,
+    "foldsImproved": 0,
+    "folds": 10,
+    "worstFoldDelta": 0.0
+   },
+   {
+    "feature": "judgments",
+    "meanPrecision": 0.2857,
+    "deltaVsCourtShareAlone": 0.0,
+    "foldsImproved": 0,
+    "folds": 10,
+    "worstFoldDelta": 0.0
+   },
+   {
+    "feature": "courtBarRatio",
+    "meanPrecision": 0.2588,
+    "deltaVsCourtShareAlone": -0.0269,
+    "foldsImproved": 4,
+    "folds": 10,
+    "worstFoldDelta": -0.2727
+   },
+   {
+    "feature": "newInstrument",
+    "meanPrecision": 0.2028,
+    "deltaVsCourtShareAlone": -0.0828,
+    "foldsImproved": 3,
+    "folds": 10,
+    "worstFoldDelta": -0.3636
+   },
+   {
+    "feature": "partyShare",
+    "meanPrecision": 0.1795,
+    "deltaVsCourtShareAlone": -0.1062,
+    "foldsImproved": 2,
+    "folds": 10,
+    "worstFoldDelta": -0.5556
+   },
+   {
+    "feature": "instrumentAge",
+    "meanPrecision": 0.1623,
+    "deltaVsCourtShareAlone": -0.1234,
+    "foldsImproved": 0,
+    "folds": 10,
+    "worstFoldDelta": -0.4444
+   },
+   {
+    "feature": "momentum",
+    "meanPrecision": 0.1321,
+    "deltaVsCourtShareAlone": -0.1535,
+    "foldsImproved": 2,
+    "folds": 10,
+    "worstFoldDelta": -0.4444
+   },
+   {
+    "feature": "rankAcceleration",
+    "meanPrecision": 0.1224,
+    "deltaVsCourtShareAlone": -0.1632,
+    "foldsImproved": 1,
+    "folds": 10,
+    "worstFoldDelta": -0.4444
+   }
+  ],
+  "featuresThatEarnTheirPlace": [],
+  "verdict": "COURT_SHARE_REMAINS_THE_RULE",
+  "rule": "a feature is kept only if it improves mean precision by more than 2 points AND improves a majority of folds. Neither test alone is enough."
+ },
+ "phase8_rareArticleDiscovery": {
+  "treatedTotal": 84,
+  "controlPool": 971,
+  "matchedTreated": 70,
+  "h1": {
+   "pairs": 70,
+   "meanTreatedCourtShare": 0.001084,
+   "meanMatchedControl": 0.000622,
+   "meanDifference": 0.000462,
+   "sd": 0.002282,
+   "positivePairs": 30,
+   "signTestShare": 0.4286
+  },
+  "h2": {
+   "pairs": 65,
+   "meanTreatedCourtShare": 0.001058,
+   "meanMatchedControl": 0.000674,
+   "meanDifference": 0.000384,
+   "sd": 0.002191,
+   "positivePairs": 22,
+   "signTestShare": 0.3385
+  },
+  "h4": {
+   "pairs": 52,
+   "meanTreatedCourtShare": 0.001579,
+   "meanMatchedControl": 0.000694,
+   "meanDifference": 0.000885,
+   "sd": 0.002954,
+   "positivePairs": 16,
+   "signTestShare": 0.3077
+  },
+  "verdict": "NO_BAR_DISCOVERY_SIGNAL_AFTER_MATCHING",
+  "horizonsSurviving": [],
+  "note": "the aggregate lead-lag result found a positive partial correlation in the bottom half. This is the cohort test that correlation deserves before it is believed."
+ },
+ "phase9_firstMoverTypology": {
+  "byType": {
+   "BAR_FIRST": {
+    "n": 94,
+    "meanSurvivalShare": 0.2897,
+    "reachedTop100Share": 0.2234
+   },
+   "BAR_ONLY": {
+    "n": 221,
+    "meanSurvivalShare": 0.0,
+    "reachedTop100Share": 0.0
+   },
+   "COURT_FIRST": {
+    "n": 295,
+    "meanSurvivalShare": 0.4659,
+    "reachedTop100Share": 0.4915
+   },
+   "COURT_ONLY": {
+    "n": 439,
+    "meanSurvivalShare": 0.1337,
+    "reachedTop100Share": 0.1139
+   },
+   "SAME_PERIOD": {
+    "n": 108,
+    "meanSurvivalShare": 0.3392,
+    "reachedTop100Share": 0.287
+   }
+  },
+  "articlesTyped": 1173,
+  "highestSurvival": "COURT_FIRST",
+  "question": "does who discovers an authority first predict what happens to it? This is not the aggregate lead-lag test and does not answer it.",
+  "limit": "left-censored articles -- first seen in the opening two quarters -- are excluded, and party visibility depends on the publisher reproducing submissions."
+ },
+ "phase10_11_sourceDynamics": {
+  "sourcesTracked": 34,
+  "byState": {
+   "DISAPPEARED": 6,
+   "EMERGING": 6,
+   "PERSISTENT": 22
+  },
+  "emergenceFeaturesByOutcome": {
+   "PERSISTENT": {
+    "firstQuarterJudgments": 1.5,
+    "firstQuarterCodes": 0.545,
+    "firstQuarterArticles": 0.545,
+    "firstQuarterCities": 1.091
+   },
+   "DISAPPEARED": {
+    "firstQuarterJudgments": 2.5,
+    "firstQuarterCodes": 0.833,
+    "firstQuarterArticles": 1.0,
+    "firstQuarterCities": 1.0
+   }
+  },
+  "diffusion": [
+   {
+    "source": "B.INSAF",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 1,
+    "firstQuarterArticles": 1,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 1,
+    "citiesAtPlus1": 1,
+    "codesAtPlus2": 1,
+    "citiesAtPlus2": 2,
+    "codesAtPlus4": 1,
+    "citiesAtPlus4": 3,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "B.KASHSHAF",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 2,
+    "firstQuarterCodes": 1,
+    "firstQuarterArticles": 1,
+    "firstQuarterCities": 2,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 1,
+    "citiesAtPlus1": 3,
+    "codesAtPlus2": 1,
+    "citiesAtPlus2": 3,
+    "codesAtPlus4": 1,
+    "citiesAtPlus4": 4,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 0,
+    "citiesAtPlus1": 1,
+    "codesAtPlus2": 0,
+    "citiesAtPlus2": 1,
+    "codesAtPlus4": 0,
+    "citiesAtPlus4": 2,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "B.MUGHNI",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 1,
+    "firstQuarterArticles": 1,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 1,
+    "citiesAtPlus1": 3,
+    "codesAtPlus2": 1,
+    "citiesAtPlus2": 4,
+    "codesAtPlus4": 1,
+    "citiesAtPlus4": 6,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 2,
+    "citiesAtPlus1": 2,
+    "codesAtPlus2": 2,
+    "citiesAtPlus2": 2,
+    "codesAtPlus4": 3,
+    "citiesAtPlus4": 4,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 2,
+    "firstQuarterCodes": 1,
+    "firstQuarterArticles": 1,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 1,
+    "citiesAtPlus1": 3,
+    "codesAtPlus2": 2,
+    "citiesAtPlus2": 3,
+    "codesAtPlus4": 3,
+    "citiesAtPlus4": 5,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 2,
+    "citiesAtPlus1": 2,
+    "codesAtPlus2": 2,
+    "citiesAtPlus2": 3,
+    "codesAtPlus4": 3,
+    "citiesAtPlus4": 4,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "GENERIC.maxim.named",
+    "firstPeriod": "1442Q3",
+    "firstQuarterJudgments": 2,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 1,
+    "citiesAtPlus1": 2,
+    "codesAtPlus2": 1,
+    "citiesAtPlus2": 3,
+    "codesAtPlus4": 2,
+    "citiesAtPlus4": 5,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 0,
+    "citiesAtPlus1": 2,
+    "codesAtPlus2": 1,
+    "citiesAtPlus2": 2,
+    "codesAtPlus4": 2,
+    "citiesAtPlus4": 3,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "firstPeriod": "1442Q1",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 1,
+    "firstQuarterArticles": 1,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 2,
+    "citiesAtPlus1": 1,
+    "codesAtPlus2": 3,
+    "citiesAtPlus2": 2,
+    "codesAtPlus4": 4,
+    "citiesAtPlus4": 5,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "H.MUTTAFAQ",
+    "firstPeriod": "1442Q4",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 0,
+    "citiesAtPlus1": 2,
+    "codesAtPlus2": 0,
+    "citiesAtPlus2": 2,
+    "codesAtPlus4": 2,
+    "citiesAtPlus4": 4,
+    "state": "PERSISTENT"
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "firstPeriod": "1442Q2",
+    "firstQuarterJudgments": 1,
+    "firstQuarterCodes": 0,
+    "firstQuarterArticles": 0,
+    "firstQuarterCities": 1,
+    "laterScorablePeriods": 10,
+    "periodsPresent": 10,
+    "persistenceShare": 1.0,
+    "codesAtPlus1": 0,
+    "citiesAtPlus1": 1,
+    "codesAtPlus2": 0,
+    "citiesAtPlus2": 1,
+    "codesAtPlus4": 1,
+    "citiesAtPlus4": 2,
+    "state": "PERSISTENT"
+   }
+  ],
+  "frozenRuleForFutureEntrants": "a new code-local source with more first-quarter judgments, more articles and more cities at emergence is predicted to persist. The direction is read off the table above; no threshold is issued as a forecast until a future entrant can score it.",
+  "limit": "the identity universe has 28 members, so 'new' means new beside that code in this window, never new to Saudi law. Diffusion is spread, not influence."
+ },
+ "phase18_transitionVelocity": {
+  "components": {
+   "BAR_UPTAKE_LATENCY": "quarters from first court citation to first party citation, signed",
+   "COURT_UPTAKE_LATENCY": "quarters from the instrument's first appearance anywhere to its first court citation",
+   "CORE_ENTRY_LATENCY": "quarters from first court citation to top-50 entry",
+   "COMPANION_FORMATION_LATENCY": "quarters from first court citation to a persistent local companion",
+   "STATUTORY_UPTAKE_LATENCY": "quarters from COMMENCEMENT to first court citation"
+  },
+  "measurableNow": [
+   "CORE_ENTRY_LATENCY",
+   "BAR_UPTAKE_LATENCY"
+  ],
+  "notMeasurable": {
+   "STATUTORY_UPTAKE_LATENCY": "commencement dates are not held per instrument in the registry, so latency is measured from first OBSERVED use, not from the day the rule took effect",
+   "COMPANION_FORMATION_LATENCY": "the identity layer starts at 1443 and only four codes carry enough local attachment"
+  },
+  "inWindowInstruments": 6,
+  "reachedTop50": 2,
+  "medianCoreEntryLatencyQuarters": 2,
+  "medianBarUptakeLatencyQuarters": -1,
+  "referenceCase": {
+   "instrument": "civil_transactions_law",
+   "firstCourtQuarter": "1445Q1",
+   "firstPartyQuarter": "1445Q1",
+   "partyBeforeCourtQuarters": 0,
+   "quartersToTop100": 1,
+   "quartersToTop50": 2,
+   "courtJudgmentsToDate": 347,
+   "censoringRisk": "IN_WINDOW"
+  }
+ },
+ "phase20_publicationGate": {
+  "what": "observation-system health. A forecast is not scored in a quarter whose publication regime broke, and the decision uses these frozen bands rather than the forecast's own error.",
+  "historicalBands": {
+   "medianReasonChars": {
+    "min": 1143,
+    "max": 1677,
+    "median": 1539
+   },
+   "shareWithReasons": {
+    "min": 1.0,
+    "max": 1.0,
+    "median": 1.0
+   },
+   "share_feesClaim": {
+    "min": 0.1522,
+    "max": 0.3365,
+    "median": 0.2453
+   },
+   "share_damagesClaim": {
+    "min": 0.163,
+    "max": 0.4309,
+    "median": 0.3598
+   },
+   "share_proofDispute": {
+    "min": 0.1531,
+    "max": 0.3869,
+    "median": 0.338
+   }
+  },
+  "voidRules": [
+   "VOID_DATA_SHIFT if judgments with authority fall below the maturity rule's floor",
+   "VOID_DATA_SHIFT if median reasons length falls outside the historical band by more than 50 per cent of the band's own width",
+   "VOID_DATA_SHIFT if any claim-family share moves more than 0.20 in a single quarter, which is above every move observed",
+   "otherwise the quarter is scored, and a miss is a miss"
+  ],
+  "decisionRule": "the void decision is made from these bands BEFORE the forecast error is computed, and never after.",
+  "largestObservedQuarterMove": {
+   "medianReasonChars": 214,
+   "shareWithReasons": 0.0,
+   "share_feesClaim": 0.1843,
+   "share_damagesClaim": 0.087,
+   "share_proofDispute": 0.1132
+  }
+ },
+ "phase21_refreshWindow": {
+  "profile": [
+   {
+    "h": 1,
+    "top50Displaced": 34.9231,
+    "rankGap": 33.1885,
+    "contentGap": 0.0437,
+    "folds": 13
+   },
+   {
+    "h": 2,
+    "top50Displaced": 39.1667,
+    "rankGap": 36.3225,
+    "contentGap": 0.0612,
+    "folds": 12
+   },
+   {
+    "h": 4,
+    "top50Displaced": 46.4,
+    "rankGap": 40.513,
+    "contentGap": 0.1191,
+    "folds": 10
+   }
+  ],
+  "firstCrossing": {
+   "TOP50_DISPLACEMENT": 1,
+   "RANK_GAP": 2,
+   "CONTENT_GAP": 4
+  },
+  "REFRESH_DUE_WINDOW": "1Q",
+  "drivingTrigger": "TOP50_DISPLACEMENT",
+  "calibration": "read off 13, 12 and 10 rolling folds at horizons 1, 2 and 4. It is a historical rate, not a promise about any one snapshot.",
+  "issuedAs": "a forecast with a band, not a detector: a snapshot taken at 1446Q2 is predicted to need refresh within one quarter, and the claim is wrong if displacement stays below 30 per cent for two."
+ },
+ "phase22_companionRefresh": {
+  "byCode": {
+   "aml_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "arbitration_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "bankruptcy_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "basic_law_of_governance": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "civil_transactions_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "commercial_books_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "commercial_courts_implementing_regulation": {
+    "periods": 8,
+    "steps": 7,
+    "meanTop3Jaccard": 0.7857,
+    "minTop3Jaccard": 0.5,
+    "class": "VARIABLE",
+    "suggestedRefresh": "two quarters"
+   },
+   "commercial_courts_law": {
+    "periods": 9,
+    "steps": 8,
+    "meanTop3Jaccard": 0.875,
+    "minTop3Jaccard": 0.5,
+    "class": "STABLE",
+    "suggestedRefresh": "annual"
+   },
+   "companies_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "enforcement_implementing_regulation": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "enforcement_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "evidence_law": {
+    "periods": 7,
+    "steps": 6,
+    "meanTop3Jaccard": 0.6167,
+    "minTop3Jaccard": 0.2,
+    "class": "VARIABLE",
+    "suggestedRefresh": "two quarters"
+   },
+   "franchise_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "health_system_regulation": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "judicial_costs_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "labor_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "law_practice_implementing_regulation": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "law_practice_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "qismah_regulation": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "sharia_procedure_implementing_regulation": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   },
+   "sharia_procedure_law": {
+    "periods": 5,
+    "steps": 4,
+    "meanTop3Jaccard": 1.0,
+    "minTop3Jaccard": 1.0,
+    "class": "STABLE",
+    "suggestedRefresh": "annual"
+   },
+   "trade_names_law": {
+    "periods": 0,
+    "class": "LOW_SUPPORT"
+   }
+  },
+  "use": "a retrieval system does not need one refresh policy. A STABLE companion set can be rebuilt annually; a FAST_MOVING one cannot.",
+  "noProductBuild": "this is a measurement, not an implementation."
+ },
+ "phase26_calibration": {
+  "target": "top-50 entrants, ranked by court share",
+  "foldPrecisionQuartiles": {
+   "p25": 0.2222,
+   "median": 0.3,
+   "p75": 0.3333
+  },
+  "range": [
+   0.0,
+   0.5556
+  ],
+  "verdict": "RANK_ONLY",
+  "why": "fold-to-fold precision ranges from 0.0 to 0.5556. A HIGH/MEDIUM/LOW label would have to map onto hit rates that are stable enough to mean something, and these are not. The forecast therefore issues a RANKED LIST and no probabilities.",
+  "forbidden": "intuitive confidence labels with no empirical mapping."
+ },
+ "phase31_32_eventBacktest": {
+  "cases": {
+   "civil_transactions_law": {
+    "cutoffQuarter": "1445Q1",
+    "knownAtCutoff": {
+     "courtShare": 0.00155,
+     "partyShare": 0.01282,
+     "distinctArticles": 7,
+     "courtBarRatio": 0.121
+    },
+    "ruleApplied": "median core-entry latency of in-window arrivals (2 quarters)",
+    "prediction": "WITHIN_2_QUARTERS",
+    "actualQuartersToTop50": 2,
+    "hit": true,
+    "label": "RETROSPECTIVE_PSEUDO_PROSPECTIVE"
+   },
+   "evidence_law": {
+    "cutoffQuarter": "1443Q1",
+    "knownAtCutoff": {
+     "courtShare": 0.01748,
+     "partyShare": 0.0,
+     "distinctArticles": 3,
+     "courtBarRatio": null
+    },
+    "ruleApplied": "median core-entry latency of in-window arrivals (2 quarters)",
+    "prediction": "WITHIN_2_QUARTERS",
+    "actualQuartersToTop50": 0,
+    "hit": true,
+    "label": "RETROSPECTIVE_PSEUDO_PROSPECTIVE"
+   }
+  },
+  "hits": 2,
+  "cases_n": 2,
+  "label": "RETROSPECTIVE_PSEUDO_PROSPECTIVE",
+  "notForesight": "these folds calibrate the rule. They are not prospective evidence and may never be cited as the observatory having anticipated anything.",
+  "leakageNote": "the median latency used as the rule is computed over in-window arrivals INCLUDING these two, so the calibration is optimistic. With two clean cases there is no honest way to hold them out and still have a rule."
+ },
+ "phase3_35_registryAudit": {
+  "prospectiveFrom": "2026-08-31",
+  "signals": 7,
+  "byComputedClass": {
+   "BACKFILLED_EVENT": 7
+  },
+  "bySourceGrade": {
+   "S1_PRIMARY_OFFICIAL": 2,
+   "S2_OFFICIAL_AGENCY_REPORT": 4,
+   "S3_RELIABLE_SECONDARY_CONFIRMATION": 1
+  },
+  "declarationMismatches": [],
+  "enforcement": "capture class is COMPUTED from first_recorded_at against the registry's own creation date, not declared. A mismatch is a bug and is listed above.",
+  "consequence": "every seed entry is BACKFILLED by construction, because the registry was created today. The first PROSPECTIVE_CAPTURE will be the first signal recorded after this commit, and only those may ever support a claim that the observatory anticipated something.",
+  "rows": [
+   {
+    "event_id": "LSIG-0001",
+    "type": "A_LEGISLATIVE",
+    "known_at": "2021-02-08",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S2_OFFICIAL_AGENCY_REPORT"
+   },
+   {
+    "event_id": "LSIG-0002",
+    "type": "A_LEGISLATIVE",
+    "known_at": "2021-02-08",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S2_OFFICIAL_AGENCY_REPORT"
+   },
+   {
+    "event_id": "LSIG-0003",
+    "type": "A_LEGISLATIVE",
+    "known_at": "2021-02-08",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S2_OFFICIAL_AGENCY_REPORT"
+   },
+   {
+    "event_id": "LSIG-0004",
+    "type": "A_LEGISLATIVE",
+    "known_at": "2026-04-15",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S2_OFFICIAL_AGENCY_REPORT"
+   },
+   {
+    "event_id": "LSIG-0005",
+    "type": "D_TECHNOLOGY_AI",
+    "known_at": "2026",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S1_PRIMARY_OFFICIAL"
+   },
+   {
+    "event_id": "LSIG-0006",
+    "type": "C_JUDICIAL_INSTITUTIONAL",
+    "known_at": "2025-02-04",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S1_PRIMARY_OFFICIAL"
+   },
+   {
+    "event_id": "LSIG-0007",
+    "type": "E_INFRASTRUCTURE",
+    "known_at": "2024",
+    "first_recorded_at": "2026-08-31",
+    "declared": "BACKFILLED_EVENT",
+    "computed": "BACKFILLED_EVENT",
+    "agrees": true,
+    "sourceGrade": "S3_RELIABLE_SECONDARY_CONFIRMATION"
+   }
+  ]
+ }
+}

@@ -41,6 +41,7 @@ def facts():
     b2, amap = J("ai_baseline_v2_results.json"), J("ai_transition_map.json")
     xm, bau = J("ai_exposure_matrix_results.json"), J("bog_access_audit.json")
     hz, dt = J("horizon_results.json"), J("detectors_results.json")
+    ld, lsr = J("leading_results.json"), J("legal_signal_registry.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -739,6 +740,46 @@ def facts():
         ("positive control delay", f"{PC['detectionDelayQuarters']}", H),
         ("refresh, earliest trigger",
          f"{RT['earliestTriggeredHorizonQuarters']}", H),
+        # --- the leading-indicator observatory
+    ]
+    L = ["LEADING.md"]
+    RD, FMv = ld["phase8_rareArticleDiscovery"], ld["phase9_firstMoverTypology"]
+    SD, VL = ld["phase10_11_sourceDynamics"], ld["phase18_transitionVelocity"]
+    RA = ld["phase3_35_registryAudit"]
+    out += [
+        ("signals seeded", f"{RA['signals']}", L),
+        ("backfilled signals",
+         f"{RA['byComputedClass']['BACKFILLED_EVENT']}", L),
+        ("ablation verdict", ld["phase7_featureAblation"]["verdict"], L),
+        ("rare cohort treated", f"{RD['treatedTotal']}", L),
+        ("rare cohort controls", f"{RD['controlPool']}", L),
+        ("rare cohort matched", f"{RD['matchedTreated']}", L),
+        ("rare cohort h1 sign test", f"{RD['h1']['signTestShare']}", L),
+        ("rare cohort h2 sign test", f"{RD['h2']['signTestShare']}", L),
+        ("rare cohort h4 sign test", f"{RD['h4']['signTestShare']}", L),
+        ("rare cohort h1 difference", f"{RD['h1']['meanDifference']}", L),
+        ("rare cohort h4 difference", f"{RD['h4']['meanDifference']}", L),
+        ("rare cohort verdict", RD["verdict"], L),
+        ("court-first survival",
+         f"{FMv['byType']['COURT_FIRST']['meanSurvivalShare']}", L),
+        ("bar-first survival",
+         f"{FMv['byType']['BAR_FIRST']['meanSurvivalShare']}", L),
+        ("same-period survival",
+         f"{FMv['byType']['SAME_PERIOD']['meanSurvivalShare']}", L),
+        ("court-only survival",
+         f"{FMv['byType']['COURT_ONLY']['meanSurvivalShare']}", L),
+        ("court-first n", f"{FMv['byType']['COURT_FIRST']['n']}", L),
+        ("bar-first n", f"{FMv['byType']['BAR_FIRST']['n']}", L),
+        ("bar-only n", f"{FMv['byType']['BAR_ONLY']['n']}", L),
+        ("sources tracked", f"{SD['sourcesTracked']}", L),
+        ("sources persistent", f"{SD['byState']['PERSISTENT']}", L),
+        ("sources disappeared", f"{SD['byState']['DISAPPEARED']}", L),
+        ("core entry latency",
+         f"{VL['medianCoreEntryLatencyQuarters']}", L),
+        ("in-window instruments reaching top 50", f"{VL['reachedTop50']}", L),
+        ("refresh due window",
+         ld["phase21_refreshWindow"]["REFRESH_DUE_WINDOW"], L),
+        ("calibration verdict", ld["phase26_calibration"]["verdict"], L),
     ]
     return out
 

@@ -1,0 +1,258 @@
+{
+ "what": "Timestamped external legal signals: the layer that moves before the judgment corpus does. Legislative, regulatory, judicial-institutional, technological, infrastructural and emerging-subject events, each with what its source establishes and what it does not.",
+ "createdAt": "2026-08-31",
+ "prospectiveFrom": "2026-08-31",
+ "captureRule": "an event whose first_recorded_at is on or before prospectiveFrom is a BACKFILLED_EVENT: it may calibrate a method and may NEVER support a claim that this observatory anticipated anything. Only signals first recorded after that date are PROSPECTIVE_CAPTURE. The class is computed from the timestamps by leading.py, not declared here.",
+ "taxonomy": {
+  "A_LEGISLATIVE": "new statute, amendment, repeal, commencement, implementing regulation, official statutory interpretation",
+  "B_REGULATORY": "new regulation, regulator rule, official consultation, binding framework, major compliance requirement",
+  "C_JUDICIAL_INSTITUTIONAL": "court procedure change, judicial principle publication, new digital judicial workflow, publication-policy change",
+  "D_TECHNOLOGY_AI": "verified judicial or legal-research AI deployment, government legal AI, AI governance instrument",
+  "E_INFRASTRUCTURE": "new official legal database, source-publication change, new precedent publication, open-data release",
+  "F_EMERGING_SUBJECT": "an official event that creates a plausible future dispute class"
+ },
+ "excluded": [
+  "news commentary",
+  "academic speculation",
+  "social-media trends",
+  "vendor marketing without official confirmation"
+ ],
+ "sourceGrades": {
+  "S1_PRIMARY_OFFICIAL": "the issuing body's own publication, read by us",
+  "S2_OFFICIAL_AGENCY_REPORT": "an official agency or national platform, read or summarised",
+  "S3_RELIABLE_SECONDARY_CONFIRMATION": "reputable secondary sources agreeing on an official act",
+  "S4_SECONDARY_ONLY": "secondary only; may create a WATCH item but never a core forecast trigger unless independently verified"
+ },
+ "seedScope": "ONE bounded official-source pass. Priority: major instruments newly enacted or commencing, official amendments, official legal or judicial AI deployments, official court and publication-system changes. Not a news database. After the seed, updates happen prospectively.",
+ "signals": [
+  {
+   "event_id": "LSIG-0001",
+   "event_type": "A_LEGISLATIVE",
+   "title": "Announcement of four new laws reforming the judicial institutions: Personal Status, Civil Transactions, Penal Code for Discretionary Sentences, Law of Evidence",
+   "announced_at": "2021-02-08",
+   "known_at": "2021-02-08",
+   "effective_at": "STAGGERED_PER_LAW",
+   "publication_date": "2021-02-08",
+   "observable_in_courts_from": "1443Q1 for the Law of Evidence; 1445Q1 for the Civil Transactions Law, as first observed in this corpus",
+   "source": "https://my.gov.sa/en/news/8764",
+   "source_authority": "National Platform",
+   "source_grade": "S2_OFFICIAL_AGENCY_REPORT",
+   "official_status": "ANNOUNCEMENT_OF_LEGISLATIVE_PROGRAMME",
+   "legal_domain": "civil, commercial, family, criminal",
+   "affected_instruments": [
+    "civil_transactions_law",
+    "evidence_law"
+   ],
+   "affected_workflow": "adjudication",
+   "affected_actor": "courts and parties",
+   "verified_facts": "four named laws were announced as a programme",
+   "claims_not_established": "commencement dates for each; this announcement is not a commencement",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "first party citation",
+    "first court citation",
+    "top-100 entry",
+    "top-50 entry",
+    "early citation velocity",
+    "court/bar split",
+    "first doctrinal companion"
+   ],
+   "objects": [
+    "CALIBRATION_CASE"
+   ],
+   "notes": "this is the known_at for both calibration cases in leading_results.json. It is why those two instruments are the only clean arrivals the corpus contains."
+  },
+  {
+   "event_id": "LSIG-0002",
+   "event_type": "A_LEGISLATIVE",
+   "title": "Law of Evidence enters observable use",
+   "announced_at": "2021-02-08",
+   "known_at": "2021-02-08",
+   "effective_at": "1443",
+   "publication_date": "UNKNOWN",
+   "observable_in_courts_from": "1443Q1",
+   "source": "https://my.gov.sa/en/news/8764",
+   "source_authority": "National Platform",
+   "source_grade": "S2_OFFICIAL_AGENCY_REPORT",
+   "official_status": "IN_FORCE",
+   "legal_domain": "procedure and proof",
+   "affected_instruments": [
+    "evidence_law"
+   ],
+   "affected_workflow": "adjudication",
+   "affected_actor": "courts and parties",
+   "verified_facts": "the instrument exists and is cited in this corpus from 1443Q1",
+   "claims_not_established": "the exact commencement date is not held in the registry, so uptake latency is measured from first OBSERVED use",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "core entry latency",
+    "companion formation"
+   ],
+   "objects": [
+    "CALIBRATION_CASE"
+   ]
+  },
+  {
+   "event_id": "LSIG-0003",
+   "event_type": "A_LEGISLATIVE",
+   "title": "Civil Transactions Law enters observable use",
+   "announced_at": "2021-02-08",
+   "known_at": "2021-02-08",
+   "effective_at": "1445",
+   "publication_date": "UNKNOWN",
+   "observable_in_courts_from": "1445Q1",
+   "source": "https://my.gov.sa/en/news/8764",
+   "source_authority": "National Platform",
+   "source_grade": "S2_OFFICIAL_AGENCY_REPORT",
+   "official_status": "IN_FORCE",
+   "legal_domain": "civil and contract",
+   "affected_instruments": [
+    "civil_transactions_law"
+   ],
+   "affected_workflow": "adjudication",
+   "affected_actor": "courts and parties",
+   "verified_facts": "first court and first party citation both in 1445Q1; top-100 by 1445Q2; top-50 by 1445Q3",
+   "claims_not_established": "commencement date not held; the bar's heavier citation rate is not evidence that the bar drove adoption",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "core entry latency",
+    "court/bar ratio",
+    "first doctrinal companion"
+   ],
+   "objects": [
+    "CALIBRATION_CASE",
+    "POSITIVE_CONTROL"
+   ],
+   "notes": "the positive control for PROSPECTIVE_DETECTOR_ERA_1."
+  },
+  {
+   "event_id": "LSIG-0004",
+   "event_type": "A_LEGISLATIVE",
+   "title": "A new Enforcement Law welcomed by the Minister of Justice as part of legal modernisation",
+   "announced_at": "2026-04-15",
+   "known_at": "2026-04-15",
+   "effective_at": "UNKNOWN",
+   "publication_date": "2026-04-15",
+   "observable_in_courts_from": "UNKNOWN: enforcement output is not published as reasoned judgments and is not in this corpus",
+   "source": "https://www.spa.gov.sa/en/N2560642",
+   "source_authority": "Saudi Press Agency",
+   "source_grade": "S2_OFFICIAL_AGENCY_REPORT",
+   "official_status": "ANNOUNCED",
+   "legal_domain": "enforcement",
+   "affected_instruments": [
+    "enforcement_law"
+   ],
+   "affected_workflow": "enforcement",
+   "affected_actor": "enforcement courts",
+   "verified_facts": "an official statement welcoming a new enforcement law exists and is dated",
+   "claims_not_established": "its commencement date, its contents, and whether any of it becomes visible in commercial adjudication. Our own fetch of the SPA page was not completed.",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "instrument visibility in the commercial corpus, if any",
+    "co-cited statutes"
+   ],
+   "objects": [
+    "WATCH_TARGET"
+   ],
+   "notes": "expected observables are deliberately thin. The workflow it touches is not the workflow this corpus records."
+  },
+  {
+   "event_id": "LSIG-0005",
+   "event_type": "D_TECHNOLOGY_AI",
+   "title": "Board of Grievances principles for the use of AI systems",
+   "announced_at": "2026",
+   "known_at": "2026",
+   "effective_at": "2026",
+   "publication_date": "2026",
+   "observable_in_courts_from": "NOT_OBSERVABLE: the Board is not in this corpus",
+   "source": "https://www.bog.gov.sa/knowledge-center/Policies/Pages/artificial-intelligence-principles.aspx",
+   "source_authority": "Board of Grievances",
+   "source_grade": "S1_PRIMARY_OFFICIAL",
+   "official_status": "IN_FORCE",
+   "legal_domain": "administrative justice governance",
+   "affected_instruments": [],
+   "affected_workflow": "judicial research",
+   "affected_actor": "Board of Grievances personnel",
+   "verified_facts": "a mandatory internal AI-use policy exists, applying to all departments and to operating companies",
+   "claims_not_established": "which systems, at what volume, with what effect",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "none in this corpus"
+   ],
+   "objects": [
+    "ADOPTION_REGISTRY_LINK:ADOPT-0005"
+   ]
+  },
+  {
+   "event_id": "LSIG-0006",
+   "event_type": "C_JUDICIAL_INSTITUTIONAL",
+   "title": "Ministry of Justice Virtual Enforcement Court launched",
+   "announced_at": "2025-02-04",
+   "known_at": "2025-02-04",
+   "effective_at": "2025-02-04",
+   "publication_date": "2025",
+   "observable_in_courts_from": "NOT_OBSERVABLE: enforcement output is not in this corpus",
+   "source": "https://www.moj.gov.sa/ar/Ministry/Pages/VirtualEnforcementCourt.aspx",
+   "source_authority": "Ministry of Justice",
+   "source_grade": "S1_PRIMARY_OFFICIAL",
+   "official_status": "LAUNCHED",
+   "legal_domain": "enforcement",
+   "affected_instruments": [],
+   "affected_workflow": "enforcement",
+   "affected_actor": "enforcement judges",
+   "verified_facts": "the Ministry states enforcement requests run automatically without human intervention under judicial supervision",
+   "claims_not_established": "the Ministry's own page does not mention artificial intelligence",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "none in this corpus"
+   ],
+   "objects": [
+    "ADOPTION_REGISTRY_LINK:ADOPT-0004"
+   ]
+  },
+  {
+   "event_id": "LSIG-0007",
+   "event_type": "E_INFRASTRUCTURE",
+   "title": "Board of Grievances publishes the administrative judgments collection for 1444 AH",
+   "announced_at": "2024",
+   "known_at": "2024",
+   "effective_at": "NOT_APPLICABLE",
+   "publication_date": "2024",
+   "observable_in_courts_from": "NOT_ACQUIRED",
+   "source": "https://www.bog.gov.sa/ScientificContent/JudicialBlogs/Pages/default.aspx",
+   "source_authority": "Board of Grievances",
+   "source_grade": "S3_RELIABLE_SECONDARY_CONFIRMATION",
+   "official_status": "PUBLISHED",
+   "legal_domain": "administrative justice",
+   "affected_instruments": [],
+   "affected_workflow": "publication",
+   "affected_actor": "researchers",
+   "verified_facts": "a collection covering 1444 AH was issued and was still described as the latest in July 2025",
+   "claims_not_established": "whether a 1445 or later collection exists; our own fetch of the Board's pages was blocked",
+   "capture_class": "BACKFILLED_EVENT",
+   "first_recorded_at": "2026-08-31",
+   "expectedObservables": [
+    "none until acquisition is possible"
+   ],
+   "objects": [
+    "WATCH_TARGET:bog_post_deployment_corpus@1446Q2"
+   ],
+   "notes": "this is the publication-coverage fact that closes the Board AI study at E0."
+  }
+ ],
+ "shocksView": {
+  "definition": "a SHOCK here is a timestamped external legal event of system-wide scope. The word carries no causal claim.",
+  "members": [
+   "LSIG-0001",
+   "LSIG-0003",
+   "LSIG-0004",
+   "LSIG-0006"
+  ]
+ }
+}

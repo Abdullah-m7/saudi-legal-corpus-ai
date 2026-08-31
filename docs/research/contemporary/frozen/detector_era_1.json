@@ -1,0 +1,112 @@
+{
+ "era": "PROSPECTIVE_DETECTOR_ERA_1",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "cfac8c5ffa9133a7de6909219d026eada34af5d4",
+ "what": "The detector contract, the maturity rule, the forecastability map and the HORIZON_1 release as they stood when they were declared frozen for prospective evaluation.",
+ "immutability": [
+  "no detector in this era may be retuned. A changed threshold, a changed baseline definition, a changed maturity rule or a changed scorable-quarter definition produces PROSPECTIVE_DETECTOR_ERA_2 as a NEW object.",
+  "era 2 never erases era 1's performance. Both are scored on whatever periods they were armed for, and a later era's better numbers are not a correction of an earlier era's worse ones.",
+  "a change to authority.py or companions.py also opens a new era, because it changes what the series measure, not merely how they are judged."
+ ],
+ "contract": {
+  "baseline": "rolling median of earlier scorable periods",
+  "variability": "median absolute deviation",
+  "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+  "watchBand": "2.0 scaled MAD",
+  "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+  "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+  "confirmation": "2 consecutive scorable periods, same direction",
+  "maturity": "only SCORABLE periods update a detector",
+  "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+  "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+ },
+ "maturityRule": {
+  "criteria": [
+   "at least 800 judgments carrying court authority",
+   "at least 200 court statutory citations",
+   "at least one later quarter exists in the corpus, so the quarter is not the collection edge",
+   "volume at least 40 per cent of the median of the four preceding quarters"
+  ],
+  "scorable": [
+   "1443Q1",
+   "1443Q3",
+   "1443Q4",
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4",
+   "1445Q1",
+   "1445Q4",
+   "1446Q1"
+  ],
+  "notScorable": [
+   "1442Q1",
+   "1442Q2",
+   "1442Q3",
+   "1442Q4",
+   "1443Q2",
+   "1445Q2",
+   "1445Q3",
+   "1446Q2"
+  ]
+ },
+ "forecastabilityCounts": {
+  "DETECT": 6,
+  "FORECAST": 8,
+  "WATCH": 1
+ },
+ "armedDetectors": [
+  "courtArticleHHI@1446Q2",
+  "namedFiqhShareOfFiqh@1446Q2",
+  "commercial_courts_law::namedShare@1446Q2",
+  "evidence_law::entropy@1446Q2",
+  "commercial_courts_implementing_regulation::topSourceShare@1446Q2"
+ ],
+ "watchTargets": [
+  "first_ai_legal_issue@1446Q2",
+  "bog_post_deployment_corpus@1446Q2",
+  "moj_commercial_ai_deployment@1446Q2",
+  "new_major_code@1446Q2",
+  "parser_era_change@1446Q2"
+ ],
+ "issuedForecasts": [
+  "operational_core_top50@1446Q2",
+  "ctl_court_share@1446Q2",
+  "court_party_top20_jaccard@1446Q2",
+  "companion_top3_sets@1446Q2",
+  "retrieval_coverage_h1@1446Q2",
+  "speaker_aware_retrieval@1446Q2",
+  "temporal_misalignment_h1@1446Q2",
+  "top50_entrants@1446Q2"
+ ],
+ "historicalAlarmBudget": {
+  "detectorsRun": 16,
+  "periodsEvaluatedTotal": 56,
+  "signalsTotal": 8,
+  "confirmedShiftsTotal": 2,
+  "alarmRate": 0.1429,
+  "confirmedRate": 0.0357
+ },
+ "positiveControl": {
+  "event": "the Civil Transactions Law becoming citable",
+  "whyItQualifies": "its date is fixed by legislation, not chosen by us after seeing the series, so it is definable without hindsight",
+  "firstCourtQuarter": "1445Q1",
+  "firstSignalQuarter": "1445Q1",
+  "detectionDelayQuarters": 0,
+  "confirmed": [
+   "1446Q1"
+  ],
+  "verdict": "DETECTED",
+  "limit": "one positive control is one positive control. It shows the detector can fire on a real structural change; it does not establish sensitivity."
+ },
+ "ledgerHash": "c7bd6441a91a7d7d",
+ "codeHashes": {
+  "ai_radar.py": "5990ba62364c860a",
+  "authority.py": "a1bf7ae3713b43e1",
+  "companion_analysis.py": "22e585b549ea3577",
+  "companions.py": "af828b14930b234f",
+  "detectors.py": "aec9242e4f2ef8e5",
+  "foresight.py": "a4e95c7085c5a1eb",
+  "horizon.py": "a8c8fc9bcd64e924"
+ }
+}

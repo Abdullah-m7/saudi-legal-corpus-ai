@@ -125,16 +125,19 @@ clear. Over 12 folds:
 | new top-50 entrant survival, one quarter | 0.5554 |
 | mean article HHI | 0.0682 |
 
-**RICH_GET_RICHER_ALREADY_PRESENT.** Seven in ten of the top decile stay
-there; movement from the bottom half into the top decile is essentially zero;
-barely half of new entrants survive a quarter. Saudi commercial adjudication
-concentrates its statutory attention strongly, and it did so before any AI is
-observable in this corpus.
+**RICH_GET_RICHER_ALREADY_PRESENT.** Stated only as the measurement
+supports it: published Saudi commercial adjudication shows **high top-decile
+persistence and extremely low bottom-half-to-top-decile mobility**, and barely
+half of new entrants survive a quarter. It showed that before any AI is
+observable in this corpus. An earlier draft said the system "concentrates
+almost as hard as it could"; that is a claim about a ceiling nothing here
+measures, and it is withdrawn. The numbers are unchanged.
 
-That cuts against the easy story rather than for it. If the system already
-concentrates this hard on its own, a later rise in concentration is weak
-evidence of anything, and any AI-homogenisation claim has to beat a baseline
-that is already close to the ceiling.
+That cuts against the easy story rather than for it. A system whose top decile
+already persists at 0.7023 and whose bottom half reaches it at 0.0017 leaves
+little room for a concentration increase to be noticed, so a later rise is weak
+evidence of anything, and an AI-homogenisation claim has to clear a baseline
+this high before it means anything at all.
 
 ## 7. Change detection, and what it costs
 
