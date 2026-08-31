@@ -28,7 +28,14 @@ files and nothing else:
 2. **rank changes** for articles already in it, and departures
 3. **authority-mix change** — the nine type shares, court voice, with the
    previous release's value beside each
-4. **hybrid-rate change** — the four reasoning shapes, per year
+4. **hybrid-rate change** — the four reasoning shapes, per year, and for
+   each authority type the **prevalence** (judgments invoking it at all)
+   and the **intensity** (invocations per invoking judgment) *separately*
+   from its share of mentions. Reported as a share alone, the bench's
+   fiqh citations fall from 22.7 per cent in 1441 to 10.0 in 1446 and
+   look like displacement; prevalence is flat and intensity does not move
+   past the second decimal. A release that reported only the share would
+   announce the disappearance of fiqh from Saudi commercial reasoning
 5. **newly visible statutes** — an instrument cited by the bench in this
    release and not the last, which is how a new code announces itself
 6. **source-composition change** — judgments per year, share carrying reasons,

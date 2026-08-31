@@ -25,3 +25,51 @@ to write a history of Saudi commercial adjudication is real and is refused:
 the older years carry 1–2 per cent of judgments with reasons and cannot
 support the comparison they invite. History enters only as a baseline for a
 recent reform.
+
+## Resolved, and what replaced them
+
+**#8 is decomposed.** `DECOMPOSITION.md`: article-level non-overlap moves
+from 80.2 to 78.5 per cent when the articles a court must invoke by virtue of
+its office are removed, and to 56.5 among dispute-specific articles only.
+Procedure does not explain it. What it *is* is intra-code: the two sides
+share an instrument in 56.2 per cent of judgments where both cite statute and
+an article in 35.3 per cent of those. The question is closed as posed.
+
+**#3 is chosen and opened.** `NEXT_PROGRAMME.md` compares it against #2 and
+against the alignment programme, and it wins on data readiness that the other
+two lack: the alignment programme is blocked by its own feasibility pilot
+(the pairing is not identifiable at proposition level), and #2/#4's clock is
+the year, which cannot carry a time-to-first-citation design. The reframed
+question is *where in a codified statute book non-statutory authority remains
+necessary, and what property of a provision predicts it* — the article-level
+rate runs from 1.1 to 85.9 per cent and the structural/dispute distinction
+explains three points of that eighty.
+
+**#4 is downgraded, on a measured ground rather than a guess.** The judgment
+layer carries `year` and nothing finer, so time to first citation has five
+ticks over the whole window and three since the Civil Transactions Law; and a
+provision's first *published* citation is a fact about the publication policy
+as much as about adjudication. It stays descriptive until a finer date exists.
+
+## The capability ledger
+
+Eight things the asset was meant to be able to answer. Where each now stands,
+and by which artefact:
+
+| capability | state | where |
+|---|---|---|
+| what courts cite | answered | `map_results.json`, `claim_results.json`, the profile |
+| what litigants cite | answered, bracketed by two specifications | same, `strict_party` / `wide_party` |
+| where they overlap | answered at six levels | `overlap_results.json` |
+| where they diverge | answered, and decomposed | `DECOMPOSITION.md` |
+| what authority combinations courts use | answered | `hybrid_view.json`, `hybrid_results.json` |
+| which provisions form the operational core | answered, and classified by function | `core_view.json`, `core_function.json` |
+| how recent statutes enter adjudication | **partial** — visibility yes, timing no, because the clock is the year | `lawinaction_results.json` |
+| how litigant arguments are legally handled | **partial** — at judgment level yes, at proposition level the corpus does not support it | `pairs_gold.json` |
+
+Six of eight are answered from generated files. The two that are not, are not
+blocked on effort: one needs a finer date than the corpus records, the other
+needs judgments to name the article they are rejecting, and they do not.
+Both are stated as limits rather than as work items, because pretending
+otherwise is how a research programme spends a year on an unanswerable
+question.

@@ -1,0 +1,213 @@
+{
+ "_bands": "B is the LOWER bound of structural exclusion, C the UPPER: the ambiguous residual is excluded in C and retained in B.",
+ "specs": {
+  "strict": {
+   "fam": {
+    "n": 4313,
+    "medianJaccard": 0.5,
+    "meanJaccard": 0.508,
+    "p25": 0.0,
+    "p75": 1.0,
+    "noOverlapPct": 26.9,
+    "exactMatchPct": 34.1
+   },
+   "inst_all": {
+    "n": 2698,
+    "medianJaccard": 0.333,
+    "meanJaccard": 0.341,
+    "p25": 0.0,
+    "p75": 0.5,
+    "noOverlapPct": 42.5,
+    "exactMatchPct": 15.5
+   },
+   "inst_nostruct": {
+    "n": 1190,
+    "medianJaccard": 0.333,
+    "meanJaccard": 0.401,
+    "p25": 0.0,
+    "p75": 1.0,
+    "noOverlapPct": 48.5,
+    "exactMatchPct": 30.1
+   },
+   "inst_dispute": {
+    "n": 253,
+    "medianJaccard": 1.0,
+    "meanJaccard": 0.777,
+    "p25": 0.5,
+    "p75": 1.0,
+    "noOverlapPct": 18.6,
+    "exactMatchPct": 73.9
+   },
+   "art_all": {
+    "n": 2621,
+    "medianJaccard": 0.0,
+    "meanJaccard": 0.088,
+    "p25": 0.0,
+    "p75": 0.0,
+    "noOverlapPct": 80.2,
+    "exactMatchPct": 3.0
+   },
+   "art_nostruct": {
+    "n": 1190,
+    "medianJaccard": 0.0,
+    "meanJaccard": 0.126,
+    "p25": 0.0,
+    "p75": 0.0,
+    "noOverlapPct": 78.5,
+    "exactMatchPct": 6.8
+   },
+   "art_dispute": {
+    "n": 253,
+    "medianJaccard": 0.0,
+    "meanJaccard": 0.333,
+    "p25": 0.0,
+    "p75": 0.667,
+    "noOverlapPct": 56.5,
+    "exactMatchPct": 24.9
+   }
+  },
+  "wide": {
+   "fam": {
+    "n": 9715,
+    "medianJaccard": 0.5,
+    "meanJaccard": 0.612,
+    "p25": 0.333,
+    "p75": 1.0,
+    "noOverlapPct": 12.6,
+    "exactMatchPct": 42.2
+   },
+   "inst_all": {
+    "n": 7922,
+    "medianJaccard": 0.333,
+    "meanJaccard": 0.346,
+    "p25": 0.0,
+    "p75": 0.5,
+    "noOverlapPct": 35.2,
+    "exactMatchPct": 11.4
+   },
+   "inst_nostruct": {
+    "n": 2268,
+    "medianJaccard": 0.333,
+    "meanJaccard": 0.414,
+    "p25": 0.0,
+    "p75": 1.0,
+    "noOverlapPct": 43.2,
+    "exactMatchPct": 29.2
+   },
+   "inst_dispute": {
+    "n": 570,
+    "medianJaccard": 1.0,
+    "meanJaccard": 0.731,
+    "p25": 0.5,
+    "p75": 1.0,
+    "noOverlapPct": 21.4,
+    "exactMatchPct": 67.7
+   },
+   "art_all": {
+    "n": 7783,
+    "medianJaccard": 0.0,
+    "meanJaccard": 0.104,
+    "p25": 0.0,
+    "p75": 0.2,
+    "noOverlapPct": 70.1,
+    "exactMatchPct": 1.8
+   },
+   "art_nostruct": {
+    "n": 2268,
+    "medianJaccard": 0.0,
+    "meanJaccard": 0.157,
+    "p25": 0.0,
+    "p75": 0.2,
+    "noOverlapPct": 70.7,
+    "exactMatchPct": 8.3
+   },
+   "art_dispute": {
+    "n": 570,
+    "medianJaccard": 0.0,
+    "meanJaccard": 0.328,
+    "p25": 0.0,
+    "p75": 0.667,
+    "noOverlapPct": 53.9,
+    "exactMatchPct": 24.2
+   }
+  }
+ },
+ "conditional": {
+  "strict": {
+   "bothCiteStatute": 2621,
+   "sharedInstrumentPct": 56.2,
+   "sharedArticleGivenInstrumentPct": 35.3,
+   "sharedArticleGivenStatutePct": 19.8,
+   "byInstrument": {
+    "commercial_courts_law": {
+     "judgmentsSharingInstrument": 758,
+     "sameArticlePct": 27.4
+    },
+    "evidence_law": {
+     "judgmentsSharingInstrument": 213,
+     "sameArticlePct": 38.5
+    },
+    "commercial_courts_implementing_regulation": {
+     "judgmentsSharingInstrument": 159,
+     "sameArticlePct": 12.6
+    },
+    "sharia_procedure_law": {
+     "judgmentsSharingInstrument": 159,
+     "sameArticlePct": 46.5
+    },
+    "companies_law": {
+     "judgmentsSharingInstrument": 148,
+     "sameArticlePct": 37.8
+    },
+    "civil_transactions_law": {
+     "judgmentsSharingInstrument": 36,
+     "sameArticlePct": 27.8
+    },
+    "arbitration_law": {
+     "judgmentsSharingInstrument": 34,
+     "sameArticlePct": 64.7
+    }
+   }
+  },
+  "wide": {
+   "bothCiteStatute": 7783,
+   "sharedInstrumentPct": 63.5,
+   "sharedArticleGivenInstrumentPct": 47.0,
+   "sharedArticleGivenStatutePct": 29.9,
+   "byInstrument": {
+    "commercial_courts_law": {
+     "judgmentsSharingInstrument": 3265,
+     "sameArticlePct": 46.6
+    },
+    "commercial_courts_implementing_regulation": {
+     "judgmentsSharingInstrument": 930,
+     "sameArticlePct": 12.5
+    },
+    "evidence_law": {
+     "judgmentsSharingInstrument": 476,
+     "sameArticlePct": 44.7
+    },
+    "sharia_procedure_law": {
+     "judgmentsSharingInstrument": 387,
+     "sameArticlePct": 54.3
+    },
+    "companies_law": {
+     "judgmentsSharingInstrument": 293,
+     "sameArticlePct": 51.9
+    },
+    "arbitration_law": {
+     "judgmentsSharingInstrument": 64,
+     "sameArticlePct": 73.4
+    },
+    "civil_transactions_law": {
+     "judgmentsSharingInstrument": 52,
+     "sameArticlePct": 36.5
+    },
+    "trade_names_law": {
+     "judgmentsSharingInstrument": 35,
+     "sameArticlePct": 100.0
+    }
+   }
+  }
+ }
+}

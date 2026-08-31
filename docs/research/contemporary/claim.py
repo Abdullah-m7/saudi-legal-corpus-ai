@@ -159,6 +159,11 @@ def shares(counter):
     return {t: round(100 * counter[t] / tot, 2) for t in A.TYPES}, tot
 
 
+def ranked(counter):
+    """most_common, with ties broken by the key so a re-run is a no-op."""
+    return sorted(counter.items(), key=lambda kv: (-kv[1], str(kv[0])))
+
+
 def core_sizes(counter):
     tot = sum(counter.values()) or 1
     run, out, need = 0, {}, [50, 75, 90]
@@ -202,13 +207,17 @@ def report(acc, args):
             for k2, v in b["combo"].items()
             if isinstance(k2, tuple) and k2[0] == "__ncombo__"}
         row["core"] = core_sizes(b["core"])
+        # Counter.most_common breaks ties by insertion order, which comes
+        # from set iteration and differs between runs. The values were
+        # identical and the file still rewrote 87 lines on every re-run --- a
+        # diff that means nothing teaches its reader to skip diffs.
         row["coreTop"] = [[f"{a} art.{n2}", v]
-                          for (a, n2), v in b["core"].most_common(10)]
+                          for (a, n2), v in ranked(b["core"])[:10]]
         row["distinctArticles"] = len(b["core"])
         # D
         pd_ = b["pairedDocs"] or 1
         tr = {}
-        for (p, c), v in b["trans"].most_common():
+        for (p, c), v in ranked(b["trans"]):
             exp = b["partyMarg"][p] * b["courtMarg"][c] / pd_
             tr[f"{p}->{c}"] = {"n": v, "expected": round(exp, 1),
                                "lift": round(v / exp, 2) if exp else None}

@@ -308,23 +308,53 @@ layer, while some non-statutory authority types show within-dispute
 persistence** — a contract point is answered with the contract, a custom point
 with custom, three to four times more often than chance.
 
-**And the two sides rarely share an article.** Measuring set overlap within
-each paired judgment:
+**And the two sides rarely share an article — but they do share the code.**
+Measuring set overlap within each paired judgment:
 
 | level | median Jaccard | share with no overlap | share identical |
 |---|---:|---:|---:|
-| authority family | 0.50 | 27.0 % | 34.5 % |
-| instrument | 0.333 | 42.4 % | 16.6 % |
-| **article** | **0.00** | **79.7 %** | 3.5 % |
+| authority family | 0.500 | 26.9 % | 34.1 % |
+| instrument | 0.333 | 42.5 % | 15.5 % |
+| **article** | **0.000** | **80.2 %** | 3.0 % |
 
-Agreement decays sharply with specificity. Courts and litigants agree about
-the *kind* of authority roughly half the time, about *which statute* a third
-of the time, and in four paired judgments out of five they cite no article in
-common. This does not mean courts ignore litigants — answering a contract
-argument by applying a statute is a legitimate answer, and a court must decide
-jurisdiction whether or not it was raised. It does mean that a study
-measuring "the articles a court applies" from an unsegmented judgment is, in
-most cases, measuring a set that is largely the parties'.
+Agreement decays sharply with specificity. The obvious objection is that a
+court decides jurisdiction whether or not jurisdiction was argued, so the
+articles it adds may be its office rather than a disagreement. We test it by
+classifying every article by function from its own enacted text — structural
+procedural, dispute-specific, or ambiguous — validated by hand at 92.9 per
+cent precision on the structural class and 100 per cent on the dispute class.
+
+**Removing the structural law does not explain the divergence.** Article-level
+non-overlap moves from 80.2 to 78.5 per cent. Only when the comparison is
+narrowed to strictly dispute-specific articles does it fall, to 56.5 per cent,
+and a majority of paired judgments still share no article.
+
+What the decomposition does change is the *character* of the divergence. Among
+dispute-specific articles the two sides use the **same instrument** in 73.9
+per cent of judgments. Conditioning makes it plain:
+
+```
+P(shared instrument | both cite statute)   56.2 %
+P(shared article    | shared instrument)   35.3 %
+P(shared article    | both cite statute)   19.8 %
+```
+
+Court and litigants are not reasoning in different legal universes. They reach
+for the same code roughly six times in ten and, inside it, land on the same
+provision about a third of the time. The divergence is **intra-code**, and it
+varies by instrument in a legible way: the Arbitration Law, which turns on a
+single mandatory-stay provision, reaches 64.7 per cent agreement; the
+281-article commercial implementing regulation, which the bench navigates and
+the parties barely touch, reaches 12.6 per cent.
+
+A twelve-judgment pilot reading claim against response is consistent with
+this and adds a caution. Pairing is identifiable at judgment level but not at
+proposition level — the court almost never names a party's article in order to
+reject it — so an adopt/reject/bypass taxonomy is not codeable here. On the
+three codes that are: the court answered on law the party had not cited in 8
+of 12, engaged the party's own article in 2, and 2 were mooted. In one of the
+two engagements the court adopted the party's article in a citation form our
+extractor under-reads, so measured engagement is a lower bound.
 
 ## VIII. Implications
 
@@ -342,11 +372,16 @@ models exist.
 
 **C. Legal AI and retrieval.** Systems trained or grounded on full judgment
 text, without role separation, learn advocacy and adjudication as one
-distribution. A retrieval system asked what authority governs a question will
-surface, from these documents, a body of contract-and-maxim argument that the
-courts themselves largely do not adopt. The article-level result sharpens
-this: in four judgments out of five the articles argued and the articles
-applied do not intersect.
+distribution. This is measurable without any model. Ranking the same 1,617
+articles by frequency in full text, in court reasoning only, and in party
+argument only, the rank correlation between the court's ranking and the
+parties' is **0.564**, and seven of the court's top fifty articles are absent
+from the full-text top fifty. The vivid case is article 90 of the commercial
+implementing regulation: the **third** most-cited article in full text, and
+not in the court's top three — it is the preparatory-hearing formula recited
+in tens of thousands of statements of fact. A system grounded on full judgment
+text would rank a docket-management formality among the most important
+provisions of Saudi commercial law.
 
 **D. Saudi legal research.** The results are evidence about *contemporary
 published commercial adjudication*, and should be described that way. They are

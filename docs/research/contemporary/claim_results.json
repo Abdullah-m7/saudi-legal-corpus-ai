@@ -397,15 +397,15 @@
      "expected": 41.7,
      "lift": 1.27
     },
-    "legal_maxim->hadith": {
-     "n": 51,
-     "expected": 39.3,
-     "lift": 1.3
-    },
     "contract->discretion": {
      "n": 51,
      "expected": 43.6,
      "lift": 1.17
+    },
+    "legal_maxim->hadith": {
+     "n": 51,
+     "expected": 39.3,
+     "lift": 1.3
     },
     "quran->hadith": {
      "n": 49,
@@ -447,15 +447,15 @@
      "expected": 22.4,
      "lift": 1.21
     },
-    "quran->quran": {
-     "n": 26,
-     "expected": 15.3,
-     "lift": 1.7
-    },
     "discretion->statute": {
      "n": 26,
      "expected": 35.7,
      "lift": 0.73
+    },
+    "quran->quran": {
+     "n": 26,
+     "expected": 15.3,
+     "lift": 1.7
     },
     "hadith->discretion": {
      "n": 24,
@@ -482,15 +482,15 @@
      "expected": 17.3,
      "lift": 1.21
     },
-    "legal_maxim->legal_maxim": {
-     "n": 20,
-     "expected": 10.9,
-     "lift": 1.84
-    },
     "contract->custom": {
      "n": 20,
      "expected": 19.3,
      "lift": 1.04
+    },
+    "legal_maxim->legal_maxim": {
+     "n": 20,
+     "expected": 10.9,
+     "lift": 1.84
     },
     "contract->judicial_principle": {
      "n": 19,
@@ -517,6 +517,11 @@
      "expected": 15.0,
      "lift": 1.07
     },
+    "custom->quran": {
+     "n": 15,
+     "expected": 14.6,
+     "lift": 1.02
+    },
     "discretion->fiqh_source": {
      "n": 15,
      "expected": 9.4,
@@ -527,30 +532,25 @@
      "expected": 19.8,
      "lift": 0.76
     },
-    "custom->quran": {
-     "n": 15,
-     "expected": 14.6,
-     "lift": 1.02
-    },
-    "judicial_principle->discretion": {
+    "custom->discretion": {
      "n": 13,
-     "expected": 4.1,
-     "lift": 3.16
+     "expected": 15.3,
+     "lift": 0.85
     },
     "custom->legal_maxim": {
      "n": 13,
      "expected": 9.6,
      "lift": 1.35
     },
+    "judicial_principle->discretion": {
+     "n": 13,
+     "expected": 4.1,
+     "lift": 3.16
+    },
     "quran->judicial_principle": {
      "n": 13,
      "expected": 10.2,
      "lift": 1.27
-    },
-    "custom->discretion": {
-     "n": 13,
-     "expected": 15.3,
-     "lift": 0.85
     },
     "quran->contract": {
      "n": 12,
@@ -572,6 +572,11 @@
      "expected": 15.5,
      "lift": 0.65
     },
+    "custom->judicial_principle": {
+     "n": 10,
+     "expected": 9.8,
+     "lift": 1.02
+    },
     "legal_maxim->judicial_principle": {
      "n": 10,
      "expected": 11.1,
@@ -587,25 +592,20 @@
      "expected": 10.0,
      "lift": 1.0
     },
-    "custom->judicial_principle": {
-     "n": 10,
-     "expected": 9.8,
-     "lift": 1.02
-    },
     "judicial_principle->hadith": {
      "n": 9,
      "expected": 9.3,
      "lift": 0.96
     },
-    "judicial_principle->judicial_principle": {
-     "n": 8,
-     "expected": 2.6,
-     "lift": 3.04
-    },
     "discretion->contract": {
      "n": 8,
      "expected": 2.1,
      "lift": 3.81
+    },
+    "judicial_principle->judicial_principle": {
+     "n": 8,
+     "expected": 2.6,
+     "lift": 3.04
     },
     "discretion->hadith": {
      "n": 7,
@@ -632,6 +632,11 @@
      "expected": 2.1,
      "lift": 1.44
     },
+    "discretion->quran": {
+     "n": 2,
+     "expected": 2.0,
+     "lift": 1.0
+    },
     "judicial_principle->legal_maxim": {
      "n": 2,
      "expected": 2.6,
@@ -641,11 +646,6 @@
      "n": 2,
      "expected": 3.9,
      "lift": 0.51
-    },
-    "discretion->quran": {
-     "n": 2,
-     "expected": 2.0,
-     "lift": 1.0
     },
     "discretion->judicial_principle": {
      "n": 1,
@@ -1101,15 +1101,15 @@
      "expected": 22.3,
      "lift": 1.21
     },
-    "quran->quran": {
-     "n": 26,
-     "expected": 15.2,
-     "lift": 1.71
-    },
     "discretion->statute": {
      "n": 26,
      "expected": 35.8,
      "lift": 0.73
+    },
+    "quran->quran": {
+     "n": 26,
+     "expected": 15.2,
+     "lift": 1.71
     },
     "hadith->discretion": {
      "n": 24,
@@ -1136,15 +1136,15 @@
      "expected": 17.2,
      "lift": 1.22
     },
-    "legal_maxim->legal_maxim": {
-     "n": 20,
-     "expected": 10.8,
-     "lift": 1.85
-    },
     "contract->custom": {
      "n": 20,
      "expected": 19.2,
      "lift": 1.04
+    },
+    "legal_maxim->legal_maxim": {
+     "n": 20,
+     "expected": 10.8,
+     "lift": 1.85
     },
     "contract->judicial_principle": {
      "n": 19,
@@ -1171,6 +1171,11 @@
      "expected": 15.0,
      "lift": 1.07
     },
+    "custom->quran": {
+     "n": 15,
+     "expected": 14.5,
+     "lift": 1.04
+    },
     "discretion->fiqh_source": {
      "n": 15,
      "expected": 9.4,
@@ -1181,30 +1186,25 @@
      "expected": 19.7,
      "lift": 0.76
     },
-    "custom->quran": {
-     "n": 15,
-     "expected": 14.5,
-     "lift": 1.04
-    },
-    "judicial_principle->discretion": {
+    "custom->discretion": {
      "n": 13,
-     "expected": 4.1,
-     "lift": 3.17
+     "expected": 15.1,
+     "lift": 0.86
     },
     "custom->legal_maxim": {
      "n": 13,
      "expected": 9.5,
      "lift": 1.37
     },
+    "judicial_principle->discretion": {
+     "n": 13,
+     "expected": 4.1,
+     "lift": 3.17
+    },
     "quran->judicial_principle": {
      "n": 13,
      "expected": 10.2,
      "lift": 1.27
-    },
-    "custom->discretion": {
-     "n": 13,
-     "expected": 15.1,
-     "lift": 0.86
     },
     "quran->contract": {
      "n": 12,
@@ -1226,6 +1226,11 @@
      "expected": 15.1,
      "lift": 0.66
     },
+    "custom->judicial_principle": {
+     "n": 10,
+     "expected": 9.7,
+     "lift": 1.03
+    },
     "legal_maxim->judicial_principle": {
      "n": 10,
      "expected": 11.0,
@@ -1241,25 +1246,20 @@
      "expected": 10.0,
      "lift": 1.0
     },
-    "custom->judicial_principle": {
-     "n": 10,
-     "expected": 9.7,
-     "lift": 1.03
-    },
     "judicial_principle->hadith": {
      "n": 9,
      "expected": 9.3,
      "lift": 0.97
     },
-    "judicial_principle->judicial_principle": {
-     "n": 8,
-     "expected": 2.6,
-     "lift": 3.04
-    },
     "discretion->contract": {
      "n": 8,
      "expected": 2.1,
      "lift": 3.85
+    },
+    "judicial_principle->judicial_principle": {
+     "n": 8,
+     "expected": 2.6,
+     "lift": 3.04
     },
     "discretion->hadith": {
      "n": 7,
@@ -1286,6 +1286,11 @@
      "expected": 2.1,
      "lift": 1.44
     },
+    "discretion->quran": {
+     "n": 2,
+     "expected": 2.0,
+     "lift": 1.01
+    },
     "judicial_principle->legal_maxim": {
      "n": 2,
      "expected": 2.6,
@@ -1295,11 +1300,6 @@
      "n": 2,
      "expected": 3.9,
      "lift": 0.51
-    },
-    "discretion->quran": {
-     "n": 2,
-     "expected": 2.0,
-     "lift": 1.01
     },
     "discretion->judicial_principle": {
      "n": 1,
@@ -1700,15 +1700,15 @@
      "expected": 33.3,
      "lift": 1.68
     },
-    "contract->quran": {
-     "n": 49,
-     "expected": 39.1,
-     "lift": 1.25
-    },
     "contract->discretion": {
      "n": 49,
      "expected": 40.9,
      "lift": 1.2
+    },
+    "contract->quran": {
+     "n": 49,
+     "expected": 39.1,
+     "lift": 1.25
     },
     "quran->hadith": {
      "n": 48,
@@ -1740,11 +1740,6 @@
      "expected": 17.0,
      "lift": 1.77
     },
-    "fiqh_source->quran": {
-     "n": 26,
-     "expected": 21.6,
-     "lift": 1.21
-    },
     "custom->custom": {
      "n": 26,
      "expected": 6.6,
@@ -1754,6 +1749,11 @@
      "n": 26,
      "expected": 35.0,
      "lift": 0.74
+    },
+    "fiqh_source->quran": {
+     "n": 26,
+     "expected": 21.6,
+     "lift": 1.21
     },
     "hadith->quran": {
      "n": 25,
@@ -1765,15 +1765,15 @@
      "expected": 29.1,
      "lift": 0.83
     },
-    "quran->quran": {
-     "n": 24,
-     "expected": 14.6,
-     "lift": 1.64
-    },
     "hadith->legal_maxim": {
      "n": 24,
      "expected": 18.4,
      "lift": 1.31
+    },
+    "quran->quran": {
+     "n": 24,
+     "expected": 14.6,
+     "lift": 1.64
     },
     "legal_maxim->contract": {
      "n": 22,
@@ -1805,40 +1805,45 @@
      "expected": 10.5,
      "lift": 1.63
     },
-    "legal_maxim->quran": {
+    "fiqh_source->contract": {
      "n": 16,
-     "expected": 15.8,
-     "lift": 1.01
-    },
-    "fiqh_source->legal_maxim": {
-     "n": 16,
-     "expected": 14.3,
-     "lift": 1.12
+     "expected": 21.6,
+     "lift": 0.74
     },
     "fiqh_source->judicial_principle": {
      "n": 16,
      "expected": 14.4,
      "lift": 1.11
     },
-    "fiqh_source->contract": {
+    "fiqh_source->legal_maxim": {
      "n": 16,
-     "expected": 21.6,
-     "lift": 0.74
+     "expected": 14.3,
+     "lift": 1.12
     },
-    "hadith->judicial_principle": {
-     "n": 15,
-     "expected": 18.6,
-     "lift": 0.81
+    "legal_maxim->quran": {
+     "n": 16,
+     "expected": 15.8,
+     "lift": 1.01
     },
     "custom->quran": {
      "n": 15,
      "expected": 14.1,
      "lift": 1.06
     },
+    "hadith->judicial_principle": {
+     "n": 15,
+     "expected": 18.6,
+     "lift": 0.81
+    },
     "discretion->fiqh_source": {
      "n": 14,
      "expected": 9.2,
      "lift": 1.52
+    },
+    "custom->discretion": {
+     "n": 13,
+     "expected": 14.7,
+     "lift": 0.88
     },
     "custom->legal_maxim": {
      "n": 13,
@@ -1850,11 +1855,6 @@
      "expected": 9.8,
      "lift": 1.33
     },
-    "custom->discretion": {
-     "n": 13,
-     "expected": 14.7,
-     "lift": 0.88
-    },
     "quran->contract": {
      "n": 12,
      "expected": 14.6,
@@ -1865,10 +1865,20 @@
      "expected": 15.3,
      "lift": 0.79
     },
+    "custom->judicial_principle": {
+     "n": 10,
+     "expected": 9.4,
+     "lift": 1.06
+    },
     "judicial_principle->discretion": {
      "n": 10,
      "expected": 3.7,
      "lift": 2.67
+    },
+    "legal_maxim->custom": {
+     "n": 10,
+     "expected": 7.5,
+     "lift": 1.34
     },
     "legal_maxim->judicial_principle": {
      "n": 10,
@@ -1885,25 +1895,15 @@
      "expected": 9.6,
      "lift": 1.04
     },
-    "legal_maxim->custom": {
-     "n": 10,
-     "expected": 7.5,
-     "lift": 1.34
-    },
-    "custom->judicial_principle": {
-     "n": 10,
-     "expected": 9.4,
-     "lift": 1.06
+    "custom->contract": {
+     "n": 9,
+     "expected": 14.1,
+     "lift": 0.64
     },
     "judicial_principle->hadith": {
      "n": 9,
      "expected": 8.5,
      "lift": 1.06
-    },
-    "custom->contract": {
-     "n": 9,
-     "expected": 14.1,
-     "lift": 0.64
     },
     "discretion->contract": {
      "n": 8,
@@ -1935,20 +1935,15 @@
      "expected": 2.0,
      "lift": 1.47
     },
-    "judicial_principle->contract": {
-     "n": 2,
-     "expected": 3.6,
-     "lift": 0.56
-    },
     "discretion->quran": {
      "n": 2,
      "expected": 1.9,
      "lift": 1.03
     },
-    "judicial_principle->quran": {
-     "n": 1,
+    "judicial_principle->contract": {
+     "n": 2,
      "expected": 3.6,
-     "lift": 0.28
+     "lift": 0.56
     },
     "discretion->judicial_principle": {
      "n": 1,
@@ -1959,6 +1954,11 @@
      "n": 1,
      "expected": 2.4,
      "lift": 0.42
+    },
+    "judicial_principle->quran": {
+     "n": 1,
+     "expected": 3.6,
+     "lift": 0.28
     }
    }
   },
@@ -2278,15 +2278,15 @@
      "expected": 34.3,
      "lift": 1.49
     },
-    "statute->judicial_principle": {
-     "n": 50,
-     "expected": 45.8,
-     "lift": 1.09
-    },
     "contract->fiqh_source": {
      "n": 50,
      "expected": 61.8,
      "lift": 0.81
+    },
+    "statute->judicial_principle": {
+     "n": 50,
+     "expected": 45.8,
+     "lift": 1.09
     },
     "contract->contract": {
      "n": 45,
@@ -2313,11 +2313,6 @@
      "expected": 45.0,
      "lift": 0.91
     },
-    "quran->fiqh_source": {
-     "n": 29,
-     "expected": 28.5,
-     "lift": 1.02
-    },
     "custom->fiqh_source": {
      "n": 29,
      "expected": 26.1,
@@ -2326,6 +2321,11 @@
     "judicial_principle->statute": {
      "n": 29,
      "expected": 28.3,
+     "lift": 1.02
+    },
+    "quran->fiqh_source": {
+     "n": 29,
+     "expected": 28.5,
      "lift": 1.02
     },
     "hadith->hadith": {
@@ -2368,15 +2368,15 @@
      "expected": 13.1,
      "lift": 1.45
     },
-    "judicial_principle->fiqh_source": {
-     "n": 16,
-     "expected": 7.2,
-     "lift": 2.23
-    },
     "contract->legal_maxim": {
      "n": 16,
      "expected": 9.3,
      "lift": 1.73
+    },
+    "judicial_principle->fiqh_source": {
+     "n": 16,
+     "expected": 7.2,
+     "lift": 2.23
     },
     "fiqh_source->discretion": {
      "n": 13,
@@ -2388,65 +2388,50 @@
      "expected": 4.7,
      "lift": 2.11
     },
-    "hadith->discretion": {
+    "hadith->contract": {
      "n": 9,
-     "expected": 12.1,
-     "lift": 0.74
+     "expected": 9.4,
+     "lift": 0.96
     },
     "hadith->custom": {
      "n": 9,
      "expected": 4.7,
      "lift": 1.91
     },
-    "hadith->contract": {
+    "hadith->discretion": {
      "n": 9,
-     "expected": 9.4,
-     "lift": 0.96
-    },
-    "legal_maxim->quran": {
-     "n": 9,
-     "expected": 5.0,
-     "lift": 1.8
+     "expected": 12.1,
+     "lift": 0.74
     },
     "hadith->quran": {
      "n": 9,
      "expected": 8.1,
      "lift": 1.12
     },
-    "fiqh_source->legal_maxim": {
-     "n": 8,
-     "expected": 5.1,
-     "lift": 1.56
-    },
-    "fiqh_source->judicial_principle": {
-     "n": 8,
-     "expected": 5.5,
-     "lift": 1.45
-    },
-    "custom->discretion": {
-     "n": 8,
-     "expected": 6.2,
-     "lift": 1.29
+    "legal_maxim->quran": {
+     "n": 9,
+     "expected": 5.0,
+     "lift": 1.8
     },
     "contract->judicial_principle": {
      "n": 8,
      "expected": 9.9,
      "lift": 0.81
     },
-    "quran->custom": {
-     "n": 7,
-     "expected": 2.6,
-     "lift": 2.67
+    "custom->discretion": {
+     "n": 8,
+     "expected": 6.2,
+     "lift": 1.29
     },
-    "legal_maxim->discretion": {
-     "n": 7,
-     "expected": 7.5,
-     "lift": 0.93
+    "fiqh_source->judicial_principle": {
+     "n": 8,
+     "expected": 5.5,
+     "lift": 1.45
     },
-    "quran->judicial_principle": {
-     "n": 7,
-     "expected": 4.6,
-     "lift": 1.53
+    "fiqh_source->legal_maxim": {
+     "n": 8,
+     "expected": 5.1,
+     "lift": 1.56
     },
     "custom->quran": {
      "n": 7,
@@ -2458,50 +2443,60 @@
      "expected": 7.7,
      "lift": 0.91
     },
-    "custom->custom": {
-     "n": 6,
-     "expected": 2.4,
-     "lift": 2.49
+    "legal_maxim->discretion": {
+     "n": 7,
+     "expected": 7.5,
+     "lift": 0.93
+    },
+    "quran->custom": {
+     "n": 7,
+     "expected": 2.6,
+     "lift": 2.67
+    },
+    "quran->judicial_principle": {
+     "n": 7,
+     "expected": 4.6,
+     "lift": 1.53
     },
     "contract->quran": {
      "n": 6,
      "expected": 9.8,
      "lift": 0.61
     },
-    "custom->legal_maxim": {
+    "custom->custom": {
      "n": 6,
-     "expected": 3.9,
-     "lift": 1.53
-    },
-    "quran->contract": {
-     "n": 6,
-     "expected": 5.3,
-     "lift": 1.14
-    },
-    "hadith->judicial_principle": {
-     "n": 6,
-     "expected": 8.2,
-     "lift": 0.73
-    },
-    "discretion->statute": {
-     "n": 6,
-     "expected": 5.7,
-     "lift": 1.06
+     "expected": 2.4,
+     "lift": 2.49
     },
     "custom->judicial_principle": {
      "n": 6,
      "expected": 4.2,
      "lift": 1.43
     },
+    "custom->legal_maxim": {
+     "n": 6,
+     "expected": 3.9,
+     "lift": 1.53
+    },
+    "discretion->statute": {
+     "n": 6,
+     "expected": 5.7,
+     "lift": 1.06
+    },
+    "hadith->judicial_principle": {
+     "n": 6,
+     "expected": 8.2,
+     "lift": 0.73
+    },
+    "quran->contract": {
+     "n": 6,
+     "expected": 5.3,
+     "lift": 1.14
+    },
     "contract->custom": {
      "n": 5,
      "expected": 5.7,
      "lift": 0.88
-    },
-    "quran->quran": {
-     "n": 5,
-     "expected": 4.5,
-     "lift": 1.11
     },
     "judicial_principle->hadith": {
      "n": 5,
@@ -2513,10 +2508,10 @@
      "expected": 5.8,
      "lift": 0.86
     },
-    "legal_maxim->custom": {
-     "n": 4,
-     "expected": 2.9,
-     "lift": 1.37
+    "quran->quran": {
+     "n": 5,
+     "expected": 4.5,
+     "lift": 1.11
     },
     "fiqh_source->quran": {
      "n": 4,
@@ -2528,9 +2523,39 @@
      "expected": 1.7,
      "lift": 2.35
     },
+    "legal_maxim->custom": {
+     "n": 4,
+     "expected": 2.9,
+     "lift": 1.37
+    },
     "quran->discretion": {
      "n": 4,
      "expected": 6.8,
+     "lift": 0.59
+    },
+    "custom->contract": {
+     "n": 3,
+     "expected": 4.8,
+     "lift": 0.62
+    },
+    "fiqh_source->contract": {
+     "n": 3,
+     "expected": 6.3,
+     "lift": 0.48
+    },
+    "fiqh_source->custom": {
+     "n": 3,
+     "expected": 3.2,
+     "lift": 0.95
+    },
+    "judicial_principle->judicial_principle": {
+     "n": 3,
+     "expected": 1.2,
+     "lift": 2.6
+    },
+    "legal_maxim->judicial_principle": {
+     "n": 3,
+     "expected": 5.1,
      "lift": 0.59
     },
     "quran->legal_maxim": {
@@ -2538,40 +2563,15 @@
      "expected": 4.3,
      "lift": 0.7
     },
-    "legal_maxim->judicial_principle": {
-     "n": 3,
-     "expected": 5.1,
-     "lift": 0.59
-    },
-    "judicial_principle->judicial_principle": {
-     "n": 3,
-     "expected": 1.2,
-     "lift": 2.6
-    },
-    "fiqh_source->custom": {
-     "n": 3,
-     "expected": 3.2,
-     "lift": 0.95
-    },
-    "fiqh_source->contract": {
-     "n": 3,
-     "expected": 6.3,
-     "lift": 0.48
-    },
-    "custom->contract": {
-     "n": 3,
-     "expected": 4.8,
-     "lift": 0.62
+    "discretion->fiqh_source": {
+     "n": 2,
+     "expected": 1.4,
+     "lift": 1.39
     },
     "discretion->hadith": {
      "n": 2,
      "expected": 0.6,
      "lift": 3.37
-    },
-    "discretion->fiqh_source": {
-     "n": 2,
-     "expected": 1.4,
-     "lift": 1.39
     },
     "discretion->discretion": {
      "n": 1,
@@ -2813,15 +2813,15 @@
      5
     ],
     [
-     "sharia_procedure_law art.76",
-     3
-    ],
-    [
      "bankruptcy_law art.168",
      3
     ],
     [
-     "sharia_procedure_implementing_regulation art.49",
+     "sharia_procedure_law art.76",
+     3
+    ],
+    [
+     "commercial_courts_law art.30",
      2
     ],
     [
@@ -2829,15 +2829,15 @@
      2
     ],
     [
-     "commercial_courts_law art.30",
+     "sharia_procedure_implementing_regulation art.49",
      2
     ],
     [
-     "sharia_procedure_law art.30",
+     "bankruptcy_law art.68",
      1
     ],
     [
-     "bankruptcy_law art.68",
+     "sharia_procedure_law art.200",
      1
     ]
    ],
@@ -2854,15 +2854,15 @@
      "expected": 1.5,
      "lift": 1.33
     },
-    "contract->statute": {
-     "n": 1,
-     "expected": 0.8,
-     "lift": 1.33
-    },
     "contract->fiqh_source": {
      "n": 1,
      "expected": 0.2,
      "lift": 4.0
+    },
+    "contract->statute": {
+     "n": 1,
+     "expected": 0.8,
+     "lift": 1.33
     },
     "statute->hadith": {
      "n": 1,
@@ -3103,11 +3103,11 @@
      11
     ],
     [
-     "sharia_procedure_law art.57",
+     "commercial_courts_law art.42",
      10
     ],
     [
-     "commercial_courts_law art.42",
+     "sharia_procedure_law art.57",
      10
     ],
     [
@@ -3119,7 +3119,7 @@
      7
     ],
     [
-     "sharia_procedure_law art.36",
+     "commercial_courts_law art.1",
      6
     ]
    ],
@@ -3130,11 +3130,6 @@
      "n": 12,
      "expected": 10.7,
      "lift": 1.12
-    },
-    "statute->hadith": {
-     "n": 3,
-     "expected": 3.6,
-     "lift": 0.84
     },
     "contract->contract": {
      "n": 3,
@@ -3151,37 +3146,52 @@
      "expected": 3.6,
      "lift": 0.84
     },
-    "hadith->statute": {
-     "n": 2,
-     "expected": 2.0,
-     "lift": 1.0
-    },
-    "hadith->hadith": {
-     "n": 2,
-     "expected": 0.7,
-     "lift": 3.0
-    },
-    "statute->quran": {
-     "n": 2,
-     "expected": 1.2,
-     "lift": 1.69
+    "statute->hadith": {
+     "n": 3,
+     "expected": 3.6,
+     "lift": 0.84
     },
     "contract->statute": {
      "n": 2,
      "expected": 4.0,
      "lift": 0.5
     },
-    "statute->judicial_principle": {
-     "n": 1,
-     "expected": 0.6,
+    "hadith->hadith": {
+     "n": 2,
+     "expected": 0.7,
+     "lift": 3.0
+    },
+    "hadith->statute": {
+     "n": 2,
+     "expected": 2.0,
+     "lift": 1.0
+    },
+    "statute->quran": {
+     "n": 2,
+     "expected": 1.2,
      "lift": 1.69
     },
-    "legal_maxim->statute": {
+    "contract->discretion": {
+     "n": 1,
+     "expected": 0.4,
+     "lift": 2.25
+    },
+    "contract->fiqh_source": {
+     "n": 1,
+     "expected": 1.3,
+     "lift": 0.75
+    },
+    "contract->hadith": {
+     "n": 1,
+     "expected": 1.3,
+     "lift": 0.75
+    },
+    "custom->fiqh_source": {
      "n": 1,
      "expected": 0.7,
      "lift": 1.5
     },
-    "custom->fiqh_source": {
+    "fiqh_source->statute": {
      "n": 1,
      "expected": 0.7,
      "lift": 1.5
@@ -3191,32 +3201,7 @@
      "expected": 0.7,
      "lift": 1.5
     },
-    "statute->legal_maxim": {
-     "n": 1,
-     "expected": 0.6,
-     "lift": 1.69
-    },
-    "statute->discretion": {
-     "n": 1,
-     "expected": 1.2,
-     "lift": 0.84
-    },
-    "contract->fiqh_source": {
-     "n": 1,
-     "expected": 1.3,
-     "lift": 0.75
-    },
-    "contract->discretion": {
-     "n": 1,
-     "expected": 0.4,
-     "lift": 2.25
-    },
-    "contract->hadith": {
-     "n": 1,
-     "expected": 1.3,
-     "lift": 0.75
-    },
-    "fiqh_source->statute": {
+    "legal_maxim->statute": {
      "n": 1,
      "expected": 0.7,
      "lift": 1.5
@@ -3225,6 +3210,21 @@
      "n": 1,
      "expected": 2.4,
      "lift": 0.42
+    },
+    "statute->discretion": {
+     "n": 1,
+     "expected": 1.2,
+     "lift": 0.84
+    },
+    "statute->judicial_principle": {
+     "n": 1,
+     "expected": 0.6,
+     "lift": 1.69
+    },
+    "statute->legal_maxim": {
+     "n": 1,
+     "expected": 0.6,
+     "lift": 1.69
     }
    }
   },
@@ -3528,15 +3528,15 @@
      "expected": 12.2,
      "lift": 0.99
     },
-    "statute->discretion": {
-     "n": 10,
-     "expected": 9.7,
-     "lift": 1.03
-    },
     "contract->fiqh_source": {
      "n": 10,
      "expected": 10.9,
      "lift": 0.92
+    },
+    "statute->discretion": {
+     "n": 10,
+     "expected": 9.7,
+     "lift": 1.03
     },
     "hadith->fiqh_source": {
      "n": 6,
@@ -3548,15 +3548,15 @@
      "expected": 6.2,
      "lift": 0.97
     },
-    "fiqh_source->fiqh_source": {
-     "n": 5,
-     "expected": 4.0,
-     "lift": 1.27
-    },
     "custom->statute": {
      "n": 5,
      "expected": 7.8,
      "lift": 0.64
+    },
+    "fiqh_source->fiqh_source": {
+     "n": 5,
+     "expected": 4.0,
+     "lift": 1.27
     },
     "legal_maxim->fiqh_source": {
      "n": 5,
@@ -3578,110 +3578,105 @@
      "expected": 2.2,
      "lift": 1.86
     },
-    "judicial_principle->statute": {
+    "hadith->hadith": {
      "n": 4,
-     "expected": 6.1,
-     "lift": 0.66
+     "expected": 3.7,
+     "lift": 1.08
     },
     "hadith->quran": {
      "n": 4,
      "expected": 1.5,
      "lift": 2.65
     },
-    "hadith->hadith": {
+    "judicial_principle->statute": {
      "n": 4,
-     "expected": 3.7,
-     "lift": 1.08
-    },
-    "legal_maxim->legal_maxim": {
-     "n": 3,
-     "expected": 0.4,
-     "lift": 7.61
-    },
-    "hadith->contract": {
-     "n": 3,
-     "expected": 2.8,
-     "lift": 1.08
+     "expected": 6.1,
+     "lift": 0.66
     },
     "custom->custom": {
      "n": 3,
      "expected": 0.2,
      "lift": 18.93
     },
-    "quran->fiqh_source": {
+    "hadith->contract": {
      "n": 3,
-     "expected": 3.3,
-     "lift": 0.92
-    },
-    "judicial_principle->discretion": {
-     "n": 3,
-     "expected": 0.3,
-     "lift": 8.69
+     "expected": 2.8,
+     "lift": 1.08
     },
     "judicial_principle->contract": {
      "n": 3,
      "expected": 0.6,
      "lift": 5.07
     },
+    "judicial_principle->discretion": {
+     "n": 3,
+     "expected": 0.3,
+     "lift": 8.69
+    },
     "judicial_principle->judicial_principle": {
      "n": 3,
      "expected": 0.2,
      "lift": 13.52
     },
-    "quran->quran": {
-     "n": 2,
-     "expected": 0.6,
-     "lift": 3.12
+    "legal_maxim->legal_maxim": {
+     "n": 3,
+     "expected": 0.4,
+     "lift": 7.61
     },
-    "fiqh_source->hadith": {
-     "n": 2,
-     "expected": 1.9,
-     "lift": 1.04
-    },
-    "contract->legal_maxim": {
-     "n": 2,
-     "expected": 1.3,
-     "lift": 1.51
+    "quran->fiqh_source": {
+     "n": 3,
+     "expected": 3.3,
+     "lift": 0.92
     },
     "contract->custom": {
      "n": 2,
      "expected": 0.8,
      "lift": 2.42
     },
-    "custom->hadith": {
+    "contract->legal_maxim": {
      "n": 2,
-     "expected": 1.0,
-     "lift": 1.97
-    },
-    "statute->legal_maxim": {
-     "n": 2,
-     "expected": 5.5,
-     "lift": 0.36
-    },
-    "statute->contract": {
-     "n": 2,
-     "expected": 16.6,
-     "lift": 0.12
-    },
-    "legal_maxim->quran": {
-     "n": 2,
-     "expected": 0.6,
-     "lift": 3.12
+     "expected": 1.3,
+     "lift": 1.51
     },
     "custom->fiqh_source": {
      "n": 2,
      "expected": 2.1,
      "lift": 0.96
     },
-    "judicial_principle->legal_maxim": {
-     "n": 1,
-     "expected": 0.2,
-     "lift": 5.07
+    "custom->hadith": {
+     "n": 2,
+     "expected": 1.0,
+     "lift": 1.97
     },
-    "judicial_principle->quran": {
-     "n": 1,
-     "expected": 0.3,
+    "fiqh_source->hadith": {
+     "n": 2,
+     "expected": 1.9,
+     "lift": 1.04
+    },
+    "legal_maxim->quran": {
+     "n": 2,
+     "expected": 0.6,
      "lift": 3.12
+    },
+    "quran->quran": {
+     "n": 2,
+     "expected": 0.6,
+     "lift": 3.12
+    },
+    "statute->contract": {
+     "n": 2,
+     "expected": 16.6,
+     "lift": 0.12
+    },
+    "statute->legal_maxim": {
+     "n": 2,
+     "expected": 5.5,
+     "lift": 0.36
+    },
+    "contract->discretion": {
+     "n": 1,
+     "expected": 2.3,
+     "lift": 0.43
     },
     "contract->hadith": {
      "n": 1,
@@ -3693,15 +3688,50 @@
      "expected": 0.8,
      "lift": 1.31
     },
+    "discretion->fiqh_source": {
+     "n": 1,
+     "expected": 0.2,
+     "lift": 4.3
+    },
+    "fiqh_source->contract": {
+     "n": 1,
+     "expected": 1.4,
+     "lift": 0.7
+    },
+    "fiqh_source->custom": {
+     "n": 1,
+     "expected": 0.3,
+     "lift": 3.34
+    },
+    "fiqh_source->legal_maxim": {
+     "n": 1,
+     "expected": 0.5,
+     "lift": 2.09
+    },
     "fiqh_source->quran": {
      "n": 1,
      "expected": 0.8,
      "lift": 1.29
     },
-    "contract->discretion": {
+    "hadith->custom": {
      "n": 1,
-     "expected": 2.3,
-     "lift": 0.43
+     "expected": 0.6,
+     "lift": 1.72
+    },
+    "judicial_principle->legal_maxim": {
+     "n": 1,
+     "expected": 0.2,
+     "lift": 5.07
+    },
+    "judicial_principle->quran": {
+     "n": 1,
+     "expected": 0.3,
+     "lift": 3.12
+    },
+    "legal_maxim->custom": {
+     "n": 1,
+     "expected": 0.2,
+     "lift": 4.06
     },
     "quran->hadith": {
      "n": 1,
@@ -3712,36 +3742,6 @@
      "n": 1,
      "expected": 3.5,
      "lift": 0.29
-    },
-    "fiqh_source->custom": {
-     "n": 1,
-     "expected": 0.3,
-     "lift": 3.34
-    },
-    "fiqh_source->contract": {
-     "n": 1,
-     "expected": 1.4,
-     "lift": 0.7
-    },
-    "legal_maxim->custom": {
-     "n": 1,
-     "expected": 0.2,
-     "lift": 4.06
-    },
-    "hadith->custom": {
-     "n": 1,
-     "expected": 0.6,
-     "lift": 1.72
-    },
-    "fiqh_source->legal_maxim": {
-     "n": 1,
-     "expected": 0.5,
-     "lift": 2.09
-    },
-    "discretion->fiqh_source": {
-     "n": 1,
-     "expected": 0.2,
-     "lift": 4.3
     }
    }
   },
@@ -4043,15 +4043,15 @@
    },
    "coreTop": [
     [
-     "commercial_courts_law art.443",
-     1
-    ],
-    [
      "commercial_books_law art.9",
      1
     ],
     [
      "commercial_courts_law art.10",
+     1
+    ],
+    [
+     "commercial_courts_law art.443",
      1
     ]
    ],
@@ -4424,11 +4424,11 @@
    },
    "coreTop": [
     [
-     "sharia_procedure_law art.208",
+     "commercial_courts_law art.2",
      1
     ],
     [
-     "commercial_courts_law art.2",
+     "sharia_procedure_law art.208",
      1
     ]
    ],
@@ -4631,10 +4631,6 @@
      4
     ],
     [
-     "sharia_procedure_law art.200",
-     1
-    ],
-    [
      "commercial_courts_law art.16",
      1
     ],
@@ -4643,19 +4639,23 @@
      1
     ],
     [
-     "sharia_procedure_law art.31",
-     1
-    ],
-    [
-     "sharia_procedure_law art.87",
-     1
-    ],
-    [
      "law_practice_law art.26",
      1
     ],
     [
+     "sharia_procedure_law art.200",
+     1
+    ],
+    [
+     "sharia_procedure_law art.31",
+     1
+    ],
+    [
      "sharia_procedure_law art.36",
+     1
+    ],
+    [
+     "sharia_procedure_law art.87",
      1
     ]
    ],
@@ -5036,15 +5036,15 @@
      "expected": 37.3,
      "lift": 1.21
     },
-    "hadith->hadith": {
-     "n": 44,
-     "expected": 44.3,
-     "lift": 0.99
-    },
     "custom->fiqh_source": {
      "n": 44,
      "expected": 40.6,
      "lift": 1.08
+    },
+    "hadith->hadith": {
+     "n": 44,
+     "expected": 44.3,
+     "lift": 0.99
     },
     "contract->quran": {
      "n": 43,
@@ -5106,25 +5106,25 @@
      "expected": 29.0,
      "lift": 0.69
     },
-    "quran->quran": {
-     "n": 19,
-     "expected": 9.8,
-     "lift": 1.94
-    },
     "fiqh_source->discretion": {
      "n": 19,
      "expected": 14.4,
      "lift": 1.32
     },
-    "legal_maxim->contract": {
-     "n": 17,
+    "quran->quran": {
+     "n": 19,
      "expected": 9.8,
-     "lift": 1.73
+     "lift": 1.94
     },
     "hadith->legal_maxim": {
      "n": 17,
      "expected": 10.8,
      "lift": 1.58
+    },
+    "legal_maxim->contract": {
+     "n": 17,
+     "expected": 9.8,
+     "lift": 1.73
     },
     "hadith->quran": {
      "n": 16,
@@ -5176,60 +5176,70 @@
      "expected": 10.5,
      "lift": 0.85
     },
-    "quran->discretion": {
+    "custom->quran": {
      "n": 8,
-     "expected": 8.6,
-     "lift": 0.93
-    },
-    "fiqh_source->legal_maxim": {
-     "n": 8,
-     "expected": 9.1,
-     "lift": 0.88
-    },
-    "fiqh_source->judicial_principle": {
-     "n": 8,
-     "expected": 8.9,
-     "lift": 0.9
+     "expected": 9.8,
+     "lift": 0.82
     },
     "discretion->contract": {
      "n": 8,
      "expected": 1.8,
      "lift": 4.51
     },
-    "custom->quran": {
+    "fiqh_source->judicial_principle": {
      "n": 8,
-     "expected": 9.8,
-     "lift": 0.82
+     "expected": 8.9,
+     "lift": 0.9
     },
-    "legal_maxim->judicial_principle": {
-     "n": 7,
-     "expected": 5.6,
-     "lift": 1.24
+    "fiqh_source->legal_maxim": {
+     "n": 8,
+     "expected": 9.1,
+     "lift": 0.88
+    },
+    "quran->discretion": {
+     "n": 8,
+     "expected": 8.6,
+     "lift": 0.93
     },
     "custom->legal_maxim": {
      "n": 7,
      "expected": 5.4,
      "lift": 1.29
     },
-    "legal_maxim->quran": {
+    "legal_maxim->judicial_principle": {
      "n": 7,
-     "expected": 10.4,
-     "lift": 0.67
+     "expected": 5.6,
+     "lift": 1.24
     },
     "legal_maxim->legal_maxim": {
      "n": 7,
      "expected": 5.8,
      "lift": 1.21
     },
+    "legal_maxim->quran": {
+     "n": 7,
+     "expected": 10.4,
+     "lift": 0.67
+    },
     "quran->legal_maxim": {
      "n": 7,
      "expected": 5.4,
      "lift": 1.29
     },
+    "custom->contract": {
+     "n": 6,
+     "expected": 9.2,
+     "lift": 0.65
+    },
     "judicial_principle->discretion": {
      "n": 6,
      "expected": 2.1,
      "lift": 2.9
+    },
+    "legal_maxim->custom": {
+     "n": 6,
+     "expected": 4.5,
+     "lift": 1.34
     },
     "quran->contract": {
      "n": 6,
@@ -5241,55 +5251,35 @@
      "expected": 5.3,
      "lift": 1.13
     },
-    "legal_maxim->custom": {
-     "n": 6,
-     "expected": 4.5,
-     "lift": 1.34
-    },
-    "custom->contract": {
-     "n": 6,
-     "expected": 9.2,
-     "lift": 0.65
+    "custom->discretion": {
+     "n": 5,
+     "expected": 8.6,
+     "lift": 0.58
     },
     "discretion->hadith": {
      "n": 5,
      "expected": 4.3,
      "lift": 1.16
     },
-    "custom->discretion": {
-     "n": 5,
-     "expected": 8.6,
-     "lift": 0.58
+    "custom->judicial_principle": {
+     "n": 4,
+     "expected": 5.3,
+     "lift": 0.76
     },
     "judicial_principle->hadith": {
      "n": 4,
      "expected": 5.4,
      "lift": 0.75
     },
-    "custom->judicial_principle": {
-     "n": 4,
-     "expected": 5.3,
-     "lift": 0.76
-    },
-    "quran->custom": {
-     "n": 3,
-     "expected": 4.2,
-     "lift": 0.71
-    },
     "discretion->legal_maxim": {
      "n": 3,
      "expected": 1.0,
      "lift": 2.87
     },
-    "judicial_principle->contract": {
-     "n": 2,
-     "expected": 2.2,
-     "lift": 0.9
-    },
-    "judicial_principle->judicial_principle": {
-     "n": 2,
-     "expected": 1.3,
-     "lift": 1.57
+    "quran->custom": {
+     "n": 3,
+     "expected": 4.2,
+     "lift": 0.71
     },
     "discretion->discretion": {
      "n": 2,
@@ -5301,20 +5291,30 @@
      "expected": 1.9,
      "lift": 1.06
     },
-    "judicial_principle->quran": {
+    "judicial_principle->contract": {
+     "n": 2,
+     "expected": 2.2,
+     "lift": 0.9
+    },
+    "judicial_principle->judicial_principle": {
+     "n": 2,
+     "expected": 1.3,
+     "lift": 1.57
+    },
+    "discretion->judicial_principle": {
      "n": 1,
-     "expected": 2.4,
-     "lift": 0.42
+     "expected": 1.0,
+     "lift": 0.98
     },
     "fiqh_source->custom": {
      "n": 1,
      "expected": 7.0,
      "lift": 0.14
     },
-    "discretion->judicial_principle": {
+    "judicial_principle->quran": {
      "n": 1,
-     "expected": 1.0,
-     "lift": 0.98
+     "expected": 2.4,
+     "lift": 0.42
     }
    }
   },
@@ -5659,12 +5659,12 @@
      "expected": 27.8,
      "lift": 1.26
     },
-    "statute->quran": {
+    "statute->legal_maxim": {
      "n": 34,
      "expected": 36.5,
      "lift": 0.93
     },
-    "statute->legal_maxim": {
+    "statute->quran": {
      "n": 34,
      "expected": 36.5,
      "lift": 0.93
@@ -5679,20 +5679,20 @@
      "expected": 23.3,
      "lift": 1.03
     },
-    "statute->custom": {
+    "hadith->hadith": {
      "n": 22,
-     "expected": 23.8,
-     "lift": 0.92
+     "expected": 17.2,
+     "lift": 1.28
     },
     "judicial_principle->statute": {
      "n": 22,
      "expected": 21.7,
      "lift": 1.02
     },
-    "hadith->hadith": {
+    "statute->custom": {
      "n": 22,
-     "expected": 17.2,
-     "lift": 1.28
+     "expected": 23.8,
+     "lift": 0.92
     },
     "fiqh_source->hadith": {
      "n": 20,
@@ -5724,15 +5724,15 @@
      "expected": 11.3,
      "lift": 1.51
     },
-    "judicial_principle->fiqh_source": {
-     "n": 14,
-     "expected": 5.7,
-     "lift": 2.48
-    },
     "contract->legal_maxim": {
      "n": 14,
      "expected": 8.1,
      "lift": 1.73
+    },
+    "judicial_principle->fiqh_source": {
+     "n": 14,
+     "expected": 5.7,
+     "lift": 2.48
     },
     "fiqh_source->discretion": {
      "n": 12,
@@ -5754,45 +5754,40 @@
      "expected": 4.1,
      "lift": 1.93
     },
-    "hadith->contract": {
+    "contract->judicial_principle": {
      "n": 7,
-     "expected": 8.6,
-     "lift": 0.82
-    },
-    "legal_maxim->discretion": {
-     "n": 7,
-     "expected": 6.9,
-     "lift": 1.02
-    },
-    "fiqh_source->legal_maxim": {
-     "n": 7,
-     "expected": 4.4,
-     "lift": 1.59
-    },
-    "fiqh_source->judicial_principle": {
-     "n": 7,
-     "expected": 4.9,
-     "lift": 1.44
+     "expected": 8.9,
+     "lift": 0.79
     },
     "custom->discretion": {
      "n": 7,
      "expected": 5.5,
      "lift": 1.28
     },
+    "fiqh_source->judicial_principle": {
+     "n": 7,
+     "expected": 4.9,
+     "lift": 1.44
+    },
+    "fiqh_source->legal_maxim": {
+     "n": 7,
+     "expected": 4.4,
+     "lift": 1.59
+    },
+    "hadith->contract": {
+     "n": 7,
+     "expected": 8.6,
+     "lift": 0.82
+    },
     "hadith->discretion": {
      "n": 7,
      "expected": 10.5,
      "lift": 0.67
     },
-    "contract->judicial_principle": {
+    "legal_maxim->discretion": {
      "n": 7,
-     "expected": 8.9,
-     "lift": 0.79
-    },
-    "quran->custom": {
-     "n": 6,
-     "expected": 2.3,
-     "lift": 2.63
+     "expected": 6.9,
+     "lift": 1.02
     },
     "custom->legal_maxim": {
      "n": 6,
@@ -5804,35 +5799,30 @@
      "expected": 6.3,
      "lift": 0.94
     },
+    "quran->custom": {
+     "n": 6,
+     "expected": 2.3,
+     "lift": 2.63
+    },
     "custom->custom": {
      "n": 5,
      "expected": 2.2,
      "lift": 2.32
     },
-    "quran->contract": {
+    "custom->judicial_principle": {
      "n": 5,
-     "expected": 4.7,
-     "lift": 1.06
-    },
-    "hadith->judicial_principle": {
-     "n": 5,
-     "expected": 7.0,
-     "lift": 0.71
-    },
-    "quran->judicial_principle": {
-     "n": 5,
-     "expected": 3.8,
-     "lift": 1.3
+     "expected": 3.6,
+     "lift": 1.37
     },
     "custom->quran": {
      "n": 5,
      "expected": 3.3,
      "lift": 1.51
     },
-    "custom->judicial_principle": {
+    "hadith->judicial_principle": {
      "n": 5,
-     "expected": 3.6,
-     "lift": 1.37
+     "expected": 7.0,
+     "lift": 0.71
     },
     "hadith->legal_maxim": {
      "n": 5,
@@ -5844,30 +5834,40 @@
      "expected": 5.6,
      "lift": 0.9
     },
+    "quran->contract": {
+     "n": 5,
+     "expected": 4.7,
+     "lift": 1.06
+    },
+    "quran->judicial_principle": {
+     "n": 5,
+     "expected": 3.8,
+     "lift": 1.3
+    },
     "contract->custom": {
      "n": 4,
      "expected": 5.3,
      "lift": 0.76
-    },
-    "legal_maxim->custom": {
-     "n": 4,
-     "expected": 2.7,
-     "lift": 1.48
-    },
-    "quran->quran": {
-     "n": 4,
-     "expected": 3.5,
-     "lift": 1.15
     },
     "fiqh_source->quran": {
      "n": 4,
      "expected": 4.4,
      "lift": 0.91
     },
+    "legal_maxim->custom": {
+     "n": 4,
+     "expected": 2.7,
+     "lift": 1.48
+    },
     "quran->discretion": {
      "n": 4,
      "expected": 5.8,
      "lift": 0.69
+    },
+    "quran->quran": {
+     "n": 4,
+     "expected": 3.5,
+     "lift": 1.15
     },
     "contract->quran": {
      "n": 3,
@@ -5879,6 +5879,16 @@
      "expected": 2.8,
      "lift": 1.06
     },
+    "fiqh_source->custom": {
+     "n": 3,
+     "expected": 2.9,
+     "lift": 1.04
+    },
+    "judicial_principle->discretion": {
+     "n": 3,
+     "expected": 1.4,
+     "lift": 2.15
+    },
     "judicial_principle->hadith": {
      "n": 3,
      "expected": 2.3,
@@ -5889,40 +5899,30 @@
      "expected": 0.9,
      "lift": 3.22
     },
-    "judicial_principle->discretion": {
-     "n": 3,
-     "expected": 1.4,
-     "lift": 2.15
-    },
-    "fiqh_source->custom": {
-     "n": 3,
-     "expected": 2.9,
-     "lift": 1.04
+    "custom->contract": {
+     "n": 2,
+     "expected": 4.4,
+     "lift": 0.45
     },
     "discretion->hadith": {
      "n": 2,
      "expected": 0.3,
      "lift": 6.69
     },
-    "quran->legal_maxim": {
+    "fiqh_source->contract": {
      "n": 2,
-     "expected": 3.5,
-     "lift": 0.57
+     "expected": 5.9,
+     "lift": 0.34
     },
     "legal_maxim->judicial_principle": {
      "n": 2,
      "expected": 4.6,
      "lift": 0.44
     },
-    "fiqh_source->contract": {
+    "quran->legal_maxim": {
      "n": 2,
-     "expected": 5.9,
-     "lift": 0.34
-    },
-    "custom->contract": {
-     "n": 2,
-     "expected": 4.4,
-     "lift": 0.45
+     "expected": 3.5,
+     "lift": 0.57
     },
     "discretion->discretion": {
      "n": 1,
@@ -6245,15 +6245,20 @@
      "expected": 18.1,
      "lift": 0.99
     },
+    "contract->fiqh_source": {
+     "n": 9,
+     "expected": 7.9,
+     "lift": 1.14
+    },
     "hadith->fiqh_source": {
      "n": 9,
      "expected": 8.3,
      "lift": 1.09
     },
-    "contract->fiqh_source": {
-     "n": 9,
-     "expected": 7.9,
-     "lift": 1.14
+    "fiqh_source->fiqh_source": {
+     "n": 8,
+     "expected": 4.8,
+     "lift": 1.68
     },
     "statute->discretion": {
      "n": 8,
@@ -6265,11 +6270,6 @@
      "expected": 6.2,
      "lift": 1.28
     },
-    "fiqh_source->fiqh_source": {
-     "n": 8,
-     "expected": 4.8,
-     "lift": 1.68
-    },
     "judicial_principle->statute": {
      "n": 7,
      "expected": 6.7,
@@ -6280,40 +6280,50 @@
      "expected": 8.6,
      "lift": 0.81
     },
-    "statute->judicial_principle": {
-     "n": 6,
-     "expected": 5.5,
-     "lift": 1.1
-    },
     "legal_maxim->fiqh_source": {
      "n": 6,
      "expected": 3.9,
      "lift": 1.52
+    },
+    "statute->judicial_principle": {
+     "n": 6,
+     "expected": 5.5,
+     "lift": 1.1
     },
     "quran->fiqh_source": {
      "n": 5,
      "expected": 5.0,
      "lift": 1.01
     },
-    "custom->hadith": {
-     "n": 4,
-     "expected": 1.8,
-     "lift": 2.2
-    },
     "custom->fiqh_source": {
      "n": 4,
      "expected": 3.9,
      "lift": 1.02
+    },
+    "custom->hadith": {
+     "n": 4,
+     "expected": 1.8,
+     "lift": 2.2
     },
     "statute->contract": {
      "n": 4,
      "expected": 3.1,
      "lift": 1.28
     },
+    "contract->contract": {
+     "n": 3,
+     "expected": 0.6,
+     "lift": 4.95
+    },
     "contract->discretion": {
      "n": 3,
      "expected": 1.4,
      "lift": 2.2
+    },
+    "contract->quran": {
+     "n": 3,
+     "expected": 1.7,
+     "lift": 1.8
     },
     "discretion->statute": {
      "n": 3,
@@ -6325,20 +6335,35 @@
      "expected": 3.8,
      "lift": 0.78
     },
-    "contract->contract": {
-     "n": 3,
-     "expected": 0.6,
-     "lift": 4.95
-    },
-    "contract->quran": {
-     "n": 3,
-     "expected": 1.7,
-     "lift": 1.8
-    },
     "hadith->quran": {
      "n": 3,
      "expected": 1.8,
      "lift": 1.71
+    },
+    "contract->hadith": {
+     "n": 2,
+     "expected": 3.6,
+     "lift": 0.55
+    },
+    "contract->legal_maxim": {
+     "n": 2,
+     "expected": 1.2,
+     "lift": 1.65
+    },
+    "custom->quran": {
+     "n": 2,
+     "expected": 0.8,
+     "lift": 2.4
+    },
+    "fiqh_source->hadith": {
+     "n": 2,
+     "expected": 2.2,
+     "lift": 0.91
+    },
+    "hadith->contract": {
+     "n": 2,
+     "expected": 0.6,
+     "lift": 3.14
     },
     "hadith->discretion": {
      "n": 2,
@@ -6350,160 +6375,135 @@
      "expected": 1.3,
      "lift": 1.57
     },
-    "quran->judicial_principle": {
+    "judicial_principle->fiqh_source": {
      "n": 2,
-     "expected": 0.7,
-     "lift": 2.99
+     "expected": 1.5,
+     "lift": 1.38
     },
     "judicial_principle->hadith": {
      "n": 2,
      "expected": 0.7,
      "lift": 2.99
     },
-    "judicial_principle->fiqh_source": {
+    "legal_maxim->hadith": {
      "n": 2,
-     "expected": 1.5,
-     "lift": 1.38
-    },
-    "hadith->contract": {
-     "n": 2,
-     "expected": 0.6,
-     "lift": 3.14
-    },
-    "contract->hadith": {
-     "n": 2,
-     "expected": 3.6,
-     "lift": 0.55
-    },
-    "statute->custom": {
-     "n": 2,
-     "expected": 2.3,
-     "lift": 0.85
+     "expected": 1.8,
+     "lift": 1.1
     },
     "quran->hadith": {
      "n": 2,
      "expected": 2.3,
      "lift": 0.87
     },
-    "contract->legal_maxim": {
+    "quran->judicial_principle": {
      "n": 2,
-     "expected": 1.2,
-     "lift": 1.65
+     "expected": 0.7,
+     "lift": 2.99
     },
-    "legal_maxim->hadith": {
+    "statute->custom": {
      "n": 2,
-     "expected": 1.8,
-     "lift": 1.1
-    },
-    "fiqh_source->hadith": {
-     "n": 2,
-     "expected": 2.2,
-     "lift": 0.91
-    },
-    "custom->quran": {
-     "n": 2,
-     "expected": 0.8,
-     "lift": 2.4
-    },
-    "legal_maxim->judicial_principle": {
-     "n": 1,
-     "expected": 0.5,
-     "lift": 1.89
-    },
-    "fiqh_source->judicial_principle": {
-     "n": 1,
-     "expected": 0.6,
-     "lift": 1.56
-    },
-    "custom->judicial_principle": {
-     "n": 1,
-     "expected": 0.5,
-     "lift": 1.89
-    },
-    "hadith->judicial_principle": {
-     "n": 1,
-     "expected": 1.1,
-     "lift": 0.9
-    },
-    "custom->contract": {
-     "n": 1,
-     "expected": 0.3,
-     "lift": 3.3
+     "expected": 2.3,
+     "lift": 0.85
     },
     "contract->custom": {
      "n": 1,
      "expected": 0.5,
      "lift": 2.2
     },
-    "hadith->custom": {
-     "n": 1,
-     "expected": 0.5,
-     "lift": 2.09
-    },
-    "quran->custom": {
-     "n": 1,
-     "expected": 0.3,
-     "lift": 3.49
-    },
-    "quran->contract": {
-     "n": 1,
-     "expected": 0.4,
-     "lift": 2.61
-    },
     "contract->judicial_principle": {
      "n": 1,
      "expected": 1.1,
      "lift": 0.94
     },
-    "judicial_principle->discretion": {
+    "custom->contract": {
      "n": 1,
      "expected": 0.3,
-     "lift": 3.98
-    },
-    "fiqh_source->contract": {
-     "n": 1,
-     "expected": 0.4,
-     "lift": 2.73
-    },
-    "fiqh_source->legal_maxim": {
-     "n": 1,
-     "expected": 0.7,
-     "lift": 1.36
-    },
-    "custom->discretion": {
-     "n": 1,
-     "expected": 0.7,
-     "lift": 1.47
-    },
-    "legal_maxim->quran": {
-     "n": 1,
-     "expected": 0.8,
-     "lift": 1.2
-    },
-    "quran->quran": {
-     "n": 1,
-     "expected": 1.1,
-     "lift": 0.95
-    },
-    "quran->legal_maxim": {
-     "n": 1,
-     "expected": 0.8,
-     "lift": 1.31
-    },
-    "discretion->fiqh_source": {
-     "n": 1,
-     "expected": 0.6,
-     "lift": 1.61
+     "lift": 3.3
     },
     "custom->custom": {
      "n": 1,
      "expected": 0.2,
      "lift": 4.4
     },
+    "custom->discretion": {
+     "n": 1,
+     "expected": 0.7,
+     "lift": 1.47
+    },
+    "custom->judicial_principle": {
+     "n": 1,
+     "expected": 0.5,
+     "lift": 1.89
+    },
+    "discretion->fiqh_source": {
+     "n": 1,
+     "expected": 0.6,
+     "lift": 1.61
+    },
+    "fiqh_source->contract": {
+     "n": 1,
+     "expected": 0.4,
+     "lift": 2.73
+    },
     "fiqh_source->discretion": {
      "n": 1,
      "expected": 0.8,
      "lift": 1.21
+    },
+    "fiqh_source->judicial_principle": {
+     "n": 1,
+     "expected": 0.6,
+     "lift": 1.56
+    },
+    "fiqh_source->legal_maxim": {
+     "n": 1,
+     "expected": 0.7,
+     "lift": 1.36
+    },
+    "hadith->custom": {
+     "n": 1,
+     "expected": 0.5,
+     "lift": 2.09
+    },
+    "hadith->judicial_principle": {
+     "n": 1,
+     "expected": 1.1,
+     "lift": 0.9
+    },
+    "judicial_principle->discretion": {
+     "n": 1,
+     "expected": 0.3,
+     "lift": 3.98
+    },
+    "legal_maxim->judicial_principle": {
+     "n": 1,
+     "expected": 0.5,
+     "lift": 1.89
+    },
+    "legal_maxim->quran": {
+     "n": 1,
+     "expected": 0.8,
+     "lift": 1.2
+    },
+    "quran->contract": {
+     "n": 1,
+     "expected": 0.4,
+     "lift": 2.61
+    },
+    "quran->custom": {
+     "n": 1,
+     "expected": 0.3,
+     "lift": 3.49
+    },
+    "quran->legal_maxim": {
+     "n": 1,
+     "expected": 0.8,
+     "lift": 1.31
+    },
+    "quran->quran": {
+     "n": 1,
+     "expected": 1.1,
+     "lift": 0.95
     }
    }
   },
@@ -6771,15 +6771,15 @@
      "expected": 4.3,
      "lift": 1.17
     },
-    "legal_maxim->statute": {
-     "n": 3,
-     "expected": 2.7,
-     "lift": 1.11
-    },
     "hadith->fiqh_source": {
      "n": 3,
      "expected": 0.6,
      "lift": 5.25
+    },
+    "legal_maxim->statute": {
+     "n": 3,
+     "expected": 2.7,
+     "lift": 1.11
     },
     "statute->fiqh_source": {
      "n": 3,
@@ -6796,12 +6796,12 @@
      "expected": 2.7,
      "lift": 0.74
     },
-    "statute->quran": {
+    "statute->discretion": {
      "n": 2,
      "expected": 1.7,
      "lift": 1.17
     },
-    "statute->discretion": {
+    "statute->quran": {
      "n": 2,
      "expected": 1.7,
      "lift": 1.17
@@ -6811,30 +6811,15 @@
      "expected": 0.1,
      "lift": 7.0
     },
-    "custom->statute": {
-     "n": 1,
-     "expected": 0.9,
-     "lift": 1.11
-    },
-    "legal_maxim->fiqh_source": {
-     "n": 1,
-     "expected": 0.6,
-     "lift": 1.75
-    },
     "contract->hadith": {
      "n": 1,
      "expected": 0.7,
      "lift": 1.4
     },
-    "judicial_principle->hadith": {
+    "custom->statute": {
      "n": 1,
-     "expected": 0.2,
-     "lift": 4.2
-    },
-    "legal_maxim->judicial_principle": {
-     "n": 1,
-     "expected": 0.3,
-     "lift": 3.5
+     "expected": 0.9,
+     "lift": 1.11
     },
     "hadith->discretion": {
      "n": 1,
@@ -6845,6 +6830,21 @@
      "n": 1,
      "expected": 0.7,
      "lift": 1.4
+    },
+    "judicial_principle->hadith": {
+     "n": 1,
+     "expected": 0.2,
+     "lift": 4.2
+    },
+    "legal_maxim->fiqh_source": {
+     "n": 1,
+     "expected": 0.6,
+     "lift": 1.75
+    },
+    "legal_maxim->judicial_principle": {
+     "n": 1,
+     "expected": 0.3,
+     "lift": 3.5
     },
     "statute->judicial_principle": {
      "n": 1,
@@ -7889,11 +7889,11 @@
    },
    "coreTop": [
     [
-     "commercial_courts_law art.527",
+     "commercial_courts_law art.16",
      1
     ],
     [
-     "commercial_courts_law art.16",
+     "commercial_courts_law art.527",
      1
     ]
    ],
@@ -8131,23 +8131,23 @@
      6
     ],
     [
-     "evidence_law art.14",
-     5
-    ],
-    [
      "commercial_courts_law art.79",
      5
     ],
     [
-     "evidence_law art.17",
-     4
+     "evidence_law art.14",
+     5
     ],
     [
      "commercial_courts_implementing_regulation art.164",
      4
     ],
     [
-     "commercial_courts_law art.20",
+     "evidence_law art.17",
+     4
+    ],
+    [
+     "civil_transactions_law art.107",
      3
     ]
    ],
@@ -8169,20 +8169,15 @@
      "expected": 0.2,
      "lift": 4.5
     },
-    "legal_maxim->contract": {
+    "fiqh_source->legal_maxim": {
      "n": 1,
-     "expected": 0.1,
-     "lift": 9.0
+     "expected": 0.2,
+     "lift": 4.5
     },
-    "legal_maxim->statute": {
+    "fiqh_source->statute": {
      "n": 1,
      "expected": 0.9,
      "lift": 1.12
-    },
-    "statute->contract": {
-     "n": 1,
-     "expected": 0.8,
-     "lift": 1.29
     },
     "judicial_principle->legal_maxim": {
      "n": 1,
@@ -8194,17 +8189,12 @@
      "expected": 0.9,
      "lift": 1.12
     },
-    "statute->legal_maxim": {
+    "legal_maxim->contract": {
      "n": 1,
-     "expected": 1.6,
-     "lift": 0.64
+     "expected": 0.1,
+     "lift": 9.0
     },
-    "fiqh_source->legal_maxim": {
-     "n": 1,
-     "expected": 0.2,
-     "lift": 4.5
-    },
-    "fiqh_source->statute": {
+    "legal_maxim->statute": {
      "n": 1,
      "expected": 0.9,
      "lift": 1.12
@@ -8213,6 +8203,16 @@
      "n": 1,
      "expected": 0.2,
      "lift": 4.5
+    },
+    "statute->contract": {
+     "n": 1,
+     "expected": 0.8,
+     "lift": 1.29
+    },
+    "statute->legal_maxim": {
+     "n": 1,
+     "expected": 1.6,
+     "lift": 0.64
     }
    }
   }

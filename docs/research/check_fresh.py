@@ -46,6 +46,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SRC = HERE / "arabic_paper"
+# the contemporary layer writes its results the same way and had no guard;
+# its file names do not collide with the paper's, so one stamp covers both.
+DIRS = (SRC, HERE / "contemporary")
 STAMP = SRC / "freshness.json"
 
 # reversal_model.py writes reversal_model_results.json and, run with a window,
@@ -57,7 +60,7 @@ SUFFIX = re.compile(r"_results\.json$")
 def producer(results):
     stem = SUFFIX.sub("", results.name)
     while stem:
-        candidate = SRC / f"{stem}.py"
+        candidate = results.parent / f"{stem}.py"
         if candidate.exists():
             return candidate
         stem = stem.rpartition("_")[0]
@@ -81,9 +84,11 @@ def local_imports(script, seen=None):
         elif isinstance(node, ast.ImportFrom) and node.module:
             names.append(node.module)
     for name in names:
-        child = SRC / f"{name.split('.')[0]}.py"
-        if child.exists():
-            local_imports(child, seen)
+        for root in (script.parent,) + DIRS:
+            child = root / f"{name.split('.')[0]}.py"
+            if child.exists():
+                local_imports(child, seen)
+                break
     return seen
 
 
@@ -98,10 +103,11 @@ def code_hash(script):
 
 def survey():
     out = {}
-    for results in sorted(SRC.glob("*_results.json")):
-        script = producer(results)
-        if script is not None:
-            out[results.name] = code_hash(script)
+    for root in DIRS:
+        for results in sorted(root.glob("*_results.json")):
+            script = producer(results)
+            if script is not None:
+                out[results.name] = code_hash(script)
     return out
 
 
@@ -121,7 +127,8 @@ def main():
         print(f"{len(stale)} result file(s) no longer match the code that "
               f"writes them --- re-run, then --stamp:")
         for name in stale:
-            script = producer(SRC / name)
+            src = next(d / name for d in DIRS if (d / name).exists())
+            script = producer(src)
             deps = ", ".join(sorted(d.name for d in local_imports(script)))
             print(f"  {name}\n    depends on: {deps}")
         return 1

@@ -136,6 +136,31 @@ most recent view.** Reasoning from non-statutory authority *alone* is rare
 and falling; reasoning from both is common and rising. Whatever codification
 did, it did not put the courts on one side of a substitution.
 
+## 4b · The falling share is arithmetic, not displacement
+
+The bench's fiqh citations fall from 22.7 per cent of everything it cites in
+1441 to 10.0 in 1446. That is a share, and a share falls whenever the other
+term grows. `hybrid.py` separates the quantities, over reasoned judgments,
+with quoted spans excluded:
+
+| year | reasoned | statute prevalence | statute intensity | fiqh prevalence | fiqh intensity |
+|---|---:|---:|---:|---:|---:|
+| 1442 | 240 | 66.2 % | 2.06 | 16.7 % | 1.93 |
+| 1443 | 3,161 | 75.9 % | 2.21 | 16.2 % | 1.98 |
+| 1444 | 16,435 | 80.2 % | 2.15 | 20.2 % | 1.93 |
+| 1445 | 5,982 | 86.6 % | 2.44 | 20.4 % | 1.97 |
+| 1446 | 1,209 | 87.2 % | 2.80 | 16.3 % | 1.93 |
+
+**Statutory prevalence rises 21 points and statutory intensity by a third;
+fiqh prevalence does not fall, and fiqh intensity is flat to two decimal
+places across five years.** Restricting to judgments citing the Commercial
+Courts Law, to hold the procedural posture roughly fixed, moves nothing:
+16.8, 21.2, 22.1, 23.3, 18.6. 1446 is partially published (n = 1,209, 95 %
+CI 14.3–18.5), so its dip is not a trend.
+
+The reading of fourteen hybrid judgments and the article-level rates that
+follow from it are in `NEXT_PROGRAMME.md`.
+
 ## 5 · Silence, not fiqh, is what the reforms displaced
 
 The per-year series, with the selection control in the second column, because

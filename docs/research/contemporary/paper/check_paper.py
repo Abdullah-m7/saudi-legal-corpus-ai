@@ -16,7 +16,12 @@ HERE = Path(__file__).resolve().parent
 C = HERE.parent
 MS = (HERE / "MANUSCRIPT.md").read_text(encoding="utf-8")
 claim = json.loads((C / "claim_results.json").read_text(encoding="utf-8"))
-align = json.loads((C / "alignment_view.json").read_text(encoding="utf-8"))
+# the manuscript is contemporary_3y throughout, so the overlap figures come
+# from overlap.py (which restricts to 1444-1446), not from alignment_view.json
+# (which spans the whole five-year layer). Pointing the guard at the wrong one
+# is exactly the error it exists to catch.
+ov = json.loads((C / "overlap_results.json").read_text(encoding="utf-8"))
+ret = json.loads((C / "retrieval_results.json").read_text(encoding="utf-8"))
 win = json.loads((C / "windows_results.json").read_text(encoding="utf-8"))
 
 V3 = claim["views"]["contemporary_3y"]
@@ -62,14 +67,33 @@ for t in TYPES:
     if r:
         want(f"lift {t}->statute", f"{r['lift']:.2f}")
 
-# alignment
-a = align["strict"]
-for lvl, key in (("authorityFamily", "0.5"), ("instrument", "0.333")):
-    want(f"align {lvl} median", a[lvl]["medianJaccard"])
-want("align article no-overlap", f"{a['article']['shareNoOverlap']}")
-want("align family no-overlap", f"{a['authorityFamily']['shareNoOverlap']}")
-want("align family identical", f"{a['authorityFamily']['shareIdentical']}")
-want("align instrument no-overlap", f"{a['instrument']['shareNoOverlap']}")
+# overlap, contemporary_3y, strict
+o = ov["specs"]["strict"]
+for key, label in (("fam", "family"), ("inst_all", "instrument"),
+                   ("art_all", "article")):
+    want(f"overlap {label} median", f"{o[key]['medianJaccard']:.3f}")
+    want(f"overlap {label} no-overlap", f"{o[key]['noOverlapPct']}")
+    want(f"overlap {label} exact", f"{o[key]['exactMatchPct']}")
+want("overlap article, structural removed", f"{o['art_nostruct']['noOverlapPct']}")
+want("overlap article, dispute only", f"{o['art_dispute']['noOverlapPct']}")
+want("overlap instrument, dispute only exact",
+     f"{o['inst_dispute']['exactMatchPct']}")
+
+# the conditional
+c = ov["conditional"]["strict"]
+want("P(shared instrument)", f"{c['sharedInstrumentPct']}")
+want("P(shared article | shared instrument)",
+     f"{c['sharedArticleGivenInstrumentPct']}")
+want("P(shared article | statute)", f"{c['sharedArticleGivenStatutePct']}")
+want("arbitration same-article",
+     f"{c['byInstrument']['arbitration_law']['sameArticlePct']}")
+want("regulation same-article",
+     f"{c['byInstrument']['commercial_courts_implementing_regulation']['sameArticlePct']}")
+
+# retrieval
+want("spearman court vs party", f"{ret['spearman']['court_vs_party']}")
+want("articles ranked", f"{ret['articlesTotal']:,}")
+want("court top50 not in full top50", 50 - ret["overlap@50"]["full_vs_court"])
 
 # windows
 for v in ("contemporary_5y", "contemporary_3y", "post_Evidence", "post_CTL"):
