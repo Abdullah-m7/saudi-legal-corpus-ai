@@ -1,0 +1,9061 @@
+{
+ "schema": {
+  "years": [
+   1444,
+   1445,
+   1446
+  ],
+  "window": 500,
+  "fields": "j y city ct voice type rule cid label resolved merged instBlock artBlock instW artW tmpl",
+  "note": "one row per non-statutory authority mention. NO judgment text: tmpl is a hash of a normalised window and cannot be inverted. instBlock/artBlock is the nearest statutory citation in the same sentence-like block; instW/artW the nearest within +-500 characters. Proximity is co-occurrence, not legal dependence.",
+  "identityUniverse": "bounded by authority.py's vocabulary: an authority it cannot name is absent here, so every count is a floor"
+ },
+ "rows": 22969,
+ "judgments": 9842,
+ "minUnitsForProfile": 100,
+ "phase4_resolution": {
+  "ibnTaymiyyaMentions": 2788,
+  "ibnTaymiyyaAsTitleShaykhAlIslamPct": 49.5,
+  "mentionsTotal": 22969,
+  "namedSourceMentions": 13181,
+  "genericMentions": 9788,
+  "resolved": 8582,
+  "resolvedPct": 65.1,
+  "untracedHadith": 4599,
+  "untracedHadithPct": 34.9,
+  "unresolvedRawMentions": 0,
+  "unresolvedRawPct": 0.0,
+  "uniqueRawStrings": 0,
+  "uniqueCanonicalIdentities": 28,
+  "mergedByAliasHandling": 2598,
+  "mergedByAliasHandlingPct": 30.3,
+  "topUnresolvedRaw": [],
+  "auditSet": {
+   "B.INSAF": [
+    "الانصاف"
+   ],
+   "B.KASHSHAF": [
+    "كشاف القناع"
+   ],
+   "B.MAJMU_FATAWA": [
+    "مجموع الفتاوى",
+    "مجموع فتاوى"
+   ],
+   "B.MATALIB": [
+    "مطالب اولي النهى"
+   ],
+   "B.MUGHNI": [
+    "المغني"
+   ],
+   "B.MUNTAHA": [
+    "منتهى الارادات"
+   ],
+   "B.RAWD": [
+    "الروض المربع"
+   ],
+   "B.ZAD": [
+    "زاد المعاد"
+   ],
+   "H.ABU_DAWUD": [
+    "رواه ابو داود"
+   ],
+   "H.AHMAD": [
+    "اخرجه احمد",
+    "رواه احمد"
+   ],
+   "H.BAYHAQI": [
+    "اخرجه البيهقي"
+   ],
+   "H.BUKHARI": [
+    "اخرجه البخاري",
+    "رواه البخاري"
+   ],
+   "H.DARAQUTNI": [
+    "اخرجه الدارقطني"
+   ],
+   "H.IBN_MAJA": [
+    "رواه ابن ماجه"
+   ],
+   "H.MUSLIM": [
+    "اخرجه مسلم",
+    "رواه مسلم"
+   ],
+   "H.MUTTAFAQ": [
+    "متفق عليه"
+   ],
+   "H.NASAI": [
+    "رواه النسائي"
+   ],
+   "H.TIRMIDHI": [
+    "اخرجه الترمذي",
+    "رواه الترمذي"
+   ],
+   "J.IBN_QAYYIM": [
+    "ابن القيم"
+   ],
+   "J.IBN_QUDAMA": [
+    "ابن قدامة"
+   ],
+   "J.IBN_TAYMIYYA": [
+    "ابن تيمية",
+    "شيخ الاسلام"
+   ],
+   "J.MUHAMMAD_B_IBRAHIM": [
+    "محمد بن ابراهيم"
+   ],
+   "M.ADA_MUHAKKAMA": [
+    "العادة محكمة"
+   ],
+   "M.ASL_UQUD": [
+    "الاصل في العقود"
+   ],
+   "M.BARAA": [
+    "الاصل براءة الذمة"
+   ],
+   "M.DARAR_YUZAL": [
+    "الضرر يزال"
+   ],
+   "M.KHARAJ": [
+    "الخراج بالضمان"
+   ],
+   "M.YAQIN": [
+    "اليقين لا يزول بالشك"
+   ]
+  }
+ },
+ "loc_w500": {
+  "unitsTotal": 5552,
+  "codesProfiled": [
+   "evidence_law",
+   "commercial_courts_law",
+   "commercial_courts_implementing_regulation",
+   "sharia_procedure_law"
+  ],
+  "codesInsufficient": [
+   "civil_transactions_law",
+   "companies_law",
+   "law_practice_law",
+   "arbitration_law",
+   "bankruptcy_law",
+   "sharia_procedure_implementing_regulation",
+   "law_practice_implementing_regulation"
+  ],
+  "phase5_8_9_profiles": {
+   "commercial_courts_law": {
+    "units": 2000,
+    "verdict": "PROFILED",
+    "distinctSources": 29,
+    "top": [
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 770,
+      "P_source_given_code": 0.385,
+      "P_code_given_source": 0.4256,
+      "lift": 1.182
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 598,
+      "P_source_given_code": 0.299,
+      "P_code_given_source": 0.4062,
+      "lift": 1.128
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 396,
+      "P_source_given_code": 0.198,
+      "P_code_given_source": 0.4578,
+      "lift": 1.271
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 119,
+      "P_source_given_code": 0.0595,
+      "P_code_given_source": 0.1693,
+      "lift": 0.47
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 96,
+      "P_source_given_code": 0.048,
+      "P_code_given_source": 0.1897,
+      "lift": 0.527
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "judgments": 94,
+      "P_source_given_code": 0.047,
+      "P_code_given_source": 0.3042,
+      "lift": 0.844
+     },
+     {
+      "source": "H.ABU_DAWUD",
+      "judgments": 81,
+      "P_source_given_code": 0.0405,
+      "P_code_given_source": 0.8182,
+      "lift": 2.271
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 76,
+      "P_source_given_code": 0.038,
+      "P_code_given_source": 0.3333,
+      "lift": 0.925
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 67,
+      "P_source_given_code": 0.0335,
+      "P_code_given_source": 0.1229,
+      "lift": 0.341
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 49,
+      "P_source_given_code": 0.0245,
+      "P_code_given_source": 0.4375,
+      "lift": 1.215
+     },
+     {
+      "source": "B.MUGHNI",
+      "judgments": 41,
+      "P_source_given_code": 0.0205,
+      "P_code_given_source": 0.5256,
+      "lift": 1.459
+     },
+     {
+      "source": "B.MAJMU_FATAWA",
+      "judgments": 28,
+      "P_source_given_code": 0.014,
+      "P_code_given_source": 0.2171,
+      "lift": 0.603
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 25,
+      "P_source_given_code": 0.0125,
+      "P_code_given_source": 0.2874,
+      "lift": 0.798
+     },
+     {
+      "source": "M.ASL_UQUD",
+      "judgments": 23,
+      "P_source_given_code": 0.0115,
+      "P_code_given_source": 0.451,
+      "lift": 1.252
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 22,
+      "P_source_given_code": 0.011,
+      "P_code_given_source": 0.1642,
+      "lift": 0.456
+     }
+    ],
+    "coverageTop1": 29.9,
+    "coverageTop3": 68.5,
+    "coverageTop5": 76.8,
+    "coverageTop10": 91.0,
+    "hhi": 0.1753,
+    "entropy": 2.193,
+    "effectiveSources": 8.96,
+    "namedShare": 24.3,
+    "untracedShare": 75.7,
+    "fiqhNamed": 457,
+    "fiqhUnattributed": 770,
+    "fiqhNamedShareOfFiqh": 37.2
+   },
+   "evidence_law": {
+    "units": 1806,
+    "verdict": "PROFILED",
+    "distinctSources": 28,
+    "top": [
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 474,
+      "P_source_given_code": 0.2625,
+      "P_code_given_source": 0.322,
+      "lift": 0.99
+     },
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 379,
+      "P_source_given_code": 0.2099,
+      "P_code_given_source": 0.2095,
+      "lift": 0.644
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 323,
+      "P_source_given_code": 0.1788,
+      "P_code_given_source": 0.5927,
+      "lift": 1.822
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 263,
+      "P_source_given_code": 0.1456,
+      "P_code_given_source": 0.304,
+      "lift": 0.935
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 260,
+      "P_source_given_code": 0.144,
+      "P_code_given_source": 0.3698,
+      "lift": 1.137
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "judgments": 181,
+      "P_source_given_code": 0.1002,
+      "P_code_given_source": 0.5858,
+      "lift": 1.801
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 91,
+      "P_source_given_code": 0.0504,
+      "P_code_given_source": 0.6791,
+      "lift": 2.088
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 77,
+      "P_source_given_code": 0.0426,
+      "P_code_given_source": 0.1522,
+      "lift": 0.468
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 44,
+      "P_source_given_code": 0.0244,
+      "P_code_given_source": 0.193,
+      "lift": 0.593
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 44,
+      "P_source_given_code": 0.0244,
+      "P_code_given_source": 0.3929,
+      "lift": 1.208
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 43,
+      "P_source_given_code": 0.0238,
+      "P_code_given_source": 0.4943,
+      "lift": 1.519
+     },
+     {
+      "source": "H.MUTTAFAQ",
+      "judgments": 38,
+      "P_source_given_code": 0.021,
+      "P_code_given_source": 0.6333,
+      "lift": 1.947
+     },
+     {
+      "source": "B.MUNTAHA",
+      "judgments": 23,
+      "P_source_given_code": 0.0127,
+      "P_code_given_source": 0.4694,
+      "lift": 1.443
+     },
+     {
+      "source": "M.ASL_UQUD",
+      "judgments": 17,
+      "P_source_given_code": 0.0094,
+      "P_code_given_source": 0.3333,
+      "lift": 1.025
+     },
+     {
+      "source": "M.BARAA",
+      "judgments": 16,
+      "P_source_given_code": 0.0089,
+      "P_code_given_source": 0.5517,
+      "lift": 1.696
+     }
+    ],
+    "coverageTop1": 20.1,
+    "coverageTop3": 49.8,
+    "coverageTop5": 72.0,
+    "coverageTop10": 90.5,
+    "hhi": 0.1194,
+    "entropy": 2.417,
+    "effectiveSources": 11.22,
+    "namedShare": 29.6,
+    "untracedShare": 70.4,
+    "fiqhNamed": 573,
+    "fiqhUnattributed": 379,
+    "fiqhNamedShareOfFiqh": 60.2
+   },
+   "commercial_courts_implementing_regulation": {
+    "units": 1039,
+    "verdict": "PROFILED",
+    "distinctSources": 23,
+    "top": [
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 442,
+      "P_source_given_code": 0.4254,
+      "P_code_given_source": 0.2443,
+      "lift": 1.306
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 298,
+      "P_source_given_code": 0.2868,
+      "P_code_given_source": 0.4239,
+      "lift": 2.265
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 289,
+      "P_source_given_code": 0.2782,
+      "P_code_given_source": 0.5711,
+      "lift": 3.052
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 147,
+      "P_source_given_code": 0.1415,
+      "P_code_given_source": 0.0999,
+      "lift": 0.534
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 109,
+      "P_source_given_code": 0.1049,
+      "P_code_given_source": 0.2,
+      "lift": 1.069
+     },
+     {
+      "source": "B.MAJMU_FATAWA",
+      "judgments": 77,
+      "P_source_given_code": 0.0741,
+      "P_code_given_source": 0.5969,
+      "lift": 3.19
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 70,
+      "P_source_given_code": 0.0674,
+      "P_code_given_source": 0.307,
+      "lift": 1.641
+     },
+     {
+      "source": "M.DARAR_YUZAL",
+      "judgments": 28,
+      "P_source_given_code": 0.0269,
+      "P_code_given_source": 0.4118,
+      "lift": 2.2
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 20,
+      "P_source_given_code": 0.0192,
+      "P_code_given_source": 0.0231,
+      "lift": 0.124
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "judgments": 15,
+      "P_source_given_code": 0.0144,
+      "P_code_given_source": 0.0485,
+      "lift": 0.259
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 11,
+      "P_source_given_code": 0.0106,
+      "P_code_given_source": 0.1264,
+      "lift": 0.676
+     },
+     {
+      "source": "B.MUNTAHA",
+      "judgments": 5,
+      "P_source_given_code": 0.0048,
+      "P_code_given_source": 0.102,
+      "lift": 0.545
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 4,
+      "P_source_given_code": 0.0038,
+      "P_code_given_source": 0.0357,
+      "lift": 0.191
+     },
+     {
+      "source": "B.MUGHNI",
+      "judgments": 3,
+      "P_source_given_code": 0.0029,
+      "P_code_given_source": 0.0385,
+      "lift": 0.206
+     },
+     {
+      "source": "J.MUHAMMAD_B_IBRAHIM",
+      "judgments": 3,
+      "P_source_given_code": 0.0029,
+      "P_code_given_source": 0.1765,
+      "lift": 0.943
+     }
+    ],
+    "coverageTop1": 28.8,
+    "coverageTop3": 67.1,
+    "coverageTop5": 83.8,
+    "coverageTop10": 97.5,
+    "hhi": 0.1758,
+    "entropy": 2.022,
+    "effectiveSources": 7.55,
+    "namedShare": 51.5,
+    "untracedShare": 48.5,
+    "fiqhNamed": 753,
+    "fiqhUnattributed": 442,
+    "fiqhNamedShareOfFiqh": 63.0
+   },
+   "sharia_procedure_law": {
+    "units": 472,
+    "verdict": "PROFILED",
+    "distinctSources": 21,
+    "top": [
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 184,
+      "P_source_given_code": 0.3898,
+      "P_code_given_source": 0.125,
+      "lift": 1.47
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 163,
+      "P_source_given_code": 0.3453,
+      "P_code_given_source": 0.1884,
+      "lift": 2.217
+     },
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 162,
+      "P_source_given_code": 0.3432,
+      "P_code_given_source": 0.0896,
+      "lift": 1.053
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 34,
+      "P_source_given_code": 0.072,
+      "P_code_given_source": 0.1491,
+      "lift": 1.754
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 18,
+      "P_source_given_code": 0.0381,
+      "P_code_given_source": 0.033,
+      "lift": 0.388
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 18,
+      "P_source_given_code": 0.0381,
+      "P_code_given_source": 0.1343,
+      "lift": 1.58
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 16,
+      "P_source_given_code": 0.0339,
+      "P_code_given_source": 0.0228,
+      "lift": 0.268
+     },
+     {
+      "source": "B.MUGHNI",
+      "judgments": 16,
+      "P_source_given_code": 0.0339,
+      "P_code_given_source": 0.2051,
+      "lift": 2.413
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 15,
+      "P_source_given_code": 0.0318,
+      "P_code_given_source": 0.0296,
+      "lift": 0.349
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 14,
+      "P_source_given_code": 0.0297,
+      "P_code_given_source": 0.125,
+      "lift": 1.47
+     },
+     {
+      "source": "B.RAWD",
+      "judgments": 6,
+      "P_source_given_code": 0.0127,
+      "P_code_given_source": 0.75,
+      "lift": 8.822
+     },
+     {
+      "source": "H.TIRMIDHI",
+      "judgments": 6,
+      "P_source_given_code": 0.0127,
+      "P_code_given_source": 0.2857,
+      "lift": 3.361
+     },
+     {
+      "source": "H.ABU_DAWUD",
+      "judgments": 5,
+      "P_source_given_code": 0.0106,
+      "P_code_given_source": 0.0505,
+      "lift": 0.594
+     },
+     {
+      "source": "B.MUNTAHA",
+      "judgments": 4,
+      "P_source_given_code": 0.0085,
+      "P_code_given_source": 0.0816,
+      "lift": 0.96
+     },
+     {
+      "source": "M.BARAA",
+      "judgments": 3,
+      "P_source_given_code": 0.0064,
+      "P_code_given_source": 0.1034,
+      "lift": 1.217
+     }
+    ],
+    "coverageTop1": 27.3,
+    "coverageTop3": 75.6,
+    "coverageTop5": 83.4,
+    "coverageTop10": 95.1,
+    "hhi": 0.1977,
+    "entropy": 1.985,
+    "effectiveSources": 7.28,
+    "namedShare": 21.2,
+    "untracedShare": 78.8,
+    "fiqhNamed": 125,
+    "fiqhUnattributed": 162,
+    "fiqhNamedShareOfFiqh": 43.6
+   },
+   "law_practice_law": {
+    "units": 57,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "civil_transactions_law": {
+    "units": 51,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "companies_law": {
+    "units": 46,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "law_practice_implementing_regulation": {
+    "units": 17,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "sharia_procedure_implementing_regulation": {
+    "units": 17,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "arbitration_law": {
+    "units": 13,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "enforcement_law": {
+    "units": 12,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "trade_names_law": {
+    "units": 7,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "qismah_regulation": {
+    "units": 4,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "franchise_law": {
+    "units": 3,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "aml_law": {
+    "units": 2,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "basic_law_of_governance": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "commercial_books_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "enforcement_implementing_regulation": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "health_system_regulation": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "judicial_costs_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "labor_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   }
+  },
+  "phase6_specificity": [
+   {
+    "source": "B.MAJMU_FATAWA",
+    "judgments": 129,
+    "codesPresent": 9,
+    "entropyOverCodes": 1.238,
+    "effectiveCodes": 3.45,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 77,
+    "P_code_given_source": 0.5969,
+    "liftInTopCode": 3.19
+   },
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "judgments": 506,
+    "codesPresent": 10,
+    "entropyOverCodes": 1.269,
+    "effectiveCodes": 3.56,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 289,
+    "P_code_given_source": 0.5711,
+    "liftInTopCode": 3.052
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "judgments": 99,
+    "codesPresent": 3,
+    "entropyOverCodes": 0.582,
+    "effectiveCodes": 1.79,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 81,
+    "P_code_given_source": 0.8182,
+    "liftInTopCode": 2.271
+   },
+   {
+    "source": "B.KASHSHAF",
+    "judgments": 703,
+    "codesPresent": 8,
+    "entropyOverCodes": 1.197,
+    "effectiveCodes": 3.31,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 298,
+    "P_code_given_source": 0.4239,
+    "liftInTopCode": 2.265
+   },
+   {
+    "source": "M.DARAR_YUZAL",
+    "judgments": 68,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.464,
+    "effectiveCodes": 4.32,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 28,
+    "P_code_given_source": 0.4118,
+    "liftInTopCode": 2.2
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "judgments": 134,
+    "codesPresent": 5,
+    "entropyOverCodes": 0.928,
+    "effectiveCodes": 2.53,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 91,
+    "P_code_given_source": 0.6791,
+    "liftInTopCode": 2.088
+   },
+   {
+    "source": "H.MUTTAFAQ",
+    "judgments": 60,
+    "codesPresent": 5,
+    "entropyOverCodes": 0.9,
+    "effectiveCodes": 2.46,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 38,
+    "P_code_given_source": 0.6333,
+    "liftInTopCode": 1.947
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "judgments": 545,
+    "codesPresent": 11,
+    "entropyOverCodes": 1.226,
+    "effectiveCodes": 3.41,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 323,
+    "P_code_given_source": 0.5927,
+    "liftInTopCode": 1.822
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "judgments": 309,
+    "codesPresent": 10,
+    "entropyOverCodes": 1.102,
+    "effectiveCodes": 3.01,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 181,
+    "P_code_given_source": 0.5858,
+    "liftInTopCode": 1.801
+   },
+   {
+    "source": "GENERIC.maxim.named",
+    "judgments": 87,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.286,
+    "effectiveCodes": 3.62,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 43,
+    "P_code_given_source": 0.4943,
+    "liftInTopCode": 1.519
+   },
+   {
+    "source": "B.MUGHNI",
+    "judgments": 78,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.34,
+    "effectiveCodes": 3.82,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 41,
+    "P_code_given_source": 0.5256,
+    "liftInTopCode": 1.459
+   },
+   {
+    "source": "B.MUNTAHA",
+    "judgments": 49,
+    "codesPresent": 4,
+    "entropyOverCodes": 1.16,
+    "effectiveCodes": 3.19,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 23,
+    "P_code_given_source": 0.4694,
+    "liftInTopCode": 1.443
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "judgments": 865,
+    "codesPresent": 10,
+    "entropyOverCodes": 1.258,
+    "effectiveCodes": 3.52,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 396,
+    "P_code_given_source": 0.4578,
+    "liftInTopCode": 1.271
+   },
+   {
+    "source": "M.ASL_UQUD",
+    "judgments": 51,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.335,
+    "effectiveCodes": 3.8,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 23,
+    "P_code_given_source": 0.451,
+    "liftInTopCode": 1.252
+   },
+   {
+    "source": "J.IBN_QUDAMA",
+    "judgments": 112,
+    "codesPresent": 5,
+    "entropyOverCodes": 1.15,
+    "effectiveCodes": 3.16,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 49,
+    "P_code_given_source": 0.4375,
+    "liftInTopCode": 1.215
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "judgments": 1809,
+    "codesPresent": 14,
+    "entropyOverCodes": 1.421,
+    "effectiveCodes": 4.14,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 770,
+    "P_code_given_source": 0.4256,
+    "liftInTopCode": 1.182
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "judgments": 1472,
+    "codesPresent": 12,
+    "entropyOverCodes": 1.436,
+    "effectiveCodes": 4.2,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 598,
+    "P_code_given_source": 0.4062,
+    "liftInTopCode": 1.128
+   },
+   {
+    "source": "B.INSAF",
+    "judgments": 228,
+    "codesPresent": 6,
+    "entropyOverCodes": 1.411,
+    "effectiveCodes": 4.1,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 76,
+    "P_code_given_source": 0.3333,
+    "liftInTopCode": 0.925
+   }
+  ],
+  "phase14_articles": {
+   "evidence_law": {
+    "articlesWith30plus": 10,
+    "articles": [
+     {
+      "article": "29",
+      "judgments": 914,
+      "top": [
+       [
+        "GENERIC.principle.settled",
+        270
+       ],
+       [
+        "B.KASHSHAF",
+        224
+       ],
+       [
+        "GENERIC.quran.citation",
+        161
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        133
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        107
+       ]
+      ]
+     },
+     {
+      "article": "21",
+      "judgments": 178,
+      "top": [
+       [
+        "GENERIC.custom.trade",
+        64
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        38
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        30
+       ],
+       [
+        "GENERIC.quran.citation",
+        27
+       ],
+       [
+        "GENERIC.principle.settled",
+        15
+       ]
+      ]
+     },
+     {
+      "article": "17",
+      "judgments": 116,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        55
+       ],
+       [
+        "J.IBN_QAYYIM",
+        28
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        27
+       ],
+       [
+        "GENERIC.quran.citation",
+        20
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        16
+       ]
+      ]
+     },
+     {
+      "article": "3",
+      "judgments": 111,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        90
+       ],
+       [
+        "H.MUTTAFAQ",
+        16
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        10
+       ],
+       [
+        "H.BAYHAQI",
+        10
+       ],
+       [
+        "B.ZAD",
+        9
+       ]
+      ]
+     },
+     {
+      "article": "14",
+      "judgments": 71,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        25
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        21
+       ],
+       [
+        "J.IBN_QAYYIM",
+        14
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        7
+       ],
+       [
+        "H.MUTTAFAQ",
+        5
+       ]
+      ]
+     },
+     {
+      "article": "103",
+      "judgments": 56,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        44
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        12
+       ],
+       [
+        "H.MUSLIM",
+        6
+       ],
+       [
+        "GENERIC.quran.citation",
+        4
+       ],
+       [
+        "J.IBN_QUDAMA",
+        4
+       ]
+      ]
+     },
+     {
+      "article": "18",
+      "judgments": 51,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        33
+       ],
+       [
+        "GENERIC.quran.citation",
+        11
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        8
+       ],
+       [
+        "J.IBN_QUDAMA",
+        3
+       ],
+       [
+        "B.MUGHNI",
+        2
+       ]
+      ]
+     },
+     {
+      "article": "97",
+      "judgments": 32,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        29
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        3
+       ],
+       [
+        "M.BARAA",
+        2
+       ],
+       [
+        "H.ABU_DAWUD",
+        1
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.5756,
+    "minPairCosine": 0.2728
+   },
+   "commercial_courts_law": {
+    "articlesWith30plus": 8,
+    "articles": [
+     {
+      "article": "16",
+      "judgments": 702,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        393
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        125
+       ],
+       [
+        "GENERIC.quran.citation",
+        67
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        33
+       ],
+       [
+        "GENERIC.custom.trade",
+        32
+       ]
+      ]
+     },
+     {
+      "article": "30",
+      "judgments": 549,
+      "top": [
+       [
+        "GENERIC.quran.citation",
+        156
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        139
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        89
+       ],
+       [
+        "B.KASHSHAF",
+        62
+       ],
+       [
+        "GENERIC.custom.trade",
+        46
+       ]
+      ]
+     },
+     {
+      "article": "29",
+      "judgments": 260,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        252
+       ],
+       [
+        "GENERIC.quran.citation",
+        119
+       ],
+       [
+        "H.ABU_DAWUD",
+        66
+       ],
+       [
+        "H.TIRMIDHI",
+        9
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        5
+       ]
+      ]
+     },
+     {
+      "article": "10",
+      "judgments": 188,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        174
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        7
+       ],
+       [
+        "GENERIC.quran.citation",
+        3
+       ],
+       [
+        "GENERIC.custom.trade",
+        2
+       ],
+       [
+        "B.KASHSHAF",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "78",
+      "judgments": 112,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        26
+       ],
+       [
+        "B.INSAF",
+        23
+       ],
+       [
+        "B.KASHSHAF",
+        13
+       ],
+       [
+        "B.MAJMU_FATAWA",
+        12
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        12
+       ]
+      ]
+     },
+     {
+      "article": "22",
+      "judgments": 39,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        32
+       ],
+       [
+        "GENERIC.quran.citation",
+        30
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        5
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        3
+       ],
+       [
+        "GENERIC.maxim.named",
+        2
+       ]
+      ]
+     },
+     {
+      "article": "58",
+      "judgments": 33,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        30
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        2
+       ],
+       [
+        "M.DARAR_YUZAL",
+        2
+       ],
+       [
+        "B.KASHSHAF",
+        1
+       ],
+       [
+        "B.MUGHNI",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "42",
+      "judgments": 32,
+      "top": [
+       [
+        "B.KASHSHAF",
+        10
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        7
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        5
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        5
+       ],
+       [
+        "GENERIC.custom.trade",
+        3
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.5389,
+    "minPairCosine": 0.06
+   },
+   "commercial_courts_implementing_regulation": {
+    "articlesWith30plus": 3,
+    "articles": [
+     {
+      "article": "164",
+      "judgments": 777,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        396
+       ],
+       [
+        "B.KASHSHAF",
+        252
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        248
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        120
+       ],
+       [
+        "B.MAJMU_FATAWA",
+        50
+       ]
+      ]
+     },
+     {
+      "article": "137",
+      "judgments": 97,
+      "top": [
+       [
+        "GENERIC.principle.settled",
+        82
+       ],
+       [
+        "B.KASHSHAF",
+        8
+       ],
+       [
+        "GENERIC.quran.citation",
+        6
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        2
+       ],
+       [
+        "GENERIC.custom.trade",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "64",
+      "judgments": 62,
+      "top": [
+       [
+        "B.KASHSHAF",
+        23
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        18
+       ],
+       [
+        "B.MAJMU_FATAWA",
+        13
+       ],
+       [
+        "GENERIC.custom.trade",
+        7
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        7
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.3649,
+    "minPairCosine": 0.0796
+   },
+   "sharia_procedure_law": {
+    "articlesWith30plus": 3,
+    "articles": [
+     {
+      "article": "70",
+      "judgments": 170,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        150
+       ],
+       [
+        "GENERIC.quran.citation",
+        136
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        6
+       ],
+       [
+        "H.ABU_DAWUD",
+        5
+       ],
+       [
+        "H.TIRMIDHI",
+        4
+       ]
+      ]
+     },
+     {
+      "article": "76",
+      "judgments": 46,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        33
+       ],
+       [
+        "GENERIC.principle.settled",
+        7
+       ],
+       [
+        "B.INSAF",
+        4
+       ],
+       [
+        "B.KASHSHAF",
+        2
+       ]
+      ]
+     },
+     {
+      "article": "128",
+      "judgments": 42,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        37
+       ],
+       [
+        "GENERIC.quran.citation",
+        4
+       ],
+       [
+        "GENERIC.principle.settled",
+        1
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.3665,
+    "minPairCosine": 0.0287
+   }
+  },
+  "phase15_leaveArticleOut": {
+   "evidence_law": {
+    "judgmentsFull": 1806,
+    "topFull": [
+     [
+      "GENERIC.hadith.untraced",
+      26.2
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      21.0
+     ],
+     [
+      "GENERIC.principle.settled",
+      17.9
+     ],
+     [
+      "GENERIC.quran.citation",
+      14.6
+     ],
+     [
+      "B.KASHSHAF",
+      14.4
+     ],
+     [
+      "GENERIC.custom.trade",
+      10.0
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "29",
+      1182
+     ],
+     [
+      "21",
+      216
+     ],
+     [
+      "17",
+      194
+     ],
+     [
+      "3",
+      177
+     ],
+     [
+      "103",
+      102
+     ]
+    ],
+    "named": {
+     "droppedArticles": [
+      "1",
+      "29"
+     ],
+     "mentionsDroppedPct": 46.5,
+     "judgmentsAfterDrop": 921,
+     "top": [
+      [
+       "GENERIC.hadith.untraced",
+       37.1
+      ],
+      [
+       "GENERIC.fiqh.unattributed",
+       29.4
+      ],
+      [
+       "GENERIC.custom.trade",
+       11.7
+      ],
+      [
+       "GENERIC.quran.citation",
+       11.1
+      ],
+      [
+       "J.IBN_QAYYIM",
+       8.3
+      ],
+      [
+       "GENERIC.principle.settled",
+       5.8
+      ]
+     ],
+     "cosineFullVsDropped": 0.907
+    },
+    "empirical": {
+     "droppedArticles": [
+      "29",
+      "21"
+     ],
+     "mentionsDroppedPct": 54.8,
+     "judgmentsAfterDrop": 748,
+     "top": [
+      [
+       "GENERIC.hadith.untraced",
+       42.0
+      ],
+      [
+       "GENERIC.fiqh.unattributed",
+       31.3
+      ],
+      [
+       "GENERIC.quran.citation",
+       10.0
+      ],
+      [
+       "J.IBN_QAYYIM",
+       10.0
+      ],
+      [
+       "GENERIC.custom.trade",
+       5.9
+      ],
+      [
+       "J.IBN_TAYMIYYA",
+       5.3
+      ]
+     ],
+     "cosineFullVsDropped": 0.8813
+    }
+   },
+   "commercial_courts_law": {
+    "judgmentsFull": 2000,
+    "topFull": [
+     [
+      "GENERIC.fiqh.unattributed",
+      38.5
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      29.9
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.8
+     ],
+     [
+      "B.KASHSHAF",
+      6.0
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      4.8
+     ],
+     [
+      "GENERIC.custom.trade",
+      4.7
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "16",
+      796
+     ],
+     [
+      "30",
+      760
+     ],
+     [
+      "29",
+      462
+     ],
+     [
+      "10",
+      190
+     ],
+     [
+      "78",
+      151
+     ]
+    ],
+    "named": {
+     "verdict": "NOT_SPECIFIED"
+    },
+    "empirical": {
+     "droppedArticles": [
+      "16",
+      "30"
+     ],
+     "mentionsDroppedPct": 57.1,
+     "judgmentsAfterDrop": 784,
+     "top": [
+      [
+       "GENERIC.hadith.untraced",
+       49.1
+      ],
+      [
+       "GENERIC.fiqh.unattributed",
+       32.0
+      ],
+      [
+       "GENERIC.quran.citation",
+       22.1
+      ],
+      [
+       "H.ABU_DAWUD",
+       9.3
+      ],
+      [
+       "J.IBN_TAYMIYYA",
+       4.8
+      ],
+      [
+       "B.INSAF",
+       4.2
+      ]
+     ],
+     "cosineFullVsDropped": 0.9473
+    }
+   },
+   "commercial_courts_implementing_regulation": {
+    "judgmentsFull": 1039,
+    "topFull": [
+     [
+      "GENERIC.fiqh.unattributed",
+      42.5
+     ],
+     [
+      "B.KASHSHAF",
+      28.7
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      27.8
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      14.1
+     ],
+     [
+      "GENERIC.principle.settled",
+      10.5
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      7.4
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "164",
+      1475
+     ],
+     [
+      "64",
+      110
+     ],
+     [
+      "137",
+      102
+     ],
+     [
+      "51",
+      69
+     ],
+     [
+      "133",
+      23
+     ]
+    ],
+    "named": {
+     "verdict": "NOT_SPECIFIED"
+    },
+    "empirical": {
+     "droppedArticles": [
+      "164",
+      "64"
+     ],
+     "mentionsDroppedPct": 84.7,
+     "judgmentsAfterDrop": 204,
+     "top": [
+      [
+       "GENERIC.principle.settled",
+       46.6
+      ],
+      [
+       "GENERIC.fiqh.unattributed",
+       19.6
+      ],
+      [
+       "B.KASHSHAF",
+       11.3
+      ],
+      [
+       "J.IBN_TAYMIYYA",
+       11.3
+      ],
+      [
+       "GENERIC.hadith.untraced",
+       10.3
+      ],
+      [
+       "B.INSAF",
+       9.8
+      ]
+     ],
+     "cosineFullVsDropped": 0.6503
+    }
+   },
+   "sharia_procedure_law": {
+    "judgmentsFull": 472,
+    "topFull": [
+     [
+      "GENERIC.hadith.untraced",
+      39.0
+     ],
+     [
+      "GENERIC.quran.citation",
+      34.5
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      34.3
+     ],
+     [
+      "B.INSAF",
+      7.2
+     ],
+     [
+      "GENERIC.principle.settled",
+      3.8
+     ],
+     [
+      "J.IBN_QAYYIM",
+      3.8
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "70",
+      313
+     ],
+     [
+      "76",
+      46
+     ],
+     [
+      "128",
+      43
+     ],
+     [
+      "57",
+      40
+     ],
+     [
+      "66",
+      38
+     ]
+    ],
+    "named": {
+     "verdict": "NOT_SPECIFIED"
+    },
+    "empirical": {
+     "droppedArticles": [
+      "70",
+      "76"
+     ],
+     "mentionsDroppedPct": 51.7,
+     "judgmentsAfterDrop": 256,
+     "top": [
+      [
+       "GENERIC.fiqh.unattributed",
+       48.0
+      ],
+      [
+       "GENERIC.hadith.untraced",
+       13.3
+      ],
+      [
+       "B.INSAF",
+       11.7
+      ],
+      [
+       "GENERIC.quran.citation",
+       10.5
+      ],
+      [
+       "J.IBN_QAYYIM",
+       7.0
+      ],
+      [
+       "B.MUGHNI",
+       6.2
+      ]
+     ],
+     "cosineFullVsDropped": 0.7963
+    }
+   },
+   "civil_transactions_law": {
+    "verdict": "INSUFFICIENT_DATA",
+    "namedArticles": [
+     "120",
+     "720"
+    ]
+   },
+   "law_practice_law": {
+    "verdict": "INSUFFICIENT_DATA",
+    "namedArticles": [
+     "26"
+    ]
+   }
+  },
+  "phase16_templates": {
+   "evidence_law": [
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 528,
+     "distinctFingerprints": 326,
+     "topFingerprintShare": 3.6,
+     "topFingerprintJudgments": 19,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 61.7,
+     "repeatedFingerprintShare": 50.4
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 435,
+     "distinctFingerprints": 331,
+     "topFingerprintShare": 5.1,
+     "topFingerprintJudgments": 22,
+     "topFingerprintCities": 3,
+     "fingerprintsPer100": 76.1,
+     "repeatedFingerprintShare": 36.1
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 325,
+     "distinctFingerprints": 234,
+     "topFingerprintShare": 10.8,
+     "topFingerprintJudgments": 34,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 72.0,
+     "repeatedFingerprintShare": 36.9
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 270,
+     "distinctFingerprints": 207,
+     "topFingerprintShare": 3.0,
+     "topFingerprintJudgments": 8,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 76.7,
+     "repeatedFingerprintShare": 33.3
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 262,
+     "distinctFingerprints": 170,
+     "topFingerprintShare": 3.8,
+     "topFingerprintJudgments": 10,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 64.9,
+     "repeatedFingerprintShare": 48.9
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "mentions": 186,
+     "distinctFingerprints": 108,
+     "topFingerprintShare": 24.7,
+     "topFingerprintJudgments": 46,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 58.1,
+     "repeatedFingerprintShare": 52.2
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 140,
+     "distinctFingerprints": 66,
+     "topFingerprintShare": 11.4,
+     "topFingerprintJudgments": 16,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 47.1,
+     "repeatedFingerprintShare": 64.3
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "mentions": 91,
+     "distinctFingerprints": 47,
+     "topFingerprintShare": 18.7,
+     "topFingerprintJudgments": 17,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 51.6,
+     "repeatedFingerprintShare": 61.5
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 44,
+     "distinctFingerprints": 35,
+     "topFingerprintShare": 11.4,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 79.5,
+     "repeatedFingerprintShare": 31.8
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "mentions": 44,
+     "distinctFingerprints": 31,
+     "topFingerprintShare": 13.6,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 70.5,
+     "repeatedFingerprintShare": 47.7
+    }
+   ],
+   "commercial_courts_law": [
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 820,
+     "distinctFingerprints": 260,
+     "topFingerprintShare": 35.9,
+     "topFingerprintJudgments": 294,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 31.7,
+     "repeatedFingerprintShare": 73.4
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 617,
+     "distinctFingerprints": 320,
+     "topFingerprintShare": 6.5,
+     "topFingerprintJudgments": 40,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 51.9,
+     "repeatedFingerprintShare": 60.6
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 401,
+     "distinctFingerprints": 243,
+     "topFingerprintShare": 9.5,
+     "topFingerprintJudgments": 38,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 60.6,
+     "repeatedFingerprintShare": 52.6
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 161,
+     "distinctFingerprints": 113,
+     "topFingerprintShare": 3.7,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 70.2,
+     "repeatedFingerprintShare": 50.3
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 120,
+     "distinctFingerprints": 87,
+     "topFingerprintShare": 4.2,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 72.5,
+     "repeatedFingerprintShare": 45.0
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "mentions": 100,
+     "distinctFingerprints": 85,
+     "topFingerprintShare": 4.0,
+     "topFingerprintJudgments": 4,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 85.0,
+     "repeatedFingerprintShare": 28.0
+    },
+    {
+     "source": "H.ABU_DAWUD",
+     "mentions": 82,
+     "distinctFingerprints": 20,
+     "topFingerprintShare": 40.2,
+     "topFingerprintJudgments": 32,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 24.4,
+     "repeatedFingerprintShare": 80.5
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 76,
+     "distinctFingerprints": 38,
+     "topFingerprintShare": 26.3,
+     "topFingerprintJudgments": 20,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 50.0,
+     "repeatedFingerprintShare": 63.2
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 67,
+     "distinctFingerprints": 52,
+     "topFingerprintShare": 7.5,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 77.6,
+     "repeatedFingerprintShare": 32.8
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "mentions": 49,
+     "distinctFingerprints": 36,
+     "topFingerprintShare": 10.2,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 73.5,
+     "repeatedFingerprintShare": 38.8
+    }
+   ],
+   "commercial_courts_implementing_regulation": [
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 536,
+     "distinctFingerprints": 272,
+     "topFingerprintShare": 17.0,
+     "topFingerprintJudgments": 91,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 50.7,
+     "repeatedFingerprintShare": 57.8
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 438,
+     "distinctFingerprints": 149,
+     "topFingerprintShare": 14.8,
+     "topFingerprintJudgments": 65,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 34.0,
+     "repeatedFingerprintShare": 78.1
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 307,
+     "distinctFingerprints": 64,
+     "topFingerprintShare": 39.7,
+     "topFingerprintJudgments": 122,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 20.8,
+     "repeatedFingerprintShare": 87.0
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 228,
+     "distinctFingerprints": 90,
+     "topFingerprintShare": 13.2,
+     "topFingerprintJudgments": 30,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 39.5,
+     "repeatedFingerprintShare": 74.6
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 109,
+     "distinctFingerprints": 82,
+     "topFingerprintShare": 8.3,
+     "topFingerprintJudgments": 9,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 75.2,
+     "repeatedFingerprintShare": 34.9
+    },
+    {
+     "source": "B.MAJMU_FATAWA",
+     "mentions": 78,
+     "distinctFingerprints": 35,
+     "topFingerprintShare": 16.7,
+     "topFingerprintJudgments": 13,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 44.9,
+     "repeatedFingerprintShare": 66.7
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 70,
+     "distinctFingerprints": 22,
+     "topFingerprintShare": 44.3,
+     "topFingerprintJudgments": 31,
+     "topFingerprintCities": 3,
+     "fingerprintsPer100": 31.4,
+     "repeatedFingerprintShare": 77.1
+    },
+    {
+     "source": "M.DARAR_YUZAL",
+     "mentions": 28,
+     "distinctFingerprints": 17,
+     "topFingerprintShare": 25.0,
+     "topFingerprintJudgments": 7,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 60.7,
+     "repeatedFingerprintShare": 57.1
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 20,
+     "distinctFingerprints": 12,
+     "topFingerprintShare": 30.0,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 3,
+     "fingerprintsPer100": 60.0,
+     "repeatedFingerprintShare": 55.0
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "mentions": 18,
+     "distinctFingerprints": 14,
+     "topFingerprintShare": 16.7,
+     "topFingerprintJudgments": 3,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 77.8,
+     "repeatedFingerprintShare": 33.3
+    }
+   ],
+   "sharia_procedure_law": [
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 196,
+     "distinctFingerprints": 109,
+     "topFingerprintShare": 8.7,
+     "topFingerprintJudgments": 17,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 55.6,
+     "repeatedFingerprintShare": 60.2
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 166,
+     "distinctFingerprints": 99,
+     "topFingerprintShare": 4.8,
+     "topFingerprintJudgments": 8,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 59.6,
+     "repeatedFingerprintShare": 57.8
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 166,
+     "distinctFingerprints": 106,
+     "topFingerprintShare": 9.0,
+     "topFingerprintJudgments": 15,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 63.9,
+     "repeatedFingerprintShare": 47.0
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 34,
+     "distinctFingerprints": 20,
+     "topFingerprintShare": 14.7,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 58.8,
+     "repeatedFingerprintShare": 64.7
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 18,
+     "distinctFingerprints": 18,
+     "topFingerprintShare": 5.6,
+     "topFingerprintJudgments": 1,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 100.0,
+     "repeatedFingerprintShare": 0.0
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "mentions": 18,
+     "distinctFingerprints": 9,
+     "topFingerprintShare": 27.8,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 50.0,
+     "repeatedFingerprintShare": 77.8
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 18,
+     "distinctFingerprints": 10,
+     "topFingerprintShare": 50.0,
+     "topFingerprintJudgments": 9,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 55.6,
+     "repeatedFingerprintShare": 50.0
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 16,
+     "distinctFingerprints": 13,
+     "topFingerprintShare": 18.8,
+     "topFingerprintJudgments": 3,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 81.2,
+     "repeatedFingerprintShare": 31.2
+    },
+    {
+     "source": "B.MUGHNI",
+     "mentions": 16,
+     "distinctFingerprints": 14,
+     "topFingerprintShare": 12.5,
+     "topFingerprintJudgments": 2,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 87.5,
+     "repeatedFingerprintShare": 25.0
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "mentions": 14,
+     "distinctFingerprints": 11,
+     "topFingerprintShare": 14.3,
+     "topFingerprintJudgments": 2,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 78.6,
+     "repeatedFingerprintShare": 42.9
+    }
+   ]
+  },
+  "phase16b_deboilerplated": {
+   "circulatingFingerprints": 194,
+   "minJudgmentsToCount": 10,
+   "courtMentionsRemoved": 5145,
+   "courtMentionsRemovedPct": 30.8,
+   "phase12_deboilerplated": {
+    "judgments": 90,
+    "codeA": "evidence_law",
+    "codeB": "commercial_courts_law",
+    "cosine": 0.7465,
+    "nullCosineMean": 0.9497,
+    "nullCosineSd": 0.0248,
+    "z": -8.19,
+    "pOneSided": 0.002,
+    "topA": [
+     [
+      "GENERIC.quran.citation",
+      38
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      28
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      13
+     ],
+     [
+      "B.KASHSHAF",
+      10
+     ],
+     [
+      "GENERIC.principle.settled",
+      10
+     ],
+     [
+      "J.IBN_QAYYIM",
+      5
+     ],
+     [
+      "GENERIC.maxim.named",
+      4
+     ],
+     [
+      "GENERIC.custom.trade",
+      3
+     ]
+    ],
+    "topB": [
+     [
+      "GENERIC.fiqh.unattributed",
+      26
+     ],
+     [
+      "B.KASHSHAF",
+      18
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      17
+     ],
+     [
+      "GENERIC.quran.citation",
+      13
+     ],
+     [
+      "J.IBN_QUDAMA",
+      8
+     ],
+     [
+      "B.MUGHNI",
+      6
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      3
+     ],
+     [
+      "B.INSAF",
+      2
+     ]
+    ],
+    "differences": [
+     {
+      "source": "GENERIC.quran.citation",
+      "share_evidence_law": 32.5,
+      "share_commercial_courts_law": 12.7,
+      "ptDiff": 19.7
+     },
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "share_evidence_law": 11.1,
+      "share_commercial_courts_law": 25.5,
+      "ptDiff": -14.4
+     },
+     {
+      "source": "B.KASHSHAF",
+      "share_evidence_law": 8.5,
+      "share_commercial_courts_law": 17.6,
+      "ptDiff": -9.1
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "share_evidence_law": 8.5,
+      "share_commercial_courts_law": 1.0,
+      "ptDiff": 7.6
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "share_evidence_law": 23.9,
+      "share_commercial_courts_law": 16.7,
+      "ptDiff": 7.3
+     },
+     {
+      "source": "B.MUGHNI",
+      "share_evidence_law": 0.0,
+      "share_commercial_courts_law": 5.9,
+      "ptDiff": -5.9
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "share_evidence_law": 2.6,
+      "share_commercial_courts_law": 7.8,
+      "ptDiff": -5.3
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "share_evidence_law": 4.3,
+      "share_commercial_courts_law": 0.0,
+      "ptDiff": 4.3
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "share_evidence_law": 3.4,
+      "share_commercial_courts_law": 2.0,
+      "ptDiff": 1.5
+     }
+    ]
+   },
+   "phase26_deboilerplated": {
+    "trainUnits": 3134,
+    "testUnits": 186,
+    "codes": [
+     "commercial_courts_implementing_regulation",
+     "commercial_courts_law",
+     "evidence_law",
+     "sharia_procedure_law"
+    ],
+    "accuracy": 40.3,
+    "macroF1": 40.5,
+    "chance": 25.0,
+    "majorityBaseline": 39.3,
+    "uniformPrior": {
+     "accuracy": 40.3,
+     "macroF1": 40.5,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 32,
+       "recall": 65.6,
+       "precision": 55.3,
+       "f1": 60.0
+      },
+      "commercial_courts_law": {
+       "n": 56,
+       "recall": 10.7,
+       "precision": 30.0,
+       "f1": 15.8
+      },
+      "evidence_law": {
+       "n": 68,
+       "recall": 33.8,
+       "precision": 79.3,
+       "f1": 47.4
+      },
+      "sharia_procedure_law": {
+       "n": 30,
+       "recall": 83.3,
+       "precision": 25.3,
+       "f1": 38.8
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 21,
+       "commercial_courts_law": 4,
+       "evidence_law": 2,
+       "sharia_procedure_law": 5
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 9,
+       "commercial_courts_law": 6,
+       "evidence_law": 4,
+       "sharia_procedure_law": 37
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 6,
+       "commercial_courts_law": 7,
+       "evidence_law": 23,
+       "sharia_procedure_law": 32
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 2,
+       "commercial_courts_law": 3,
+       "sharia_procedure_law": 25
+      }
+     }
+    },
+    "withPrior": {
+     "accuracy": 48.9,
+     "macroF1": 39.3,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 32,
+       "recall": 40.6,
+       "precision": 56.5,
+       "f1": 47.3
+      },
+      "commercial_courts_law": {
+       "n": 56,
+       "recall": 67.9,
+       "precision": 38.8,
+       "f1": 49.4
+      },
+      "evidence_law": {
+       "n": 68,
+       "recall": 58.8,
+       "precision": 62.5,
+       "f1": 60.6
+      },
+      "sharia_procedure_law": {
+       "n": 30,
+       "recall": 0.0,
+       "precision": 0.0,
+       "f1": 0
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 13,
+       "commercial_courts_law": 7,
+       "evidence_law": 12
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 7,
+       "commercial_courts_law": 38,
+       "evidence_law": 11
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 2,
+       "commercial_courts_law": 25,
+       "evidence_law": 40,
+       "sharia_procedure_law": 1
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 1,
+       "commercial_courts_law": 28,
+       "evidence_law": 1
+      }
+     }
+    }
+   },
+   "phase27_deboilerplatedShuffled": {
+    "trainUnits": 3134,
+    "testUnits": 216,
+    "codes": [
+     "commercial_courts_implementing_regulation",
+     "commercial_courts_law",
+     "evidence_law",
+     "sharia_procedure_law"
+    ],
+    "accuracy": 22.7,
+    "macroF1": 18.3,
+    "chance": 25.0,
+    "majorityBaseline": 39.3,
+    "uniformPrior": {
+     "accuracy": 22.7,
+     "macroF1": 18.3,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 45,
+       "recall": 66.7,
+       "precision": 22.1,
+       "f1": 33.1
+      },
+      "commercial_courts_law": {
+       "n": 61,
+       "recall": 16.4,
+       "precision": 27.0,
+       "f1": 20.4
+      },
+      "evidence_law": {
+       "n": 82,
+       "recall": 9.8,
+       "precision": 44.4,
+       "f1": 16.0
+      },
+      "sharia_procedure_law": {
+       "n": 28,
+       "recall": 3.6,
+       "precision": 4.0,
+       "f1": 3.8
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 30,
+       "commercial_courts_law": 12,
+       "evidence_law": 1,
+       "sharia_procedure_law": 2
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 38,
+       "commercial_courts_law": 10,
+       "evidence_law": 4,
+       "sharia_procedure_law": 9
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 50,
+       "commercial_courts_law": 11,
+       "evidence_law": 8,
+       "sharia_procedure_law": 13
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 18,
+       "commercial_courts_law": 4,
+       "evidence_law": 5,
+       "sharia_procedure_law": 1
+      }
+     }
+    },
+    "withPrior": {
+     "accuracy": 37.5,
+     "macroF1": 22.8,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 45,
+       "recall": 6.7,
+       "precision": 25.0,
+       "f1": 10.5
+      },
+      "commercial_courts_law": {
+       "n": 61,
+       "recall": 24.6,
+       "precision": 36.6,
+       "f1": 29.4
+      },
+      "evidence_law": {
+       "n": 82,
+       "recall": 76.8,
+       "precision": 38.7,
+       "f1": 51.4
+      },
+      "sharia_procedure_law": {
+       "n": 28,
+       "recall": 0.0,
+       "precision": 0,
+       "f1": 0
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 3,
+       "commercial_courts_law": 7,
+       "evidence_law": 35
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 3,
+       "commercial_courts_law": 15,
+       "evidence_law": 43
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 4,
+       "commercial_courts_law": 15,
+       "evidence_law": 63
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 2,
+       "commercial_courts_law": 4,
+       "evidence_law": 22
+      }
+     }
+    }
+   }
+  },
+  "phase18_maxims": {
+   "evidence_law": {
+    "judgments": 1806,
+    "namedMaximTextPct": 2.6,
+    "maximLabelOnlyPct": 2.4,
+    "topMaxims": [
+     [
+      "M.ASL_UQUD",
+      17,
+      0.9
+     ],
+     [
+      "M.BARAA",
+      16,
+      0.9
+     ],
+     [
+      "M.DARAR_YUZAL",
+      12,
+      0.7
+     ],
+     [
+      "M.ADA_MUHAKKAMA",
+      2,
+      0.1
+     ]
+    ]
+   },
+   "commercial_courts_law": {
+    "judgments": 2000,
+    "namedMaximTextPct": 2.6,
+    "maximLabelOnlyPct": 1.2,
+    "topMaxims": [
+     [
+      "M.ASL_UQUD",
+      23,
+      1.1
+     ],
+     [
+      "M.DARAR_YUZAL",
+      19,
+      0.9
+     ],
+     [
+      "M.BARAA",
+      7,
+      0.3
+     ],
+     [
+      "M.ADA_MUHAKKAMA",
+      2,
+      0.1
+     ],
+     [
+      "M.KHARAJ",
+      1,
+      0.1
+     ]
+    ]
+   },
+   "commercial_courts_implementing_regulation": {
+    "judgments": 1039,
+    "namedMaximTextPct": 3.1,
+    "maximLabelOnlyPct": 1.1,
+    "topMaxims": [
+     [
+      "M.DARAR_YUZAL",
+      28,
+      2.7
+     ],
+     [
+      "M.ADA_MUHAKKAMA",
+      2,
+      0.2
+     ],
+     [
+      "M.ASL_UQUD",
+      1,
+      0.1
+     ],
+     [
+      "M.BARAA",
+      1,
+      0.1
+     ]
+    ]
+   },
+   "sharia_procedure_law": {
+    "judgments": 472,
+    "namedMaximTextPct": 1.1,
+    "maximLabelOnlyPct": 0.2,
+    "topMaxims": [
+     [
+      "M.BARAA",
+      3,
+      0.6
+     ],
+     [
+      "M.ASL_UQUD",
+      2,
+      0.4
+     ]
+    ]
+   }
+  },
+  "phase19_21_voice": {
+   "evidence_law": {
+    "judgmentsBench": 1806,
+    "judgmentsBar": 173,
+    "judgmentsBoth": 22,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      26.2
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      21.0
+     ],
+     [
+      "GENERIC.principle.settled",
+      17.9
+     ],
+     [
+      "GENERIC.quran.citation",
+      14.6
+     ],
+     [
+      "B.KASHSHAF",
+      14.4
+     ],
+     [
+      "GENERIC.custom.trade",
+      10.0
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      27.2
+     ],
+     [
+      "GENERIC.custom.trade",
+      23.7
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      19.7
+     ],
+     [
+      "GENERIC.maxim.named",
+      17.3
+     ],
+     [
+      "GENERIC.quran.citation",
+      13.9
+     ],
+     [
+      "GENERIC.principle.settled",
+      9.8
+     ]
+    ],
+    "benchBarCosine": 0.8656,
+    "survivalBarToBenchPct": 34.4,
+    "benchGeneratedPct": 56.0,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "commercial_courts_law": {
+    "judgmentsBench": 2000,
+    "judgmentsBar": 149,
+    "judgmentsBoth": 13,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      38.5
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      29.9
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.8
+     ],
+     [
+      "B.KASHSHAF",
+      6.0
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      4.8
+     ],
+     [
+      "GENERIC.custom.trade",
+      4.7
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      32.9
+     ],
+     [
+      "GENERIC.custom.trade",
+      24.2
+     ],
+     [
+      "GENERIC.quran.citation",
+      12.8
+     ],
+     [
+      "GENERIC.principle.settled",
+      9.4
+     ],
+     [
+      "H.MUTTAFAQ",
+      9.4
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      6.7
+     ]
+    ],
+    "benchBarCosine": 0.6754,
+    "survivalBarToBenchPct": 6.7,
+    "benchGeneratedPct": 94.1,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "commercial_courts_implementing_regulation": {
+    "judgmentsBench": 1039,
+    "judgmentsBar": 102,
+    "judgmentsBoth": 11,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      42.5
+     ],
+     [
+      "B.KASHSHAF",
+      28.7
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      27.8
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      14.1
+     ],
+     [
+      "GENERIC.principle.settled",
+      10.5
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      7.4
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      29.4
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      19.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      15.7
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      15.7
+     ],
+     [
+      "M.DARAR_YUZAL",
+      13.7
+     ],
+     [
+      "GENERIC.custom.trade",
+      9.8
+     ]
+    ],
+    "benchBarCosine": 0.7142,
+    "survivalBarToBenchPct": 47.1,
+    "benchGeneratedPct": 50.0,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "sharia_procedure_law": {
+    "judgmentsBench": 472,
+    "judgmentsBar": 101,
+    "judgmentsBoth": 5,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      39.0
+     ],
+     [
+      "GENERIC.quran.citation",
+      34.5
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      34.3
+     ],
+     [
+      "B.INSAF",
+      7.2
+     ],
+     [
+      "GENERIC.principle.settled",
+      3.8
+     ],
+     [
+      "J.IBN_QAYYIM",
+      3.8
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      28.7
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      21.8
+     ],
+     [
+      "B.KASHSHAF",
+      14.9
+     ],
+     [
+      "GENERIC.principle.settled",
+      9.9
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      9.9
+     ],
+     [
+      "GENERIC.quran.citation",
+      8.9
+     ]
+    ],
+    "benchBarCosine": 0.8277,
+    "survivalBarToBenchPct": 80.0,
+    "benchGeneratedPct": 33.3,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "civil_transactions_law": {
+    "judgmentsBench": 51,
+    "judgmentsBar": 36,
+    "judgmentsBoth": 1,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      33.3
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      17.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      15.7
+     ],
+     [
+      "GENERIC.custom.trade",
+      11.8
+     ],
+     [
+      "M.ASL_UQUD",
+      11.8
+     ],
+     [
+      "GENERIC.maxim.named",
+      9.8
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      27.8
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.4
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      16.7
+     ],
+     [
+      "J.MUHAMMAD_B_IBRAHIM",
+      16.7
+     ],
+     [
+      "M.DARAR_YUZAL",
+      16.7
+     ],
+     [
+      "GENERIC.maxim.named",
+      11.1
+     ]
+    ],
+    "benchBarCosine": 0.8692,
+    "survivalBarToBenchPct": 0.0,
+    "benchGeneratedPct": 100.0,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "companies_law": {
+    "judgmentsBench": 46,
+    "judgmentsBar": 42,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "GENERIC.principle.settled",
+      28.3
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      26.1
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      26.1
+     ],
+     [
+      "GENERIC.custom.trade",
+      6.5
+     ],
+     [
+      "GENERIC.quran.citation",
+      6.5
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      4.3
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.custom.trade",
+      33.3
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      19.0
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      14.3
+     ],
+     [
+      "GENERIC.principle.settled",
+      14.3
+     ],
+     [
+      "GENERIC.maxim.named",
+      9.5
+     ],
+     [
+      "B.MUGHNI",
+      7.1
+     ]
+    ],
+    "benchBarCosine": 0.6937,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "law_practice_law": {
+    "judgmentsBench": 57,
+    "judgmentsBar": 15,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      50.9
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      17.5
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      14.0
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      12.3
+     ],
+     [
+      "GENERIC.quran.citation",
+      12.3
+     ],
+     [
+      "GENERIC.custom.trade",
+      7.0
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.principle.settled",
+      33.3
+     ],
+     [
+      "GENERIC.maxim.named",
+      13.3
+     ],
+     [
+      "GENERIC.quran.citation",
+      13.3
+     ],
+     [
+      "H.MUTTAFAQ",
+      13.3
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      6.7
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      6.7
+     ]
+    ],
+    "benchBarCosine": 0.3029,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "arbitration_law": {
+    "judgmentsBench": 13,
+    "judgmentsBar": 8,
+    "judgmentsBoth": 1,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      100.0
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      50.0
+     ],
+     [
+      "GENERIC.custom.trade",
+      25.0
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      12.5
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      12.5
+     ]
+    ],
+    "benchBarCosine": 0.2132,
+    "survivalBarToBenchPct": 0.0,
+    "benchGeneratedPct": 100.0,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "bankruptcy_law": {
+    "judgmentsBench": 0,
+    "judgmentsBar": 1,
+    "judgmentsBoth": 0,
+    "topBench": [],
+    "topBar": [
+     [
+      "GENERIC.fiqh.unattributed",
+      100.0
+     ]
+    ],
+    "benchBarCosine": null,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "sharia_procedure_implementing_regulation": {
+    "judgmentsBench": 17,
+    "judgmentsBar": 3,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      29.4
+     ],
+     [
+      "M.DARAR_YUZAL",
+      23.5
+     ],
+     [
+      "B.KASHSHAF",
+      17.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      17.6
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      11.8
+     ],
+     [
+      "J.MUHAMMAD_B_IBRAHIM",
+      11.8
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.principle.settled",
+      66.7
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      33.3
+     ],
+     [
+      "M.DARAR_YUZAL",
+      33.3
+     ]
+    ],
+    "benchBarCosine": 0.533,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "law_practice_implementing_regulation": {
+    "judgmentsBench": 17,
+    "judgmentsBar": 2,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "J.IBN_TAYMIYYA",
+      70.6
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      23.5
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      11.8
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      5.9
+     ],
+     [
+      "GENERIC.principle.settled",
+      5.9
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      50.0
+     ],
+     [
+      "GENERIC.quran.citation",
+      50.0
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      50.0
+     ]
+    ],
+    "benchBarCosine": 0.6274,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   }
+  },
+  "phase22_23_stability": {
+   "evidence_law": {
+    "yearsCompared": {
+     "1444": 1166,
+     "1445": 524,
+     "1446": 116
+    },
+    "meanYearCosine": 0.9391,
+    "minYearCosine": 0.9206,
+    "citiesCompared": {
+     "أبها": 89,
+     "الدمام": 557,
+     "الرياض": 601,
+     "جدة": 340
+    },
+    "meanCityCosine": 0.7501,
+    "minCityCosine": 0.5301
+   },
+   "commercial_courts_law": {
+    "yearsCompared": {
+     "1444": 1266,
+     "1445": 614,
+     "1446": 120
+    },
+    "meanYearCosine": 0.971,
+    "minYearCosine": 0.9597,
+    "citiesCompared": {
+     "الدمام": 281,
+     "الرياض": 736,
+     "جدة": 651,
+     "مكة المكرمة": 246
+    },
+    "meanCityCosine": 0.6921,
+    "minCityCosine": 0.4636
+   },
+   "commercial_courts_implementing_regulation": {
+    "yearsCompared": {
+     "1444": 658,
+     "1445": 315,
+     "1446": 66
+    },
+    "meanYearCosine": 0.8249,
+    "minYearCosine": 0.6893,
+    "citiesCompared": {
+     "الدمام": 239,
+     "الرياض": 510,
+     "جدة": 243
+    },
+    "meanCityCosine": 0.7105,
+    "minCityCosine": 0.5975
+   },
+   "sharia_procedure_law": {
+    "yearsCompared": {
+     "1444": 349,
+     "1445": 106
+    },
+    "meanYearCosine": 0.9644,
+    "minYearCosine": 0.9644,
+    "citiesCompared": {
+     "الدمام": 152,
+     "الرياض": 192,
+     "جدة": 88
+    },
+    "meanCityCosine": 0.8932,
+    "minCityCosine": 0.8199
+   }
+  },
+  "phase24_portability": [
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "judgments": 1753,
+    "codes": 4,
+    "effectiveCodes": 3.53,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 42.5,
+     "commercial_courts_law": 38.5,
+     "sharia_procedure_law": 34.3,
+     "evidence_law": 21.0
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "judgments": 1403,
+    "codes": 4,
+    "effectiveCodes": 3.43,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 39.0,
+     "commercial_courts_law": 29.9,
+     "evidence_law": 26.2,
+     "commercial_courts_implementing_regulation": 14.1
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "judgments": 842,
+    "codes": 4,
+    "effectiveCodes": 3.08,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 34.5,
+     "commercial_courts_law": 19.8,
+     "evidence_law": 14.6,
+     "commercial_courts_implementing_regulation": 1.9
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "B.KASHSHAF",
+    "judgments": 693,
+    "codes": 4,
+    "effectiveCodes": 3.07,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 28.7,
+     "evidence_law": 14.4,
+     "commercial_courts_law": 5.9,
+     "sharia_procedure_law": 3.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "judgments": 517,
+    "codes": 4,
+    "effectiveCodes": 2.73,
+    "presenceRateByCode": {
+     "evidence_law": 17.9,
+     "commercial_courts_implementing_regulation": 10.5,
+     "sharia_procedure_law": 3.8,
+     "commercial_courts_law": 3.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "judgments": 477,
+    "codes": 4,
+    "effectiveCodes": 2.8,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 27.8,
+     "commercial_courts_law": 4.8,
+     "evidence_law": 4.3,
+     "sharia_procedure_law": 3.2
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "judgments": 292,
+    "codes": 4,
+    "effectiveCodes": 2.33,
+    "presenceRateByCode": {
+     "evidence_law": 10.0,
+     "commercial_courts_law": 4.7,
+     "commercial_courts_implementing_regulation": 1.4,
+     "sharia_procedure_law": 0.4
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "B.INSAF",
+    "judgments": 224,
+    "codes": 4,
+    "effectiveCodes": 3.8,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 7.2,
+     "commercial_courts_implementing_regulation": 6.7,
+     "commercial_courts_law": 3.8,
+     "evidence_law": 2.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "judgments": 133,
+    "codes": 4,
+    "effectiveCodes": 2.44,
+    "presenceRateByCode": {
+     "evidence_law": 5.0,
+     "sharia_procedure_law": 3.8,
+     "commercial_courts_law": 1.1,
+     "commercial_courts_implementing_regulation": 0.2
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "judgments": 117,
+    "codes": 4,
+    "effectiveCodes": 2.45,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 7.4,
+     "commercial_courts_law": 1.4,
+     "evidence_law": 0.6,
+     "sharia_procedure_law": 0.4
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "J.IBN_QUDAMA",
+    "judgments": 111,
+    "codes": 4,
+    "effectiveCodes": 3.03,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 3.0,
+     "commercial_courts_law": 2.5,
+     "evidence_law": 2.4,
+     "commercial_courts_implementing_regulation": 0.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "judgments": 99,
+    "codes": 3,
+    "effectiveCodes": 1.79,
+    "presenceRateByCode": {
+     "commercial_courts_law": 4.0,
+     "sharia_procedure_law": 1.1,
+     "evidence_law": 0.7
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "GENERIC.maxim.named",
+    "judgments": 80,
+    "codes": 4,
+    "effectiveCodes": 2.79,
+    "presenceRateByCode": {
+     "evidence_law": 2.4,
+     "commercial_courts_law": 1.2,
+     "commercial_courts_implementing_regulation": 1.1,
+     "sharia_procedure_law": 0.2
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "B.MUGHNI",
+    "judgments": 72,
+    "codes": 4,
+    "effectiveCodes": 2.96,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 3.4,
+     "commercial_courts_law": 2.1,
+     "evidence_law": 0.7,
+     "commercial_courts_implementing_regulation": 0.3
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "H.MUTTAFAQ",
+    "judgments": 59,
+    "codes": 4,
+    "effectiveCodes": 2.29,
+    "presenceRateByCode": {
+     "evidence_law": 2.1,
+     "commercial_courts_law": 0.9,
+     "sharia_procedure_law": 0.2,
+     "commercial_courts_implementing_regulation": 0.2
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "M.DARAR_YUZAL",
+    "judgments": 59,
+    "codes": 3,
+    "effectiveCodes": 2.84,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 2.7,
+     "commercial_courts_law": 0.9,
+     "evidence_law": 0.7
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "B.MUNTAHA",
+    "judgments": 49,
+    "codes": 4,
+    "effectiveCodes": 3.19,
+    "presenceRateByCode": {
+     "evidence_law": 1.3,
+     "commercial_courts_law": 0.9,
+     "sharia_procedure_law": 0.8,
+     "commercial_courts_implementing_regulation": 0.5
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "M.ASL_UQUD",
+    "judgments": 43,
+    "codes": 4,
+    "effectiveCodes": 2.54,
+    "presenceRateByCode": {
+     "commercial_courts_law": 1.1,
+     "evidence_law": 0.9,
+     "sharia_procedure_law": 0.4,
+     "commercial_courts_implementing_regulation": 0.1
+    },
+    "class": "PORTABLE"
+   }
+  ],
+  "phase26_signature": {
+   "trainUnits": 4241,
+   "testUnits": 304,
+   "codes": [
+    "commercial_courts_implementing_regulation",
+    "commercial_courts_law",
+    "evidence_law",
+    "sharia_procedure_law"
+   ],
+   "accuracy": 53.9,
+   "macroF1": 50.7,
+   "chance": 25.0,
+   "majorityBaseline": 37.8,
+   "uniformPrior": {
+    "accuracy": 53.9,
+    "macroF1": 50.7,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 94,
+      "recall": 86.2,
+      "precision": 71.1,
+      "f1": 77.9
+     },
+     "commercial_courts_law": {
+      "n": 87,
+      "recall": 24.1,
+      "precision": 84.0,
+      "f1": 37.5
+     },
+     "evidence_law": {
+      "n": 85,
+      "recall": 34.1,
+      "precision": 78.4,
+      "f1": 47.5
+     },
+     "sharia_procedure_law": {
+      "n": 38,
+      "recall": 86.8,
+      "precision": 25.8,
+      "f1": 39.8
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 81,
+      "evidence_law": 4,
+      "sharia_procedure_law": 9
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 21,
+      "commercial_courts_law": 21,
+      "evidence_law": 4,
+      "sharia_procedure_law": 41
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 9,
+      "commercial_courts_law": 2,
+      "evidence_law": 29,
+      "sharia_procedure_law": 45
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 3,
+      "commercial_courts_law": 2,
+      "sharia_procedure_law": 33
+     }
+    }
+   },
+   "withPrior": {
+    "accuracy": 58.6,
+    "macroF1": 46.8,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 94,
+      "recall": 83.0,
+      "precision": 74.3,
+      "f1": 78.4
+     },
+     "commercial_courts_law": {
+      "n": 87,
+      "recall": 72.4,
+      "precision": 42.0,
+      "f1": 53.2
+     },
+     "evidence_law": {
+      "n": 85,
+      "recall": 43.5,
+      "precision": 77.1,
+      "f1": 55.6
+     },
+     "sharia_procedure_law": {
+      "n": 38,
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 78,
+      "commercial_courts_law": 11,
+      "evidence_law": 5
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 18,
+      "commercial_courts_law": 63,
+      "evidence_law": 6
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 6,
+      "commercial_courts_law": 41,
+      "evidence_law": 37,
+      "sharia_procedure_law": 1
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 3,
+      "commercial_courts_law": 35
+     }
+    }
+   }
+  },
+  "phase27_shuffledControl": {
+   "trainUnits": 4241,
+   "testUnits": 324,
+   "codes": [
+    "commercial_courts_implementing_regulation",
+    "commercial_courts_law",
+    "evidence_law",
+    "sharia_procedure_law"
+   ],
+   "accuracy": 29.0,
+   "macroF1": 16.3,
+   "chance": 25.0,
+   "majorityBaseline": 37.8,
+   "uniformPrior": {
+    "accuracy": 29.0,
+    "macroF1": 16.3,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 101,
+      "recall": 84.2,
+      "precision": 31.5,
+      "f1": 45.8
+     },
+     "commercial_courts_law": {
+      "n": 93,
+      "recall": 4.3,
+      "precision": 50.0,
+      "f1": 7.9
+     },
+     "evidence_law": {
+      "n": 97,
+      "recall": 3.1,
+      "precision": 100.0,
+      "f1": 6.0
+     },
+     "sharia_procedure_law": {
+      "n": 33,
+      "recall": 6.1,
+      "precision": 4.7,
+      "f1": 5.3
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 85,
+      "sharia_procedure_law": 16
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 79,
+      "commercial_courts_law": 4,
+      "sharia_procedure_law": 10
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 78,
+      "commercial_courts_law": 1,
+      "evidence_law": 3,
+      "sharia_procedure_law": 15
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 28,
+      "commercial_courts_law": 3,
+      "sharia_procedure_law": 2
+     }
+    }
+   },
+   "withPrior": {
+    "accuracy": 33.0,
+    "macroF1": 24.6,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 101,
+      "recall": 20.8,
+      "precision": 30.0,
+      "f1": 24.6
+     },
+     "commercial_courts_law": {
+      "n": 93,
+      "recall": 66.7,
+      "precision": 34.3,
+      "f1": 45.3
+     },
+     "evidence_law": {
+      "n": 97,
+      "recall": 24.7,
+      "precision": 33.3,
+      "f1": 28.4
+     },
+     "sharia_procedure_law": {
+      "n": 33,
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 21,
+      "commercial_courts_law": 52,
+      "evidence_law": 27,
+      "sharia_procedure_law": 1
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 17,
+      "commercial_courts_law": 62,
+      "evidence_law": 14
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 24,
+      "commercial_courts_law": 49,
+      "evidence_law": 24
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 8,
+      "commercial_courts_law": 18,
+      "evidence_law": 7
+     }
+    }
+   }
+  },
+  "phase28_retrieval": {
+   "evidence_law": {
+    "top0": 0.0,
+    "top1": 20.9,
+    "top3": 50.5,
+    "top5": 72.0,
+    "top10": 91.4,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 27,
+    "testMentions": 521
+   },
+   "commercial_courts_law": {
+    "top0": 0.0,
+    "top1": 31.0,
+    "top3": 71.6,
+    "top5": 78.5,
+    "top10": 92.5,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 28,
+    "testMentions": 536
+   },
+   "commercial_courts_implementing_regulation": {
+    "top0": 0.0,
+    "top1": 28.5,
+    "top3": 71.5,
+    "top5": 85.9,
+    "top10": 97.0,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 23,
+    "testMentions": 368
+   },
+   "sharia_procedure_law": {
+    "top0": 0.0,
+    "top1": 27.9,
+    "top3": 76.4,
+    "top5": 83.6,
+    "top10": 95.7,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 21,
+    "testMentions": 140
+   }
+  },
+  "phase29_untraceable": {
+   "evidence_law": {
+    "mentions": 2550,
+    "untraceablePct": 70.1,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 29.9,
+    "byKind": {
+     "GENERIC.custom.trade": 7.3,
+     "GENERIC.fiqh.unattributed": 17.1,
+     "GENERIC.hadith.untraced": 20.7,
+     "GENERIC.maxim.named": 1.7,
+     "GENERIC.principle.settled": 12.7,
+     "GENERIC.quran.citation": 10.6
+    }
+   },
+   "commercial_courts_law": {
+    "mentions": 2725,
+    "untraceablePct": 74.5,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 25.5,
+    "byKind": {
+     "GENERIC.custom.trade": 3.7,
+     "GENERIC.fiqh.unattributed": 30.1,
+     "GENERIC.hadith.untraced": 22.6,
+     "GENERIC.maxim.named": 0.9,
+     "GENERIC.principle.settled": 2.5,
+     "GENERIC.quran.citation": 14.7
+    }
+   },
+   "commercial_courts_implementing_regulation": {
+    "mentions": 1871,
+    "untraceablePct": 49.3,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 50.7,
+    "byKind": {
+     "GENERIC.custom.trade": 1.0,
+     "GENERIC.fiqh.unattributed": 28.6,
+     "GENERIC.hadith.untraced": 12.2,
+     "GENERIC.maxim.named": 0.6,
+     "GENERIC.principle.settled": 5.8,
+     "GENERIC.quran.citation": 1.1
+    }
+   },
+   "sharia_procedure_law": {
+    "mentions": 695,
+    "untraceablePct": 79.0,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 21.0,
+    "byKind": {
+     "GENERIC.custom.trade": 0.3,
+     "GENERIC.fiqh.unattributed": 23.9,
+     "GENERIC.hadith.untraced": 28.2,
+     "GENERIC.maxim.named": 0.1,
+     "GENERIC.principle.settled": 2.6,
+     "GENERIC.quran.citation": 23.9
+    }
+   }
+  },
+  "phase7_null": {
+   "commercial_courts_implementing_regulation": [
+    {
+     "source": "B.INSAF",
+     "observed": 70,
+     "nullMean": 54.5,
+     "nullSd": 6.56,
+     "z": 2.37,
+     "pOneSided": 0.0149,
+     "ratio": 1.29
+    },
+    {
+     "source": "B.KASHSHAF",
+     "observed": 298,
+     "nullMean": 154.3,
+     "nullSd": 8.6,
+     "z": 16.71,
+     "pOneSided": 0.005,
+     "ratio": 1.93
+    },
+    {
+     "source": "B.MAJMU_FATAWA",
+     "observed": 77,
+     "nullMean": 33.4,
+     "nullSd": 5.07,
+     "z": 8.61,
+     "pOneSided": 0.005,
+     "ratio": 2.31
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "observed": 15,
+     "nullMean": 74.0,
+     "nullSd": 7.32,
+     "z": -8.07,
+     "pOneSided": 1.0,
+     "ratio": 0.2
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "observed": 442,
+     "nullMean": 396.3,
+     "nullSd": 13.67,
+     "z": 3.34,
+     "pOneSided": 0.005,
+     "ratio": 1.12
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "observed": 147,
+     "nullMean": 318.8,
+     "nullSd": 12.91,
+     "z": -13.31,
+     "pOneSided": 1.0,
+     "ratio": 0.46
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "observed": 109,
+     "nullMean": 130.6,
+     "nullSd": 8.68,
+     "z": -2.49,
+     "pOneSided": 0.99,
+     "ratio": 0.83
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "observed": 20,
+     "nullMean": 160.3,
+     "nullSd": 8.92,
+     "z": -15.74,
+     "pOneSided": 1.0,
+     "ratio": 0.12
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "observed": 289,
+     "nullMean": 198.3,
+     "nullSd": 8.98,
+     "z": 10.1,
+     "pOneSided": 0.005,
+     "ratio": 1.46
+    },
+    {
+     "source": "M.DARAR_YUZAL",
+     "observed": 28,
+     "nullMean": 16.6,
+     "nullSd": 3.46,
+     "z": 3.31,
+     "pOneSided": 0.005,
+     "ratio": 1.69
+    }
+   ],
+   "commercial_courts_law": [
+    {
+     "source": "B.INSAF",
+     "observed": 76,
+     "nullMean": 71.8,
+     "nullSd": 6.2,
+     "z": 0.68,
+     "pOneSided": 0.2935,
+     "ratio": 1.06
+    },
+    {
+     "source": "B.KASHSHAF",
+     "observed": 119,
+     "nullMean": 213.8,
+     "nullSd": 10.05,
+     "z": -9.43,
+     "pOneSided": 1.0,
+     "ratio": 0.56
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "observed": 94,
+     "nullMean": 100.2,
+     "nullSd": 8.51,
+     "z": -0.72,
+     "pOneSided": 0.791,
+     "ratio": 0.94
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "observed": 770,
+     "nullMean": 636.7,
+     "nullSd": 16.62,
+     "z": 8.02,
+     "pOneSided": 0.005,
+     "ratio": 1.21
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "observed": 598,
+     "nullMean": 503.1,
+     "nullSd": 15.71,
+     "z": 6.04,
+     "pOneSided": 0.005,
+     "ratio": 1.19
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "observed": 67,
+     "nullMean": 149.4,
+     "nullSd": 9.26,
+     "z": -8.89,
+     "pOneSided": 1.0,
+     "ratio": 0.45
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "observed": 396,
+     "nullMean": 308.2,
+     "nullSd": 12.07,
+     "z": 7.27,
+     "pOneSided": 0.005,
+     "ratio": 1.28
+    },
+    {
+     "source": "H.ABU_DAWUD",
+     "observed": 81,
+     "nullMean": 31.8,
+     "nullSd": 4.54,
+     "z": 10.84,
+     "pOneSided": 0.005,
+     "ratio": 2.55
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "observed": 49,
+     "nullMean": 43.7,
+     "nullSd": 4.8,
+     "z": 1.11,
+     "pOneSided": 0.1741,
+     "ratio": 1.12
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "observed": 96,
+     "nullMean": 252.2,
+     "nullSd": 11.2,
+     "z": -13.95,
+     "pOneSided": 1.0,
+     "ratio": 0.38
+    }
+   ],
+   "evidence_law": [
+    {
+     "source": "B.INSAF",
+     "observed": 44,
+     "nullMean": 67.7,
+     "nullSd": 5.97,
+     "z": -3.97,
+     "pOneSided": 1.0,
+     "ratio": 0.65
+    },
+    {
+     "source": "B.KASHSHAF",
+     "observed": 260,
+     "nullMean": 223.7,
+     "nullSd": 10.47,
+     "z": 3.46,
+     "pOneSided": 0.005,
+     "ratio": 1.16
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "observed": 181,
+     "nullMean": 99.7,
+     "nullSd": 7.34,
+     "z": 11.07,
+     "pOneSided": 0.005,
+     "ratio": 1.81
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "observed": 379,
+     "nullMean": 548.3,
+     "nullSd": 13.78,
+     "z": -12.29,
+     "pOneSided": 1.0,
+     "ratio": 0.69
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "observed": 474,
+     "nullMean": 478.9,
+     "nullSd": 14.34,
+     "z": -0.34,
+     "pOneSided": 0.6517,
+     "ratio": 0.99
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "observed": 323,
+     "nullMean": 176.4,
+     "nullSd": 9.83,
+     "z": 14.92,
+     "pOneSided": 0.005,
+     "ratio": 1.83
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "observed": 263,
+     "nullMean": 255.1,
+     "nullSd": 11.71,
+     "z": 0.68,
+     "pOneSided": 0.2836,
+     "ratio": 1.03
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "observed": 91,
+     "nullMean": 47.0,
+     "nullSd": 4.73,
+     "z": 9.31,
+     "pOneSided": 0.005,
+     "ratio": 1.94
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "observed": 44,
+     "nullMean": 37.9,
+     "nullSd": 4.45,
+     "z": 1.38,
+     "pOneSided": 0.0945,
+     "ratio": 1.16
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "observed": 77,
+     "nullMean": 216.9,
+     "nullSd": 10.22,
+     "z": -13.69,
+     "pOneSided": 1.0,
+     "ratio": 0.35
+    }
+   ],
+   "sharia_procedure_law": [
+    {
+     "source": "B.INSAF",
+     "observed": 34,
+     "nullMean": 22.1,
+     "nullSd": 4.33,
+     "z": 2.76,
+     "pOneSided": 0.01,
+     "ratio": 1.54
+    },
+    {
+     "source": "B.KASHSHAF",
+     "observed": 16,
+     "nullMean": 61.5,
+     "nullSd": 6.49,
+     "z": -7.01,
+     "pOneSided": 1.0,
+     "ratio": 0.26
+    },
+    {
+     "source": "B.MUGHNI",
+     "observed": 16,
+     "nullMean": 4.7,
+     "nullSd": 2.01,
+     "z": 5.63,
+     "pOneSided": 0.005,
+     "ratio": 3.44
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "observed": 162,
+     "nullMean": 156.9,
+     "nullSd": 9.13,
+     "z": 0.55,
+     "pOneSided": 0.3035,
+     "ratio": 1.03
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "observed": 184,
+     "nullMean": 123.6,
+     "nullSd": 8.19,
+     "z": 7.38,
+     "pOneSided": 0.005,
+     "ratio": 1.49
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "observed": 18,
+     "nullMean": 47.4,
+     "nullSd": 6.2,
+     "z": -4.74,
+     "pOneSided": 1.0,
+     "ratio": 0.38
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "observed": 163,
+     "nullMean": 69.3,
+     "nullSd": 6.54,
+     "z": 14.32,
+     "pOneSided": 0.005,
+     "ratio": 2.35
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "observed": 18,
+     "nullMean": 11.0,
+     "nullSd": 3.3,
+     "z": 2.12,
+     "pOneSided": 0.0299,
+     "ratio": 1.63
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "observed": 14,
+     "nullMean": 7.7,
+     "nullSd": 2.54,
+     "z": 2.48,
+     "pOneSided": 0.0199,
+     "ratio": 1.82
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "observed": 15,
+     "nullMean": 63.8,
+     "nullSd": 6.84,
+     "z": -7.14,
+     "pOneSided": 1.0,
+     "ratio": 0.24
+    }
+   ]
+  },
+  "phase12_sameJudgment": {
+   "judgments": 162,
+   "codeA": "evidence_law",
+   "codeB": "commercial_courts_law",
+   "cosine": 0.7036,
+   "nullCosineMean": 0.9734,
+   "nullCosineSd": 0.013,
+   "z": -20.76,
+   "pOneSided": 0.002,
+   "topA": [
+    [
+     "GENERIC.hadith.untraced",
+     50
+    ],
+    [
+     "GENERIC.quran.citation",
+     46
+    ],
+    [
+     "GENERIC.fiqh.unattributed",
+     32
+    ],
+    [
+     "B.KASHSHAF",
+     28
+    ],
+    [
+     "H.MUTTAFAQ",
+     14
+    ],
+    [
+     "GENERIC.custom.trade",
+     12
+    ],
+    [
+     "GENERIC.principle.settled",
+     11
+    ],
+    [
+     "J.IBN_QAYYIM",
+     6
+    ]
+   ],
+   "topB": [
+    [
+     "GENERIC.fiqh.unattributed",
+     80
+    ],
+    [
+     "GENERIC.hadith.untraced",
+     27
+    ],
+    [
+     "B.KASHSHAF",
+     21
+    ],
+    [
+     "B.INSAF",
+     16
+    ],
+    [
+     "GENERIC.quran.citation",
+     15
+    ],
+    [
+     "J.IBN_QUDAMA",
+     8
+    ],
+    [
+     "B.MUGHNI",
+     6
+    ],
+    [
+     "GENERIC.principle.settled",
+     4
+    ]
+   ],
+   "differences": [
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "share_evidence_law": 15.0,
+     "share_commercial_courts_law": 41.5,
+     "ptDiff": -26.5
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "share_evidence_law": 21.5,
+     "share_commercial_courts_law": 7.8,
+     "ptDiff": 13.7
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "share_evidence_law": 23.4,
+     "share_commercial_courts_law": 14.0,
+     "ptDiff": 9.4
+    },
+    {
+     "source": "B.INSAF",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_law": 8.3,
+     "ptDiff": -8.3
+    },
+    {
+     "source": "H.MUTTAFAQ",
+     "share_evidence_law": 6.5,
+     "share_commercial_courts_law": 1.0,
+     "ptDiff": 5.5
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "share_evidence_law": 5.6,
+     "share_commercial_courts_law": 0.5,
+     "ptDiff": 5.1
+    },
+    {
+     "source": "B.MUGHNI",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_law": 3.1,
+     "ptDiff": -3.1
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "share_evidence_law": 5.1,
+     "share_commercial_courts_law": 2.1,
+     "ptDiff": 3.1
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "share_evidence_law": 1.4,
+     "share_commercial_courts_law": 4.1,
+     "ptDiff": -2.7
+    },
+    {
+     "source": "B.KASHSHAF",
+     "share_evidence_law": 13.1,
+     "share_commercial_courts_law": 10.9,
+     "ptDiff": 2.2
+    }
+   ]
+  },
+  "phase12_sameJudgment_ccir": {
+   "judgments": 72,
+   "codeA": "evidence_law",
+   "codeB": "commercial_courts_implementing_regulation",
+   "cosine": 0.5975,
+   "nullCosineMean": 0.9514,
+   "nullCosineSd": 0.0263,
+   "z": -13.48,
+   "pOneSided": 0.002,
+   "topA": [
+    [
+     "GENERIC.fiqh.unattributed",
+     24
+    ],
+    [
+     "GENERIC.custom.trade",
+     13
+    ],
+    [
+     "GENERIC.hadith.untraced",
+     12
+    ],
+    [
+     "GENERIC.quran.citation",
+     12
+    ],
+    [
+     "B.KASHSHAF",
+     6
+    ],
+    [
+     "GENERIC.principle.settled",
+     5
+    ],
+    [
+     "M.ASL_UQUD",
+     3
+    ],
+    [
+     "B.INSAF",
+     2
+    ]
+   ],
+   "topB": [
+    [
+     "J.IBN_TAYMIYYA",
+     29
+    ],
+    [
+     "GENERIC.fiqh.unattributed",
+     21
+    ],
+    [
+     "GENERIC.hadith.untraced",
+     11
+    ],
+    [
+     "B.KASHSHAF",
+     7
+    ],
+    [
+     "B.INSAF",
+     4
+    ],
+    [
+     "J.IBN_QUDAMA",
+     2
+    ],
+    [
+     "B.ZAD",
+     1
+    ],
+    [
+     "GENERIC.maxim.named",
+     1
+    ]
+   ],
+   "differences": [
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "share_evidence_law": 2.3,
+     "share_commercial_courts_implementing_regulation": 35.8,
+     "ptDiff": -33.5
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "share_evidence_law": 14.9,
+     "share_commercial_courts_implementing_regulation": 0.0,
+     "ptDiff": 14.9
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "share_evidence_law": 13.8,
+     "share_commercial_courts_implementing_regulation": 1.2,
+     "ptDiff": 12.6
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "share_evidence_law": 5.7,
+     "share_commercial_courts_implementing_regulation": 1.2,
+     "ptDiff": 4.5
+    },
+    {
+     "source": "B.INSAF",
+     "share_evidence_law": 2.3,
+     "share_commercial_courts_implementing_regulation": 4.9,
+     "ptDiff": -2.6
+    },
+    {
+     "source": "M.ASL_UQUD",
+     "share_evidence_law": 3.4,
+     "share_commercial_courts_implementing_regulation": 1.2,
+     "ptDiff": 2.2
+    },
+    {
+     "source": "B.KASHSHAF",
+     "share_evidence_law": 6.9,
+     "share_commercial_courts_implementing_regulation": 8.6,
+     "ptDiff": -1.7
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "share_evidence_law": 27.6,
+     "share_commercial_courts_implementing_regulation": 25.9,
+     "ptDiff": 1.7
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "share_evidence_law": 13.8,
+     "share_commercial_courts_implementing_regulation": 13.6,
+     "ptDiff": 0.2
+    }
+   ]
+  },
+  "phase13_relatednessSensitivity": {
+   "judgments": 162,
+   "thetaA": 0.6,
+   "thetaB": 0.231,
+   "observedCosine": 0.7036,
+   "correctedCosine": 0.1763,
+   "direction": "WIDENS",
+   "correctedTopA": [
+    [
+     "GENERIC.hadith.untraced",
+     25.1
+    ],
+    [
+     "GENERIC.quran.citation",
+     24.7
+    ],
+    [
+     "B.KASHSHAF",
+     13.2
+    ],
+    [
+     "H.MUTTAFAQ",
+     7.9
+    ],
+    [
+     "GENERIC.custom.trade",
+     6.9
+    ],
+    [
+     "GENERIC.fiqh.unattributed",
+     6.3
+    ]
+   ],
+   "correctedTopB": [
+    [
+     "GENERIC.fiqh.unattributed",
+     59.5
+    ],
+    [
+     "B.INSAF",
+     15.5
+    ],
+    [
+     "J.IBN_QUDAMA",
+     6.1
+    ],
+    [
+     "B.MUGHNI",
+     5.8
+    ],
+    [
+     "B.KASHSHAF",
+     4.8
+    ],
+    [
+     "M.DARAR_YUZAL",
+     2.9
+    ]
+   ]
+  }
+ },
+ "loc_block": {
+  "unitsTotal": 3793,
+  "codesProfiled": [
+   "evidence_law",
+   "commercial_courts_law",
+   "commercial_courts_implementing_regulation",
+   "sharia_procedure_law"
+  ],
+  "codesInsufficient": [
+   "civil_transactions_law",
+   "companies_law",
+   "law_practice_law",
+   "arbitration_law",
+   "bankruptcy_law",
+   "sharia_procedure_implementing_regulation",
+   "law_practice_implementing_regulation"
+  ],
+  "phase5_8_9_profiles": {
+   "commercial_courts_law": {
+    "units": 1555,
+    "verdict": "PROFILED",
+    "distinctSources": 28,
+    "top": [
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 717,
+      "P_source_given_code": 0.4611,
+      "P_code_given_source": 0.5245,
+      "lift": 1.279
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 379,
+      "P_source_given_code": 0.2437,
+      "P_code_given_source": 0.3665,
+      "lift": 0.894
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 297,
+      "P_source_given_code": 0.191,
+      "P_code_given_source": 0.4942,
+      "lift": 1.205
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 88,
+      "P_source_given_code": 0.0566,
+      "P_code_given_source": 0.2184,
+      "lift": 0.533
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "judgments": 85,
+      "P_source_given_code": 0.0547,
+      "P_code_given_source": 0.4595,
+      "lift": 1.121
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 78,
+      "P_source_given_code": 0.0502,
+      "P_code_given_source": 0.3319,
+      "lift": 0.81
+     },
+     {
+      "source": "H.ABU_DAWUD",
+      "judgments": 71,
+      "P_source_given_code": 0.0457,
+      "P_code_given_source": 0.8256,
+      "lift": 2.014
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 69,
+      "P_source_given_code": 0.0444,
+      "P_code_given_source": 0.3833,
+      "lift": 0.935
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 66,
+      "P_source_given_code": 0.0424,
+      "P_code_given_source": 0.1422,
+      "lift": 0.347
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 54,
+      "P_source_given_code": 0.0347,
+      "P_code_given_source": 0.5934,
+      "lift": 1.447
+     },
+     {
+      "source": "B.MUGHNI",
+      "judgments": 45,
+      "P_source_given_code": 0.0289,
+      "P_code_given_source": 0.6923,
+      "lift": 1.689
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 27,
+      "P_source_given_code": 0.0174,
+      "P_code_given_source": 0.2195,
+      "lift": 0.535
+     },
+     {
+      "source": "H.MUTTAFAQ",
+      "judgments": 26,
+      "P_source_given_code": 0.0167,
+      "P_code_given_source": 0.3939,
+      "lift": 0.961
+     },
+     {
+      "source": "J.MUHAMMAD_B_IBRAHIM",
+      "judgments": 19,
+      "P_source_given_code": 0.0122,
+      "P_code_given_source": 0.7037,
+      "lift": 1.716
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 17,
+      "P_source_given_code": 0.0109,
+      "P_code_given_source": 0.1889,
+      "lift": 0.461
+     }
+    ],
+    "coverageTop1": 33.9,
+    "coverageTop3": 65.9,
+    "coverageTop5": 74.1,
+    "coverageTop10": 90.1,
+    "hhi": 0.1765,
+    "entropy": 2.234,
+    "effectiveSources": 9.33,
+    "namedShare": 26.2,
+    "untracedShare": 73.8,
+    "fiqhNamed": 402,
+    "fiqhUnattributed": 717,
+    "fiqhNamedShareOfFiqh": 35.9
+   },
+   "evidence_law": {
+    "units": 1179,
+    "verdict": "PROFILED",
+    "distinctSources": 27,
+    "top": [
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 333,
+      "P_source_given_code": 0.2824,
+      "P_code_given_source": 0.3221,
+      "lift": 1.036
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 296,
+      "P_source_given_code": 0.2511,
+      "P_code_given_source": 0.6379,
+      "lift": 2.052
+     },
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 252,
+      "P_source_given_code": 0.2137,
+      "P_code_given_source": 0.1843,
+      "lift": 0.593
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 173,
+      "P_source_given_code": 0.1467,
+      "P_code_given_source": 0.2879,
+      "lift": 0.926
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 90,
+      "P_source_given_code": 0.0763,
+      "P_code_given_source": 0.383,
+      "lift": 1.232
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "judgments": 75,
+      "P_source_given_code": 0.0636,
+      "P_code_given_source": 0.4054,
+      "lift": 1.304
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 72,
+      "P_source_given_code": 0.0611,
+      "P_code_given_source": 0.5854,
+      "lift": 1.883
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 53,
+      "P_source_given_code": 0.045,
+      "P_code_given_source": 0.1315,
+      "lift": 0.423
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 39,
+      "P_source_given_code": 0.0331,
+      "P_code_given_source": 0.4333,
+      "lift": 1.394
+     },
+     {
+      "source": "H.MUTTAFAQ",
+      "judgments": 36,
+      "P_source_given_code": 0.0305,
+      "P_code_given_source": 0.5455,
+      "lift": 1.755
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 32,
+      "P_source_given_code": 0.0271,
+      "P_code_given_source": 0.1778,
+      "lift": 0.572
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 30,
+      "P_source_given_code": 0.0254,
+      "P_code_given_source": 0.3297,
+      "lift": 1.061
+     },
+     {
+      "source": "H.BAYHAQI",
+      "judgments": 13,
+      "P_source_given_code": 0.011,
+      "P_code_given_source": 0.9286,
+      "lift": 2.987
+     },
+     {
+      "source": "M.ASL_UQUD",
+      "judgments": 13,
+      "P_source_given_code": 0.011,
+      "P_code_given_source": 0.3939,
+      "lift": 1.267
+     },
+     {
+      "source": "M.BARAA",
+      "judgments": 12,
+      "P_source_given_code": 0.0102,
+      "P_code_given_source": 0.5,
+      "lift": 1.609
+     }
+    ],
+    "coverageTop1": 20.9,
+    "coverageTop3": 55.3,
+    "coverageTop5": 71.8,
+    "coverageTop10": 89.1,
+    "hhi": 0.1259,
+    "entropy": 2.423,
+    "effectiveSources": 11.28,
+    "namedShare": 26.7,
+    "untracedShare": 73.3,
+    "fiqhNamed": 318,
+    "fiqhUnattributed": 252,
+    "fiqhNamedShareOfFiqh": 55.8
+   },
+   "commercial_courts_implementing_regulation": {
+    "units": 499,
+    "verdict": "PROFILED",
+    "distinctSources": 22,
+    "top": [
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 223,
+      "P_source_given_code": 0.4469,
+      "P_code_given_source": 0.1631,
+      "lift": 1.24
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 219,
+      "P_source_given_code": 0.4389,
+      "P_code_given_source": 0.5434,
+      "lift": 4.131
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 130,
+      "P_source_given_code": 0.2605,
+      "P_code_given_source": 0.1257,
+      "lift": 0.956
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 44,
+      "P_source_given_code": 0.0882,
+      "P_code_given_source": 0.1872,
+      "lift": 1.423
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 42,
+      "P_source_given_code": 0.0842,
+      "P_code_given_source": 0.2333,
+      "lift": 1.774
+     },
+     {
+      "source": "B.MAJMU_FATAWA",
+      "judgments": 34,
+      "P_source_given_code": 0.0681,
+      "P_code_given_source": 0.5763,
+      "lift": 4.38
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 30,
+      "P_source_given_code": 0.0601,
+      "P_code_given_source": 0.0647,
+      "lift": 0.491
+     },
+     {
+      "source": "M.DARAR_YUZAL",
+      "judgments": 19,
+      "P_source_given_code": 0.0381,
+      "P_code_given_source": 0.2969,
+      "lift": 2.257
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 17,
+      "P_source_given_code": 0.0341,
+      "P_code_given_source": 0.0283,
+      "lift": 0.215
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 14,
+      "P_source_given_code": 0.0281,
+      "P_code_given_source": 0.1556,
+      "lift": 1.182
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "judgments": 13,
+      "P_source_given_code": 0.0261,
+      "P_code_given_source": 0.0703,
+      "lift": 0.534
+     },
+     {
+      "source": "B.MUGHNI",
+      "judgments": 2,
+      "P_source_given_code": 0.004,
+      "P_code_given_source": 0.0308,
+      "lift": 0.234
+     },
+     {
+      "source": "B.ZAD",
+      "judgments": 2,
+      "P_source_given_code": 0.004,
+      "P_code_given_source": 0.1538,
+      "lift": 1.169
+     },
+     {
+      "source": "H.BUKHARI",
+      "judgments": 2,
+      "P_source_given_code": 0.004,
+      "P_code_given_source": 0.2857,
+      "lift": 2.172
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 2,
+      "P_source_given_code": 0.004,
+      "P_code_given_source": 0.0163,
+      "lift": 0.124
+     }
+    ],
+    "coverageTop1": 27.8,
+    "coverageTop3": 71.4,
+    "coverageTop5": 82.1,
+    "coverageTop10": 96.4,
+    "hhi": 0.1892,
+    "entropy": 2.01,
+    "effectiveSources": 7.46,
+    "namedShare": 46.7,
+    "untracedShare": 53.3,
+    "fiqhNamed": 348,
+    "fiqhUnattributed": 223,
+    "fiqhNamedShareOfFiqh": 60.9
+   },
+   "sharia_procedure_law": {
+    "units": 384,
+    "verdict": "PROFILED",
+    "distinctSources": 22,
+    "top": [
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "judgments": 138,
+      "P_source_given_code": 0.3594,
+      "P_code_given_source": 0.101,
+      "lift": 0.997
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "judgments": 125,
+      "P_source_given_code": 0.3255,
+      "P_code_given_source": 0.1209,
+      "lift": 1.194
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "judgments": 97,
+      "P_source_given_code": 0.2526,
+      "P_code_given_source": 0.1614,
+      "lift": 1.594
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "judgments": 53,
+      "P_source_given_code": 0.138,
+      "P_code_given_source": 0.1142,
+      "lift": 1.128
+     },
+     {
+      "source": "B.INSAF",
+      "judgments": 27,
+      "P_source_given_code": 0.0703,
+      "P_code_given_source": 0.15,
+      "lift": 1.482
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "judgments": 18,
+      "P_source_given_code": 0.0469,
+      "P_code_given_source": 0.1463,
+      "lift": 1.446
+     },
+     {
+      "source": "J.IBN_TAYMIYYA",
+      "judgments": 18,
+      "P_source_given_code": 0.0469,
+      "P_code_given_source": 0.0447,
+      "lift": 0.441
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "judgments": 14,
+      "P_source_given_code": 0.0365,
+      "P_code_given_source": 0.1556,
+      "lift": 1.537
+     },
+     {
+      "source": "M.DARAR_YUZAL",
+      "judgments": 14,
+      "P_source_given_code": 0.0365,
+      "P_code_given_source": 0.2188,
+      "lift": 2.161
+     },
+     {
+      "source": "B.KASHSHAF",
+      "judgments": 13,
+      "P_source_given_code": 0.0339,
+      "P_code_given_source": 0.0553,
+      "lift": 0.546
+     },
+     {
+      "source": "B.MUGHNI",
+      "judgments": 6,
+      "P_source_given_code": 0.0156,
+      "P_code_given_source": 0.0923,
+      "lift": 0.912
+     },
+     {
+      "source": "H.TIRMIDHI",
+      "judgments": 6,
+      "P_source_given_code": 0.0156,
+      "P_code_given_source": 0.4286,
+      "lift": 4.233
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "judgments": 5,
+      "P_source_given_code": 0.013,
+      "P_code_given_source": 0.0549,
+      "lift": 0.543
+     },
+     {
+      "source": "B.RAWD",
+      "judgments": 4,
+      "P_source_given_code": 0.0104,
+      "P_code_given_source": 0.6667,
+      "lift": 6.585
+     },
+     {
+      "source": "H.ABU_DAWUD",
+      "judgments": 4,
+      "P_source_given_code": 0.0104,
+      "P_code_given_source": 0.0465,
+      "lift": 0.459
+     }
+    ],
+    "coverageTop1": 24.9,
+    "coverageTop3": 64.9,
+    "coverageTop5": 79.3,
+    "coverageTop10": 93.2,
+    "hhi": 0.159,
+    "entropy": 2.197,
+    "effectiveSources": 9.0,
+    "namedShare": 22.7,
+    "untracedShare": 77.3,
+    "fiqhNamed": 94,
+    "fiqhUnattributed": 138,
+    "fiqhNamedShareOfFiqh": 40.5
+   },
+   "law_practice_law": {
+    "units": 52,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "civil_transactions_law": {
+    "units": 40,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "companies_law": {
+    "units": 31,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "sharia_procedure_implementing_regulation": {
+    "units": 13,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "enforcement_law": {
+    "units": 12,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "arbitration_law": {
+    "units": 9,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "law_practice_implementing_regulation": {
+    "units": 7,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "aml_law": {
+    "units": 2,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "enforcement_implementing_regulation": {
+    "units": 2,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "trade_names_law": {
+    "units": 2,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "commercial_books_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "copyright_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "finance_companies_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "health_system_regulation": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "judicial_documents_regulation": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   },
+   "labor_law": {
+    "units": 1,
+    "verdict": "INSUFFICIENT_DATA"
+   }
+  },
+  "phase6_specificity": [
+   {
+    "source": "B.MAJMU_FATAWA",
+    "judgments": 59,
+    "codesPresent": 5,
+    "entropyOverCodes": 1.193,
+    "effectiveCodes": 3.3,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 34,
+    "P_code_given_source": 0.5763,
+    "liftInTopCode": 4.38
+   },
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "judgments": 403,
+    "codesPresent": 8,
+    "entropyOverCodes": 1.316,
+    "effectiveCodes": 3.73,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 219,
+    "P_code_given_source": 0.5434,
+    "liftInTopCode": 4.131
+   },
+   {
+    "source": "M.DARAR_YUZAL",
+    "judgments": 64,
+    "codesPresent": 8,
+    "entropyOverCodes": 1.654,
+    "effectiveCodes": 5.23,
+    "topCode": "commercial_courts_implementing_regulation",
+    "topCodeJudgments": 19,
+    "P_code_given_source": 0.2969,
+    "liftInTopCode": 2.257
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "judgments": 464,
+    "codesPresent": 11,
+    "entropyOverCodes": 1.181,
+    "effectiveCodes": 3.26,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 296,
+    "P_code_given_source": 0.6379,
+    "liftInTopCode": 2.052
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "judgments": 86,
+    "codesPresent": 4,
+    "entropyOverCodes": 0.603,
+    "effectiveCodes": 1.83,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 71,
+    "P_code_given_source": 0.8256,
+    "liftInTopCode": 2.014
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "judgments": 123,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.14,
+    "effectiveCodes": 3.13,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 72,
+    "P_code_given_source": 0.5854,
+    "liftInTopCode": 1.883
+   },
+   {
+    "source": "H.MUTTAFAQ",
+    "judgments": 66,
+    "codesPresent": 5,
+    "entropyOverCodes": 0.931,
+    "effectiveCodes": 2.54,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 36,
+    "P_code_given_source": 0.5455,
+    "liftInTopCode": 1.755
+   },
+   {
+    "source": "B.MUGHNI",
+    "judgments": 65,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.048,
+    "effectiveCodes": 2.85,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 45,
+    "P_code_given_source": 0.6923,
+    "liftInTopCode": 1.689
+   },
+   {
+    "source": "J.IBN_QUDAMA",
+    "judgments": 91,
+    "codesPresent": 5,
+    "entropyOverCodes": 0.934,
+    "effectiveCodes": 2.54,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 54,
+    "P_code_given_source": 0.5934,
+    "liftInTopCode": 1.447
+   },
+   {
+    "source": "GENERIC.maxim.named",
+    "judgments": 90,
+    "codesPresent": 7,
+    "entropyOverCodes": 1.494,
+    "effectiveCodes": 4.46,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 39,
+    "P_code_given_source": 0.4333,
+    "liftInTopCode": 1.394
+   },
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "judgments": 1367,
+    "codesPresent": 11,
+    "entropyOverCodes": 1.324,
+    "effectiveCodes": 3.76,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 717,
+    "P_code_given_source": 0.5245,
+    "liftInTopCode": 1.279
+   },
+   {
+    "source": "B.KASHSHAF",
+    "judgments": 235,
+    "codesPresent": 8,
+    "entropyOverCodes": 1.392,
+    "effectiveCodes": 4.02,
+    "topCode": "evidence_law",
+    "topCodeJudgments": 90,
+    "P_code_given_source": 0.383,
+    "liftInTopCode": 1.232
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "judgments": 601,
+    "codesPresent": 8,
+    "entropyOverCodes": 1.236,
+    "effectiveCodes": 3.44,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 297,
+    "P_code_given_source": 0.4942,
+    "liftInTopCode": 1.205
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "judgments": 185,
+    "codesPresent": 9,
+    "entropyOverCodes": 1.19,
+    "effectiveCodes": 3.29,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 85,
+    "P_code_given_source": 0.4595,
+    "liftInTopCode": 1.121
+   },
+   {
+    "source": "B.INSAF",
+    "judgments": 180,
+    "codesPresent": 8,
+    "entropyOverCodes": 1.524,
+    "effectiveCodes": 4.59,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 69,
+    "P_code_given_source": 0.3833,
+    "liftInTopCode": 0.935
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "judgments": 1034,
+    "codesPresent": 11,
+    "entropyOverCodes": 1.514,
+    "effectiveCodes": 4.55,
+    "topCode": "commercial_courts_law",
+    "topCodeJudgments": 379,
+    "P_code_given_source": 0.3665,
+    "liftInTopCode": 0.894
+   }
+  ],
+  "phase14_articles": {
+   "evidence_law": {
+    "articlesWith30plus": 8,
+    "articles": [
+     {
+      "article": "29",
+      "judgments": 556,
+      "top": [
+       [
+        "GENERIC.principle.settled",
+        265
+       ],
+       [
+        "GENERIC.quran.citation",
+        89
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        83
+       ],
+       [
+        "B.KASHSHAF",
+        65
+       ],
+       [
+        "GENERIC.custom.trade",
+        37
+       ]
+      ]
+     },
+     {
+      "article": "21",
+      "judgments": 86,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        29
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        28
+       ],
+       [
+        "GENERIC.quran.citation",
+        25
+       ],
+       [
+        "GENERIC.principle.settled",
+        15
+       ],
+       [
+        "B.KASHSHAF",
+        5
+       ]
+      ]
+     },
+     {
+      "article": "17",
+      "judgments": 83,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        40
+       ],
+       [
+        "J.IBN_QAYYIM",
+        24
+       ],
+       [
+        "GENERIC.quran.citation",
+        18
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        15
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        8
+       ]
+      ]
+     },
+     {
+      "article": "3",
+      "judgments": 79,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        62
+       ],
+       [
+        "H.MUTTAFAQ",
+        16
+       ],
+       [
+        "H.BAYHAQI",
+        10
+       ],
+       [
+        "B.ZAD",
+        9
+       ],
+       [
+        "J.IBN_QAYYIM",
+        9
+       ]
+      ]
+     },
+     {
+      "article": "103",
+      "judgments": 53,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        44
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        13
+       ],
+       [
+        "H.MUSLIM",
+        6
+       ],
+       [
+        "H.MUTTAFAQ",
+        3
+       ],
+       [
+        "B.INSAF",
+        2
+       ]
+      ]
+     },
+     {
+      "article": "14",
+      "judgments": 49,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        20
+       ],
+       [
+        "J.IBN_QAYYIM",
+        12
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        8
+       ],
+       [
+        "H.MUTTAFAQ",
+        6
+       ],
+       [
+        "B.INSAF",
+        3
+       ]
+      ]
+     },
+     {
+      "article": "18",
+      "judgments": 40,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        32
+       ],
+       [
+        "J.IBN_QUDAMA",
+        4
+       ],
+       [
+        "GENERIC.quran.citation",
+        3
+       ],
+       [
+        "B.MUGHNI",
+        2
+       ],
+       [
+        "B.MAJMU_FATAWA",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "31",
+      "judgments": 30,
+      "top": [
+       [
+        "GENERIC.custom.trade",
+        18
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        8
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        5
+       ],
+       [
+        "GENERIC.maxim.named",
+        4
+       ],
+       [
+        "GENERIC.quran.citation",
+        3
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.5105,
+    "minPairCosine": 0.1545
+   },
+   "commercial_courts_law": {
+    "articlesWith30plus": 6,
+    "articles": [
+     {
+      "article": "16",
+      "judgments": 631,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        391
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        116
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        37
+       ],
+       [
+        "B.INSAF",
+        33
+       ],
+       [
+        "GENERIC.custom.trade",
+        31
+       ]
+      ]
+     },
+     {
+      "article": "30",
+      "judgments": 428,
+      "top": [
+       [
+        "GENERIC.quran.citation",
+        145
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        100
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        87
+       ],
+       [
+        "B.KASHSHAF",
+        50
+       ],
+       [
+        "GENERIC.custom.trade",
+        42
+       ]
+      ]
+     },
+     {
+      "article": "10",
+      "judgments": 181,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        174
+       ],
+       [
+        "GENERIC.custom.trade",
+        3
+       ],
+       [
+        "B.INSAF",
+        2
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        2
+       ],
+       [
+        "B.KASHSHAF",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "29",
+      "judgments": 133,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        126
+       ],
+       [
+        "GENERIC.quran.citation",
+        103
+       ],
+       [
+        "H.ABU_DAWUD",
+        66
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        3
+       ],
+       [
+        "H.TIRMIDHI",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "78",
+      "judgments": 49,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        14
+       ],
+       [
+        "B.INSAF",
+        12
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        12
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        6
+       ],
+       [
+        "J.IBN_QUDAMA",
+        5
+       ]
+      ]
+     },
+     {
+      "article": "79",
+      "judgments": 30,
+      "top": [
+       [
+        "GENERIC.principle.settled",
+        22
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        6
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        2
+       ],
+       [
+        "H.BUKHARI",
+        2
+       ],
+       [
+        "H.MUSLIM",
+        2
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.3836,
+    "minPairCosine": 0.0275
+   },
+   "commercial_courts_implementing_regulation": {
+    "articlesWith30plus": 2,
+    "articles": [
+     {
+      "article": "164",
+      "judgments": 368,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        193
+       ],
+       [
+        "J.IBN_TAYMIYYA",
+        182
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        112
+       ],
+       [
+        "B.INSAF",
+        31
+       ],
+       [
+        "B.KASHSHAF",
+        24
+       ]
+      ]
+     },
+     {
+      "article": "64",
+      "judgments": 48,
+      "top": [
+       [
+        "J.IBN_TAYMIYYA",
+        26
+       ],
+       [
+        "B.MAJMU_FATAWA",
+        13
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        11
+       ],
+       [
+        "B.KASHSHAF",
+        7
+       ],
+       [
+        "GENERIC.custom.trade",
+        6
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.8133,
+    "minPairCosine": 0.8133
+   },
+   "sharia_procedure_law": {
+    "articlesWith30plus": 4,
+    "articles": [
+     {
+      "article": "70",
+      "judgments": 96,
+      "top": [
+       [
+        "GENERIC.hadith.untraced",
+        78
+       ],
+       [
+        "GENERIC.quran.citation",
+        75
+       ],
+       [
+        "GENERIC.fiqh.unattributed",
+        5
+       ],
+       [
+        "H.TIRMIDHI",
+        5
+       ],
+       [
+        "H.ABU_DAWUD",
+        2
+       ]
+      ]
+     },
+     {
+      "article": "57",
+      "judgments": 72,
+      "top": [
+       [
+        "GENERIC.principle.settled",
+        43
+       ],
+       [
+        "GENERIC.hadith.untraced",
+        20
+       ],
+       [
+        "B.INSAF",
+        15
+       ],
+       [
+        "GENERIC.maxim.named",
+        14
+       ],
+       [
+        "M.DARAR_YUZAL",
+        14
+       ]
+      ]
+     },
+     {
+      "article": "128",
+      "judgments": 43,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        40
+       ],
+       [
+        "GENERIC.quran.citation",
+        3
+       ],
+       [
+        "GENERIC.principle.settled",
+        1
+       ],
+       [
+        "J.IBN_QUDAMA",
+        1
+       ]
+      ]
+     },
+     {
+      "article": "76",
+      "judgments": 30,
+      "top": [
+       [
+        "GENERIC.fiqh.unattributed",
+        18
+       ],
+       [
+        "B.INSAF",
+        8
+       ],
+       [
+        "B.KASHSHAF",
+        3
+       ],
+       [
+        "GENERIC.principle.settled",
+        1
+       ]
+      ]
+     }
+    ],
+    "meanWithinCodeArticleCosine": 0.2852,
+    "minPairCosine": 0.0416
+   }
+  },
+  "phase15_leaveArticleOut": {
+   "evidence_law": {
+    "judgmentsFull": 1179,
+    "topFull": [
+     [
+      "GENERIC.hadith.untraced",
+      28.2
+     ],
+     [
+      "GENERIC.principle.settled",
+      25.1
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      21.4
+     ],
+     [
+      "GENERIC.quran.citation",
+      14.7
+     ],
+     [
+      "B.KASHSHAF",
+      7.6
+     ],
+     [
+      "GENERIC.custom.trade",
+      6.4
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "29",
+      713
+     ],
+     [
+      "3",
+      142
+     ],
+     [
+      "17",
+      128
+     ],
+     [
+      "21",
+      115
+     ],
+     [
+      "103",
+      114
+     ]
+    ],
+    "named": {
+     "droppedArticles": [
+      "1",
+      "29"
+     ],
+     "mentionsDroppedPct": 41.8,
+     "judgmentsAfterDrop": 644,
+     "top": [
+      [
+       "GENERIC.hadith.untraced",
+       38.7
+      ],
+      [
+       "GENERIC.fiqh.unattributed",
+       33.7
+      ],
+      [
+       "GENERIC.quran.citation",
+       13.0
+      ],
+      [
+       "J.IBN_QAYYIM",
+       9.2
+      ],
+      [
+       "GENERIC.custom.trade",
+       5.9
+      ],
+      [
+       "H.MUTTAFAQ",
+       5.0
+      ]
+     ],
+     "cosineFullVsDropped": 0.8758
+    },
+    "empirical": {
+     "droppedArticles": [
+      "29",
+      "3"
+     ],
+     "mentionsDroppedPct": 50.0,
+     "judgmentsAfterDrop": 572,
+     "top": [
+      [
+       "GENERIC.fiqh.unattributed",
+       36.5
+      ],
+      [
+       "GENERIC.hadith.untraced",
+       33.0
+      ],
+      [
+       "GENERIC.quran.citation",
+       14.0
+      ],
+      [
+       "J.IBN_QAYYIM",
+       8.7
+      ],
+      [
+       "GENERIC.custom.trade",
+       5.6
+      ],
+      [
+       "GENERIC.principle.settled",
+       5.1
+      ]
+     ],
+     "cosineFullVsDropped": 0.8723
+    }
+   },
+   "commercial_courts_law": {
+    "judgmentsFull": 1555,
+    "topFull": [
+     [
+      "GENERIC.fiqh.unattributed",
+      46.1
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      24.4
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.1
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      5.7
+     ],
+     [
+      "GENERIC.custom.trade",
+      5.5
+     ],
+     [
+      "B.KASHSHAF",
+      5.0
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "16",
+      817
+     ],
+     [
+      "30",
+      645
+     ],
+     [
+      "29",
+      303
+     ],
+     [
+      "10",
+      189
+     ],
+     [
+      "78",
+      84
+     ]
+    ],
+    "named": {
+     "verdict": "NOT_SPECIFIED"
+    },
+    "empirical": {
+     "droppedArticles": [
+      "16",
+      "30"
+     ],
+     "mentionsDroppedPct": 64.6,
+     "judgmentsAfterDrop": 512,
+     "top": [
+      [
+       "GENERIC.fiqh.unattributed",
+       44.3
+      ],
+      [
+       "GENERIC.hadith.untraced",
+       34.4
+      ],
+      [
+       "GENERIC.quran.citation",
+       23.8
+      ],
+      [
+       "H.ABU_DAWUD",
+       13.5
+      ],
+      [
+       "GENERIC.principle.settled",
+       6.6
+      ],
+      [
+       "J.IBN_TAYMIYYA",
+       5.1
+      ]
+     ],
+     "cosineFullVsDropped": 0.9717
+    }
+   },
+   "commercial_courts_implementing_regulation": {
+    "judgmentsFull": 499,
+    "topFull": [
+     [
+      "GENERIC.fiqh.unattributed",
+      44.7
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      43.9
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      26.1
+     ],
+     [
+      "B.KASHSHAF",
+      8.8
+     ],
+     [
+      "B.INSAF",
+      8.4
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      6.8
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "164",
+      892
+     ],
+     [
+      "64",
+      94
+     ],
+     [
+      "137",
+      26
+     ],
+     [
+      "133",
+      24
+     ],
+     [
+      "51",
+      11
+     ]
+    ],
+    "named": {
+     "verdict": "NOT_SPECIFIED"
+    },
+    "empirical": {
+     "droppedArticles": [
+      "164",
+      "64"
+     ],
+     "mentionsDroppedPct": 88.7,
+     "judgmentsAfterDrop": 83,
+     "top": [
+      [
+       "GENERIC.fiqh.unattributed",
+       22.9
+      ],
+      [
+       "GENERIC.principle.settled",
+       21.7
+      ],
+      [
+       "GENERIC.hadith.untraced",
+       16.9
+      ],
+      [
+       "GENERIC.quran.citation",
+       16.9
+      ],
+      [
+       "B.KASHSHAF",
+       15.7
+      ],
+      [
+       "J.IBN_TAYMIYYA",
+       13.3
+      ]
+     ],
+     "cosineFullVsDropped": 0.7689
+    }
+   },
+   "sharia_procedure_law": {
+    "judgmentsFull": 384,
+    "topFull": [
+     [
+      "GENERIC.fiqh.unattributed",
+      35.9
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      32.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      25.3
+     ],
+     [
+      "GENERIC.principle.settled",
+      13.8
+     ],
+     [
+      "B.INSAF",
+      7.0
+     ],
+     [
+      "J.IBN_QAYYIM",
+      4.7
+     ]
+    ],
+    "articlesByMentions": [
+     [
+      "70",
+      178
+     ],
+     [
+      "57",
+      126
+     ],
+     [
+      "128",
+      47
+     ],
+     [
+      "66",
+      35
+     ],
+     [
+      "73",
+      30
+     ]
+    ],
+    "named": {
+     "verdict": "NOT_SPECIFIED"
+    },
+    "empirical": {
+     "droppedArticles": [
+      "70",
+      "57"
+     ],
+     "mentionsDroppedPct": 52.6,
+     "judgmentsAfterDrop": 216,
+     "top": [
+      [
+       "GENERIC.fiqh.unattributed",
+       58.8
+      ],
+      [
+       "GENERIC.hadith.untraced",
+       12.5
+      ],
+      [
+       "GENERIC.quran.citation",
+       9.7
+      ],
+      [
+       "J.IBN_QAYYIM",
+       8.3
+      ],
+      [
+       "J.IBN_TAYMIYYA",
+       7.9
+      ],
+      [
+       "B.INSAF",
+       5.6
+      ]
+     ],
+     "cosineFullVsDropped": 0.8223
+    }
+   },
+   "civil_transactions_law": {
+    "verdict": "INSUFFICIENT_DATA",
+    "namedArticles": [
+     "120",
+     "720"
+    ]
+   },
+   "law_practice_law": {
+    "verdict": "INSUFFICIENT_DATA",
+    "namedArticles": [
+     "26"
+    ]
+   }
+  },
+  "phase16_templates": {
+   "evidence_law": [
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 378,
+     "distinctFingerprints": 232,
+     "topFingerprintShare": 6.3,
+     "topFingerprintJudgments": 24,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 61.4,
+     "repeatedFingerprintShare": 49.5
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 297,
+     "distinctFingerprints": 213,
+     "topFingerprintShare": 11.8,
+     "topFingerprintJudgments": 34,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 71.7,
+     "repeatedFingerprintShare": 37.4
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 279,
+     "distinctFingerprints": 220,
+     "topFingerprintShare": 5.4,
+     "topFingerprintJudgments": 15,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 78.9,
+     "repeatedFingerprintShare": 33.0
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 173,
+     "distinctFingerprints": 135,
+     "topFingerprintShare": 4.6,
+     "topFingerprintJudgments": 8,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 78.0,
+     "repeatedFingerprintShare": 30.6
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 95,
+     "distinctFingerprints": 45,
+     "topFingerprintShare": 13.7,
+     "topFingerprintJudgments": 13,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 47.4,
+     "repeatedFingerprintShare": 65.3
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 90,
+     "distinctFingerprints": 75,
+     "topFingerprintShare": 6.7,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 3,
+     "fingerprintsPer100": 83.3,
+     "repeatedFingerprintShare": 25.6
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "mentions": 77,
+     "distinctFingerprints": 60,
+     "topFingerprintShare": 7.8,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 77.9,
+     "repeatedFingerprintShare": 35.1
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "mentions": 73,
+     "distinctFingerprints": 32,
+     "topFingerprintShare": 23.3,
+     "topFingerprintJudgments": 17,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 43.8,
+     "repeatedFingerprintShare": 68.5
+    },
+    {
+     "source": "GENERIC.maxim.named",
+     "mentions": 39,
+     "distinctFingerprints": 28,
+     "topFingerprintShare": 10.3,
+     "topFingerprintJudgments": 4,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 71.8,
+     "repeatedFingerprintShare": 46.2
+    },
+    {
+     "source": "H.MUTTAFAQ",
+     "mentions": 36,
+     "distinctFingerprints": 18,
+     "topFingerprintShare": 36.1,
+     "topFingerprintJudgments": 13,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 50.0,
+     "repeatedFingerprintShare": 61.1
+    }
+   ],
+   "commercial_courts_law": [
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 750,
+     "distinctFingerprints": 213,
+     "topFingerprintShare": 39.2,
+     "topFingerprintJudgments": 294,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 28.4,
+     "repeatedFingerprintShare": 76.1
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 404,
+     "distinctFingerprints": 264,
+     "topFingerprintShare": 5.0,
+     "topFingerprintJudgments": 19,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 65.3,
+     "repeatedFingerprintShare": 47.3
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 302,
+     "distinctFingerprints": 205,
+     "topFingerprintShare": 6.6,
+     "topFingerprintJudgments": 19,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 67.9,
+     "repeatedFingerprintShare": 46.4
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 156,
+     "distinctFingerprints": 81,
+     "topFingerprintShare": 9.6,
+     "topFingerprintJudgments": 15,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 51.9,
+     "repeatedFingerprintShare": 67.9
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "mentions": 92,
+     "distinctFingerprints": 80,
+     "topFingerprintShare": 3.3,
+     "topFingerprintJudgments": 3,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 87.0,
+     "repeatedFingerprintShare": 25.0
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 87,
+     "distinctFingerprints": 60,
+     "topFingerprintShare": 5.7,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 69.0,
+     "repeatedFingerprintShare": 47.1
+    },
+    {
+     "source": "H.ABU_DAWUD",
+     "mentions": 72,
+     "distinctFingerprints": 12,
+     "topFingerprintShare": 45.8,
+     "topFingerprintJudgments": 32,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 16.7,
+     "repeatedFingerprintShare": 86.1
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 69,
+     "distinctFingerprints": 24,
+     "topFingerprintShare": 46.4,
+     "topFingerprintJudgments": 32,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 34.8,
+     "repeatedFingerprintShare": 75.4
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 66,
+     "distinctFingerprints": 45,
+     "topFingerprintShare": 24.2,
+     "topFingerprintJudgments": 16,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 68.2,
+     "repeatedFingerprintShare": 37.9
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "mentions": 54,
+     "distinctFingerprints": 36,
+     "topFingerprintShare": 9.3,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 66.7,
+     "repeatedFingerprintShare": 46.3
+    }
+   ],
+   "commercial_courts_implementing_regulation": [
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 345,
+     "distinctFingerprints": 104,
+     "topFingerprintShare": 9.9,
+     "topFingerprintJudgments": 34,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 30.1,
+     "repeatedFingerprintShare": 82.6
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 336,
+     "distinctFingerprints": 251,
+     "topFingerprintShare": 2.1,
+     "topFingerprintJudgments": 7,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 74.7,
+     "repeatedFingerprintShare": 39.3
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 199,
+     "distinctFingerprints": 76,
+     "topFingerprintShare": 15.6,
+     "topFingerprintJudgments": 31,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 38.2,
+     "repeatedFingerprintShare": 75.4
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 45,
+     "distinctFingerprints": 27,
+     "topFingerprintShare": 15.6,
+     "topFingerprintJudgments": 7,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 60.0,
+     "repeatedFingerprintShare": 55.6
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 42,
+     "distinctFingerprints": 17,
+     "topFingerprintShare": 40.5,
+     "topFingerprintJudgments": 17,
+     "topFingerprintCities": 4,
+     "fingerprintsPer100": 40.5,
+     "repeatedFingerprintShare": 69.0
+    },
+    {
+     "source": "B.MAJMU_FATAWA",
+     "mentions": 34,
+     "distinctFingerprints": 21,
+     "topFingerprintShare": 17.6,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 61.8,
+     "repeatedFingerprintShare": 52.9
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 30,
+     "distinctFingerprints": 27,
+     "topFingerprintShare": 10.0,
+     "topFingerprintJudgments": 3,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 90.0,
+     "repeatedFingerprintShare": 16.7
+    },
+    {
+     "source": "M.DARAR_YUZAL",
+     "mentions": 19,
+     "distinctFingerprints": 11,
+     "topFingerprintShare": 36.8,
+     "topFingerprintJudgments": 7,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 57.9,
+     "repeatedFingerprintShare": 57.9
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 17,
+     "distinctFingerprints": 9,
+     "topFingerprintShare": 35.3,
+     "topFingerprintJudgments": 6,
+     "topFingerprintCities": 3,
+     "fingerprintsPer100": 52.9,
+     "repeatedFingerprintShare": 64.7
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "mentions": 15,
+     "distinctFingerprints": 14,
+     "topFingerprintShare": 13.3,
+     "topFingerprintJudgments": 2,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 93.3,
+     "repeatedFingerprintShare": 13.3
+    }
+   ],
+   "sharia_procedure_law": [
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "mentions": 142,
+     "distinctFingerprints": 85,
+     "topFingerprintShare": 6.3,
+     "topFingerprintJudgments": 9,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 59.9,
+     "repeatedFingerprintShare": 57.7
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "mentions": 137,
+     "distinctFingerprints": 91,
+     "topFingerprintShare": 8.8,
+     "topFingerprintJudgments": 12,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 66.4,
+     "repeatedFingerprintShare": 51.1
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "mentions": 100,
+     "distinctFingerprints": 78,
+     "topFingerprintShare": 8.0,
+     "topFingerprintJudgments": 8,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 78.0,
+     "repeatedFingerprintShare": 33.0
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "mentions": 53,
+     "distinctFingerprints": 36,
+     "topFingerprintShare": 13.2,
+     "topFingerprintJudgments": 7,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 67.9,
+     "repeatedFingerprintShare": 43.4
+    },
+    {
+     "source": "B.INSAF",
+     "mentions": 27,
+     "distinctFingerprints": 11,
+     "topFingerprintShare": 48.1,
+     "topFingerprintJudgments": 13,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 40.7,
+     "repeatedFingerprintShare": 70.4
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "mentions": 21,
+     "distinctFingerprints": 10,
+     "topFingerprintShare": 47.6,
+     "topFingerprintJudgments": 10,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 47.6,
+     "repeatedFingerprintShare": 61.9
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "mentions": 18,
+     "distinctFingerprints": 9,
+     "topFingerprintShare": 27.8,
+     "topFingerprintJudgments": 5,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 50.0,
+     "repeatedFingerprintShare": 77.8
+    },
+    {
+     "source": "GENERIC.maxim.named",
+     "mentions": 14,
+     "distinctFingerprints": 2,
+     "topFingerprintShare": 85.7,
+     "topFingerprintJudgments": 12,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 14.3,
+     "repeatedFingerprintShare": 100.0
+    },
+    {
+     "source": "M.DARAR_YUZAL",
+     "mentions": 14,
+     "distinctFingerprints": 3,
+     "topFingerprintShare": 71.4,
+     "topFingerprintJudgments": 10,
+     "topFingerprintCities": 1,
+     "fingerprintsPer100": 21.4,
+     "repeatedFingerprintShare": 100.0
+    },
+    {
+     "source": "B.KASHSHAF",
+     "mentions": 13,
+     "distinctFingerprints": 12,
+     "topFingerprintShare": 15.4,
+     "topFingerprintJudgments": 2,
+     "topFingerprintCities": 2,
+     "fingerprintsPer100": 92.3,
+     "repeatedFingerprintShare": 15.4
+    }
+   ]
+  },
+  "phase16b_deboilerplated": {
+   "circulatingFingerprints": 194,
+   "minJudgmentsToCount": 10,
+   "courtMentionsRemoved": 5145,
+   "courtMentionsRemovedPct": 30.8,
+   "phase12_deboilerplated": {
+    "judgments": 51,
+    "codeA": "evidence_law",
+    "codeB": "commercial_courts_law",
+    "cosine": 0.6065,
+    "nullCosineMean": 0.8938,
+    "nullCosineSd": 0.0443,
+    "z": -6.49,
+    "pOneSided": 0.002,
+    "topA": [
+     [
+      "GENERIC.quran.citation",
+      17
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      14
+     ],
+     [
+      "GENERIC.principle.settled",
+      10
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      8
+     ],
+     [
+      "GENERIC.maxim.named",
+      4
+     ],
+     [
+      "J.IBN_QAYYIM",
+      4
+     ],
+     [
+      "B.KASHSHAF",
+      2
+     ],
+     [
+      "J.IBN_QUDAMA",
+      2
+     ]
+    ],
+    "topB": [
+     [
+      "GENERIC.fiqh.unattributed",
+      21
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      8
+     ],
+     [
+      "B.KASHSHAF",
+      7
+     ],
+     [
+      "B.MUGHNI",
+      6
+     ],
+     [
+      "J.IBN_QUDAMA",
+      6
+     ],
+     [
+      "GENERIC.quran.citation",
+      5
+     ],
+     [
+      "GENERIC.custom.trade",
+      2
+     ],
+     [
+      "H.MUTTAFAQ",
+      2
+     ]
+    ],
+    "differences": [
+     {
+      "source": "GENERIC.fiqh.unattributed",
+      "share_evidence_law": 12.1,
+      "share_commercial_courts_law": 33.3,
+      "ptDiff": -21.2
+     },
+     {
+      "source": "GENERIC.quran.citation",
+      "share_evidence_law": 25.8,
+      "share_commercial_courts_law": 7.9,
+      "ptDiff": 17.8
+     },
+     {
+      "source": "GENERIC.principle.settled",
+      "share_evidence_law": 15.2,
+      "share_commercial_courts_law": 1.6,
+      "ptDiff": 13.6
+     },
+     {
+      "source": "B.MUGHNI",
+      "share_evidence_law": 0.0,
+      "share_commercial_courts_law": 9.5,
+      "ptDiff": -9.5
+     },
+     {
+      "source": "GENERIC.hadith.untraced",
+      "share_evidence_law": 21.2,
+      "share_commercial_courts_law": 12.7,
+      "ptDiff": 8.5
+     },
+     {
+      "source": "B.KASHSHAF",
+      "share_evidence_law": 3.0,
+      "share_commercial_courts_law": 11.1,
+      "ptDiff": -8.1
+     },
+     {
+      "source": "J.IBN_QUDAMA",
+      "share_evidence_law": 3.0,
+      "share_commercial_courts_law": 9.5,
+      "ptDiff": -6.5
+     },
+     {
+      "source": "GENERIC.maxim.named",
+      "share_evidence_law": 6.1,
+      "share_commercial_courts_law": 1.6,
+      "ptDiff": 4.5
+     },
+     {
+      "source": "J.IBN_QAYYIM",
+      "share_evidence_law": 6.1,
+      "share_commercial_courts_law": 1.6,
+      "ptDiff": 4.5
+     },
+     {
+      "source": "H.MUTTAFAQ",
+      "share_evidence_law": 0.0,
+      "share_commercial_courts_law": 3.2,
+      "ptDiff": -3.2
+     },
+     {
+      "source": "GENERIC.custom.trade",
+      "share_evidence_law": 1.5,
+      "share_commercial_courts_law": 3.2,
+      "ptDiff": -1.7
+     }
+    ]
+   },
+   "phase26_deboilerplated": {
+    "trainUnits": 2254,
+    "testUnits": 147,
+    "codes": [
+     "commercial_courts_implementing_regulation",
+     "commercial_courts_law",
+     "evidence_law",
+     "sharia_procedure_law"
+    ],
+    "accuracy": 40.8,
+    "macroF1": 35.8,
+    "chance": 25.0,
+    "majorityBaseline": 37.0,
+    "uniformPrior": {
+     "accuracy": 40.8,
+     "macroF1": 35.8,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 19,
+       "recall": 57.9,
+       "precision": 47.8,
+       "f1": 52.4
+      },
+      "commercial_courts_law": {
+       "n": 59,
+       "recall": 64.4,
+       "precision": 46.9,
+       "f1": 54.3
+      },
+      "evidence_law": {
+       "n": 48,
+       "recall": 20.8,
+       "precision": 76.9,
+       "f1": 32.8
+      },
+      "sharia_procedure_law": {
+       "n": 21,
+       "recall": 4.8,
+       "precision": 3.3,
+       "f1": 3.9
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 11,
+       "commercial_courts_law": 5,
+       "evidence_law": 1,
+       "sharia_procedure_law": 2
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 10,
+       "commercial_courts_law": 38,
+       "evidence_law": 1,
+       "sharia_procedure_law": 10
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 1,
+       "commercial_courts_law": 20,
+       "evidence_law": 10,
+       "sharia_procedure_law": 17
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 1,
+       "commercial_courts_law": 18,
+       "evidence_law": 1,
+       "sharia_procedure_law": 1
+      }
+     }
+    },
+    "withPrior": {
+     "accuracy": 46.3,
+     "macroF1": 38.3,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 19,
+       "recall": 52.6,
+       "precision": 55.6,
+       "f1": 54.1
+      },
+      "commercial_courts_law": {
+       "n": 59,
+       "recall": 74.6,
+       "precision": 43.1,
+       "f1": 54.7
+      },
+      "evidence_law": {
+       "n": 48,
+       "recall": 27.1,
+       "precision": 56.5,
+       "f1": 36.6
+      },
+      "sharia_procedure_law": {
+       "n": 21,
+       "recall": 4.8,
+       "precision": 25.0,
+       "f1": 8.0
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 10,
+       "commercial_courts_law": 6,
+       "evidence_law": 2,
+       "sharia_procedure_law": 1
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 6,
+       "commercial_courts_law": 44,
+       "evidence_law": 7,
+       "sharia_procedure_law": 2
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 1,
+       "commercial_courts_law": 34,
+       "evidence_law": 13
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 1,
+       "commercial_courts_law": 18,
+       "evidence_law": 1,
+       "sharia_procedure_law": 1
+      }
+     }
+    }
+   },
+   "phase27_deboilerplatedShuffled": {
+    "trainUnits": 2254,
+    "testUnits": 155,
+    "codes": [
+     "commercial_courts_implementing_regulation",
+     "commercial_courts_law",
+     "evidence_law",
+     "sharia_procedure_law"
+    ],
+    "accuracy": 27.7,
+    "macroF1": 18.9,
+    "chance": 25.0,
+    "majorityBaseline": 37.0,
+    "uniformPrior": {
+     "accuracy": 27.7,
+     "macroF1": 18.9,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 33,
+       "recall": 81.8,
+       "precision": 27.3,
+       "f1": 40.9
+      },
+      "commercial_courts_law": {
+       "n": 55,
+       "recall": 27.3,
+       "precision": 35.7,
+       "f1": 30.9
+      },
+      "evidence_law": {
+       "n": 49,
+       "recall": 2.0,
+       "precision": 20.0,
+       "f1": 3.7
+      },
+      "sharia_procedure_law": {
+       "n": 18,
+       "recall": 0.0,
+       "precision": 0.0,
+       "f1": 0
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 27,
+       "commercial_courts_law": 4,
+       "evidence_law": 1,
+       "sharia_procedure_law": 1
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 35,
+       "commercial_courts_law": 15,
+       "evidence_law": 3,
+       "sharia_procedure_law": 2
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 23,
+       "commercial_courts_law": 19,
+       "evidence_law": 1,
+       "sharia_procedure_law": 6
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 14,
+       "commercial_courts_law": 4
+      }
+     }
+    },
+    "withPrior": {
+     "accuracy": 30.3,
+     "macroF1": 22.1,
+     "perCode": {
+      "commercial_courts_implementing_regulation": {
+       "n": 33,
+       "recall": 21.2,
+       "precision": 28.0,
+       "f1": 24.1
+      },
+      "commercial_courts_law": {
+       "n": 55,
+       "recall": 54.5,
+       "precision": 36.1,
+       "f1": 43.5
+      },
+      "evidence_law": {
+       "n": 49,
+       "recall": 20.4,
+       "precision": 21.3,
+       "f1": 20.8
+      },
+      "sharia_procedure_law": {
+       "n": 18,
+       "recall": 0.0,
+       "precision": 0,
+       "f1": 0
+      }
+     },
+     "confusion": {
+      "commercial_courts_implementing_regulation": {
+       "commercial_courts_implementing_regulation": 7,
+       "commercial_courts_law": 9,
+       "evidence_law": 17
+      },
+      "commercial_courts_law": {
+       "commercial_courts_implementing_regulation": 10,
+       "commercial_courts_law": 30,
+       "evidence_law": 15
+      },
+      "evidence_law": {
+       "commercial_courts_implementing_regulation": 6,
+       "commercial_courts_law": 33,
+       "evidence_law": 10
+      },
+      "sharia_procedure_law": {
+       "commercial_courts_implementing_regulation": 2,
+       "commercial_courts_law": 11,
+       "evidence_law": 5
+      }
+     }
+    }
+   }
+  },
+  "phase18_maxims": {
+   "evidence_law": {
+    "judgments": 1179,
+    "namedMaximTextPct": 3.1,
+    "maximLabelOnlyPct": 3.3,
+    "topMaxims": [
+     [
+      "M.ASL_UQUD",
+      13,
+      1.1
+     ],
+     [
+      "M.BARAA",
+      12,
+      1.0
+     ],
+     [
+      "M.DARAR_YUZAL",
+      9,
+      0.8
+     ],
+     [
+      "M.ADA_MUHAKKAMA",
+      2,
+      0.2
+     ]
+    ]
+   },
+   "commercial_courts_law": {
+    "judgments": 1555,
+    "namedMaximTextPct": 2.5,
+    "maximLabelOnlyPct": 1.1,
+    "topMaxims": [
+     [
+      "M.DARAR_YUZAL",
+      16,
+      1.0
+     ],
+     [
+      "M.ASL_UQUD",
+      13,
+      0.8
+     ],
+     [
+      "M.BARAA",
+      6,
+      0.4
+     ],
+     [
+      "M.ADA_MUHAKKAMA",
+      3,
+      0.2
+     ],
+     [
+      "M.KHARAJ",
+      1,
+      0.1
+     ]
+    ]
+   },
+   "commercial_courts_implementing_regulation": {
+    "judgments": 499,
+    "namedMaximTextPct": 4.4,
+    "maximLabelOnlyPct": 2.8,
+    "topMaxims": [
+     [
+      "M.DARAR_YUZAL",
+      19,
+      3.8
+     ],
+     [
+      "M.ASL_UQUD",
+      2,
+      0.4
+     ],
+     [
+      "M.BARAA",
+      1,
+      0.2
+     ]
+    ]
+   },
+   "sharia_procedure_law": {
+    "judgments": 384,
+    "namedMaximTextPct": 4.9,
+    "maximLabelOnlyPct": 3.6,
+    "topMaxims": [
+     [
+      "M.DARAR_YUZAL",
+      14,
+      3.6
+     ],
+     [
+      "M.BARAA",
+      3,
+      0.8
+     ],
+     [
+      "M.ASL_UQUD",
+      2,
+      0.5
+     ]
+    ]
+   }
+  },
+  "phase19_21_voice": {
+   "evidence_law": {
+    "judgmentsBench": 1179,
+    "judgmentsBar": 346,
+    "judgmentsBoth": 26,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      28.2
+     ],
+     [
+      "GENERIC.principle.settled",
+      25.1
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      21.4
+     ],
+     [
+      "GENERIC.quran.citation",
+      14.7
+     ],
+     [
+      "B.KASHSHAF",
+      7.6
+     ],
+     [
+      "GENERIC.custom.trade",
+      6.4
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      33.5
+     ],
+     [
+      "GENERIC.custom.trade",
+      33.2
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      19.7
+     ],
+     [
+      "GENERIC.maxim.named",
+      19.1
+     ],
+     [
+      "GENERIC.quran.citation",
+      17.6
+     ],
+     [
+      "GENERIC.principle.settled",
+      8.1
+     ]
+    ],
+    "benchBarCosine": 0.779,
+    "survivalBarToBenchPct": 27.9,
+    "benchGeneratedPct": 62.5,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "commercial_courts_law": {
+    "judgmentsBench": 1555,
+    "judgmentsBar": 583,
+    "judgmentsBoth": 36,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      46.1
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      24.4
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.1
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      5.7
+     ],
+     [
+      "GENERIC.custom.trade",
+      5.5
+     ],
+     [
+      "B.KASHSHAF",
+      5.0
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      30.2
+     ],
+     [
+      "GENERIC.custom.trade",
+      22.3
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      20.2
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.2
+     ],
+     [
+      "GENERIC.maxim.named",
+      12.2
+     ],
+     [
+      "H.MUTTAFAQ",
+      9.3
+     ]
+    ],
+    "benchBarCosine": 0.7854,
+    "survivalBarToBenchPct": 3.7,
+    "benchGeneratedPct": 95.7,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "commercial_courts_implementing_regulation": {
+    "judgmentsBench": 499,
+    "judgmentsBar": 468,
+    "judgmentsBoth": 22,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      44.7
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      43.9
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      26.1
+     ],
+     [
+      "B.KASHSHAF",
+      8.8
+     ],
+     [
+      "B.INSAF",
+      8.4
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      6.8
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      37.2
+     ],
+     [
+      "GENERIC.quran.citation",
+      27.1
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      16.0
+     ],
+     [
+      "GENERIC.custom.trade",
+      12.8
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      11.8
+     ],
+     [
+      "M.DARAR_YUZAL",
+      11.5
+     ]
+    ],
+    "benchBarCosine": 0.6473,
+    "survivalBarToBenchPct": 21.4,
+    "benchGeneratedPct": 69.0,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "sharia_procedure_law": {
+    "judgmentsBench": 384,
+    "judgmentsBar": 288,
+    "judgmentsBoth": 8,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      35.9
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      32.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      25.3
+     ],
+     [
+      "GENERIC.principle.settled",
+      13.8
+     ],
+     [
+      "B.INSAF",
+      7.0
+     ],
+     [
+      "J.IBN_QAYYIM",
+      4.7
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      38.9
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      21.2
+     ],
+     [
+      "GENERIC.custom.trade",
+      14.9
+     ],
+     [
+      "GENERIC.quran.citation",
+      14.9
+     ],
+     [
+      "B.KASHSHAF",
+      13.2
+     ],
+     [
+      "GENERIC.principle.settled",
+      10.4
+     ]
+    ],
+    "benchBarCosine": 0.8619,
+    "survivalBarToBenchPct": 41.7,
+    "benchGeneratedPct": 44.4,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "civil_transactions_law": {
+    "judgmentsBench": 40,
+    "judgmentsBar": 71,
+    "judgmentsBoth": 2,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      42.5
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      20.0
+     ],
+     [
+      "GENERIC.quran.citation",
+      20.0
+     ],
+     [
+      "GENERIC.maxim.named",
+      10.0
+     ],
+     [
+      "B.KASHSHAF",
+      7.5
+     ],
+     [
+      "M.ASL_UQUD",
+      7.5
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      29.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      21.1
+     ],
+     [
+      "GENERIC.custom.trade",
+      18.3
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      16.9
+     ],
+     [
+      "GENERIC.maxim.named",
+      15.5
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      14.1
+     ]
+    ],
+    "benchBarCosine": 0.8112,
+    "survivalBarToBenchPct": 33.3,
+    "benchGeneratedPct": 50.0,
+    "marginalVerdict": "PROFILED",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "companies_law": {
+    "judgmentsBench": 31,
+    "judgmentsBar": 117,
+    "judgmentsBoth": 2,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      41.9
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      25.8
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      22.6
+     ],
+     [
+      "GENERIC.principle.settled",
+      16.1
+     ],
+     [
+      "GENERIC.quran.citation",
+      9.7
+     ],
+     [
+      "GENERIC.custom.trade",
+      6.5
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.custom.trade",
+      22.2
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      19.7
+     ],
+     [
+      "GENERIC.maxim.named",
+      19.7
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      15.4
+     ],
+     [
+      "GENERIC.principle.settled",
+      8.5
+     ],
+     [
+      "GENERIC.quran.citation",
+      7.7
+     ]
+    ],
+    "benchBarCosine": 0.6932,
+    "survivalBarToBenchPct": 0.0,
+    "benchGeneratedPct": 100.0,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "law_practice_law": {
+    "judgmentsBench": 52,
+    "judgmentsBar": 31,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "GENERIC.hadith.untraced",
+      59.6
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      19.2
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      13.5
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      11.5
+     ],
+     [
+      "GENERIC.custom.trade",
+      9.6
+     ],
+     [
+      "GENERIC.quran.citation",
+      9.6
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.principle.settled",
+      29.0
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      25.8
+     ],
+     [
+      "GENERIC.quran.citation",
+      19.4
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      12.9
+     ],
+     [
+      "GENERIC.custom.trade",
+      9.7
+     ],
+     [
+      "H.MUTTAFAQ",
+      9.7
+     ]
+    ],
+    "benchBarCosine": 0.6543,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "arbitration_law": {
+    "judgmentsBench": 9,
+    "judgmentsBar": 13,
+    "judgmentsBoth": 1,
+    "topBench": [
+     [
+      "GENERIC.fiqh.unattributed",
+      100.0
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      61.5
+     ],
+     [
+      "GENERIC.custom.trade",
+      15.4
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      15.4
+     ],
+     [
+      "GENERIC.quran.citation",
+      15.4
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      15.4
+     ],
+     [
+      "B.KASHSHAF",
+      7.7
+     ]
+    ],
+    "benchBarCosine": 0.2169,
+    "survivalBarToBenchPct": 0.0,
+    "benchGeneratedPct": 100.0,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "bankruptcy_law": {
+    "judgmentsBench": 0,
+    "judgmentsBar": 10,
+    "judgmentsBoth": 0,
+    "topBench": [],
+    "topBar": [
+     [
+      "GENERIC.hadith.untraced",
+      70.0
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      20.0
+     ],
+     [
+      "GENERIC.custom.trade",
+      10.0
+     ],
+     [
+      "GENERIC.quran.citation",
+      10.0
+     ]
+    ],
+    "benchBarCosine": null,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "sharia_procedure_implementing_regulation": {
+    "judgmentsBench": 13,
+    "judgmentsBar": 11,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "B.KASHSHAF",
+      38.5
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      23.1
+     ],
+     [
+      "M.DARAR_YUZAL",
+      23.1
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      15.4
+     ],
+     [
+      "B.MUGHNI",
+      7.7
+     ],
+     [
+      "GENERIC.principle.settled",
+      7.7
+     ]
+    ],
+    "topBar": [
+     [
+      "GENERIC.quran.citation",
+      45.5
+     ],
+     [
+      "GENERIC.custom.trade",
+      36.4
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      36.4
+     ],
+     [
+      "GENERIC.fiqh.unattributed",
+      27.3
+     ],
+     [
+      "GENERIC.principle.settled",
+      27.3
+     ],
+     [
+      "M.DARAR_YUZAL",
+      18.2
+     ]
+    ],
+    "benchBarCosine": 0.4823,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   },
+   "law_practice_implementing_regulation": {
+    "judgmentsBench": 7,
+    "judgmentsBar": 11,
+    "judgmentsBoth": 0,
+    "topBench": [
+     [
+      "J.IBN_TAYMIYYA",
+      85.7
+     ],
+     [
+      "B.INSAF",
+      71.4
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      28.6
+     ],
+     [
+      "M.DARAR_YUZAL",
+      14.3
+     ]
+    ],
+    "topBar": [
+     [
+      "H.MUTTAFAQ",
+      45.5
+     ],
+     [
+      "GENERIC.hadith.untraced",
+      27.3
+     ],
+     [
+      "J.IBN_TAYMIYYA",
+      18.2
+     ],
+     [
+      "J.MUHAMMAD_B_IBRAHIM",
+      18.2
+     ],
+     [
+      "B.KASHSHAF",
+      9.1
+     ],
+     [
+      "B.MAJMU_FATAWA",
+      9.1
+     ]
+    ],
+    "benchBarCosine": 0.3232,
+    "survivalBarToBenchPct": null,
+    "benchGeneratedPct": null,
+    "marginalVerdict": "INSUFFICIENT_DATA",
+    "pairedVerdict": "INSUFFICIENT_DATA"
+   }
+  },
+  "phase22_23_stability": {
+   "evidence_law": {
+    "yearsCompared": {
+     "1444": 759,
+     "1445": 334,
+     "1446": 86
+    },
+    "meanYearCosine": 0.9274,
+    "minYearCosine": 0.9024,
+    "citiesCompared": {
+     "أبها": 80,
+     "الدمام": 304,
+     "الرياض": 388,
+     "جدة": 239
+    },
+    "meanCityCosine": 0.7275,
+    "minCityCosine": 0.4957
+   },
+   "commercial_courts_law": {
+    "yearsCompared": {
+     "1444": 985,
+     "1445": 469,
+     "1446": 101
+    },
+    "meanYearCosine": 0.968,
+    "minYearCosine": 0.9527,
+    "citiesCompared": {
+     "الدمام": 211,
+     "الرياض": 549,
+     "جدة": 517,
+     "مكة المكرمة": 205
+    },
+    "meanCityCosine": 0.626,
+    "minCityCosine": 0.4269
+   },
+   "commercial_courts_implementing_regulation": {
+    "yearsCompared": {
+     "1444": 285,
+     "1445": 174,
+     "1446": 40
+    },
+    "meanYearCosine": 0.8575,
+    "minYearCosine": 0.793,
+    "citiesCompared": {
+     "الرياض": 320,
+     "جدة": 126
+    },
+    "meanCityCosine": 0.9402,
+    "minCityCosine": 0.9402
+   },
+   "sharia_procedure_law": {
+    "yearsCompared": {
+     "1444": 298,
+     "1445": 79
+    },
+    "meanYearCosine": 0.9629,
+    "minYearCosine": 0.9629,
+    "citiesCompared": {
+     "الدمام": 104,
+     "الرياض": 184,
+     "جدة": 70
+    },
+    "meanCityCosine": 0.6486,
+    "minCityCosine": 0.465
+   }
+  },
+  "phase24_portability": [
+   {
+    "source": "GENERIC.fiqh.unattributed",
+    "judgments": 1330,
+    "codes": 4,
+    "effectiveCodes": 3.26,
+    "presenceRateByCode": {
+     "commercial_courts_law": 46.1,
+     "commercial_courts_implementing_regulation": 44.7,
+     "sharia_procedure_law": 35.9,
+     "evidence_law": 21.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.hadith.untraced",
+    "judgments": 967,
+    "codes": 4,
+    "effectiveCodes": 3.56,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 32.6,
+     "evidence_law": 28.2,
+     "commercial_courts_implementing_regulation": 26.1,
+     "commercial_courts_law": 24.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.quran.citation",
+    "judgments": 584,
+    "codes": 4,
+    "effectiveCodes": 3.02,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 25.3,
+     "commercial_courts_law": 19.1,
+     "evidence_law": 14.7,
+     "commercial_courts_implementing_regulation": 3.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.principle.settled",
+    "judgments": 445,
+    "codes": 4,
+    "effectiveCodes": 2.69,
+    "presenceRateByCode": {
+     "evidence_law": 25.1,
+     "sharia_procedure_law": 13.8,
+     "commercial_courts_implementing_regulation": 6.0,
+     "commercial_courts_law": 4.2
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "J.IBN_TAYMIYYA",
+    "judgments": 378,
+    "codes": 4,
+    "effectiveCodes": 2.93,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 43.9,
+     "commercial_courts_law": 5.7,
+     "sharia_procedure_law": 4.7,
+     "evidence_law": 4.5
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "B.KASHSHAF",
+    "judgments": 225,
+    "codes": 4,
+    "effectiveCodes": 3.38,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 8.8,
+     "evidence_law": 7.6,
+     "commercial_courts_law": 5.0,
+     "sharia_procedure_law": 3.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "GENERIC.custom.trade",
+    "judgments": 175,
+    "codes": 4,
+    "effectiveCodes": 2.61,
+    "presenceRateByCode": {
+     "evidence_law": 6.4,
+     "commercial_courts_law": 5.5,
+     "commercial_courts_implementing_regulation": 2.6,
+     "sharia_procedure_law": 0.5
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "B.INSAF",
+    "judgments": 170,
+    "codes": 4,
+    "effectiveCodes": 3.74,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 8.4,
+     "sharia_procedure_law": 7.0,
+     "commercial_courts_law": 4.4,
+     "evidence_law": 2.7
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "J.IBN_QAYYIM",
+    "judgments": 119,
+    "codes": 4,
+    "effectiveCodes": 2.7,
+    "presenceRateByCode": {
+     "evidence_law": 6.1,
+     "sharia_procedure_law": 4.7,
+     "commercial_courts_law": 1.7,
+     "commercial_courts_implementing_regulation": 0.4
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "J.IBN_QUDAMA",
+    "judgments": 89,
+    "codes": 3,
+    "effectiveCodes": 2.3,
+    "presenceRateByCode": {
+     "commercial_courts_law": 3.5,
+     "evidence_law": 2.5,
+     "sharia_procedure_law": 1.3
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "H.ABU_DAWUD",
+    "judgments": 85,
+    "codes": 3,
+    "effectiveCodes": 1.73,
+    "presenceRateByCode": {
+     "commercial_courts_law": 4.6,
+     "sharia_procedure_law": 1.0,
+     "evidence_law": 0.8
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "GENERIC.maxim.named",
+    "judgments": 84,
+    "codes": 4,
+    "effectiveCodes": 3.59,
+    "presenceRateByCode": {
+     "sharia_procedure_law": 3.6,
+     "evidence_law": 3.3,
+     "commercial_courts_implementing_regulation": 2.8,
+     "commercial_courts_law": 1.1
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "H.MUTTAFAQ",
+    "judgments": 65,
+    "codes": 4,
+    "effectiveCodes": 2.38,
+    "presenceRateByCode": {
+     "evidence_law": 3.1,
+     "commercial_courts_law": 1.7,
+     "sharia_procedure_law": 0.5,
+     "commercial_courts_implementing_regulation": 0.2
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "B.MUGHNI",
+    "judgments": 62,
+    "codes": 4,
+    "effectiveCodes": 2.34,
+    "presenceRateByCode": {
+     "commercial_courts_law": 2.9,
+     "sharia_procedure_law": 1.6,
+     "evidence_law": 0.8,
+     "commercial_courts_implementing_regulation": 0.4
+    },
+    "class": "SEMI_PORTABLE"
+   },
+   {
+    "source": "M.DARAR_YUZAL",
+    "judgments": 58,
+    "codes": 4,
+    "effectiveCodes": 3.87,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 3.8,
+     "sharia_procedure_law": 3.6,
+     "commercial_courts_law": 1.0,
+     "evidence_law": 0.8
+    },
+    "class": "PORTABLE"
+   },
+   {
+    "source": "B.MAJMU_FATAWA",
+    "judgments": 52,
+    "codes": 4,
+    "effectiveCodes": 2.56,
+    "presenceRateByCode": {
+     "commercial_courts_implementing_regulation": 6.8,
+     "commercial_courts_law": 0.6,
+     "evidence_law": 0.6,
+     "sharia_procedure_law": 0.3
+    },
+    "class": "PORTABLE"
+   }
+  ],
+  "phase26_signature": {
+   "trainUnits": 2879,
+   "testUnits": 217,
+   "codes": [
+    "commercial_courts_implementing_regulation",
+    "commercial_courts_law",
+    "evidence_law",
+    "sharia_procedure_law"
+   ],
+   "accuracy": 46.5,
+   "macroF1": 46.1,
+   "chance": 25.0,
+   "majorityBaseline": 43.2,
+   "uniformPrior": {
+    "accuracy": 46.5,
+    "macroF1": 46.1,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 42,
+      "recall": 83.3,
+      "precision": 48.6,
+      "f1": 61.4
+     },
+     "commercial_courts_law": {
+      "n": 79,
+      "recall": 34.2,
+      "precision": 71.1,
+      "f1": 46.2
+     },
+     "evidence_law": {
+      "n": 69,
+      "recall": 27.5,
+      "precision": 63.3,
+      "f1": 38.4
+     },
+     "sharia_procedure_law": {
+      "n": 27,
+      "recall": 74.1,
+      "precision": 26.0,
+      "f1": 38.5
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 35,
+      "evidence_law": 1,
+      "sharia_procedure_law": 6
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 18,
+      "commercial_courts_law": 27,
+      "evidence_law": 10,
+      "sharia_procedure_law": 24
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 16,
+      "commercial_courts_law": 7,
+      "evidence_law": 19,
+      "sharia_procedure_law": 27
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 3,
+      "commercial_courts_law": 4,
+      "sharia_procedure_law": 20
+     }
+    }
+   },
+   "withPrior": {
+    "accuracy": 51.6,
+    "macroF1": 46.4,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 42,
+      "recall": 73.8,
+      "precision": 57.4,
+      "f1": 64.6
+     },
+     "commercial_courts_law": {
+      "n": 79,
+      "recall": 68.4,
+      "precision": 45.8,
+      "f1": 54.8
+     },
+     "evidence_law": {
+      "n": 69,
+      "recall": 33.3,
+      "precision": 63.9,
+      "f1": 43.8
+     },
+     "sharia_procedure_law": {
+      "n": 27,
+      "recall": 14.8,
+      "precision": 44.4,
+      "f1": 22.2
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 31,
+      "commercial_courts_law": 8,
+      "evidence_law": 2,
+      "sharia_procedure_law": 1
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 11,
+      "commercial_courts_law": 54,
+      "evidence_law": 11,
+      "sharia_procedure_law": 3
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 9,
+      "commercial_courts_law": 36,
+      "evidence_law": 23,
+      "sharia_procedure_law": 1
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 3,
+      "commercial_courts_law": 20,
+      "sharia_procedure_law": 4
+     }
+    }
+   }
+  },
+  "phase27_shuffledControl": {
+   "trainUnits": 2879,
+   "testUnits": 213,
+   "codes": [
+    "commercial_courts_implementing_regulation",
+    "commercial_courts_law",
+    "evidence_law",
+    "sharia_procedure_law"
+   ],
+   "accuracy": 26.3,
+   "macroF1": 17.1,
+   "chance": 25.0,
+   "majorityBaseline": 43.2,
+   "uniformPrior": {
+    "accuracy": 26.3,
+    "macroF1": 17.1,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 48,
+      "recall": 93.8,
+      "precision": 23.9,
+      "f1": 38.1
+     },
+     "commercial_courts_law": {
+      "n": 76,
+      "recall": 10.5,
+      "precision": 47.1,
+      "f1": 17.2
+     },
+     "evidence_law": {
+      "n": 65,
+      "recall": 3.1,
+      "precision": 40.0,
+      "f1": 5.7
+     },
+     "sharia_procedure_law": {
+      "n": 24,
+      "recall": 4.2,
+      "precision": 33.3,
+      "f1": 7.4
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 45,
+      "commercial_courts_law": 2,
+      "sharia_procedure_law": 1
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 66,
+      "commercial_courts_law": 8,
+      "evidence_law": 2
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 58,
+      "commercial_courts_law": 4,
+      "evidence_law": 2,
+      "sharia_procedure_law": 1
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 19,
+      "commercial_courts_law": 3,
+      "evidence_law": 1,
+      "sharia_procedure_law": 1
+     }
+    }
+   },
+   "withPrior": {
+    "accuracy": 37.1,
+    "macroF1": 25.2,
+    "perCode": {
+     "commercial_courts_implementing_regulation": {
+      "n": 48,
+      "recall": 22.9,
+      "precision": 31.4,
+      "f1": 26.5
+     },
+     "commercial_courts_law": {
+      "n": 76,
+      "recall": 75.0,
+      "precision": 37.7,
+      "f1": 50.2
+     },
+     "evidence_law": {
+      "n": 65,
+      "recall": 16.9,
+      "precision": 40.7,
+      "f1": 23.9
+     },
+     "sharia_procedure_law": {
+      "n": 24,
+      "recall": 0.0,
+      "precision": 0,
+      "f1": 0
+     }
+    },
+    "confusion": {
+     "commercial_courts_implementing_regulation": {
+      "commercial_courts_implementing_regulation": 11,
+      "commercial_courts_law": 32,
+      "evidence_law": 5
+     },
+     "commercial_courts_law": {
+      "commercial_courts_implementing_regulation": 11,
+      "commercial_courts_law": 57,
+      "evidence_law": 8
+     },
+     "evidence_law": {
+      "commercial_courts_implementing_regulation": 9,
+      "commercial_courts_law": 45,
+      "evidence_law": 11
+     },
+     "sharia_procedure_law": {
+      "commercial_courts_implementing_regulation": 4,
+      "commercial_courts_law": 17,
+      "evidence_law": 3
+     }
+    }
+   }
+  },
+  "phase28_retrieval": {
+   "evidence_law": {
+    "top0": 0.0,
+    "top1": 22.1,
+    "top3": 54.7,
+    "top5": 70.7,
+    "top10": 89.1,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 25,
+    "testMentions": 358
+   },
+   "commercial_courts_law": {
+    "top0": 0.0,
+    "top1": 34.5,
+    "top3": 69.0,
+    "top5": 76.8,
+    "top10": 90.5,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 28,
+    "testMentions": 452
+   },
+   "commercial_courts_implementing_regulation": {
+    "top0": 0.0,
+    "top1": 29.1,
+    "top3": 74.2,
+    "top5": 83.0,
+    "top10": 96.2,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 19,
+    "testMentions": 182
+   },
+   "sharia_procedure_law": {
+    "top0": 0.0,
+    "top1": 25.4,
+    "top3": 64.9,
+    "top5": 81.3,
+    "top10": 93.3,
+    "courtReasoningUniverse": 100.0,
+    "distinctSourcesInTrain": 21,
+    "testMentions": 134
+   }
+  },
+  "phase29_untraceable": {
+   "evidence_law": {
+    "mentions": 1711,
+    "untraceablePct": 72.6,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 27.4,
+    "byKind": {
+     "GENERIC.custom.trade": 4.5,
+     "GENERIC.fiqh.unattributed": 16.3,
+     "GENERIC.hadith.untraced": 22.1,
+     "GENERIC.maxim.named": 2.3,
+     "GENERIC.principle.settled": 17.4,
+     "GENERIC.quran.citation": 10.1
+    }
+   },
+   "commercial_courts_law": {
+    "mentions": 2262,
+    "untraceablePct": 72.1,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 27.9,
+    "byKind": {
+     "GENERIC.custom.trade": 4.1,
+     "GENERIC.fiqh.unattributed": 33.2,
+     "GENERIC.hadith.untraced": 17.9,
+     "GENERIC.maxim.named": 0.8,
+     "GENERIC.principle.settled": 2.9,
+     "GENERIC.quran.citation": 13.4
+    }
+   },
+   "commercial_courts_implementing_regulation": {
+    "mentions": 1112,
+    "untraceablePct": 54.9,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 45.1,
+    "byKind": {
+     "GENERIC.custom.trade": 1.3,
+     "GENERIC.fiqh.unattributed": 30.2,
+     "GENERIC.hadith.untraced": 17.9,
+     "GENERIC.maxim.named": 1.3,
+     "GENERIC.principle.settled": 2.7,
+     "GENERIC.quran.citation": 1.5
+    }
+   },
+   "sharia_procedure_law": {
+    "mentions": 578,
+    "untraceablePct": 77.7,
+    "unresolvedRawPct": 0.0,
+    "traceablePct": 22.3,
+    "byKind": {
+     "GENERIC.custom.trade": 0.5,
+     "GENERIC.fiqh.unattributed": 24.6,
+     "GENERIC.hadith.untraced": 23.7,
+     "GENERIC.maxim.named": 2.4,
+     "GENERIC.principle.settled": 9.2,
+     "GENERIC.quran.citation": 17.3
+    }
+   }
+  },
+  "phase12_sameJudgment": {
+   "judgments": 91,
+   "codeA": "evidence_law",
+   "codeB": "commercial_courts_law",
+   "cosine": 0.5218,
+   "nullCosineMean": 0.9406,
+   "nullCosineSd": 0.0257,
+   "z": -16.32,
+   "pOneSided": 0.002,
+   "topA": [
+    [
+     "GENERIC.hadith.untraced",
+     36
+    ],
+    [
+     "GENERIC.quran.citation",
+     22
+    ],
+    [
+     "GENERIC.fiqh.unattributed",
+     16
+    ],
+    [
+     "H.MUTTAFAQ",
+     14
+    ],
+    [
+     "GENERIC.principle.settled",
+     11
+    ],
+    [
+     "J.IBN_TAYMIYYA",
+     9
+    ],
+    [
+     "B.KASHSHAF",
+     6
+    ],
+    [
+     "J.IBN_QAYYIM",
+     6
+    ]
+   ],
+   "topB": [
+    [
+     "GENERIC.fiqh.unattributed",
+     52
+    ],
+    [
+     "GENERIC.hadith.untraced",
+     10
+    ],
+    [
+     "B.KASHSHAF",
+     9
+    ],
+    [
+     "B.INSAF",
+     7
+    ],
+    [
+     "B.MUGHNI",
+     6
+    ],
+    [
+     "J.IBN_QUDAMA",
+     6
+    ],
+    [
+     "GENERIC.quran.citation",
+     5
+    ],
+    [
+     "GENERIC.custom.trade",
+     2
+    ]
+   ],
+   "differences": [
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "share_evidence_law": 11.9,
+     "share_commercial_courts_law": 49.5,
+     "ptDiff": -37.7
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "share_evidence_law": 26.7,
+     "share_commercial_courts_law": 9.5,
+     "ptDiff": 17.1
+    },
+    {
+     "source": "GENERIC.quran.citation",
+     "share_evidence_law": 16.3,
+     "share_commercial_courts_law": 4.8,
+     "ptDiff": 11.5
+    },
+    {
+     "source": "H.MUTTAFAQ",
+     "share_evidence_law": 10.4,
+     "share_commercial_courts_law": 1.9,
+     "ptDiff": 8.5
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "share_evidence_law": 8.1,
+     "share_commercial_courts_law": 1.0,
+     "ptDiff": 7.2
+    },
+    {
+     "source": "B.MUGHNI",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_law": 5.7,
+     "ptDiff": -5.7
+    },
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "share_evidence_law": 6.7,
+     "share_commercial_courts_law": 1.0,
+     "ptDiff": 5.7
+    },
+    {
+     "source": "B.INSAF",
+     "share_evidence_law": 2.2,
+     "share_commercial_courts_law": 6.7,
+     "ptDiff": -4.4
+    },
+    {
+     "source": "J.IBN_QUDAMA",
+     "share_evidence_law": 1.5,
+     "share_commercial_courts_law": 5.7,
+     "ptDiff": -4.2
+    },
+    {
+     "source": "B.KASHSHAF",
+     "share_evidence_law": 4.4,
+     "share_commercial_courts_law": 8.6,
+     "ptDiff": -4.1
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "share_evidence_law": 4.4,
+     "share_commercial_courts_law": 1.0,
+     "ptDiff": 3.5
+    }
+   ]
+  },
+  "phase12_sameJudgment_ccir": {
+   "judgments": 20,
+   "codeA": "evidence_law",
+   "codeB": "commercial_courts_implementing_regulation",
+   "cosine": 0.4236,
+   "nullCosineMean": 0.8537,
+   "nullCosineSd": 0.0624,
+   "z": -6.89,
+   "pOneSided": 0.002,
+   "topA": [
+    [
+     "GENERIC.hadith.untraced",
+     9
+    ],
+    [
+     "GENERIC.fiqh.unattributed",
+     4
+    ],
+    [
+     "GENERIC.principle.settled",
+     4
+    ],
+    [
+     "M.ASL_UQUD",
+     2
+    ],
+    [
+     "GENERIC.custom.trade",
+     1
+    ],
+    [
+     "GENERIC.maxim.named",
+     1
+    ],
+    [
+     "H.BAYHAQI",
+     1
+    ],
+    [
+     "H.MUSLIM",
+     1
+    ]
+   ],
+   "topB": [
+    [
+     "J.IBN_TAYMIYYA",
+     11
+    ],
+    [
+     "GENERIC.hadith.untraced",
+     3
+    ],
+    [
+     "GENERIC.fiqh.unattributed",
+     2
+    ],
+    [
+     "GENERIC.principle.settled",
+     2
+    ],
+    [
+     "B.INSAF",
+     1
+    ],
+    [
+     "B.KASHSHAF",
+     1
+    ],
+    [
+     "B.MAJMU_FATAWA",
+     1
+    ],
+    [
+     "B.ZAD",
+     1
+    ]
+   ],
+   "differences": [
+    {
+     "source": "J.IBN_TAYMIYYA",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 42.3,
+     "ptDiff": -38.5
+    },
+    {
+     "source": "GENERIC.hadith.untraced",
+     "share_evidence_law": 34.6,
+     "share_commercial_courts_implementing_regulation": 11.5,
+     "ptDiff": 23.1
+    },
+    {
+     "source": "GENERIC.fiqh.unattributed",
+     "share_evidence_law": 15.4,
+     "share_commercial_courts_implementing_regulation": 7.7,
+     "ptDiff": 7.7
+    },
+    {
+     "source": "GENERIC.principle.settled",
+     "share_evidence_law": 15.4,
+     "share_commercial_courts_implementing_regulation": 7.7,
+     "ptDiff": 7.7
+    },
+    {
+     "source": "M.ASL_UQUD",
+     "share_evidence_law": 7.7,
+     "share_commercial_courts_implementing_regulation": 0.0,
+     "ptDiff": 7.7
+    },
+    {
+     "source": "B.INSAF",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": -3.8
+    },
+    {
+     "source": "B.KASHSHAF",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": -3.8
+    },
+    {
+     "source": "B.MAJMU_FATAWA",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": -3.8
+    },
+    {
+     "source": "B.ZAD",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": -3.8
+    },
+    {
+     "source": "H.BAYHAQI",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 0.0,
+     "ptDiff": 3.8
+    },
+    {
+     "source": "H.MUSLIM",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 0.0,
+     "ptDiff": 3.8
+    },
+    {
+     "source": "M.ADA_MUHAKKAMA",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 0.0,
+     "ptDiff": 3.8
+    },
+    {
+     "source": "M.DARAR_YUZAL",
+     "share_evidence_law": 0.0,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": -3.8
+    },
+    {
+     "source": "GENERIC.custom.trade",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": 0.0
+    },
+    {
+     "source": "GENERIC.maxim.named",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": 0.0
+    },
+    {
+     "source": "J.IBN_QAYYIM",
+     "share_evidence_law": 3.8,
+     "share_commercial_courts_implementing_regulation": 3.8,
+     "ptDiff": 0.0
+    }
+   ]
+  },
+  "phase13_relatednessSensitivity": {
+   "judgments": 91,
+   "thetaA": 0.6,
+   "thetaB": 0.231,
+   "observedCosine": 0.5218,
+   "correctedCosine": 0.034,
+   "direction": "WIDENS",
+   "correctedTopA": [
+    [
+     "GENERIC.hadith.untraced",
+     31.1
+    ],
+    [
+     "GENERIC.quran.citation",
+     19.3
+    ],
+    [
+     "H.MUTTAFAQ",
+     12.6
+    ],
+    [
+     "GENERIC.principle.settled",
+     10.1
+    ],
+    [
+     "J.IBN_TAYMIYYA",
+     8.2
+    ],
+    [
+     "J.IBN_QAYYIM",
+     5.4
+    ]
+   ],
+   "correctedTopB": [
+    [
+     "GENERIC.fiqh.unattributed",
+     63.8
+    ],
+    [
+     "B.MUGHNI",
+     8.7
+    ],
+    [
+     "B.KASHSHAF",
+     8.7
+    ],
+    [
+     "B.INSAF",
+     8.0
+    ],
+    [
+     "J.IBN_QUDAMA",
+     7.2
+    ],
+    [
+     "H.ABU_DAWUD",
+     1.5
+    ]
+   ]
+  }
+ },
+ "phase17_propositions": {
+  "courtMentions": 16698,
+  "distinctFingerprints": 8447,
+  "sharePartOfARepeatedFamily": 59.7,
+  "familiesWith5plus": 470,
+  "shareInFamiliesWith5plus": 41.5,
+  "verdict": "FEASIBLE_ONLY_AS_WORDING_FAMILIES",
+  "note": "a fingerprint is shared wording, not a shared legal proposition. Two courts can state the same proposition in different words and be counted apart, and one formula can carry different propositions. Proposition families are NOT attempted: it would require reading, and reading is what the layer deliberately does not store."
+ },
+ "phase30_mechanism": {
+  "evidence_law": {
+   "units": 1806,
+   "articleDropCosine": 0.8813,
+   "articleCarried": false,
+   "articleRobust": true,
+   "topFingerprintShareMax": 10.8,
+   "templateHeavy": false,
+   "untraceablePct": 70.1,
+   "genericDominated": true,
+   "namedCompanionsWithLift2AndZ3": [
+    "J.IBN_QAYYIM"
+   ],
+   "yearCosine": 0.9391,
+   "yearStable": true,
+   "cityCosine": 0.7501,
+   "signatureF1": 47.5,
+   "shuffledF1": 6.0,
+   "identifiable": true,
+   "mechanism": "A_CODE_SPECIFIC_STABLE"
+  },
+  "commercial_courts_law": {
+   "units": 2000,
+   "articleDropCosine": 0.9473,
+   "articleCarried": false,
+   "articleRobust": true,
+   "topFingerprintShareMax": 35.9,
+   "templateHeavy": true,
+   "untraceablePct": 74.5,
+   "genericDominated": true,
+   "namedCompanionsWithLift2AndZ3": [
+    "H.ABU_DAWUD"
+   ],
+   "yearCosine": 0.971,
+   "yearStable": true,
+   "cityCosine": 0.6921,
+   "signatureF1": 37.5,
+   "shuffledF1": 7.9,
+   "identifiable": false,
+   "mechanism": "D_TEMPLATE_CARRIED"
+  },
+  "commercial_courts_implementing_regulation": {
+   "units": 1039,
+   "articleDropCosine": 0.6503,
+   "articleCarried": true,
+   "articleRobust": false,
+   "topFingerprintShareMax": 39.7,
+   "templateHeavy": true,
+   "untraceablePct": 49.3,
+   "genericDominated": false,
+   "namedCompanionsWithLift2AndZ3": [
+    "B.KASHSHAF",
+    "J.IBN_TAYMIYYA",
+    "B.MAJMU_FATAWA"
+   ],
+   "yearCosine": 0.8249,
+   "yearStable": false,
+   "cityCosine": 0.7105,
+   "signatureF1": 77.9,
+   "shuffledF1": 45.8,
+   "identifiable": true,
+   "mechanism": "B_ARTICLE_CARRIED_WITH_D_TEMPLATE"
+  },
+  "sharia_procedure_law": {
+   "units": 472,
+   "articleDropCosine": 0.7963,
+   "articleCarried": false,
+   "articleRobust": false,
+   "topFingerprintShareMax": 14.7,
+   "templateHeavy": false,
+   "untraceablePct": 79.0,
+   "genericDominated": true,
+   "namedCompanionsWithLift2AndZ3": [],
+   "yearCosine": 0.9644,
+   "yearStable": true,
+   "cityCosine": 0.8932,
+   "signatureF1": 39.8,
+   "shuffledF1": 5.3,
+   "identifiable": false,
+   "mechanism": "C_GENERIC_RESERVOIR"
+  },
+  "_notTestable": {
+   "E_PARTY_DRIVEN": "not testable: the paired bench-and-bar measure needs judgments where both voices attach authority to the same code locally, and there are 5 to 22 of them per code",
+   "G_NO_STABLE_STRUCTURE": "rejected corpus-wide by PHASE 12 and PHASE 26, not per code"
+  }
+ },
+ "phase25_network": {
+  "edges": 61,
+  "file": "code_source_network.json"
+ }
+}

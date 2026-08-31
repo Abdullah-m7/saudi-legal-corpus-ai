@@ -154,3 +154,57 @@ contrast rather than closing it. And a held-out prediction test put the
 docket's share of the improvement over a grand mean at 87.2 per cent against
 the codes' 12.8. The code effect is real, survives every control, and is the
 smaller organising variable for predicting any single judgment.
+
+---
+
+## T5 · One doctrinal companion structure
+
+**HYPOTHESIS.** Each statute book carries a recurring set of named
+non-statutory sources — its doctrinal companions — so that knowing the code
+tells you which jurists, books and maxims will appear beside it. The
+programme's own preferred form of this was answer A: stable, code-specific,
+carried by the code.
+
+**TEST.** `companions.py` recorded the identity of every non-statutory mention
+in 1444–1446 with its nearest statutory citation at two locality definitions,
+its speaker, and a fingerprint of the surrounding wording. 22,969 mentions,
+9,842 judgments, 5,552 judgment-by-code units. `companion_analysis.py` ran the
+battery: per-code profiles with lift, a constrained null preserving year,
+city, authorities per judgment, code exposure and global source frequency; a
+within-judgment permutation on the 162 judgments that attach authority to both
+the Evidence Law and the Commercial Courts Law; leave-dominant-article-out; a
+de-boilerplating falsification; and a held-out classifier that predicts the
+code from its sources alone.
+
+**FAILURE.** A is right for one code out of four. The Commercial Courts
+Implementing Regulation's environment is article 164's environment and
+collapses without it — profile cosine 0.6503 after dropping it, against 0.8813
+for the Evidence Law after dropping the two articles that generate more than
+half of *its* mentions. The Commercial Courts Law's strongest edge is one
+sentence repeated in 294 judgments. The Sharia Procedure Law has no named
+companion clearing lift 2 with z 3 at all. And in three of the four codes,
+between 70.1 and 79.0 per cent of what the court reaches for names no source
+that can be looked up.
+
+**WHAT SURVIVED.** The structure is real and it is not one mechanism. Within a
+single judgment — same bench, same dispute, same year — the sources beside the
+Evidence Law and the sources beside the Commercial Courts Law separate at
+cosine 0.7036 against a within-judgment null of 0.9734, z = -20.76. A held-out
+classifier recovers the code from the sources alone at 53.9 per cent against a
+constrained shuffle at 29.0. Strip every form of words that circulates in ten
+or more judgments — 30.8 per cent of all court-voice mentions — and the
+within-judgment separation survives at z = -8.19 and the classifier's macro-F1
+at 40.5 against its own control's 18.3.
+
+**CONSEQUENCE.** Answer F, with the assignment: Evidence Law A, implementing
+regulation B with D, Commercial Courts Law D, Sharia Procedure Law C. Answer E
+is not testable in this corpus — five to twenty-two judgments per code carry
+both voices attaching authority to the same code — and is recorded as
+untested, not as rejected. The full argument is in `DOCTRINE.md`; the edges are
+in `code_source_network.json`.
+
+**WHAT THIS DOES NOT LICENSE.** The word *canon*. The identity universe is
+`authority.py`'s vocabulary — five jurists, eight books, six maxim texts, a
+set of transmission markers — so every concentration statistic is a statement
+about the extractor before it is a statement about the judiciary, and no
+"effective canon size" here is read as one.

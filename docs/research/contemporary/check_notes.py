@@ -34,6 +34,7 @@ def facts():
     tr, af = J("traceability_results.json"), J("adjudicative_function_gold.json")
     ins, ief = J("instruments_results.json"), J("instrument_effect_results.json")
     ai = J("article_instrument_results.json")
+    cm = J("companion_analysis_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -401,6 +402,100 @@ def facts():
          ["DOCKET.md", "THEORY_LOG.md", "CLAIM_ECOLOGIES.md"]),
         ("arbitration adjustment",
          f"{dm['codeAdjustments']['arbitration_law']}", ["DOCKET.md"]),
+        # --- the doctrinal companion programme
+    ]
+    C4 = cm["phase4_resolution"]
+    CW = cm["loc_w500"]
+    CP = CW["phase5_8_9_profiles"]
+    C7 = {c: {d["source"]: d for d in v} for c, v in CW["phase7_null"].items()}
+    C12, C12b = CW["phase12_sameJudgment"], cm["loc_block"]["phase12_sameJudgment"]
+    C15, C16 = CW["phase15_leaveArticleOut"], CW["phase16b_deboilerplated"]
+    C22, C26 = CW["phase22_23_stability"], CW["phase26_signature"]
+    D = ["DOCTRINE.md"]
+    EV, CL = "evidence_law", "commercial_courts_law"
+    IR = "commercial_courts_implementing_regulation"
+    SP = "sharia_procedure_law"
+    out += [
+        ("resolved share", f"{C4['resolvedPct']}", D),
+        ("untraced hadith share", f"{C4['untracedHadithPct']}", D),
+        ("merged by alias handling", f"{C4['mergedByAliasHandlingPct']}", D),
+        ("Ibn Taymiyya as title", f"{C4['ibnTaymiyyaAsTitleShaykhAlIslamPct']}", D),
+        ("evidence effective sources", f"{CP[EV]['effectiveSources']}", D),
+        ("evidence hhi", f"{CP[EV]['hhi']}", D),
+        ("evidence top3", f"{CP[EV]['coverageTop3']}", D),
+        ("ccl hhi", f"{CP[CL]['hhi']}", D),
+        ("ccl effective sources", f"{CP[CL]['effectiveSources']}", D),
+        ("ccir hhi", f"{CP[IR]['hhi']}", D),
+        ("ccir effective sources", f"{CP[IR]['effectiveSources']}", D),
+        ("sharia procedure hhi", f"{CP[SP]['hhi']}", D),
+        ("sharia procedure effective sources", f"{CP[SP]['effectiveSources']}", D),
+        ("ibn al-Qayyim P(code|source)",
+         f"{[r for r in CP[EV]['top'] if r['source'] == 'J.IBN_QAYYIM'][0]['P_code_given_source']}", D),
+        ("kashshaf z in ccir", f"{C7[IR]['B.KASHSHAF']['z']}", D),
+        ("ibn taymiyya z in ccir", f"{C7[IR]['J.IBN_TAYMIYYA']['z']}", D),
+        ("majmu z in ccir", f"{C7[IR]['B.MAJMU_FATAWA']['z']}", D),
+        ("settled practice z in evidence",
+         f"{C7[EV]['GENERIC.principle.settled']['z']}", D),
+        ("custom z in evidence", f"{C7[EV]['GENERIC.custom.trade']['z']}", D),
+        ("ibn al-Qayyim z in evidence", f"{C7[EV]['J.IBN_QAYYIM']['z']}", D),
+        ("abu dawud z in ccl", f"{C7[CL]['H.ABU_DAWUD']['z']}", D),
+        ("quran z in sharia procedure",
+         f"{C7[SP]['GENERIC.quran.citation']['z']}", D),
+        ("ibn taymiyya z in ccl", f"{C7[CL]['J.IBN_TAYMIYYA']['z']}", D),
+        ("ibn taymiyya z in evidence", f"{C7[EV]['J.IBN_TAYMIYYA']['z']}", D),
+        ("same-judgment cosine", f"{C12['cosine']}", D),
+        ("same-judgment null", f"{C12['nullCosineMean']}", D),
+        ("same-judgment z", f"{C12['z']}", D),
+        ("same-judgment block cosine", f"{C12b['cosine']}", D),
+        ("same-judgment block z", f"{C12b['z']}", D),
+        ("ccir same-judgment cosine", f"{CW['phase12_sameJudgment_ccir']['cosine']}", D),
+        ("ccir same-judgment z", f"{CW['phase12_sameJudgment_ccir']['z']}", D),
+        ("relatedness-corrected cosine",
+         f"{CW['phase13_relatednessSensitivity']['correctedCosine']}", D),
+        ("evidence article drop cosine",
+         f"{C15[EV]['empirical']['cosineFullVsDropped']}", D),
+        ("evidence named article drop cosine",
+         f"{C15[EV]['named']['cosineFullVsDropped']}", D),
+        ("ccir article drop cosine", f"{C15[IR]['empirical']['cosineFullVsDropped']}", D),
+        ("ccl article drop cosine", f"{C15[CL]['empirical']['cosineFullVsDropped']}", D),
+        ("sharia procedure article drop cosine",
+         f"{C15[SP]['empirical']['cosineFullVsDropped']}", D),
+        ("ccir mentions dropped", f"{C15[IR]['empirical']['mentionsDroppedPct']}", D),
+        ("evidence mentions dropped", f"{C15[EV]['named']['mentionsDroppedPct']}", D),
+        ("boilerplate share removed", f"{C16['courtMentionsRemovedPct']}", D),
+        ("de-boilerplated same-judgment z",
+         f"{C16['phase12_deboilerplated']['z']}", D),
+        ("de-boilerplated macro F1", f"{C16['phase26_deboilerplated']['macroF1']}", D),
+        ("de-boilerplated control macro F1",
+         f"{C16['phase27_deboilerplatedShuffled']['macroF1']}", D),
+        ("signature accuracy", f"{C26['accuracy']}", D),
+        ("signature macro F1", f"{C26['macroF1']}", D),
+        ("shuffled signature accuracy",
+         f"{CW['phase27_shuffledControl']['accuracy']}", D),
+        ("shuffled signature macro F1",
+         f"{CW['phase27_shuffledControl']['macroF1']}", D),
+        ("signature majority baseline", f"{C26['majorityBaseline']}", D),
+        ("evidence recall", f"{C26['uniformPrior']['perCode'][EV]['recall']}", D),
+        ("ccir recall", f"{C26['uniformPrior']['perCode'][IR]['recall']}", D),
+        ("evidence precision", f"{C26['uniformPrior']['perCode'][EV]['precision']}", D),
+        ("evidence year cosine", f"{C22[EV]['meanYearCosine']}", D),
+        ("ccl year cosine", f"{C22[CL]['meanYearCosine']}", D),
+        ("ccir year cosine", f"{C22[IR]['meanYearCosine']}", D),
+        ("evidence city cosine", f"{C22[EV]['meanCityCosine']}", D),
+        ("ccl min city cosine", f"{C22[CL]['minCityCosine']}", D),
+        ("untraceable, sharia procedure",
+         f"{CW['phase29_untraceable'][SP]['untraceablePct']}", D),
+        ("untraceable, ccir", f"{CW['phase29_untraceable'][IR]['untraceablePct']}", D),
+        ("untraceable, evidence", f"{CW['phase29_untraceable'][EV]['untraceablePct']}", D),
+        ("untraceable, ccl", f"{CW['phase29_untraceable'][CL]['untraceablePct']}", D),
+        ("evidence retrieval top3", f"{CW['phase28_retrieval'][EV]['top3']}", D),
+        ("ccir retrieval top5", f"{CW['phase28_retrieval'][IR]['top5']}", D),
+        ("repeated wording family share",
+         f"{cm['phase17_propositions']['sharePartOfARepeatedFamily']}", D),
+        ("ccir top fingerprint share",
+         f"{CW['phase16_templates'][IR][2]['topFingerprintShare']}", D),
+        ("ccl top fingerprint share",
+         f"{CW['phase16_templates'][CL][0]['topFingerprintShare']}", D),
     ]
     return out
 

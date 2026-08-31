@@ -106,16 +106,41 @@ def norm(s):
     return re.sub(r"[^ء-ي ]", "", s)
 
 
+# The table above is written in ordinary orthography; lookups arrive
+# orthographically normalised (أإآ->ا, ى->ي, ة->ه). Normalising the keys by
+# the same function is the whole of the alias handling: two strings merge only
+# when they are IDENTICAL after that normalisation. Nothing is merged on
+# similarity, and the share of resolutions that needed it is reported.
+CANON_N = {norm(k): v for k, v in CANON.items()}
+assert len(CANON_N) == len(CANON), "two canonical keys collide after norm"
+
+# A prophetic report whose collection is not named. «صلى الله عليه وسلم» and
+# the ligature ﷺ are the formula that follows a mention of the Prophet; they
+# identify no collection and are not evidence that one was consulted. They are
+# kept as an identity of their own -- untraceable hadith -- rather than
+# guessed into a collection. PHASE 29 counts them.
+UNTRACED_HADITH = {norm(x) for x in (
+    "صلى الله عليه وسلم", "عليه الصلاة والسلام", "حديث النبي",
+    "حديث حسن", "حديث صحيح", "في الحديث الصحيح")}
+GENERIC_RULES = ("fiqh.unattributed", "principle.settled", "custom.trade",
+                 "maxim.named", "quran.citation", "discretion.named")
+
+
 def canonical(rule, raw):
+    """-> (identity, label, resolved, merged_by_alias_handling)"""
     n = norm(raw)
-    if n in CANON:
-        cid, label = CANON[n]
-        return cid, label, True
+    if raw and not n and "\uFDFA" in raw:
+        # ﷺ is a single ligature character and survives no letter filter
+        n = norm("صلى الله عليه وسلم")
+    if n in UNTRACED_HADITH:
+        return "GENERIC.hadith.untraced", "hadith, no collection named", False, False
+    if n in CANON_N:
+        cid, label = CANON_N[n]
+        return cid, label, True, n not in CANON
     # the generic rules name no source at all; they are their own identity
-    if rule in ("fiqh.unattributed", "principle.settled", "custom.trade",
-                "maxim.named", "quran.citation", "discretion.named"):
-        return f"GENERIC.{rule}", rule, False
-    return f"RAW.{n[:40]}", n[:40], False
+    if rule in GENERIC_RULES:
+        return f"GENERIC.{rule}", rule, False, False
+    return f"RAW.{n[:40]}", n[:40], False, False
 
 
 def fingerprint(text, a, b):
@@ -132,7 +157,7 @@ def main():
         fh.write(json.dumps({"_schema": {
             "years": sorted(YEARS), "window": W,
             "fields": "j y city ct voice type rule cid label resolved "
-                      "instBlock artBlock instW artW tmpl",
+                      "merged instBlock artBlock instW artW tmpl",
             "note": "one row per non-statutory authority mention. NO judgment "
                     "text: tmpl is a hash of a normalised window and cannot be "
                     "inverted. instBlock/artBlock is the nearest statutory "
@@ -188,7 +213,7 @@ def main():
                     if mm:
                         raw = mm.group(0)
                     break
-                cid, label, resolved = canonical(m["rule"], raw)
+                cid, label, resolved, merged = canonical(m["rule"], raw)
                 mb = blk(at)
                 ib = [(p, i, ar) for p, i, ar in stat if mb[0] <= p < mb[1]]
                 iw = [(p, i, ar) for p, i, ar in stat if abs(p - at) <= W]
@@ -200,6 +225,7 @@ def main():
                     "voice": ("court" if voice == "court_reasoning" else "party"),
                     "type": m["type"], "rule": m["rule"],
                     "cid": cid, "label": label, "resolved": resolved,
+                    "merged": merged,
                     "instBlock": nb[1] if nb else None,
                     "artBlock": nb[2] if nb else None,
                     "instW": nw[1] if nw else None,
