@@ -1,0 +1,99 @@
+{
+ "window": [
+  1444,
+  1445,
+  1446
+ ],
+ "judgmentsInWindow": 28090,
+ "pairedRecords": 4212,
+ "pairedShare": 15.0,
+ "selection": {
+  "note": "every figure below is conditional on the dispute having been appealed and published as one record carrying both documents. Judgments never appealed have no outcome and are not in the denominator."
+ },
+ "byShape": {
+  "statute_only": {
+   "n": 1845,
+   "disturbedPct": 10.6,
+   "disturbedCI": [
+    9.2,
+    12.1
+   ],
+   "affirmedPct": 73.9,
+   "medianChars": 7585,
+   "meanAuthorities": 2.0
+  },
+  "hybrid": {
+   "n": 954,
+   "disturbedPct": 11.9,
+   "disturbedCI": [
+    10.0,
+    14.2
+   ],
+   "affirmedPct": 70.5,
+   "medianChars": 7838,
+   "meanAuthorities": 4.28
+  },
+  "nonstatute_only": {
+   "n": 312,
+   "disturbedPct": 16.3,
+   "disturbedCI": [
+    12.7,
+    20.9
+   ],
+   "affirmedPct": 71.5,
+   "medianChars": 7362,
+   "meanAuthorities": 1.96
+  },
+  "none": {
+   "n": 1101,
+   "disturbedPct": 12.4,
+   "disturbedCI": [
+    10.5,
+    14.4
+   ],
+   "affirmedPct": 75.6,
+   "medianChars": 7619,
+   "meanAuthorities": 0.05
+  }
+ },
+ "crossTab": {
+  "hybrid|affirmed": 673,
+  "hybrid|not_admitted": 118,
+  "hybrid|other_disposition": 3,
+  "hybrid|reversed": 64,
+  "hybrid|substituted": 50,
+  "hybrid|unclear": 46,
+  "none|affirmed": 832,
+  "none|not_admitted": 101,
+  "none|other_disposition": 7,
+  "none|reversed": 67,
+  "none|substituted": 69,
+  "none|unclear": 25,
+  "nonstatute_only|affirmed": 223,
+  "nonstatute_only|not_admitted": 30,
+  "nonstatute_only|other_disposition": 1,
+  "nonstatute_only|reversed": 20,
+  "nonstatute_only|substituted": 31,
+  "nonstatute_only|unclear": 7,
+  "statute_only|affirmed": 1363,
+  "statute_only|not_admitted": 211,
+  "statute_only|other_disposition": 14,
+  "statute_only|reversed": 124,
+  "statute_only|substituted": 71,
+  "statute_only|unclear": 62
+ },
+ "outcomes": [
+  "affirmed",
+  "not_admitted",
+  "other_disposition",
+  "reversed",
+  "substituted",
+  "unclear"
+ ],
+ "shapeMixAppealed": {
+  "statute_only": 43.8,
+  "hybrid": 22.6,
+  "nonstatute_only": 7.4,
+  "none": 26.1
+ }
+}

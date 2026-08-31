@@ -63,17 +63,20 @@ Two cautions. 1446 has 1,209 reasoned judgments and is a partially published
 year, so its dip (95 % CI 14.3–18.5) is not a trend; and the window is five
 years, which is a window on the codification wave, not on the century.
 
-## 3 · What the fiqh is doing — 14 judgments, read
+## 3 · What the fiqh is doing — an exploratory hand-read sample (n = 14)
 
 Counting STATUTE+FIQH is what provoked the question; it cannot answer it. So
 `hybrid.py sheet` drew 14 judgments of 1444–1446 whose reasons carry both,
 and they were read against the six functions the question proposed.
 
-**Two of the six never occurred. Nothing was ornamental** — in all fourteen,
-the non-statutory authority carries a proposition that none of the statutory
-articles cited in the same judgment states — **and nothing was
-definitional**: no judgment used fiqh to define a term the statute left
-undefined. What the reading found instead:
+Two of the six did not occur in the sample. Nothing was read as ornamental —
+in all fourteen the non-statutory authority carries a proposition that none of
+the statutory articles cited in the same judgment states — and nothing was
+definitional. **How much that carries is bounded by fourteen**: 0 of 14 has a
+95 per cent Wilson interval running to 21.5 per cent, so the sample rules out
+a *common* ornamental use of non-statutory authority and nothing narrower. It
+is an exploratory hand-read sample by one reader, and every claim resting on
+these labels is **PROVISIONAL_PENDING_SECOND_READER**. What the reading found:
 
 | what the authority does | n |
 |---|---:|
@@ -189,3 +192,25 @@ What it needs before it is a paper, in order:
 Not in scope: a second paper this session, an LLM pass over anything before a
 gold sample exists, and any historical extension. The question is about a
 statute book that is three years old.
+
+---
+
+## Postscript: the programme was run, and the answer is PARTIAL
+
+`COMPLETENESS.md` carries the result. The reframed question of §5 —
+*where in a codified statute book does non-statutory authority remain
+necessary, and what property of a provision predicts it* — has an answer that
+is narrower than the question. Open texture predicts; institutionality
+predicts better and in the opposite direction; an explicit referral to the
+Shariah in the article's own words predicts nothing; and the ordering does
+not survive inside four of six statute books.
+
+The three items this section listed as prerequisites now stand as follows.
+The second reader packet is built and blind (`ANNOTATION_GUIDE.md`,
+`second_reader.py`) and nothing turning on the hand labels is claimed until
+it returns. The party-voice rate was computed properly rather than as a
+probe, and the exploratory reading it prompted did not survive: the median
+bench-minus-bar difference is about zero, and what is real is a class
+pattern, not a level. Article features were built as a hand taxonomy rather
+than as rules, because the taxonomy had to be blind and a rule set written
+after seeing the rates would not have been.

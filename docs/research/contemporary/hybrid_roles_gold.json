@@ -1,0 +1,320 @@
+{
+ "readBy": "primary annotator; the same 40 judgments are the second reader's Task B packet",
+ "status": "PROVISIONAL_PENDING_SECOND_READER",
+ "seed": 4113,
+ "n": 40,
+ "sampling": "judgments of 1444-1446 whose reasons cite a statute and at least one non-statutory authority, stratified on the leading non-statutory type, shuffled",
+ "taxonomy": {
+  "SUPPLIES_THE_DECISION_RULE": "the statutes cited in the same judgment do not state the rule that decides the point; the non-statutory authority does",
+  "ALLOCATES_BURDEN_OR_PRESUMPTION": "the statute says what counts as proof; the authority says what is presumed when the proof runs out",
+  "INTERPRETS_OR_DEFINES": "gives content to a word or a provision the statute leaves open",
+  "CORROBORATES": "the article decides the point on its own; the authority endorses the result or shows it Shariah-conformable",
+  "INDEPENDENT_GROUND": "decides a point no statute cited in the judgment addresses",
+  "UNCLEAR": "the passage does not let the reader tell"
+ },
+ "counts": {
+  "SUPPLIES_THE_DECISION_RULE": 16,
+  "ALLOCATES_BURDEN_OR_PRESUMPTION": 6,
+  "UNCLEAR": 4,
+  "INDEPENDENT_GROUND": 2,
+  "CORROBORATES": 8,
+  "INTERPRETS_OR_DEFINES": 4
+ },
+ "deletionTest": {
+  "question": "could the sentence carrying the authority be deleted without changing the reasoning?",
+  "counts": {
+   "no": 27,
+   "cannot tell": 4,
+   "yes": 9
+  },
+  "codeable": 36,
+  "deletablePctOfCodeable": 25.0,
+  "deletableCI": [
+   13.8,
+   41.1
+  ]
+ },
+ "correction": "The earlier exploratory sample of 14 recorded ZERO ornamental cases. Asked as a deletion test rather than as an intuition, and on 40 judgments, 9 of 36 codeable cases are deletable without changing the reasoning. The earlier reading was not wrong about what the authority carried; it was asking a question one reader cannot answer by intuition, and the operational form of the question gives a different and larger number.",
+ "labels": {
+  "B000": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "CCL 40 defines when an admission is judicial; «الإقرار حجـة قائمة بنفسه» and «أساس التعاقد شرعي صحيح» supply the effect the article does not state",
+   "judgment": "l-lcVf8CFqhNG-hIcsDhspyy2ncC_ebPMgwdRSwu_56atCZSqpOhKjdsOSDkyDIy",
+   "alsoInFirstSample": null
+  },
+  "B001": {
+   "role": "ALLOCATES_BURDEN_OR_PRESUMPTION",
+   "deletable": "no",
+   "evidence": "EVID 29 plus «الأصل عدم سداد مبلغ المديونية ما لم يثبت العكس»; «استقر القضاء على أن الإقرار بالكتابة كالإقرار باللسان» extends it",
+   "judgment": "RGmkkGiYl2sH_HAQ_839-8CSK1zdbyvVwCHJ-9qLTyEbBgwSFaJxj-LcyQ36BOna",
+   "alsoInFirstSample": null
+  },
+  "B002": {
+   "role": "UNCLEAR",
+   "deletable": "cannot tell",
+   "evidence": "the settlement text fills the trimmed extract; no non-statutory passage visible in 3,200 chars",
+   "judgment": "LR8t2MJ344tHfd7ORMAW_8ieo6ZIR0FFU61lZQYTDTZkmTilTaeoWBcvTyetEC5w",
+   "alsoInFirstSample": null
+  },
+  "B003": {
+   "role": "INDEPENDENT_GROUND",
+   "deletable": "no",
+   "evidence": "the loss rule of مضاربة and «تنزيل آثاره الشرعية» decide the case; the only statute cited confers jurisdiction",
+   "judgment": "Frc4_jE1uJJDgjvzY2rxlNZS5-eoYFn7XmPKPm2v7ySohrQiKQQ_52_f84Ob-5cx",
+   "alsoInFirstSample": null
+  },
+  "B004": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«لا ضرر ولا ضرار» and Ibn Taymiyya on مطل carry the entitlement to costs under art. 164 and SPL 73",
+   "judgment": "MqUs26b0bY2IHSuu2YW_tpc_HSDZK-xv_-uNgnKC6_dEyi4pD2u7MlxsDgcNxUFs",
+   "alsoInFirstSample": null
+  },
+  "B005": {
+   "role": "UNCLEAR",
+   "deletable": "cannot tell",
+   "evidence": "reasons run on CTL arts. 31 and 307; the flagged non-statutory mention is past the trim",
+   "judgment": "3tbsf11fhbNpW_hEr3N6d0XdY38ih0wYBmToAoppo309en_CQ8dkBpLCFBLcR-xb",
+   "alsoInFirstSample": null
+  },
+  "B006": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "«والتوقيع من وسائل الإثبات المعتبرة شرعًا ونظامًا» beside CCL 42, which states the same rule",
+   "judgment": "lUUXDMZndpUJ8jT-GI6JJYoKt0iBe5xd4b2PTpTs6RA8c-DvKeZ2VXkkRqMtkTTv",
+   "alsoInFirstSample": null
+  },
+  "B007": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "«والصلح خير» and the hadith beside CCL 29(2), which alone makes the recorded settlement executory",
+   "judgment": "1gd-jkAFcSpHamRCcWQrY8A-7p7yDihBmh9izyDxpoKKEVJZCbp_vWL6D9hd7aap",
+   "alsoInFirstSample": null
+  },
+  "B008": {
+   "role": "ALLOCATES_BURDEN_OR_PRESUMPTION",
+   "deletable": "no",
+   "evidence": "«الأعراف التجارية تقتضي صحة ما يقدّمه الأطراف ما لم يطعن به الخصم» supplies the presumption EVID 5 does not",
+   "judgment": "_c95sYOGhD8Jy_c_3q1ZatuPXdEyBqB-9Sx_YUHNXOFGS6i8m228KVuVkx4FARbD",
+   "alsoInFirstSample": null
+  },
+  "B009": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«الوفاء بالعقود واجبٌ في الشريعة» with Q 5:1 and «المسلمون على شروطهم» carries the binding force of the contract",
+   "judgment": "aHVaYXzyvGcvviVpGbVfQ1_5mQ9Rs5q0BM2Kh1EPxMmrXpfwXabOglzTZSBryJiQ",
+   "alsoInFirstSample": null
+  },
+  "B010": {
+   "role": "INTERPRETS_OR_DEFINES",
+   "deletable": "yes",
+   "evidence": "«استقر القضاء على أن الإقرار بالكتابة كالإقرار باللسان … وهو ما تضمنته المادة التاسعة والعشرون» — the judgment itself says the article contains it",
+   "judgment": "9CvGS-lXX5kxRUJVYXQ0pPRjmYg2ohp2TFaT0rE2i7VQo6g5Xvzeu8j7IQDB-GL_",
+   "alsoInFirstSample": null
+  },
+  "B011": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«ما هو مقرر فقهاً وقضاءً من الاعتداد بمصاريف الدعوى، وإلزام من أحوج خصمه في الشكاية»",
+   "judgment": "oAhUsRoXoz1GKJVmgPIceu-omU11TpWEcsEFo9Wy57nsAjw5Og8L6TVP5NMk6M8r",
+   "alsoInFirstSample": null
+  },
+  "B012": {
+   "role": "INTERPRETS_OR_DEFINES",
+   "deletable": "yes",
+   "evidence": "identical formula to B010, attributed to EVID 29",
+   "judgment": "_MDIL6ZHSIMTIKPyVtsS4Q1hIINd5H9xLAAgseSJP62oKTHWmlhTE57ksEygceux",
+   "alsoInFirstSample": null
+  },
+  "B013": {
+   "role": "INTERPRETS_OR_DEFINES",
+   "deletable": "no",
+   "evidence": "«عرّف الفقهاء شركة العنان» with الإنصاف للمرداوي classifies the contract, and the classification decides the claim",
+   "judgment": "aeWoCsYSzWOO73O_wwLPr5p5WZ1btrFH2wYTQ4PEUpePGJbd2ddoSKAv1OPAhov_",
+   "alsoInFirstSample": null
+  },
+  "B014": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«الضرر يزال» carries the entitlement; art. 164 supplies only the assessment",
+   "judgment": "B63TRaJUC3ORFtV6zIYHWEANyDIve4KI0llTOXu4QN96jbXFJq6rIKcmK4X9UzLc",
+   "alsoInFirstSample": null
+  },
+  "B015": {
+   "role": "CORROBORATES",
+   "deletable": "no",
+   "evidence": "«والصلح خير» and the hadith, then the operative test «لم تشتمل بنود الاتفاق ما يعارض أصلاً شرعياً أو نظامياً»",
+   "judgment": "JTAyR8k7iGby6Sngxq0nAvLMYM5cdKBwy4O1f1gWKag_IL3GGxj4kHxGB4Q1VWpY",
+   "alsoInFirstSample": null
+  },
+  "B016": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«ولما قرره أهل العلم … (ينظر: كشاف القناع ٣/٣٤٨)» under art. 164",
+   "judgment": "tzdxrRMznXdkXgq-1ZNJLj0-hpjs3iXsoSUxUPM7qU18b3PlaRvfxkcOSgOAdkaI",
+   "alsoInFirstSample": null
+  },
+  "B017": {
+   "role": "ALLOCATES_BURDEN_OR_PRESUMPTION",
+   "deletable": "no",
+   "evidence": "«الأصل عدم سداد مبلغ المديونية محل المطالبة» beside EVID 30",
+   "judgment": "MdSaeAcGcPjI7Ll0heNdJpXdEm9G0-cuuIDAi6BnkqG03J11Tcm2wX0NNIV1TGaw",
+   "alsoInFirstSample": null
+  },
+  "B018": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«الراجح من أقوال أهل العلم في مسألة تضمين الغريم المماطل»; the verses «فاسأل به خبيرا» corroborate the expert power separately",
+   "judgment": "qK2idT2a_R9ihzoOGw3DLJECo3Zax17zpl_oRjUpw7GvsCM_Idcra6uAsCMImj5Q",
+   "alsoInFirstSample": null
+  },
+  "B019": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«الإقرار حجة على صاحبه؛ إذ الأصل في الإقرار لزومه ونفاذ أثره» before CCL 40, which only defines",
+   "judgment": "xYXxJzOE46nGZAY4iUPNCA7bj0IcH5JCHqZMR1qUsmW7ZXWihWUp0tZWarYlQzP1",
+   "alsoInFirstSample": null
+  },
+  "B020": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«المستقر فقهاً وقضاءً جوازُ الحكم على الغائب … ذهب جمهورُ الفقهاء»",
+   "judgment": "19Bt4hFC6qNoPCRezaNR80afa8AdhaL_T_JRVfDlma-uWbCg1zeR4v6M5ZyH2hgs",
+   "alsoInFirstSample": null
+  },
+  "B021": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "the hadith «لو يعطى الناس بدعواهم» restating EVID 2(1), cited immediately after it",
+   "judgment": "uaY2wyg6sqZvvjangVUT-7ir2vhJWM_YHwUnu9Gt2kqiJJfb9gp7tnhGqX283hyL",
+   "alsoInFirstSample": null
+  },
+  "B022": {
+   "role": "UNCLEAR",
+   "deletable": "cannot tell",
+   "evidence": "no non-statutory passage visible within the trim",
+   "judgment": "xFgyH5J31VpbIo2kAp_k7UzBXNdlIIEF-XpxKUWIcNpkl_HlvC7GrYbZ6McRsjer",
+   "alsoInFirstSample": null
+  },
+  "B023": {
+   "role": "ALLOCATES_BURDEN_OR_PRESUMPTION",
+   "deletable": "no",
+   "evidence": "«الأصل بقاء الدين في الذمة حتى يثبت خلافه (كشاف القناع ٣/٣٠٧)» after EVID 21 and 29",
+   "judgment": "ZeQ28R_WFBp-BDGv0S90OjErw0vfwBoITZMeWFKeWrmZx83TVdCss81lI6jyTS1Z",
+   "alsoInFirstSample": null
+  },
+  "B024": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«الأصل في الإقرار لزومه ونفاذ أثره» before EVID 14, which only defines; then كشاف القناع ٣/٤١٩ for costs",
+   "judgment": "vDcDO_j08EihOYyC6vRWH5EpxVgHlGfgjzQbcflcxl2J722_qi7cyLpt-6jVO3vV",
+   "alsoInFirstSample": null
+  },
+  "B025": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "«القاعدة الشرعية: البينة على المدعي» and Q 2:282 beside the Evidence Law's own rules",
+   "judgment": "NU-lwW22_lpmh7wQFjfe-qA61PRdN6u35xus269DTp4c7UmItAsqwX3z9wRHZg5l",
+   "alsoInFirstSample": null
+  },
+  "B026": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«المقرر فقهاً … جواز الحكم باليمين مع الشاهد» — a rule no cited article states",
+   "judgment": "5DRoIGD0GI0dflzK6_WxS6gwZlbTICNNtzCHv1LcM2tNQVjr9fLdFbNoE0sogjHs",
+   "alsoInFirstSample": null
+  },
+  "B027": {
+   "role": "INDEPENDENT_GROUND",
+   "deletable": "no",
+   "evidence": "territorial venue from «المقرر فقهاً وقضاءً»; CCL 16 confers subject-matter competence only",
+   "judgment": "DTfJaxrIJLoqYr_YaOteHEZsWG7I1FiMazOn_S1yqBvjNpfrTEzX-ro7TfruBtQU",
+   "alsoInFirstSample": null
+  },
+  "B028": {
+   "role": "ALLOCATES_BURDEN_OR_PRESUMPTION",
+   "deletable": "no",
+   "evidence": "«الأصل بقاء المبلغ في ذمة المدعى عليها»; the judgment also says «جاءت الشريعة باعتباره والأخذ به في نظام الإثبات»",
+   "judgment": "Uzj3ybxke7MWg0WGF7hnUnUFNbSYLLHlLRWT9G1xDYHTU428LIG4I09aFIq7emr0",
+   "alsoInFirstSample": null
+  },
+  "B029": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«المقرر شرعاً وقضاء أن المدعي مكلف … وله حق الاجتهاد في قبولها أو ردها لسبب شرعي أو نظامي أو عقلي»",
+   "judgment": "lWtaVFlnSbWhHEEcOxmdWRljvSnYDUr350pAYGPUDGil2HC09xWmeg2VPx7dgOi4",
+   "alsoInFirstSample": null
+  },
+  "B030": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "the hadith beside EVID 103(2), which states the نكول effect in full",
+   "judgment": "AgRm_qHEeRnAIwLkgpwJsGdd9aRGJrqPRE1hD2YwX6WWbEdH_v6IbySmx9USN88V",
+   "alsoInFirstSample": null
+  },
+  "B031": {
+   "role": "INTERPRETS_OR_DEFINES",
+   "deletable": "no",
+   "evidence": "EVID 97's «أقوى المتداعيين» given content by Ibn Taymiyya: «سواء ترجح ذلك بالبراءة الأصلية، أو اليد الحسية، أو العادة العملية»",
+   "judgment": "s1LjGtHhUuEtumodm95uw1EEysM0YCE2q6j6stcvsyu70FndrzDPA2OkUFI568NJ",
+   "alsoInFirstSample": null
+  },
+  "B032": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "«الراجح من أقوال أهل العلم في مسألة تضمين الغريم المماطل» under art. 164",
+   "judgment": "sgRmfGFu619B-D-rBIs2Cpovxra2pmFV4lJ5G6P_LOrDUu6cWrJdNnYCS7nE5uXy",
+   "alsoInFirstSample": null
+  },
+  "B033": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "Q 5:1 beside the fee clause of the contract and EVID 21",
+   "judgment": "XHrUvwfmXNTHWoUkJF0fYrJF10T0XcsZuaime4-bSZcB0IK4-Y4qSXcx7i6nya_M",
+   "alsoInFirstSample": null
+  },
+  "B034": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "expert's fee allocated by «ما هو مقرر فقهاً وقضاءً من الاعتداد بمصاريف الدعوى»",
+   "judgment": "vlCqEGemn1yNhQ2pGkw_iSEk77CqIXSH0_VniU6hHVKC7ezRTiesU4NeLmvig3c_",
+   "alsoInFirstSample": null
+  },
+  "B035": {
+   "role": "CORROBORATES",
+   "deletable": "yes",
+   "evidence": "the hadith beside EVID 103, which states the نكول effect",
+   "judgment": "TpycrVk0TEN1LeeQItvjywqa_mj7xcR_fo-2mQ1Qd_-PMOKrnF0UW0YMcqBfeO8r",
+   "alsoInFirstSample": null
+  },
+  "B036": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "the same costs formula, with SPL 128 cited for the expert only",
+   "judgment": "HkXiJzabfD9hyI2tplWHSMke5C8aERgqVEtBR0qrYBKrij3hbOJkMEKJDWGBpkhq",
+   "alsoInFirstSample": null
+  },
+  "B037": {
+   "role": "UNCLEAR",
+   "deletable": "cannot tell",
+   "evidence": "no non-statutory passage visible within the trim",
+   "judgment": "B57pGerVFbMX3dGGLXLp_K-8dBF7AqZVgX-MLNfHJ7AQAOY05Y8iKzZB5Yb7sMGF",
+   "alsoInFirstSample": null
+  },
+  "B038": {
+   "role": "SUPPLIES_THE_DECISION_RULE",
+   "deletable": "no",
+   "evidence": "Q 5:1 and «المسلمون على شروطهم» carrying the binding force of the contract",
+   "judgment": "tSWuNCCkbwGaWpRPgr9bAWrovkg-T5IC5oDFOajpfV-BQWEXzzwloKOKK4XEfT_4",
+   "alsoInFirstSample": null
+  },
+  "B039": {
+   "role": "ALLOCATES_BURDEN_OR_PRESUMPTION",
+   "deletable": "no",
+   "evidence": "«الأعراف التجارية تقتضي صحة ما يقدّمه الأطراف ما لم يطعن به الخصم», with Q 5:1 corroborating",
+   "judgment": "ZgA_t2Sh-W3pYL2B5oQqqnyS4gVDwSna4QiwsEFJp3RUnz6ZtYnLxY_Vl5FTO52y",
+   "alsoInFirstSample": null
+  }
+ }
+}

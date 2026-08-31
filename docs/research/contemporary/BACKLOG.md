@@ -73,3 +73,20 @@ needs judgments to name the article they are rejecting, and they do not.
 Both are stated as limits rather than as work items, because pretending
 otherwise is how a research programme spends a year on an unanswerable
 question.
+
+## The capability ledger, after the completeness programme
+
+| capability | state | where |
+|---|---|---|
+| which provisions are sufficient on their own | **partial** — an article-level rate exists for 239 provisions, but the class that predicts it is institutionality rather than completeness | `completeness_layer.csv`, `COMPLETENESS.md` |
+| which provisions draw supplementation | answered, article by article | `completeness_layer.csv` |
+| what kind of supplementation | answered on 40 hand-read judgments, PROVISIONAL_PENDING_SECOND_READER | `hybrid_roles_gold.json` |
+| does the bench supplement differently from the bar | answered, and the difference is a class effect not a level effect | `completeness_results.json` |
+| how the new codes coexist with fiqh | answered for the Evidence Law; thin but replicated for the Civil Transactions Law | `codes_results.json` |
+| what a legal AI would miss on statutes alone | answered as an estimate with its factors separated | `rag_gap_results.json` |
+| dilution against displacement | answered on five denominators, and they disagree in a way that is itself the result | `codes_results.json` |
+| does reasoning shape go with appellate fate | examined and declined: no association, and the slice is unrepresentative | `appellate_results.json` |
+
+Two things this programme closed rather than opened. The alignment programme
+stays closed at proposition level. And *silence* is closed as a research
+object: it is a length, and length here is partly a publication decision.

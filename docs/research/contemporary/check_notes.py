@@ -27,6 +27,9 @@ def facts():
     ret, cf = J("retrieval_results.json"), J("core_function.json")
     fg, pg = J("function_gold.json"), J("pairs_gold.json")
     hg = J("hybrid_gold.json")
+    cp, cd = J("completeness_results.json"), J("codes_results.json")
+    si, ap = J("silence_results.json"), J("appellate_results.json")
+    rg, hr = J("rag_gap_results.json"), J("hybrid_roles_gold.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
     W = ov["conditional"]["wide"]
     y, seam = hy["years"], hy["seams"]
@@ -95,6 +98,65 @@ def facts():
          f"{pg['labels']['counts']['ANSWERED_ON_OTHER_LAW']}", []),
         ("hybrid sample ornament count",
          f"{hg['counts']['ORNAMENT']}", []),
+        # --- the completeness programme
+        ("open-textured pooled",
+         f"{cp['byClass']['OPEN_TEXTURED_STANDARD']['judgmentLevelPct']}",
+         ["COMPLETENESS.md"]),
+        ("open-textured median",
+         f"{cp['byClass']['OPEN_TEXTURED_STANDARD']['articleMedianPct']}",
+         ["COMPLETENESS.md"]),
+        ("institutional median",
+         f"{cp['byClass']['INSTITUTIONAL_DIRECTIVE']['articleMedianPct']}",
+         ["COMPLETENESS.md"]),
+        ("institutional median, unseen",
+         f"{cp['byClassUnseenOnly']['INSTITUTIONAL_DIRECTIVE']['articleMedianPct']}",
+         ["COMPLETENESS.md"]),
+        ("external referral pooled, unseen",
+         f"{cp['byClassUnseenOnly']['EXTERNAL_REFERRAL']['judgmentLevelPct']}",
+         ["COMPLETENESS.md"]),
+        ("matched pairs median delta",
+         f"{cp['matchedPairs']['medianDeltaPts']}", ["COMPLETENESS.md"]),
+        ("matched pairs sign test",
+         f"{cp['matchedPairs']['signTestP']}", ["COMPLETENESS.md"]),
+        ("judicial principle, open-textured",
+         f"{cp['byClassByAuthority']['OPEN_TEXTURED_STANDARD']['judicial_principle']}",
+         ["COMPLETENESS.md"]),
+        ("judicial principle, institutional",
+         f"{cp['byClassByAuthority']['INSTITUTIONAL_DIRECTIVE']['judicial_principle']}",
+         ["COMPLETENESS.md"]),
+        ("bench-bar delta, institutional, strict",
+         f"{cp['benchVsBar_party']['byClass']['INSTITUTIONAL_DIRECTIVE']}",
+         ["COMPLETENESS.md"]),
+        ("CTL pooled non-statutory",
+         f"{cd['civilTransactionsLaw']['pooledNonStatutePct']}",
+         ["COMPLETENESS.md"]),
+        ("Evidence pooled non-statutory",
+         f"{cd['evidenceLaw']['pooledNonStatutePct']}", ["COMPLETENESS.md"]),
+        ("fiqh per statutory citation 1446",
+         f"{cd['denominators']['1446']['fiqhPerStatutoryCitation']}",
+         ["COMPLETENESS.md"]),
+        ("fiqh per 1k reasoned 1446",
+         f"{cd['denominators']['1446']['fiqhCitationsPer1000Reasoned']}",
+         ["COMPLETENESS.md"]),
+        ("silent share", f"{si['silentPct']}", ["COMPLETENESS.md"]),
+        ("silent median reason chars",
+         f"{si['silent']['medianReasonChars']:,}", ["COMPLETENESS.md"]),
+        ("silence in the shortest decile",
+         f"{si['byLengthDecile'][0]['silentPct']}", ["COMPLETENESS.md"]),
+        ("paired appellate share", f"{ap['pairedShare']}", ["COMPLETENESS.md"]),
+        ("disturbed, non-statute only",
+         f"{ap['byShape']['nonstatute_only']['disturbedPct']}",
+         ["COMPLETENESS.md"]),
+        ("statute-only retrieval omission",
+         f"{rg['estimateReasonedJudgmentsWhereStatuteOnlyRetrievalOmitsPct']}",
+         ["COMPLETENESS.md"]),
+        ("named fiqh with a source",
+         f"{rg['namedFiqhWithASourcePct']}", ["COMPLETENESS.md"]),
+        ("deletable share of codeable",
+         f"{hr['deletionTest']['deletablePctOfCodeable']}",
+         ["COMPLETENESS.md"]),
+        ("supplies the decision rule",
+         f"{hr['counts']['SUPPLIES_THE_DECISION_RULE']}", ["COMPLETENESS.md"]),
     ]
     return out
 

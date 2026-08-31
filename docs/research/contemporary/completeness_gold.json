@@ -1,0 +1,1038 @@
+{
+ "readBy": "primary annotator, from the enacted article text alone",
+ "blindTo": "the article's non-statutory attraction rate, its citation rank, and every judgment that cites it. The sheet showed instrument, article number and text; nothing else.",
+ "frame": "the 130 articles cited in the court's reasons in at least 30 judgments and carried in the corpus registry; 4 are empty in the registry and are excluded, leaving 126",
+ "registryEmpty": [
+  "companies_law:152",
+  "companies_law:52",
+  "companies_law:153",
+  "companies_law:53"
+ ],
+ "contamination": "26 of the 126 carry ratePreviouslySeen=true: their attraction rate was printed in an earlier session or in an exploratory probe of this one, before this classification was made. Every test below is reported twice, once on all 126 and once on the 100 unseen articles. The marker «العرف» entered EXTERNAL_REFERRAL after art. 164 had been read, which is the single most contaminated decision in the scheme.",
+ "classes": {
+  "EXTERNAL_REFERRAL": "the article's own words send the judge to a source outside the enacted text -- the Shariah, custom, or the fiqh maxims",
+  "OPEN_TEXTURED_STANDARD": "the decision the article calls for turns on a standard whose content the text does not fix",
+  "DUTY_OR_POWER_WITHOUT_DECISION_RULE": "confers a power or imposes an act without stating the rule that decides entitlement",
+  "INSTITUTIONAL_DIRECTIVE": "fixes an institutional fact -- competence, venue, form, deadline, chamber -- completely",
+  "DEFINITION_STATUS": "defines a term or fixes a scope or a status",
+  "SELF_SUFFICIENT_RULE": "states condition, rule and legal effect determinately enough to decide the point it addresses"
+ },
+ "priority": [
+  "EXTERNAL_REFERRAL",
+  "OPEN_TEXTURED_STANDARD",
+  "DUTY_OR_POWER_WITHOUT_DECISION_RULE",
+  "DEFINITION_STATUS",
+  "INSTITUTIONAL_DIRECTIVE",
+  "SELF_SUFFICIENT_RULE"
+ ],
+ "labels": {
+  "evidence_law:92": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "defines اليمين الحاسمة and اليمين المتممة",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 0
+  },
+  "sharia_procedure_law:35": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "jurisdiction of the commercial courts, enumerated",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 1
+  },
+  "commercial_courts_law:82": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what the appeal transfers and what is admissible in it",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 2
+  },
+  "evidence_law:109": {
+   "class": "DUTY_OR_POWER_WITHOUT_DECISION_RULE",
+   "decisiveText": "«يجوز للمحكمة … أن تندب خبيراً» / «من يرى لزوم سماع أقواله»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 3
+  },
+  "law_practice_law:28": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«تقدر المحكمة أتعابه في ضوء الجهد المبذول والنفع الذي عاد»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 5
+  },
+  "commercial_courts_law:31": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«ولم يتقدم بعذر تقبله المحكمة» / «إذا كانت صالحة للحكم فيها»",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 6
+  },
+  "commercial_courts_implementing_regulation:31": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "jurisdiction by claim value",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 7
+  },
+  "commercial_courts_law:79": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "appeal periods, in days",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 8
+  },
+  "commercial_courts_law:20": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what the claim form must contain",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 9
+  },
+  "arbitration_law:15": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "how arbitrators are appointed, with deadlines",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 10
+  },
+  "sharia_procedure_law:205": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«المسائل المستعجلة التي يخشى عليها فوات الوقت»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 11
+  },
+  "sharia_procedure_law:66": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "judge must clarify the claim; failure → صرف النظر",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 12
+  },
+  "commercial_courts_law:86": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "refers the grounds to the Sharia Procedure Law",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 13
+  },
+  "commercial_courts_implementing_regulation:70": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what the pre-action notice must contain",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 14
+  },
+  "sharia_procedure_law:70": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "parties may have agreement recorded; court issues the deed",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 15
+  },
+  "arbitration_law:50": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "exhaustive grounds for annulling an arbitral award",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 16
+  },
+  "commercial_courts_implementing_regulation:37": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "when the limitation period starts to run",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 17
+  },
+  "evidence_law:2": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the claimant proves; the judge may not decide on private knowledge",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 19
+  },
+  "commercial_courts_law:1": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "the statute's defined terms",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 20
+  },
+  "evidence_law:31": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "evidentiary weight of traders' books",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 21
+  },
+  "evidence_law:22": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "who is interrogated when a party lacks capacity",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 22
+  },
+  "evidence_law:5": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "no particular form is required to prove an obligation",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 23
+  },
+  "evidence_law:17": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "«الإقرار القضائي حجة قاطعة على المقر، وقاصرة عليه»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 24
+  },
+  "commercial_courts_law:16": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "jurisdiction of the commercial court, enumerated",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 25
+  },
+  "commercial_courts_law:40": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "defines when an admission is judicial",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 26
+  },
+  "commercial_courts_implementing_regulation:102": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what an urgent application must contain",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 28
+  },
+  "commercial_courts_implementing_regulation:71": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "when the pre-action notice is effected",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 29
+  },
+  "arbitration_law:53": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "enforcement order and the documents required with it",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 30
+  },
+  "sharia_procedure_law:92": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the modes of discontinuing a claim, and its limit",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 31
+  },
+  "commercial_courts_implementing_regulation:90": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "the agenda of the preparatory hearing",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 32
+  },
+  "sharia_procedure_law:16": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "when service is validly effected",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 33
+  },
+  "sharia_procedure_law:36": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "venue by the defendant's place of residence",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 34
+  },
+  "commercial_courts_implementing_regulation:51": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "which claims must be filed by a lawyer",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 35
+  },
+  "evidence_law:103": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "attend and swear or be deemed ناكل; the effect is stated",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 36
+  },
+  "sharia_procedure_law:68": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«فللقاضي إمهاله متى رأى ضرورة ذلك» / «إلا لعذر يقبله القاضي»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 37
+  },
+  "evidence_law:40": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«ولم تكف وقائع الدعوى ومستنداتها في إقناع المحكمة»",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 38
+  },
+  "commercial_courts_law:58": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«فللمحكمة قفل باب المرافعة … متى كانت صالحة للفصل فيها»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 39
+  },
+  "evidence_law:36": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«أو يؤدي إلى إظهار الحقيقة فيه»",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 40
+  },
+  "commercial_courts_implementing_regulation:245": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "nothing may be raised after the preparatory hearing closes",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 41
+  },
+  "arbitration_law:5": {
+   "class": "EXTERNAL_REFERRAL",
+   "decisiveText": "«وذلك بما لا يخالف أحكام الشريعة الإسلامية»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 42
+  },
+  "evidence_law:39": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "who bears the burden on forgery and on denial",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 43
+  },
+  "commercial_courts_implementing_regulation:58": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "which claims must go to mediation before filing",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 44
+  },
+  "commercial_courts_law:73": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "delegates to the implementing regulation",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 45
+  },
+  "commercial_courts_implementing_regulation:208": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "effect of an inadmissible appeal on finality",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 46
+  },
+  "evidence_law:26": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the official document is conclusive against all",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 47
+  },
+  "commercial_courts_law:21": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "registration of the claim and completion of defects",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 48
+  },
+  "commercial_courts_law:22": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "referral to chambers; the defence memo deadline",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 49
+  },
+  "sharia_procedure_law:113": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "attend and swear or be deemed ناكل; the effect is stated",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 50
+  },
+  "commercial_courts_law:81": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "how an appeal is filed",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 51
+  },
+  "arbitration_law:51": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "the sixty-day period and the appeal route",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 52
+  },
+  "commercial_courts_implementing_regulation:240": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "mediation before small claims, capped at fifteen days",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 53
+  },
+  "evidence_law:105": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "incomplete proof → supplementary oath → judgment follows",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 54
+  },
+  "evidence_law:30": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "signed correspondence has the weight of a private document",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 55
+  },
+  "sharia_procedure_law:11": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "service by bailiff and by electronic means",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 56
+  },
+  "commercial_courts_implementing_regulation:164": {
+   "class": "EXTERNAL_REFERRAL",
+   "decisiveText": "«د - العرف، أو العادة المستقرة» among the factors in assessing compensation",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 57
+  },
+  "commercial_courts_implementing_regulation:52": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "petitions must be filed by a lawyer",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 58
+  },
+  "sharia_procedure_law:78": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "duty to transfer the case to the competent court",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 59
+  },
+  "arbitration_law:11": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "arbitration agreement pleaded in time → claim not admissible",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 60
+  },
+  "commercial_courts_implementing_regulation:11": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "composition of first-instance chambers by claim value",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 61
+  },
+  "commercial_courts_implementing_regulation:16": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what may be delegated to the administration",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 62
+  },
+  "commercial_courts_law:36": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "enumerates what counts as an urgent application",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 63
+  },
+  "sharia_procedure_law:75": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "pleas must be raised first or the right is lost",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 64
+  },
+  "evidence_law:98": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "swearing wins, نكول loses, after warning",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 66
+  },
+  "civil_transactions_law:120": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«كل خطأٍ سبب ضررًا للغير يُلزم من ارتكبه بالتعويض»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 67
+  },
+  "sharia_procedure_law:30": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«ويقتضي حسن سير العدالة أن يُنظر معها»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 68
+  },
+  "commercial_courts_implementing_regulation:108": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the urgent application is examined without the merits",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 69
+  },
+  "sharia_procedure_law:57": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«فإن غاب عن هذه الجلسة دون عذر تقبله المحكمة»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 70
+  },
+  "civil_transactions_law:720": {
+   "class": "EXTERNAL_REFERRAL",
+   "decisiveText": "enacts the کلية maxims themselves: «العادة مُحَكَّمة»، «الأمور بمقاصدها»",
+   "ambiguous": false,
+   "fiqhIdiom": true,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 71
+  },
+  "commercial_courts_law:8": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "delegates procedures to the implementing regulation",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 72
+  },
+  "commercial_courts_law:17": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "venue, with a contrary agreement permitted",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 73
+  },
+  "sharia_procedure_law:41": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what the claim form must contain",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 74
+  },
+  "commercial_courts_implementing_regulation:8": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "an agreement the statute refers to counts only if written",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 75
+  },
+  "commercial_courts_law:78": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "which judgments are appealable",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 76
+  },
+  "commercial_courts_implementing_regulation:106": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "decide at the first session; three working days at most",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 77
+  },
+  "commercial_courts_law:30": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "served in person or appeared → the proceedings are adversarial",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 78
+  },
+  "sharia_procedure_law:93": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "discontinuance annuls the procedure, not the right",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 79
+  },
+  "arbitration_law:55": {
+   "class": "EXTERNAL_REFERRAL",
+   "decisiveText": "«أنه لا يتضمن ما يخالف أحكام الشريعة الإسلامية والنظام العام»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 80
+  },
+  "commercial_courts_implementing_regulation:69": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "which claims require a pre-action notice",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 81
+  },
+  "commercial_courts_implementing_regulation:21": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "applies the expert's obligations to an adviser",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 82
+  },
+  "sharia_procedure_law:31": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "jurisdiction of the general courts",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 83
+  },
+  "commercial_courts_implementing_regulation:215": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "which appeals are heard without a hearing",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 84
+  },
+  "commercial_courts_law:2": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "the scope of the statute and its regulation",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 85
+  },
+  "commercial_courts_law:29": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "settlement recorded in the minutes is an executory instrument",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 86
+  },
+  "evidence_law:93": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«تكون اليمين في جانب أقوى المتداعيين» — the term is not defined",
+   "ambiguous": false,
+   "fiqhIdiom": true,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 87
+  },
+  "commercial_courts_law:3": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what the Supreme Judicial Council decides",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 88
+  },
+  "commercial_courts_law:27": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«لا يجوز تأجيل الجلسة إلا لسبب يقتضي ذلك»",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 89
+  },
+  "commercial_courts_law:9": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what counts as an address for service",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 90
+  },
+  "commercial_courts_implementing_regulation:77": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "unrelated claims in one form → inadmissible",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 91
+  },
+  "sharia_procedure_law:76": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "jurisdiction and standing pleas, raisable at any stage",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 92
+  },
+  "sharia_procedure_law:1": {
+   "class": "EXTERNAL_REFERRAL",
+   "decisiveText": "«تطبق المحاكم … أحكام الشريعة الإسلامية، وفقاً لما دل عليه الكتاب والسنة»",
+   "ambiguous": false,
+   "fiqhIdiom": true,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 93
+  },
+  "evidence_law:86": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "res judicata, applied by the court of its own motion",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 94
+  },
+  "sharia_procedure_law:128": {
+   "class": "DUTY_OR_POWER_WITHOUT_DECISION_RULE",
+   "decisiveText": "«للمحكمة عند الاقتضاء أن تقرر تكليف خبير»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 95
+  },
+  "commercial_courts_implementing_regulation:81": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "the defence memo and its deadline",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 96
+  },
+  "commercial_courts_law:42": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "evidentiary weight of official and private papers",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 97
+  },
+  "commercial_courts_law:19": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "the fifteen-day pre-action notice",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 98
+  },
+  "evidence_law:122": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the losing party bears the expert's fee, pro rata",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 99
+  },
+  "sharia_procedure_law:108": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "an admission binds its maker alone",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 100
+  },
+  "evidence_law:97": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the decisive oath, its return, and the effect of نكول",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 101
+  },
+  "commercial_courts_implementing_regulation:104": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "claimant absent from the urgent hearing → inadmissible",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 102
+  },
+  "bankruptcy_law:7": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "liquidation conditions and joint liability for the shortfall",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 103
+  },
+  "commercial_courts_implementing_regulation:204": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«ما تضمنه طلب الاعتراض من دفوع جوهرية» — not defined",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 104
+  },
+  "commercial_courts_implementing_regulation:243": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "the small-claims defence memo and its deadline",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 105
+  },
+  "evidence_law:21": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«بغير عذر مقبول» / «بغير مسوّغ معتبر» / «استخلصت المحكمة ما تراه»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 106
+  },
+  "evidence_law:16": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«لا يقبل الإقرار إذا كذبه ظاهر الحال»",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 107
+  },
+  "civil_transactions_law:107": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«مع التعويض … إن كان له مقتض» / «إذا كان الجزء … قليل الأهمية»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 108
+  },
+  "evidence_law:3": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«البينة لإثبات خلاف الظاهر، واليمين لإبقاء الأصل» — الظاهر and الأصل are undefined",
+   "ambiguous": true,
+   "fiqhIdiom": true,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 109
+  },
+  "evidence_law:29": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "the private document is attributed to its signatory unless expressly denied",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 110
+  },
+  "commercial_courts_implementing_regulation:137": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«فللمحكمة أن تستخلص من ذلك ما تراه قرينة»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 111
+  },
+  "commercial_courts_implementing_regulation:133": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "no oath is administered to a legal person, in any case",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 112
+  },
+  "commercial_courts_implementing_regulation:59": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "how prior recourse to mediation is proved",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 113
+  },
+  "evidence_law:1": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "«تسري أحكام هذا النظام على المعاملات المدنية والتجارية»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 114
+  },
+  "commercial_courts_implementing_regulation:244": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«فتفصل في الدعوى ما لم تر ضرورةً لإجراء تبادل المذكرات»",
+   "ambiguous": true,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 115
+  },
+  "sharia_procedure_law:200": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "enumerated grounds for a petition to reopen",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 116
+  },
+  "sharia_procedure_law:83": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "what incidental claims the claimant may add",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 117
+  },
+  "commercial_courts_implementing_regulation:64": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "a settlement offer accepted before withdrawal takes effect",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 118
+  },
+  "law_practice_law:26": {
+   "class": "OPEN_TEXTURED_STANDARD",
+   "decisiveText": "«بما يتناسب مع الجهد الذي بذله المحامي والنفع الذي عاد على الموكل»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 119
+  },
+  "sharia_procedure_law:67": {
+   "class": "EXTERNAL_REFERRAL",
+   "decisiveText": "«وأجرى في القضية المقتضى الشرعي»",
+   "ambiguous": false,
+   "fiqhIdiom": true,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 120
+  },
+  "evidence_law:14": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "defines judicial and non-judicial admission",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 121
+  },
+  "commercial_courts_law:10": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "how electronic service is effected",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 122
+  },
+  "evidence_law:110": {
+   "class": "DUTY_OR_POWER_WITHOUT_DECISION_RULE",
+   "decisiveText": "«للمحكمة … أن تقرر ندب خبير … في المسائل الفنية»",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 123
+  },
+  "commercial_courts_implementing_regulation:237": {
+   "class": "DEFINITION_STATUS",
+   "decisiveText": "defines what a small claim is",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 124
+  },
+  "evidence_law:18": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "an admission binds and cannot be withdrawn",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 125
+  },
+  "arbitration_law:8": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "which court hears an annulment action",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": true,
+   "sheetIndex": 126
+  },
+  "commercial_courts_implementing_regulation:56": {
+   "class": "SELF_SUFFICIENT_RULE",
+   "decisiveText": "claims filed contrary to arts. 51-52 are inadmissible",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 127
+  },
+  "sharia_procedure_law:73": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "conduct of the hearing and the presiding judge's powers",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 128
+  },
+  "commercial_courts_implementing_regulation:76": {
+   "class": "INSTITUTIONAL_DIRECTIVE",
+   "decisiveText": "what the claim form must contain",
+   "ambiguous": false,
+   "fiqhIdiom": false,
+   "ratePreviouslySeen": false,
+   "sheetIndex": 129
+  }
+ }
+}
