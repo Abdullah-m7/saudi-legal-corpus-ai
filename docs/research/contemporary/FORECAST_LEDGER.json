@@ -268,6 +268,124 @@
    },
    "baseline_prediction": "no displacement",
    "scoring_rule": "absolute error on both quantities; the claim scores as HELD if displacement exceeds the never-seen share by more than a factor of three."
+  },
+  {
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "target_period": "NEXT_ELIGIBLE_QUARTER: the earliest hijri quarter after 1446Q2 that carries at least 800 judgments with court authority in a future rebuild of this corpus. Defined this way because 1446Q3 and 1446Q4 are publication-lagged (184 and 7 judgments), and a forecast into them would be a forecast about the publisher. If no quarter reaches 800 by 1449Q4, every entry below becomes VOID_DATA_SHIFT rather than being scored.",
+   "repository_head": "321a417f6c093c94e09757a1e4ce00f8ad4f13b2",
+   "pipeline_version": "contemporary/2026-08-companion+foresight",
+   "data_hashes": {
+    "authority.py": "a1bf7ae3713b43e1",
+    "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+    "companion_layer.jsonl.gz": "0d8d40697468b73e",
+    "companions.py": "af828b14930b234f",
+    "foresight.py": "a4e95c7085c5a1eb",
+    "judgment_dates.json.gz": "65200a04e59a0cb1"
+   },
+   "training_window": "1442Q1..1446Q2, rolling origin",
+   "status": "OPEN",
+   "forecast_id": "top50_entrants@1446Q2",
+   "target_definition": "which (instrument, article) pairs OUTSIDE the top 50 at 1446Q2 enter the court's top 50 in the target quarter. Scored against the frozen ranked list below.",
+   "model": "rank candidates by judgments; the additive rule combining three features scored WORSE (0.1402 against 0.2857) and is not used",
+   "prediction": {
+    "rankedCandidates": [
+     {
+      "rank": 1,
+      "article": "commercial_courts_implementing_regulation:69",
+      "currentRank": 50,
+      "courtShare": 0.00205,
+      "rankAcceleration": 9949,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 2,
+      "article": "commercial_courts_law:19",
+      "currentRank": 52,
+      "courtShare": 0.00205,
+      "rankAcceleration": 9947,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 3,
+      "article": "trademark_law:7",
+      "currentRank": 63,
+      "courtShare": 0.00205,
+      "rankAcceleration": 9936,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 4,
+      "article": "arbitration_law:14",
+      "currentRank": 64,
+      "courtShare": 0.00137,
+      "rankAcceleration": 9935,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 5,
+      "article": "commercial_courts_law:31",
+      "currentRank": 53,
+      "courtShare": 0.00205,
+      "rankAcceleration": 35,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 6,
+      "article": "companies_law:167",
+      "currentRank": 56,
+      "courtShare": 0.00205,
+      "rankAcceleration": 100,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 7,
+      "article": "commercial_courts_law:40",
+      "currentRank": 55,
+      "courtShare": 0.00205,
+      "rankAcceleration": 34,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 8,
+      "article": "evidence_law:30",
+      "currentRank": 58,
+      "courtShare": 0.00205,
+      "rankAcceleration": 114,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 9,
+      "article": "evidence_law:93",
+      "currentRank": 59,
+      "courtShare": 0.00205,
+      "rankAcceleration": 37,
+      "difficulty": "NEAR_BOUNDARY"
+     },
+     {
+      "rank": 10,
+      "article": "commercial_courts_law:36",
+      "currentRank": 54,
+      "courtShare": 0.00205,
+      "rankAcceleration": 15,
+      "difficulty": "NEAR_BOUNDARY"
+     }
+    ],
+    "expectedEntrantsInPeriod": 12.4,
+    "expectedPrecisionAtNTrue": 0.2857,
+    "baseRate": 0.066,
+    "difficultySplit": {
+     "meanNearBoundaryEntrants": 4.8,
+     "meanLongJumpEntrants": 5.6
+    }
+   },
+   "uncertainty": {
+    "folds": 10,
+    "worstFoldPrecision": 0.0,
+    "note": "one backtest fold produced zero correct candidates. The signal is real on average and fails completely sometimes."
+   },
+   "baseline_prediction": 0.066,
+   "scoring_rule": "precision at n, where n is the number of articles that actually entered. Report separately for NEAR_BOUNDARY and LONG_JUMP candidates: predicting an article ranked 52 into the top 50 is not the same achievement as predicting one ranked 300."
   }
  ],
  "conditionalForecasts": [
@@ -368,7 +486,7 @@
   "civil_transactions_law:564"
  ],
  "frozenTop50Note": "the court's 50 most cited articles in 1446Q2, the set that operational_core_top50@1446Q2 predicts will still be the top 50 next period",
- "ledgerHash": "ebdf19344d6f81e5",
+ "ledgerHash": "c7bd6441a91a7d7d",
  "scorableQuarter": {
   "what": "A quarter is SCORABLE only when it is mature enough that a miss measures the forecast rather than the publisher. Defined here, before any outcome is observable, and not revised afterwards.",
   "criteria": [
@@ -592,5 +710,203 @@
   "verdict": "INFEASIBLE",
   "why": "no Board of Grievances data exists in this repository and none could be lawfully acquired. A forecast needs a series to forecast from.",
   "whatWouldMakeItFeasible": "any complete Board period at all, at which point the targets are already specified in the preregistration above."
+ },
+ "horizonRelease": {
+  "release": "HORIZON_1",
+  "cutoff": "1446Q2",
+  "created_at": "2026-08-31",
+  "rule": "every future metric is FORECAST, DETECT or WATCH. Nothing is forced into a probability model.",
+  "counts": {
+   "forecasts": 1,
+   "detectors": 5,
+   "watchTargets": 5,
+   "competingHypotheses": 2
+  },
+  "detectors": [
+   {
+    "detector_id": "courtArticleHHI@1446Q2",
+    "metric": "courtArticleHHI",
+    "contract": {
+     "baseline": "rolling median of earlier scorable periods",
+     "variability": "median absolute deviation",
+     "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+     "watchBand": "2.0 scaled MAD",
+     "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+     "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+     "confirmation": "2 consecutive scorable periods, same direction",
+     "maturity": "only SCORABLE periods update a detector",
+     "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+     "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+    },
+    "baselineAtCutoff": 0.06776,
+    "spreadAtCutoff": 0.006079,
+    "historicalAlarmRate": 0.0,
+    "stateAtCutoff": "NORMAL",
+    "evaluation": "a future SCORABLE quarter updates the detector. A SIGNAL is recorded in SURPRISE_LEDGER.json with no explanation attached; the explanation is sought afterwards and may never be found.",
+    "status": "ARMED"
+   },
+   {
+    "detector_id": "namedFiqhShareOfFiqh@1446Q2",
+    "metric": "namedFiqhShareOfFiqh",
+    "contract": {
+     "baseline": "rolling median of earlier scorable periods",
+     "variability": "median absolute deviation",
+     "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+     "watchBand": "2.0 scaled MAD",
+     "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+     "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+     "confirmation": "2 consecutive scorable periods, same direction",
+     "maturity": "only SCORABLE periods update a detector",
+     "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+     "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+    },
+    "baselineAtCutoff": 0.6034,
+    "spreadAtCutoff": 0.040297,
+    "historicalAlarmRate": 0.0,
+    "stateAtCutoff": "NORMAL",
+    "evaluation": "a future SCORABLE quarter updates the detector. A SIGNAL is recorded in SURPRISE_LEDGER.json with no explanation attached; the explanation is sought afterwards and may never be found.",
+    "status": "ARMED"
+   },
+   {
+    "detector_id": "commercial_courts_law::namedShare@1446Q2",
+    "metric": "commercial_courts_law::namedShare",
+    "contract": {
+     "baseline": "rolling median of earlier scorable periods",
+     "variability": "median absolute deviation",
+     "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+     "watchBand": "2.0 scaled MAD",
+     "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+     "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+     "confirmation": "2 consecutive scorable periods, same direction",
+     "maturity": "only SCORABLE periods update a detector",
+     "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+     "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+    },
+    "baselineAtCutoff": 0.26203,
+    "spreadAtCutoff": 0.021768,
+    "historicalAlarmRate": 0.5,
+    "stateAtCutoff": "CONFIRMED_SHIFT",
+    "evaluation": "a future SCORABLE quarter updates the detector. A SIGNAL is recorded in SURPRISE_LEDGER.json with no explanation attached; the explanation is sought afterwards and may never be found.",
+    "status": "ARMED"
+   },
+   {
+    "detector_id": "evidence_law::entropy@1446Q2",
+    "metric": "evidence_law::entropy",
+    "contract": {
+     "baseline": "rolling median of earlier scorable periods",
+     "variability": "median absolute deviation",
+     "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+     "watchBand": "2.0 scaled MAD",
+     "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+     "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+     "confirmation": "2 consecutive scorable periods, same direction",
+     "maturity": "only SCORABLE periods update a detector",
+     "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+     "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+    },
+    "baselineAtCutoff": 2.3352,
+    "spreadAtCutoff": 0.187717,
+    "historicalAlarmRate": 0.5,
+    "stateAtCutoff": "NORMAL",
+    "evaluation": "a future SCORABLE quarter updates the detector. A SIGNAL is recorded in SURPRISE_LEDGER.json with no explanation attached; the explanation is sought afterwards and may never be found.",
+    "status": "ARMED"
+   },
+   {
+    "detector_id": "commercial_courts_implementing_regulation::topSourceShare@1446Q2",
+    "metric": "commercial_courts_implementing_regulation::topSourceShare",
+    "contract": {
+     "baseline": "rolling median of earlier scorable periods",
+     "variability": "median absolute deviation",
+     "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+     "watchBand": "2.0 scaled MAD",
+     "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+     "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+     "confirmation": "2 consecutive scorable periods, same direction",
+     "maturity": "only SCORABLE periods update a detector",
+     "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+     "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+    },
+    "baselineAtCutoff": 0.29119,
+    "spreadAtCutoff": 0.014899,
+    "historicalAlarmRate": 0.3333,
+    "stateAtCutoff": "SIGNAL",
+    "evaluation": "a future SCORABLE quarter updates the detector. A SIGNAL is recorded in SURPRISE_LEDGER.json with no explanation attached; the explanation is sought afterwards and may never be found.",
+    "status": "ARMED"
+   }
+  ],
+  "watchTargets": [
+   {
+    "watch_id": "first_ai_legal_issue@1446Q2",
+    "definition": "the first LEVEL 3 judgment in ai_radar.py",
+    "baseline": "0 of 50,666",
+    "probability": null,
+    "why": "forcing a probability onto a rare emerging event is false precision"
+   },
+   {
+    "watch_id": "bog_post_deployment_corpus@1446Q2",
+    "definition": "an official Board of Grievances collection covering 1445 AH or later",
+    "baseline": "latest published collection covers 1444 AH",
+    "probability": null,
+    "why": "the single condition that converts the AI study from E0 to E1"
+   },
+   {
+    "watch_id": "moj_commercial_ai_deployment@1446Q2",
+    "definition": "a verified AI deployment in MoJ commercial courts",
+    "baseline": "none found",
+    "probability": null,
+    "why": "the only condition that would produce an L3 event in a corpus already held"
+   },
+   {
+    "watch_id": "new_major_code@1446Q2",
+    "definition": "a new instrument's first court citation in a SCORABLE quarter",
+    "baseline": "the Civil Transactions Law: 2 quarters from first court citation to the top 50",
+    "probability": null,
+    "why": "the uptake monitor needs an arrival to profile"
+   },
+   {
+    "watch_id": "parser_era_change@1446Q2",
+    "definition": "a change to authority.py or companions.py that alters what counts as an authority",
+    "baseline": "current era hash in the freshness stamp",
+    "probability": null,
+    "why": "every traceability detector must stop at that boundary rather than stitch across it"
+   }
+  ],
+  "competingAiHypotheses": [
+   {
+    "hypothesis_id": "H_AI_HOMOGENISATION",
+    "notAForecast": "a competing hypothesis. No point is scored for holding both; the future adjudicates.",
+    "statement": "after a verified research-AI deployment in a workflow this repository observes, article and source concentration moves ABOVE the frozen detector bounds",
+    "wouldShowAs": [
+     "courtArticleHHI",
+     "commercial_courts_law::topSourceShare",
+     "evidence_law::topSourceShare",
+     "commercial_courts_law::entropy",
+     "evidence_law::entropy",
+     "courtPartyTop20Jaccard"
+    ],
+    "requires": 3,
+    "stateAtCutoff": "NORMAL"
+   },
+   {
+    "hypothesis_id": "H_AI_DISCOVERY",
+    "notAForecast": "as above, and it predicts the opposite sign",
+    "statement": "the same deployment instead moves long-tail and entropy measures above the frozen bounds",
+    "wouldShowAs": [
+     "courtArticleHHI",
+     "commercial_courts_law::entropy",
+     "evidence_law::entropy",
+     "commercial_courts_implementing_regulation::entropy",
+     "commercial_courts_law::topSourceShare"
+    ],
+    "requires": 3,
+    "stateAtCutoff": "NORMAL"
+   }
+  ],
+  "entrantForecastSummary": {
+   "bestFeature": "judgments",
+   "meanPrecisionAtNTrue": 0.2857,
+   "meanBaseRate": 0.066,
+   "worstFold": 0.0
+  }
  }
 }

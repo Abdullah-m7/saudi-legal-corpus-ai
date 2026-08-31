@@ -1,0 +1,81 @@
+{
+ "what": "External conditions that would change what this repository can study. Machine-readable trigger definitions only: there is no scheduler in this repository and nothing here polls anything.",
+ "howItIsUsed": "a future session reads this file, checks the conditions by hand or by whatever means it lawfully has, and if one is met, follows the action written beside it. A trigger is not a prediction that the condition will occur.",
+ "separateFrom": "adoption_registry.json records events that HAVE been verified. This file records conditions that have NOT occurred and what to do if they do.",
+ "triggers": [
+  {
+   "trigger_id": "BOG_POST_DEPLOYMENT_CORPUS",
+   "condition": "an official Board of Grievances judgment collection covering 1445 AH or later exists",
+   "checkBy": "the Board's judicial-codices index, or a national-platform service listing, or an official announcement",
+   "action": [
+    "re-run the access audit in bog_access_audit.json",
+    "if permitted, take an acquisition pilot and run the privacy gate before any bulk step",
+    "run the transport tests listed in the preregistration",
+    "activate bog_judicial_research_ai@preregistered",
+    "re-evaluate the event class on the E0-E5 ladder"
+   ],
+   "status": "OPEN",
+   "priority": 1
+  },
+  {
+   "trigger_id": "MOJ_COMMERCIAL_AI_DEPLOYMENT",
+   "condition": "a verified, officially sourced AI deployment affecting legal research or reasoning in the Ministry of Justice COMMERCIAL courts",
+   "action": [
+    "add the event to adoption_registry.json with its channel",
+    "this is the only condition that would raise an event to L3_WORKFLOW_MATCH in a corpus already held",
+    "freeze a pre-period immediately, before any post data arrives"
+   ],
+   "status": "OPEN",
+   "priority": 1
+  },
+  {
+   "trigger_id": "BAR_AI_DEPLOYMENT",
+   "condition": "a verified institutional legal-research AI deployment affecting advocacy, from a bar association or named firms",
+   "action": [
+    "record it; the advocacy channel is the one this corpus observes best and currently has no verified event"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "AI_L3_JUDGMENT",
+   "condition": "ai_radar.py returns any judgment at LEVEL 3",
+   "action": [
+    "record the judgment, its date, the court's own words, the concept family, the codes cited beside it, and the voice",
+    "one occurrence is an occurrence; three in a year or two under one code is a family and earns its own measurement"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "NEW_MAJOR_CODE",
+   "condition": "a new Saudi instrument enters observed commercial adjudication, defined as first court citation in a SCORABLE quarter",
+   "action": [
+    "start the new-law uptake monitor for it",
+    "compare its velocity against the Civil Transactions Law profile: 2 quarters from first court citation to the top 50"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "MAJOR_AMENDMENT",
+   "condition": "an amendment to a provision inside the operational core, where the version metadata is verifiable",
+   "action": [
+    "record the commencement date",
+    "note that article-version history is NOT held, so the amendment can only be aligned at instrument level"
+   ],
+   "status": "OPEN",
+   "priority": 3
+  },
+  {
+   "trigger_id": "PARSER_ERA_CHANGE",
+   "condition": "authority.py or companions.py changes in a way that alters what counts as an authority",
+   "action": [
+    "open a NEW MEASUREMENT ERA",
+    "do not stitch detector series across the boundary: a parser improvement raises named-source share exactly like better citation practice would"
+   ],
+   "status": "OPEN",
+   "priority": 1
+  }
+ ]
+}

@@ -1,0 +1,2541 @@
+{
+ "what": "PROSPECTIVE CHANGE DETECTION. Rules frozen before the future, replayed pseudo-prospectively over the history to measure how often they fire when nothing is known to have happened.",
+ "contract": {
+  "baseline": "rolling median of earlier scorable periods",
+  "variability": "median absolute deviation",
+  "threshold": "3.0 scaled MAD (MAD x 1.4826)",
+  "watchBand": "2.0 scaled MAD",
+  "dispersionFloor": "max(0.0001, 0.05 x |baseline|), so a series flat at zero can still depart",
+  "disclosure": "the dispersion floor and the MAD consistency constant were both added AFTER the positive control was missed. The control exists to expose exactly that kind of flaw. Nothing was tuned to make a particular quarter fire, the whole alarm budget was recomputed, and both numbers are reported before and after.",
+  "confirmation": "2 consecutive scorable periods, same direction",
+  "maturity": "only SCORABLE periods update a detector",
+  "detectorChosenBeforeInspection": "median and MAD with k = 3 were fixed before any series was replayed. No detector family was selected after seeing which one fired on a shift we liked.",
+  "signalIsNotACause": "a SIGNAL is a departure from a series' own history. It is never labelled with an explanation at the moment it fires."
+ },
+ "scorablePeriods": [
+  "1443Q1",
+  "1443Q3",
+  "1443Q4",
+  "1444Q1",
+  "1444Q2",
+  "1444Q3",
+  "1444Q4",
+  "1445Q1",
+  "1445Q4",
+  "1446Q1"
+ ],
+ "detectors": {
+  "civilTransactionsLawShareOfCourtCitations": {
+   "metric": "civilTransactionsLawShareOfCourtCitations",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 5,
+   "signals": [
+    "1445Q1",
+    "1445Q4",
+    "1446Q1"
+   ],
+   "confirmedShifts": [
+    "1446Q1"
+   ],
+   "alarmRatePerEvaluablePeriod": 0.6,
+   "confirmedRate": 0.2,
+   "currentState": "CONFIRMED_SHIFT",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "value": 0.0,
+     "baseline": 0.0,
+     "spread": 0.0001,
+     "spreadFloored": true,
+     "robustZ": 0.0
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.0,
+     "baseline": 0.0,
+     "spread": 0.0001,
+     "spreadFloored": true,
+     "robustZ": 0.0
+    },
+    {
+     "period": "1445Q1",
+     "state": "SIGNAL",
+     "value": 0.00155,
+     "baseline": 0.0,
+     "spread": 0.0001,
+     "spreadFloored": true,
+     "robustZ": 15.5
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "SIGNAL",
+     "value": 0.06067,
+     "baseline": 0.0,
+     "spread": 0.0001,
+     "spreadFloored": true,
+     "robustZ": 606.7
+    },
+    {
+     "period": "1446Q1",
+     "state": "CONFIRMED_SHIFT",
+     "value": 0.0855,
+     "baseline": 0.0,
+     "spread": 0.0001,
+     "spreadFloored": true,
+     "robustZ": 855.0
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercialCourtsLawShareOfInstruments": {
+   "metric": "commercialCourtsLawShareOfInstruments",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 5,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "value": 0.45116,
+     "baseline": 0.44819,
+     "spread": 0.073893,
+     "spreadFloored": false,
+     "robustZ": 0.04
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.4367,
+     "baseline": 0.45116,
+     "spread": 0.069489,
+     "spreadFloored": false,
+     "robustZ": -0.21
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.46677,
+     "baseline": 0.44819,
+     "spread": 0.032054,
+     "spreadFloored": false,
+     "robustZ": 0.58
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.41054,
+     "baseline": 0.45116,
+     "spread": 0.036457,
+     "spreadFloored": false,
+     "robustZ": -1.11
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.42681,
+     "baseline": 0.44819,
+     "spread": 0.032054,
+     "spreadFloored": false,
+     "robustZ": -0.67
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "courtArticleHHI": {
+   "metric": "courtArticleHHI",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 5,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "value": 0.07186,
+     "baseline": 0.06345,
+     "spread": 0.005515,
+     "spreadFloored": false,
+     "robustZ": 1.52
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.07186,
+     "baseline": 0.064,
+     "spread": 0.007976,
+     "spreadFloored": false,
+     "robustZ": 0.99
+    },
+    {
+     "period": "1445Q1",
+     "state": "WATCH",
+     "value": 0.08244,
+     "baseline": 0.064,
+     "spread": 0.007976,
+     "spreadFloored": false,
+     "robustZ": 2.31
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.06776,
+     "baseline": 0.06938,
+     "spread": 0.008792,
+     "spreadFloored": false,
+     "robustZ": -0.18
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.07253,
+     "baseline": 0.06776,
+     "spread": 0.006079,
+     "spreadFloored": false,
+     "robustZ": 0.78
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "courtPartyTop20Jaccard": {
+   "metric": "courtPartyTop20Jaccard",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 4,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.11111,
+     "baseline": 0.14286,
+     "spread": 0.047073,
+     "spreadFloored": false,
+     "robustZ": -0.67
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.21212,
+     "baseline": 0.14286,
+     "spread": 0.047073,
+     "spreadFloored": false,
+     "robustZ": 1.47
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.21212,
+     "baseline": 0.14286,
+     "spread": 0.047073,
+     "spreadFloored": false,
+     "robustZ": 1.47
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.17647,
+     "baseline": 0.14286,
+     "spread": 0.047073,
+     "spreadFloored": false,
+     "robustZ": 0.71
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "evidenceLawNamedFiqhShare": {
+   "metric": "evidenceLawNamedFiqhShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 0,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": null,
+   "confirmedRate": null,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1446Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    }
+   ]
+  },
+  "namedFiqhShareOfFiqh": {
+   "metric": "namedFiqhShareOfFiqh",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 5,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "value": 0.56231,
+     "baseline": 0.62062,
+     "spread": 0.031031,
+     "spreadFloored": true,
+     "robustZ": -1.88
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.55935,
+     "baseline": 0.62062,
+     "spread": 0.08645,
+     "spreadFloored": false,
+     "robustZ": -0.71
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.6212,
+     "baseline": 0.60285,
+     "spread": 0.060105,
+     "spreadFloored": false,
+     "robustZ": 0.31
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.6034,
+     "baseline": 0.62062,
+     "spread": 0.08645,
+     "spreadFloored": false,
+     "robustZ": -0.2
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.6044,
+     "baseline": 0.6034,
+     "spread": 0.040297,
+     "spreadFloored": false,
+     "robustZ": 0.02
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "nonStatutoryShareOfCourtMentions": {
+   "metric": "nonStatutoryShareOfCourtMentions",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 5,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "value": 0.25551,
+     "baseline": 0.28717,
+     "spread": 0.043663,
+     "spreadFloored": false,
+     "robustZ": -0.73
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.23796,
+     "baseline": 0.28717,
+     "spread": 0.046939,
+     "spreadFloored": false,
+     "robustZ": -1.05
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.26732,
+     "baseline": 0.25986,
+     "spread": 0.04049,
+     "spreadFloored": false,
+     "robustZ": 0.18
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.21463,
+     "baseline": 0.26732,
+     "spread": 0.043529,
+     "spreadFloored": false,
+     "robustZ": -1.21
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.2039,
+     "baseline": 0.25986,
+     "spread": 0.04049,
+     "spreadFloored": false,
+     "robustZ": -1.38
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_implementing_regulation::topSourceShare": {
+   "metric": "commercial_courts_implementing_regulation::topSourceShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 3,
+   "signals": [
+    "1446Q1"
+   ],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.3333,
+   "confirmedRate": 0.0,
+   "currentState": "SIGNAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.28114,
+     "baseline": 0.3592,
+     "spread": 0.072202,
+     "spreadFloored": false,
+     "robustZ": -1.08
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.28846,
+     "baseline": 0.3592,
+     "spread": 0.100828,
+     "spreadFloored": false,
+     "robustZ": -0.7
+    },
+    {
+     "period": "1446Q1",
+     "state": "SIGNAL",
+     "value": 0.44928,
+     "baseline": 0.29119,
+     "spread": 0.014899,
+     "spreadFloored": false,
+     "robustZ": 10.61
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_implementing_regulation::entropy": {
+   "metric": "commercial_courts_implementing_regulation::entropy",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 3,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "WATCH",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 1.9524,
+     "baseline": 1.83615,
+     "spread": 0.091807,
+     "spreadFloored": true,
+     "robustZ": 1.27
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 1.74112,
+     "baseline": 1.9524,
+     "spread": 0.175563,
+     "spreadFloored": false,
+     "robustZ": -1.2
+    },
+    {
+     "period": "1446Q1",
+     "state": "WATCH",
+     "value": 1.42797,
+     "baseline": 1.83615,
+     "spread": 0.140894,
+     "spreadFloored": false,
+     "robustZ": -2.9
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_implementing_regulation::namedShare": {
+   "metric": "commercial_courts_implementing_regulation::namedShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 3,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.5516,
+     "baseline": 0.50704,
+     "spread": 0.094648,
+     "spreadFloored": false,
+     "robustZ": 0.47
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.47115,
+     "baseline": 0.5516,
+     "spread": 0.066063,
+     "spreadFloored": false,
+     "robustZ": -1.22
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.62319,
+     "baseline": 0.50704,
+     "spread": 0.070086,
+     "spreadFloored": false,
+     "robustZ": 1.66
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_implementing_regulation::top3_membership": {
+   "metric": "commercial_courts_implementing_regulation::top3_membership",
+   "rule": "a break is any change in the top-3 SET between consecutive scorable periods; order is ignored because the order was measured as unstable",
+   "breaks": [
+    {
+     "period": "1444Q1",
+     "from": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "J.IBN_TAYMIYYA"
+     ],
+     "to": [
+      "B.KASHSHAF",
+      "GENERIC.fiqh.unattributed",
+      "J.IBN_TAYMIYYA"
+     ]
+    },
+    {
+     "period": "1445Q4",
+     "from": [
+      "B.KASHSHAF",
+      "GENERIC.fiqh.unattributed",
+      "J.IBN_TAYMIYYA"
+     ],
+     "to": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "J.IBN_TAYMIYYA"
+     ]
+    },
+    {
+     "period": "1446Q1",
+     "from": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "J.IBN_TAYMIYYA"
+     ],
+     "to": [
+      "B.KASHSHAF",
+      "GENERIC.hadith.untraced",
+      "J.IBN_TAYMIYYA"
+     ]
+    }
+   ],
+   "breakCount": 3,
+   "currentState": "CONFIRMED_SHIFT"
+  },
+  "commercial_courts_law::topSourceShare": {
+   "metric": "commercial_courts_law::topSourceShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 4,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.31095,
+     "baseline": 0.29888,
+     "spread": 0.043148,
+     "spreadFloored": false,
+     "robustZ": 0.28
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 0.26895,
+     "baseline": 0.31095,
+     "spread": 0.025251,
+     "spreadFloored": false,
+     "robustZ": -1.66
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "WATCH",
+     "value": 0.39062,
+     "baseline": 0.29888,
+     "spread": 0.043148,
+     "spreadFloored": false,
+     "robustZ": 2.13
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.32099,
+     "baseline": 0.31095,
+     "spread": 0.062277,
+     "spreadFloored": false,
+     "robustZ": 0.16
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_law::entropy": {
+   "metric": "commercial_courts_law::entropy",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 4,
+   "signals": [
+    "1445Q4"
+   ],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.25,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 2.05535,
+     "baseline": 2.20605,
+     "spread": 0.110302,
+     "spreadFloored": true,
+     "robustZ": -1.37
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "value": 2.21691,
+     "baseline": 2.20605,
+     "spread": 0.18772,
+     "spreadFloored": false,
+     "robustZ": 0.06
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "SIGNAL",
+     "value": 1.86307,
+     "baseline": 2.20605,
+     "spread": 0.110302,
+     "spreadFloored": true,
+     "robustZ": -3.11
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 1.89111,
+     "baseline": 2.20605,
+     "spread": 0.18772,
+     "spreadFloored": false,
+     "robustZ": -1.68
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_law::namedShare": {
+   "metric": "commercial_courts_law::namedShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 4,
+   "signals": [
+    "1445Q4",
+    "1446Q1"
+   ],
+   "confirmedShifts": [
+    "1446Q1"
+   ],
+   "alarmRatePerEvaluablePeriod": 0.5,
+   "confirmedRate": 0.25,
+   "currentState": "CONFIRMED_SHIFT",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "value": 0.24735,
+     "baseline": 0.26203,
+     "spread": 0.013102,
+     "spreadFloored": true,
+     "robustZ": -1.12
+    },
+    {
+     "period": "1445Q1",
+     "state": "WATCH",
+     "value": 0.3154,
+     "baseline": 0.26203,
+     "spread": 0.019352,
+     "spreadFloored": false,
+     "robustZ": 2.76
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "SIGNAL",
+     "value": 0.20312,
+     "baseline": 0.26203,
+     "spread": 0.019352,
+     "spreadFloored": false,
+     "robustZ": -3.04
+    },
+    {
+     "period": "1446Q1",
+     "state": "CONFIRMED_SHIFT",
+     "value": 0.17284,
+     "baseline": 0.26203,
+     "spread": 0.021768,
+     "spreadFloored": false,
+     "robustZ": -4.1
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    }
+   ]
+  },
+  "commercial_courts_law::top3_membership": {
+   "metric": "commercial_courts_law::top3_membership",
+   "rule": "a break is any change in the top-3 SET between consecutive scorable periods; order is ignored because the order was measured as unstable",
+   "breaks": [
+    {
+     "period": "1443Q4",
+     "from": [
+      "B.KASHSHAF",
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.quran.citation"
+     ],
+     "to": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.quran.citation"
+     ]
+    },
+    {
+     "period": "1446Q1",
+     "from": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.quran.citation"
+     ],
+     "to": [
+      "GENERIC.custom.trade",
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced"
+     ]
+    }
+   ],
+   "breakCount": 2,
+   "currentState": "CONFIRMED_SHIFT"
+  },
+  "evidence_law::topSourceShare": {
+   "metric": "evidence_law::topSourceShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 2,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "WATCH",
+     "value": 0.30088,
+     "baseline": 0.20395,
+     "spread": 0.033944,
+     "spreadFloored": false,
+     "robustZ": 2.86
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.26829,
+     "baseline": 0.2487,
+     "spread": 0.077363,
+     "spreadFloored": false,
+     "robustZ": 0.25
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    }
+   ]
+  },
+  "evidence_law::entropy": {
+   "metric": "evidence_law::entropy",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 2,
+   "signals": [
+    "1445Q4"
+   ],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.5,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "SIGNAL",
+     "value": 1.98043,
+     "baseline": 2.3352,
+     "spread": 0.11676,
+     "spreadFloored": true,
+     "robustZ": -3.04
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 2.03424,
+     "baseline": 2.3352,
+     "spread": 0.187717,
+     "spreadFloored": false,
+     "robustZ": -1.6
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    }
+   ]
+  },
+  "evidence_law::namedShare": {
+   "metric": "evidence_law::namedShare",
+   "k": 3.0,
+   "confirmRule": 2,
+   "periodsEvaluated": 2,
+   "signals": [],
+   "confirmedShifts": [],
+   "alarmRatePerEvaluablePeriod": 0.0,
+   "confirmedRate": 0.0,
+   "currentState": "NORMAL",
+   "byPeriod": [
+    {
+     "period": "1442Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1442Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q1",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1443Q4",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    },
+    {
+     "period": "1444Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q2",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q3",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1444Q4",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q1",
+     "state": "NORMAL",
+     "reason": "training"
+    },
+    {
+     "period": "1445Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q3",
+     "state": "NOT_SCORABLE",
+     "reason": "period not mature"
+    },
+    {
+     "period": "1445Q4",
+     "state": "NORMAL",
+     "value": 0.17699,
+     "baseline": 0.29167,
+     "spread": 0.095068,
+     "spreadFloored": false,
+     "robustZ": -1.21
+    },
+    {
+     "period": "1446Q1",
+     "state": "NORMAL",
+     "value": 0.17073,
+     "baseline": 0.29167,
+     "spread": 0.106579,
+     "spreadFloored": false,
+     "robustZ": -1.13
+    },
+    {
+     "period": "1446Q2",
+     "state": "NOT_SCORABLE",
+     "reason": "no value"
+    }
+   ]
+  },
+  "evidence_law::top3_membership": {
+   "metric": "evidence_law::top3_membership",
+   "rule": "a break is any change in the top-3 SET between consecutive scorable periods; order is ignored because the order was measured as unstable",
+   "breaks": [
+    {
+     "period": "1444Q2",
+     "from": [
+      "B.KASHSHAF",
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced"
+     ],
+     "to": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.principle.settled"
+     ]
+    },
+    {
+     "period": "1444Q4",
+     "from": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.principle.settled"
+     ],
+     "to": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.quran.citation"
+     ]
+    },
+    {
+     "period": "1445Q4",
+     "from": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.quran.citation"
+     ],
+     "to": [
+      "GENERIC.custom.trade",
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.principle.settled"
+     ]
+    },
+    {
+     "period": "1446Q1",
+     "from": [
+      "GENERIC.custom.trade",
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.principle.settled"
+     ],
+     "to": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.principle.settled"
+     ]
+    }
+   ],
+   "breakCount": 4,
+   "currentState": "CONFIRMED_SHIFT"
+  }
+ },
+ "alarmBudget": {
+  "detectorsRun": 16,
+  "periodsEvaluatedTotal": 56,
+  "signalsTotal": 8,
+  "confirmedShiftsTotal": 2,
+  "alarmRate": 0.1429,
+  "confirmedRate": 0.0357,
+  "reading": "with no labelled true shifts in most series, this rate is the candidate FALSE-ALARM rate. A detector family that fired on a large share of ordinary quarters would be useless, and this one does not."
+ },
+ "phase25_positiveControl": {
+  "event": "the Civil Transactions Law becoming citable",
+  "whyItQualifies": "its date is fixed by legislation, not chosen by us after seeing the series, so it is definable without hindsight",
+  "firstCourtQuarter": "1445Q1",
+  "firstSignalQuarter": "1445Q1",
+  "detectionDelayQuarters": 0,
+  "confirmed": [
+   "1446Q1"
+  ],
+  "verdict": "DETECTED",
+  "limit": "one positive control is one positive control. It shows the detector can fire on a real structural change; it does not establish sensitivity."
+ },
+ "phase10_doctrinalNovelty": {
+  "definition": "a DOCTRINAL_NOVELTY_EVENT is a source identity that had never appeared beside a code in any earlier scorable period and then does. One mention is not an event: FIRST_SEEN becomes REPEATED at two periods, and EMERGING_COMPANION only at three periods of presence AFTER at least three observed periods of absence, so a source that merely arrives with the layer is not counted as doctrine emerging.",
+  "events": [
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "B.MUGHNI",
+    "firstSeen": "1444Q1",
+    "periods": 2,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "B.MUNTAHA",
+    "firstSeen": "1444Q3",
+    "periods": 3,
+    "priorPeriodsAbsent": 3,
+    "state": "EMERGING_COMPANION"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "B.ZAD",
+    "firstSeen": "1444Q1",
+    "periods": 2,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "GENERIC.custom.trade",
+    "firstSeen": "1444Q1",
+    "periods": 5,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "GENERIC.maxim.named",
+    "firstSeen": "1444Q1",
+    "periods": 5,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "H.BAYHAQI",
+    "firstSeen": "1444Q2",
+    "periods": 1,
+    "priorPeriodsAbsent": 2,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "H.BUKHARI",
+    "firstSeen": "1444Q2",
+    "periods": 2,
+    "priorPeriodsAbsent": 2,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "J.IBN_QAYYIM",
+    "firstSeen": "1444Q1",
+    "periods": 2,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "J.IBN_QUDAMA",
+    "firstSeen": "1444Q1",
+    "periods": 3,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "J.MUHAMMAD_B_IBRAHIM",
+    "firstSeen": "1444Q3",
+    "periods": 2,
+    "priorPeriodsAbsent": 3,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "M.ADA_MUHAKKAMA",
+    "firstSeen": "1444Q2",
+    "periods": 2,
+    "priorPeriodsAbsent": 2,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "M.BARAA",
+    "firstSeen": "1444Q2",
+    "periods": 1,
+    "priorPeriodsAbsent": 2,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "M.DARAR_YUZAL",
+    "firstSeen": "1444Q1",
+    "periods": 6,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "B.MUGHNI",
+    "firstSeen": "1443Q4",
+    "periods": 6,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "B.MUNTAHA",
+    "firstSeen": "1443Q4",
+    "periods": 7,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "B.RAWD",
+    "firstSeen": "1443Q4",
+    "periods": 2,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "H.ABU_DAWUD",
+    "firstSeen": "1443Q4",
+    "periods": 8,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "H.BUKHARI",
+    "firstSeen": "1444Q1",
+    "periods": 2,
+    "priorPeriodsAbsent": 2,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "H.DARAQUTNI",
+    "firstSeen": "1444Q2",
+    "periods": 1,
+    "priorPeriodsAbsent": 3,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "H.IBN_MAJA",
+    "firstSeen": "1444Q4",
+    "periods": 1,
+    "priorPeriodsAbsent": 5,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "H.MUSLIM",
+    "firstSeen": "1444Q1",
+    "periods": 1,
+    "priorPeriodsAbsent": 2,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "H.NASAI",
+    "firstSeen": "1444Q2",
+    "periods": 1,
+    "priorPeriodsAbsent": 3,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "J.IBN_QAYYIM",
+    "firstSeen": "1443Q4",
+    "periods": 8,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "J.IBN_QUDAMA",
+    "firstSeen": "1443Q4",
+    "periods": 6,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "J.MUHAMMAD_B_IBRAHIM",
+    "firstSeen": "1444Q1",
+    "periods": 6,
+    "priorPeriodsAbsent": 2,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "M.ADA_MUHAKKAMA",
+    "firstSeen": "1444Q1",
+    "periods": 2,
+    "priorPeriodsAbsent": 2,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "M.ASL_UQUD",
+    "firstSeen": "1443Q4",
+    "periods": 5,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "M.BARAA",
+    "firstSeen": "1443Q4",
+    "periods": 3,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "M.DARAR_YUZAL",
+    "firstSeen": "1443Q4",
+    "periods": 6,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "commercial_courts_law",
+    "source": "M.KHARAJ",
+    "firstSeen": "1444Q2",
+    "periods": 1,
+    "priorPeriodsAbsent": 3,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "evidence_law",
+    "source": "H.ABU_DAWUD",
+    "firstSeen": "1444Q2",
+    "periods": 4,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "H.AHMAD",
+    "firstSeen": "1444Q2",
+    "periods": 1,
+    "priorPeriodsAbsent": 1,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "evidence_law",
+    "source": "H.BUKHARI",
+    "firstSeen": "1444Q3",
+    "periods": 1,
+    "priorPeriodsAbsent": 2,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "evidence_law",
+    "source": "H.IBN_MAJA",
+    "firstSeen": "1444Q3",
+    "periods": 1,
+    "priorPeriodsAbsent": 2,
+    "state": "TRANSIENT"
+   },
+   {
+    "code": "evidence_law",
+    "source": "H.MUSLIM",
+    "firstSeen": "1444Q2",
+    "periods": 3,
+    "priorPeriodsAbsent": 1,
+    "state": "REPEATED"
+   },
+   {
+    "code": "evidence_law",
+    "source": "J.MUHAMMAD_B_IBRAHIM",
+    "firstSeen": "1444Q3",
+    "periods": 1,
+    "priorPeriodsAbsent": 2,
+    "state": "TRANSIENT"
+   }
+  ],
+  "byState": {
+   "EMERGING_COMPANION": 1,
+   "REPEATED": 24,
+   "TRANSIENT": 11
+  },
+  "emerging": [
+   {
+    "code": "commercial_courts_implementing_regulation",
+    "source": "B.MUNTAHA",
+    "firstSeen": "1444Q3",
+    "periods": 3,
+    "priorPeriodsAbsent": 3,
+    "state": "EMERGING_COMPANION"
+   }
+  ],
+  "limit": "the identity universe has 28 members, so novelty here means novel BESIDE THAT CODE, never novel to Saudi law."
+ },
+ "phase12_traceabilityDetector": {
+  "metrics": [
+   "namedFiqhShareOfFiqh",
+   "commercial_courts_implementing_regulation::namedShare",
+   "commercial_courts_law::namedShare",
+   "evidence_law::namedShare"
+  ],
+  "parserEraRule": "these detectors compare values produced by ONE frozen extractor version. A change to authority.py opens a NEW MEASUREMENT ERA and the series are not stitched across it: a parser improvement raises named-source share exactly like better citation practice would.",
+  "currentEra": "authority.py as of this commit; the freshness stamp carries its hash"
+ },
+ "phase16_17_18_composites": {
+  "AI_ATTRIBUTION_QUALITY": {
+   "hypothesis": "assisted lookup makes citation resolvable, so named authority rises",
+   "requires": 2,
+   "members": [
+    {
+     "metric": "namedFiqhShareOfFiqh",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": 0.02
+    },
+    {
+     "metric": "evidence_law::namedShare",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": -1.13
+    },
+    {
+     "metric": "commercial_courts_law::namedShare",
+     "wantedDirection": "up",
+     "state": "CONFIRMED_SHIFT",
+     "robustZ": -4.1
+    }
+   ],
+   "movedCoherently": [],
+   "state": "NORMAL",
+   "rule": "a composite fires only when at least the required number of member metrics signal in the direction the hypothesis predicts. One statistic never fires it."
+  },
+  "AI_DISCOVERY": {
+   "hypothesis": "retrieval lowers the cost of reaching the long tail, so authority disperses",
+   "requires": 3,
+   "members": [
+    {
+     "metric": "courtArticleHHI",
+     "wantedDirection": "down",
+     "state": "NORMAL",
+     "robustZ": 0.78
+    },
+    {
+     "metric": "commercial_courts_law::entropy",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": -1.68
+    },
+    {
+     "metric": "evidence_law::entropy",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": -1.6
+    },
+    {
+     "metric": "commercial_courts_implementing_regulation::entropy",
+     "wantedDirection": "up",
+     "state": "WATCH",
+     "robustZ": -2.9
+    },
+    {
+     "metric": "commercial_courts_law::topSourceShare",
+     "wantedDirection": "down",
+     "state": "NORMAL",
+     "robustZ": 0.16
+    }
+   ],
+   "movedCoherently": [],
+   "state": "NORMAL",
+   "rule": "a composite fires only when at least the required number of member metrics signal in the direction the hypothesis predicts. One statistic never fires it."
+  },
+  "AI_GENERALISED_DRAFTING": {
+   "hypothesis": "the opposite: generic doctrinal wording expands",
+   "requires": 2,
+   "members": [
+    {
+     "metric": "namedFiqhShareOfFiqh",
+     "wantedDirection": "down",
+     "state": "NORMAL",
+     "robustZ": 0.02
+    },
+    {
+     "metric": "evidence_law::namedShare",
+     "wantedDirection": "down",
+     "state": "NORMAL",
+     "robustZ": -1.13
+    },
+    {
+     "metric": "commercial_courts_law::namedShare",
+     "wantedDirection": "down",
+     "state": "CONFIRMED_SHIFT",
+     "robustZ": -4.1
+    }
+   ],
+   "movedCoherently": [
+    "commercial_courts_law::namedShare"
+   ],
+   "state": "WATCH",
+   "rule": "a composite fires only when at least the required number of member metrics signal in the direction the hypothesis predicts. One statistic never fires it."
+  },
+  "AI_HOMOGENISATION": {
+   "hypothesis": "retrieval surfaces the same top-ranked sources repeatedly, so authority concentrates",
+   "requires": 3,
+   "members": [
+    {
+     "metric": "courtArticleHHI",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": 0.78
+    },
+    {
+     "metric": "commercial_courts_law::topSourceShare",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": 0.16
+    },
+    {
+     "metric": "evidence_law::topSourceShare",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": 0.25
+    },
+    {
+     "metric": "commercial_courts_law::entropy",
+     "wantedDirection": "down",
+     "state": "NORMAL",
+     "robustZ": -1.68
+    },
+    {
+     "metric": "evidence_law::entropy",
+     "wantedDirection": "down",
+     "state": "NORMAL",
+     "robustZ": -1.6
+    },
+    {
+     "metric": "courtPartyTop20Jaccard",
+     "wantedDirection": "up",
+     "state": "NORMAL",
+     "robustZ": 0.71
+    }
+   ],
+   "movedCoherently": [],
+   "state": "NORMAL",
+   "rule": "a composite fires only when at least the required number of member metrics signal in the direction the hypothesis predicts. One statistic never fires it."
+  }
+ }
+}

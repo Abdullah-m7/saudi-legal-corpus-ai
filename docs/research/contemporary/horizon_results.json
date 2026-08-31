@@ -1,0 +1,1430 @@
+{
+ "what": "SAUDI LEGAL HORIZON SCANNER: the forecastable half. What can be predicted, when a period may be scored, and the baselines any future claim about change has to clear.",
+ "phase1_forecastabilityMap": {
+  "rows": [
+   {
+    "target": "civilTransactionsLawShareOfCourtCitations",
+    "kind": "scalar",
+    "folds": 10,
+    "bestBaseline": "LAST",
+    "bestBaselineMae": 0.01005,
+    "bestModel": "SHRINK",
+    "meanSkill": -0.162,
+    "worstFoldSkill": -3.902,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "DETECT",
+    "reason": "persistence not beaten; the level is monitorable but not predictable beyond its own last value"
+   },
+   {
+    "target": "commercialCourtsLawShareOfInstruments",
+    "kind": "scalar",
+    "folds": 10,
+    "bestBaseline": "LAST",
+    "bestBaselineMae": 0.02129,
+    "bestModel": "SHRINK",
+    "meanSkill": -0.0319,
+    "worstFoldSkill": -10.8983,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "DETECT",
+    "reason": "persistence not beaten; the level is monitorable but not predictable beyond its own last value"
+   },
+   {
+    "target": "courtArticleHHI",
+    "kind": "scalar",
+    "folds": 10,
+    "bestBaseline": "LAST",
+    "bestBaselineMae": 0.00678,
+    "bestModel": "SHRINK",
+    "meanSkill": 0.0141,
+    "worstFoldSkill": -0.855,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "DETECT",
+    "reason": "persistence not beaten; the level is monitorable but not predictable beyond its own last value"
+   },
+   {
+    "target": "courtPartyTop20Jaccard",
+    "kind": "scalar",
+    "folds": 8,
+    "bestBaseline": "MA3",
+    "bestBaselineMae": 0.03701,
+    "bestModel": "SHRINK",
+    "meanSkill": 0.0054,
+    "worstFoldSkill": -1.0008,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "DETECT",
+    "reason": "persistence not beaten; the level is monitorable but not predictable beyond its own last value"
+   },
+   {
+    "target": "evidenceLawNamedFiqhShare",
+    "kind": "scalar",
+    "folds": 3,
+    "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+    "status": "WATCH",
+    "reason": "too few rolling folds to evaluate at all"
+   },
+   {
+    "target": "namedFiqhShareOfFiqh",
+    "kind": "scalar",
+    "folds": 14,
+    "bestBaseline": "MEAN",
+    "bestBaselineMae": 0.04087,
+    "bestModel": "SHRINK",
+    "meanSkill": -0.3128,
+    "worstFoldSkill": -11.2249,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "DETECT",
+    "reason": "persistence not beaten; the level is monitorable but not predictable beyond its own last value"
+   },
+   {
+    "target": "nonStatutoryShareOfCourtMentions",
+    "kind": "scalar",
+    "folds": 14,
+    "bestBaseline": "MA3",
+    "bestBaselineMae": 0.04167,
+    "bestModel": "SHRINK",
+    "meanSkill": 0.0275,
+    "worstFoldSkill": -1.564,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "DETECT",
+    "reason": "persistence not beaten; the level is monitorable but not predictable beyond its own last value"
+   },
+   {
+    "target": "top50_membership",
+    "kind": "set",
+    "folds": 10,
+    "bestBaseline": "previous period's set",
+    "baselineJaccard": 0.6059,
+    "worstFold": 0.4286,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "FORECAST",
+    "reason": "the set is predictable at Jaccard 0.6059 with a characterised worst fold; no model beats persistence but persistence itself is a usable forecast with known error"
+   },
+   {
+    "target": "top10_membership",
+    "kind": "set",
+    "folds": 13,
+    "baselineJaccard": 0.6117,
+    "worstFold": 0.25,
+    "verdict": "PERSISTENCE_NOT_BEATEN",
+    "status": "FORECAST",
+    "reason": "same, at a smaller and noisier k"
+   },
+   {
+    "target": "top50_new_entrants",
+    "kind": "binary",
+    "folds": 10,
+    "baseRate": 0.0448,
+    "bestSignal": "courtShare",
+    "precisionAtNTrue": 0.2319,
+    "lift": 5.18,
+    "verdict": "SIGNAL_ABOVE_BASE_RATE",
+    "status": "FORECAST",
+    "reason": "the only target where a signal beats its base rate by more than a factor of five"
+   },
+   {
+    "target": "retrieval_universe_coverage",
+    "kind": "coverage",
+    "folds": 13,
+    "verdict": "CHARACTERISED",
+    "status": "FORECAST",
+    "reason": "a frozen universe's coverage decays at a stable rate across 13 folds"
+   },
+   {
+    "target": "companion_top3_set::commercial_courts_implementing_regulation",
+    "kind": "set",
+    "folds": 10,
+    "baselineJaccard": 0.8,
+    "worstFold": 0.5,
+    "sameSetShare": 60.0,
+    "orderHeld": 10.0,
+    "verdict": "TOP_K_PERSISTENT",
+    "status": "FORECAST",
+    "reason": "the SET persists; the ORDER does not and is not forecast"
+   },
+   {
+    "target": "companion_top3_set::commercial_courts_law",
+    "kind": "set",
+    "folds": 11,
+    "baselineJaccard": 0.8636,
+    "worstFold": 0.5,
+    "sameSetShare": 72.7,
+    "orderHeld": 36.4,
+    "verdict": "TOP_K_PERSISTENT",
+    "status": "FORECAST",
+    "reason": "the SET persists; the ORDER does not and is not forecast"
+   },
+   {
+    "target": "companion_top3_set::evidence_law",
+    "kind": "set",
+    "folds": 8,
+    "baselineJaccard": 0.625,
+    "worstFold": 0.5,
+    "sameSetShare": 25.0,
+    "orderHeld": 0.0,
+    "verdict": "TOP_K_PERSISTENT",
+    "status": "FORECAST",
+    "reason": "the SET persists; the ORDER does not and is not forecast"
+   },
+   {
+    "target": "companion_top3_set::sharia_procedure_law",
+    "kind": "set",
+    "folds": 4,
+    "baselineJaccard": 1.0,
+    "worstFold": 1.0,
+    "sameSetShare": 100.0,
+    "orderHeld": 0.0,
+    "verdict": "TOP_K_PERSISTENT",
+    "status": "FORECAST",
+    "reason": "the SET persists; the ORDER does not and is not forecast"
+   }
+  ],
+  "counts": {
+   "DETECT": 6,
+   "FORECAST": 8,
+   "WATCH": 1
+  },
+  "rule": "FORECAST where a predictor beats an uninformed reference with a characterised error; DETECT where the level is measurable but persistence is unbeaten; WATCH where there is not enough temporal depth to evaluate. No target is rescued with a larger model."
+ },
+ "phase3_maturityRule": {
+  "criteria": [
+   "at least 800 judgments carrying court authority",
+   "at least 200 court statutory citations",
+   "at least one later quarter exists in the corpus, so the quarter is not the collection edge",
+   "volume at least 40 per cent of the median of the four preceding quarters"
+  ],
+  "forbidden": "the outcome itself may never be used to decide maturity. A quarter is not declared immature because a forecast missed in it.",
+  "byPeriod": [
+   {
+    "period": "1442Q1",
+    "judgments": 1077,
+    "courtCitations": 34,
+    "priorFourQuarterMedian": null,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": false,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "courtStatuteCitationsAtLeast200"
+    ]
+   },
+   {
+    "period": "1442Q2",
+    "judgments": 2149,
+    "courtCitations": 89,
+    "priorFourQuarterMedian": 1077,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": false,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "courtStatuteCitationsAtLeast200"
+    ]
+   },
+   {
+    "period": "1442Q3",
+    "judgments": 2991,
+    "courtCitations": 67,
+    "priorFourQuarterMedian": 2149,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": false,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "courtStatuteCitationsAtLeast200"
+    ]
+   },
+   {
+    "period": "1442Q4",
+    "judgments": 2271,
+    "courtCitations": 106,
+    "priorFourQuarterMedian": 2149,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": false,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "courtStatuteCitationsAtLeast200"
+    ]
+   },
+   {
+    "period": "1443Q1",
+    "judgments": 1483,
+    "courtCitations": 286,
+    "priorFourQuarterMedian": 2271,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1443Q2",
+    "judgments": 347,
+    "courtCitations": 305,
+    "priorFourQuarterMedian": 2271,
+    "checks": {
+     "judgmentsAtLeast800": false,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": false
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "judgmentsAtLeast800",
+     "atLeast40pctOfPriorFourQuarterMedian"
+    ]
+   },
+   {
+    "period": "1443Q3",
+    "judgments": 1150,
+    "courtCitations": 1984,
+    "priorFourQuarterMedian": 2271,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1443Q4",
+    "judgments": 1665,
+    "courtCitations": 2102,
+    "priorFourQuarterMedian": 1483,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1444Q1",
+    "judgments": 4315,
+    "courtCitations": 6096,
+    "priorFourQuarterMedian": 1483,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1444Q2",
+    "judgments": 5523,
+    "courtCitations": 8492,
+    "priorFourQuarterMedian": 1665,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1444Q3",
+    "judgments": 4150,
+    "courtCitations": 6306,
+    "priorFourQuarterMedian": 4315,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1444Q4",
+    "judgments": 3340,
+    "courtCitations": 6027,
+    "priorFourQuarterMedian": 4315,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1445Q1",
+    "judgments": 2783,
+    "courtCitations": 5146,
+    "priorFourQuarterMedian": 4315,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1445Q2",
+    "judgments": 1517,
+    "courtCitations": 2868,
+    "priorFourQuarterMedian": 4150,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": false
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "atLeast40pctOfPriorFourQuarterMedian"
+    ]
+   },
+   {
+    "period": "1445Q3",
+    "judgments": 997,
+    "courtCitations": 1902,
+    "priorFourQuarterMedian": 3340,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": false
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "atLeast40pctOfPriorFourQuarterMedian"
+    ]
+   },
+   {
+    "period": "1445Q4",
+    "judgments": 1235,
+    "courtCitations": 2258,
+    "priorFourQuarterMedian": 2783,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1446Q1",
+    "judgments": 1344,
+    "courtCitations": 1462,
+    "priorFourQuarterMedian": 1517,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": true,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "SCORABLE",
+    "failed": []
+   },
+   {
+    "period": "1446Q2",
+    "judgments": 868,
+    "courtCitations": 1072,
+    "priorFourQuarterMedian": 1344,
+    "checks": {
+     "judgmentsAtLeast800": true,
+     "courtStatuteCitationsAtLeast200": true,
+     "notTheCollectionEdge": false,
+     "atLeast40pctOfPriorFourQuarterMedian": true
+    },
+    "verdict": "NOT_SCORABLE",
+    "failed": [
+     "notTheCollectionEdge"
+    ]
+   }
+  ],
+  "scorable": [
+   "1443Q1",
+   "1443Q3",
+   "1443Q4",
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4",
+   "1445Q1",
+   "1445Q4",
+   "1446Q1"
+  ],
+  "notScorable": [
+   "1442Q1",
+   "1442Q2",
+   "1442Q3",
+   "1442Q4",
+   "1443Q2",
+   "1445Q2",
+   "1445Q3",
+   "1446Q2"
+  ]
+ },
+ "phase4_5_entrants": {
+  "folds": 10,
+  "periods": [
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4",
+   "1445Q1",
+   "1445Q2",
+   "1445Q3",
+   "1445Q4",
+   "1446Q1",
+   "1446Q2"
+  ],
+  "meanBaseRate": 0.066,
+  "meanPrecisionAtNTrue": {
+   "courtShare": 0.2857,
+   "partyShare": 0.1206,
+   "rank": 0.01,
+   "rankAcceleration": 0.0947,
+   "momentum": 0.1363,
+   "judgments": 0.2857,
+   "combined": 0.1402
+  },
+  "liftOverBaseRate": {
+   "courtShare": 4.33,
+   "partyShare": 1.83,
+   "rank": 0.15,
+   "rankAcceleration": 1.43,
+   "momentum": 2.07,
+   "judgments": 4.33,
+   "combined": 2.12
+  },
+  "bestFeature": "judgments",
+  "worstFoldForBest": 0.0,
+  "meanNearBoundaryEntrants": 4.8,
+  "meanLongJumpEntrants": 5.6,
+  "byFold": [
+   {
+    "period": "1444Q1",
+    "candidates": 55,
+    "entrants": 15,
+    "baseRate": 0.2727,
+    "precision": {
+     "courtShare": 0.2667,
+     "partyShare": 0.3333,
+     "rank": 0.0,
+     "rankAcceleration": 0.2667,
+     "momentum": 0.2667,
+     "judgments": 0.2667,
+     "combined": 0.2667
+    },
+    "nearBoundaryEntrants": 5,
+    "longJumpEntrants": 10
+   },
+   {
+    "period": "1444Q2",
+    "candidates": 114,
+    "entrants": 9,
+    "baseRate": 0.0789,
+    "precision": {
+     "courtShare": 0.3333,
+     "partyShare": 0.2222,
+     "rank": 0.0,
+     "rankAcceleration": 0.4444,
+     "momentum": 0.4444,
+     "judgments": 0.3333,
+     "combined": 0.5556
+    },
+    "nearBoundaryEntrants": 5,
+    "longJumpEntrants": 4
+   },
+   {
+    "period": "1444Q3",
+    "candidates": 180,
+    "entrants": 9,
+    "baseRate": 0.05,
+    "precision": {
+     "courtShare": 0.2222,
+     "partyShare": 0.1111,
+     "rank": 0.0,
+     "rankAcceleration": 0.0,
+     "momentum": 0.0,
+     "judgments": 0.2222,
+     "combined": 0.0
+    },
+    "nearBoundaryEntrants": 6,
+    "longJumpEntrants": 3
+   },
+   {
+    "period": "1444Q4",
+    "candidates": 218,
+    "entrants": 12,
+    "baseRate": 0.055,
+    "precision": {
+     "courtShare": 0.3333,
+     "partyShare": 0.1667,
+     "rank": 0.0,
+     "rankAcceleration": 0.0,
+     "momentum": 0.25,
+     "judgments": 0.3333,
+     "combined": 0.1667
+    },
+    "nearBoundaryEntrants": 6,
+    "longJumpEntrants": 6
+   },
+   {
+    "period": "1445Q1",
+    "candidates": 254,
+    "entrants": 11,
+    "baseRate": 0.0433,
+    "precision": {
+     "courtShare": 0.3636,
+     "partyShare": 0.1818,
+     "rank": 0.0,
+     "rankAcceleration": 0.0,
+     "momentum": 0.0909,
+     "judgments": 0.3636,
+     "combined": 0.0909
+    },
+    "nearBoundaryEntrants": 5,
+    "longJumpEntrants": 6
+   },
+   {
+    "period": "1445Q2",
+    "candidates": 274,
+    "entrants": 10,
+    "baseRate": 0.0365,
+    "precision": {
+     "courtShare": 0.3,
+     "partyShare": 0.1,
+     "rank": 0.0,
+     "rankAcceleration": 0.0,
+     "momentum": 0.2,
+     "judgments": 0.3,
+     "combined": 0.1
+    },
+    "nearBoundaryEntrants": 7,
+    "longJumpEntrants": 3
+   },
+   {
+    "period": "1445Q3",
+    "candidates": 285,
+    "entrants": 8,
+    "baseRate": 0.0281,
+    "precision": {
+     "courtShare": 0.0,
+     "partyShare": 0.0,
+     "rank": 0.0,
+     "rankAcceleration": 0.125,
+     "momentum": 0.0,
+     "judgments": 0.0,
+     "combined": 0.0
+    },
+    "nearBoundaryEntrants": 2,
+    "longJumpEntrants": 6
+   },
+   {
+    "period": "1445Q4",
+    "candidates": 302,
+    "entrants": 10,
+    "baseRate": 0.0331,
+    "precision": {
+     "courtShare": 0.3,
+     "partyShare": 0.0,
+     "rank": 0.1,
+     "rankAcceleration": 0.0,
+     "momentum": 0.0,
+     "judgments": 0.3,
+     "combined": 0.0
+    },
+    "nearBoundaryEntrants": 3,
+    "longJumpEntrants": 7
+   },
+   {
+    "period": "1446Q1",
+    "candidates": 314,
+    "entrants": 9,
+    "baseRate": 0.0287,
+    "precision": {
+     "courtShare": 0.5556,
+     "partyShare": 0.0,
+     "rank": 0.0,
+     "rankAcceleration": 0.1111,
+     "momentum": 0.1111,
+     "judgments": 0.5556,
+     "combined": 0.2222
+    },
+    "nearBoundaryEntrants": 6,
+    "longJumpEntrants": 3
+   },
+   {
+    "period": "1446Q2",
+    "candidates": 326,
+    "entrants": 11,
+    "baseRate": 0.0337,
+    "precision": {
+     "courtShare": 0.1818,
+     "partyShare": 0.0909,
+     "rank": 0.0,
+     "rankAcceleration": 0.0,
+     "momentum": 0.0,
+     "judgments": 0.1818,
+     "combined": 0.0
+    },
+    "nearBoundaryEntrants": 3,
+    "longJumpEntrants": 8
+   }
+  ],
+  "verdict": "SIGNAL_ABOVE_BASE_RATE",
+  "frozenCandidateList": [
+   {
+    "rank": 1,
+    "article": "commercial_courts_implementing_regulation:69",
+    "currentRank": 50,
+    "courtShare": 0.00205,
+    "rankAcceleration": 9949,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 2,
+    "article": "commercial_courts_law:19",
+    "currentRank": 52,
+    "courtShare": 0.00205,
+    "rankAcceleration": 9947,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 3,
+    "article": "trademark_law:7",
+    "currentRank": 63,
+    "courtShare": 0.00205,
+    "rankAcceleration": 9936,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 4,
+    "article": "arbitration_law:14",
+    "currentRank": 64,
+    "courtShare": 0.00137,
+    "rankAcceleration": 9935,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 5,
+    "article": "commercial_courts_law:31",
+    "currentRank": 53,
+    "courtShare": 0.00205,
+    "rankAcceleration": 35,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 6,
+    "article": "companies_law:167",
+    "currentRank": 56,
+    "courtShare": 0.00205,
+    "rankAcceleration": 100,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 7,
+    "article": "commercial_courts_law:40",
+    "currentRank": 55,
+    "courtShare": 0.00205,
+    "rankAcceleration": 34,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 8,
+    "article": "evidence_law:30",
+    "currentRank": 58,
+    "courtShare": 0.00205,
+    "rankAcceleration": 114,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 9,
+    "article": "evidence_law:93",
+    "currentRank": 59,
+    "courtShare": 0.00205,
+    "rankAcceleration": 37,
+    "difficulty": "NEAR_BOUNDARY"
+   },
+   {
+    "rank": 10,
+    "article": "commercial_courts_law:36",
+    "currentRank": 54,
+    "courtShare": 0.00205,
+    "rankAcceleration": 15,
+    "difficulty": "NEAR_BOUNDARY"
+   }
+  ]
+ },
+ "phase6_newLawMonitor": {
+  "milestones": [
+   "FIRST_PARTY",
+   "FIRST_COURT",
+   "TOP100_ENTRY",
+   "TOP50_ENTRY"
+  ],
+  "instrumentsArrivingInWindow": 60,
+  "reachedTop50": 8,
+  "medianQuartersToTop50": 2,
+  "rows": [
+   {
+    "instrument": "evidence_law",
+    "firstCourtQuarter": "1443Q1",
+    "firstPartyQuarter": "1444Q1",
+    "partyBeforeCourtQuarters": -4,
+    "quartersToTop100": 0,
+    "quartersToTop50": 0,
+    "courtJudgmentsToDate": 7601,
+    "censoringRisk": "POSSIBLY_CENSORED"
+   },
+   {
+    "instrument": "arbitration_law",
+    "firstCourtQuarter": "1442Q3",
+    "firstPartyQuarter": "1443Q3",
+    "partyBeforeCourtQuarters": -4,
+    "quartersToTop100": 4,
+    "quartersToTop50": 4,
+    "courtJudgmentsToDate": 394,
+    "censoringRisk": "POSSIBLY_CENSORED"
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": "1445Q1",
+    "partyBeforeCourtQuarters": 0,
+    "quartersToTop100": 1,
+    "quartersToTop50": 2,
+    "courtJudgmentsToDate": 347,
+    "censoringRisk": "IN_WINDOW"
+   },
+   {
+    "instrument": "sharia_procedure_implementing_regulation",
+    "firstCourtQuarter": "1443Q1",
+    "firstPartyQuarter": "1444Q2",
+    "partyBeforeCourtQuarters": -5,
+    "quartersToTop100": 0,
+    "quartersToTop50": 0,
+    "courtJudgmentsToDate": 221,
+    "censoringRisk": "POSSIBLY_CENSORED"
+   },
+   {
+    "instrument": "trade_names_law",
+    "firstCourtQuarter": "1442Q3",
+    "firstPartyQuarter": "1444Q1",
+    "partyBeforeCourtQuarters": -6,
+    "quartersToTop100": 4,
+    "quartersToTop50": 6,
+    "courtJudgmentsToDate": 120,
+    "censoringRisk": "POSSIBLY_CENSORED"
+   },
+   {
+    "instrument": "law_practice_implementing_regulation",
+    "firstCourtQuarter": "1442Q4",
+    "firstPartyQuarter": "1443Q3",
+    "partyBeforeCourtQuarters": -3,
+    "quartersToTop100": 1,
+    "quartersToTop50": 14,
+    "courtJudgmentsToDate": 97,
+    "censoringRisk": "POSSIBLY_CENSORED"
+   },
+   {
+    "instrument": "trademark_law",
+    "firstCourtQuarter": "1442Q4",
+    "firstPartyQuarter": "1443Q3",
+    "partyBeforeCourtQuarters": -3,
+    "quartersToTop100": 9,
+    "quartersToTop50": null,
+    "courtJudgmentsToDate": 61,
+    "censoringRisk": "POSSIBLY_CENSORED"
+   },
+   {
+    "instrument": "arbitration_implementing_regulation",
+    "firstCourtQuarter": "1444Q2",
+    "firstPartyQuarter": "1444Q3",
+    "partyBeforeCourtQuarters": -1,
+    "quartersToTop100": 1,
+    "quartersToTop50": 2,
+    "courtJudgmentsToDate": 52,
+    "censoringRisk": "IN_WINDOW"
+   },
+   {
+    "instrument": "health_system_regulation",
+    "firstCourtQuarter": "1443Q2",
+    "firstPartyQuarter": "1444Q1",
+    "partyBeforeCourtQuarters": -3,
+    "quartersToTop100": 0,
+    "quartersToTop50": null,
+    "courtJudgmentsToDate": 35,
+    "censoringRisk": "IN_WINDOW"
+   },
+   {
+    "instrument": "copyright_law",
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": "1444Q1",
+    "partyBeforeCourtQuarters": -2,
+    "quartersToTop100": null,
+    "quartersToTop50": null,
+    "courtJudgmentsToDate": 28,
+    "censoringRisk": "IN_WINDOW"
+   },
+   {
+    "instrument": "telecommunications_law",
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": "1444Q3",
+    "partyBeforeCourtQuarters": -4,
+    "quartersToTop100": 1,
+    "quartersToTop50": null,
+    "courtJudgmentsToDate": 19,
+    "censoringRisk": "IN_WINDOW"
+   },
+   {
+    "instrument": "criminal_procedure_law",
+    "firstCourtQuarter": "1444Q1",
+    "firstPartyQuarter": "1444Q1",
+    "partyBeforeCourtQuarters": 0,
+    "quartersToTop100": null,
+    "quartersToTop50": null,
+    "courtJudgmentsToDate": 15,
+    "censoringRisk": "IN_WINDOW"
+   }
+  ],
+  "note": "left-censored instruments -- already cited in the first two quarters -- are excluded, because their arrival is not in the window. This is a velocity profile, not a forecast: the corpus contains one clean arrival and one is not a sample."
+ },
+ "phase7_leadLagHeterogeneity": {
+  "bySubset": {
+   "ALL": {
+    "folds": 11,
+    "meanPartialR": -0.0107,
+    "worst": -0.186,
+    "best": 0.1758,
+    "foldsPositive": 4,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "COMMERCIAL_COURTS_LAW": {
+    "folds": 11,
+    "meanPartialR": 0.0197,
+    "worst": -0.3752,
+    "best": 0.4116,
+    "foldsPositive": 7,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "CORE_ARTICLES_TOP_50": {
+    "folds": 11,
+    "meanPartialR": -0.0051,
+    "worst": -0.1734,
+    "best": 0.219,
+    "foldsPositive": 5,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "EVIDENCE_LAW": {
+    "folds": 8,
+    "meanPartialR": -0.0233,
+    "worst": -0.1518,
+    "best": 0.096,
+    "foldsPositive": 3,
+    "verdict": "NO_LEAD_LAG_ABOVE_PERSISTENCE"
+   },
+   "RARE_ARTICLES_BOTTOM_HALF": {
+    "folds": 11,
+    "meanPartialR": 0.0638,
+    "worst": -0.2275,
+    "best": 0.4082,
+    "foldsPositive": 7,
+    "verdict": "PARTY_ADDS"
+   }
+  },
+  "subsetsWherePartyAdds": [
+   "RARE_ARTICLES_BOTTOM_HALF"
+  ],
+  "verdict": "HETEROGENEOUS_DO_NOT_GENERALISE",
+  "note": "a subset result is reported as a subset result. It is never generalised to the corpus, and the corpus-level negative is not overturned by one group."
+ },
+ "phase19_20_salienceBaseline": {
+  "folds": 12,
+  "rankAutocorrelation": 0.6541,
+  "topDecilePersistence": 0.7023,
+  "bottomHalfToTopDecileMobility": 0.0017,
+  "newEntrantSurvivalOneQuarter": 0.5554,
+  "articleHhiMean": 0.0682,
+  "articleHhiRange": [
+   0.03818,
+   0.08244
+  ],
+  "verdict": "RICH_GET_RICHER_ALREADY_PRESENT",
+  "whyThisMatters": "any future claim that AI concentrated legal authority has to clear this baseline. If the system already concentrates strongly without observable AI, a later concentration is not evidence of AI; if it is mobile now, a later freeze would be."
+ },
+ "phase23_24_architectures": {
+  "folds": 13,
+  "summary": {
+   "COURT_REASONING": {
+    "meanCourtAuthorityRecall": 0.9563,
+    "meanUniverseSize": 588.8,
+    "meanPartyContamination": 0.0
+   },
+   "SPEAKER_AWARE_HYBRID": {
+    "meanCourtAuthorityRecall": 0.9614,
+    "meanUniverseSize": 734.5,
+    "meanPartyContamination": 0.1939
+   },
+   "STATUTE_ONLY_TOP200": {
+    "meanCourtAuthorityRecall": 0.914,
+    "meanUniverseSize": 173.6,
+    "meanPartyContamination": 0.0
+   },
+   "STATUTE_ONLY_TOP50": {
+    "meanCourtAuthorityRecall": 0.8039,
+    "meanUniverseSize": 50.0,
+    "meanPartyContamination": 0.0
+   },
+   "WHOLE_JUDGMENT": {
+    "meanCourtAuthorityRecall": 0.9626,
+    "meanUniverseSize": 865.3,
+    "meanPartyContamination": 0.2824
+   }
+  },
+  "paretoFront": [
+   "COURT_REASONING",
+   "SPEAKER_AWARE_HYBRID",
+   "STATUTE_ONLY_TOP200",
+   "STATUTE_ONLY_TOP50",
+   "WHOLE_JUDGMENT"
+  ],
+  "noCompositeScore": "the components are not summed. A weight on recall against contamination is a legal judgement about what a wrong citation costs, and this file does not make it.",
+  "byFold": [
+   {
+    "period": "1443Q2",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.8262,
+     "universeSize": 128,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.8328,
+     "universeSize": 153,
+     "partyContamination": 0.1634
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.777,
+     "universeSize": 74,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.7148,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.8328,
+     "universeSize": 153,
+     "partyContamination": 0.1634
+    }
+   },
+   {
+    "period": "1443Q3",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9289,
+     "universeSize": 145,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9405,
+     "universeSize": 173,
+     "partyContamination": 0.1618
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.8377,
+     "universeSize": 69,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8029,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9405,
+     "universeSize": 173,
+     "partyContamination": 0.1618
+    }
+   },
+   {
+    "period": "1443Q4",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9553,
+     "universeSize": 219,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9591,
+     "universeSize": 273,
+     "partyContamination": 0.1978
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9334,
+     "universeSize": 163,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8078,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9591,
+     "universeSize": 274,
+     "partyContamination": 0.2007
+    }
+   },
+   {
+    "period": "1444Q1",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9265,
+     "universeSize": 277,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9337,
+     "universeSize": 346,
+     "partyContamination": 0.1994
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9116,
+     "universeSize": 186,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.7277,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9344,
+     "universeSize": 355,
+     "partyContamination": 0.2197
+    }
+   },
+   {
+    "period": "1444Q2",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9691,
+     "universeSize": 460,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9757,
+     "universeSize": 575,
+     "partyContamination": 0.2
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9345,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.7558,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9767,
+     "universeSize": 628,
+     "partyContamination": 0.2675
+    }
+   },
+   {
+    "period": "1444Q3",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9819,
+     "universeSize": 602,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9868,
+     "universeSize": 752,
+     "partyContamination": 0.1995
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9359,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.7932,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9894,
+     "universeSize": 852,
+     "partyContamination": 0.2934
+    }
+   },
+   {
+    "period": "1444Q4",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9862,
+     "universeSize": 684,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9897,
+     "universeSize": 855,
+     "partyContamination": 0.2
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9371,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.7977,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9912,
+     "universeSize": 999,
+     "partyContamination": 0.3153
+    }
+   },
+   {
+    "period": "1445Q1",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9845,
+     "universeSize": 741,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9895,
+     "universeSize": 926,
+     "partyContamination": 0.1998
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9438,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8241,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9907,
+     "universeSize": 1092,
+     "partyContamination": 0.3214
+    }
+   },
+   {
+    "period": "1445Q2",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9878,
+     "universeSize": 806,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9913,
+     "universeSize": 1007,
+     "partyContamination": 0.1996
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9498,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8218,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9927,
+     "universeSize": 1213,
+     "partyContamination": 0.3355
+    }
+   },
+   {
+    "period": "1445Q3",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9369,
+     "universeSize": 832,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9427,
+     "universeSize": 1040,
+     "partyContamination": 0.2
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.8864,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.7934,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9437,
+     "universeSize": 1270,
+     "partyContamination": 0.3449
+    }
+   },
+   {
+    "period": "1445Q4",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9836,
+     "universeSize": 891,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9867,
+     "universeSize": 1113,
+     "partyContamination": 0.1995
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9442,
+     "universeSize": 200,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8649,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9876,
+     "universeSize": 1369,
+     "partyContamination": 0.3492
+    }
+   },
+   {
+    "period": "1446Q1",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9767,
+     "universeSize": 921,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9822,
+     "universeSize": 1151,
+     "partyContamination": 0.1998
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9378,
+     "universeSize": 199,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8605,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9856,
+     "universeSize": 1417,
+     "partyContamination": 0.35
+    }
+   },
+   {
+    "period": "1446Q2",
+    "COURT_REASONING": {
+     "courtAuthorityRecall": 0.9879,
+     "universeSize": 948,
+     "partyContamination": 0.0
+    },
+    "SPEAKER_AWARE_HYBRID": {
+     "courtAuthorityRecall": 0.9879,
+     "universeSize": 1185,
+     "partyContamination": 0.2
+    },
+    "STATUTE_ONLY_TOP200": {
+     "courtAuthorityRecall": 0.9524,
+     "universeSize": 166,
+     "partyContamination": 0.0
+    },
+    "STATUTE_ONLY_TOP50": {
+     "courtAuthorityRecall": 0.8862,
+     "universeSize": 50,
+     "partyContamination": 0.0
+    },
+    "WHOLE_JUDGMENT": {
+     "courtAuthorityRecall": 0.9897,
+     "universeSize": 1454,
+     "partyContamination": 0.348
+    }
+   }
+  ]
+ },
+ "phase22_refreshTriggers": {
+  "profile": [
+   {
+    "horizonQuarters": 1,
+    "top50DisplacedPct": 34.9231,
+    "citationShareToNeverSeenArticles": 0.0437,
+    "meanRankDisplacementTop200": 33.1885
+   },
+   {
+    "horizonQuarters": 2,
+    "top50DisplacedPct": 39.1667,
+    "citationShareToNeverSeenArticles": 0.0612,
+    "meanRankDisplacementTop200": 36.3225
+   },
+   {
+    "horizonQuarters": 4,
+    "top50DisplacedPct": 46.4,
+    "citationShareToNeverSeenArticles": 0.1191,
+    "meanRankDisplacementTop200": 40.513
+   }
+  ],
+  "triggers": [
+   {
+    "trigger": "TOP50_DISPLACEMENT",
+    "threshold": 30.0,
+    "unit": "per cent of the frozen top 50 no longer in the observed top 50",
+    "firstHorizonCrossed": 1
+   },
+   {
+    "trigger": "CONTENT_GAP",
+    "threshold": 0.1,
+    "unit": "share of court citations going to articles the snapshot never saw",
+    "firstHorizonCrossed": 4
+   },
+   {
+    "trigger": "RANK_GAP",
+    "threshold": 35.0,
+    "unit": "mean rank displacement in the top 200",
+    "firstHorizonCrossed": 2
+   }
+  ],
+  "earliestTriggeredHorizonQuarters": 1,
+  "recommendation": "a snapshot crosses its first refresh trigger at horizon 1 quarter(s)",
+  "whichTriggerFiresFirst": "TOP50_DISPLACEMENT",
+  "note": "RANK_GAP and TOP50_DISPLACEMENT fire long before CONTENT_GAP. A maintenance policy written around missing content would refresh far too late."
+ }
+}

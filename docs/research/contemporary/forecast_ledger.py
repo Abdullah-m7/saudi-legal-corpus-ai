@@ -177,6 +177,45 @@ def build():
                         "the target quarter (LOW_SUPPORT).",
     }))
 
+    # ---- 6. the entrant forecast, the one target with a real signal
+    hz = J("horizon_results.json")
+    en = hz["phase4_5_entrants"]
+    if en.get("frozenCandidateList"):
+        best = en["bestFeature"]
+        out.append(dict(common, **{
+            "forecast_id": f"top50_entrants@{CUTOFF}",
+            "target_definition":
+                "which (instrument, article) pairs OUTSIDE the top 50 at "
+                "1446Q2 enter the court's top 50 in the target quarter. "
+                "Scored against the frozen ranked list below.",
+            "model": f"rank candidates by {best}; the additive rule combining "
+                     "three features scored WORSE "
+                     f"({en['meanPrecisionAtNTrue']['combined']} against "
+                     f"{en['meanPrecisionAtNTrue'][best]}) and is not used",
+            "prediction": {
+                "rankedCandidates": en["frozenCandidateList"],
+                "expectedEntrantsInPeriod": hz["phase1_forecastabilityMap"] and
+                    J("foresight_results.json")["articleVisibility"][
+                        "meanNewEntrantsPerPeriod"],
+                "expectedPrecisionAtNTrue": en["meanPrecisionAtNTrue"][best],
+                "baseRate": en["meanBaseRate"],
+                "difficultySplit": {
+                    "meanNearBoundaryEntrants": en["meanNearBoundaryEntrants"],
+                    "meanLongJumpEntrants": en["meanLongJumpEntrants"]}},
+            "uncertainty": {"folds": en["folds"],
+                            "worstFoldPrecision": en["worstFoldForBest"],
+                            "note": "one backtest fold produced zero correct "
+                                    "candidates. The signal is real on "
+                                    "average and fails completely sometimes."},
+            "baseline_prediction": en["meanBaseRate"],
+            "scoring_rule":
+                "precision at n, where n is the number of articles that "
+                "actually entered. Report separately for NEAR_BOUNDARY and "
+                "LONG_JUMP candidates: predicting an article ranked 52 into "
+                "the top 50 is not the same achievement as predicting one "
+                "ranked 300.",
+        }))
+
     # ---- 5b. the speaker-aware correction
     sa = fs["speakerAwareRetrieval"]
     mis = fs["temporalMisalignment"]["h1"]
@@ -560,6 +599,114 @@ PREREGISTRATION = {
 }
 
 
+def horizon_release():
+    """The first Horizon release: one forecast, five detectors, five watch
+    targets, and two competing AI hypotheses that are not forecasts."""
+    hz, det = J("horizon_results.json"), J("detectors_results.json")
+    en = hz["phase4_5_entrants"]
+    fam = det["phase16_17_18_composites"]
+    D = det["detectors"]
+
+    detectors = []
+    for m in ("courtArticleHHI", "namedFiqhShareOfFiqh",
+              "commercial_courts_law::namedShare",
+              "evidence_law::entropy",
+              "commercial_courts_implementing_regulation::topSourceShare"):
+        d = D.get(m, {})
+        detectors.append({
+            "detector_id": f"{m}@{CUTOFF}",
+            "metric": m,
+            "contract": det["contract"],
+            "baselineAtCutoff": next(
+                (s.get("baseline") for s in reversed(d.get("byPeriod", []))
+                 if s.get("baseline") is not None), None),
+            "spreadAtCutoff": next(
+                (s.get("spread") for s in reversed(d.get("byPeriod", []))
+                 if s.get("spread") is not None), None),
+            "historicalAlarmRate": d.get("alarmRatePerEvaluablePeriod"),
+            "stateAtCutoff": d.get("currentState"),
+            "evaluation": "a future SCORABLE quarter updates the detector. A "
+                          "SIGNAL is recorded in SURPRISE_LEDGER.json with no "
+                          "explanation attached; the explanation is sought "
+                          "afterwards and may never be found.",
+            "status": "ARMED"})
+
+    watch = [
+        {"watch_id": f"first_ai_legal_issue@{CUTOFF}",
+         "definition": "the first LEVEL 3 judgment in ai_radar.py",
+         "baseline": "0 of 50,666", "probability": None,
+         "why": "forcing a probability onto a rare emerging event is false "
+                "precision"},
+        {"watch_id": f"bog_post_deployment_corpus@{CUTOFF}",
+         "definition": "an official Board of Grievances collection covering "
+                       "1445 AH or later",
+         "baseline": "latest published collection covers 1444 AH",
+         "probability": None,
+         "why": "the single condition that converts the AI study from E0 to "
+                "E1"},
+        {"watch_id": f"moj_commercial_ai_deployment@{CUTOFF}",
+         "definition": "a verified AI deployment in MoJ commercial courts",
+         "baseline": "none found", "probability": None,
+         "why": "the only condition that would produce an L3 event in a "
+                "corpus already held"},
+        {"watch_id": f"new_major_code@{CUTOFF}",
+         "definition": "a new instrument's first court citation in a SCORABLE "
+                       "quarter",
+         "baseline": "the Civil Transactions Law: 2 quarters from first court "
+                     "citation to the top 50",
+         "probability": None,
+         "why": "the uptake monitor needs an arrival to profile"},
+        {"watch_id": f"parser_era_change@{CUTOFF}",
+         "definition": "a change to authority.py or companions.py that alters "
+                       "what counts as an authority",
+         "baseline": "current era hash in the freshness stamp",
+         "probability": None,
+         "why": "every traceability detector must stop at that boundary "
+                "rather than stitch across it"},
+    ]
+
+    hyp = [
+        {"hypothesis_id": "H_AI_HOMOGENISATION",
+         "notAForecast": "a competing hypothesis. No point is scored for "
+                         "holding both; the future adjudicates.",
+         "statement": "after a verified research-AI deployment in a workflow "
+                      "this repository observes, article and source "
+                      "concentration moves ABOVE the frozen detector bounds",
+         "wouldShowAs": fam["AI_HOMOGENISATION"]["metrics"]
+                        if "metrics" in fam["AI_HOMOGENISATION"] else
+                        [m["metric"] for m in fam["AI_HOMOGENISATION"]["members"]],
+         "requires": fam["AI_HOMOGENISATION"]["requires"],
+         "stateAtCutoff": fam["AI_HOMOGENISATION"]["state"]},
+        {"hypothesis_id": "H_AI_DISCOVERY",
+         "notAForecast": "as above, and it predicts the opposite sign",
+         "statement": "the same deployment instead moves long-tail and "
+                      "entropy measures above the frozen bounds",
+         "wouldShowAs": [m["metric"]
+                         for m in fam["AI_DISCOVERY"]["members"]],
+         "requires": fam["AI_DISCOVERY"]["requires"],
+         "stateAtCutoff": fam["AI_DISCOVERY"]["state"]},
+    ]
+    return {
+        "release": "HORIZON_1",
+        "cutoff": CUTOFF,
+        "created_at": CREATED,
+        "rule": "every future metric is FORECAST, DETECT or WATCH. Nothing is "
+                "forced into a probability model.",
+        "counts": {"forecasts": 1, "detectors": len(detectors),
+                   "watchTargets": len(watch),
+                   "competingHypotheses": len(hyp)},
+        "detectors": detectors,
+        "watchTargets": watch,
+        "competingAiHypotheses": hyp,
+        "entrantForecastSummary": {
+            "bestFeature": en.get("bestFeature"),
+            "meanPrecisionAtNTrue": en.get("meanPrecisionAtNTrue", {}).get(
+                en.get("bestFeature")),
+            "meanBaseRate": en.get("meanBaseRate"),
+            "worstFold": en.get("worstFoldForBest")},
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -698,6 +845,8 @@ def main():
         old["watchTargets"] = WATCH
     if "forecasterTournament" not in old:
         old["forecasterTournament"] = tournament()
+    if "horizonRelease" not in old:
+        old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:
         import foresight as F
         rows, _d, _e = F.load()

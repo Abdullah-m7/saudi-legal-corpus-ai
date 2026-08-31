@@ -1,0 +1,68 @@
+{
+ "what": "What happened that we did NOT forecast, and that a detector frozen beforehand caught. This is the opposite of FORECAST_LEDGER.json and is kept for the opposite reason.",
+ "difference": {
+  "FORECAST_LEDGER": "what did we predict, and were we right?",
+  "SURPRISE_LEDGER": "what moved outside its own history, when did our detector see it, and what did we later learn it was?"
+ },
+ "rules": [
+  "an entry is created ONLY by a detector that was frozen before the period it fired on. A detector invented after seeing a shift may never create an entry, retroactively or otherwise.",
+  "the explanation field is filled AFTER the signal, never before. Searching for a trend that suits a known event is how a repository starts telling stories.",
+  "a signal that later reverses stays in the ledger with its reversal recorded. False alarms are the point of keeping the file.",
+  "interpretation_status begins UNEXPLAINED and may stay there permanently."
+ ],
+ "schema": {
+  "surprise_id": "string",
+  "metric": "the detector that fired",
+  "detector_version": "commit and contract parameters at fire time",
+  "first_signal_period": "hijri quarter",
+  "confirmation_period": "hijri quarter, or null if never confirmed",
+  "baseline_expectation": "median and spread at fire time",
+  "observed_shift": "value and robust z",
+  "related_legal_event": "filled after, or UNKNOWN",
+  "related_ai_event": "adoption_registry event id, or NONE",
+  "interpretation_status": "UNEXPLAINED | PUBLICATION_ARTEFACT | COMPOSITION_SHIFT | LEGAL_CHANGE | PARSER_ERA | REVERSED",
+  "later_explanation": "free text, dated"
+ },
+ "prospectiveEntries": [],
+ "prospectiveEntriesNote": "EMPTY, and correctly so. Every detector in this repository was frozen today. Nothing can yet have fired prospectively, and the historical replay below is NOT a set of surprises: those quarters were in the past when the detector was written.",
+ "historicalReplayForCalibration": {
+  "purpose": "to measure how often the frozen rules fire on ordinary quarters, not to claim any discovery",
+  "detectorsRun": 16,
+  "periodsEvaluated": 56,
+  "signals": 8,
+  "confirmedShifts": 2,
+  "alarmRate": 0.1429,
+  "whatFired": {
+   "civilTransactionsLawShareOfCourtCitations": [
+    "1445Q1",
+    "1445Q4",
+    "1446Q1"
+   ],
+   "commercial_courts_implementing_regulation::topSourceShare": [
+    "1446Q1"
+   ],
+   "commercial_courts_law::entropy": [
+    "1445Q4"
+   ],
+   "commercial_courts_law::namedShare": [
+    "1445Q4",
+    "1446Q1"
+   ],
+   "evidence_law::entropy": [
+    "1445Q4"
+   ]
+  },
+  "positiveControl": {
+   "event": "the Civil Transactions Law becoming citable",
+   "whyItQualifies": "its date is fixed by legislation, not chosen by us after seeing the series, so it is definable without hindsight",
+   "firstCourtQuarter": "1445Q1",
+   "firstSignalQuarter": "1445Q1",
+   "detectionDelayQuarters": 0,
+   "confirmed": [
+    "1446Q1"
+   ],
+   "verdict": "DETECTED",
+   "limit": "one positive control is one positive control. It shows the detector can fire on a real structural change; it does not establish sensitivity."
+  }
+ }
+}

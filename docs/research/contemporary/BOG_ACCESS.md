@@ -191,8 +191,19 @@ no result exists. What is missing is the observation: the institution that
 deployed the AI has not published a judgment since it did.
 
 That is a real finding about the state of Saudi legal-AI research, not a
-failure of this session. **The first verified judicial AI deployment in Saudi
-Arabia is currently unobservable in its effects, by anyone, because the
-deploying institution's published record stops before the deployment.** Any
-paper claiming to measure the impact of that deployment on published
-administrative reasoning would, today, be measuring something else.
+failure of this session. **The effects of the first verified Saudi judicial AI
+deployment are not externally observable from the currently published Board of
+Grievances adjudicatory record available under the audited public-access
+routes, because that record stops before the deployment.**
+
+The scope of that sentence matters and an earlier draft overstated it by
+saying "unobservable by anyone". The evidence does not support that. The Board
+holds internal case data we do not have and cannot see, and it may hold
+whatever evaluation it chose to run on its own system; a route we could not
+read may permit more than we could establish; and a later collection may
+already exist. The claim is about what is externally observable from the
+published record under the routes audited here, and nothing wider. No figure
+in this file changes with the correction.
+
+Any paper claiming, today, to measure the impact of that deployment on
+published administrative reasoning would be measuring something else.

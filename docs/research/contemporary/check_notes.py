@@ -40,6 +40,7 @@ def facts():
     reg, rad = J("adoption_registry.json"), J("ai_radar_results.json")
     b2, amap = J("ai_baseline_v2_results.json"), J("ai_transition_map.json")
     xm, bau = J("ai_exposure_matrix_results.json"), J("bog_access_audit.json")
+    hz, dt = J("horizon_results.json"), J("detectors_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -679,6 +680,65 @@ def facts():
         ("radar L3, in the access note", f"{rad['L3_count']}", BA),
         ("judgments scanned, in the access note",
          f"{rad['judgmentsScanned']:,}", BA),
+        # --- the horizon scanner and the detectors
+    ]
+    H = ["HORIZON.md"]
+    EN, LL = hz["phase4_5_entrants"], hz["phase7_leadLagHeterogeneity"]
+    SA, AR = hz["phase19_20_salienceBaseline"], hz["phase23_24_architectures"]
+    NL, RT = hz["phase6_newLawMonitor"], hz["phase22_refreshTriggers"]
+    AB, PC = dt["alarmBudget"], dt["phase25_positiveControl"]
+    FMC = hz["phase1_forecastabilityMap"]["counts"]
+    out += [
+        ("forecastable targets", f"{FMC['FORECAST']}", H),
+        ("detect targets", f"{FMC['DETECT']}", H),
+        ("scorable quarters", f"{len(hz['phase3_maturityRule']['scorable'])}", H),
+        ("entrant base rate", f"{EN['meanBaseRate']}", H),
+        ("entrant precision, court share",
+         f"{EN['meanPrecisionAtNTrue']['courtShare']}", H),
+        ("entrant lift, court share", f"{EN['liftOverBaseRate']['courtShare']}", H),
+        ("entrant precision, combined",
+         f"{EN['meanPrecisionAtNTrue']['combined']}", H),
+        ("entrant precision, party share",
+         f"{EN['meanPrecisionAtNTrue']['partyShare']}", H),
+        ("entrant near-boundary", f"{EN['meanNearBoundaryEntrants']}", H),
+        ("entrant long jumps", f"{EN['meanLongJumpEntrants']}", H),
+        ("new-law instruments in window",
+         f"{NL['instrumentsArrivingInWindow']}", H),
+        ("new-law reached top 50", f"{NL['reachedTop50']}", H),
+        ("new-law median quarters to top 50",
+         f"{NL['medianQuartersToTop50']}", H),
+        ("lead-lag, all articles",
+         f"{LL['bySubset']['ALL']['meanPartialR']}", H),
+        ("lead-lag, rare articles",
+         f"{LL['bySubset']['RARE_ARTICLES_BOTTOM_HALF']['meanPartialR']}", H),
+        ("lead-lag, commercial courts law",
+         f"{LL['bySubset']['COMMERCIAL_COURTS_LAW']['meanPartialR']}", H),
+        ("rank autocorrelation", f"{SA['rankAutocorrelation']}", H),
+        ("top decile persistence", f"{SA['topDecilePersistence']}", H),
+        ("bottom-half mobility", f"{SA['bottomHalfToTopDecileMobility']}", H),
+        ("entrant survival", f"{SA['newEntrantSurvivalOneQuarter']}", H),
+        ("article hhi mean", f"{SA['articleHhiMean']}", H),
+        ("hybrid recall",
+         f"{AR['summary']['SPEAKER_AWARE_HYBRID']['meanCourtAuthorityRecall']}", H),
+        ("hybrid size",
+         f"{AR['summary']['SPEAKER_AWARE_HYBRID']['meanUniverseSize']}", H),
+        ("hybrid contamination",
+         f"{AR['summary']['SPEAKER_AWARE_HYBRID']['meanPartyContamination']}", H),
+        ("whole judgment recall",
+         f"{AR['summary']['WHOLE_JUDGMENT']['meanCourtAuthorityRecall']}", H),
+        ("whole judgment contamination",
+         f"{AR['summary']['WHOLE_JUDGMENT']['meanPartyContamination']}", H),
+        ("top200 recall",
+         f"{AR['summary']['STATUTE_ONLY_TOP200']['meanCourtAuthorityRecall']}", H),
+        ("detectors run", f"{AB['detectorsRun']}", H),
+        ("evaluable periods", f"{AB['periodsEvaluatedTotal']}", H),
+        ("signals total", f"{AB['signalsTotal']}", H),
+        ("alarm rate", f"{AB['alarmRate']}", H),
+        ("confirmed rate", f"{AB['confirmedRate']}", H),
+        ("positive control first signal", f"{PC['firstSignalQuarter']}", H),
+        ("positive control delay", f"{PC['detectionDelayQuarters']}", H),
+        ("refresh, earliest trigger",
+         f"{RT['earliestTriggeredHorizonQuarters']}", H),
     ]
     return out
 

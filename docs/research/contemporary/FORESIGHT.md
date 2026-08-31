@@ -363,7 +363,7 @@ over the rolling folds — not a distributional interval nobody checked.
 ## Q. Forecast ledger status
 
 `FORECAST_LEDGER.json`: 5 forecasts, 2 conditional forecasts, 1 scenario, all
-OPEN, ledger hash `ebdf19344d6f81e5`, plus the 50 frozen article keys the
+OPEN, ledger hash `c7bd6441a91a7d7d`, plus the 50 frozen article keys the
 first forecast is scored against. `forecast_ledger.py` appends only: it will
 not modify an entry that already exists, and `--check` reports when the
 current code would predict something different, treating the ledger entry as
