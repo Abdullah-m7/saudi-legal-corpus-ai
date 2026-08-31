@@ -99,6 +99,14 @@ is not evidence about wording. The binding limit was always the six pairs.
 series, two models. The best mean skill is +0.0275 with a worst fold of
 −1.564.
 
+**The statute-then-doctrine-then-wording ordering was an artefact of the
+clock.** It was observed in both Era 1 transitions and it disappears from both
+when commencement is read out of the enacted text: `NO_DOCTRINE` for one law,
+`SIMULTANEOUS` for the other. Recorded as T8 in `THEORY_LOG.md`. The
+consequence for the AI programme is direct — the ordinary-transition reference
+an AI comparator was to be built on has no stable dimension, and matrix v3's
+comparator status is `NOT_YET_CONSTRUCTIBLE`.
+
 **The wording layer is not the early layer.** Its historical mobility is the
 highest of the three measured layers, and in both available transitions it
 moves AFTER statutory visibility — latency 2 against 0, and 3 against 0 — and
@@ -150,6 +158,29 @@ pseudo-events with no legal event at all. `TOP50_DISPLACEMENT` is retained as
 the refresh trigger and the proposal to warn earlier from formula or companion
 movement is HOLD: there is one event with an evaluable pre-event snapshot, and
 earlier-than-a-clock is not earlier-than-a-signal.
+
+**Only ONE legal transition in this corpus has a verified clock and the
+support to read eight layers.** The clock layer covers 77 instruments the
+corpus cites: 23 have no clock at all, 8 have a rule with nothing to anchor it,
+42 have a bounded quarter, and 4 have an exact effective date. Of those, 34 are
+the first corpus appearance of a law that commenced long before the window.
+The Law of Evidence passes the promotion gate; the Civil Transactions Law
+fails it on one condition — three mature post-quarters — because its verified
+clock is one quarter later than the clock the earlier era used. *Lifted by:*
+future laws, not more date collection.
+
+**Corpus arrival is not legal commencement, by a median of 28 quarters.**
+Across the 25 instruments with both a clock and corpus use. Any event study
+that takes T=0 from a first citation is, for most instruments, starting the
+clock about seven years late. This is why the arrival-based new-law monitor
+remains a velocity profile and is never read as a legal-transition latency.
+
+**Two publication dates are grade S3, and the reason is ours.**
+`laws.boe.gov.sa` closes our TLS tunnel mid-exchange and Umm Al-Qura's older
+permalinks 404 on its redesigned site. The commencement rules and decree dates
+for the same laws are S1 and local. Neither access failure is evidence that the
+source is unavailable, and neither was worked around. *Lifted by:* a working
+route to the gazette.
 
 ## Calibration refused
 

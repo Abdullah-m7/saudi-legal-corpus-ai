@@ -1035,6 +1035,53 @@ def transition_release():
     }
 
 
+def clock_release():
+    """The verified legal clock layer, and what it did to Era 1's headline."""
+    c = J("clocks_results.json")
+    e = J("transition_era2_results.json")
+    return {
+        "what": "LEGAL CLOCK LAYER and CALIBRATION ERA 2. Commencement dates "
+                "read out of enacted texts, and the transition battery re-run "
+                "from them.",
+        "clockCorrection": e["clockCorrection"],
+        "TRANSITION_BET_001": {
+            "status": e["phase25_bet"]["decision"],
+            "gate": "STRENGTHENED, never lowered",
+            "conditions": e["phase25_bet"]["conditions"],
+            "whyRefused": e["phase25_bet"]["why"],
+            "whatWouldEarnIt": e["phase25_bet"]["whatWouldEarnIt"],
+            "note": "the candidate is TRUE everywhere it can be checked and "
+                    "is refused for the second time. One qualified "
+                    "transition, and leave-one-transition-out is not even "
+                    "runnable."},
+        "withdrawnFromTheTransitionRelease": {
+            "claim": "ordinary legal transitions run STATUTE -> DOCTRINE -> "
+                     "FORMULA",
+            "status": "WITHDRAWN",
+            "verdict": e["phase13_orderingSurvives"]["verdict"],
+            "why": e["phase13_orderingSurvives"]["mechanism"],
+            "era1NotRewritten": "transitionRelease and "
+                                "frozen/three_layer_baseline.json keep their "
+                                "numbers exactly. What is withdrawn is the "
+                                "reading placed on them."},
+        "falsification": {
+            "medianArrivalMinusEffectiveQuarters":
+                c["phase8_falsification"]["medianCourtMinusEffectiveQuarters"],
+            "instruments":
+                c["phase8_falsification"]["instrumentsWithBothAClockAndCorpusUse"],
+            "reading": "corpus arrival sits a median of 28 quarters after "
+                       "legal commencement. An event clock read off the first "
+                       "citation would have been wrong by years for most "
+                       "instruments."},
+        "uptakeClockV2": e["phase22_uptakeClockV2"],
+        "incidence": {k: v for k, v in e["phase29_incidence"].items()
+                      if k not in ("silentInstruments",)},
+        "creditRule": "every clock is BACKFILLED: recorded after the "
+                      "commencement it describes. A clock may calibrate a "
+                      "method; it is never foresight.",
+    }
+
+
 def conditionals():
     """Scored ONLY if the registry's threshold is met and observable."""
     ab = J("ai_baseline_results.json")
@@ -1181,6 +1228,8 @@ def main():
         old["formulaRelease"] = formula_release()
     if "transitionRelease" not in old:
         old["transitionRelease"] = transition_release()
+    if "clockRelease" not in old:
+        old["clockRelease"] = clock_release()
     if "horizonRelease" not in old:
         old["horizonRelease"] = horizon_release()
     if "frozenTop50" not in old:

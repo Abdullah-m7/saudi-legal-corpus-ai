@@ -1,0 +1,145 @@
+{
+ "what": "TRANSITION SIGNATURE LIBRARY, CALIBRATION ERA 2. Signatures measured from verified legal clocks.",
+ "era1Library": "transition_signatures.json, frozen and separate",
+ "captureClasses": {
+  "BACKFILLED_CALIBRATION": "recorded after the commencement it describes; never foresight",
+  "PROSPECTIVE": "none yet"
+ },
+ "signatures": [
+  {
+   "event_id": "CLK-evidence_law",
+   "event_type": "NEW_INSTRUMENT",
+   "instrument": "evidence_law",
+   "known_at": "1443-05-26H",
+   "effective_at": "1443-12-07H",
+   "observable_from": "1443Q4",
+   "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+   "publicationHealthAtT0": {
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 1,
+    "court_latency": 0,
+    "formula_latency": 0,
+    "ecology_latency": 0,
+    "companion_latency": null,
+    "core_latency": null,
+    "retrieval_latency": 1
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "ALREADY_CROSSED_BEFORE_T0",
+    "L7_OPERATIONAL_CORE": "ALREADY_CROSSED_BEFORE_T0",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 1939,
+    "B_carriedFromOlderLaw": 21,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 9
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_IN_DOMAIN": 1,
+    "ALREADY_PRESENT_SYSTEM_WIDE": 26,
+    "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 1
+   },
+   "statuteFormulaDoctrineOrder": "NO_DOCTRINE",
+   "repeatedSources": [
+    "B.INSAF",
+    "B.KASHSHAF",
+    "B.MAJMU_FATAWA",
+    "B.MUGHNI",
+    "B.MUNTAHA",
+    "B.ZAD",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "H.ABU_DAWUD",
+    "H.BAYHAQI",
+    "H.BUKHARI",
+    "H.MUSLIM",
+    "H.MUTTAFAQ",
+    "J.IBN_QAYYIM",
+    "J.IBN_QUDAMA",
+    "J.IBN_TAYMIYYA",
+    "M.ADA_MUHAKKAMA",
+    "M.ASL_UQUD",
+    "M.BARAA",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6,
+   "era": "CALIBRATION_ERA_2",
+   "gateStatus": "PROMOTED_CALIBRATION_TRANSITION",
+   "layersAlreadyCrossedBeforeCommencement": [
+    "L6_DOCTRINAL_COMPANION",
+    "L7_OPERATIONAL_CORE"
+   ]
+  },
+  {
+   "event_id": "CLK-civil_transactions_law",
+   "event_type": "NEW_INSTRUMENT",
+   "instrument": "civil_transactions_law",
+   "known_at": "1444-11-29H",
+   "effective_at": "1445-06-04H",
+   "observable_from": "1445Q2",
+   "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+   "publicationHealthAtT0": {
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 2,
+    "court_latency": 2,
+    "formula_latency": 2,
+    "ecology_latency": 2,
+    "companion_latency": 2,
+    "core_latency": 2,
+    "retrieval_latency": 2
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 108,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 8
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 21
+   },
+   "statuteFormulaDoctrineOrder": "SIMULTANEOUS",
+   "repeatedSources": [
+    "B.KASHSHAF",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "J.IBN_TAYMIYYA",
+    "M.ASL_UQUD",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6,
+   "era": "CALIBRATION_ERA_2",
+   "gateStatus": "BELOW_GATE_REPORTED_FOR_COMPARISON_ONLY",
+   "layersAlreadyCrossedBeforeCommencement": []
+  }
+ ]
+}

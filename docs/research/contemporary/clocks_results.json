@@ -1,0 +1,3180 @@
+{
+ "what": "VERIFIED LEGAL CLOCK LAYER. When each instrument the corpus cites legally became capable of governing, read from the enacted text rather than from a citation.",
+ "whyThisIsNotHistoricalExpansion": "no new source, no new corpus, no backward extension. The enacted texts were already in the repository; what was missing was the arithmetic that turns a commencement provision into a corpus quarter.",
+ "phase3_clockComponents": [
+  "ROYAL_DECREE_DATE",
+  "COUNCIL_DECISION_DATE",
+  "OFFICIAL_PUBLICATION_DATE",
+  "GAZETTE_ISSUE",
+  "COMMENCEMENT_RULE",
+  "DELAY_FROM_PUBLICATION",
+  "FIRST_POSSIBLE_APPLICATION_DATE",
+  "FIRST_OBSERVABLE_QUARTER"
+ ],
+ "phase3_note": "these are not synonyms. A statute that commences 180 days after PUBLICATION does not commence 180 days after its decree, and the two differ by the gazette lag measured below.",
+ "phase4_sourceHierarchy": {
+  "S1": "the enacted text held in this repository, captured from the Ministry of Justice legal portal and verified against the official PDF. Supplies the decree, its date and the commencement rule verbatim.",
+  "S2": "an official ministry or regulator page stating commencement",
+  "S3": "a search-engine summary of an official portal page we could not fetch. Used only for publication dates, always labelled, and never for a rule.",
+  "accessFailure": "laws.boe.gov.sa closes our TLS tunnel mid-exchange and www.uqn.gov.sa's older permalinks 404 on its redesigned site. Both are OUR failures to reach a source, not evidence that the source is unavailable, and neither is worked around."
+ },
+ "phase5_clockQuality": {
+  "C0_NO_CLOCK": 23,
+  "C1_YEAR_ONLY": 8,
+  "C2_APPROX_QUARTER": 42,
+  "C3_EXACT_EFFECTIVE_DATE": 2,
+  "C4_EXACT_EFFECTIVE_AND_PUBLICATION": 2
+ },
+ "phase6_delayedCommencement": {
+  "rulesObserved": {
+   "IMMEDIATE_ON_PUBLICATION": 11,
+   "NONE_FOUND": 23,
+   "N_DAYS_AFTER_PUBLICATION": 41,
+   "N_DAYS_AFTER_UNSTATED_ANCHOR": 2
+  },
+  "staggeredCommencement": "no instrument in this set carries a per-article commencement in its own text, so no ARTICLE_CLOCK overrides are created. An article-version system is not built."
+ },
+ "phase7_eventTypes": {
+  "COMMENCES_AFTER_THE_WINDOW": 2,
+  "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW": 34,
+  "MAJOR_AMENDMENT": 1,
+  "NEW_IMPLEMENTING_REGULATION": 1,
+  "NEW_INSTRUMENT": 7,
+  "REPLACEMENT": 1,
+  "UNKNOWN": 31
+ },
+ "phase8_falsification": {
+  "instrumentsWithBothAClockAndCorpusUse": 25,
+  "medianCourtMinusEffectiveQuarters": 28,
+  "arrivingBeforeTheirEffectiveDate": 3,
+  "byClass": null,
+  "anticipatoryClasses": {
+   "PRE_EFFECTIVE_REFERENCE": "a citation dated before the law's effective date. Verified only as an ordering of dates; the judgment's use of the provision is not read.",
+   "TRANSITIONAL_APPLICATION": "the law's own transitional article makes it apply to pending cases. Requires the article to say so.",
+   "FUTURE_EFFECTIVE_DISCUSSION": "the provision is discussed as forthcoming. NOT SEPARABLE with the layers this repository holds, so it is never assigned.",
+   "UNKNOWN_LIKELY_IDENTITY_COLLISION": "more than a tenth of the instrument's citations fall before its effective date. The extractor matches an instrument by TITLE, and a replacement usually keeps its predecessor's title, so the most likely reading is that the corpus is citing the old law under the new law's clock. Not anticipatory practice, and not assumed to be either."
+  },
+  "byInstrument": [
+   {
+    "instrument": "accounting_auditing_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": null,
+    "firstPartyQuarter": "1445Q1",
+    "courtMinusEffectiveQuarters": null,
+    "partyMinusEffectiveQuarters": 9,
+    "courtCitations": 0
+   },
+   {
+    "instrument": "anti_concealment_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1444Q2",
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": 7,
+    "partyMinusEffectiveQuarters": 8,
+    "courtCitations": 2
+   },
+   {
+    "instrument": "anti_fraud_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q4",
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": 57,
+    "partyMinusEffectiveQuarters": 60,
+    "courtCitations": 3
+   },
+   {
+    "instrument": "bankruptcy_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": null,
+    "firstPartyQuarter": "1444Q2",
+    "courtMinusEffectiveQuarters": null,
+    "partyMinusEffectiveQuarters": 17,
+    "courtCitations": 0
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1445Q2",
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": "1445Q1",
+    "courtMinusEffectiveQuarters": -1,
+    "partyMinusEffectiveQuarters": -1,
+    "courtCitations": 486,
+    "preEffectiveCourtCitations": 8,
+    "preEffectiveShare": 0.0165,
+    "class": "PRE_EFFECTIVE_REFERENCE"
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1442Q1",
+    "firstPartyQuarter": "1442Q4",
+    "courtMinusEffectiveQuarters": 1,
+    "partyMinusEffectiveQuarters": 4,
+    "courtCitations": 5718
+   },
+   {
+    "instrument": "commercial_courts_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1442Q1",
+    "firstPartyQuarter": "1442Q3",
+    "courtMinusEffectiveQuarters": 1,
+    "partyMinusEffectiveQuarters": 3,
+    "courtCitations": 21097
+   },
+   {
+    "instrument": "competition_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1445Q2",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 17,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 1
+   },
+   {
+    "instrument": "copyright_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": "1444Q1",
+    "courtMinusEffectiveQuarters": 74,
+    "partyMinusEffectiveQuarters": 76,
+    "courtCitations": 38
+   },
+   {
+    "instrument": "credit_information_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1444Q1",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 56,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 3
+   },
+   {
+    "instrument": "criminal_procedure_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 35,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 3
+   },
+   {
+    "instrument": "criminal_procedure_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1444Q1",
+    "firstPartyQuarter": "1444Q1",
+    "courtMinusEffectiveQuarters": 36,
+    "partyMinusEffectiveQuarters": 36,
+    "courtCitations": 22
+   },
+   {
+    "instrument": "ecommerce_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": null,
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": null,
+    "partyMinusEffectiveQuarters": 14,
+    "courtCitations": 0
+   },
+   {
+    "instrument": "electricity_law",
+    "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1442Q4",
+    "firstCourtQuarter": "1444Q4",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 8,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 1
+   },
+   {
+    "instrument": "electronic_transactions_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 60,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 2
+   },
+   {
+    "instrument": "enforcement_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1442Q2",
+    "firstPartyQuarter": "1443Q3",
+    "courtMinusEffectiveQuarters": 33,
+    "partyMinusEffectiveQuarters": 38,
+    "courtCitations": 43
+   },
+   {
+    "instrument": "evidence_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1443Q4",
+    "firstCourtQuarter": "1443Q1",
+    "firstPartyQuarter": "1444Q1",
+    "courtMinusEffectiveQuarters": -3,
+    "partyMinusEffectiveQuarters": 1,
+    "courtCitations": 9993,
+    "preEffectiveCourtCitations": 16,
+    "preEffectiveShare": 0.0016,
+    "class": "PRE_EFFECTIVE_REFERENCE"
+   },
+   {
+    "instrument": "finance_companies_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 45,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 1
+   },
+   {
+    "instrument": "finance_lease_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 39,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 8
+   },
+   {
+    "instrument": "finance_lease_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q1",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 35,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 2
+   },
+   {
+    "instrument": "franchise_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q4",
+    "firstPartyQuarter": "1443Q4",
+    "courtMinusEffectiveQuarters": 9,
+    "partyMinusEffectiveQuarters": 9,
+    "courtCitations": 20
+   },
+   {
+    "instrument": "income_tax_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1444Q1",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 75,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 9
+   },
+   {
+    "instrument": "judgment_objection_methods_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": "1445Q1",
+    "courtMinusEffectiveQuarters": 0,
+    "partyMinusEffectiveQuarters": 0,
+    "courtCitations": 3
+   },
+   {
+    "instrument": "judicial_costs_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q4",
+    "firstPartyQuarter": "1444Q1",
+    "courtMinusEffectiveQuarters": 1,
+    "partyMinusEffectiveQuarters": 2,
+    "courtCitations": 14
+   },
+   {
+    "instrument": "law_practice_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1442Q2",
+    "firstPartyQuarter": "1443Q3",
+    "courtMinusEffectiveQuarters": 78,
+    "partyMinusEffectiveQuarters": 83,
+    "courtCitations": 420
+   },
+   {
+    "instrument": "mining_investment_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": null,
+    "firstPartyQuarter": "1444Q2",
+    "courtMinusEffectiveQuarters": null,
+    "partyMinusEffectiveQuarters": 8,
+    "courtCitations": 0
+   },
+   {
+    "instrument": "personal_status_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1445Q4",
+    "firstPartyQuarter": null,
+    "courtMinusEffectiveQuarters": 8,
+    "partyMinusEffectiveQuarters": null,
+    "courtCitations": 1
+   },
+   {
+    "instrument": "private_healthcare_institutions_law",
+    "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1424Q1",
+    "firstCourtQuarter": null,
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": null,
+    "partyMinusEffectiveQuarters": 82,
+    "courtCitations": 0
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1442Q1",
+    "firstPartyQuarter": "1442Q1",
+    "courtMinusEffectiveQuarters": 28,
+    "partyMinusEffectiveQuarters": 28,
+    "courtCitations": 5804
+   },
+   {
+    "instrument": "telecommunications_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": -3,
+    "partyMinusEffectiveQuarters": 1,
+    "courtCitations": 19,
+    "preEffectiveCourtCitations": 9,
+    "preEffectiveShare": 0.4737,
+    "class": "UNKNOWN_LIKELY_IDENTITY_COLLISION"
+   }
+  ],
+  "anomalies": [
+   {
+    "instrument": "civil_transactions_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1445Q2",
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": "1445Q1",
+    "courtMinusEffectiveQuarters": -1,
+    "partyMinusEffectiveQuarters": -1,
+    "courtCitations": 486,
+    "preEffectiveCourtCitations": 8,
+    "preEffectiveShare": 0.0165,
+    "class": "PRE_EFFECTIVE_REFERENCE"
+   },
+   {
+    "instrument": "evidence_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1443Q4",
+    "firstCourtQuarter": "1443Q1",
+    "firstPartyQuarter": "1444Q1",
+    "courtMinusEffectiveQuarters": -3,
+    "partyMinusEffectiveQuarters": 1,
+    "courtCitations": 9993,
+    "preEffectiveCourtCitations": 16,
+    "preEffectiveShare": 0.0016,
+    "class": "PRE_EFFECTIVE_REFERENCE"
+   },
+   {
+    "instrument": "telecommunications_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": -3,
+    "partyMinusEffectiveQuarters": 1,
+    "courtCitations": 19,
+    "preEffectiveCourtCitations": 9,
+    "preEffectiveShare": 0.4737,
+    "class": "UNKNOWN_LIKELY_IDENTITY_COLLISION"
+   }
+  ],
+  "readingRule": "a large pre-effective share is more likely an extractor identity collision -- an old law and its replacement share a title -- than anticipatory legal practice. Neither is assumed; the share decides which class is recorded and both remain falsifiable."
+ },
+ "publicationLagEvidence": {
+  "pairs": 25,
+  "medianDays": 16,
+  "p10": 5,
+  "p90": 42,
+  "min": 1,
+  "max": 87,
+  "note": "measured from locally held official texts that carry BOTH a decree date and a gazette publication date. It bounds how wrong a missing publication date can make a computed commencement; it is never substituted for one."
+ },
+ "phase10_promotion": {
+  "gate": {
+   "clockQuality": "C3 or C4 -- an exact effective date. C1 never becomes a headline calibration event.",
+   "eventType": "a legally meaningful event, not the first corpus appearance of an old law",
+   "commencement": "inside the corpus window",
+   "maturePostQuarters": "at least 3",
+   "courtSupport": "at least 150 court citations, so eight layers have something to read",
+   "collectionEdge": "not the last quarter",
+   "clockIndependence": "the clock comes from the enacted text and the gazette, never from a citation",
+   "baseline": "at least one mature pre-event quarter"
+  },
+  "promoted": [
+   "evidence_law"
+  ],
+  "rejected": [
+   {
+    "instrument": "commercial_courts_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 21097
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 5804
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 5718
+   },
+   {
+    "instrument": "companies_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "courtCitations": 1292
+   },
+   {
+    "instrument": "arbitration_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 653
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "why": [
+     "atLeastThreeMaturePostQuarters"
+    ],
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "event_type": "NEW_INSTRUMENT",
+    "courtCitations": 486
+   },
+   {
+    "instrument": "law_practice_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 420
+   },
+   {
+    "instrument": "sharia_procedure_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 231
+   },
+   {
+    "instrument": "trade_names_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "COMMENCES_AFTER_THE_WINDOW",
+    "courtCitations": 134
+   },
+   {
+    "instrument": "bankruptcy_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 122
+   },
+   {
+    "instrument": "law_practice_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 99
+   },
+   {
+    "instrument": "trademark_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 71
+   },
+   {
+    "instrument": "arbitration_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 70
+   },
+   {
+    "instrument": "health_system_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 45
+   },
+   {
+    "instrument": "enforcement_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 43
+   },
+   {
+    "instrument": "copyright_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 38
+   },
+   {
+    "instrument": "capital_market_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 29
+   },
+   {
+    "instrument": "criminal_procedure_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 22
+   },
+   {
+    "instrument": "franchise_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 20
+   },
+   {
+    "instrument": "telecommunications_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "courtCitations": 19
+   },
+   {
+    "instrument": "commercial_papers_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 15
+   },
+   {
+    "instrument": "commercial_books_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 14
+   },
+   {
+    "instrument": "judicial_costs_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "courtCitations": 14
+   },
+   {
+    "instrument": "implementing_regulations_general",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 12
+   },
+   {
+    "instrument": "labor_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "courtCitations": 12
+   },
+   {
+    "instrument": "basic_law_of_governance",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 9
+   },
+   {
+    "instrument": "board_of_grievances_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 9
+   },
+   {
+    "instrument": "income_tax_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 9
+   },
+   {
+    "instrument": "commercial_register_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "COMMENCES_AFTER_THE_WINDOW",
+    "courtCitations": 8
+   },
+   {
+    "instrument": "finance_lease_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 8
+   },
+   {
+    "instrument": "enforcement_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 7
+   },
+   {
+    "instrument": "maritime_commercial_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 7
+   },
+   {
+    "instrument": "tawtheeq_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "courtCitations": 7
+   },
+   {
+    "instrument": "zakat_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 6
+   },
+   {
+    "instrument": "judicial_documents_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "courtCitations": 4
+   },
+   {
+    "instrument": "qismah_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 4
+   },
+   {
+    "instrument": "anti_fraud_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 3
+   },
+   {
+    "instrument": "credit_information_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 3
+   },
+   {
+    "instrument": "criminal_procedure_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 3
+   },
+   {
+    "instrument": "judgment_objection_methods_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_IMPLEMENTING_REGULATION",
+    "courtCitations": 3
+   }
+  ],
+  "rows": [
+   {
+    "instrument": "evidence_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": "1443Q4",
+    "courtCitations": 9993,
+    "maturePostQuarters": 8,
+    "checks": {
+     "clockQualityAtLeastC3": true,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": true,
+     "atLeastThreeMaturePostQuarters": true,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": true,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": true
+    },
+    "promoted": true,
+    "failed": []
+   },
+   {
+    "instrument": "commercial_courts_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 21097,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 5804,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 5718,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "companies_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1292,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "arbitration_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 653,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": "1445Q2",
+    "courtCitations": 486,
+    "maturePostQuarters": 2,
+    "checks": {
+     "clockQualityAtLeastC3": true,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": true,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": true,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": true
+    },
+    "promoted": false,
+    "failed": [
+     "atLeastThreeMaturePostQuarters"
+    ]
+   },
+   {
+    "instrument": "law_practice_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 420,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "sharia_procedure_implementing_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 231,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": true,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "trade_names_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "COMMENCES_AFTER_THE_WINDOW",
+    "effectiveQuarter": null,
+    "courtCitations": 134,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "bankruptcy_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 122,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "law_practice_implementing_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 99,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "trademark_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 71,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "arbitration_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 70,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "health_system_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 45,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "enforcement_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 43,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "copyright_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 38,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "capital_market_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 29,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "criminal_procedure_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 22,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "franchise_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 20,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "telecommunications_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": null,
+    "courtCitations": 19,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "commercial_papers_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 15,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "commercial_books_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 14,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "judicial_costs_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": null,
+    "courtCitations": 14,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "implementing_regulations_general",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 12,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "labor_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 12,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "basic_law_of_governance",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 9,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "board_of_grievances_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 9,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "income_tax_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 9,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "commercial_register_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "COMMENCES_AFTER_THE_WINDOW",
+    "effectiveQuarter": null,
+    "courtCitations": 8,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "finance_lease_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 8,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "enforcement_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 7,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "maritime_commercial_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 7,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "tawtheeq_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 7,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "zakat_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 6,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "judicial_documents_regulation",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 4,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "qismah_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 4,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "anti_fraud_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 3,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "credit_information_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 3,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "criminal_procedure_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 3,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "judgment_objection_methods_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_IMPLEMENTING_REGULATION",
+    "effectiveQuarter": null,
+    "courtCitations": 3,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "judiciary_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 3,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "aml_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "anti_concealment_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "commercial_agencies_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "electronic_transactions_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "finance_lease_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "gtpl_implementing_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "insurance_control_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "investment_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "patent_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "telecommunications_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "vat_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 2,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "audiovisual_media_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "cma_corporate_governance_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "competition_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "cooperative_societies_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "customs_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "electricity_law",
+    "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+    "event_type": "REPLACEMENT",
+    "effectiveQuarter": "1442Q4",
+    "courtCitations": 1,
+    "maturePostQuarters": 10,
+    "checks": {
+     "clockQualityAtLeastC3": true,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": true,
+     "atLeastThreeMaturePostQuarters": true,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": true,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "atLeast150CourtCitations",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "finance_companies_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "franchise_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "gtpl_law",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "income_tax_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "judicial_costs_implementing_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "personal_status_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "pharmaceutical_establishments_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "real_estate_brokerage_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 1,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "accounting_auditing_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "MAJOR_AMENDMENT",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "bankruptcy_implementing_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "commercial_agencies_regulation",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "ecommerce_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "evidence_procedural_manuals",
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "mining_investment_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "NEW_INSTRUMENT",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": true,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "patent_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "press_regulation",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "private_healthcare_institutions_law",
+    "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "effectiveQuarter": "1424Q1",
+    "courtCitations": 0,
+    "maturePostQuarters": 10,
+    "checks": {
+     "clockQualityAtLeastC3": true,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": true,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": true,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeast150CourtCitations",
+     "aPreQuarterExistsForBaselines"
+    ]
+   },
+   {
+    "instrument": "social_insurance_legacy_law",
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "effectiveQuarter": null,
+    "courtCitations": 0,
+    "maturePostQuarters": 0,
+    "checks": {
+     "clockQualityAtLeastC3": false,
+     "eventTypeLegallyMeaningful": false,
+     "commencementInsideWindow": false,
+     "atLeastThreeMaturePostQuarters": false,
+     "atLeast150CourtCitations": false,
+     "notTheCollectionEdge": false,
+     "clockNotDerivedFromOutcome": true,
+     "aPreQuarterExistsForBaselines": false
+    },
+    "promoted": false,
+    "failed": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ]
+   }
+  ],
+  "quotaRule": "the target is four events because TRANSITION_BET_001 named four as its earning condition. A weak event is NOT promoted to reach it; if three qualify, three is the answer."
+ },
+ "instrumentsWithoutALocalOfficialText": [],
+ "phase30_observabilityVersusImportance": "failure to appear in this corpus does NOT mean a law is unused nationally. It means NO OBSERVABLE UPTAKE IN THIS PUBLISHED COMMERCIAL ADJUDICATION CORPUS, and that sentence is carried in every derived record.",
+ "calendarNote": "dates are computed on the tabular Islamic calendar, which can differ from the observed Umm al-Qura date by about one day. Immaterial at quarter resolution except at a quarter edge, which is flagged as quarterBoundaryRisk rather than resolved."
+}

@@ -1,0 +1,2162 @@
+{
+ "what": "CALIBRATION ERA 2. The Era 1 battery, unchanged, re-run from commencement dates read out of the enacted texts.",
+ "era1IsFrozen": "frozen/three_layer_baseline.json and transition_results.json are untouched. Era 1's signatures, its negative controls and its S->D->F observation stand exactly as recorded.",
+ "clockCorrection": {
+  "evidence_law": {
+   "era1_T0": "1443Q1",
+   "era2_T0": "1443Q4",
+   "quartersEarly": 3,
+   "era1Source": "signal registry observable_in_courts_from, itself read off the first citation",
+   "era2Source": "enacted article 129 plus the gazette publication date"
+  },
+  "civil_transactions_law": {
+   "era1_T0": "1445Q1",
+   "era2_T0": "1445Q2",
+   "quartersEarly": 1,
+   "era1Source": "same",
+   "era2Source": "enacted article 721 plus the gazette publication date"
+  },
+  "consequence": "an outcome-derived clock does not merely shift a latency. It manufactured a mature post-quarter for the Civil Transactions Law that its real clock does not have, which is why that event passes the Era 1 gate and fails the Era 2 one."
+ },
+ "phase12_batteryUnchanged": {
+  "importedFrom": "transition.py",
+  "thresholds": {
+   "TOP50_DISPLACEMENT_PCT": 30.0,
+   "REPEATED_SOURCE_JUDGMENTS": 2,
+   "CONCENTRATION_SHIFT": 0.15,
+   "MIN_COURT_CITES_FOR_LAYER": 5,
+   "HORIZON_QUARTERS": 6,
+   "provenance": "fixed once, before any post-period was read, and applied identically to every event and every pseudo-event. Nothing is tuned per law."
+  },
+  "note": "the layer criteria, the thresholds and the horizon are imported, not restated. No event-specific tuning exists because no event-specific code exists."
+ },
+ "qualifiedTransitions": [
+  "CLK-evidence_law"
+ ],
+ "calibrationEra2Size": 1,
+ "phase10_11_gateOutcome": {
+  "promoted": [
+   "evidence_law"
+  ],
+  "targetWasFour": true,
+  "reached": 1,
+  "quotaNotFilled": "no weak event was promoted to reach four. The gate is the same one that was written before any clock was read.",
+  "rejected": [
+   {
+    "instrument": "commercial_courts_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 21097
+   },
+   {
+    "instrument": "sharia_procedure_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 5804
+   },
+   {
+    "instrument": "commercial_courts_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 5718
+   },
+   {
+    "instrument": "companies_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C1_YEAR_ONLY",
+    "event_type": "UNKNOWN",
+    "courtCitations": 1292
+   },
+   {
+    "instrument": "arbitration_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 653
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "why": [
+     "atLeastThreeMaturePostQuarters"
+    ],
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "event_type": "NEW_INSTRUMENT",
+    "courtCitations": 486
+   },
+   {
+    "instrument": "law_practice_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 420
+   },
+   {
+    "instrument": "sharia_procedure_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 231
+   },
+   {
+    "instrument": "trade_names_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "COMMENCES_AFTER_THE_WINDOW",
+    "courtCitations": 134
+   },
+   {
+    "instrument": "bankruptcy_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C2_APPROX_QUARTER",
+    "event_type": "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW",
+    "courtCitations": 122
+   },
+   {
+    "instrument": "law_practice_implementing_regulation",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 99
+   },
+   {
+    "instrument": "trademark_law",
+    "why": [
+     "clockQualityAtLeastC3",
+     "eventTypeLegallyMeaningful",
+     "commencementInsideWindow",
+     "atLeastThreeMaturePostQuarters",
+     "atLeast150CourtCitations",
+     "notTheCollectionEdge",
+     "aPreQuarterExistsForBaselines"
+    ],
+    "clock_quality": "C0_NO_CLOCK",
+    "event_type": "UNKNOWN",
+    "courtCitations": 71
+   }
+  ]
+ },
+ "signatures": [
+  {
+   "event_id": "CLK-evidence_law",
+   "event_type": "NEW_INSTRUMENT",
+   "instrument": "evidence_law",
+   "known_at": "1443-05-26H",
+   "effective_at": "1443-12-07H",
+   "observable_from": "1443Q4",
+   "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+   "publicationHealthAtT0": {
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 1,
+    "court_latency": 0,
+    "formula_latency": 0,
+    "ecology_latency": 0,
+    "companion_latency": null,
+    "core_latency": null,
+    "retrieval_latency": 1
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "ALREADY_CROSSED_BEFORE_T0",
+    "L7_OPERATIONAL_CORE": "ALREADY_CROSSED_BEFORE_T0",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 1939,
+    "B_carriedFromOlderLaw": 21,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 9
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_IN_DOMAIN": 1,
+    "ALREADY_PRESENT_SYSTEM_WIDE": 26,
+    "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 1
+   },
+   "statuteFormulaDoctrineOrder": "NO_DOCTRINE",
+   "repeatedSources": [
+    "B.INSAF",
+    "B.KASHSHAF",
+    "B.MAJMU_FATAWA",
+    "B.MUGHNI",
+    "B.MUNTAHA",
+    "B.ZAD",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "H.ABU_DAWUD",
+    "H.BAYHAQI",
+    "H.BUKHARI",
+    "H.MUSLIM",
+    "H.MUTTAFAQ",
+    "J.IBN_QAYYIM",
+    "J.IBN_QUDAMA",
+    "J.IBN_TAYMIYYA",
+    "M.ADA_MUHAKKAMA",
+    "M.ASL_UQUD",
+    "M.BARAA",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6,
+   "era": "CALIBRATION_ERA_2",
+   "gateStatus": "PROMOTED_CALIBRATION_TRANSITION",
+   "layersAlreadyCrossedBeforeCommencement": [
+    "L6_DOCTRINAL_COMPANION",
+    "L7_OPERATIONAL_CORE"
+   ]
+  },
+  {
+   "event_id": "CLK-civil_transactions_law",
+   "event_type": "NEW_INSTRUMENT",
+   "instrument": "civil_transactions_law",
+   "known_at": "1444-11-29H",
+   "effective_at": "1445-06-04H",
+   "observable_from": "1445Q2",
+   "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+   "publicationHealthAtT0": {
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 2,
+    "court_latency": 2,
+    "formula_latency": 2,
+    "ecology_latency": 2,
+    "companion_latency": 2,
+    "core_latency": 2,
+    "retrieval_latency": 2
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 108,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 8
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 21
+   },
+   "statuteFormulaDoctrineOrder": "SIMULTANEOUS",
+   "repeatedSources": [
+    "B.KASHSHAF",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "J.IBN_TAYMIYYA",
+    "M.ASL_UQUD",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6,
+   "era": "CALIBRATION_ERA_2",
+   "gateStatus": "BELOW_GATE_REPORTED_FOR_COMPARISON_ONLY",
+   "layersAlreadyCrossedBeforeCommencement": []
+  }
+ ],
+ "byEvent": {
+  "evidence_law": {
+   "signature": {
+    "event_id": "CLK-evidence_law",
+    "event_type": "NEW_INSTRUMENT",
+    "instrument": "evidence_law",
+    "known_at": "1443-05-26H",
+    "effective_at": "1443-12-07H",
+    "observable_from": "1443Q4",
+    "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+    "publicationHealthAtT0": {
+     "gate": "STANDING_CAVEAT",
+     "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+    },
+    "capture": "BACKFILLED_CALIBRATION",
+    "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+    "latencies": {
+     "party_latency": 1,
+     "court_latency": 0,
+     "formula_latency": 0,
+     "ecology_latency": 0,
+     "companion_latency": null,
+     "core_latency": null,
+     "retrieval_latency": 1
+    },
+    "layerStatus": {
+     "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+     "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+     "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+     "L5_AUTHORITY_ECOLOGY": "MOVED",
+     "L6_DOCTRINAL_COMPANION": "ALREADY_CROSSED_BEFORE_T0",
+     "L7_OPERATIONAL_CORE": "ALREADY_CROSSED_BEFORE_T0",
+     "L8_RETRIEVAL_STATE": "MOVED"
+    },
+    "formulaUptakeMix": {
+     "A_newlyObservedFormulas": 1939,
+     "B_carriedFromOlderLaw": 21,
+     "C_carriedButNeverSeenBesideAnotherInstrument": 9
+    },
+    "companionProvenance": {
+     "ALREADY_PRESENT_IN_DOMAIN": 1,
+     "ALREADY_PRESENT_SYSTEM_WIDE": 26,
+     "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 1
+    },
+    "statuteFormulaDoctrineOrder": "NO_DOCTRINE",
+    "repeatedSources": [
+     "B.INSAF",
+     "B.KASHSHAF",
+     "B.MAJMU_FATAWA",
+     "B.MUGHNI",
+     "B.MUNTAHA",
+     "B.ZAD",
+     "GENERIC.custom.trade",
+     "GENERIC.fiqh.unattributed",
+     "GENERIC.hadith.untraced",
+     "GENERIC.maxim.named",
+     "GENERIC.principle.settled",
+     "GENERIC.quran.citation",
+     "H.ABU_DAWUD",
+     "H.BAYHAQI",
+     "H.BUKHARI",
+     "H.MUSLIM",
+     "H.MUTTAFAQ",
+     "J.IBN_QAYYIM",
+     "J.IBN_QUDAMA",
+     "J.IBN_TAYMIYYA",
+     "M.ADA_MUHAKKAMA",
+     "M.ASL_UQUD",
+     "M.BARAA",
+     "M.DARAR_YUZAL"
+    ],
+    "evaluationHorizonQuarters": 6,
+    "era": "CALIBRATION_ERA_2",
+    "gateStatus": "PROMOTED_CALIBRATION_TRANSITION",
+    "layersAlreadyCrossedBeforeCommencement": [
+     "L6_DOCTRINAL_COMPANION",
+     "L7_OPERATIONAL_CORE"
+    ]
+   },
+   "ordering": {
+    "byQuartersAfterT0": [
+     {
+      "quartersAfterT0": 0,
+      "layers": [
+       "court_latency",
+       "ecology_latency",
+       "formula_latency"
+      ]
+     },
+     {
+      "quartersAfterT0": 1,
+      "layers": [
+       "party_latency",
+       "retrieval_latency"
+      ]
+     }
+    ],
+    "FIRST_MOVING_LAYER": [
+     "court_latency",
+     "ecology_latency",
+     "formula_latency"
+    ],
+    "SECOND": [
+     "party_latency",
+     "retrieval_latency"
+    ],
+    "THIRD": null,
+    "NO_DETECTED_SHIFT": [
+     "companion_latency",
+     "core_latency"
+    ],
+    "caution": "simultaneity at quarter resolution is common and is shown as a tie rather than broken by a rule. A tie is not an ordering."
+   },
+   "layers": {
+    "L2_BAR_STATUTORY_VISIBILITY": {
+     "criterion": "FIRST_VISIBILITY: any party citation of the instrument in a scorable quarter",
+     "firstCrossed": "1444Q1",
+     "quartersAfterT0": 1,
+     "status": "MOVED"
+    },
+    "L3_COURT_STATUTORY_VISIBILITY": {
+     "criterion": "FIRST_VISIBILITY: any court citation",
+     "firstCrossed": "1443Q4",
+     "quartersAfterT0": 0,
+     "status": "MOVED"
+    },
+    "L4_AUTHORITY_ADJACENT_FORMULA": {
+     "criterion": "any authority-adjacent recurring-formula mention beside the instrument",
+     "firstCrossed": "1443Q4",
+     "firstNewlyObservedFormulaQuarter": "1443Q4",
+     "quartersAfterT0": 0,
+     "status": "MOVED"
+    },
+    "L5_AUTHORITY_ECOLOGY": {
+     "criterion": "FIRST_VISIBILITY: a judgment citing the instrument also carries a non-statutory authority in the court's voice. Where a pre-T0 baseline exists, a SHIFT sub-criterion is reported beside it.",
+     "firstCrossed": "1443Q4",
+     "preT0HybridBaseline": 0.375,
+     "shiftCrossed": null,
+     "quartersAfterT0": 0,
+     "status": "MOVED"
+    },
+    "L6_DOCTRINAL_COMPANION": {
+     "criterion": "a canonical non-statutory identity observed in the court's voice beside this instrument in at least 2 distinct judgments, cumulatively",
+     "firstCrossed": null,
+     "quartersAfterT0": null,
+     "status": "ALREADY_CROSSED_BEFORE_T0",
+     "restrictedToScorableAtOrAfterT0": true,
+     "crossedBeforeT0At": null,
+     "quartersBeforeT0": 1
+    },
+    "L7_OPERATIONAL_CORE": {
+     "criterion": "the instrument holds an article in the court's top-50 cited articles for the quarter",
+     "firstCrossed": null,
+     "quartersAfterT0": null,
+     "status": "ALREADY_CROSSED_BEFORE_T0",
+     "restrictedToScorableAtOrAfterT0": true,
+     "crossedBeforeT0At": null,
+     "quartersBeforeT0": 3
+    },
+    "L8_RETRIEVAL_STATE": {
+     "criterion": "a top-50 snapshot frozen at the last pre-event scorable quarter is displaced by 30.0 per cent or more",
+     "firstCrossed": "1444Q1",
+     "quartersAfterT0": 1,
+     "status": "MOVED"
+    },
+    "_diagnostics": {
+     "layersAlreadyCrossedBeforeCommencement": [
+      {
+       "layer": "L6_DOCTRINAL_COMPANION",
+       "crossedAt": null,
+       "quartersBeforeT0": 1
+      },
+      {
+       "layer": "L7_OPERATIONAL_CORE",
+       "crossedAt": null,
+       "quartersBeforeT0": 3
+      }
+     ],
+     "anyQuarterFirstCourtUse": "1443Q1",
+     "anyQuarterFirstPartyUse": "1444Q1",
+     "nonScorableQuartersFromT0": [
+      "1445Q2",
+      "1445Q3",
+      "1446Q2"
+     ],
+     "note": "the battery is unchanged. These are read-outs beside it."
+    }
+   },
+   "clock": {
+    "announcement": "1443-05-26H",
+    "legalEffectiveAt": "1443-12-07H",
+    "firstPossibleCourtObservation": "1443Q4",
+    "firstActualCourtObservation": "1443Q1",
+    "T0": "1443Q4",
+    "T0Index": 7,
+    "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+    "clockRuleVerbatim": "يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية.",
+    "clockIsNotAnOutcome": "T=0 is computed from the enacted commencement provision and the gazette publication date. No citation enters it."
+   },
+   "statuteFormulaDoctrine": {
+    "class": "NO_DOCTRINE",
+    "statuteToFormula": 0
+   },
+   "companion": {
+    "byPeriod": [
+     {
+      "period": "1442Q1",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1442Q2",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1442Q3",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1442Q4",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q1",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q2",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q3",
+      "sourcesThisQuarter": 1,
+      "repeatedSourcesToDate": 1,
+      "topSourceShare": 1.0
+     },
+     {
+      "period": "1443Q4",
+      "sourcesThisQuarter": 6,
+      "repeatedSourcesToDate": 3,
+      "topSourceShare": 0.4667
+     },
+     {
+      "period": "1444Q1",
+      "sourcesThisQuarter": 22,
+      "repeatedSourcesToDate": 16,
+      "topSourceShare": 0.2149
+     },
+     {
+      "period": "1444Q2",
+      "sourcesThisQuarter": 22,
+      "repeatedSourcesToDate": 22,
+      "topSourceShare": 0.1785
+     },
+     {
+      "period": "1444Q3",
+      "sourcesThisQuarter": 18,
+      "repeatedSourcesToDate": 23,
+      "topSourceShare": 0.2053
+     },
+     {
+      "period": "1444Q4",
+      "sourcesThisQuarter": 20,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.2743
+     },
+     {
+      "period": "1445Q1",
+      "sourcesThisQuarter": 18,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.1895
+     },
+     {
+      "period": "1445Q2",
+      "sourcesThisQuarter": 16,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.1961
+     },
+     {
+      "period": "1445Q3",
+      "sourcesThisQuarter": 15,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.2165
+     },
+     {
+      "period": "1445Q4",
+      "sourcesThisQuarter": 11,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.3148
+     },
+     {
+      "period": "1446Q1",
+      "sourcesThisQuarter": 13,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.2838
+     },
+     {
+      "period": "1446Q2",
+      "sourcesThisQuarter": 9,
+      "repeatedSourcesToDate": 24,
+      "topSourceShare": 0.25
+     }
+    ],
+    "firstRepeatedSourceQuarter": "1443Q3",
+    "repeatedSourceRule": "a canonical non-statutory identity observed in the court's voice beside this instrument in at least 2 distinct judgments, cumulatively",
+    "repeatedSources": [
+     "B.INSAF",
+     "B.KASHSHAF",
+     "B.MAJMU_FATAWA",
+     "B.MUGHNI",
+     "B.MUNTAHA",
+     "B.ZAD",
+     "GENERIC.custom.trade",
+     "GENERIC.fiqh.unattributed",
+     "GENERIC.hadith.untraced",
+     "GENERIC.maxim.named",
+     "GENERIC.principle.settled",
+     "GENERIC.quran.citation",
+     "H.ABU_DAWUD",
+     "H.BAYHAQI",
+     "H.BUKHARI",
+     "H.MUSLIM",
+     "H.MUTTAFAQ",
+     "J.IBN_QAYYIM",
+     "J.IBN_QUDAMA",
+     "J.IBN_TAYMIYYA",
+     "M.ADA_MUHAKKAMA",
+     "M.ASL_UQUD",
+     "M.BARAA",
+     "M.DARAR_YUZAL"
+    ],
+    "persistenceAfterFormation": {
+     "B.INSAF": 0.75,
+     "B.KASHSHAF": 1.0,
+     "B.MAJMU_FATAWA": 0.5,
+     "B.MUGHNI": 0.5,
+     "B.MUNTAHA": 0.25,
+     "B.ZAD": 0.25,
+     "GENERIC.custom.trade": 1.0,
+     "GENERIC.fiqh.unattributed": 1.0,
+     "GENERIC.hadith.untraced": 1.0,
+     "GENERIC.maxim.named": 0.875,
+     "GENERIC.principle.settled": 0.875,
+     "GENERIC.quran.citation": 0.875
+    }
+   },
+   "companionProvenance": {
+    "sourcesBesideInstrumentAfterT0": 28,
+    "byProvenance": {
+     "ALREADY_PRESENT_IN_DOMAIN": 1,
+     "ALREADY_PRESENT_SYSTEM_WIDE": 26,
+     "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 1
+    },
+    "reading": "a companion drawn from sources already circulating elsewhere is a different event from a source new to the corpus, and the extractor's 28-identity vocabulary makes the second class very hard to populate. Both counts are floors."
+   },
+   "formula": {
+    "byPeriod": [
+     {
+      "period": "1442Q1",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1442Q2",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1442Q3",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1442Q4",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q1",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q2",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q3",
+      "mentions": 2,
+      "distinctFormulas": 2,
+      "firstObservedAnywhereHere": 2,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": 0.5
+     },
+     {
+      "period": "1443Q4",
+      "mentions": 16,
+      "distinctFormulas": 14,
+      "firstObservedAnywhereHere": 14,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": 0.125
+     },
+     {
+      "period": "1444Q1",
+      "mentions": 401,
+      "distinctFormulas": 276,
+      "firstObservedAnywhereHere": 256,
+      "carriedFromEarlierQuarters": 14,
+      "top1Share": 0.0324
+     },
+     {
+      "period": "1444Q2",
+      "mentions": 515,
+      "distinctFormulas": 386,
+      "firstObservedAnywhereHere": 337,
+      "carriedFromEarlierQuarters": 23,
+      "top1Share": 0.033
+     },
+     {
+      "period": "1444Q3",
+      "mentions": 496,
+      "distinctFormulas": 381,
+      "firstObservedAnywhereHere": 325,
+      "carriedFromEarlierQuarters": 14,
+      "top1Share": 0.0141
+     },
+     {
+      "period": "1444Q4",
+      "mentions": 404,
+      "distinctFormulas": 324,
+      "firstObservedAnywhereHere": 280,
+      "carriedFromEarlierQuarters": 7,
+      "top1Share": 0.0248
+     },
+     {
+      "period": "1445Q1",
+      "mentions": 395,
+      "distinctFormulas": 305,
+      "firstObservedAnywhereHere": 242,
+      "carriedFromEarlierQuarters": 13,
+      "top1Share": 0.0456
+     },
+     {
+      "period": "1445Q2",
+      "mentions": 191,
+      "distinctFormulas": 149,
+      "firstObservedAnywhereHere": 125,
+      "carriedFromEarlierQuarters": 3,
+      "top1Share": 0.0471
+     },
+     {
+      "period": "1445Q3",
+      "mentions": 117,
+      "distinctFormulas": 107,
+      "firstObservedAnywhereHere": 86,
+      "carriedFromEarlierQuarters": 5,
+      "top1Share": 0.0513
+     },
+     {
+      "period": "1445Q4",
+      "mentions": 150,
+      "distinctFormulas": 122,
+      "firstObservedAnywhereHere": 100,
+      "carriedFromEarlierQuarters": 3,
+      "top1Share": 0.0733
+     },
+     {
+      "period": "1446Q1",
+      "mentions": 100,
+      "distinctFormulas": 96,
+      "firstObservedAnywhereHere": 81,
+      "carriedFromEarlierQuarters": 2,
+      "top1Share": 0.02
+     },
+     {
+      "period": "1446Q2",
+      "mentions": 58,
+      "distinctFormulas": 49,
+      "firstObservedAnywhereHere": 35,
+      "carriedFromEarlierQuarters": 2,
+      "top1Share": 0.069
+     }
+    ],
+    "formulasEverBesideInstrument": 1969,
+    "alreadyObservedBeforeT0": 30,
+    "alsoObservedBesideAnotherInstrument": 91,
+    "newlyObservedWithThisInstrument": 1939,
+    "uptakeMix": {
+     "A_newlyObservedFormulas": 1939,
+     "B_carriedFromOlderLaw": 21,
+     "C_carriedButNeverSeenBesideAnotherInstrument": 9
+    },
+    "preT0QuartersAvailable": 7,
+    "leftTruncationWarning": "the pre-T0 window is only 7 quarter(s) of corpus, so 'newly observed' is inflated: a formula circulating for years before the corpus begins is newly observed here. The count is a ceiling on innovation, not a measure of it.",
+    "note": "A formula appearing beside a new instrument is a wording observation. It is not the court applying old reasoning to new law, and no adaptation is asserted."
+   },
+   "coreAndRetrieval": {
+    "firstTop100Quarter": "1443Q1",
+    "firstTop50Quarter": "1443Q1",
+    "snapshotFrozenAt": "1443Q3",
+    "displacement": [
+     {
+      "period": "1443Q4",
+      "top50DisplacedPct": 22.0,
+      "quartersAfterT0": 0
+     },
+     {
+      "period": "1444Q1",
+      "top50DisplacedPct": 42.0,
+      "quartersAfterT0": 1
+     },
+     {
+      "period": "1444Q2",
+      "top50DisplacedPct": 52.0,
+      "quartersAfterT0": 2
+     },
+     {
+      "period": "1444Q3",
+      "top50DisplacedPct": 56.0,
+      "quartersAfterT0": 3
+     },
+     {
+      "period": "1444Q4",
+      "top50DisplacedPct": 52.0,
+      "quartersAfterT0": 4
+     },
+     {
+      "period": "1445Q1",
+      "top50DisplacedPct": 60.0,
+      "quartersAfterT0": 5
+     },
+     {
+      "period": "1445Q4",
+      "top50DisplacedPct": 68.0,
+      "quartersAfterT0": 8
+     },
+     {
+      "period": "1446Q1",
+      "top50DisplacedPct": 74.0,
+      "quartersAfterT0": 9
+     }
+    ],
+    "firstMateriallyStaleQuarter": "1444Q1",
+    "evaluable": true,
+    "notEvaluableWhy": null,
+    "staleThresholdPct": 30.0,
+    "thresholdProvenance": "inherited unchanged from the frozen REPOSITORY_BET_001 refresh trigger. Not chosen here and not tuned per event."
+   },
+   "voiceOrder": {
+    "firstMention": {
+     "court": "1443Q1",
+     "party": "1444Q1",
+     "leader": "COURT"
+    },
+    "sustainedVisibility": {
+     "rule": "court or party presence in three consecutive scorable quarters",
+     "court": "1443Q4",
+     "party": "1444Q3",
+     "leader": "COURT"
+    },
+    "firstMentionMinusT0": {
+     "court": -3,
+     "party": 1
+    },
+    "caution": "a same-quarter first mention is a tie at quarter resolution, not simultaneity in the courtroom."
+   },
+   "byQuarter": {
+    "courtJudgments": {
+     "1443Q1": 4,
+     "1443Q2": 3,
+     "1443Q3": 6,
+     "1443Q4": 37,
+     "1444Q1": 927,
+     "1444Q2": 1250,
+     "1444Q3": 1175,
+     "1444Q4": 1182,
+     "1445Q1": 976,
+     "1445Q2": 561,
+     "1445Q3": 454,
+     "1445Q4": 522,
+     "1446Q1": 336,
+     "1446Q2": 259
+    },
+    "partyJudgments": {
+     "1444Q1": 25,
+     "1444Q2": 95,
+     "1444Q3": 87,
+     "1444Q4": 82,
+     "1445Q1": 90,
+     "1445Q2": 44,
+     "1445Q3": 33,
+     "1445Q4": 39,
+     "1446Q1": 33,
+     "1446Q2": 5
+    },
+    "courtRank": {
+     "1443Q1": 5,
+     "1443Q2": 4,
+     "1443Q3": 7,
+     "1443Q4": 5,
+     "1444Q1": 2,
+     "1444Q2": 2,
+     "1444Q3": 2,
+     "1444Q4": 2,
+     "1445Q1": 2,
+     "1445Q2": 2,
+     "1445Q3": 2,
+     "1445Q4": 2,
+     "1446Q1": 2,
+     "1446Q2": 2
+    },
+    "hybridRate": {
+     "1443Q1": 0.25,
+     "1443Q2": 0.0,
+     "1443Q3": 0.5,
+     "1443Q4": 0.5135,
+     "1444Q1": 0.4833,
+     "1444Q2": 0.444,
+     "1444Q3": 0.4068,
+     "1444Q4": 0.3832,
+     "1445Q1": 0.3883,
+     "1445Q2": 0.3832,
+     "1445Q3": 0.3392,
+     "1445Q4": 0.3142,
+     "1446Q1": 0.3006,
+     "1446Q2": 0.305
+    },
+    "namedFiqhRate": {
+     "1443Q1": 0.25,
+     "1443Q2": 0.0,
+     "1443Q3": 0.5,
+     "1443Q4": 0.2432,
+     "1444Q1": 0.2438,
+     "1444Q2": 0.1904,
+     "1444Q3": 0.1515,
+     "1444Q4": 0.1328,
+     "1445Q1": 0.1588,
+     "1445Q2": 0.1444,
+     "1445Q3": 0.1167,
+     "1445Q4": 0.0881,
+     "1446Q1": 0.0863,
+     "1446Q2": 0.1429
+    }
+   }
+  },
+  "civil_transactions_law": {
+   "signature": {
+    "event_id": "CLK-civil_transactions_law",
+    "event_type": "NEW_INSTRUMENT",
+    "instrument": "civil_transactions_law",
+    "known_at": "1444-11-29H",
+    "effective_at": "1445-06-04H",
+    "observable_from": "1445Q2",
+    "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+    "publicationHealthAtT0": {
+     "gate": "STANDING_CAVEAT",
+     "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+    },
+    "capture": "BACKFILLED_CALIBRATION",
+    "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+    "latencies": {
+     "party_latency": 2,
+     "court_latency": 2,
+     "formula_latency": 2,
+     "ecology_latency": 2,
+     "companion_latency": 2,
+     "core_latency": 2,
+     "retrieval_latency": 2
+    },
+    "layerStatus": {
+     "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+     "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+     "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+     "L5_AUTHORITY_ECOLOGY": "MOVED",
+     "L6_DOCTRINAL_COMPANION": "MOVED",
+     "L7_OPERATIONAL_CORE": "MOVED",
+     "L8_RETRIEVAL_STATE": "MOVED"
+    },
+    "formulaUptakeMix": {
+     "A_newlyObservedFormulas": 108,
+     "B_carriedFromOlderLaw": 4,
+     "C_carriedButNeverSeenBesideAnotherInstrument": 8
+    },
+    "companionProvenance": {
+     "ALREADY_PRESENT_SYSTEM_WIDE": 21
+    },
+    "statuteFormulaDoctrineOrder": "SIMULTANEOUS",
+    "repeatedSources": [
+     "B.KASHSHAF",
+     "GENERIC.custom.trade",
+     "GENERIC.fiqh.unattributed",
+     "GENERIC.hadith.untraced",
+     "GENERIC.maxim.named",
+     "GENERIC.principle.settled",
+     "GENERIC.quran.citation",
+     "J.IBN_TAYMIYYA",
+     "M.ASL_UQUD",
+     "M.DARAR_YUZAL"
+    ],
+    "evaluationHorizonQuarters": 6,
+    "era": "CALIBRATION_ERA_2",
+    "gateStatus": "BELOW_GATE_REPORTED_FOR_COMPARISON_ONLY",
+    "layersAlreadyCrossedBeforeCommencement": []
+   },
+   "ordering": {
+    "byQuartersAfterT0": [
+     {
+      "quartersAfterT0": 2,
+      "layers": [
+       "companion_latency",
+       "core_latency",
+       "court_latency",
+       "ecology_latency",
+       "formula_latency",
+       "party_latency",
+       "retrieval_latency"
+      ]
+     }
+    ],
+    "FIRST_MOVING_LAYER": [
+     "companion_latency",
+     "core_latency",
+     "court_latency",
+     "ecology_latency",
+     "formula_latency",
+     "party_latency",
+     "retrieval_latency"
+    ],
+    "SECOND": null,
+    "THIRD": null,
+    "NO_DETECTED_SHIFT": [],
+    "caution": "simultaneity at quarter resolution is common and is shown as a tie rather than broken by a rule. A tie is not an ordering."
+   },
+   "layers": {
+    "L2_BAR_STATUTORY_VISIBILITY": {
+     "criterion": "FIRST_VISIBILITY: any party citation of the instrument in a scorable quarter",
+     "firstCrossed": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED"
+    },
+    "L3_COURT_STATUTORY_VISIBILITY": {
+     "criterion": "FIRST_VISIBILITY: any court citation",
+     "firstCrossed": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED"
+    },
+    "L4_AUTHORITY_ADJACENT_FORMULA": {
+     "criterion": "any authority-adjacent recurring-formula mention beside the instrument",
+     "firstCrossed": "1445Q4",
+     "firstNewlyObservedFormulaQuarter": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED"
+    },
+    "L5_AUTHORITY_ECOLOGY": {
+     "criterion": "FIRST_VISIBILITY: a judgment citing the instrument also carries a non-statutory authority in the court's voice. Where a pre-T0 baseline exists, a SHIFT sub-criterion is reported beside it.",
+     "firstCrossed": "1445Q4",
+     "preT0HybridBaseline": 0.4286,
+     "shiftCrossed": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED"
+    },
+    "L6_DOCTRINAL_COMPANION": {
+     "criterion": "a canonical non-statutory identity observed in the court's voice beside this instrument in at least 2 distinct judgments, cumulatively",
+     "firstCrossed": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED",
+     "restrictedToScorableAtOrAfterT0": true
+    },
+    "L7_OPERATIONAL_CORE": {
+     "criterion": "the instrument holds an article in the court's top-50 cited articles for the quarter",
+     "firstCrossed": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED",
+     "restrictedToScorableAtOrAfterT0": true
+    },
+    "L8_RETRIEVAL_STATE": {
+     "criterion": "a top-50 snapshot frozen at the last pre-event scorable quarter is displaced by 30.0 per cent or more",
+     "firstCrossed": "1445Q4",
+     "quartersAfterT0": 2,
+     "status": "MOVED"
+    },
+    "_diagnostics": {
+     "layersAlreadyCrossedBeforeCommencement": [],
+     "anyQuarterFirstCourtUse": "1445Q1",
+     "anyQuarterFirstPartyUse": "1445Q1",
+     "nonScorableQuartersFromT0": [
+      "1445Q2",
+      "1445Q3",
+      "1446Q2"
+     ],
+     "note": "the battery is unchanged. These are read-outs beside it."
+    }
+   },
+   "clock": {
+    "announcement": "1444-11-29H",
+    "legalEffectiveAt": "1445-06-04H",
+    "firstPossibleCourtObservation": "1445Q2",
+    "firstActualCourtObservation": "1445Q1",
+    "T0": "1445Q2",
+    "T0Index": 13,
+    "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+    "clockRuleVerbatim": "يُعمل بهذا النظام بعد مضي (مائة وثمانين) يومًا من تاريخ نشره في الجريدة الرسمية، ويُلغي كل ما يتعارض معه من أحكام.",
+    "clockIsNotAnOutcome": "T=0 is computed from the enacted commencement provision and the gazette publication date. No citation enters it."
+   },
+   "statuteFormulaDoctrine": {
+    "class": "SIMULTANEOUS",
+    "statuteToFormula": 0,
+    "statuteToDoctrine": 0
+   },
+   "companion": {
+    "byPeriod": [
+     {
+      "period": "1442Q1",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1442Q2",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1442Q3",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1442Q4",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q1",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q2",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q3",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1443Q4",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1444Q1",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1444Q2",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1444Q3",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1444Q4",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1445Q1",
+      "sourcesThisQuarter": 0,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": null
+     },
+     {
+      "period": "1445Q2",
+      "sourcesThisQuarter": 5,
+      "repeatedSourcesToDate": 0,
+      "topSourceShare": 0.2
+     },
+     {
+      "period": "1445Q3",
+      "sourcesThisQuarter": 7,
+      "repeatedSourcesToDate": 4,
+      "topSourceShare": 0.3
+     },
+     {
+      "period": "1445Q4",
+      "sourcesThisQuarter": 11,
+      "repeatedSourcesToDate": 6,
+      "topSourceShare": 0.1905
+     },
+     {
+      "period": "1446Q1",
+      "sourcesThisQuarter": 12,
+      "repeatedSourcesToDate": 10,
+      "topSourceShare": 0.2727
+     },
+     {
+      "period": "1446Q2",
+      "sourcesThisQuarter": 7,
+      "repeatedSourcesToDate": 10,
+      "topSourceShare": 0.3636
+     }
+    ],
+    "firstRepeatedSourceQuarter": "1445Q3",
+    "repeatedSourceRule": "a canonical non-statutory identity observed in the court's voice beside this instrument in at least 2 distinct judgments, cumulatively",
+    "repeatedSources": [
+     "B.KASHSHAF",
+     "GENERIC.custom.trade",
+     "GENERIC.fiqh.unattributed",
+     "GENERIC.hadith.untraced",
+     "GENERIC.maxim.named",
+     "GENERIC.principle.settled",
+     "GENERIC.quran.citation",
+     "J.IBN_TAYMIYYA",
+     "M.ASL_UQUD",
+     "M.DARAR_YUZAL"
+    ],
+    "persistenceAfterFormation": {
+     "B.KASHSHAF": 1.0,
+     "GENERIC.custom.trade": 1.0,
+     "GENERIC.fiqh.unattributed": 1.0,
+     "GENERIC.hadith.untraced": 1.0,
+     "GENERIC.maxim.named": 1.0,
+     "GENERIC.principle.settled": 0.5,
+     "GENERIC.quran.citation": 1.0,
+     "J.IBN_TAYMIYYA": 1.0,
+     "M.ASL_UQUD": 1.0,
+     "M.DARAR_YUZAL": 0.5
+    }
+   },
+   "companionProvenance": {
+    "sourcesBesideInstrumentAfterT0": 21,
+    "byProvenance": {
+     "ALREADY_PRESENT_SYSTEM_WIDE": 21
+    },
+    "reading": "a companion drawn from sources already circulating elsewhere is a different event from a source new to the corpus, and the extractor's 28-identity vocabulary makes the second class very hard to populate. Both counts are floors."
+   },
+   "formula": {
+    "byPeriod": [
+     {
+      "period": "1442Q1",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1442Q2",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1442Q3",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1442Q4",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q1",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q2",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q3",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1443Q4",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1444Q1",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1444Q2",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1444Q3",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1444Q4",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1445Q1",
+      "mentions": 0,
+      "distinctFormulas": 0,
+      "firstObservedAnywhereHere": 0,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": null
+     },
+     {
+      "period": "1445Q2",
+      "mentions": 6,
+      "distinctFormulas": 6,
+      "firstObservedAnywhereHere": 6,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": 0.1667
+     },
+     {
+      "period": "1445Q3",
+      "mentions": 16,
+      "distinctFormulas": 16,
+      "firstObservedAnywhereHere": 13,
+      "carriedFromEarlierQuarters": 3,
+      "top1Share": 0.0625
+     },
+     {
+      "period": "1445Q4",
+      "mentions": 43,
+      "distinctFormulas": 42,
+      "firstObservedAnywhereHere": 38,
+      "carriedFromEarlierQuarters": 4,
+      "top1Share": 0.0465
+     },
+     {
+      "period": "1446Q1",
+      "mentions": 45,
+      "distinctFormulas": 44,
+      "firstObservedAnywhereHere": 38,
+      "carriedFromEarlierQuarters": 0,
+      "top1Share": 0.0444
+     },
+     {
+      "period": "1446Q2",
+      "mentions": 22,
+      "distinctFormulas": 20,
+      "firstObservedAnywhereHere": 11,
+      "carriedFromEarlierQuarters": 7,
+      "top1Share": 0.0909
+     }
+    ],
+    "formulasEverBesideInstrument": 120,
+    "alreadyObservedBeforeT0": 12,
+    "alsoObservedBesideAnotherInstrument": 6,
+    "newlyObservedWithThisInstrument": 108,
+    "uptakeMix": {
+     "A_newlyObservedFormulas": 108,
+     "B_carriedFromOlderLaw": 4,
+     "C_carriedButNeverSeenBesideAnotherInstrument": 8
+    },
+    "preT0QuartersAvailable": 13,
+    "leftTruncationWarning": null,
+    "note": "A formula appearing beside a new instrument is a wording observation. It is not the court applying old reasoning to new law, and no adaptation is asserted."
+   },
+   "coreAndRetrieval": {
+    "firstTop100Quarter": "1445Q2",
+    "firstTop50Quarter": "1445Q3",
+    "snapshotFrozenAt": "1445Q1",
+    "displacement": [
+     {
+      "period": "1445Q4",
+      "top50DisplacedPct": 40.0,
+      "quartersAfterT0": 2
+     },
+     {
+      "period": "1446Q1",
+      "top50DisplacedPct": 46.0,
+      "quartersAfterT0": 3
+     }
+    ],
+    "firstMateriallyStaleQuarter": "1445Q4",
+    "evaluable": true,
+    "notEvaluableWhy": null,
+    "staleThresholdPct": 30.0,
+    "thresholdProvenance": "inherited unchanged from the frozen REPOSITORY_BET_001 refresh trigger. Not chosen here and not tuned per event."
+   },
+   "voiceOrder": {
+    "firstMention": {
+     "court": "1445Q1",
+     "party": "1445Q1",
+     "leader": "SAME_QUARTER"
+    },
+    "sustainedVisibility": {
+     "rule": "court or party presence in three consecutive scorable quarters",
+     "court": "1446Q1",
+     "party": "1446Q1",
+     "leader": "SAME_QUARTER"
+    },
+    "firstMentionMinusT0": {
+     "court": -1,
+     "party": -1
+    },
+    "caution": "a same-quarter first mention is a tie at quarter resolution, not simultaneity in the courtroom."
+   },
+   "byQuarter": {
+    "courtJudgments": {
+     "1445Q1": 7,
+     "1445Q2": 8,
+     "1445Q3": 88,
+     "1445Q4": 93,
+     "1446Q1": 93,
+     "1446Q2": 61
+    },
+    "partyJudgments": {
+     "1445Q1": 3,
+     "1445Q2": 3,
+     "1445Q3": 34,
+     "1445Q4": 33,
+     "1446Q1": 31,
+     "1446Q2": 10
+    },
+    "courtRank": {
+     "1445Q1": 12,
+     "1445Q2": 10,
+     "1445Q3": 4,
+     "1445Q4": 4,
+     "1446Q1": 3,
+     "1446Q2": 4
+    },
+    "hybridRate": {
+     "1445Q1": 0.4286,
+     "1445Q2": 0.5,
+     "1445Q3": 0.1705,
+     "1445Q4": 0.2688,
+     "1446Q1": 0.3011,
+     "1446Q2": 0.1967
+    },
+    "namedFiqhRate": {
+     "1445Q1": 0.0,
+     "1445Q2": 0.0,
+     "1445Q3": 0.0114,
+     "1445Q4": 0.0753,
+     "1446Q1": 0.0538,
+     "1446Q2": 0.0328
+    }
+   }
+  }
+ },
+ "articles": {
+  "evidence_law": {
+   "articlesReported": 8,
+   "namedInAdvance": [],
+   "rows": [
+    {
+     "article": 29,
+     "courtCitations": 3756,
+     "requestedByName": false,
+     "firstCourtQuarter": "1443Q3",
+     "firstPartyQuarter": "1444Q2",
+     "quartersAfterT0": -1,
+     "firstTop50Quarter": "1443Q4",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 21,
+     "courtCitations": 1024,
+     "requestedByName": false,
+     "firstCourtQuarter": "1443Q4",
+     "firstPartyQuarter": "1444Q2",
+     "quartersAfterT0": 0,
+     "firstTop50Quarter": "1444Q1",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 17,
+     "courtCitations": 848,
+     "requestedByName": false,
+     "firstCourtQuarter": "1443Q1",
+     "firstPartyQuarter": "1444Q1",
+     "quartersAfterT0": -3,
+     "firstTop50Quarter": "1443Q1",
+     "quartersFirstToTop50": 0
+    },
+    {
+     "article": 14,
+     "courtCitations": 574,
+     "requestedByName": false,
+     "firstCourtQuarter": "1443Q1",
+     "firstPartyQuarter": "1444Q1",
+     "quartersAfterT0": -3,
+     "firstTop50Quarter": "1444Q1",
+     "quartersFirstToTop50": 4
+    },
+    {
+     "article": 3,
+     "courtCitations": 400,
+     "requestedByName": false,
+     "firstCourtQuarter": "1444Q1",
+     "firstPartyQuarter": "1444Q2",
+     "quartersAfterT0": 1,
+     "firstTop50Quarter": "1444Q1",
+     "quartersFirstToTop50": 0
+    },
+    {
+     "article": 1,
+     "courtCitations": 363,
+     "requestedByName": false,
+     "firstCourtQuarter": "1443Q3",
+     "firstPartyQuarter": "1444Q1",
+     "quartersAfterT0": -1,
+     "firstTop50Quarter": "1444Q1",
+     "quartersFirstToTop50": 2
+    },
+    {
+     "article": 110,
+     "courtCitations": 316,
+     "requestedByName": false,
+     "firstCourtQuarter": "1444Q1",
+     "firstPartyQuarter": "1444Q3",
+     "quartersAfterT0": 1,
+     "firstTop50Quarter": "1444Q2",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 2,
+     "courtCitations": 234,
+     "requestedByName": false,
+     "firstCourtQuarter": "1443Q4",
+     "firstPartyQuarter": "1444Q1",
+     "quartersAfterT0": 0,
+     "firstTop50Quarter": "1444Q3",
+     "quartersFirstToTop50": 3
+    }
+   ],
+   "note": "an article entering the corpus is an observation about citation, not about the provision's importance."
+  },
+  "civil_transactions_law": {
+   "articlesReported": 8,
+   "namedInAdvance": [
+    107,
+    120,
+    720
+   ],
+   "rows": [
+    {
+     "article": 120,
+     "courtCitations": 111,
+     "requestedByName": true,
+     "firstCourtQuarter": "1445Q1",
+     "firstPartyQuarter": "1445Q1",
+     "quartersAfterT0": -1,
+     "firstTop50Quarter": "1445Q4",
+     "quartersFirstToTop50": 3
+    },
+    {
+     "article": 720,
+     "courtCitations": 80,
+     "requestedByName": true,
+     "firstCourtQuarter": "1445Q4",
+     "firstPartyQuarter": "1445Q4",
+     "quartersAfterT0": 2,
+     "firstTop50Quarter": "1445Q4",
+     "quartersFirstToTop50": 0
+    },
+    {
+     "article": 107,
+     "courtCitations": 34,
+     "requestedByName": true,
+     "firstCourtQuarter": "1445Q1",
+     "firstPartyQuarter": "1445Q4",
+     "quartersAfterT0": -1,
+     "firstTop50Quarter": "1445Q4",
+     "quartersFirstToTop50": 3
+    },
+    {
+     "article": 17,
+     "courtCitations": 25,
+     "requestedByName": false,
+     "firstCourtQuarter": "1445Q4",
+     "firstPartyQuarter": null,
+     "quartersAfterT0": 2,
+     "firstTop50Quarter": "1446Q1",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 401,
+     "courtCitations": 12,
+     "requestedByName": false,
+     "firstCourtQuarter": "1445Q4",
+     "firstPartyQuarter": null,
+     "quartersAfterT0": 2,
+     "firstTop50Quarter": "1446Q1",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 564,
+     "courtCitations": 12,
+     "requestedByName": false,
+     "firstCourtQuarter": "1445Q4",
+     "firstPartyQuarter": null,
+     "quartersAfterT0": 2,
+     "firstTop50Quarter": "1446Q1",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 91,
+     "courtCitations": 10,
+     "requestedByName": false,
+     "firstCourtQuarter": "1445Q4",
+     "firstPartyQuarter": "1445Q1",
+     "quartersAfterT0": 2,
+     "firstTop50Quarter": "1446Q1",
+     "quartersFirstToTop50": 1
+    },
+    {
+     "article": 28,
+     "courtCitations": 9,
+     "requestedByName": false,
+     "firstCourtQuarter": "1445Q4",
+     "firstPartyQuarter": "1445Q1",
+     "quartersAfterT0": 2,
+     "firstTop50Quarter": "1446Q1",
+     "quartersFirstToTop50": 1
+    }
+   ],
+   "note": "an article entering the corpus is an observation about citation, not about the provision's importance."
+  }
+ },
+ "phase13_orderingSurvives": {
+  "byEvent": {
+   "CLK-evidence_law": "NO_DOCTRINE",
+   "CLK-civil_transactions_law": "SIMULTANEOUS"
+  },
+  "era1": {
+   "LSIG-0002": "S->D->F",
+   "LSIG-0003": "S->D->F"
+  },
+  "verdict": "S_D_F_DOES_NOT_SURVIVE_THE_CLOCK_CORRECTION",
+  "sameInstrumentComparison": {
+   "evidence_law": {
+    "era1_clock": "1443Q1",
+    "era1_order": "S->D->F",
+    "era2_clock": "1443Q4",
+    "era2_order": "NO_DOCTRINE"
+   },
+   "civil_transactions_law": {
+    "era1_clock": "1445Q1",
+    "era1_order": "S->D->F",
+    "era2_clock": "1445Q2",
+    "era2_order": "SIMULTANEOUS"
+   }
+  },
+  "mechanism": "Era 1 started both clocks before the law could be applied -- three quarters early for the Law of Evidence, one for the Civil Transactions Law. A layer's FIRST crossing is then read off a citation series climbing from zero, and layers that need more material to register -- a repeated companion, a recurring formula -- necessarily register later than a first citation does. The apparent S->D->F staging is that growth curve, not an ordering between layers. Move the clock to the law's actual commencement and the staging collapses: the Civil Transactions Law shows every measurable layer crossing in the SAME quarter, and the Law of Evidence has its companion and its operational core ALREADY crossed before the law took effect at all.",
+  "whatSurvives": "nothing about ORDER. What survives is that both laws are visible in the court's voice in the first mature quarter at or after their commencement, which is a statement about speed, not sequence."
+ },
+ "phase14_companionLatency": {
+  "era1": {
+   "LSIG-0002": 2,
+   "LSIG-0003": 2
+  },
+  "era2": {
+   "CLK-evidence_law": null,
+   "CLK-civil_transactions_law": 2
+  },
+  "question": "is +2 reproducible or accidental?"
+ },
+ "phase15_formulaLatency": {
+  "era1": {
+   "LSIG-0002": 2,
+   "LSIG-0003": 3
+  },
+  "era2": {
+   "CLK-evidence_law": 0,
+   "CLK-civil_transactions_law": 2
+  },
+  "uptakeMix": {
+   "CLK-evidence_law": {
+    "A_newlyObservedFormulas": 1939,
+    "B_carriedFromOlderLaw": 21,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 9
+   },
+   "CLK-civil_transactions_law": {
+    "A_newlyObservedFormulas": 108,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 8
+   }
+  }
+ },
+ "phase16_ecologyAtT0": {
+  "era2": {
+   "CLK-evidence_law": 0,
+   "CLK-civil_transactions_law": 2
+  },
+  "class": {
+   "CLK-evidence_law": "IMMEDIATE_ECOLOGY",
+   "CLK-civil_transactions_law": "DELAYED_ECOLOGY"
+  }
+ },
+ "phase17_18_voiceOrder": {
+  "evidence_law": {
+   "firstMention": {
+    "court": "1443Q1",
+    "party": "1444Q1",
+    "leader": "COURT"
+   },
+   "sustainedVisibility": {
+    "rule": "court or party presence in three consecutive scorable quarters",
+    "court": "1443Q4",
+    "party": "1444Q3",
+    "leader": "COURT"
+   },
+   "firstMentionMinusT0": {
+    "court": -3,
+    "party": 1
+   },
+   "caution": "a same-quarter first mention is a tie at quarter resolution, not simultaneity in the courtroom."
+  },
+  "civil_transactions_law": {
+   "firstMention": {
+    "court": "1445Q1",
+    "party": "1445Q1",
+    "leader": "SAME_QUARTER"
+   },
+   "sustainedVisibility": {
+    "rule": "court or party presence in three consecutive scorable quarters",
+    "court": "1446Q1",
+    "party": "1446Q1",
+    "leader": "SAME_QUARTER"
+   },
+   "firstMentionMinusT0": {
+    "court": -1,
+    "party": -1
+   },
+   "caution": "a same-quarter first mention is a tie at quarter resolution, not simultaneity in the courtroom."
+  }
+ },
+ "phase22_uptakeClockV2": {
+  "version": "UPTAKE_CLOCK_V2",
+  "supersedes": "nothing. horizon_results.json phase6_newLawMonitor measures FIRST_OBSERVED -> TOP50 and is left exactly as it is; this measures from the legal effective date and is a different quantity.",
+  "eligibility": "clock quality C3 or C4 and a legally meaningful event type. Bounded quarters are excluded: a latency measured from a bound is a bound, not a latency.",
+  "rows": [
+   {
+    "instrument": "evidence_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "effectiveQuarter": "1443Q4",
+    "courtCitations": 9993,
+    "effectiveToFirstCourt": -3,
+    "effectiveToFirstParty": 1,
+    "effectiveToSustainedCourt": 0,
+    "effectiveToTop100": -3,
+    "effectiveToTop50": -3
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "effectiveQuarter": "1445Q2",
+    "courtCitations": 486,
+    "effectiveToFirstCourt": -1,
+    "effectiveToFirstParty": -1,
+    "effectiveToSustainedCourt": 3,
+    "effectiveToTop100": 2,
+    "effectiveToTop50": 2
+   },
+   {
+    "instrument": "electricity_law",
+    "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+    "effectiveQuarter": "1442Q4",
+    "courtCitations": 1,
+    "effectiveToFirstCourt": 8,
+    "effectiveToFirstParty": null,
+    "effectiveToSustainedCourt": null,
+    "effectiveToTop100": null,
+    "effectiveToTop50": null
+   }
+  ],
+  "n": 3,
+  "warning": "with this few rows no median is a distribution. The values are listed per instrument and not summarised into a band."
+ },
+ "phase23_forecastableLatencies": {
+  "verdict": "HOLD",
+  "why": "one qualified transition. A median over one event is that event, and a range over one event is a point. No latency is offered as forecastable and no probability is issued.",
+  "useInstead": "DETECT and WATCH, which are already armed."
+ },
+ "phase19_signatureClasses": {
+  "verdict": "NOT_ATTEMPTED",
+  "why": "descriptive classes were to be inspected only at four or more events. There is one."
+ },
+ "phase20_eventTypeComparison": {
+  "verdict": "NOT_ATTEMPTED",
+  "why": "comparing new instruments against implementing regulations and amendments needs more than one example of each. The clock layer finds exactly one qualified new instrument and no qualified regulation or amendment."
+ },
+ "phase27_majorAmendmentCalibration": {
+  "verdict": "HOLD",
+  "why": "the Companies Law is a REPLACEMENT with a commencement article and a decree date, but its publication date is unknown locally and its bounded effective window spans two quarters, so its clock is C1. It also shares its title with the law it replaced, so the extractor cannot separate the two. Both problems would have to be solved."
+ },
+ "phase24_leaveOneTransitionOut": {
+  "verdict": "NOT_RUNNABLE",
+  "eventsAvailable": 1,
+  "why": "leave-one-transition-out needs a training set. With 1 qualified event(s) the held-out fold has nothing to be predicted from, and running it anyway would produce a number with no content.",
+  "whatWouldMakeItRunnable": "four qualified transitions, which is also TRANSITION_BET_001's earning condition and is not lowered here."
+ },
+ "phase26_referenceSignature": {
+  "latencyTable": {
+   "party_latency": {
+    "era1": {
+     "LSIG-0002": 4,
+     "LSIG-0003": 0
+    },
+    "era2": {
+     "CLK-evidence_law": 1,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "court_latency": {
+    "era1": {
+     "LSIG-0002": 0,
+     "LSIG-0003": 0
+    },
+    "era2": {
+     "CLK-evidence_law": 0,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "formula_latency": {
+    "era1": {
+     "LSIG-0002": 2,
+     "LSIG-0003": 3
+    },
+    "era2": {
+     "CLK-evidence_law": 0,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "ecology_latency": {
+    "era1": {
+     "LSIG-0002": 0,
+     "LSIG-0003": 0
+    },
+    "era2": {
+     "CLK-evidence_law": 0,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "companion_latency": {
+    "era1": {
+     "LSIG-0002": 2,
+     "LSIG-0003": 2
+    },
+    "era2": {
+     "CLK-evidence_law": null,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "core_latency": {
+    "era1": {
+     "LSIG-0002": 0,
+     "LSIG-0003": 2
+    },
+    "era2": {
+     "CLK-evidence_law": null,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "retrieval_latency": {
+    "era1": {
+     "LSIG-0002": null,
+     "LSIG-0003": 3
+    },
+    "era2": {
+     "CLK-evidence_law": 1,
+     "CLK-civil_transactions_law": 2
+    }
+   }
+  },
+  "stableAcrossEverythingMeasured": [],
+  "varyingAcrossEverythingMeasured": [
+   "court_latency",
+   "ecology_latency",
+   "formula_latency",
+   "party_latency"
+  ],
+  "notMeasurableInEveryCell": [
+   "companion_latency",
+   "core_latency",
+   "retrieval_latency"
+  ],
+  "stabilityRule": "a dimension is stable only if it registered in EVERY measurement and its range is at most one quarter. A layer that failed to register somewhere is not stable, it is unmeasured, and the two are not merged.",
+  "onlyStableDimensionsMayBecomeAnAIComparator": true,
+  "caution": "the era 1 and era 2 rows are the SAME two laws measured from different zeros. They are not independent observations and are not counted as four events. The comparison shows how much of a latency is a property of the law and how much is a property of the clock."
+ },
+ "phase29_incidence": {
+  "eligible": 43,
+  "eligibilityRule": "a clock at C2 or better with a computed or bounded effective quarter, and at least three mature quarters after it",
+  "everCitedByACourt": {
+   "n": 36,
+   "share": 0.8372
+  },
+  "everCitedByAParty": {
+   "n": 29,
+   "share": 0.6744
+  },
+  "reachedTop100": {
+   "n": 14,
+   "share": 0.3256
+  },
+  "reachedTop50": {
+   "n": 8,
+   "share": 0.186
+  },
+  "atLeast150CourtCitations": {
+   "n": 6,
+   "share": 0.1395
+  },
+  "silentInstruments": [
+   "accounting_auditing_law",
+   "bankruptcy_implementing_regulation",
+   "ecommerce_law",
+   "mining_investment_law",
+   "patent_regulation",
+   "press_regulation",
+   "private_healthcare_institutions_law"
+  ],
+  "silentCount": 7,
+  "phase28_negativeLegalEvents": {
+   "what": "instruments with a valid clock and no later judicial visibility. A better negative control than an arbitrary pseudo-date, because the legal event is real and the corpus response is absent.",
+   "class": "NO_OBSERVABLE_UPTAKE_WITHIN_HORIZON",
+   "n": 7,
+   "disclosure": "failure to appear in this corpus does NOT mean a law is unused nationally. It means no observable uptake in this published commercial adjudication corpus."
+  },
+  "note": "the denominator is dominated by old laws whose commencement predates the window, so these are base rates for VISIBILITY in a commercial corpus, not for uptake after a new law."
+ },
+ "phase33_matrixV3": {
+  "extends": "transition_results.json phase34_observabilityMatrixV2",
+  "whatIsNew": "each AI channel hypothesis is now compared against a measured ordinary-transition reference rather than against nothing.",
+  "ordinaryReference": {
+   "stableDimensions": [],
+   "varyingDimensions": [
+    "court_latency",
+    "ecology_latency",
+    "formula_latency",
+    "party_latency"
+   ],
+   "orderingObserved": "statutory visibility and authority ecology at the effective quarter, doctrinal companion after, authority-adjacent formula after -- on the laws measured, at both clocks"
+  },
+  "comparatorStatus": "NOT_YET_CONSTRUCTIBLE",
+  "comparatorNote": "no latency dimension registered in every measurement AND stayed within one quarter, so there is currently NO stable dimension on which a future transition may be compared. The comparison logic below is frozen and armed; it has nothing to compare against until an ordinary-transition reference with stable dimensions exists. Arming a comparator with an empty stable set and using it anyway would be the failure this phase exists to prevent.",
+  "comparisonLogic": {
+   "verdicts": [
+    "CONSISTENT_WITH_ORDINARY_TRANSITION_REFERENCE",
+    "DEPARTURE_FROM_ORDINARY_TRANSITION_REFERENCE",
+    "NOT_EVALUABLE"
+   ],
+   "rule": "a future transition is compared ONLY on the stable dimensions. A departure on a varying dimension is not a departure, because that dimension varies between ordinary laws.",
+   "forbidden": "a DEPARTURE verdict is not evidence of AI. It is a statement that the sequence did not look like the ordinary new-law sequence, and an externally verified adoption event reaching this workflow remains necessary before any AI reading.",
+   "frozen": true
+  },
+  "phase34_futureSignatureSpace": {
+   "sequences": [
+    "FORMULA_FIRST",
+    "SOURCE_FIRST",
+    "TRACEABILITY_FIRST",
+    "BAR_FIRST",
+    "CONCENTRATION_FIRST",
+    "NO_SHIFT"
+   ],
+   "note": "these are transition signatures, not AI labels. None carries an AI meaning and none may be given one without a verified adoption event.",
+   "observedInOrdinaryTransitions": [
+    "none of them: both laws show statute and ecology together at the effective quarter"
+   ]
+  }
+ },
+ "phase35_36_retrieval": {
+  "byEvent": [
+   {
+    "instrument": "evidence_law",
+    "effectiveQuarter": "1443Q4",
+    "snapshotFrozenAt": "1443Q3",
+    "evaluable": true,
+    "quartersToFirstStaleness": 1,
+    "quartersToCoreEntry": null,
+    "quartersToCompanion": null
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "effectiveQuarter": "1445Q2",
+    "snapshotFrozenAt": "1445Q1",
+    "evaluable": true,
+    "quartersToFirstStaleness": 2,
+    "quartersToCoreEntry": 2,
+    "quartersToCompanion": 2
+   }
+  ],
+  "eventsWithAnEvaluableSnapshot": 2,
+  "phase36_eventTriggeredVersusPeriodicRefresh": {
+   "question": "should a major legal event trigger an immediate retrieval rebuild, or is the periodic rank-driven policy already enough?",
+   "decision": "PERIODIC_RETAINED",
+   "why": [
+    "the Era 1 negative control found top-50 staleness firing in 15 of 15 pseudo-events with no legal event at all, so staleness is a clock",
+    "only 2 qualified event has an evaluable pre-event snapshot, so an event-triggered policy cannot be backtested against the periodic one",
+    "REPOSITORY_BET_001's TOP50_DISPLACEMENT trigger is frozen and is not replaced by an untested rule"
+   ],
+   "whatWouldChangeIt": "three or more qualified events each with an evaluable pre-event snapshot, where rebuilding at the effective date avoids a gap the periodic policy incurs."
+  }
+ },
+ "phase25_bet": {
+  "id": "TRANSITION_BET_001",
+  "candidateShape": "for the next prospectively captured major law, statutory visibility will precede stable doctrinal-companion formation",
+  "decision": "REFUSED",
+  "conditions": {
+   "atLeastFourQualifiedTransitions": false,
+   "statutePrecedesRepeatedCompanionInAll": false,
+   "noClockDerivedFromOutcome": true,
+   "publicationHealthDisclosed": true,
+   "leaveOneOutDoesNotContradict": false,
+   "formulaOrderingLabelledSecondary": true
+  },
+  "why": [
+   "1 transition qualifies under the promotion gate, not four. The gate was fixed before the clocks were read and is not lowered to reach a quota.",
+   "the Civil Transactions Law FAILED the gate only because its verified clock is one quarter later than the clock Era 1 used, which cost it a mature post-quarter. That is the cost of an outcome-derived clock, measured.",
+   "leave-one-transition-out is NOT RUNNABLE below four events, so one of the strengthened conditions cannot even be evaluated",
+   "the candidate remains TRUE everywhere it can be checked, and being true is not the same as being earned"
+  ],
+  "whatWouldEarnIt": "four qualified transitions with C3 or better clocks and a runnable leave-one-out. On present evidence that requires future laws, not more date collection: the window contains no further in-window commencement with the support to read eight layers.",
+  "keptBecauseRefused": true
+ },
+ "standingLimitations": [
+  "ONE qualified calibration transition. Every comparison in this file is either against Era 1's same two laws at a different clock, or against nothing.",
+  "the publication dates for both laws are graded S3: the official portal that holds them closes our TLS tunnel mid-exchange. The commencement RULE and the decree date are S1 and local.",
+  "dates are computed on the tabular Islamic calendar, which can differ from the observed date by about a day.",
+  "nothing here is causal and nothing here is foresight."
+ ]
+}

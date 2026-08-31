@@ -134,6 +134,30 @@
    ],
    "status": "OPEN",
    "priority": 1
+  },
+  {
+   "trigger_id": "GAZETTE_ROUTE_BECOMES_REACHABLE",
+   "condition": "laws.boe.gov.sa or the Umm Al-Qura gazette becomes fetchable from this environment, or a publication date for an in-window instrument turns up in a locally held official text",
+   "checkBy": "re-run the two S3 publication dates in clocks.py against the official page; check legal_clock_registry.json for any instrument still at C1 or C2 whose rule is known",
+   "action": [
+    "upgrade the affected clocks from C3 to C4 and re-run clocks.py",
+    "re-run the promotion gate; a C2 instrument that becomes C3 may qualify",
+    "do NOT re-freeze frozen/legal_clock_era_1.json; a better clock opens a new era"
+   ],
+   "status": "OPEN",
+   "priority": 2
+  },
+  {
+   "trigger_id": "FOURTH_QUALIFIED_TRANSITION",
+   "condition": "a fourth instrument passes the promotion gate in clocks_results.json phase10_promotion",
+   "checkBy": "clocks.py after any new quarter of corpus or any clock upgrade",
+   "action": [
+    "run transition_era2.py; leave-one-transition-out becomes runnable at four",
+    "re-evaluate TRANSITION_BET_001 against the STRENGTHENED gate, which is not lowered",
+    "re-test whether any latency dimension is stable enough to make the AI comparator constructible"
+   ],
+   "status": "OPEN",
+   "priority": 1
   }
  ]
 }

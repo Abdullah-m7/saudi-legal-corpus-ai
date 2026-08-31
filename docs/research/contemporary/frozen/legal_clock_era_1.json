@@ -1,0 +1,489 @@
+{
+ "what": "The verified legal clock layer, and the transition era it produced. Frozen because every future transition comparison starts from these commencement dates and from the two corrections they forced.",
+ "era": "LEGAL_CLOCK_ERA_1 / CALIBRATION_ERA_2",
+ "frozenAt": "2026-08-31",
+ "repositoryHead": "1bcfc60bd21aacb12bd70e3b90df6b299703bb32",
+ "codeHash": {
+  "clocks.py": "2a79a16afa50",
+  "hijri.py": "4f8284c81e86",
+  "transition_era2.py": "fb6c3cebc3b6",
+  "transition.py": "cf3534e6aa60"
+ },
+ "clockQuality": {
+  "C0_NO_CLOCK": 23,
+  "C1_YEAR_ONLY": 8,
+  "C2_APPROX_QUARTER": 42,
+  "C3_EXACT_EFFECTIVE_DATE": 2,
+  "C4_EXACT_EFFECTIVE_AND_PUBLICATION": 2
+ },
+ "eventTypes": {
+  "COMMENCES_AFTER_THE_WINDOW": 2,
+  "FIRST_CORPUS_APPEARANCE_OF_OLD_LAW": 34,
+  "MAJOR_AMENDMENT": 1,
+  "NEW_IMPLEMENTING_REGULATION": 1,
+  "NEW_INSTRUMENT": 7,
+  "REPLACEMENT": 1,
+  "UNKNOWN": 31
+ },
+ "commencementRules": {
+  "IMMEDIATE_ON_PUBLICATION": 11,
+  "NONE_FOUND": 23,
+  "N_DAYS_AFTER_PUBLICATION": 41,
+  "N_DAYS_AFTER_UNSTATED_ANCHOR": 2
+ },
+ "publicationLagEvidence": {
+  "pairs": 25,
+  "medianDays": 16,
+  "p10": 5,
+  "p90": 42,
+  "min": 1,
+  "max": 87,
+  "note": "measured from locally held official texts that carry BOTH a decree date and a gazette publication date. It bounds how wrong a missing publication date can make a computed commencement; it is never substituted for one."
+ },
+ "falsification": {
+  "instrumentsWithBothAClockAndCorpusUse": 25,
+  "medianCourtMinusEffectiveQuarters": 28,
+  "arrivingBeforeTheirEffectiveDate": 3,
+  "byClass": null,
+  "anticipatoryClasses": {
+   "PRE_EFFECTIVE_REFERENCE": "a citation dated before the law's effective date. Verified only as an ordering of dates; the judgment's use of the provision is not read.",
+   "TRANSITIONAL_APPLICATION": "the law's own transitional article makes it apply to pending cases. Requires the article to say so.",
+   "FUTURE_EFFECTIVE_DISCUSSION": "the provision is discussed as forthcoming. NOT SEPARABLE with the layers this repository holds, so it is never assigned.",
+   "UNKNOWN_LIKELY_IDENTITY_COLLISION": "more than a tenth of the instrument's citations fall before its effective date. The extractor matches an instrument by TITLE, and a replacement usually keeps its predecessor's title, so the most likely reading is that the corpus is citing the old law under the new law's clock. Not anticipatory practice, and not assumed to be either."
+  },
+  "anomalies": [
+   {
+    "instrument": "civil_transactions_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1445Q2",
+    "firstCourtQuarter": "1445Q1",
+    "firstPartyQuarter": "1445Q1",
+    "courtMinusEffectiveQuarters": -1,
+    "partyMinusEffectiveQuarters": -1,
+    "courtCitations": 486,
+    "preEffectiveCourtCitations": 8,
+    "preEffectiveShare": 0.0165,
+    "class": "PRE_EFFECTIVE_REFERENCE"
+   },
+   {
+    "instrument": "evidence_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "quarterIsBounded": false,
+    "effectiveQuarter": "1443Q4",
+    "firstCourtQuarter": "1443Q1",
+    "firstPartyQuarter": "1444Q1",
+    "courtMinusEffectiveQuarters": -3,
+    "partyMinusEffectiveQuarters": 1,
+    "courtCitations": 9993,
+    "preEffectiveCourtCitations": 16,
+    "preEffectiveShare": 0.0016,
+    "class": "PRE_EFFECTIVE_REFERENCE"
+   },
+   {
+    "instrument": "telecommunications_law",
+    "clock_quality": "C2_APPROX_QUARTER",
+    "quarterIsBounded": true,
+    "effectiveQuarter": null,
+    "firstCourtQuarter": "1443Q3",
+    "firstPartyQuarter": "1444Q3",
+    "courtMinusEffectiveQuarters": -3,
+    "partyMinusEffectiveQuarters": 1,
+    "courtCitations": 19,
+    "preEffectiveCourtCitations": 9,
+    "preEffectiveShare": 0.4737,
+    "class": "UNKNOWN_LIKELY_IDENTITY_COLLISION"
+   }
+  ],
+  "readingRule": "a large pre-effective share is more likely an extractor identity collision -- an old law and its replacement share a title -- than anticipatory legal practice. Neither is assumed; the share decides which class is recorded and both remain falsifiable."
+ },
+ "promotionGate": {
+  "clockQuality": "C3 or C4 -- an exact effective date. C1 never becomes a headline calibration event.",
+  "eventType": "a legally meaningful event, not the first corpus appearance of an old law",
+  "commencement": "inside the corpus window",
+  "maturePostQuarters": "at least 3",
+  "courtSupport": "at least 150 court citations, so eight layers have something to read",
+  "collectionEdge": "not the last quarter",
+  "clockIndependence": "the clock comes from the enacted text and the gazette, never from a citation",
+  "baseline": "at least one mature pre-event quarter"
+ },
+ "promoted": [
+  "evidence_law"
+ ],
+ "clockCorrection": {
+  "evidence_law": {
+   "era1_T0": "1443Q1",
+   "era2_T0": "1443Q4",
+   "quartersEarly": 3,
+   "era1Source": "signal registry observable_in_courts_from, itself read off the first citation",
+   "era2Source": "enacted article 129 plus the gazette publication date"
+  },
+  "civil_transactions_law": {
+   "era1_T0": "1445Q1",
+   "era2_T0": "1445Q2",
+   "quartersEarly": 1,
+   "era1Source": "same",
+   "era2Source": "enacted article 721 plus the gazette publication date"
+  },
+  "consequence": "an outcome-derived clock does not merely shift a latency. It manufactured a mature post-quarter for the Civil Transactions Law that its real clock does not have, which is why that event passes the Era 1 gate and fails the Era 2 one."
+ },
+ "era2Signatures": [
+  {
+   "event_id": "CLK-evidence_law",
+   "event_type": "NEW_INSTRUMENT",
+   "instrument": "evidence_law",
+   "known_at": "1443-05-26H",
+   "effective_at": "1443-12-07H",
+   "observable_from": "1443Q4",
+   "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+   "publicationHealthAtT0": {
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 1,
+    "court_latency": 0,
+    "formula_latency": 0,
+    "ecology_latency": 0,
+    "companion_latency": null,
+    "core_latency": null,
+    "retrieval_latency": 1
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "ALREADY_CROSSED_BEFORE_T0",
+    "L7_OPERATIONAL_CORE": "ALREADY_CROSSED_BEFORE_T0",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 1939,
+    "B_carriedFromOlderLaw": 21,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 9
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_IN_DOMAIN": 1,
+    "ALREADY_PRESENT_SYSTEM_WIDE": 26,
+    "NEW_CODE_LOCAL_OR_GLOBALLY_NEW": 1
+   },
+   "statuteFormulaDoctrineOrder": "NO_DOCTRINE",
+   "repeatedSources": [
+    "B.INSAF",
+    "B.KASHSHAF",
+    "B.MAJMU_FATAWA",
+    "B.MUGHNI",
+    "B.MUNTAHA",
+    "B.ZAD",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "H.ABU_DAWUD",
+    "H.BAYHAQI",
+    "H.BUKHARI",
+    "H.MUSLIM",
+    "H.MUTTAFAQ",
+    "J.IBN_QAYYIM",
+    "J.IBN_QUDAMA",
+    "J.IBN_TAYMIYYA",
+    "M.ADA_MUHAKKAMA",
+    "M.ASL_UQUD",
+    "M.BARAA",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6,
+   "era": "CALIBRATION_ERA_2",
+   "gateStatus": "PROMOTED_CALIBRATION_TRANSITION",
+   "layersAlreadyCrossedBeforeCommencement": [
+    "L6_DOCTRINAL_COMPANION",
+    "L7_OPERATIONAL_CORE"
+   ]
+  },
+  {
+   "event_id": "CLK-civil_transactions_law",
+   "event_type": "NEW_INSTRUMENT",
+   "instrument": "civil_transactions_law",
+   "known_at": "1444-11-29H",
+   "effective_at": "1445-06-04H",
+   "observable_from": "1445Q2",
+   "clockQuality": "C3_EXACT_EFFECTIVE_DATE",
+   "publicationHealthAtT0": {
+    "gate": "STANDING_CAVEAT",
+    "gateNote": "publication health fires on all but one quarter-to-quarter step in this corpus; see transition_results.json PHASE 4."
+   },
+   "capture": "BACKFILLED_CALIBRATION",
+   "captureNote": "the signal registry was created after the fact, so every current event is backfilled by construction. None of these may ever count as foresight.",
+   "latencies": {
+    "party_latency": 2,
+    "court_latency": 2,
+    "formula_latency": 2,
+    "ecology_latency": 2,
+    "companion_latency": 2,
+    "core_latency": 2,
+    "retrieval_latency": 2
+   },
+   "layerStatus": {
+    "L2_BAR_STATUTORY_VISIBILITY": "MOVED",
+    "L3_COURT_STATUTORY_VISIBILITY": "MOVED",
+    "L4_AUTHORITY_ADJACENT_FORMULA": "MOVED",
+    "L5_AUTHORITY_ECOLOGY": "MOVED",
+    "L6_DOCTRINAL_COMPANION": "MOVED",
+    "L7_OPERATIONAL_CORE": "MOVED",
+    "L8_RETRIEVAL_STATE": "MOVED"
+   },
+   "formulaUptakeMix": {
+    "A_newlyObservedFormulas": 108,
+    "B_carriedFromOlderLaw": 4,
+    "C_carriedButNeverSeenBesideAnotherInstrument": 8
+   },
+   "companionProvenance": {
+    "ALREADY_PRESENT_SYSTEM_WIDE": 21
+   },
+   "statuteFormulaDoctrineOrder": "SIMULTANEOUS",
+   "repeatedSources": [
+    "B.KASHSHAF",
+    "GENERIC.custom.trade",
+    "GENERIC.fiqh.unattributed",
+    "GENERIC.hadith.untraced",
+    "GENERIC.maxim.named",
+    "GENERIC.principle.settled",
+    "GENERIC.quran.citation",
+    "J.IBN_TAYMIYYA",
+    "M.ASL_UQUD",
+    "M.DARAR_YUZAL"
+   ],
+   "evaluationHorizonQuarters": 6,
+   "era": "CALIBRATION_ERA_2",
+   "gateStatus": "BELOW_GATE_REPORTED_FOR_COMPARISON_ONLY",
+   "layersAlreadyCrossedBeforeCommencement": []
+  }
+ ],
+ "orderingResult": {
+  "byEvent": {
+   "CLK-evidence_law": "NO_DOCTRINE",
+   "CLK-civil_transactions_law": "SIMULTANEOUS"
+  },
+  "era1": {
+   "LSIG-0002": "S->D->F",
+   "LSIG-0003": "S->D->F"
+  },
+  "verdict": "S_D_F_DOES_NOT_SURVIVE_THE_CLOCK_CORRECTION",
+  "sameInstrumentComparison": {
+   "evidence_law": {
+    "era1_clock": "1443Q1",
+    "era1_order": "S->D->F",
+    "era2_clock": "1443Q4",
+    "era2_order": "NO_DOCTRINE"
+   },
+   "civil_transactions_law": {
+    "era1_clock": "1445Q1",
+    "era1_order": "S->D->F",
+    "era2_clock": "1445Q2",
+    "era2_order": "SIMULTANEOUS"
+   }
+  },
+  "mechanism": "Era 1 started both clocks before the law could be applied -- three quarters early for the Law of Evidence, one for the Civil Transactions Law. A layer's FIRST crossing is then read off a citation series climbing from zero, and layers that need more material to register -- a repeated companion, a recurring formula -- necessarily register later than a first citation does. The apparent S->D->F staging is that growth curve, not an ordering between layers. Move the clock to the law's actual commencement and the staging collapses: the Civil Transactions Law shows every measurable layer crossing in the SAME quarter, and the Law of Evidence has its companion and its operational core ALREADY crossed before the law took effect at all.",
+  "whatSurvives": "nothing about ORDER. What survives is that both laws are visible in the court's voice in the first mature quarter at or after their commencement, which is a statement about speed, not sequence."
+ },
+ "referenceSignature": {
+  "latencyTable": {
+   "party_latency": {
+    "era1": {
+     "LSIG-0002": 4,
+     "LSIG-0003": 0
+    },
+    "era2": {
+     "CLK-evidence_law": 1,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "court_latency": {
+    "era1": {
+     "LSIG-0002": 0,
+     "LSIG-0003": 0
+    },
+    "era2": {
+     "CLK-evidence_law": 0,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "formula_latency": {
+    "era1": {
+     "LSIG-0002": 2,
+     "LSIG-0003": 3
+    },
+    "era2": {
+     "CLK-evidence_law": 0,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "ecology_latency": {
+    "era1": {
+     "LSIG-0002": 0,
+     "LSIG-0003": 0
+    },
+    "era2": {
+     "CLK-evidence_law": 0,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "companion_latency": {
+    "era1": {
+     "LSIG-0002": 2,
+     "LSIG-0003": 2
+    },
+    "era2": {
+     "CLK-evidence_law": null,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "core_latency": {
+    "era1": {
+     "LSIG-0002": 0,
+     "LSIG-0003": 2
+    },
+    "era2": {
+     "CLK-evidence_law": null,
+     "CLK-civil_transactions_law": 2
+    }
+   },
+   "retrieval_latency": {
+    "era1": {
+     "LSIG-0002": null,
+     "LSIG-0003": 3
+    },
+    "era2": {
+     "CLK-evidence_law": 1,
+     "CLK-civil_transactions_law": 2
+    }
+   }
+  },
+  "stableAcrossEverythingMeasured": [],
+  "varyingAcrossEverythingMeasured": [
+   "court_latency",
+   "ecology_latency",
+   "formula_latency",
+   "party_latency"
+  ],
+  "notMeasurableInEveryCell": [
+   "companion_latency",
+   "core_latency",
+   "retrieval_latency"
+  ],
+  "stabilityRule": "a dimension is stable only if it registered in EVERY measurement and its range is at most one quarter. A layer that failed to register somewhere is not stable, it is unmeasured, and the two are not merged.",
+  "onlyStableDimensionsMayBecomeAnAIComparator": true,
+  "caution": "the era 1 and era 2 rows are the SAME two laws measured from different zeros. They are not independent observations and are not counted as four events. The comparison shows how much of a latency is a property of the law and how much is a property of the clock."
+ },
+ "uptakeClockV2": {
+  "version": "UPTAKE_CLOCK_V2",
+  "supersedes": "nothing. horizon_results.json phase6_newLawMonitor measures FIRST_OBSERVED -> TOP50 and is left exactly as it is; this measures from the legal effective date and is a different quantity.",
+  "eligibility": "clock quality C3 or C4 and a legally meaningful event type. Bounded quarters are excluded: a latency measured from a bound is a bound, not a latency.",
+  "rows": [
+   {
+    "instrument": "evidence_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "effectiveQuarter": "1443Q4",
+    "courtCitations": 9993,
+    "effectiveToFirstCourt": -3,
+    "effectiveToFirstParty": 1,
+    "effectiveToSustainedCourt": 0,
+    "effectiveToTop100": -3,
+    "effectiveToTop50": -3
+   },
+   {
+    "instrument": "civil_transactions_law",
+    "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+    "effectiveQuarter": "1445Q2",
+    "courtCitations": 486,
+    "effectiveToFirstCourt": -1,
+    "effectiveToFirstParty": -1,
+    "effectiveToSustainedCourt": 3,
+    "effectiveToTop100": 2,
+    "effectiveToTop50": 2
+   },
+   {
+    "instrument": "electricity_law",
+    "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+    "effectiveQuarter": "1442Q4",
+    "courtCitations": 1,
+    "effectiveToFirstCourt": 8,
+    "effectiveToFirstParty": null,
+    "effectiveToSustainedCourt": null,
+    "effectiveToTop100": null,
+    "effectiveToTop50": null
+   }
+  ],
+  "n": 3,
+  "warning": "with this few rows no median is a distribution. The values are listed per instrument and not summarised into a band."
+ },
+ "incidence": {
+  "eligible": 43,
+  "eligibilityRule": "a clock at C2 or better with a computed or bounded effective quarter, and at least three mature quarters after it",
+  "everCitedByACourt": {
+   "n": 36,
+   "share": 0.8372
+  },
+  "everCitedByAParty": {
+   "n": 29,
+   "share": 0.6744
+  },
+  "reachedTop100": {
+   "n": 14,
+   "share": 0.3256
+  },
+  "reachedTop50": {
+   "n": 8,
+   "share": 0.186
+  },
+  "atLeast150CourtCitations": {
+   "n": 6,
+   "share": 0.1395
+  },
+  "silentInstruments": [
+   "accounting_auditing_law",
+   "bankruptcy_implementing_regulation",
+   "ecommerce_law",
+   "mining_investment_law",
+   "patent_regulation",
+   "press_regulation",
+   "private_healthcare_institutions_law"
+  ],
+  "silentCount": 7,
+  "phase28_negativeLegalEvents": {
+   "what": "instruments with a valid clock and no later judicial visibility. A better negative control than an arbitrary pseudo-date, because the legal event is real and the corpus response is absent.",
+   "class": "NO_OBSERVABLE_UPTAKE_WITHIN_HORIZON",
+   "n": 7,
+   "disclosure": "failure to appear in this corpus does NOT mean a law is unused nationally. It means no observable uptake in this published commercial adjudication corpus."
+  },
+  "note": "the denominator is dominated by old laws whose commencement predates the window, so these are base rates for VISIBILITY in a commercial corpus, not for uptake after a new law."
+ },
+ "bet": {
+  "id": "TRANSITION_BET_001",
+  "candidateShape": "for the next prospectively captured major law, statutory visibility will precede stable doctrinal-companion formation",
+  "decision": "REFUSED",
+  "conditions": {
+   "atLeastFourQualifiedTransitions": false,
+   "statutePrecedesRepeatedCompanionInAll": false,
+   "noClockDerivedFromOutcome": true,
+   "publicationHealthDisclosed": true,
+   "leaveOneOutDoesNotContradict": false,
+   "formulaOrderingLabelledSecondary": true
+  },
+  "why": [
+   "1 transition qualifies under the promotion gate, not four. The gate was fixed before the clocks were read and is not lowered to reach a quota.",
+   "the Civil Transactions Law FAILED the gate only because its verified clock is one quarter later than the clock Era 1 used, which cost it a mature post-quarter. That is the cost of an outcome-derived clock, measured.",
+   "leave-one-transition-out is NOT RUNNABLE below four events, so one of the strengthened conditions cannot even be evaluated",
+   "the candidate remains TRUE everywhere it can be checked, and being true is not the same as being earned"
+  ],
+  "whatWouldEarnIt": "four qualified transitions with C3 or better clocks and a runnable leave-one-out. On present evidence that requires future laws, not more date collection: the window contains no further in-window commencement with the support to read eight layers.",
+  "keptBecauseRefused": true
+ },
+ "whatThisDoesNotTouch": "CALIBRATION ERA 1. Its signatures, its negative controls and its S->D->F observation stand exactly as frozen in frozen/three_layer_baseline.json, and no detector era is altered.",
+ "whatWouldMoveThis": "a new law commencing inside a future window with the support to read eight layers. It gets its own era."
+}

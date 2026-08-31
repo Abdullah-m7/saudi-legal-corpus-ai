@@ -45,6 +45,8 @@ def facts():
     dfz = J("diffusion_results.json")
     fmz = J("formula_analysis_results.json")
     trz = J("transition_results.json")
+    clz = J("clocks_results.json")
+    e2z = J("transition_era2_results.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -841,7 +843,72 @@ def facts():
          f"{dfz['phase25_entrantForecastability']['baseRate']}", DF),
         ("entrant lift doctrinal",
          f"{dfz['phase25_entrantForecastability']['liftOverBaseRate']}", DF),
-    ] + formula_facts(fmz) + transition_facts(trz)
+    ] + formula_facts(fmz) + transition_facts(trz) \
+      + clock_facts(clz, e2z)
+    return out
+
+
+def clock_facts(c, e):
+    """CLOCKS.md. The verified legal clock layer and Calibration Era 2."""
+    CK = ["CLOCKS.md"]
+    q, ty = c["phase5_clockQuality"], c["phase7_eventTypes"]
+    lag, f = c["publicationLagEvidence"], c["phase8_falsification"]
+    ru = c["phase6_delayedCommencement"]["rulesObserved"]
+    an = {a["instrument"]: a for a in f["anomalies"]}
+    sig = {s["instrument"]: s for s in e["signatures"]}
+    up = {r["instrument"]: r for r in e["phase22_uptakeClockV2"]["rows"]}
+    inc = e["phase29_incidence"]
+    ref = e["phase26_referenceSignature"]
+    out = [
+        ("clock C0", f"{q['C0_NO_CLOCK']}", CK),
+        ("clock C1", f"{q['C1_YEAR_ONLY']}", CK),
+        ("clock C2", f"{q['C2_APPROX_QUARTER']}", CK),
+        ("clock C3", f"{q['C3_EXACT_EFFECTIVE_DATE']}", CK),
+        ("clock C4", f"{q['C4_EXACT_EFFECTIVE_AND_PUBLICATION']}", CK),
+        ("old law appearances", f"{ty['FIRST_CORPUS_APPEARANCE_OF_OLD_LAW']}", CK),
+        ("new instruments", f"{ty['NEW_INSTRUMENT']}", CK),
+        ("rule n days after publication", f"{ru['N_DAYS_AFTER_PUBLICATION']}", CK),
+        ("rule immediate", f"{ru['IMMEDIATE_ON_PUBLICATION']}", CK),
+        ("rule none found", f"{ru['NONE_FOUND']}", CK),
+        ("lag pairs", f"{lag['pairs']}", CK),
+        ("lag median", f"{lag['medianDays']}", CK),
+        ("lag p90", f"{lag['p90']}", CK),
+        ("lag max", f"{lag['max']}", CK),
+        ("median arrival minus effective",
+         f"{f['medianCourtMinusEffectiveQuarters']}", CK),
+        ("instruments with clock and use",
+         f"{f['instrumentsWithBothAClockAndCorpusUse']}", CK),
+        ("evidence pre-effective citations",
+         f"{an['evidence_law']['preEffectiveCourtCitations']}", CK),
+        ("evidence pre-effective share",
+         f"{an['evidence_law']['preEffectiveShare']}", CK),
+        ("ctl pre-effective citations",
+         f"{an['civil_transactions_law']['preEffectiveCourtCitations']}", CK),
+        ("ctl pre-effective share",
+         f"{an['civil_transactions_law']['preEffectiveShare']}", CK),
+        ("telecom pre-effective share",
+         f"{an['telecommunications_law']['preEffectiveShare']}", CK),
+        ("incidence court", f"{inc['everCitedByACourt']['share']}", CK),
+        ("incidence party", f"{inc['everCitedByAParty']['share']}", CK),
+        ("incidence top100", f"{inc['reachedTop100']['share']}", CK),
+        ("incidence top50", f"{inc['reachedTop50']['share']}", CK),
+        ("incidence 150 citations",
+         f"{inc['atLeast150CourtCitations']['share']}", CK),
+        ("incidence eligible", f"{inc['eligible']}", CK),
+        ("silent instruments", f"{inc['silentCount']}", CK),
+        ("comparator status", f"{e['phase33_matrixV3']['comparatorStatus']}", CK),
+        ("ordering verdict", f"{e['phase13_orderingSurvives']['verdict']}", CK),
+    ]
+    for lbl, inst in (("evidence", "evidence_law"),
+                      ("ctl", "civil_transactions_law")):
+        for k, v in sorted(sig[inst]["latencies"].items()):
+            if v is not None:
+                out.append((f"era2 {lbl} {k}", f"{v}", CK))
+        for k in ("effectiveToFirstCourt", "effectiveToFirstParty",
+                  "effectiveToSustainedCourt", "effectiveToTop100",
+                  "effectiveToTop50"):
+            if up[inst][k] is not None:
+                out.append((f"uptakev2 {lbl} {k}", f"{up[inst][k]}", CK))
     return out
 
 

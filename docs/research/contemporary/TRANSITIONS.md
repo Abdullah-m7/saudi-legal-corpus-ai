@@ -15,6 +15,15 @@ transitions so an extraordinary one could be recognised.
 **Nothing here is causal.** A layer crossing a criterion after a commencement
 date is an ordering of observations, never the statute acting on the court.
 
+> **SUPERSEDED READING, entered after the legal clock layer was built.** The
+> T=0 values used in this file came from the signal registry's
+> `observable_in_courts_from`, which was itself read off the first citation.
+> Reading commencement out of the enacted texts instead puts the Law of
+> Evidence at 1443Q4 rather than 1443Q1, and the Civil Transactions Law at
+> 1445Q2 rather than 1445Q1. **Every number in this file stands and is frozen;
+> the S→D→F ordering it reports does not survive the correction.** See
+> `CLOCKS.md` sections 5 and 8, and T8 in `THEORY_LOG.md`.
+
 ---
 
 ## Scope corrections entered first
@@ -326,10 +335,12 @@ law and simultaneous for the other.
 > And when a future verified AI deployment becomes observable, will its
 > sequence look like an ordinary legal change?
 
-**Unknown, and now answerable.** What exists today is a reference: two ordinary
-transitions with `S→D→F` ordering, a companion at +2 in both, wording last in
-both, and a negative control showing the staging is not manufactured by the
-criteria. Four AI channel hypotheses are frozen against that reference with
+**Unknown, and less answerable than this file thought.** What existed at the
+time of writing looked like a reference: two ordinary transitions with `S→D→F`
+ordering, a companion at +2 in both, wording last in both, and a negative
+control showing the staging is not manufactured by the criteria. The clock
+layer then showed the staging was manufactured by something else — a T=0 set
+before either law could be applied. `CLOCKS.md` carries the corrected reading. Four AI channel hypotheses are frozen against that reference with
 falsifiers and a six-quarter horizon. The instrument is calibrated. The data
 will decide.
 

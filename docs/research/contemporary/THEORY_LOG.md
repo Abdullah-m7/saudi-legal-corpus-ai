@@ -372,3 +372,48 @@ staleness firing in 15 of 15 pseudo-events with no legal event at all:
 **a frozen retrieval snapshot ages on a clock, not on events.** Any proposal to
 use a legal signal as an early refresh warning has to beat a clock, and the
 candidate was put on HOLD for exactly that reason.
+
+---
+
+## T8 · Statute, then doctrine, then wording
+
+**HYPOTHESIS.** An ordinary Saudi legal transition runs in a sequence:
+statutory visibility and the non-statutory ecology at the effective quarter,
+the doctrinal companion two quarters later, the authority-adjacent recurring
+formula last. Observed in the Law of Evidence and the Civil Transactions Law,
+with the companion at exactly +2 in both, and recorded as the ordinary-
+transition reference against which a future AI-linked transition would be
+compared.
+
+**TEST.** Read the commencement out of the enacted texts instead of off the
+first citation. Both laws state their own rule — «يعمل بهذا النظام بعد (مائة
+وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية» — so with the decree date and
+the gazette publication date the effective quarter is computable. Then re-run
+the identical battery.
+
+**WHAT FAILED.** Era 1's clocks were early: the Law of Evidence by three
+quarters, the Civil Transactions Law by one. At the verified clocks the
+ordering is `NO_DOCTRINE` for the first — its doctrinal companion and its
+operational core had **already crossed before the law took effect** — and
+`SIMULTANEOUS` for the second, where every measurable layer arrives in the same
+quarter. The +2 companion latency does not reproduce.
+`S_D_F_DOES_NOT_SURVIVE_THE_CLOCK_CORRECTION`.
+
+And the mechanism is ordinary. Start a clock before a law can be applied and a
+layer's *first* crossing is read off a citation series climbing from zero.
+Layers needing more material to register — a repeated companion, a recurring
+formula — necessarily register later than a first citation does. **The staging
+was that growth curve, not an ordering between layers.**
+
+**WHAT SURVIVED.** Nothing about order. What survives is a statement about
+speed: both laws are visible in the court's voice in the first mature quarter
+at or after commencement. Era 1's numbers are untouched and stay frozen; what
+is withdrawn is the reading placed on them, and the ordinary-transition
+reference an AI comparator was to be built on now has **no stable dimension at
+all** — `NOT_YET_CONSTRUCTIBLE`.
+
+**AND ONE THING THE CLOCK LAYER FOUND ON ITS OWN.** Across 25 instruments with
+both a clock and corpus use, the median gap between first court citation and
+legal effective date is **28 quarters**. Corpus arrival is not a proxy for
+legal commencement and never was; for most instruments it is the quarter a
+1442-onwards commercial corpus first happened to cite a law from the 1420s.

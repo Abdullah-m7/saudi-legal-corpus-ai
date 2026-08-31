@@ -1172,5 +1172,132 @@
    ]
   },
   "creditRule": "every event here is BACKFILLED_CALIBRATION. None may ever be reported as foresight."
+ },
+ "clockRelease": {
+  "what": "LEGAL CLOCK LAYER and CALIBRATION ERA 2. Commencement dates read out of enacted texts, and the transition battery re-run from them.",
+  "clockCorrection": {
+   "evidence_law": {
+    "era1_T0": "1443Q1",
+    "era2_T0": "1443Q4",
+    "quartersEarly": 3,
+    "era1Source": "signal registry observable_in_courts_from, itself read off the first citation",
+    "era2Source": "enacted article 129 plus the gazette publication date"
+   },
+   "civil_transactions_law": {
+    "era1_T0": "1445Q1",
+    "era2_T0": "1445Q2",
+    "quartersEarly": 1,
+    "era1Source": "same",
+    "era2Source": "enacted article 721 plus the gazette publication date"
+   },
+   "consequence": "an outcome-derived clock does not merely shift a latency. It manufactured a mature post-quarter for the Civil Transactions Law that its real clock does not have, which is why that event passes the Era 1 gate and fails the Era 2 one."
+  },
+  "TRANSITION_BET_001": {
+   "status": "REFUSED",
+   "gate": "STRENGTHENED, never lowered",
+   "conditions": {
+    "atLeastFourQualifiedTransitions": false,
+    "statutePrecedesRepeatedCompanionInAll": false,
+    "noClockDerivedFromOutcome": true,
+    "publicationHealthDisclosed": true,
+    "leaveOneOutDoesNotContradict": false,
+    "formulaOrderingLabelledSecondary": true
+   },
+   "whyRefused": [
+    "1 transition qualifies under the promotion gate, not four. The gate was fixed before the clocks were read and is not lowered to reach a quota.",
+    "the Civil Transactions Law FAILED the gate only because its verified clock is one quarter later than the clock Era 1 used, which cost it a mature post-quarter. That is the cost of an outcome-derived clock, measured.",
+    "leave-one-transition-out is NOT RUNNABLE below four events, so one of the strengthened conditions cannot even be evaluated",
+    "the candidate remains TRUE everywhere it can be checked, and being true is not the same as being earned"
+   ],
+   "whatWouldEarnIt": "four qualified transitions with C3 or better clocks and a runnable leave-one-out. On present evidence that requires future laws, not more date collection: the window contains no further in-window commencement with the support to read eight layers.",
+   "note": "the candidate is TRUE everywhere it can be checked and is refused for the second time. One qualified transition, and leave-one-transition-out is not even runnable."
+  },
+  "withdrawnFromTheTransitionRelease": {
+   "claim": "ordinary legal transitions run STATUTE -> DOCTRINE -> FORMULA",
+   "status": "WITHDRAWN",
+   "verdict": "S_D_F_DOES_NOT_SURVIVE_THE_CLOCK_CORRECTION",
+   "why": "Era 1 started both clocks before the law could be applied -- three quarters early for the Law of Evidence, one for the Civil Transactions Law. A layer's FIRST crossing is then read off a citation series climbing from zero, and layers that need more material to register -- a repeated companion, a recurring formula -- necessarily register later than a first citation does. The apparent S->D->F staging is that growth curve, not an ordering between layers. Move the clock to the law's actual commencement and the staging collapses: the Civil Transactions Law shows every measurable layer crossing in the SAME quarter, and the Law of Evidence has its companion and its operational core ALREADY crossed before the law took effect at all.",
+   "era1NotRewritten": "transitionRelease and frozen/three_layer_baseline.json keep their numbers exactly. What is withdrawn is the reading placed on them."
+  },
+  "falsification": {
+   "medianArrivalMinusEffectiveQuarters": 28,
+   "instruments": 25,
+   "reading": "corpus arrival sits a median of 28 quarters after legal commencement. An event clock read off the first citation would have been wrong by years for most instruments."
+  },
+  "uptakeClockV2": {
+   "version": "UPTAKE_CLOCK_V2",
+   "supersedes": "nothing. horizon_results.json phase6_newLawMonitor measures FIRST_OBSERVED -> TOP50 and is left exactly as it is; this measures from the legal effective date and is a different quantity.",
+   "eligibility": "clock quality C3 or C4 and a legally meaningful event type. Bounded quarters are excluded: a latency measured from a bound is a bound, not a latency.",
+   "rows": [
+    {
+     "instrument": "evidence_law",
+     "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+     "effectiveQuarter": "1443Q4",
+     "courtCitations": 9993,
+     "effectiveToFirstCourt": -3,
+     "effectiveToFirstParty": 1,
+     "effectiveToSustainedCourt": 0,
+     "effectiveToTop100": -3,
+     "effectiveToTop50": -3
+    },
+    {
+     "instrument": "civil_transactions_law",
+     "clock_quality": "C3_EXACT_EFFECTIVE_DATE",
+     "effectiveQuarter": "1445Q2",
+     "courtCitations": 486,
+     "effectiveToFirstCourt": -1,
+     "effectiveToFirstParty": -1,
+     "effectiveToSustainedCourt": 3,
+     "effectiveToTop100": 2,
+     "effectiveToTop50": 2
+    },
+    {
+     "instrument": "electricity_law",
+     "clock_quality": "C4_EXACT_EFFECTIVE_AND_PUBLICATION",
+     "effectiveQuarter": "1442Q4",
+     "courtCitations": 1,
+     "effectiveToFirstCourt": 8,
+     "effectiveToFirstParty": null,
+     "effectiveToSustainedCourt": null,
+     "effectiveToTop100": null,
+     "effectiveToTop50": null
+    }
+   ],
+   "n": 3,
+   "warning": "with this few rows no median is a distribution. The values are listed per instrument and not summarised into a band."
+  },
+  "incidence": {
+   "eligible": 43,
+   "eligibilityRule": "a clock at C2 or better with a computed or bounded effective quarter, and at least three mature quarters after it",
+   "everCitedByACourt": {
+    "n": 36,
+    "share": 0.8372
+   },
+   "everCitedByAParty": {
+    "n": 29,
+    "share": 0.6744
+   },
+   "reachedTop100": {
+    "n": 14,
+    "share": 0.3256
+   },
+   "reachedTop50": {
+    "n": 8,
+    "share": 0.186
+   },
+   "atLeast150CourtCitations": {
+    "n": 6,
+    "share": 0.1395
+   },
+   "silentCount": 7,
+   "phase28_negativeLegalEvents": {
+    "what": "instruments with a valid clock and no later judicial visibility. A better negative control than an arbitrary pseudo-date, because the legal event is real and the corpus response is absent.",
+    "class": "NO_OBSERVABLE_UPTAKE_WITHIN_HORIZON",
+    "n": 7,
+    "disclosure": "failure to appear in this corpus does NOT mean a law is unused nationally. It means no observable uptake in this published commercial adjudication corpus."
+   },
+   "note": "the denominator is dominated by old laws whose commencement predates the window, so these are base rates for VISIBILITY in a commercial corpus, not for uptake after a new law."
+  },
+  "creditRule": "every clock is BACKFILLED: recorded after the commencement it describes. A clock may calibrate a method; it is never foresight."
  }
 }
