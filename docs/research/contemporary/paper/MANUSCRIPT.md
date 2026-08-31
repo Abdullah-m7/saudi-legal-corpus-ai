@@ -356,6 +356,23 @@ of 12, engaged the party's own article in 2, and 2 were mooted. In one of the
 two engagements the court adopted the party's article in a citation form our
 extractor under-reads, so measured engagement is a lower bound.
 
+One reading of the intra-code divergence would deflate it: perhaps the two
+sides are reaching for functionally different parts of the same code, so that
+"same code, different article" is really a difference in the kind of law each
+voice invokes. Classifying the 126 most-cited articles by whether they run the
+adjudicative process or help resolve the dispute lets that be tested, and it
+does not hold. Among the 938 judgments in which both voices cite the same
+instrument, the largest transition by a wide margin is a party's institutional
+article to the court's institutional article at a **different** provision —
+427 judgments, against 66 where the function changes from the party's
+institutional to the court's dispute-deciding and 26 the other way. The two
+sides are, in the main, reading the same procedural chapter and citing
+different sections of it. The same holds inside a single code: the bench cites
+art. 29 of the Evidence Law in 1,618 judgments of 1445-1446 and a litigant
+cites it in 97, and the two coincide in 2.4 per cent of the bench's. The
+divergence is not an artefact of comparing across statute books, and it is not
+explained by the two voices carrying different functional layers of the law.
+
 ## VIII. Implications
 
 **A. Empirical legal measurement.** Whole-document citation counts mix

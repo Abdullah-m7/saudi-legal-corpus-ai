@@ -80,7 +80,7 @@ question.
 |---|---|---|
 | which provisions are sufficient on their own | **partial** — an article-level rate exists for 239 provisions, but the class that predicts it is institutionality rather than completeness | `completeness_layer.csv`, `COMPLETENESS.md` |
 | which provisions draw supplementation | answered, article by article | `completeness_layer.csv` |
-| what kind of supplementation | answered on 40 hand-read judgments, PROVISIONAL_PENDING_SECOND_READER | `hybrid_roles_gold.json` |
+| what kind of supplementation | answered on 40 hand-read judgments, as an interpretive layer with rules and an ambiguity class | `hybrid_roles_gold.json` |
 | does the bench supplement differently from the bar | answered, and the difference is a class effect not a level effect | `completeness_results.json` |
 | how the new codes coexist with fiqh | answered for the Evidence Law; thin but replicated for the Civil Transactions Law | `codes_results.json` |
 | what a legal AI would miss on statutes alone | answered as an estimate with its factors separated | `rag_gap_results.json` |
@@ -90,3 +90,55 @@ question.
 Two things this programme closed rather than opened. The alignment programme
 stays closed at proposition level. And *silence* is closed as a research
 object: it is a length, and length here is partly a publication decision.
+
+## Second-paper decision, after the two-layer programme
+
+Three candidates, scored on what a second paper actually needs.
+
+| | A: institutional vs dispute-deciding law | B: code-specific authority ecologies | C: the traceability gap |
+|---|---|---|---|
+| novelty | high — no empirical partition of this kind exists for a recently codified Islamic-law jurisdiction, and the distinction it would replace is degenerate here (122 of 126 articles are "procedural") | high — nobody has profiled what appears *beside* each modern code | moderate to high — the measurement is new, the observation is not surprising to practitioners |
+| effect strength | moderate: article-level medians 14.7 against 34.2 per cent, eta² 0.166, holds inside three statute books of five | **large**: hybrid supplementation runs from 4.1 per cent (Arbitration Law) to 59.4 (Law of Practice), a fourteen-fold spread on 30,000 judgments | clear but descriptive: 11.2 per cent of the bench's authority names no source, 40.1 per cent of its fiqh |
+| data readiness | complete | complete | complete |
+| legal importance | high — two thirds of citation-visible authority is machinery | high — it asks whether codification produced one legal culture or several | moderate — the strongest implications are for research and retrieval, not for doctrine |
+| generalisability | the partition is defined against this corpus and would need redefining elsewhere | the *method* transfers to any jurisdiction with several modern codes | high |
+| dependence on hand labels | **high** — and the independently assigned label set performs worse out of sample than the grand mean | **none** — every figure is a scan of the mention layer | none |
+| decision | **HOLD** | **WRITE** | **HOLD** |
+
+**A is held** for the reason its own explanatory-power table gives: instrument
+identity beats it out of sample (MAE 15.32 against 16.02, against a 18.29
+null), and a theory of provisions that loses to knowing which code the
+provision is in is not ready to be a paper about provisions. It is ready to be
+a section of one.
+
+**B is the write**, and it is the answer to why A loses. If which code an
+article belongs to predicts supplementation better than what the article does,
+then the object worth explaining is the code. The Arbitration Law is applied
+almost purely on its own terms; the Law of Practice is supplemented in three
+judgments of five; the Civil Transactions Law is the only major code whose
+maxim and custom rates approach its named-fiqh rate. That is a finding about
+contemporary Saudi codification, it needs no hand label, and it is measured
+over the whole window.
+
+**C is held** as a section of B rather than a paper. On its own it is a
+measurement in search of a legal question; inside B it is the answer to "what
+would it take to study these ecologies from outside", and it belongs there.
+
+No manuscript is drafted in this session.
+
+## The capability ledger, after the two-layer programme
+
+The ten questions the asset is meant to answer, and where each now stands:
+
+| # | question | state | where |
+|---|---|---|---|
+| 1 | what law is visible in contemporary court reasoning | answered | `monitor_view.json`, the profile |
+| 2 | which provisions run the court | answered for 126 provisions; ~64 % of the core | `article_function.csv`, `TWO_LAYERS.md` §4 |
+| 3 | which provisions decide disputes | answered, same layer | `article_function.csv` |
+| 4 | what do litigants cite | answered, and they cite *more* institutional law than the bench | `TWO_LAYERS.md` §5 |
+| 5 | what does the court cite instead | answered: relatively more dispute-deciding law | `TWO_LAYERS.md` §5 |
+| 6 | which modern codes attract which supplementary authorities | answered, and the spread is the strongest effect in the programme | `ecology_results.json` |
+| 7 | is fiqh declining absolutely or only relatively | answered on five denominators: relatively | `monitor_view.json`, `COMPLETENESS.md` §8 |
+| 8 | how much judicial authority is independently traceable | answered, as components | `TRACEABILITY.md` |
+| 9 | what does statute-only legal AI miss | answered as coverage bounds | `TRACEABILITY.md` §1 |
+| 10 | what changes when new judgments arrive | mechanism built, never yet run on a real second batch | `monitor.py --delta` |

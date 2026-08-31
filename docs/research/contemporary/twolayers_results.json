@@ -1,0 +1,822 @@
+{
+ "nArticles": 126,
+ "agreementWithRuleLabels": {
+  "n": 126,
+  "agree": 63,
+  "pct": 50.0,
+  "note": "48 of the rule labels are AMBIGUOUS because function.py returned 'other'; the rule map cannot place those at all. Where it can, the two label sets agree far more often.",
+  "nRuleDecisive": 78,
+  "agreeWhereRuleDecisive": 62,
+  "pctWhereRuleDecisive": 79.5,
+  "confusion": {
+   "hand=INSTITUTIONAL_OPERATION | rule=INSTITUTIONAL_OPERATION": 37,
+   "hand=INSTITUTIONAL_OPERATION | rule=AMBIGUOUS": 33,
+   "hand=DISPUTE_DECISION | rule=DISPUTE_DECISION": 23,
+   "hand=INSTITUTIONAL_OPERATION | rule=DISPUTE_DECISION": 7,
+   "hand=DISPUTE_DECISION | rule=AMBIGUOUS": 7,
+   "hand=MIXED | rule=AMBIGUOUS": 7,
+   "hand=MIXED | rule=DISPUTE_DECISION": 2,
+   "hand=DISPUTE_DECISION | rule=INSTITUTIONAL_OPERATION": 2,
+   "hand=MIXED | rule=INSTITUTIONAL_OPERATION": 2,
+   "hand=DISPUTE_DECISION | rule=MIXED": 2,
+   "hand=MIXED | rule=MIXED": 2,
+   "hand=AMBIGUOUS | rule=AMBIGUOUS": 1,
+   "hand=INSTITUTIONAL_OPERATION | rule=MIXED": 1
+  }
+ },
+ "byClass": {
+  "INSTITUTIONAL_OPERATION": {
+   "articles": 78,
+   "judgments": 27398,
+   "pooledPct": 32.1,
+   "pooledCI": [
+    31.5,
+    32.7
+   ],
+   "medianPct": 14.7,
+   "p25": 4.3,
+   "p75": 34.8
+  },
+  "DISPUTE_DECISION": {
+   "articles": 34,
+   "judgments": 10160,
+   "pooledPct": 41.4,
+   "pooledCI": [
+    40.4,
+    42.3
+   ],
+   "medianPct": 34.2,
+   "p25": 23.4,
+   "p75": 41.7
+  },
+  "MIXED": {
+   "articles": 13,
+   "judgments": 3264,
+   "pooledPct": 55.1,
+   "pooledCI": [
+    53.4,
+    56.8
+   ],
+   "medianPct": 47.2,
+   "p25": 23.2,
+   "p75": 65.0
+  },
+  "AMBIGUOUS": {
+   "articles": 1,
+   "judgments": 65,
+   "pooledPct": 13.8,
+   "pooledCI": [
+    7.5,
+    24.3
+   ],
+   "medianPct": 13.8,
+   "p25": null,
+   "p75": null
+  }
+ },
+ "byClassRuleLabels": {
+  "INSTITUTIONAL_OPERATION": {
+   "articles": 41,
+   "judgments": 24171,
+   "pooledPct": 35.2,
+   "pooledCI": [
+    34.6,
+    35.8
+   ],
+   "medianPct": 18.6,
+   "p25": 6.2,
+   "p75": 33.1
+  },
+  "DISPUTE_DECISION": {
+   "articles": 32,
+   "judgments": 7873,
+   "pooledPct": 35.7,
+   "pooledCI": [
+    34.6,
+    36.7
+   ],
+   "medianPct": 34.2,
+   "p25": 4.7,
+   "p75": 39.6
+  },
+  "MIXED": {
+   "articles": 5,
+   "judgments": 2067,
+   "pooledPct": 44.3,
+   "pooledCI": [
+    42.2,
+    46.5
+   ],
+   "medianPct": 40.6,
+   "p25": 15.8,
+   "p75": 51.6
+  },
+  "AMBIGUOUS": {
+   "articles": 48,
+   "judgments": 6776,
+   "pooledPct": 38.1,
+   "pooledCI": [
+    36.9,
+    39.2
+   ],
+   "medianPct": 27.0,
+   "p25": 5.0,
+   "p75": 46.0
+  }
+ },
+ "byClassUnambiguous": {
+  "INSTITUTIONAL_OPERATION": {
+   "articles": 74,
+   "judgments": 21932,
+   "pooledPct": 29.1,
+   "pooledCI": [
+    28.5,
+    29.7
+   ],
+   "medianPct": 13.6,
+   "p25": 4.3,
+   "p75": 34.1
+  },
+  "DISPUTE_DECISION": {
+   "articles": 30,
+   "judgments": 8486,
+   "pooledPct": 37.9,
+   "pooledCI": [
+    36.9,
+    39.0
+   ],
+   "medianPct": 34.6,
+   "p25": 27.5,
+   "p75": 41.7
+  },
+  "MIXED": {
+   "articles": 12,
+   "judgments": 3231,
+   "pooledPct": 55.5,
+   "pooledCI": [
+    53.7,
+    57.2
+   ],
+   "medianPct": 49.4,
+   "p25": 27.3,
+   "p75": 68.7
+  }
+ },
+ "shapeAndAuthorityByClass": {
+  "INSTITUTIONAL_OPERATION": {
+   "judgments": 27398,
+   "statute_only": 67.9,
+   "hybrid": 32.1,
+   "named_fiqh": 20.6,
+   "maxim": 2.4,
+   "scripture": 10.9,
+   "judicial_principle": 3.8,
+   "custom": 2.8
+  },
+  "DISPUTE_DECISION": {
+   "judgments": 10160,
+   "statute_only": 58.6,
+   "hybrid": 41.4,
+   "named_fiqh": 27.3,
+   "maxim": 2.8,
+   "scripture": 13.2,
+   "judicial_principle": 6.4,
+   "custom": 3.1
+  },
+  "MIXED": {
+   "judgments": 3264,
+   "statute_only": 44.9,
+   "hybrid": 55.1,
+   "named_fiqh": 18.6,
+   "maxim": 3.7,
+   "scripture": 24.3,
+   "judicial_principle": 17.7,
+   "custom": 5.2
+  },
+  "AMBIGUOUS": {
+   "judgments": 65,
+   "statute_only": 86.2,
+   "hybrid": 13.8,
+   "named_fiqh": 13.8,
+   "maxim": 0.0,
+   "scripture": 1.5,
+   "judicial_principle": 0.0,
+   "custom": 0.0
+  }
+ },
+ "withinInstrument": {
+  "arbitration_law": {
+   "nArticles": 8,
+   "hand": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 5,
+     "judgments": 388,
+     "pooledPct": 3.9,
+     "pooledCI": [
+      2.4,
+      6.3
+     ],
+     "medianPct": 2.7,
+     "p25": 0.0,
+     "p75": 6.7
+    },
+    "DISPUTE_DECISION": {
+     "articles": 3,
+     "judgments": 130,
+     "pooledPct": 5.4,
+     "pooledCI": [
+      2.6,
+      10.7
+     ],
+     "medianPct": 0.0,
+     "p25": null,
+     "p75": null
+    }
+   },
+   "rule": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 2,
+     "judgments": 260,
+     "pooledPct": 4.6,
+     "pooledCI": [
+      2.7,
+      7.9
+     ],
+     "medianPct": 6.0,
+     "p25": null,
+     "p75": null
+    },
+    "DISPUTE_DECISION": {
+     "articles": 6,
+     "judgments": 258,
+     "pooledPct": 3.9,
+     "pooledCI": [
+      2.1,
+      7.0
+     ],
+     "medianPct": 0.0,
+     "p25": 0.0,
+     "p75": 6.5
+    }
+   }
+  },
+  "commercial_courts_implementing_regulation": {
+   "nArticles": 34,
+   "hand": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 29,
+     "judgments": 3089,
+     "pooledPct": 12.6,
+     "pooledCI": [
+      11.5,
+      13.8
+     ],
+     "medianPct": 6.5,
+     "p25": 3.9,
+     "p75": 20.7
+    },
+    "DISPUTE_DECISION": {
+     "articles": 2,
+     "judgments": 1439,
+     "pooledPct": 64.5,
+     "pooledCI": [
+      62.0,
+      66.9
+     ],
+     "medianPct": 33.3,
+     "p25": null,
+     "p75": null
+    },
+    "MIXED": {
+     "articles": 3,
+     "judgments": 626,
+     "pooledPct": 73.8,
+     "pooledCI": [
+      70.2,
+      77.1
+     ],
+     "medianPct": 72.3,
+     "p25": null,
+     "p75": null
+    }
+   },
+   "rule": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 14,
+     "judgments": 2532,
+     "pooledPct": 45.7,
+     "pooledCI": [
+      43.7,
+      47.6
+     ],
+     "medianPct": 16.9,
+     "p25": 6.2,
+     "p75": 33.9
+    },
+    "DISPUTE_DECISION": {
+     "articles": 2,
+     "judgments": 149,
+     "pooledPct": 24.8,
+     "pooledCI": [
+      18.6,
+      32.3
+     ],
+     "medianPct": 25.6,
+     "p25": null,
+     "p75": null
+    },
+    "AMBIGUOUS": {
+     "articles": 18,
+     "judgments": 2473,
+     "pooledPct": 23.7,
+     "pooledCI": [
+      22.1,
+      25.5
+     ],
+     "medianPct": 5.3,
+     "p25": 2.6,
+     "p75": 23.8
+    }
+   }
+  },
+  "commercial_courts_law": {
+   "nArticles": 26,
+   "hand": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 22,
+     "judgments": 19161,
+     "pooledPct": 37.7,
+     "pooledCI": [
+      37.1,
+      38.4
+     ],
+     "medianPct": 30.5,
+     "p25": 12.7,
+     "p75": 41.9
+    },
+    "DISPUTE_DECISION": {
+     "articles": 2,
+     "judgments": 474,
+     "pooledPct": 48.7,
+     "pooledCI": [
+      44.3,
+      53.2
+     ],
+     "medianPct": 45.4,
+     "p25": null,
+     "p75": null
+    },
+    "MIXED": {
+     "articles": 2,
+     "judgments": 356,
+     "pooledPct": 79.5,
+     "pooledCI": [
+      75.0,
+      83.4
+     ],
+     "medianPct": 54.1,
+     "p25": null,
+     "p75": null
+    }
+   },
+   "rule": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 16,
+     "judgments": 18524,
+     "pooledPct": 37.9,
+     "pooledCI": [
+      37.2,
+      38.6
+     ],
+     "medianPct": 27.6,
+     "p25": 22.5,
+     "p75": 41.5
+    },
+    "DISPUTE_DECISION": {
+     "articles": 1,
+     "judgments": 92,
+     "pooledPct": 2.2,
+     "pooledCI": [
+      0.6,
+      7.6
+     ],
+     "medianPct": 2.2,
+     "p25": null,
+     "p75": null
+    },
+    "AMBIGUOUS": {
+     "articles": 9,
+     "judgments": 1375,
+     "pooledPct": 53.2,
+     "pooledCI": [
+      50.5,
+      55.8
+     ],
+     "medianPct": 37.0,
+     "p25": 15.8,
+     "p75": 57.7
+    }
+   }
+  },
+  "evidence_law": {
+   "nArticles": 27,
+   "hand": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 5,
+     "judgments": 1013,
+     "pooledPct": 53.8,
+     "pooledCI": [
+      50.7,
+      56.9
+     ],
+     "medianPct": 45.9,
+     "p25": 38.0,
+     "p75": 60.2
+    },
+    "DISPUTE_DECISION": {
+     "articles": 18,
+     "judgments": 7367,
+     "pooledPct": 37.1,
+     "pooledCI": [
+      36.0,
+      38.2
+     ],
+     "medianPct": 36.4,
+     "p25": 31.6,
+     "p75": 40.1
+    },
+    "MIXED": {
+     "articles": 4,
+     "judgments": 1132,
+     "pooledPct": 45.3,
+     "pooledCI": [
+      42.4,
+      48.2
+     ],
+     "medianPct": 48.5,
+     "p25": 29.5,
+     "p75": 54.4
+    }
+   },
+   "rule": {
+    "DISPUTE_DECISION": {
+     "articles": 18,
+     "judgments": 7080,
+     "pooledPct": 37.2,
+     "pooledCI": [
+      36.1,
+      38.3
+     ],
+     "medianPct": 37.7,
+     "p25": 33.3,
+     "p75": 41.2
+    },
+    "MIXED": {
+     "articles": 2,
+     "judgments": 1259,
+     "pooledPct": 44.6,
+     "pooledCI": [
+      41.8,
+      47.3
+     ],
+     "medianPct": 43.0,
+     "p25": null,
+     "p75": null
+    },
+    "AMBIGUOUS": {
+     "articles": 7,
+     "judgments": 1173,
+     "pooledPct": 50.6,
+     "pooledCI": [
+      47.8,
+      53.5
+     ],
+     "medianPct": 45.9,
+     "p25": 31.9,
+     "p75": 55.3
+    }
+   }
+  },
+  "sharia_procedure_law": {
+   "nArticles": 25,
+   "hand": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 17,
+     "judgments": 3747,
+     "pooledPct": 16.4,
+     "pooledCI": [
+      15.2,
+      17.6
+     ],
+     "medianPct": 11.4,
+     "p25": 4.0,
+     "p75": 34.4
+    },
+    "DISPUTE_DECISION": {
+     "articles": 3,
+     "judgments": 145,
+     "pooledPct": 33.1,
+     "pooledCI": [
+      26.0,
+      41.1
+     ],
+     "medianPct": 25.6,
+     "p25": null,
+     "p75": null
+    },
+    "MIXED": {
+     "articles": 4,
+     "judgments": 1150,
+     "pooledPct": 47.1,
+     "pooledCI": [
+      44.3,
+      50.0
+     ],
+     "medianPct": 26.3,
+     "p25": 4.5,
+     "p75": 53.9
+    },
+    "AMBIGUOUS": {
+     "articles": 1,
+     "judgments": 65,
+     "pooledPct": 13.8,
+     "pooledCI": [
+      7.5,
+      24.3
+     ],
+     "medianPct": 13.8,
+     "p25": null,
+     "p75": null
+    }
+   },
+   "rule": {
+    "INSTITUTIONAL_OPERATION": {
+     "articles": 9,
+     "judgments": 2855,
+     "pooledPct": 11.4,
+     "pooledCI": [
+      10.3,
+      12.6
+     ],
+     "medianPct": 9.1,
+     "p25": 4.0,
+     "p75": 10.8
+    },
+    "DISPUTE_DECISION": {
+     "articles": 2,
+     "judgments": 150,
+     "pooledPct": 68.7,
+     "pooledCI": [
+      60.9,
+      75.5
+     ],
+     "medianPct": 68.3,
+     "p25": null,
+     "p75": null
+    },
+    "MIXED": {
+     "articles": 3,
+     "judgments": 808,
+     "pooledPct": 43.9,
+     "pooledCI": [
+      40.6,
+      47.4
+     ],
+     "medianPct": 16.5,
+     "p25": null,
+     "p75": null
+    },
+    "AMBIGUOUS": {
+     "articles": 11,
+     "judgments": 1294,
+     "pooledPct": 33.2,
+     "pooledCI": [
+      30.6,
+      35.8
+     ],
+     "medianPct": 25.6,
+     "p25": 2.9,
+     "p75": 37.8
+    }
+   }
+  }
+ },
+ "coreAnatomy": {
+  "top10": {
+   "citingJudgments": 23728,
+   "unlabelledPct": 0.0,
+   "INSTITUTIONAL_OPERATION": 68.2,
+   "DISPUTE_DECISION": 27.4,
+   "MIXED": 4.3,
+   "AMBIGUOUS": 0.0,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 35.5,
+    "service_notice": 21.9,
+    "standing_capacity": 5.7,
+    "appeal_finality": 5.2
+   }
+  },
+  "top25": {
+   "citingJudgments": 29038,
+   "unlabelledPct": 0.0,
+   "INSTITUTIONAL_OPERATION": 66.4,
+   "DISPUTE_DECISION": 24.7,
+   "MIXED": 8.9,
+   "AMBIGUOUS": 0.0,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 30.5,
+    "service_notice": 18.9,
+    "appeal_finality": 6.7,
+    "standing_capacity": 4.6,
+    "other": 4.0,
+    "definitions": 1.6
+   }
+  },
+  "top50": {
+   "citingJudgments": 32939,
+   "unlabelledPct": 0.4,
+   "INSTITUTIONAL_OPERATION": 63.6,
+   "DISPUTE_DECISION": 27.5,
+   "MIXED": 8.5,
+   "AMBIGUOUS": 0.0,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 27.4,
+    "service_notice": 16.7,
+    "appeal_finality": 6.5,
+    "other": 5.3,
+    "standing_capacity": 4.1,
+    "definitions": 1.4,
+    "procedural_bar": 0.6,
+    "attendance_default": 0.6,
+    "case_management": 0.5,
+    "proof_rules": 0.4
+   }
+  },
+  "top100": {
+   "citingJudgments": 36428,
+   "unlabelledPct": 2.0,
+   "INSTITUTIONAL_OPERATION": 63.9,
+   "DISPUTE_DECISION": 26.1,
+   "MIXED": 7.8,
+   "AMBIGUOUS": 0.1,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 25.3,
+    "service_notice": 15.1,
+    "other": 7.6,
+    "appeal_finality": 6.3,
+    "standing_capacity": 3.7,
+    "case_management": 2.1,
+    "definitions": 1.3,
+    "procedural_bar": 0.8,
+    "proof_rules": 0.7,
+    "attendance_default": 0.5,
+    "enforcement": 0.2,
+    "arbitration": 0.2
+   }
+  }
+ },
+ "coreAnatomyNote": "citation-visible legal authority, not time spent and not importance. An article is counted once per judgment that cites it. The institutional subtypes come from function.py's thirteen functions, which are descriptive only and were never validated at function level; 'other' is where that classifier declined to place the article.",
+ "courtVsParty": {
+  "court": {
+   "citationsToLabelledArticles": 40887,
+   "INSTITUTIONAL_OPERATION": 67.0,
+   "DISPUTE_DECISION": 24.8,
+   "MIXED": 8.0,
+   "AMBIGUOUS": 0.2
+  },
+  "party": {
+   "citationsToLabelledArticles": 2879,
+   "INSTITUTIONAL_OPERATION": 77.0,
+   "DISPUTE_DECISION": 18.4,
+   "MIXED": 4.3,
+   "AMBIGUOUS": 0.3
+  },
+  "wide": {
+   "citationsToLabelledArticles": 13489,
+   "INSTITUTIONAL_OPERATION": 88.3,
+   "DISPUTE_DECISION": 8.5,
+   "MIXED": 3.0,
+   "AMBIGUOUS": 0.1
+  }
+ },
+ "transitions": {
+  "party": {
+   "judgmentsSharingAnInstrument": 938,
+   "table": {
+    "party=INSTITUTIONAL_OPERATION -> court=INSTITUTIONAL_OPERATION [different articles]": 427,
+    "party=INSTITUTIONAL_OPERATION -> court=INSTITUTIONAL_OPERATION [same article present]": 297,
+    "party=DISPUTE_DECISION -> court=DISPUTE_DECISION [same article present]": 88,
+    "party=INSTITUTIONAL_OPERATION -> court=DISPUTE_DECISION [different articles]": 66,
+    "party=DISPUTE_DECISION -> court=DISPUTE_DECISION [different articles]": 47,
+    "party=DISPUTE_DECISION -> court=INSTITUTIONAL_OPERATION [different articles]": 26,
+    "party=DISPUTE_DECISION -> court=INSTITUTIONAL_OPERATION [same article present]": 21,
+    "party=INSTITUTIONAL_OPERATION -> court=MIXED [different articles]": 16,
+    "party=DISPUTE_DECISION -> court=MIXED [different articles]": 10,
+    "party=MIXED -> court=INSTITUTIONAL_OPERATION [different articles]": 9,
+    "party=MIXED -> court=DISPUTE_DECISION [different articles]": 7,
+    "party=MIXED -> court=MIXED [same article present]": 6,
+    "party=INSTITUTIONAL_OPERATION -> court=DISPUTE_DECISION [same article present]": 4,
+    "party=INSTITUTIONAL_OPERATION -> court=MIXED [same article present]": 3,
+    "party=MIXED -> court=DISPUTE_DECISION [same article present]": 2,
+    "party=MIXED -> court=INSTITUTIONAL_OPERATION [same article present]": 2,
+    "party=INSTITUTIONAL_OPERATION -> court=AMBIGUOUS [different articles]": 2,
+    "party=AMBIGUOUS -> court=INSTITUTIONAL_OPERATION [different articles]": 1,
+    "party=INSTITUTIONAL_OPERATION -> court=AMBIGUOUS [same article present]": 1,
+    "party=DISPUTE_DECISION -> court=MIXED [same article present]": 1
+   }
+  },
+  "wide": {
+   "judgmentsSharingAnInstrument": 3994,
+   "table": {
+    "party=INSTITUTIONAL_OPERATION -> court=INSTITUTIONAL_OPERATION [same article present]": 1790,
+    "party=INSTITUTIONAL_OPERATION -> court=INSTITUTIONAL_OPERATION [different articles]": 1641,
+    "party=INSTITUTIONAL_OPERATION -> court=DISPUTE_DECISION [different articles]": 390,
+    "party=DISPUTE_DECISION -> court=DISPUTE_DECISION [same article present]": 228,
+    "party=INSTITUTIONAL_OPERATION -> court=MIXED [different articles]": 183,
+    "party=DISPUTE_DECISION -> court=DISPUTE_DECISION [different articles]": 100,
+    "party=MIXED -> court=INSTITUTIONAL_OPERATION [different articles]": 59,
+    "party=DISPUTE_DECISION -> court=INSTITUTIONAL_OPERATION [different articles]": 54,
+    "party=DISPUTE_DECISION -> court=INSTITUTIONAL_OPERATION [same article present]": 50,
+    "party=INSTITUTIONAL_OPERATION -> court=DISPUTE_DECISION [same article present]": 38,
+    "party=MIXED -> court=MIXED [same article present]": 34,
+    "party=MIXED -> court=DISPUTE_DECISION [different articles]": 27,
+    "party=MIXED -> court=INSTITUTIONAL_OPERATION [same article present]": 22,
+    "party=DISPUTE_DECISION -> court=MIXED [different articles]": 18,
+    "party=INSTITUTIONAL_OPERATION -> court=MIXED [same article present]": 14,
+    "party=MIXED -> court=DISPUTE_DECISION [same article present]": 5,
+    "party=MIXED -> court=MIXED [different articles]": 4,
+    "party=DISPUTE_DECISION -> court=MIXED [same article present]": 3,
+    "party=INSTITUTIONAL_OPERATION -> court=AMBIGUOUS [different articles]": 2,
+    "party=AMBIGUOUS -> court=AMBIGUOUS [same article present]": 1,
+    "party=AMBIGUOUS -> court=INSTITUTIONAL_OPERATION [different articles]": 1,
+    "party=INSTITUTIONAL_OPERATION -> court=AMBIGUOUS [same article present]": 1,
+    "party=AMBIGUOUS -> court=INSTITUTIONAL_OPERATION [same article present]": 1,
+    "party=AMBIGUOUS -> court=MIXED [different articles]": 1
+   }
+  }
+ },
+ "confusionWithProcedural": {
+  "articlesWithAProceduralFlag": 126,
+  "table": {
+   "AMBIGUOUS | procedural": 1,
+   "DISPUTE_DECISION | procedural": 30,
+   "DISPUTE_DECISION | substantive": 4,
+   "INSTITUTIONAL_OPERATION | procedural": 78,
+   "MIXED | procedural": 13
+  }
+ },
+ "confusionWithCompleteness": {
+  "INSTITUTIONAL_OPERATION | INSTITUTIONAL_DIRECTIVE": 47,
+  "DISPUTE_DECISION | SELF_SUFFICIENT_RULE": 19,
+  "INSTITUTIONAL_OPERATION | SELF_SUFFICIENT_RULE": 17,
+  "DISPUTE_DECISION | OPEN_TEXTURED_STANDARD": 7,
+  "MIXED | OPEN_TEXTURED_STANDARD": 7,
+  "INSTITUTIONAL_OPERATION | OPEN_TEXTURED_STANDARD": 6,
+  "DISPUTE_DECISION | EXTERNAL_REFERRAL": 5,
+  "INSTITUTIONAL_OPERATION | DEFINITION_STATUS": 5,
+  "MIXED | SELF_SUFFICIENT_RULE": 5,
+  "DISPUTE_DECISION | DEFINITION_STATUS": 3,
+  "INSTITUTIONAL_OPERATION | DUTY_OR_POWER_WITHOUT_DECISION_RULE": 3,
+  "AMBIGUOUS | EXTERNAL_REFERRAL": 1,
+  "MIXED | INSTITUTIONAL_DIRECTIVE": 1
+ },
+ "explanatoryPower": {
+  "articles": 123,
+  "note": "eta-squared is the share of between-article variance in the supplementation rate that the grouping accounts for, on articles with at least 30 court-citing judgments. The hold-out fits group means on every second article by citation rank and scores the rest, against the grand mean as the null. Neither is a causal claim.",
+  "A_procedural_substantive": {
+   "groups": 2,
+   "etaSquared": 0.005,
+   "holdoutMAE": 18.19,
+   "holdoutMAEofGrandMean": 18.29,
+   "improvementPts": 0.1
+  },
+  "B_completeness": {
+   "groups": 6,
+   "etaSquared": 0.156,
+   "holdoutMAE": 16.51,
+   "holdoutMAEofGrandMean": 18.29,
+   "improvementPts": 1.78
+  },
+  "C_institutional_dispute": {
+   "groups": 4,
+   "etaSquared": 0.166,
+   "holdoutMAE": 16.02,
+   "holdoutMAEofGrandMean": 18.29,
+   "improvementPts": 2.27
+  },
+  "C_rule_labels": {
+   "groups": 4,
+   "etaSquared": 0.049,
+   "holdoutMAE": 18.38,
+   "holdoutMAEofGrandMean": 18.29,
+   "improvementPts": -0.09
+  },
+  "D_instrument": {
+   "groups": 8,
+   "etaSquared": 0.245,
+   "holdoutMAE": 15.32,
+   "holdoutMAEofGrandMean": 18.29,
+   "improvementPts": 2.97
+  }
+ }
+}

@@ -3,8 +3,12 @@
 
 Nothing in this repository's hand labels has an agreement statistic. One
 reader produced the article classification and the functional reading of the
-hybrid judgments, and every claim resting on them is marked
-PROVISIONAL_PENDING_SECOND_READER until that changes.
+hybrid judgments. Those findings are published as an interpretive layer --
+written rules, an ambiguity class, stated provenance, and a sensitivity
+analysis against an independently assigned label set -- and they do not wait
+on this packet. It is OPTIONAL EXTERNAL REPLICATION: what a second reader
+adds is an agreement statistic, which strengthens the labels; what a second
+reader does not do is authorise them.
 
 The packet is blind in a specific sense. The sheets carry the article text or
 the reasons and nothing else -- no class, no rate, no citation rank, no

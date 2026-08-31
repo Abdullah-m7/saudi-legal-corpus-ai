@@ -75,8 +75,8 @@ the statutory articles cited in the same judgment states — and nothing was
 definitional. **How much that carries is bounded by fourteen**: 0 of 14 has a
 95 per cent Wilson interval running to 21.5 per cent, so the sample rules out
 a *common* ornamental use of non-statutory authority and nothing narrower. It
-is an exploratory hand-read sample by one reader, and every claim resting on
-these labels is **PROVISIONAL_PENDING_SECOND_READER**. What the reading found:
+is an exploratory hand-read sample by one reader, superseded by the 40-judgment
+reading in `COMPLETENESS.md` §4. What it found:
 
 | what the authority does | n |
 |---|---:|

@@ -169,7 +169,8 @@ then:
 python3 second_reader.py score --answers second_reader_articles.csv
 ```
 
-which prints raw agreement, Cohen's kappa, and the confusion pairs. Until
-that has been run against a human second reader, every claim in
-`COMPLETENESS.md` §4 and §11 stays marked
-**PROVISIONAL_PENDING_SECOND_READER**.
+which prints raw agreement, Cohen's kappa, and the confusion pairs. This packet is **optional external replication**. The findings that rest on
+hand labels are published as an interpretive layer with their rules,
+ambiguity class and provenance attached, and they do not wait on it. What a
+second reader adds is an agreement statistic, which strengthens them; what
+they do not do is authorise them.

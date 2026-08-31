@@ -1,0 +1,954 @@
+{
+ "question": "does this provision primarily RUN THE ADJUDICATIVE PROCESS or HELP RESOLVE THE DISPUTE?",
+ "classes": {
+  "INSTITUTIONAL_OPERATION": "makes the court system run: jurisdiction, venue, filing, service, appearance, deadlines, procedural admissibility, appeal mechanics, costs administration, the court's procedural powers",
+  "DISPUTE_DECISION": "bears on who wins the contested question: entitlement, liability, obligation, validity, remedy, and the weight or consequence of proof where it decides contested rights",
+  "MIXED": "both, inseparably -- a procedural act whose consequence decides",
+  "AMBIGUOUS": "the reader could not place it"
+ },
+ "readBy": "primary annotator, from the enacted article text and its legal function; the same 126 articles as completeness_gold.json",
+ "provenance": {
+  "blindness": "NOT blind. By the time this partition was made the annotator had seen article-level supplementation rates for most of these articles. That is stated rather than managed away.",
+  "sensitivity": "every test is therefore reported twice: on these hand labels, and on `ruleLabel`, a mechanical map from the thirteen functions of function.py, which were assigned from enacted text in an earlier session before any supplementation rate had been computed. The two label sets agree on 63 of 126.",
+  "ambiguityRule": "an article is marked ambiguous where the reader placed it against a real pull the other way; the reason is recorded in `note`."
+ },
+ "ruleMap": {
+  "definitions": "INSTITUTIONAL_OPERATION",
+  "jurisdiction": "INSTITUTIONAL_OPERATION",
+  "appeal_finality": "INSTITUTIONAL_OPERATION",
+  "service_notice": "INSTITUTIONAL_OPERATION",
+  "standing_capacity": "INSTITUTIONAL_OPERATION",
+  "procedural_bar": "INSTITUTIONAL_OPERATION",
+  "case_management": "INSTITUTIONAL_OPERATION",
+  "costs": "INSTITUTIONAL_OPERATION",
+  "attendance_default": "MIXED",
+  "proof_rules": "DISPUTE_DECISION",
+  "obligation": "DISPUTE_DECISION",
+  "damages": "DISPUTE_DECISION",
+  "corporate": "DISPUTE_DECISION",
+  "insolvency": "DISPUTE_DECISION",
+  "arbitration": "DISPUTE_DECISION",
+  "enforcement": "DISPUTE_DECISION",
+  "other": "AMBIGUOUS"
+ },
+ "agreementWithRuleLabels": {
+  "n": 126,
+  "agree": 63,
+  "pct": 50.0,
+  "note": "48 of the rule labels are AMBIGUOUS because function.py returned 'other'; the rule map cannot place those at all. Where it can, the two label sets agree far more often.",
+  "nRuleDecisive": 78,
+  "agreeWhereRuleDecisive": 62,
+  "pctWhereRuleDecisive": 79.5,
+  "confusion": {
+   "hand=INSTITUTIONAL_OPERATION | rule=INSTITUTIONAL_OPERATION": 37,
+   "hand=INSTITUTIONAL_OPERATION | rule=AMBIGUOUS": 33,
+   "hand=DISPUTE_DECISION | rule=DISPUTE_DECISION": 23,
+   "hand=INSTITUTIONAL_OPERATION | rule=DISPUTE_DECISION": 7,
+   "hand=DISPUTE_DECISION | rule=AMBIGUOUS": 7,
+   "hand=MIXED | rule=AMBIGUOUS": 7,
+   "hand=MIXED | rule=DISPUTE_DECISION": 2,
+   "hand=DISPUTE_DECISION | rule=INSTITUTIONAL_OPERATION": 2,
+   "hand=MIXED | rule=INSTITUTIONAL_OPERATION": 2,
+   "hand=DISPUTE_DECISION | rule=MIXED": 2,
+   "hand=MIXED | rule=MIXED": 2,
+   "hand=AMBIGUOUS | rule=AMBIGUOUS": 1,
+   "hand=INSTITUTIONAL_OPERATION | rule=MIXED": 1
+  }
+ },
+ "counts": {
+  "INSTITUTIONAL_OPERATION": 78,
+  "DISPUTE_DECISION": 34,
+  "MIXED": 13,
+  "AMBIGUOUS": 1
+ },
+ "ruleCounts": {
+  "INSTITUTIONAL_OPERATION": 41,
+  "DISPUTE_DECISION": 32,
+  "AMBIGUOUS": 48,
+  "MIXED": 5
+ },
+ "labels": {
+  "arbitration_law:11": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "admissibility gateway: the court must decline when the arbitration agreement is pleaded in time",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "arbitration_law:15": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "appointment of arbitrators and the deadlines for it",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "arbitration_law:5": {
+   "function": "DISPUTE_DECISION",
+   "note": "fixes the rules governing the parties' relationship",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "EXTERNAL_REFERRAL"
+  },
+  "arbitration_law:50": {
+   "function": "DISPUTE_DECISION",
+   "note": "the grounds decide the annulment action, which is the dispute before this court",
+   "ambiguous": true,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "arbitration_law:51": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the sixty-day period and the route of appeal",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "arbitration_law:53": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the enforcement order and the documents filed with it",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "arbitration_law:55": {
+   "function": "DISPUTE_DECISION",
+   "note": "decides whether the award is enforceable, the relief sought",
+   "ambiguous": true,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "EXTERNAL_REFERRAL"
+  },
+  "arbitration_law:8": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "which court hears an annulment action",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "bankruptcy_law:7": {
+   "function": "DISPUTE_DECISION",
+   "note": "liquidation conditions and joint liability for the shortfall",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "civil_transactions_law:107": {
+   "function": "DISPUTE_DECISION",
+   "note": "termination, performance and damages",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "civil_transactions_law:120": {
+   "function": "DISPUTE_DECISION",
+   "note": "the general tort clause",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "civil_transactions_law:720": {
+   "function": "DISPUTE_DECISION",
+   "note": "the کلية maxims, applied to the substance",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "EXTERNAL_REFERRAL"
+  },
+  "commercial_courts_implementing_regulation:102": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "contents of an urgent application",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:104": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "claimant absent from the urgent hearing",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:106": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "when the chamber must decide the application",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:108": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the urgent application is examined without the merits",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:11": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "which chamber hears a claim of what value",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:133": {
+   "function": "MIXED",
+   "note": "an evidentiary bar that also decides who may be put to the oath",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:137": {
+   "function": "MIXED",
+   "note": "an attendance rule whose inference bears on the contested fact",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "commercial_courts_implementing_regulation:16": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what may be delegated to the administration",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:164": {
+   "function": "DISPUTE_DECISION",
+   "note": "entitlement to compensation for material and moral damage; the costs component pulls the other way",
+   "ambiguous": true,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "EXTERNAL_REFERRAL"
+  },
+  "commercial_courts_implementing_regulation:204": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the appellate judgment must state",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "commercial_courts_implementing_regulation:208": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the effect of an inadmissible appeal on finality",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:21": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the obligations of an adviser to the court",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:215": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "which appeals are heard without a hearing",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:237": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "defines the small-claims track",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "commercial_courts_implementing_regulation:240": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "mediation before small claims",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:243": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the small-claims defence memo and its deadline",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:244": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "how the preparatory hearing disposes of the case",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "commercial_courts_implementing_regulation:245": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "preclusion after the preparatory hearing",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:31": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "jurisdiction by claim value",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:37": {
+   "function": "DISPUTE_DECISION",
+   "note": "when limitation starts to run, which can defeat the right",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:51": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "which claims must be filed by a lawyer",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:52": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "petitions must be filed by a lawyer",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:56": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "claims filed contrary to arts. 51-52 are inadmissible",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:58": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "mandatory mediation before filing",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:59": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "how prior recourse to mediation is proved",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:64": {
+   "function": "MIXED",
+   "note": "a settlement offer that disposes of the dispute through a procedural mechanism",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:69": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "which claims require a pre-action notice",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:70": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the pre-action notice must contain",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:71": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "when the pre-action notice is effected",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:76": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the claim form must contain",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:77": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "unrelated claims in one form are inadmissible",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:8": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "agreements the procedural statute refers to must be written",
+   "ambiguous": true,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_implementing_regulation:81": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the defence memo and its deadline",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_implementing_regulation:90": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the agenda of the preparatory hearing",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:1": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the statute's defined terms",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "commercial_courts_law:10": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "how electronic service is effected",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:16": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "subject-matter jurisdiction of the commercial court",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:17": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "venue",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:19": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the fifteen-day pre-action notice",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:2": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the scope of the statute and its regulation",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "commercial_courts_law:20": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the claim form must contain",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:21": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "registration of the claim and completion of defects",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:22": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "referral to chambers and the defence memo deadline",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:27": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "adjournment of the hearing",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "commercial_courts_law:29": {
+   "function": "MIXED",
+   "note": "recording a settlement disposes of the dispute by an institutional act",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_law:3": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the Supreme Judicial Council decides about courts and chambers",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:30": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "when proceedings count as adversarial",
+   "ambiguous": true,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_law:31": {
+   "function": "MIXED",
+   "note": "claimant's absence: striking out, or judgment on the merits",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "commercial_courts_law:36": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what counts as an urgent application",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "commercial_courts_law:40": {
+   "function": "DISPUTE_DECISION",
+   "note": "when an admission is judicial, and an admission decides the claim",
+   "ambiguous": true,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "commercial_courts_law:42": {
+   "function": "DISPUTE_DECISION",
+   "note": "the evidentiary weight of official and private papers",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "commercial_courts_law:58": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "closing and reopening pleadings",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "commercial_courts_law:73": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "delegation to the implementing regulation",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:78": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "which judgments are appealable",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:79": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the appeal periods",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:8": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "delegation of procedures to the implementing regulation",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:81": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "how an appeal is filed",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:82": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the appeal transfers",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:86": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "refers the retrial grounds to the Sharia Procedure Law",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "commercial_courts_law:9": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what counts as an address for service",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "evidence_law:1": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the scope of the Evidence Law; a scope clause of a dispute-deciding code",
+   "ambiguous": true,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "evidence_law:103": {
+   "function": "DISPUTE_DECISION",
+   "note": "attendance for the oath, and نكول decides",
+   "ambiguous": false,
+   "ruleLabel": "MIXED",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:105": {
+   "function": "DISPUTE_DECISION",
+   "note": "incomplete proof, supplementary oath, judgment follows",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:109": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "inspection and the appointment of an expert",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "DUTY_OR_POWER_WITHOUT_DECISION_RULE"
+  },
+  "evidence_law:110": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the appointment of an expert on technical questions",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "DUTY_OR_POWER_WITHOUT_DECISION_RULE"
+  },
+  "evidence_law:122": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "who bears the expert's fee -- costs administration",
+   "ambiguous": true,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:14": {
+   "function": "DISPUTE_DECISION",
+   "note": "what makes an admission judicial",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "evidence_law:16": {
+   "function": "DISPUTE_DECISION",
+   "note": "the forms of admission and when it is not accepted",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "evidence_law:17": {
+   "function": "DISPUTE_DECISION",
+   "note": "the judicial admission is conclusive against its maker",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:18": {
+   "function": "DISPUTE_DECISION",
+   "note": "an admission binds and is indivisible",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:2": {
+   "function": "DISPUTE_DECISION",
+   "note": "the claimant proves what he claims",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:21": {
+   "function": "MIXED",
+   "note": "an interrogation power whose consequence bears on the contested fact",
+   "ambiguous": false,
+   "ruleLabel": "MIXED",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "evidence_law:22": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "who is interrogated where a party lacks capacity",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:26": {
+   "function": "DISPUTE_DECISION",
+   "note": "the official document is conclusive against all",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:29": {
+   "function": "DISPUTE_DECISION",
+   "note": "the private document is attributed to its signatory",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:3": {
+   "function": "DISPUTE_DECISION",
+   "note": "the burden of proof and the presumptions that go with it",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "evidence_law:30": {
+   "function": "DISPUTE_DECISION",
+   "note": "signed correspondence has the weight of a private document",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:31": {
+   "function": "DISPUTE_DECISION",
+   "note": "the evidentiary weight of traders' books",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:36": {
+   "function": "MIXED",
+   "note": "an order to produce, on conditions that bear on the merits",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "evidence_law:39": {
+   "function": "DISPUTE_DECISION",
+   "note": "who bears the burden on forgery and on denial",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:40": {
+   "function": "MIXED",
+   "note": "the verification procedure, triggered by the court's view of the proof",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "evidence_law:5": {
+   "function": "DISPUTE_DECISION",
+   "note": "no particular form is required to prove an obligation",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:86": {
+   "function": "MIXED",
+   "note": "res judicata: a bar to the claim and a decision on the right",
+   "ambiguous": true,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:92": {
+   "function": "DISPUTE_DECISION",
+   "note": "defines the decisive and the supplementary oath",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "DEFINITION_STATUS"
+  },
+  "evidence_law:93": {
+   "function": "DISPUTE_DECISION",
+   "note": "the oath goes to the stronger of the two litigants",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "evidence_law:97": {
+   "function": "DISPUTE_DECISION",
+   "note": "the decisive oath, its return, and نكول",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "evidence_law:98": {
+   "function": "DISPUTE_DECISION",
+   "note": "swearing wins, نكول loses",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "law_practice_law:26": {
+   "function": "DISPUTE_DECISION",
+   "note": "entitlement to the lawyer's fee and its assessment",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "law_practice_law:28": {
+   "function": "DISPUTE_DECISION",
+   "note": "the fee where the lawyer has died",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "sharia_procedure_law:1": {
+   "function": "AMBIGUOUS",
+   "note": "the courts apply the Shariah: at once the court's mandate and the choice of the law that decides",
+   "ambiguous": true,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "EXTERNAL_REFERRAL"
+  },
+  "sharia_procedure_law:108": {
+   "function": "DISPUTE_DECISION",
+   "note": "the admission binds its maker alone",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:11": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "service by bailiff and by electronic means",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:113": {
+   "function": "DISPUTE_DECISION",
+   "note": "attendance for the oath, and نكول decides",
+   "ambiguous": false,
+   "ruleLabel": "MIXED",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:128": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the appointment of an expert",
+   "ambiguous": false,
+   "ruleLabel": "DISPUTE_DECISION",
+   "completenessClass": "DUTY_OR_POWER_WITHOUT_DECISION_RULE"
+  },
+  "sharia_procedure_law:16": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "when service is validly effected",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:200": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the grounds for a petition to reopen",
+   "ambiguous": false,
+   "ruleLabel": "MIXED",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:205": {
+   "function": "MIXED",
+   "note": "interim relief: a procedural order with substantive effect",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "sharia_procedure_law:30": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "ancillary jurisdiction",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "sharia_procedure_law:31": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "jurisdiction of the general courts",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:35": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "jurisdiction of the commercial courts",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:36": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "venue by the defendant's residence",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:41": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what the claim form must contain",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:57": {
+   "function": "MIXED",
+   "note": "default: the case is decided against the absent defendant",
+   "ambiguous": false,
+   "ruleLabel": "MIXED",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "sharia_procedure_law:66": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the judge must have the claim stated before proceeding",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:67": {
+   "function": "DISPUTE_DECISION",
+   "note": "refusal to answer is نكول and the Shariah consequence follows",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "EXTERNAL_REFERRAL"
+  },
+  "sharia_procedure_law:68": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "an adjournment to reply",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "OPEN_TEXTURED_STANDARD"
+  },
+  "sharia_procedure_law:70": {
+   "function": "MIXED",
+   "note": "recording what the parties agreed, and issuing the deed",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:73": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "conduct of the hearing",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:75": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "pleas that must be raised first or are waived",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:76": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "pleas of jurisdiction and standing",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:78": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the duty to transfer to the competent court",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "INSTITUTIONAL_DIRECTIVE"
+  },
+  "sharia_procedure_law:83": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "what incidental claims may be added",
+   "ambiguous": false,
+   "ruleLabel": "AMBIGUOUS",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:92": {
+   "function": "INSTITUTIONAL_OPERATION",
+   "note": "the modes of discontinuing a claim",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  },
+  "sharia_procedure_law:93": {
+   "function": "MIXED",
+   "note": "discontinuance annuls the procedure but not the right",
+   "ambiguous": false,
+   "ruleLabel": "INSTITUTIONAL_OPERATION",
+   "completenessClass": "SELF_SUFFICIENT_RULE"
+  }
+ }
+}

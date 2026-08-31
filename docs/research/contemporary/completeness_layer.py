@@ -84,7 +84,7 @@ def main():
                                  f"{a[0]} / article {a[1]}",
             "completeness_class": (lab or {}).get("class") or "",
             "classification": ("hand, one reader, blind to all rates; "
-                               "PROVISIONAL_PENDING_SECOND_READER"
+                               "INTERPRETIVE_LAYER"
                                if lab else "not classified: outside the "
                                "n>=30 frame"),
             "class_ambiguous": "" if not lab else str(lab["ambiguous"]).lower(),

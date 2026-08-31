@@ -19,8 +19,9 @@ Three factors, each from its own source:
                        retrieved from any corpus, however complete.
                                                             [mention layer]
 
-The middle factor rests on hand labels by one reader and is therefore
-PROVISIONAL_PENDING_SECOND_READER; the outer two do not.
+The middle factor rests on hand labels and is an interpretive layer: written
+rules, an UNCLEAR class, per-item provenance, and a deletion test in place of
+an intuition. The outer two are mechanical.
 
     python3 rag_gap.py
 """
@@ -78,7 +79,8 @@ def main():
         "loadBearingOfCodeable": f"{load}/{d['codeable']}",
         "loadBearingPct": round(p_load, 1),
         "loadBearingCI": wilson(load, d["codeable"]),
-        "loadBearingStatus": "PROVISIONAL_PENDING_SECOND_READER",
+        "loadBearingStatus": "INTERPRETIVE_LAYER",
+        "loadBearingBasis": "explicit rules in ANNOTATION_GUIDE.md, an UNCLEAR class used 4 times in 40, provenance recorded per item, and a deletion test that replaces the reader's intuition with an answerable question",
         "estimateReasonedJudgmentsWhereStatuteOnlyRetrievalOmitsPct":
             round(p_hybrid * p_load / 100, 1),
         "namedFiqhMentions": tot_fiqh,

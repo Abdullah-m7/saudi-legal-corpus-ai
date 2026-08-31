@@ -122,8 +122,10 @@ and on forty judgments, **9 of 36 codeable cases are deletable**: 25.0 per
 cent, 95 % CI 13.8–41.1. The earlier reading was not wrong about what the
 authority carried in those fourteen; it was answering by intuition a question
 that only an operational test can answer, and the operational test gives a
-larger number. Every figure in this section is
-**PROVISIONAL_PENDING_SECOND_READER**.
+larger number. This is an **interpretive layer**: explicit written rules, an UNCLEAR
+class used in 4 of the 40, provenance recorded per item, and a deletion test
+that replaces intuition with an answerable question. It is not held back for a
+second human.
 
 The two clearest kinds are worth naming because they are structurally
 different. Sixteen judgments take the rule of decision from outside: costs

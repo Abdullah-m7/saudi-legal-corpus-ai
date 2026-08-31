@@ -23,6 +23,9 @@ claim = json.loads((C / "claim_results.json").read_text(encoding="utf-8"))
 ov = json.loads((C / "overlap_results.json").read_text(encoding="utf-8"))
 ret = json.loads((C / "retrieval_results.json").read_text(encoding="utf-8"))
 win = json.loads((C / "windows_results.json").read_text(encoding="utf-8"))
+# section VII's functional-robustness paragraph reads from the two-layer test
+tl = json.loads((C / "twolayers_results.json").read_text(encoding="utf-8"))
+eco = json.loads((C / "ecology_results.json").read_text(encoding="utf-8"))
 
 V3 = claim["views"]["contemporary_3y"]
 TYPES = ["contract", "legal_maxim", "custom", "fiqh_source", "discretion",
@@ -45,6 +48,25 @@ for v in ("contemporary_5y", "contemporary_3y", "post_Evidence", "post_CTL"):
     for t in TYPES:
         s, w = claim["views"][v][f"strict_ratio"][t], claim["views"][v]["wide_ratio"][t]
         want(f"{v}/{t}", f"{s:.2f} / {w:.2f}")
+
+# section VII, the functional-divergence robustness paragraph
+T = tl["transitions"]["party"]
+want("judgments sharing an instrument", f"{T['judgmentsSharingAnInstrument']:,}")
+for lab, k in (
+        ("inst->inst, different articles",
+         "party=INSTITUTIONAL_OPERATION -> court=INSTITUTIONAL_OPERATION "
+         "[different articles]"),
+        ("inst->dispute, different articles",
+         "party=INSTITUTIONAL_OPERATION -> court=DISPUTE_DECISION "
+         "[different articles]"),
+        ("dispute->inst, different articles",
+         "party=DISPUTE_DECISION -> court=INSTITUTIONAL_OPERATION "
+         "[different articles]")):
+    want(lab, T["table"][k])
+E = {r["article"]: r for r in eco["dives"]["evidence_law"]["articles"]}
+want("evidence 29 court judgments", f"{E[29]['courtJudgments']:,}")
+want("evidence 29 party judgments", E[29]["partyJudgments"])
+want("evidence 29 both", E[29]["bothPct"])
 
 # mention totals
 want("court mentions", f"{V3['strict_courtN']:,}")
