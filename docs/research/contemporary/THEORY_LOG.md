@@ -208,3 +208,48 @@ in `code_source_network.json`.
 set of transmission markers — so every concentration statistic is a statement
 about the extractor before it is a statement about the judiciary, and no
 "effective canon size" here is read as one.
+
+---
+
+## H1 · AI-legal-salience feedback — a hypothesis record, not a killed theory
+
+This entry is deliberately different from the four above. Nothing is being
+buried. A mechanism is being written down, with its first link tested, so that
+a future session cannot pretend it was obvious either way.
+
+**THE PROPOSED LOOP.** Retrieval ranking makes some authorities easier to
+find; lawyers cite what they find; courts are exposed to what lawyers cite;
+courts cite it; the next corpus ranks it higher; retrieval surfaces it more.
+If it exists, legal AI does not merely speed up legal research — it changes
+which law is visible, cumulatively.
+
+**WHAT CAN BE TESTED NOW.** There are no retrieval logs, so the loop cannot be
+observed. But its first link is a precondition that this corpus can test
+without any AI at all: does advocacy visibility lead adjudicatory visibility?
+
+**RESULT: THE FIRST LINK IS ABSENT.** Over 11 rolling quarterly folds, the
+court's own citation shares correlate at 0.9625 with its shares one quarter
+later. The bar's shares correlate at 0.3471 — and at -0.0107 once the court's
+own previous quarter is held fixed, positive in 4 folds of 11. Of 460 articles
+whose first observed use in both voices falls inside the window, 56.3 per cent
+appear in the court's voice first and 20.22 per cent in the bar's. When the
+Civil Transactions Law arrived, both voices saw it in the same quarter.
+
+**CONSEQUENCE.** The hypothesis is recorded as PLAUSIBLE_MECHANISM_WITH_A
+_MISSING_PRECONDITION, not as established and not as refuted. The measurement
+that would refute or support it after legal-AI adoption is specified in
+`FORESIGHT.md` section N and frozen in `frozen/ai_transition_baseline.json`.
+
+**WHAT WOULD CHANGE THE VERDICT.** A positive partial correlation sustained
+over several folds; or a new code where the bar's citations precede the
+bench's by more than a quarter. One caveat cuts the other way and is recorded
+with the result: advocacy is measured only where the publisher reproduces it,
+and a summarised submission understates the bar.
+
+**SEPARATELY, AND MORE UNCOMFORTABLY.** Across every scalar target in
+`foresight.py`, no model beat `last period` or `the mean so far`. Momentum was
+actively harmful — DRIFT scored -1.849 mean skill on the named-fiqh share with
+one fold at -99.1786. The forecastable structure this corpus has is
+persistence plus churn, and the one signal that beats its base rate — entry
+into the operational core, lift 5.18 over a base rate of 4.48 per cent — is
+again the bench's own prior citation.

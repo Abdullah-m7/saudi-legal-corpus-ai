@@ -1,0 +1,309 @@
+{
+ "what": "Every forecast this repository has issued, kept whether it aged well or badly. Entries are append-only: a prediction is never edited after the period it predicts becomes observable, and a failed forecast is never deleted. Status moves from OPEN to SCORED, VOID_DATA_SHIFT or VOID_TARGET_REDEFINED, and nothing else in an entry changes, ever.",
+ "forecasts": [
+  {
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "target_period": "NEXT_ELIGIBLE_QUARTER: the earliest hijri quarter after 1446Q2 that carries at least 800 judgments with court authority in a future rebuild of this corpus. Defined this way because 1446Q3 and 1446Q4 are publication-lagged (184 and 7 judgments), and a forecast into them would be a forecast about the publisher. If no quarter reaches 800 by 1449Q4, every entry below becomes VOID_DATA_SHIFT rather than being scored.",
+   "repository_head": "4b18a2d2f91f863dae58a6e2ad4aaf9b2c7c083a",
+   "pipeline_version": "contemporary/2026-08-companion+foresight",
+   "data_hashes": {
+    "authority.py": "a1bf7ae3713b43e1",
+    "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+    "companion_layer.jsonl.gz": "0d8d40697468b73e",
+    "companions.py": "f9fdb17c7cf56e1d",
+    "foresight.py": "f3d38a7f94f0a48d",
+    "judgment_dates.json.gz": "65200a04e59a0cb1"
+   },
+   "training_window": "1442Q1..1446Q2, rolling origin",
+   "status": "OPEN",
+   "forecast_id": "operational_core_top50@1446Q2",
+   "target_definition": "the 50 (instrument, article) pairs most cited by the COURT in the target quarter, ranked by citation count, ties broken on the key. Scored against the frozen set stored as frozenTop50.",
+   "model": "PERSISTENCE (the cutoff quarter's own top 50). This is a BASELINE: no model beat it over 10 rolling folds, and MA3 was worse (mean Jaccard 0.5663 against 0.6059).",
+   "prediction": {
+    "expectedJaccardWithFrozenSet": 0.6059,
+    "expectedNewEntrants": 12.4,
+    "frozenSet": "frozenTop50"
+   },
+   "uncertainty": {
+    "backtestedJaccardWorstFold": 0.4286,
+    "folds": 10,
+    "intervalIsBacktestedRangeNotAModelInterval": true
+   },
+   "baseline_prediction": "identical: the model IS the baseline",
+   "scoring_rule": "Jaccard(frozen top 50, observed top 50). SCORED_WELL if at least 0.4286 (the worst backtested fold); SCORED_POORLY otherwise. Report the value either way."
+  },
+  {
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "target_period": "NEXT_ELIGIBLE_QUARTER: the earliest hijri quarter after 1446Q2 that carries at least 800 judgments with court authority in a future rebuild of this corpus. Defined this way because 1446Q3 and 1446Q4 are publication-lagged (184 and 7 judgments), and a forecast into them would be a forecast about the publisher. If no quarter reaches 800 by 1449Q4, every entry below becomes VOID_DATA_SHIFT rather than being scored.",
+   "repository_head": "4b18a2d2f91f863dae58a6e2ad4aaf9b2c7c083a",
+   "pipeline_version": "contemporary/2026-08-companion+foresight",
+   "data_hashes": {
+    "authority.py": "a1bf7ae3713b43e1",
+    "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+    "companion_layer.jsonl.gz": "0d8d40697468b73e",
+    "companions.py": "f9fdb17c7cf56e1d",
+    "foresight.py": "f3d38a7f94f0a48d",
+    "judgment_dates.json.gz": "65200a04e59a0cb1"
+   },
+   "training_window": "1442Q1..1446Q2, rolling origin",
+   "status": "OPEN",
+   "forecast_id": "ctl_court_share@1446Q2",
+   "target_definition": "the share of the court's statutory citations in the target quarter that name the Civil Transactions Law.",
+   "model": "LAST (a BASELINE; no model beat it over 10 folds)",
+   "prediction": {
+    "pointEstimate": 0.07743,
+    "direction": "CONTINUED_PRESENCE_NEAR_CURRENT_LEVEL"
+   },
+   "uncertainty": {
+    "backtestedMae": 0.01005,
+    "interval": [
+     0.05733,
+     0.09753
+    ],
+    "intervalIsPlusMinusTwoBacktestedMae": true
+   },
+   "baseline_prediction": 0.07743,
+   "scoring_rule": "absolute error against the observed share; interval coverage recorded as HIT or MISS. This is the only new code whose arrival the corpus contains, so a large miss is scientifically more interesting than a hit."
+  },
+  {
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "target_period": "NEXT_ELIGIBLE_QUARTER: the earliest hijri quarter after 1446Q2 that carries at least 800 judgments with court authority in a future rebuild of this corpus. Defined this way because 1446Q3 and 1446Q4 are publication-lagged (184 and 7 judgments), and a forecast into them would be a forecast about the publisher. If no quarter reaches 800 by 1449Q4, every entry below becomes VOID_DATA_SHIFT rather than being scored.",
+   "repository_head": "4b18a2d2f91f863dae58a6e2ad4aaf9b2c7c083a",
+   "pipeline_version": "contemporary/2026-08-companion+foresight",
+   "data_hashes": {
+    "authority.py": "a1bf7ae3713b43e1",
+    "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+    "companion_layer.jsonl.gz": "0d8d40697468b73e",
+    "companions.py": "f9fdb17c7cf56e1d",
+    "foresight.py": "f3d38a7f94f0a48d",
+    "judgment_dates.json.gz": "65200a04e59a0cb1"
+   },
+   "training_window": "1442Q1..1446Q2, rolling origin",
+   "status": "OPEN",
+   "forecast_id": "court_party_top20_jaccard@1446Q2",
+   "target_definition": "Jaccard between the court's top-20 and the strict party voice's top-20 (instrument, article) pairs in the target quarter.",
+   "model": "MA3 (a BASELINE)",
+   "prediction": {
+    "pointEstimate": 0.15656,
+    "direction": "STABILITY"
+   },
+   "uncertainty": {
+    "backtestedMae": 0.03701,
+    "interval": [
+     0.08254,
+     0.23058
+    ]
+   },
+   "baseline_prediction": 0.15656,
+   "scoring_rule": "absolute error, plus a direction call: CONVERGENCE if the observed value is above the interval, DIVERGENCE if below, STABILITY if inside. STABILITY is the prediction."
+  },
+  {
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "target_period": "NEXT_ELIGIBLE_QUARTER: the earliest hijri quarter after 1446Q2 that carries at least 800 judgments with court authority in a future rebuild of this corpus. Defined this way because 1446Q3 and 1446Q4 are publication-lagged (184 and 7 judgments), and a forecast into them would be a forecast about the publisher. If no quarter reaches 800 by 1449Q4, every entry below becomes VOID_DATA_SHIFT rather than being scored.",
+   "repository_head": "4b18a2d2f91f863dae58a6e2ad4aaf9b2c7c083a",
+   "pipeline_version": "contemporary/2026-08-companion+foresight",
+   "data_hashes": {
+    "authority.py": "a1bf7ae3713b43e1",
+    "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+    "companion_layer.jsonl.gz": "0d8d40697468b73e",
+    "companions.py": "f9fdb17c7cf56e1d",
+    "foresight.py": "f3d38a7f94f0a48d",
+    "judgment_dates.json.gz": "65200a04e59a0cb1"
+   },
+   "training_window": "1442Q1..1446Q2, rolling origin",
+   "status": "OPEN",
+   "forecast_id": "companion_top3_sets@1446Q2",
+   "target_definition": "for each code below, the three non-statutory source identities most often attached to it in the court's voice within 500 characters, in the target quarter.",
+   "model": "PERSISTENCE of the SET, not of the order. The backtest separates them: the set holds, the ranking does not.",
+   "prediction": {
+    "frozenTop3": {
+     "commercial_courts_implementing_regulation": [
+      "GENERIC.fiqh.unattributed",
+      "B.KASHSHAF",
+      "J.IBN_TAYMIYYA"
+     ],
+     "commercial_courts_law": [
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.hadith.untraced",
+      "GENERIC.quran.citation"
+     ],
+     "evidence_law": [
+      "GENERIC.hadith.untraced",
+      "GENERIC.fiqh.unattributed",
+      "GENERIC.principle.settled"
+     ],
+     "sharia_procedure_law": [
+      "GENERIC.hadith.untraced",
+      "GENERIC.quran.citation",
+      "GENERIC.fiqh.unattributed"
+     ]
+    },
+    "expectedSetJaccard": {
+     "commercial_courts_implementing_regulation": 0.8333,
+     "commercial_courts_law": 0.8889,
+     "evidence_law": 0.625,
+     "sharia_procedure_law": 1.0
+    },
+    "expectedTop1Held": {
+     "commercial_courts_implementing_regulation": 44.4,
+     "commercial_courts_law": 55.6,
+     "evidence_law": 50.0,
+     "sharia_procedure_law": 25.0
+    },
+    "orderIsNotPredicted": true
+   },
+   "uncertainty": {
+    "worstBacktestedJaccard": {
+     "commercial_courts_implementing_regulation": 0.5,
+     "commercial_courts_law": 0.5,
+     "evidence_law": 0.5,
+     "sharia_procedure_law": 1.0
+    },
+    "steps": {
+     "commercial_courts_implementing_regulation": 9,
+     "commercial_courts_law": 9,
+     "evidence_law": 8,
+     "sharia_procedure_law": 4
+    }
+   },
+   "baseline_prediction": "identical: the model IS the baseline",
+   "scoring_rule": "per code, Jaccard(frozen top 3, observed top 3), and separately whether the top-1 held. Abstain for any code with fewer than 60 attached court mentions in the target quarter (LOW_SUPPORT)."
+  },
+  {
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "target_period": "NEXT_ELIGIBLE_QUARTER: the earliest hijri quarter after 1446Q2 that carries at least 800 judgments with court authority in a future rebuild of this corpus. Defined this way because 1446Q3 and 1446Q4 are publication-lagged (184 and 7 judgments), and a forecast into them would be a forecast about the publisher. If no quarter reaches 800 by 1449Q4, every entry below becomes VOID_DATA_SHIFT rather than being scored.",
+   "repository_head": "4b18a2d2f91f863dae58a6e2ad4aaf9b2c7c083a",
+   "pipeline_version": "contemporary/2026-08-companion+foresight",
+   "data_hashes": {
+    "authority.py": "a1bf7ae3713b43e1",
+    "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+    "companion_layer.jsonl.gz": "0d8d40697468b73e",
+    "companions.py": "f9fdb17c7cf56e1d",
+    "foresight.py": "f3d38a7f94f0a48d",
+    "judgment_dates.json.gz": "65200a04e59a0cb1"
+   },
+   "training_window": "1442Q1..1446Q2, rolling origin",
+   "status": "OPEN",
+   "forecast_id": "retrieval_coverage_h1@1446Q2",
+   "target_definition": "the share of the target quarter's court statutory citations whose (instrument, article) already appears in the frozen COURT_REASONING universe: every article the court cited anywhere in 1442Q1 to 1446Q2.",
+   "model": "FROZEN_UNIVERSE_COVERAGE, backtested at horizon 1 over 13 folds",
+   "prediction": {
+    "pointEstimate": 0.9563,
+    "alsoPredicted": {
+     "WHOLE_JUDGMENT": 0.9626,
+     "STATUTE_ONLY_TOP50": 0.8039
+    },
+    "orderingClaim": "WHOLE_JUDGMENT at least COURT_REASONING, and both above STATUTE_ONLY_TOP200, which is above STATUTE_ONLY_TOP50"
+   },
+   "uncertainty": {
+    "worstBacktestedFold": 0.8262
+   },
+   "baseline_prediction": 0.8039,
+   "scoring_rule": "absolute error on the point estimate, and whether the ordering claim holds. The ordering is the part worth being wrong about: it is the claim that a retrieval universe should be built from what the whole judgment cites, not from the operational core."
+  }
+ ],
+ "conditionalForecasts": [
+  {
+   "conditional_forecast_id": "named_fiqh_under_research_ai@1446Q2",
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "status": "OPEN",
+   "condition": "adoption_registry.json threshold T_RESEARCH_DEPLOYED is met, with all qualifying events dated before the forecast window",
+   "target_definition": "named fiqh as a share of all court fiqh mentions, corpus-wide, trailing four quarters",
+   "baseline_at_cutoff": 58.71,
+   "prediction": "an INCREASE of at least 5 percentage points against the frozen baseline, sustained over four quarters",
+   "direction_is_not_assumed": "the opposite is a live possibility and is stated as the falsifier: if source-resolving research tools are deployed and this share does not rise, the mechanism 'better retrieval makes citation more traceable' is wrong for this corpus.",
+   "scoring_rule": "difference in percentage points against the frozen baseline, with a same-length pre-window from the baseline period as the comparison. SCORED only if the condition is met; otherwise NEVER_TRIGGERED.",
+   "confounders_to_record": [
+    "a change in authority.py's vocabulary",
+    "a change in the publisher's release mix",
+    "new legislation displacing fiqh citation",
+    "any judicial drafting guidance issued in the same window"
+   ]
+  },
+  {
+   "conditional_forecast_id": "article_concentration_under_research_ai@1446Q2",
+   "created_at": "2026-08-31",
+   "data_cutoff": "1446Q2",
+   "status": "OPEN",
+   "condition": "adoption_registry.json threshold T_RESEARCH_DEPLOYED is met",
+   "target_definition": "HHI of the court's article citations, trailing four quarters",
+   "baseline_at_cutoff": 0.06891,
+   "prediction": "NO DIRECTION IS PREDICTED. Two mechanisms point opposite ways and both are live: retrieval that surfaces what is already cited concentrates (homogenisation), retrieval that reaches the long tail disperses. The forecast is that the ABSOLUTE change exceeds 0.01, that is, that something moves.",
+   "scoring_rule": "absolute change above 0.01 scores as MOVED; the sign is recorded but was not predicted, and no credit is taken for it.",
+   "confounders_to_record": [
+    "new legislation entering the core, as the Civil Transactions Law did in 1445",
+    "publication mix",
+    "docket composition"
+   ]
+  }
+ ],
+ "scenarios": [
+  {
+   "scenario_id": "ctl_uptake_repeat",
+   "not_a_forecast": "mechanical what-if. No scoring rule, no skill statistic, never counted as right or wrong.",
+   "assumption": "a future code enters the corpus with the same uptake shape the Civil Transactions Law showed: first court citation and first party citation in the same quarter, top-100 two quarters later, top-50 the quarter after.",
+   "mechanical_consequence": "such a code would displace roughly the number of articles the observed top-50 turnover already moves each quarter, so the operational core absorbs one new code without a visible break in its churn rate.",
+   "why_this_is_not_a_forecast": "it assumes the event rather than predicting it, and the corpus contains exactly one such event, which is not a sample."
+  }
+ ],
+ "frozenTop50": [
+  "commercial_courts_law:16",
+  "evidence_law:29",
+  "commercial_courts_law:30",
+  "commercial_courts_implementing_regulation:164",
+  "commercial_courts_law:78",
+  "evidence_law:21",
+  "civil_transactions_law:120",
+  "commercial_courts_law:22",
+  "evidence_law:17",
+  "civil_transactions_law:720",
+  "evidence_law:2",
+  "sharia_procedure_law:70",
+  "evidence_law:5",
+  "commercial_courts_law:29",
+  "commercial_courts_law:79",
+  "evidence_law:14",
+  "commercial_courts_law:1",
+  "commercial_courts_implementing_regulation:11",
+  "civil_transactions_law:17",
+  "commercial_courts_law:9",
+  "evidence_law:3",
+  "commercial_courts_implementing_regulation:81",
+  "sharia_procedure_law:73",
+  "evidence_law:109",
+  "evidence_law:31",
+  "arbitration_law:8",
+  "evidence_law:6",
+  "evidence_law:98",
+  "sharia_procedure_law:57",
+  "arbitration_law:53",
+  "civil_transactions_law:91",
+  "commercial_courts_implementing_regulation:108",
+  "evidence_law:110",
+  "evidence_law:18",
+  "law_practice_law:26",
+  "commercial_courts_implementing_regulation:64",
+  "commercial_courts_law:10",
+  "evidence_law:1",
+  "evidence_law:105",
+  "evidence_law:16",
+  "evidence_law:54",
+  "evidence_law:92",
+  "law_practice_implementing_regulation:28",
+  "law_practice_law:28",
+  "arbitration_law:55",
+  "bankruptcy_law:99",
+  "civil_transactions_law:107",
+  "civil_transactions_law:19",
+  "civil_transactions_law:401",
+  "civil_transactions_law:564"
+ ],
+ "frozenTop50Note": "the court's 50 most cited articles in 1446Q2, the set that operational_core_top50@1446Q2 predicts will still be the top 50 next period",
+ "ledgerHash": "7d6e396bb21fdbcb"
+}

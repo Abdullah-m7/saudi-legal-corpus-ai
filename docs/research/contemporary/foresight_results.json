@@ -1,0 +1,1535 @@
+{
+ "periods": [
+  "1442Q1",
+  "1442Q2",
+  "1442Q3",
+  "1442Q4",
+  "1443Q1",
+  "1443Q2",
+  "1443Q3",
+  "1443Q4",
+  "1444Q1",
+  "1444Q2",
+  "1444Q3",
+  "1444Q4",
+  "1445Q1",
+  "1445Q2",
+  "1445Q3",
+  "1445Q4",
+  "1446Q1",
+  "1446Q2"
+ ],
+ "judgmentsWithAuthorityByPeriod": {
+  "1442Q1": 1077,
+  "1442Q2": 2149,
+  "1442Q3": 2991,
+  "1442Q4": 2271,
+  "1443Q1": 1483,
+  "1443Q2": 347,
+  "1443Q3": 1150,
+  "1443Q4": 1665,
+  "1444Q1": 4315,
+  "1444Q2": 5523,
+  "1444Q3": 4150,
+  "1444Q4": 3340,
+  "1445Q1": 2783,
+  "1445Q2": 1517,
+  "1445Q3": 997,
+  "1445Q4": 1235,
+  "1446Q1": 1344,
+  "1446Q2": 868
+ },
+ "mentionsUsed": 154699,
+ "excludedOutsideWindow": {
+  "1446Q3": 835,
+  "1446Q4": 45
+ },
+ "compositionWarning": "quarterly judgment counts range from 347 to 5523, a factor of 15.9. Every target below is a RATE, a SHARE or a RANK for that reason; no count is forecast, and a shift in what the publisher releases would still move a rate.",
+ "scalarTargets": {
+  "civilTransactionsLawShareOfCourtCitations": {
+   "target": "civilTransactionsLawShareOfCourtCitations",
+   "folds": 10,
+   "periods": [
+    "1444Q1",
+    "1444Q2",
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "mae": {
+    "DRIFT": 0.01853,
+    "LAST": 0.01005,
+    "MA2": 0.01202,
+    "MA3": 0.01546,
+    "MEAN": 0.02587,
+    "SHRINK": 0.01168
+   },
+   "bestBaseline": "LAST",
+   "bestBaselineMae": 0.01005,
+   "series": {
+    "1442Q1": null,
+    "1442Q2": null,
+    "1442Q3": null,
+    "1442Q4": null,
+    "1443Q1": 0.0,
+    "1443Q2": 0.0,
+    "1443Q3": 0.0,
+    "1443Q4": 0.0,
+    "1444Q1": 0.0,
+    "1444Q2": 0.0,
+    "1444Q3": 0.0,
+    "1444Q4": 0.0,
+    "1445Q1": 0.00155,
+    "1445Q2": 0.00384,
+    "1445Q3": 0.06414,
+    "1445Q4": 0.06067,
+    "1446Q1": 0.0855,
+    "1446Q2": 0.07743
+   },
+   "modelSkill": {
+    "DRIFT": {
+     "meanSkillVsBestBaseline": -0.8434,
+     "worstFoldSkill": -17.3804,
+     "foldsBeatingBaseline": 2,
+     "foldsScored": 6
+    },
+    "SHRINK": {
+     "meanSkillVsBestBaseline": -0.162,
+     "worstFoldSkill": -3.902,
+     "foldsBeatingBaseline": 1,
+     "foldsScored": 6
+    }
+   },
+   "verdict": "PERSISTENCE_NOT_BEATEN",
+   "bestModel": "SHRINK"
+  },
+  "evidenceLawNamedFiqhShare": {
+   "target": "evidenceLawNamedFiqhShare",
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "folds": 3,
+   "series": {
+    "1442Q1": null,
+    "1442Q2": null,
+    "1442Q3": null,
+    "1442Q4": null,
+    "1443Q1": null,
+    "1443Q2": null,
+    "1443Q3": null,
+    "1443Q4": null,
+    "1444Q1": 0.68023,
+    "1444Q2": 0.72249,
+    "1444Q3": 0.61905,
+    "1444Q4": 0.45833,
+    "1445Q1": 0.54286,
+    "1445Q2": 0.66667,
+    "1445Q3": 0.48837,
+    "1445Q4": null,
+    "1446Q1": null,
+    "1446Q2": null
+   }
+  },
+  "namedFiqhShareOfFiqh": {
+   "target": "namedFiqhShareOfFiqh",
+   "folds": 14,
+   "periods": [
+    "1443Q1",
+    "1443Q2",
+    "1443Q3",
+    "1443Q4",
+    "1444Q1",
+    "1444Q2",
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "mae": {
+    "DRIFT": 0.11643,
+    "LAST": 0.06298,
+    "MA2": 0.06088,
+    "MA3": 0.04916,
+    "MEAN": 0.04087,
+    "SHRINK": 0.05365
+   },
+   "bestBaseline": "MEAN",
+   "bestBaselineMae": 0.04087,
+   "series": {
+    "1442Q1": 0.81818,
+    "1442Q2": 0.54839,
+    "1442Q3": 0.54545,
+    "1442Q4": 0.46154,
+    "1443Q1": 0.75439,
+    "1443Q2": 0.54545,
+    "1443Q3": 0.52632,
+    "1443Q4": 0.60285,
+    "1444Q1": 0.63058,
+    "1444Q2": 0.62062,
+    "1444Q3": 0.56231,
+    "1444Q4": 0.55935,
+    "1445Q1": 0.6212,
+    "1445Q2": 0.5989,
+    "1445Q3": 0.5831,
+    "1445Q4": 0.6034,
+    "1446Q1": 0.6044,
+    "1446Q2": 0.54037
+   },
+   "modelSkill": {
+    "DRIFT": {
+     "meanSkillVsBestBaseline": -1.849,
+     "worstFoldSkill": -99.1786,
+     "foldsBeatingBaseline": 1,
+     "foldsScored": 14
+    },
+    "SHRINK": {
+     "meanSkillVsBestBaseline": -0.3128,
+     "worstFoldSkill": -11.2249,
+     "foldsBeatingBaseline": 5,
+     "foldsScored": 14
+    }
+   },
+   "verdict": "PERSISTENCE_NOT_BEATEN",
+   "bestModel": "SHRINK"
+  },
+  "nonStatutoryShareOfCourtMentions": {
+   "target": "nonStatutoryShareOfCourtMentions",
+   "folds": 14,
+   "periods": [
+    "1443Q1",
+    "1443Q2",
+    "1443Q3",
+    "1443Q4",
+    "1444Q1",
+    "1444Q2",
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "mae": {
+    "DRIFT": 0.08558,
+    "LAST": 0.04843,
+    "MA2": 0.04737,
+    "MA3": 0.04167,
+    "MEAN": 0.0435,
+    "SHRINK": 0.04052
+   },
+   "bestBaseline": "MA3",
+   "bestBaselineMae": 0.04167,
+   "series": {
+    "1442Q1": 0.30612,
+    "1442Q2": 0.39521,
+    "1442Q3": 0.336,
+    "1442Q4": 0.17308,
+    "1443Q1": 0.25986,
+    "1443Q2": 0.29939,
+    "1443Q3": 0.1504,
+    "1443Q4": 0.31662,
+    "1444Q1": 0.33564,
+    "1444Q2": 0.28717,
+    "1444Q3": 0.25551,
+    "1444Q4": 0.23796,
+    "1445Q1": 0.26732,
+    "1445Q2": 0.25579,
+    "1445Q3": 0.23152,
+    "1445Q4": 0.21463,
+    "1446Q1": 0.2039,
+    "1446Q2": 0.23087
+   },
+   "modelSkill": {
+    "DRIFT": {
+     "meanSkillVsBestBaseline": -1.0539,
+     "worstFoldSkill": -17.6758,
+     "foldsBeatingBaseline": 5,
+     "foldsScored": 14
+    },
+    "SHRINK": {
+     "meanSkillVsBestBaseline": 0.0275,
+     "worstFoldSkill": -1.564,
+     "foldsBeatingBaseline": 8,
+     "foldsScored": 14
+    }
+   },
+   "verdict": "PERSISTENCE_NOT_BEATEN",
+   "bestModel": "SHRINK"
+  },
+  "courtPartyTop20Jaccard": {
+   "target": "courtPartyTop20Jaccard",
+   "folds": 8,
+   "periods": [
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "mae": {
+    "DRIFT": 0.06691,
+    "LAST": 0.04189,
+    "MA2": 0.04152,
+    "MA3": 0.03701,
+    "MEAN": 0.03915,
+    "SHRINK": 0.03681
+   },
+   "bestBaseline": "MA3",
+   "bestBaselineMae": 0.03701,
+   "series": {
+    "1442Q1": null,
+    "1442Q2": null,
+    "1442Q3": null,
+    "1442Q4": null,
+    "1443Q1": null,
+    "1443Q2": null,
+    "1443Q3": 0.21212,
+    "1443Q4": 0.11111,
+    "1444Q1": 0.11111,
+    "1444Q2": 0.14286,
+    "1444Q3": 0.14286,
+    "1444Q4": 0.11111,
+    "1445Q1": 0.21212,
+    "1445Q2": 0.17647,
+    "1445Q3": 0.17647,
+    "1445Q4": 0.21212,
+    "1446Q1": 0.17647,
+    "1446Q2": 0.08108
+   },
+   "modelSkill": {
+    "DRIFT": {
+     "meanSkillVsBestBaseline": -0.8076,
+     "worstFoldSkill": -5.4737,
+     "foldsBeatingBaseline": 1,
+     "foldsScored": 8
+    },
+    "SHRINK": {
+     "meanSkillVsBestBaseline": 0.0054,
+     "worstFoldSkill": -1.0008,
+     "foldsBeatingBaseline": 4,
+     "foldsScored": 8
+    }
+   },
+   "verdict": "PERSISTENCE_NOT_BEATEN",
+   "bestModel": "SHRINK"
+  },
+  "courtArticleHHI": {
+   "target": "courtArticleHHI",
+   "folds": 10,
+   "periods": [
+    "1444Q1",
+    "1444Q2",
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "mae": {
+    "DRIFT": 0.01044,
+    "LAST": 0.00678,
+    "MA2": 0.00795,
+    "MA3": 0.00858,
+    "MEAN": 0.01007,
+    "SHRINK": 0.00669
+   },
+   "bestBaseline": "LAST",
+   "bestBaselineMae": 0.00678,
+   "series": {
+    "1442Q1": null,
+    "1442Q2": null,
+    "1442Q3": null,
+    "1442Q4": null,
+    "1443Q1": 0.05973,
+    "1443Q2": 0.05832,
+    "1443Q3": 0.03818,
+    "1443Q4": 0.06345,
+    "1444Q1": 0.06938,
+    "1444Q2": 0.064,
+    "1444Q3": 0.07186,
+    "1444Q4": 0.07186,
+    "1445Q1": 0.08244,
+    "1445Q2": 0.07145,
+    "1445Q3": 0.06318,
+    "1445Q4": 0.06776,
+    "1446Q1": 0.07253,
+    "1446Q2": 0.08203
+   },
+   "modelSkill": {
+    "DRIFT": {
+     "meanSkillVsBestBaseline": -0.5383,
+     "worstFoldSkill": -2.2597,
+     "foldsBeatingBaseline": 3,
+     "foldsScored": 9
+    },
+    "SHRINK": {
+     "meanSkillVsBestBaseline": 0.0141,
+     "worstFoldSkill": -0.855,
+     "foldsBeatingBaseline": 4,
+     "foldsScored": 9
+    }
+   },
+   "verdict": "PERSISTENCE_NOT_BEATEN",
+   "bestModel": "SHRINK"
+  },
+  "commercialCourtsLawShareOfInstruments": {
+   "target": "commercialCourtsLawShareOfInstruments",
+   "folds": 10,
+   "periods": [
+    "1444Q1",
+    "1444Q2",
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "mae": {
+    "DRIFT": 0.04701,
+    "LAST": 0.02129,
+    "MA2": 0.03168,
+    "MA3": 0.02677,
+    "MEAN": 0.02336,
+    "SHRINK": 0.02197
+   },
+   "bestBaseline": "LAST",
+   "bestBaselineMae": 0.02129,
+   "series": {
+    "1442Q1": null,
+    "1442Q2": null,
+    "1442Q3": null,
+    "1442Q4": null,
+    "1443Q1": 0.42657,
+    "1443Q2": 0.50164,
+    "1443Q3": 0.37702,
+    "1443Q4": 0.50618,
+    "1444Q1": 0.49803,
+    "1444Q2": 0.44819,
+    "1444Q3": 0.45116,
+    "1444Q4": 0.4367,
+    "1445Q1": 0.46677,
+    "1445Q2": 0.46618,
+    "1445Q3": 0.40168,
+    "1445Q4": 0.41054,
+    "1446Q1": 0.42681,
+    "1446Q2": 0.44403
+   },
+   "modelSkill": {
+    "DRIFT": {
+     "meanSkillVsBestBaseline": -1.2076,
+     "worstFoldSkill": -50.9661,
+     "foldsBeatingBaseline": 4,
+     "foldsScored": 10
+    },
+    "SHRINK": {
+     "meanSkillVsBestBaseline": -0.0319,
+     "worstFoldSkill": -10.8983,
+     "foldsBeatingBaseline": 4,
+     "foldsScored": 10
+    }
+   },
+   "verdict": "PERSISTENCE_NOT_BEATEN",
+   "bestModel": "SHRINK"
+  }
+ },
+ "articleVisibility": {
+  "k": 50,
+  "folds": 10,
+  "periods": [
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4",
+   "1445Q1",
+   "1445Q2",
+   "1445Q3",
+   "1445Q4",
+   "1446Q1",
+   "1446Q2"
+  ],
+  "meanTopKJaccard_prevPeriod": 0.6059,
+  "worstTopKJaccard_prevPeriod": 0.4286,
+  "meanTopKJaccard_ma3": 0.5663,
+  "meanNewEntrantsPerPeriod": 12.4,
+  "shareMaeMean": {
+   "ALLHIST": 0.002079,
+   "LAST": 0.00141,
+   "MA3": 0.001871
+  },
+  "byFold": [
+   {
+    "period": "1444Q1",
+    "universe": 105,
+    "courtCitations": 6096,
+    "topKJaccard_prevPeriod": 0.4286,
+    "topKJaccard_ma3": 0.4493,
+    "shareMae": {
+     "ALLHIST": 0.006247,
+     "LAST": 0.004848,
+     "MA3": 0.006477
+    },
+    "newEntrants": 20
+   },
+   {
+    "period": "1444Q2",
+    "universe": 164,
+    "courtCitations": 8492,
+    "topKJaccard_prevPeriod": 0.6393,
+    "topKJaccard_ma3": 0.4085,
+    "shareMae": {
+     "ALLHIST": 0.002727,
+     "LAST": 0.001692,
+     "MA3": 0.003525
+    },
+    "newEntrants": 11
+   },
+   {
+    "period": "1444Q3",
+    "universe": 230,
+    "courtCitations": 6306,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.5873,
+    "shareMae": {
+     "ALLHIST": 0.001493,
+     "LAST": 0.001214,
+     "MA3": 0.001558
+    },
+    "newEntrants": 10
+   },
+   {
+    "period": "1444Q4",
+    "universe": 268,
+    "courtCitations": 6027,
+    "topKJaccard_prevPeriod": 0.6129,
+    "topKJaccard_ma3": 0.6129,
+    "shareMae": {
+     "ALLHIST": 0.001473,
+     "LAST": 0.000966,
+     "MA3": 0.001207
+    },
+    "newEntrants": 12
+   },
+   {
+    "period": "1445Q1",
+    "universe": 304,
+    "courtCitations": 5146,
+    "topKJaccard_prevPeriod": 0.6393,
+    "topKJaccard_ma3": 0.6393,
+    "shareMae": {
+     "ALLHIST": 0.001233,
+     "LAST": 0.000832,
+     "MA3": 0.000903
+    },
+    "newEntrants": 11
+   },
+   {
+    "period": "1445Q2",
+    "universe": 324,
+    "courtCitations": 2868,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.5625,
+    "shareMae": {
+     "ALLHIST": 0.00116,
+     "LAST": 0.00097,
+     "MA3": 0.000963
+    },
+    "newEntrants": 10
+   },
+   {
+    "period": "1445Q3",
+    "universe": 335,
+    "courtCitations": 1902,
+    "topKJaccard_prevPeriod": 0.5385,
+    "topKJaccard_ma3": 0.6129,
+    "shareMae": {
+     "ALLHIST": 0.001583,
+     "LAST": 0.001201,
+     "MA3": 0.001164
+    },
+    "newEntrants": 15
+   },
+   {
+    "period": "1445Q4",
+    "universe": 352,
+    "courtCitations": 2258,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.6393,
+    "shareMae": {
+     "ALLHIST": 0.001624,
+     "LAST": 0.000798,
+     "MA3": 0.001018
+    },
+    "newEntrants": 10
+   },
+   {
+    "period": "1446Q1",
+    "universe": 364,
+    "courtCitations": 1462,
+    "topKJaccard_prevPeriod": 0.6129,
+    "topKJaccard_ma3": 0.6129,
+    "shareMae": {
+     "ALLHIST": 0.001564,
+     "LAST": 0.000803,
+     "MA3": 0.000966
+    },
+    "newEntrants": 12
+   },
+   {
+    "period": "1446Q2",
+    "universe": 376,
+    "courtCitations": 1072,
+    "topKJaccard_prevPeriod": 0.5873,
+    "topKJaccard_ma3": 0.5385,
+    "shareMae": {
+     "ALLHIST": 0.001685,
+     "LAST": 0.000775,
+     "MA3": 0.000928
+    },
+    "newEntrants": 13
+   }
+  ],
+  "verdict": "PERSISTENCE_NOT_BEATEN"
+ },
+ "articleVisibilityTop10": {
+  "k": 10,
+  "folds": 13,
+  "periods": [
+   "1443Q2",
+   "1443Q3",
+   "1443Q4",
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4",
+   "1445Q1",
+   "1445Q2",
+   "1445Q3",
+   "1445Q4",
+   "1446Q1",
+   "1446Q2"
+  ],
+  "meanTopKJaccard_prevPeriod": 0.6117,
+  "worstTopKJaccard_prevPeriod": 0.25,
+  "meanTopKJaccard_ma3": 0.5453,
+  "meanNewEntrantsPerPeriod": 2.62,
+  "shareMaeMean": {
+   "ALLHIST": 0.004505,
+   "LAST": 0.004184,
+   "MA3": 0.004277
+  },
+  "byFold": [
+   {
+    "period": "1443Q2",
+    "universe": 21,
+    "courtCitations": 305,
+    "topKJaccard_prevPeriod": 0.3333,
+    "topKJaccard_ma3": 0.4286,
+    "shareMae": {
+     "ALLHIST": 0.015287,
+     "LAST": 0.017754,
+     "MA3": 0.014944
+    },
+    "newEntrants": 5
+   },
+   {
+    "period": "1443Q3",
+    "universe": 36,
+    "courtCitations": 1984,
+    "topKJaccard_prevPeriod": 0.4286,
+    "topKJaccard_ma3": 0.3333,
+    "shareMae": {
+     "ALLHIST": 0.0158,
+     "LAST": 0.014075,
+     "MA3": 0.015481
+    },
+    "newEntrants": 4
+   },
+   {
+    "period": "1443Q4",
+    "universe": 78,
+    "courtCitations": 2102,
+    "topKJaccard_prevPeriod": 0.3333,
+    "topKJaccard_ma3": 0.5385,
+    "shareMae": {
+     "ALLHIST": 0.006692,
+     "LAST": 0.008468,
+     "MA3": 0.006472
+    },
+    "newEntrants": 5
+   },
+   {
+    "period": "1444Q1",
+    "universe": 105,
+    "courtCitations": 6096,
+    "topKJaccard_prevPeriod": 0.25,
+    "topKJaccard_ma3": 0.25,
+    "shareMae": {
+     "ALLHIST": 0.006247,
+     "LAST": 0.004848,
+     "MA3": 0.006477
+    },
+    "newEntrants": 6
+   },
+   {
+    "period": "1444Q2",
+    "universe": 164,
+    "courtCitations": 8492,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.3333,
+    "shareMae": {
+     "ALLHIST": 0.002727,
+     "LAST": 0.001692,
+     "MA3": 0.003525
+    },
+    "newEntrants": 2
+   },
+   {
+    "period": "1444Q3",
+    "universe": 230,
+    "courtCitations": 6306,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.5385,
+    "shareMae": {
+     "ALLHIST": 0.001493,
+     "LAST": 0.001214,
+     "MA3": 0.001558
+    },
+    "newEntrants": 2
+   },
+   {
+    "period": "1444Q4",
+    "universe": 268,
+    "courtCitations": 6027,
+    "topKJaccard_prevPeriod": 0.8182,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.001473,
+     "LAST": 0.000966,
+     "MA3": 0.001207
+    },
+    "newEntrants": 1
+   },
+   {
+    "period": "1445Q1",
+    "universe": 304,
+    "courtCitations": 5146,
+    "topKJaccard_prevPeriod": 0.8182,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.001233,
+     "LAST": 0.000832,
+     "MA3": 0.000903
+    },
+    "newEntrants": 1
+   },
+   {
+    "period": "1445Q2",
+    "universe": 324,
+    "courtCitations": 2868,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.00116,
+     "LAST": 0.00097,
+     "MA3": 0.000963
+    },
+    "newEntrants": 2
+   },
+   {
+    "period": "1445Q3",
+    "universe": 335,
+    "courtCitations": 1902,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.001583,
+     "LAST": 0.001201,
+     "MA3": 0.001164
+    },
+    "newEntrants": 2
+   },
+   {
+    "period": "1445Q4",
+    "universe": 352,
+    "courtCitations": 2258,
+    "topKJaccard_prevPeriod": 0.8182,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.001624,
+     "LAST": 0.000798,
+     "MA3": 0.001018
+    },
+    "newEntrants": 1
+   },
+   {
+    "period": "1446Q1",
+    "universe": 364,
+    "courtCitations": 1462,
+    "topKJaccard_prevPeriod": 0.6667,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.001564,
+     "LAST": 0.000803,
+     "MA3": 0.000966
+    },
+    "newEntrants": 2
+   },
+   {
+    "period": "1446Q2",
+    "universe": 376,
+    "courtCitations": 1072,
+    "topKJaccard_prevPeriod": 0.8182,
+    "topKJaccard_ma3": 0.6667,
+    "shareMae": {
+     "ALLHIST": 0.001685,
+     "LAST": 0.000775,
+     "MA3": 0.000928
+    },
+    "newEntrants": 1
+   }
+  ],
+  "verdict": "PERSISTENCE_NOT_BEATEN"
+ },
+ "newEntrants": {
+  "candidates": 2322,
+  "baseRate": 0.0448,
+  "periods": [
+   "1444Q1",
+   "1444Q2",
+   "1444Q3",
+   "1444Q4",
+   "1445Q1",
+   "1445Q2",
+   "1445Q3",
+   "1445Q4",
+   "1446Q1",
+   "1446Q2"
+  ],
+  "courtShare": {
+   "precisionAtNTrue": 0.2319,
+   "periodsScored": 10,
+   "liftOverBaseRate": 5.18
+  },
+  "partyShare": {
+   "precisionAtNTrue": 0.1028,
+   "periodsScored": 10,
+   "liftOverBaseRate": 2.3
+  },
+  "momentum": {
+   "precisionAtNTrue": 0.1363,
+   "periodsScored": 10,
+   "liftOverBaseRate": 3.04
+  },
+  "bestSignal": "courtShare",
+  "verdict": "SIGNAL_ABOVE_BASE_RATE"
+ },
+ "leadLag": {
+  "folds": 11,
+  "meanCourtPersistenceR": 0.9625,
+  "meanPartyLeadR": 0.3471,
+  "meanPartyPartialR": -0.0107,
+  "worstPartyPartialR": -0.186,
+  "foldsWithPositivePartial": 4,
+  "byFold": [
+   {
+    "period": "1443Q4",
+    "articles": 78,
+    "courtPersistenceR": 0.7987,
+    "partyLeadR": 0.356,
+    "partyPartialR": 0.1506
+   },
+   {
+    "period": "1444Q1",
+    "articles": 105,
+    "courtPersistenceR": 0.9159,
+    "partyLeadR": 0.2644,
+    "partyPartialR": -0.0049
+   },
+   {
+    "period": "1444Q2",
+    "articles": 164,
+    "courtPersistenceR": 0.9803,
+    "partyLeadR": 0.3932,
+    "partyPartialR": 0.1758
+   },
+   {
+    "period": "1444Q3",
+    "articles": 230,
+    "courtPersistenceR": 0.9884,
+    "partyLeadR": 0.3809,
+    "partyPartialR": 0.0203
+   },
+   {
+    "period": "1444Q4",
+    "articles": 268,
+    "courtPersistenceR": 0.9915,
+    "partyLeadR": 0.2993,
+    "partyPartialR": -0.0658
+   },
+   {
+    "period": "1445Q1",
+    "articles": 304,
+    "courtPersistenceR": 0.9935,
+    "partyLeadR": 0.1771,
+    "partyPartialR": -0.186
+   },
+   {
+    "period": "1445Q2",
+    "articles": 324,
+    "courtPersistenceR": 0.9912,
+    "partyLeadR": 0.2321,
+    "partyPartialR": -0.0045
+   },
+   {
+    "period": "1445Q3",
+    "articles": 335,
+    "courtPersistenceR": 0.961,
+    "partyLeadR": 0.3309,
+    "partyPartialR": -0.0236
+   },
+   {
+    "period": "1445Q4",
+    "articles": 352,
+    "courtPersistenceR": 0.9903,
+    "partyLeadR": 0.4044,
+    "partyPartialR": -0.1649
+   },
+   {
+    "period": "1446Q1",
+    "articles": 364,
+    "courtPersistenceR": 0.9857,
+    "partyLeadR": 0.529,
+    "partyPartialR": 0.0459
+   },
+   {
+    "period": "1446Q2",
+    "articles": 376,
+    "courtPersistenceR": 0.9911,
+    "partyLeadR": 0.4509,
+    "partyPartialR": -0.0602
+   }
+  ],
+  "verdict": "NO_LEAD_LAG_ASSOCIATION_ABOVE_PERSISTENCE",
+  "note": "LEAD-LAG ASSOCIATION, not influence. A provision both sides discover at the same time produces this pattern too."
+ },
+ "retrievalDecay": {
+  "h1": {
+   "folds": 13,
+   "meanCoverage": {
+    "COURT_REASONING": 0.9563,
+    "RECENT_COURT_2Q": 0.9424,
+    "STATUTE_ONLY_TOP200": 0.914,
+    "STATUTE_ONLY_TOP50": 0.8039,
+    "WHOLE_JUDGMENT": 0.9626
+   },
+   "worstCoverage": {
+    "COURT_REASONING": 0.8262,
+    "RECENT_COURT_2Q": 0.8033,
+    "STATUTE_ONLY_TOP200": 0.777,
+    "STATUTE_ONLY_TOP50": 0.7148,
+    "WHOLE_JUDGMENT": 0.8328
+   }
+  },
+  "h2": {
+   "folds": 12,
+   "meanCoverage": {
+    "COURT_REASONING": 0.9388,
+    "RECENT_COURT_2Q": 0.9206,
+    "STATUTE_ONLY_TOP200": 0.8892,
+    "STATUTE_ONLY_TOP50": 0.7706,
+    "WHOLE_JUDGMENT": 0.9491
+   },
+   "worstCoverage": {
+    "COURT_REASONING": 0.8483,
+    "RECENT_COURT_2Q": 0.7969,
+    "STATUTE_ONLY_TOP200": 0.7555,
+    "STATUTE_ONLY_TOP50": 0.6319,
+    "WHOLE_JUDGMENT": 0.87
+   }
+  },
+  "h4": {
+   "folds": 10,
+   "meanCoverage": {
+    "COURT_REASONING": 0.8809,
+    "RECENT_COURT_2Q": 0.8667,
+    "STATUTE_ONLY_TOP200": 0.8329,
+    "STATUTE_ONLY_TOP50": 0.7194,
+    "WHOLE_JUDGMENT": 0.8886
+   },
+   "worstCoverage": {
+    "COURT_REASONING": 0.7095,
+    "RECENT_COURT_2Q": 0.6821,
+    "STATUTE_ONLY_TOP200": 0.6108,
+    "STATUTE_ONLY_TOP50": 0.5444,
+    "WHOLE_JUDGMENT": 0.7166
+   }
+  },
+  "doctrinalCompanionUniverse": {
+   "periods": [
+    "1444Q1",
+    "1444Q2",
+    "1444Q3",
+    "1444Q4",
+    "1445Q1",
+    "1445Q2",
+    "1445Q3",
+    "1445Q4",
+    "1446Q1",
+    "1446Q2"
+   ],
+   "byStep": [
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "coverage": 0.9992,
+     "top3Coverage": 0.5467
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "coverage": 1.0,
+     "top3Coverage": 0.5639
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "coverage": 0.999,
+     "top3Coverage": 0.5835
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "coverage": 0.999,
+     "top3Coverage": 0.5573
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q2",
+     "coverage": 0.9981,
+     "top3Coverage": 0.5415
+    },
+    {
+     "from": "1445Q2",
+     "to": "1445Q3",
+     "coverage": 0.9952,
+     "top3Coverage": 0.5855
+    },
+    {
+     "from": "1445Q3",
+     "to": "1445Q4",
+     "coverage": 0.9985,
+     "top3Coverage": 0.5364
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "coverage": 0.9899,
+     "top3Coverage": 0.5542
+    },
+    {
+     "from": "1446Q1",
+     "to": "1446Q2",
+     "coverage": 1.0,
+     "top3Coverage": 0.6246
+    }
+   ],
+   "meanCoverage": 0.9977,
+   "note": "the identity universe exists for 1444-1446 only and is bounded by authority.py's vocabulary, so this is an upper bound on how well a frozen companion set ages"
+  }
+ },
+ "companionPersistence": {
+  "aml_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "arbitration_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "basic_law_of_governance": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "civil_transactions_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "commercial_books_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "commercial_courts_implementing_regulation": {
+   "periodsWithSupport": 10,
+   "steps": 9,
+   "meanTopKJaccard": 0.8333,
+   "worstTopKJaccard": 0.5,
+   "sameSetShare": 66.7,
+   "sameOrderShare": 11.1,
+   "top1HeldShare": 44.4,
+   "byStep": [
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": true,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q2",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q2",
+     "to": "1445Q3",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1445Q3",
+     "to": "1445Q4",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1446Q1",
+     "to": "1446Q2",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": false
+    }
+   ],
+   "verdict": "TOP_K_PERSISTENT"
+  },
+  "commercial_courts_law": {
+   "periodsWithSupport": 10,
+   "steps": 9,
+   "meanTopKJaccard": 0.8889,
+   "worstTopKJaccard": 0.5,
+   "sameSetShare": 77.8,
+   "sameOrderShare": 33.3,
+   "top1HeldShare": 55.6,
+   "byStep": [
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": true,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": true,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q2",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q2",
+     "to": "1445Q3",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q3",
+     "to": "1445Q4",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": true,
+     "top1Held": true
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1446Q1",
+     "to": "1446Q2",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": true
+    }
+   ],
+   "verdict": "TOP_K_PERSISTENT"
+  },
+  "companies_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "enforcement_implementing_regulation": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "enforcement_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "evidence_law": {
+   "periodsWithSupport": 9,
+   "steps": 8,
+   "meanTopKJaccard": 0.625,
+   "worstTopKJaccard": 0.5,
+   "sameSetShare": 25.0,
+   "sameOrderShare": 0.0,
+   "top1HeldShare": 50.0,
+   "byStep": [
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q1",
+     "to": "1445Q2",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q2",
+     "to": "1445Q3",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q3",
+     "to": "1445Q4",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1445Q4",
+     "to": "1446Q1",
+     "jaccard": 0.5,
+     "sameSet": false,
+     "sameOrder": false,
+     "top1Held": true
+    }
+   ],
+   "verdict": "TOP_K_PERSISTENT"
+  },
+  "franchise_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "health_system_regulation": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "judicial_costs_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "labor_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "law_practice_implementing_regulation": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "law_practice_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "qismah_regulation": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "sharia_procedure_implementing_regulation": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  },
+  "sharia_procedure_law": {
+   "periodsWithSupport": 5,
+   "steps": 4,
+   "meanTopKJaccard": 1.0,
+   "worstTopKJaccard": 1.0,
+   "sameSetShare": 100.0,
+   "sameOrderShare": 0.0,
+   "top1HeldShare": 25.0,
+   "byStep": [
+    {
+     "from": "1444Q1",
+     "to": "1444Q2",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1444Q2",
+     "to": "1444Q3",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": true
+    },
+    {
+     "from": "1444Q3",
+     "to": "1444Q4",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    },
+    {
+     "from": "1444Q4",
+     "to": "1445Q1",
+     "jaccard": 1.0,
+     "sameSet": true,
+     "sameOrder": false,
+     "top1Held": false
+    }
+   ],
+   "verdict": "TOP_K_PERSISTENT"
+  },
+  "trade_names_law": {
+   "verdict": "INSUFFICIENT_TEMPORAL_DEPTH",
+   "periodsWithSupport": 0
+  }
+ },
+ "newCodeUptake": {
+  "code": "civil_transactions_law",
+  "firstCourtQuarter": "1445Q1",
+  "firstPartyQuarter": "1445Q1",
+  "firstQuarterInCourtTop50": "1445Q3",
+  "firstQuarterInCourtTop100": "1445Q2",
+  "quartersFromFirstCourtUseToTop50": 2,
+  "byPeriod": [
+   {
+    "period": "1442Q1",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1442Q2",
+    "courtShare": 0.0,
+    "partyShare": null,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1442Q3",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1442Q4",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1443Q1",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1443Q2",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1443Q3",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1443Q4",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1444Q1",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1444Q2",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1444Q3",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1444Q4",
+    "courtShare": 0.0,
+    "partyShare": 0.0,
+    "distinctArticlesCourt": 0
+   },
+   {
+    "period": "1445Q1",
+    "courtShare": 0.00155,
+    "partyShare": 0.01282,
+    "distinctArticlesCourt": 7
+   },
+   {
+    "period": "1445Q2",
+    "courtShare": 0.00384,
+    "partyShare": 0.00877,
+    "distinctArticlesCourt": 7
+   },
+   {
+    "period": "1445Q3",
+    "courtShare": 0.06414,
+    "partyShare": 0.16716,
+    "distinctArticlesCourt": 49
+   },
+   {
+    "period": "1445Q4",
+    "courtShare": 0.06067,
+    "partyShare": 0.16452,
+    "distinctArticlesCourt": 46
+   },
+   {
+    "period": "1446Q1",
+    "courtShare": 0.0855,
+    "partyShare": 0.21756,
+    "distinctArticlesCourt": 43
+   },
+   {
+    "period": "1446Q2",
+    "courtShare": 0.07743,
+    "partyShare": 0.14118,
+    "distinctArticlesCourt": 23
+   }
+  ],
+  "note": "commencement dates are not in the registry, so this is latency inside the published corpus, not latency from the day the code took effect."
+ }
+}

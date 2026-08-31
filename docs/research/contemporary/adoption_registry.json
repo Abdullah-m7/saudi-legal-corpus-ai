@@ -1,0 +1,32 @@
+{
+ "what": "A registry of VERIFIED legal-AI adoption events in Saudi legal practice. It is empty on purpose.",
+ "why_empty": "Nothing has been entered because nothing has been verified by this repository. An empty registry is a true statement about what we know; a registry populated from news summaries, vendor pages or inference would be a false one. UNKNOWN is a permitted and preferred value everywhere in this schema.",
+ "rules": [
+  "An event is entered only with a citable source. No rumour, no inference from a product announcement that a workflow changed.",
+  "AI exposure is NEVER inferred from the style, length, punctuation or fluency of a document. No detector output may be entered here, and no document in this corpus is or will be labelled AI-written.",
+  "An event describes an institution and a workflow, never an individual lawyer, judge or judgment.",
+  "confirmed_status stays PENDING until the source is checked against the issuing body's own publication.",
+  "Entering an event does not license a causal claim. It licenses an event-study window, and the event-study contract in FORESIGHT.md requires the confounders to be recorded alongside."
+ ],
+ "schema": {
+  "event_id": "string, stable, e.g. ADOPT-0001",
+  "date": "hijri and gregorian where both are known; UNKNOWN otherwise",
+  "organization": "the institution, not a person",
+  "legal_domain": "commercial | civil | criminal | administrative | general | UNKNOWN",
+  "actor_type": ["court", "ministry", "regulator", "law firm", "legal research provider", "university/training", "public legal service"],
+  "technology_type": "retrieval | drafting assistant | translation | classification | general LLM | UNKNOWN",
+  "workflow_stage": ["legal research", "drafting", "document review", "case triage", "translation", "retrieval", "judicial administration", "decision support", "public-facing legal assistance"],
+  "deployment_scope": "pilot | partial | institution-wide | UNKNOWN",
+  "source": "url or citation to the issuing body's own publication",
+  "source_quality": "OFFICIAL | REPUTABLE_SECONDARY | UNVERIFIED",
+  "confirmed_status": "CONFIRMED | PENDING | REJECTED",
+  "notes": "free text, including what the source does NOT say"
+ },
+ "adoptionThresholds": {
+  "note": "the observable conditions the conditional forecasts in FORECAST_LEDGER.json depend on. They are defined here, before any event exists, so that a future session cannot choose a threshold that makes a forecast look good.",
+  "T_RESEARCH_DEPLOYED": "at least 3 events with confirmed_status=CONFIRMED, source_quality=OFFICIAL, workflow_stage in {legal research, retrieval}, and actor_type in {court, ministry, regulator, legal research provider}, whose dates all precede the forecast window",
+  "T_DRAFTING_DEPLOYED": "the same, with workflow_stage=drafting and actor_type=law firm, from at least 3 distinct organizations",
+  "T_COURT_DECISION_SUPPORT": "at least 1 CONFIRMED OFFICIAL event with actor_type=court and workflow_stage in {decision support, judicial administration} and deployment_scope in {partial, institution-wide}"
+ },
+ "events": []
+}

@@ -1,0 +1,199 @@
+{
+ "what": "AI-TRANSITION BASELINE: the measurable state of published Saudi commercial adjudication at a stated cutoff, recorded so that a future session can ask whether anything moved.",
+ "notPreAi": "Legal AI already exists and is already in use somewhere in Saudi legal practice. This baseline makes no claim about how much, and nothing here is evidence that any document was produced with or without it.",
+ "dataCutoff": "1446Q2",
+ "windowUsed": [
+  "1442Q1",
+  "1446Q2"
+ ],
+ "repositoryHead": "4b18a2d2f91f863dae58a6e2ad4aaf9b2c7c083a",
+ "pipelineVersion": "contemporary/2026-08-companion+foresight",
+ "dataHashes": {
+  "authority.py": "a1bf7ae3713b43e1",
+  "authority_mentions.jsonl.gz": "135d5aae34c4677d",
+  "companion_layer.jsonl.gz": "0d8d40697468b73e",
+  "companions.py": "f9fdb17c7cf56e1d",
+  "foresight.py": "f3d38a7f94f0a48d",
+  "judgment_dates.json.gz": "65200a04e59a0cb1"
+ },
+ "compositionWarnings": [
+  "quarterly judgment counts range from 347 to 5523, a factor of 15.9. Every target below is a RATE, a SHARE or a RANK for that reason; no count is forecast, and a shift in what the publisher releases would still move a rate.",
+  "the corpus is published commercial judgments; it is not the Saudi judiciary, and the publisher's release policy is itself a time-varying quantity that no metric here separates out",
+  "quarters after 1446Q2 are excluded for publication lag (1446Q3 = 184 judgments, 1446Q4 = 7)",
+  "the doctrinal identity universe is authority.py's vocabulary, so every diversity figure in family C is a floor and a change in the extractor would move it without anything moving in the law"
+ ],
+ "A_statutoryUse": {
+  "trailingYear": [
+   "1445Q3",
+   "1446Q2"
+  ],
+  "courtArticleHHI": 0.06891,
+  "courtArticleEntropy": 3.7261,
+  "effectiveArticles": 41.52,
+  "distinctArticlesCited": 382,
+  "courtInstrumentHHI": 0.2905,
+  "distinctInstruments": 31,
+  "articlesFor50pctOfCitations": 7,
+  "articlesFor75pctOfCitations": 34,
+  "articlesFor90pctOfCitations": 108,
+  "top10ShareOfCourtCitations": 61.46,
+  "top50ShareOfCourtCitations": 87.05,
+  "top100ShareOfCourtCitations": 93.13,
+  "quarterOnQuarterRankSpearman": 0.3817,
+  "meanTop50EntrantsPerQuarter": 12.4
+ },
+ "B_courtVsBar": {
+  "authorityFamilyMedianJaccard": 0.5,
+  "articleMedianJaccard": 0.0,
+  "instrumentMedianJaccard": 0.333,
+  "P_sharedInstrumentGivenBothCiteStatute": 56.2,
+  "P_sharedArticleGivenSharedInstrument": 35.3,
+  "courtTop20VsPartyTop20Jaccard": 0.1765,
+  "courtStatuteShareOfCourtMentions": 75.83,
+  "partyStatutoryMentionsTrailingYear": 998,
+  "courtStatutoryMentionsTrailingYear": 6694
+ },
+ "C_doctrinalDiversity": {
+  "note": "court voice, nearest statutory citation within 500 characters, 1444-1446; bounded by the extractor",
+  "distinctCanonicalIdentities": 28,
+  "byCode": {
+   "commercial_courts_implementing_regulation": {
+    "units": 1039,
+    "distinctSources": 23,
+    "entropy": 2.022,
+    "effectiveSources": 7.55,
+    "hhi": 0.1758,
+    "coverageTop1": 28.8,
+    "coverageTop3": 67.1,
+    "coverageTop5": 83.8,
+    "namedShare": 51.5,
+    "fiqhNamedShareOfFiqh": 63.0
+   },
+   "commercial_courts_law": {
+    "units": 2000,
+    "distinctSources": 29,
+    "entropy": 2.193,
+    "effectiveSources": 8.96,
+    "hhi": 0.1753,
+    "coverageTop1": 29.9,
+    "coverageTop3": 68.5,
+    "coverageTop5": 76.8,
+    "namedShare": 24.3,
+    "fiqhNamedShareOfFiqh": 37.2
+   },
+   "evidence_law": {
+    "units": 1806,
+    "distinctSources": 28,
+    "entropy": 2.417,
+    "effectiveSources": 11.22,
+    "hhi": 0.1194,
+    "coverageTop1": 20.1,
+    "coverageTop3": 49.8,
+    "coverageTop5": 72.0,
+    "namedShare": 29.6,
+    "fiqhNamedShareOfFiqh": 60.2
+   },
+   "sharia_procedure_law": {
+    "units": 472,
+    "distinctSources": 21,
+    "entropy": 1.985,
+    "effectiveSources": 7.28,
+    "hhi": 0.1977,
+    "coverageTop1": 27.3,
+    "coverageTop3": 75.6,
+    "coverageTop5": 83.4,
+    "namedShare": 21.2,
+    "fiqhNamedShareOfFiqh": 43.6
+   }
+  },
+  "namedMaximTextPctByCode": {
+   "commercial_courts_implementing_regulation": 3.1,
+   "commercial_courts_law": 2.6,
+   "evidence_law": 2.6,
+   "sharia_procedure_law": 1.1
+  },
+  "corpusNamedFiqhShareOfFiqhTrailingYear": 58.71
+ },
+ "D_traceability": {
+  "courtMentionsClassified": 70231,
+  "resolvedStatutePct": 66.8,
+  "unresolvedStatutePct": 3.8,
+  "namedSourcePct": 18.2,
+  "unnamedPct": 11.2,
+  "medianPerJudgmentTraceablePct": 100.0,
+  "namedDoctrinalAuthorityResolvedPct": 65.1,
+  "untracedHadithPct": 34.9,
+  "untraceableShareOfLocalMentionsByCode": {
+   "commercial_courts_implementing_regulation": 49.3,
+   "commercial_courts_law": 74.5,
+   "evidence_law": 70.1,
+   "sharia_procedure_law": 79.0
+  },
+  "byYear": {
+   "1442": 81.1,
+   "1443": 78.7,
+   "1444": 85.2,
+   "1445": 86.6,
+   "1446": 89.19999999999999
+  }
+ },
+ "E_hybridReasoning": {
+  "statuteOnlyPct": 53.5,
+  "hybridPct": 28.7,
+  "nonStatuteOnlyPct": 5.8,
+  "noExplicitAuthorityPct": 12.0,
+  "nonStatutoryShareOfCourtMentionsTrailingYear": 21.99,
+  "codeSpecificHybridRate": {
+   "arbitration_law": 4.1,
+   "bankruptcy_law": 3.5,
+   "civil_transactions_law": 24.9,
+   "commercial_courts_implementing_regulation": 44.8,
+   "commercial_courts_law": 37.1,
+   "companies_law": 15.8,
+   "evidence_law": 39.4,
+   "law_practice_law": 59.4,
+   "sharia_procedure_implementing_regulation": 33.0,
+   "sharia_procedure_law": 27.7,
+   "trade_names_law": 31.0
+  },
+  "codeSpecificNamedFiqhRate": {
+   "arbitration_law": 3.9,
+   "bankruptcy_law": 2.3,
+   "civil_transactions_law": 7.8,
+   "commercial_courts_implementing_regulation": 31.9,
+   "commercial_courts_law": 22.2,
+   "companies_law": 10.1,
+   "evidence_law": 24.3,
+   "law_practice_law": 24.1,
+   "sharia_procedure_implementing_regulation": 18.8,
+   "sharia_procedure_law": 14.3,
+   "trade_names_law": 12.4
+  }
+ },
+ "F_templateConcentration": {
+  "scope": "court-voice authority CONTEXTS only -- a hash of the wording around a non-statutory mention. This is not a measure of whole-judgment templating and must not be read as one.",
+  "distinctFingerprints": 8447,
+  "shareInARepeatedFamily": 59.7,
+  "shareInFamiliesOf5Plus": 41.5,
+  "circulatingFingerprints": 194,
+  "courtMentionsInCirculatingWordingPct": 30.8,
+  "topFingerprintShareByCodeTopSource": {
+   "commercial_courts_implementing_regulation": 17.0,
+   "commercial_courts_law": 35.9,
+   "evidence_law": 3.6,
+   "sharia_procedure_law": 8.7
+  },
+  "attribution": "these templates are HUMAN AND INSTITUTIONAL as measured; nothing here attributes any of them to any tool."
+ },
+ "G_uptakeVelocity": {
+  "definition": "first OBSERVED quarter of use inside the corpus. Enactment dates are not in the registry, so this is not latency from commencement, and it is left-censored at 1442Q1.",
+  "articlesWithBothFirstUsesObserved": 460,
+  "medianCourtMinusPartyFirstUseQuarters": -1,
+  "shareFirstSeenInPartyVoice": 20.22,
+  "shareFirstSeenInCourtVoice": 56.3,
+  "shareFirstSeenSameQuarter": 23.48,
+  "leadLagVerdict": "NO_LEAD_LAG_ASSOCIATION_ABOVE_PERSISTENCE",
+  "meanCourtPersistenceR": 0.9625,
+  "meanPartyPartialR": -0.0107
+ }
+}

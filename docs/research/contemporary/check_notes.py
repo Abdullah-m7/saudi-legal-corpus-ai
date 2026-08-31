@@ -35,6 +35,8 @@ def facts():
     ins, ief = J("instruments_results.json"), J("instrument_effect_results.json")
     ai = J("article_instrument_results.json")
     cm = J("companion_analysis_results.json")
+    fo, aib = J("foresight_results.json"), J("ai_baseline_results.json")
+    fl = J("FORECAST_LEDGER.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -496,6 +498,107 @@ def facts():
          f"{CW['phase16_templates'][IR][2]['topFingerprintShare']}", D),
         ("ccl top fingerprint share",
          f"{CW['phase16_templates'][CL][0]['topFingerprintShare']}", D),
+        # --- the foresight and AI-transition programme
+    ]
+    FS, FL = fo["scalarTargets"], ["FORESIGHT.md"]
+    AV, EN = fo["articleVisibility"], fo["newEntrants"]
+    LL, RD = fo["leadLag"], fo["retrievalDecay"]
+    CPP, UP = fo["companionPersistence"], fo["newCodeUptake"]
+    A, B, C, DD = (aib["A_statutoryUse"], aib["B_courtVsBar"],
+                   aib["C_doctrinalDiversity"], aib["D_traceability"])
+    E, FF, G = (aib["E_hybridReasoning"], aib["F_templateConcentration"],
+                aib["G_uptakeVelocity"])
+    FC = {f["forecast_id"]: f for f in fl["forecasts"]}
+    out += [
+        ("mentions in the temporal window", f"{fo['mentionsUsed']:,}", FL),
+        ("thinnest quarter", f"{min(fo['judgmentsWithAuthorityByPeriod'].values())}", FL),
+        ("distinct articles cited", f"{A['distinctArticlesCited']}", FL),
+        ("court article HHI at cutoff", f"{A['courtArticleHHI']}", FL),
+        ("top-50 share of court citations", f"{A['top50ShareOfCourtCitations']}", FL),
+        ("entrants per quarter", f"{A['meanTop50EntrantsPerQuarter']}", FL),
+        ("court/party top-20 jaccard", f"{B['courtTop20VsPartyTop20Jaccard']}", FL),
+        ("canonical identities", f"{C['distinctCanonicalIdentities']}", FL),
+        ("named fiqh share trailing year",
+         f"{C['corpusNamedFiqhShareOfFiqhTrailingYear']}", FL),
+        ("resolved statute pct", f"{DD['resolvedStatutePct']}", FL),
+        ("named source pct", f"{DD['namedSourcePct']}", FL),
+        ("unnamed pct", f"{DD['unnamedPct']}", FL),
+        ("statute-only share", f"{E['statuteOnlyPct']}", FL),
+        ("hybrid share", f"{E['hybridPct']}", FL),
+        ("distinct fingerprints", f"{FF['distinctFingerprints']:,}", FL),
+        ("circulating fingerprints", f"{FF['circulatingFingerprints']}", FL),
+        ("court mentions in circulating wording",
+         f"{FF['courtMentionsInCirculatingWordingPct']}", FL),
+        ("first seen in court voice", f"{G['shareFirstSeenInCourtVoice']}", FL),
+        ("first seen in party voice", f"{G['shareFirstSeenInPartyVoice']}", FL),
+        ("first seen same quarter", f"{G['shareFirstSeenSameQuarter']}", FL),
+        ("articles with both first uses",
+         f"{G['articlesWithBothFirstUsesObserved']}", FL),
+        ("named fiqh best baseline mae",
+         f"{FS['namedFiqhShareOfFiqh']['mae']['MEAN']}", FL),
+        ("non-statutory best baseline mae",
+         f"{FS['nonStatutoryShareOfCourtMentions']['mae']['MA3']}", FL),
+        ("overlap best baseline mae",
+         f"{FS['courtPartyTop20Jaccard']['mae']['MA3']}", FL),
+        ("hhi best baseline mae", f"{FS['courtArticleHHI']['mae']['LAST']}", FL),
+        ("ccl instrument share mae",
+         f"{FS['commercialCourtsLawShareOfInstruments']['mae']['LAST']}", FL),
+        ("ctl share mae",
+         f"{FS['civilTransactionsLawShareOfCourtCitations']['mae']['LAST']}", FL),
+        ("shrink skill on non-statutory share",
+         f"{FS['nonStatutoryShareOfCourtMentions']['modelSkill']['SHRINK']['meanSkillVsBestBaseline']}", FL),
+        ("shrink worst fold",
+         f"{FS['nonStatutoryShareOfCourtMentions']['modelSkill']['SHRINK']['worstFoldSkill']}", FL),
+        ("drift skill on named fiqh",
+         f"{FS['namedFiqhShareOfFiqh']['modelSkill']['DRIFT']['meanSkillVsBestBaseline']}", FL),
+        ("drift worst fold on named fiqh",
+         f"{FS['namedFiqhShareOfFiqh']['modelSkill']['DRIFT']['worstFoldSkill']}", FL),
+        ("top-50 jaccard persistence", f"{AV['meanTopKJaccard_prevPeriod']}", FL),
+        ("top-50 jaccard worst fold", f"{AV['worstTopKJaccard_prevPeriod']}", FL),
+        ("top-50 jaccard ma3", f"{AV['meanTopKJaccard_ma3']}", FL),
+        ("top-10 jaccard persistence",
+         f"{fo['articleVisibilityTop10']['meanTopKJaccard_prevPeriod']}", FL),
+        ("share mae LAST", f"{AV['shareMaeMean']['LAST']}", FL),
+        ("share mae MA3", f"{AV['shareMaeMean']['MA3']}", FL),
+        ("entrant candidates", f"{EN['candidates']:,}", FL),
+        ("entrant base rate", f"{round(100 * EN['baseRate'], 2)}", FL),
+        ("entrant precision, court share",
+         f"{round(100 * EN['courtShare']['precisionAtNTrue'], 2)}", FL),
+        ("entrant lift, court share", f"{EN['courtShare']['liftOverBaseRate']}", FL),
+        ("entrant lift, party share", f"{EN['partyShare']['liftOverBaseRate']}", FL),
+        ("entrant lift, momentum", f"{EN['momentum']['liftOverBaseRate']}", FL),
+        ("court persistence r", f"{LL['meanCourtPersistenceR']}", FL),
+        ("party lead r", f"{LL['meanPartyLeadR']}", FL),
+        ("party partial r", f"{LL['meanPartyPartialR']}", FL),
+        ("decay whole judgment h1",
+         f"{RD['h1']['meanCoverage']['WHOLE_JUDGMENT']}", FL),
+        ("decay court reasoning h1",
+         f"{RD['h1']['meanCoverage']['COURT_REASONING']}", FL),
+        ("decay top50 h1",
+         f"{RD['h1']['meanCoverage']['STATUTE_ONLY_TOP50']}", FL),
+        ("decay court reasoning h4",
+         f"{RD['h4']['meanCoverage']['COURT_REASONING']}", FL),
+        ("decay top50 h4",
+         f"{RD['h4']['meanCoverage']['STATUTE_ONLY_TOP50']}", FL),
+        ("companion universe coverage",
+         f"{RD['doctrinalCompanionUniverse']['meanCoverage']}", FL),
+        ("companion jaccard, evidence",
+         f"{CPP['evidence_law']['meanTopKJaccard']}", FL),
+        ("companion jaccard, ccl",
+         f"{CPP['commercial_courts_law']['meanTopKJaccard']}", FL),
+        ("companion jaccard, ccir",
+         f"{CPP['commercial_courts_implementing_regulation']['meanTopKJaccard']}", FL),
+        ("ctl first court quarter", f"{UP['firstCourtQuarter']}", FL),
+        ("ctl first top50 quarter", f"{UP['firstQuarterInCourtTop50']}", FL),
+        ("ctl quarters to top50",
+         f"{UP['quartersFromFirstCourtUseToTop50']}", FL),
+        ("forecast: ctl share",
+         f"{FC['ctl_court_share@1446Q2']['prediction']['pointEstimate']}", FL),
+        ("forecast: overlap",
+         f"{FC['court_party_top20_jaccard@1446Q2']['prediction']['pointEstimate']}", FL),
+        ("forecast: retrieval coverage",
+         f"{FC['retrieval_coverage_h1@1446Q2']['prediction']['pointEstimate']}", FL),
+        ("ledger hash", fl["ledgerHash"], FL),
     ]
     return out
 
