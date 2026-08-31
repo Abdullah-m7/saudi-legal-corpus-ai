@@ -1,0 +1,885 @@
+{
+ "what": "the code-ecology claim as it stood before the docket test",
+ "theory": "T3 --- instrument identity remains a major empirical organizing variable after citation load, enacted-text features, age, domain, three functional taxonomies, article composition, matched legal function and year. It is NOT yet a claim about legal culture: dispute composition is the last known untested competitor.",
+ "codeHash": {
+  "instruments.py": "f5da748dc5bd",
+  "instrument_effect.py": "3189cd778650",
+  "article_instrument.py": "e65fae7bc8dc"
+ },
+ "ecology": {
+  "commercial_courts_law": {
+   "judgments": 13254,
+   "hybridPct": 37.1,
+   "statuteOnlyPct": 62.9,
+   "named_fiqh": 22.2,
+   "maxim": 2.6,
+   "scripture": 14.5,
+   "judicial_principle": 3.9,
+   "custom": 3.0,
+   "top10ConcentrationPct": 91.0
+  },
+  "evidence_law": {
+   "judgments": 7611,
+   "hybridPct": 39.4,
+   "statuteOnlyPct": 60.6,
+   "named_fiqh": 24.3,
+   "maxim": 2.4,
+   "scripture": 12.8,
+   "judicial_principle": 6.3,
+   "custom": 3.6,
+   "top10ConcentrationPct": 79.2
+  },
+  "sharia_procedure_law": {
+   "judgments": 3854,
+   "hybridPct": 27.7,
+   "statuteOnlyPct": 72.3,
+   "named_fiqh": 14.3,
+   "maxim": 1.0,
+   "scripture": 10.5,
+   "judicial_principle": 5.5,
+   "custom": 1.0,
+   "top10ConcentrationPct": 77.4
+  },
+  "commercial_courts_implementing_regulation": {
+   "judgments": 3533,
+   "hybridPct": 44.8,
+   "statuteOnlyPct": 55.2,
+   "named_fiqh": 31.9,
+   "maxim": 3.8,
+   "scripture": 10.1,
+   "judicial_principle": 10.4,
+   "custom": 2.7,
+   "top10ConcentrationPct": 67.6
+  },
+  "companies_law": {
+   "judgments": 634,
+   "hybridPct": 15.8,
+   "statuteOnlyPct": 84.2,
+   "named_fiqh": 10.1,
+   "maxim": 1.3,
+   "scripture": 5.4,
+   "judicial_principle": 3.2,
+   "custom": 0.8,
+   "top10ConcentrationPct": 50.2
+  },
+  "arbitration_law": {
+   "judgments": 363,
+   "hybridPct": 4.1,
+   "statuteOnlyPct": 95.9,
+   "named_fiqh": 3.9,
+   "maxim": 0.3,
+   "scripture": 0.3,
+   "judicial_principle": 0.3,
+   "custom": 0.0,
+   "top10ConcentrationPct": 92.4
+  },
+  "civil_transactions_law": {
+   "judgments": 357,
+   "hybridPct": 24.9,
+   "statuteOnlyPct": 75.1,
+   "named_fiqh": 7.8,
+   "maxim": 5.6,
+   "scripture": 9.5,
+   "judicial_principle": 2.8,
+   "custom": 4.5,
+   "top10ConcentrationPct": 62.5
+  },
+  "law_practice_law": {
+   "judgments": 345,
+   "hybridPct": 59.4,
+   "statuteOnlyPct": 40.6,
+   "named_fiqh": 24.1,
+   "maxim": 0.6,
+   "scripture": 21.4,
+   "judicial_principle": 22.9,
+   "custom": 2.3,
+   "top10ConcentrationPct": 99.5
+  },
+  "sharia_procedure_implementing_regulation": {
+   "judgments": 191,
+   "hybridPct": 33.0,
+   "statuteOnlyPct": 67.0,
+   "named_fiqh": 18.8,
+   "maxim": 3.1,
+   "scripture": 11.0,
+   "judicial_principle": 3.7,
+   "custom": 1.0,
+   "top10ConcentrationPct": 83.4
+  },
+  "bankruptcy_law": {
+   "judgments": 86,
+   "hybridPct": 3.5,
+   "statuteOnlyPct": 96.5,
+   "named_fiqh": 2.3,
+   "maxim": 0.0,
+   "scripture": 1.2,
+   "judicial_principle": 0.0,
+   "custom": 1.2,
+   "top10ConcentrationPct": 77.9
+  },
+  "trade_names_law": {
+   "judgments": 113,
+   "hybridPct": 31.0,
+   "statuteOnlyPct": 69.0,
+   "named_fiqh": 12.4,
+   "maxim": 1.8,
+   "scripture": 8.8,
+   "judicial_principle": 11.5,
+   "custom": 0.9,
+   "top10ConcentrationPct": 98.3
+  },
+  "law_practice_implementing_regulation": {
+   "judgments": 87,
+   "hybridPct": 42.5,
+   "statuteOnlyPct": 57.5,
+   "named_fiqh": 36.8,
+   "maxim": 4.6,
+   "scripture": 25.3,
+   "judicial_principle": 1.1,
+   "custom": 0.0,
+   "top10ConcentrationPct": 100.0
+  }
+ },
+ "authorityVectors": {
+  "commercial_courts_law": {
+   "named_fiqh": 0.2035,
+   "maxim": 0.0238,
+   "scripture": 0.1329,
+   "judicial_principle": 0.0357,
+   "custom": 0.0275,
+   "statute_only": 0.5765
+  },
+  "evidence_law": {
+   "named_fiqh": 0.2209,
+   "maxim": 0.0218,
+   "scripture": 0.1164,
+   "judicial_principle": 0.0573,
+   "custom": 0.0327,
+   "statute_only": 0.5509
+  },
+  "sharia_procedure_law": {
+   "named_fiqh": 0.1367,
+   "maxim": 0.0096,
+   "scripture": 0.1004,
+   "judicial_principle": 0.0526,
+   "custom": 0.0096,
+   "statute_only": 0.6912
+  },
+  "commercial_courts_implementing_regulation": {
+   "named_fiqh": 0.2796,
+   "maxim": 0.0333,
+   "scripture": 0.0885,
+   "judicial_principle": 0.0911,
+   "custom": 0.0237,
+   "statute_only": 0.4838
+  },
+  "companies_law": {
+   "named_fiqh": 0.0962,
+   "maxim": 0.0124,
+   "scripture": 0.0514,
+   "judicial_principle": 0.0305,
+   "custom": 0.0076,
+   "statute_only": 0.8019
+  },
+  "arbitration_law": {
+   "named_fiqh": 0.0387,
+   "maxim": 0.003,
+   "scripture": 0.003,
+   "judicial_principle": 0.003,
+   "custom": 0.0,
+   "statute_only": 0.9523
+  },
+  "civil_transactions_law": {
+   "named_fiqh": 0.0741,
+   "maxim": 0.0532,
+   "scripture": 0.0902,
+   "judicial_principle": 0.0266,
+   "custom": 0.0427,
+   "statute_only": 0.7132
+  },
+  "law_practice_law": {
+   "named_fiqh": 0.2154,
+   "maxim": 0.0054,
+   "scripture": 0.1912,
+   "judicial_principle": 0.2046,
+   "custom": 0.0206,
+   "statute_only": 0.3628
+  },
+  "sharia_procedure_implementing_regulation": {
+   "named_fiqh": 0.1797,
+   "maxim": 0.0296,
+   "scripture": 0.1052,
+   "judicial_principle": 0.0354,
+   "custom": 0.0096,
+   "statute_only": 0.6405
+  },
+  "bankruptcy_law": {
+   "named_fiqh": 0.0227,
+   "maxim": 0.0,
+   "scripture": 0.0119,
+   "judicial_principle": 0.0,
+   "custom": 0.0119,
+   "statute_only": 0.9536
+  },
+  "trade_names_law": {
+   "named_fiqh": 0.1188,
+   "maxim": 0.0172,
+   "scripture": 0.0843,
+   "judicial_principle": 0.1102,
+   "custom": 0.0086,
+   "statute_only": 0.6609
+  },
+  "law_practice_implementing_regulation": {
+   "named_fiqh": 0.2937,
+   "maxim": 0.0367,
+   "scripture": 0.2019,
+   "judicial_principle": 0.0088,
+   "custom": 0.0,
+   "statute_only": 0.4589
+  }
+ },
+ "courtVersusBar": {
+  "commercial_courts_law": {
+   "court": 37.1,
+   "partyWide": 20.4,
+   "partyStrict": 29.0
+  },
+  "evidence_law": {
+   "court": 39.4,
+   "partyWide": 42.8,
+   "partyStrict": 48.2
+  },
+  "sharia_procedure_law": {
+   "court": 27.7,
+   "partyWide": 33.5,
+   "partyStrict": 36.6
+  },
+  "commercial_courts_implementing_regulation": {
+   "court": 44.8,
+   "partyWide": 16.7,
+   "partyStrict": 25.9
+  },
+  "companies_law": {
+   "court": 15.8,
+   "partyWide": 24.6,
+   "partyStrict": 28.6
+  },
+  "arbitration_law": {
+   "court": 4.1,
+   "partyWide": 15.0,
+   "partyStrict": 16.7
+  },
+  "civil_transactions_law": {
+   "court": 24.9,
+   "partyWide": 47.9,
+   "partyStrict": 50.9
+  },
+  "law_practice_law": {
+   "court": 59.4,
+   "partyWide": 44.3,
+   "partyStrict": 39.5
+  },
+  "sharia_procedure_implementing_regulation": {
+   "court": 33.0,
+   "partyWide": 41.0,
+   "partyStrict": 50.0
+  },
+  "bankruptcy_law": {
+   "court": 3.5,
+   "partyWide": 31.5,
+   "partyStrict": 28.0
+  },
+  "trade_names_law": {
+   "court": 31.0,
+   "partyWide": 21.6,
+   "partyStrict": 20.0
+  },
+  "law_practice_implementing_regulation": {
+   "court": 42.5,
+   "partyWide": 63.6,
+   "partyStrict": 40.0
+  }
+ },
+ "matchedFunctionPairs": {
+  "note": "pairs of articles doing the same adjudicative work, in the same citation band, in DIFFERENT codes -- and, as the control, the same construction inside ONE code. If the code carries something, the cross-code gap should be the larger.",
+  "crossCodePairs": 722,
+  "crossCodeMedianGapPts": 20.4,
+  "crossCodeMeanGapPts": 21.8,
+  "sameCodePairs": 289,
+  "sameCodeMedianGapPts": 11.0,
+  "sameCodeMeanGapPts": 16.9,
+  "byFunction": {
+   "INSTITUTIONAL_OPERATION": {
+    "crossCodePairs": 610,
+    "crossCodeMedianGapPts": 20.4,
+    "sameCodePairs": 235,
+    "sameCodeMedianGapPts": 14.8
+   },
+   "DISPUTE_DECISION": {
+    "crossCodePairs": 97,
+    "crossCodeMedianGapPts": 19.8,
+    "sameCodePairs": 48,
+    "sameCodeMedianGapPts": 7.4
+   },
+   "MIXED": {
+    "crossCodePairs": 15,
+    "crossCodeMedianGapPts": 19.7,
+    "sameCodePairs": 6,
+    "sameCodeMedianGapPts": 13.7
+   }
+  },
+  "widest": [
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "commercial_courts_implementing_regulation:58",
+    "aN": 374,
+    "aPct": 1.1,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 70.6
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "commercial_courts_implementing_regulation:59",
+    "aN": 171,
+    "aPct": 1.8,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 69.9
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_implementing_regulation:8",
+    "aN": 72,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:128",
+    "bN": 116,
+    "bPct": 69.0,
+    "absGapPts": 69.0
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_implementing_regulation:104",
+    "aN": 70,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:128",
+    "bN": 116,
+    "bPct": 69.0,
+    "absGapPts": 69.0
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_law:21",
+    "aN": 79,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:128",
+    "bN": 116,
+    "bPct": 69.0,
+    "absGapPts": 69.0
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "arbitration_law:8",
+    "aN": 184,
+    "aPct": 2.7,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 68.9
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 2,
+    "a": "commercial_courts_implementing_regulation:16",
+    "aN": 177,
+    "aPct": 3.4,
+    "b": "evidence_law:1",
+    "bN": 356,
+    "bPct": 71.6,
+    "absGapPts": 68.2
+   },
+   {
+    "function": "INSTITUTIONAL_OPERATION",
+    "band": 1,
+    "a": "commercial_courts_implementing_regulation:8",
+    "aN": 72,
+    "aPct": 0.0,
+    "b": "sharia_procedure_law:73",
+    "bN": 97,
+    "bPct": 68.0,
+    "absGapPts": 68.0
+   }
+  ],
+  "narrowest": [
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:5",
+    "aN": 45,
+    "aPct": 0.0,
+    "b": "bankruptcy_law:7",
+    "bN": 38,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:5",
+    "aN": 45,
+    "aPct": 0.0,
+    "b": "commercial_courts_implementing_regulation:37",
+    "bN": 45,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:55",
+    "aN": 32,
+    "aPct": 0.0,
+    "b": "bankruptcy_law:7",
+    "bN": 38,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "arbitration_law:55",
+    "aN": 32,
+    "aPct": 0.0,
+    "b": "commercial_courts_implementing_regulation:37",
+    "bN": 45,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   },
+   {
+    "function": "DISPUTE_DECISION",
+    "band": 0,
+    "a": "bankruptcy_law:7",
+    "aN": 38,
+    "aPct": 0.0,
+    "b": "commercial_courts_implementing_regulation:37",
+    "bN": 45,
+    "bPct": 0.0,
+    "absGapPts": 0.0
+   }
+  ]
+ },
+ "articleVersusInstrument": {
+  "articlePropertiesFirst": {
+   "articleShare": 44.8,
+   "instrumentShareOfResidual": 14.9
+  },
+  "instrumentFirst": {
+   "instrumentShare": 24.5,
+   "articleShareOfResidual": 44.8
+  },
+  "note": "article properties are the adjudicative function, the citation band, whether the article's own text carries open-textured vocabulary, and whether it is longer than the corpus median. Groups are cells of that cross, so the share is inflated by cell count and is comparable between the two orders, not against zero.",
+  "articles": 123,
+  "articleCells": 34,
+  "instrumentGroups": 8,
+  "chanceShares": {
+   "articleProperties": 26.7,
+   "instrument": 5.6,
+   "note": "mean between-share achieved by the same cell sizes on shuffled article rates, over 400 shuffles. Subtract it from the observed share to compare schemes of different size."
+  }
+ },
+ "varianceRanking": {
+  "instrument": {
+   "groups": 8,
+   "betweenSharePct": 24.5,
+   "chanceSharePct": 5.6,
+   "excessPts": 18.9
+  },
+  "years since commencement": {
+   "groups": 7,
+   "betweenSharePct": 21.0,
+   "chanceSharePct": 4.8,
+   "excessPts": 16.2
+  },
+  "adjudicative function": {
+   "groups": 4,
+   "betweenSharePct": 16.6,
+   "chanceSharePct": 2.4,
+   "excessPts": 14.2
+  },
+  "instrument (same article-year cells)": {
+   "chanceSharePct": null,
+   "excessPts": null,
+   "groups": 13,
+   "betweenSharePct": 13.5
+  },
+  "citation band": {
+   "groups": 4,
+   "betweenSharePct": 12.1,
+   "chanceSharePct": 2.3,
+   "excessPts": 9.8
+  },
+  "year (article-year cells)": {
+   "chanceSharePct": null,
+   "excessPts": null,
+   "groups": 5,
+   "betweenSharePct": 4.2
+  },
+  "open-textured vocabulary": {
+   "groups": 2,
+   "betweenSharePct": 1.7,
+   "chanceSharePct": 0.8,
+   "excessPts": 0.9
+  },
+  "has a party citation at all": {
+   "groups": 2,
+   "betweenSharePct": 0.8,
+   "chanceSharePct": 0.8,
+   "excessPts": 0.0
+  },
+  "article longer than median": {
+   "groups": 2,
+   "betweenSharePct": 0.3,
+   "chanceSharePct": 0.8,
+   "excessPts": -0.5
+  }
+ },
+ "withinBetween": {
+  "grouping": "instrument",
+  "groups": 12,
+  "betweenSharePct": 23.8,
+  "withinSharePct": 76.2
+ },
+ "yearTrajectories": {
+  "commercial_courts_law": {
+   "1442": 29.7,
+   "1443": 34.6,
+   "1444": 36.6,
+   "1445": 39.3,
+   "1446": 32.8
+  },
+  "evidence_law": {
+   "1443": 46.0,
+   "1444": 42.5,
+   "1445": 36.2,
+   "1446": 30.9
+  },
+  "sharia_procedure_law": {
+   "1442": 23.8,
+   "1443": 18.4,
+   "1444": 25.0,
+   "1445": 35.0,
+   "1446": 52.1
+  },
+  "commercial_courts_implementing_regulation": {
+   "1443": 14.7,
+   "1444": 44.0,
+   "1445": 47.2,
+   "1446": 41.6
+  },
+  "companies_law": {
+   "1443": 49.3,
+   "1444": 17.5,
+   "1445": 9.8
+  },
+  "arbitration_law": {
+   "1444": 5.1,
+   "1445": 1.1
+  },
+  "civil_transactions_law": {
+   "1445": 24.2,
+   "1446": 25.8
+  },
+  "law_practice_law": {
+   "1443": 39.0,
+   "1444": 58.9,
+   "1445": 61.8
+  },
+  "sharia_procedure_implementing_regulation": {
+   "1444": 35.1,
+   "1445": 34.7
+  },
+  "bankruptcy_law": {
+   "1444": 4.8
+  },
+  "trade_names_law": {
+   "1444": 32.9
+  },
+  "law_practice_implementing_regulation": {
+   "1444": 41.7
+  }
+ },
+ "retrievalRisk": {
+  "commercial_courts_law": {
+   "statuteOnlyRetrievalMissesPct": 37.1,
+   "ci": [
+    36.3,
+    38.0
+   ],
+   "judgments": 13254
+  },
+  "evidence_law": {
+   "statuteOnlyRetrievalMissesPct": 39.4,
+   "ci": [
+    38.4,
+    40.5
+   ],
+   "judgments": 7611
+  },
+  "sharia_procedure_law": {
+   "statuteOnlyRetrievalMissesPct": 27.7,
+   "ci": [
+    26.3,
+    29.1
+   ],
+   "judgments": 3854
+  },
+  "commercial_courts_implementing_regulation": {
+   "statuteOnlyRetrievalMissesPct": 44.8,
+   "ci": [
+    43.2,
+    46.5
+   ],
+   "judgments": 3533
+  },
+  "companies_law": {
+   "statuteOnlyRetrievalMissesPct": 15.8,
+   "ci": [
+    13.1,
+    18.8
+   ],
+   "judgments": 634
+  },
+  "arbitration_law": {
+   "statuteOnlyRetrievalMissesPct": 4.1,
+   "ci": [
+    2.5,
+    6.7
+   ],
+   "judgments": 363
+  },
+  "civil_transactions_law": {
+   "statuteOnlyRetrievalMissesPct": 24.9,
+   "ci": [
+    20.7,
+    29.7
+   ],
+   "judgments": 357
+  },
+  "law_practice_law": {
+   "statuteOnlyRetrievalMissesPct": 59.4,
+   "ci": [
+    54.2,
+    64.5
+   ],
+   "judgments": 345
+  },
+  "sharia_procedure_implementing_regulation": {
+   "statuteOnlyRetrievalMissesPct": 33.0,
+   "ci": [
+    26.7,
+    39.9
+   ],
+   "judgments": 191
+  },
+  "bankruptcy_law": {
+   "statuteOnlyRetrievalMissesPct": 3.5,
+   "ci": [
+    1.2,
+    9.8
+   ],
+   "judgments": 86
+  },
+  "trade_names_law": {
+   "statuteOnlyRetrievalMissesPct": 31.0,
+   "ci": [
+    23.2,
+    40.0
+   ],
+   "judgments": 113
+  },
+  "law_practice_implementing_regulation": {
+   "statuteOnlyRetrievalMissesPct": 42.5,
+   "ci": [
+    32.7,
+    53.0
+   ],
+   "judgments": 87
+  }
+ },
+ "traceabilityByCode": {
+  "commercial_courts_law": 64.0,
+  "evidence_law": 62.1,
+  "sharia_procedure_law": 65.9,
+  "commercial_courts_implementing_regulation": 57.2,
+  "companies_law": 48.8,
+  "arbitration_law": 11.1,
+  "civil_transactions_law": 53.3,
+  "law_practice_law": 57.0,
+  "sharia_procedure_implementing_regulation": 69.9,
+  "bankruptcy_law": 40.0,
+  "trade_names_law": 50.0,
+  "law_practice_implementing_regulation": 77.9
+ },
+ "standardisedForCitationLoad": {
+  "commercial_courts_law": 36.6,
+  "evidence_law": 37.5,
+  "sharia_procedure_law": 27.9,
+  "commercial_courts_implementing_regulation": 42.5,
+  "companies_law": 16.2,
+  "arbitration_law": 4.4,
+  "civil_transactions_law": 23.0,
+  "law_practice_law": 59.2,
+  "sharia_procedure_implementing_regulation": 33.4,
+  "bankruptcy_law": 5.2,
+  "trade_names_law": 23.6,
+  "law_practice_implementing_regulation": 43.0
+ },
+ "leaveOneOut": {
+  "note": "predict a held-out code's hybrid rate from code-level features fitted on the others. Eight instruments carry features, so the model is the single best feature on the training set rather than a multivariate fit.",
+  "instruments": [
+   "commercial_courts_law",
+   "evidence_law",
+   "sharia_procedure_law",
+   "commercial_courts_implementing_regulation",
+   "arbitration_law",
+   "civil_transactions_law",
+   "law_practice_law",
+   "bankruptcy_law"
+  ],
+  "meanAbsoluteErrorPts": 15.3,
+  "nullMeanAbsoluteErrorPts": 17.2,
+  "grandMeanPct": 30.1,
+  "byInstrument": {
+   "commercial_courts_law": {
+    "observedPct": 37.1,
+    "predictedPct": 34.5,
+    "errorPts": -2.6,
+    "featureChosen": "openTexturedSharePct"
+   },
+   "evidence_law": {
+    "observedPct": 39.4,
+    "predictedPct": 20.2,
+    "errorPts": -19.2,
+    "featureChosen": "openTexturedSharePct"
+   },
+   "sharia_procedure_law": {
+    "observedPct": 27.7,
+    "predictedPct": 13.3,
+    "errorPts": -14.4,
+    "featureChosen": "openTexturedSharePct"
+   },
+   "commercial_courts_implementing_regulation": {
+    "observedPct": 44.8,
+    "predictedPct": 41.8,
+    "errorPts": -3.0,
+    "featureChosen": "openTexturedSharePct"
+   },
+   "arbitration_law": {
+    "observedPct": 4.1,
+    "predictedPct": 18.9,
+    "errorPts": 14.8,
+    "featureChosen": "openTexturedSharePct"
+   },
+   "civil_transactions_law": {
+    "observedPct": 24.9,
+    "predictedPct": 44.1,
+    "errorPts": 19.2,
+    "featureChosen": "openTexturedSharePct"
+   },
+   "law_practice_law": {
+    "observedPct": 59.4,
+    "predictedPct": 21.6,
+    "errorPts": -37.8,
+    "featureChosen": "medianArticleWords"
+   },
+   "bankruptcy_law": {
+    "observedPct": 3.5,
+    "predictedPct": 15.2,
+    "errorPts": 11.7,
+    "featureChosen": "openTexturedSharePct"
+   }
+  }
+ },
+ "coreAnatomy": {
+  "top10": {
+   "citingJudgments": 23728,
+   "unlabelledPct": 0.0,
+   "INSTITUTIONAL_OPERATION": 68.2,
+   "DISPUTE_DECISION": 27.4,
+   "MIXED": 4.3,
+   "AMBIGUOUS": 0.0,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 35.5,
+    "service_notice": 21.9,
+    "standing_capacity": 5.7,
+    "appeal_finality": 5.2
+   }
+  },
+  "top25": {
+   "citingJudgments": 29038,
+   "unlabelledPct": 0.0,
+   "INSTITUTIONAL_OPERATION": 66.4,
+   "DISPUTE_DECISION": 24.7,
+   "MIXED": 8.9,
+   "AMBIGUOUS": 0.0,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 30.5,
+    "service_notice": 18.9,
+    "appeal_finality": 6.7,
+    "standing_capacity": 4.6,
+    "other": 4.0,
+    "definitions": 1.6
+   }
+  },
+  "top50": {
+   "citingJudgments": 32939,
+   "unlabelledPct": 0.4,
+   "INSTITUTIONAL_OPERATION": 63.6,
+   "DISPUTE_DECISION": 27.5,
+   "MIXED": 8.5,
+   "AMBIGUOUS": 0.0,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 27.4,
+    "service_notice": 16.7,
+    "appeal_finality": 6.5,
+    "other": 5.3,
+    "standing_capacity": 4.1,
+    "definitions": 1.4,
+    "procedural_bar": 0.6,
+    "attendance_default": 0.6,
+    "case_management": 0.5,
+    "proof_rules": 0.4
+   }
+  },
+  "top100": {
+   "citingJudgments": 36428,
+   "unlabelledPct": 2.0,
+   "INSTITUTIONAL_OPERATION": 63.9,
+   "DISPUTE_DECISION": 26.1,
+   "MIXED": 7.8,
+   "AMBIGUOUS": 0.1,
+   "institutionalSubtypesPctOfAll": {
+    "jurisdiction": 25.3,
+    "service_notice": 15.1,
+    "other": 7.6,
+    "appeal_finality": 6.3,
+    "standing_capacity": 3.7,
+    "case_management": 2.1,
+    "definitions": 1.3,
+    "procedural_bar": 0.8,
+    "proof_rules": 0.7,
+    "attendance_default": 0.5,
+    "enforcement": 0.2,
+    "arbitration": 0.2
+   }
+  }
+ }
+}
