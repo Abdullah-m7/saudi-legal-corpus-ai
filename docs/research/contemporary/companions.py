@@ -44,8 +44,16 @@ from function import MARKS            # noqa: E402
 from windows import judgments, year_of   # noqa: E402
 
 REGISTRY = HERE.parents[2] / "data" / "corpus_registry" / "corpus_registry.json"
-OUT = HERE / "companion_layer.jsonl.gz"
-YEARS = {1444, 1445, 1446}
+# FORECAST_CALIBRATION_BACKFILL: the identity layer was built for 1444-1446,
+# which gives the forecasting programme too few folds to backtest companion
+# persistence. Earlier years can be written to a SEPARATE file so that the
+# doctrinal analysis in DOCTRINE.md keeps reading exactly the window it was
+# computed on, and only the forecasting code merges the two. The backfill is
+# for fold count, not for history: nothing narrates change across it.
+ARGS = dict(zip(sys.argv[1::2], sys.argv[2::2]))
+YEARS = ({int(y) for y in ARGS["--years"].split(",")} if "--years" in ARGS
+         else {1444, 1445, 1446})
+OUT = HERE / ARGS.get("--out", "companion_layer.jsonl.gz")
 NONSTATUTE = ("fiqh_source", "legal_maxim", "quran", "hadith",
               "judicial_principle", "custom")
 W = 500

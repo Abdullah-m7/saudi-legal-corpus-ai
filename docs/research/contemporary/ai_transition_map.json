@@ -1,0 +1,140 @@
+{
+ "what": "AI-LAW TRANSITION MAP: verified event -> channel -> workflow -> observables that could move -> data we hold -> linkability -> frozen baseline -> forecast or watch target -> future score.",
+ "rule": "evidence and hypothesis are kept in different columns. deployment_status is what a source establishes; observablesThatCouldMove is a hypothesis and is never read as a finding.",
+ "eventStudiesPermittedToday": 0,
+ "openForecasts": 7,
+ "openWatchTargets": 3,
+ "aiAsSubjectOfLawL3": 0,
+ "rows": [
+  {
+   "event_id": "ADOPT-0001",
+   "organization": "SDAIA (Saudi Data and Artificial Intelligence Authority)",
+   "channel": "GOVERNMENT_REGULATORY_LEGAL_WORK",
+   "workflow_stage": "governance",
+   "deployment_status": "GOVERNANCE",
+   "observablesThatCouldMove": [
+    "none in this corpus"
+   ],
+   "dataAvailableHere": "NO",
+   "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "frozenBaselineFamily": "none",
+   "forecastOrWatchTarget": "none",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  },
+  {
+   "event_id": "ADOPT-0002",
+   "organization": "Board of Grievances with Elm",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "workflow_stage": "legal research",
+   "deployment_status": "PARTNERSHIP",
+   "observablesThatCouldMove": [
+    "named vs generic fiqh share",
+    "source diversity and entropy",
+    "citation concentration",
+    "rare authority discovery",
+    "doctrinal companion concentration"
+   ],
+   "dataAvailableHere": "YES IN PRINCIPLE for MoJ commercial courts, NO for the Board of Grievances, whose judgments are not in this corpus and where every verified judicial deployment is",
+   "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+   "frozenBaselineFamily": "C_doctrinalDiversity, D_traceability",
+   "forecastOrWatchTarget": "watch: verified_moj_commercial_ai_deployment@1446Q2",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  },
+  {
+   "event_id": "ADOPT-0003",
+   "organization": "Board of Grievances",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "workflow_stage": "decision support",
+   "deployment_status": "DEPLOYED",
+   "observablesThatCouldMove": [
+    "named vs generic fiqh share",
+    "source diversity and entropy",
+    "citation concentration",
+    "rare authority discovery",
+    "doctrinal companion concentration"
+   ],
+   "dataAvailableHere": "YES IN PRINCIPLE for MoJ commercial courts, NO for the Board of Grievances, whose judgments are not in this corpus and where every verified judicial deployment is",
+   "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+   "frozenBaselineFamily": "C_doctrinalDiversity, D_traceability",
+   "forecastOrWatchTarget": "watch: verified_moj_commercial_ai_deployment@1446Q2",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  },
+  {
+   "event_id": "ADOPT-0004",
+   "organization": "Ministry of Justice",
+   "channel": "ENFORCEMENT",
+   "workflow_stage": "enforcement",
+   "deployment_status": "DEPLOYED",
+   "observablesThatCouldMove": [
+    "enforcement workflow outcomes"
+   ],
+   "dataAvailableHere": "NO: enforcement output is not in this corpus",
+   "corpus_linkability": "L2_INSTITUTION_MATCH",
+   "frozenBaselineFamily": "none: outcome not in this corpus",
+   "forecastOrWatchTarget": "none",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  },
+  {
+   "event_id": "ADOPT-0005",
+   "organization": "Board of Grievances",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "workflow_stage": "governance",
+   "deployment_status": "GOVERNANCE",
+   "observablesThatCouldMove": [
+    "named vs generic fiqh share",
+    "source diversity and entropy",
+    "citation concentration",
+    "rare authority discovery",
+    "doctrinal companion concentration"
+   ],
+   "dataAvailableHere": "YES IN PRINCIPLE for MoJ commercial courts, NO for the Board of Grievances, whose judgments are not in this corpus and where every verified judicial deployment is",
+   "corpus_linkability": "L1_EXTERNAL_OUTCOME",
+   "frozenBaselineFamily": "C_doctrinalDiversity, D_traceability",
+   "forecastOrWatchTarget": "watch: verified_moj_commercial_ai_deployment@1446Q2",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  },
+  {
+   "event_id": "ADOPT-0006",
+   "organization": "Board of Grievances with Elm",
+   "channel": "COURT_ADMINISTRATION",
+   "workflow_stage": "judicial administration",
+   "deployment_status": "PARTNERSHIP",
+   "observablesThatCouldMove": [
+    "disposition mix",
+    "reasons length",
+    "publication timing"
+   ],
+   "dataAvailableHere": "BARELY: publication timing and disposition mix are confounded with the publisher's own release policy",
+   "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "frozenBaselineFamily": "none frozen; the publisher confounds it",
+   "forecastOrWatchTarget": "watch: verified_moj_commercial_ai_deployment@1446Q2",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  },
+  {
+   "event_id": "ADOPT-0007",
+   "organization": "Board of Grievances with HUMAIN",
+   "channel": "BENCH_JUDICIAL_RESEARCH",
+   "workflow_stage": "UNKNOWN",
+   "deployment_status": "DISCUSSION",
+   "observablesThatCouldMove": [
+    "named vs generic fiqh share",
+    "source diversity and entropy",
+    "citation concentration",
+    "rare authority discovery",
+    "doctrinal companion concentration"
+   ],
+   "dataAvailableHere": "YES IN PRINCIPLE for MoJ commercial courts, NO for the Board of Grievances, whose judgments are not in this corpus and where every verified judicial deployment is",
+   "corpus_linkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "frozenBaselineFamily": "C_doctrinalDiversity, D_traceability",
+   "forecastOrWatchTarget": "watch: verified_moj_commercial_ai_deployment@1446Q2",
+   "eventStudyPermitted": false,
+   "whyNot": "linkability below L3: an event study here would measure the wrong output"
+  }
+ ]
+}

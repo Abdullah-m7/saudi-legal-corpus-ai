@@ -253,3 +253,31 @@ one fold at -99.1786. The forecastable structure this corpus has is
 persistence plus churn, and the one signal that beats its base rate — entry
 into the operational core, lift 5.18 over a base rate of 4.48 per cent — is
 again the bench's own prior citation.
+
+**CORRECTION, same session — the channel was wrong.** The entry above was
+written while the adoption registry was empty, and it drew a conclusion wider
+than its evidence: it treated advocacy as *the* mechanism by which legal AI
+would reshape law. A bounded search of official Saudi sources then found seven
+adoption events, three of them before the baseline cutoff, and the earliest
+verified judicial deployment is not in a law firm at all — it is a knowledge
+assistant serving judges and researchers at the Board of Grievances, on the
+Board's own subdomain, recognised in the 2024 Digital Government Award.
+
+So the finding is narrowed rather than withdrawn. What the measurement
+supports is that PATH 1 — AI retrieval, to advocate citation, to judicial
+exposure — has no observable precondition in this corpus. It says nothing
+about PATH 2, a court's own research environment changing what the bench
+cites, which is the path the registry shows exists and which this corpus, being
+Ministry of Justice commercial judgments rather than administrative ones, is in
+the wrong institution to observe. Five pathways are now recorded, and three of
+them this corpus cannot test at all. The details are in `AI_TRANSITION.md`.
+
+**AND A SECOND CORRECTION, to the retrieval recommendation.** The same report
+named the whole-judgment retrieval universe as the architecture worth
+preferring, on coverage. Coverage is recall. Pricing the trade the speaker
+programme spent the project setting up: the party-only remainder grows the
+index by 40.6 per cent, adds 0.0064 of coverage, and 0.0956 of it is ever
+cited by a court. The recommendation is withdrawn; the forecast that measured
+it is reframed rather than voided, because its definition was valid before any
+outcome and voiding it for an inconvenient reading is precisely what the
+ledger forbids.

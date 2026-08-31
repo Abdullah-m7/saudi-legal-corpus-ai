@@ -1,0 +1,127 @@
+{
+ "what": "AI-TRANSITION BASELINE v2: an interpretive layer over the frozen baseline, saying what AI activity was already underway when it was taken.",
+ "doesNotModify": "frozen/ai_transition_baseline.json is untouched. No number in it is restated, corrected or replaced here.",
+ "baselineCutoff": "1446Q2",
+ "baselineCutoffGregorianApprox": "2024-12-31",
+ "verdict": "THE BASELINE IS NOT A PRE-ADOPTION BASELINE. A judicial legal-research AI was already deployed in a Saudi court, and a cross-government generative-AI principles document was already in force, before the cutoff. What makes the baseline still usable is a different fact: the court in question is the Board of Grievances, whose judgments are not in this corpus, and no verified AI deployment was found in the Ministry of Justice commercial courts that this corpus does observe.",
+ "channelsWithAdoptionAlreadyUnderwayAtCutoff": [
+  "BENCH_JUDICIAL_RESEARCH"
+ ],
+ "channels": {
+  "BAR_ADVOCACY": {
+   "description": "legal research, drafting, source discovery, case preparation by advocates",
+   "statusAtBaselineCutoff": "NO_VERIFIED_EVENT",
+   "statusNow": "NO_VERIFIED_EVENT",
+   "eventsBeforeCutoff": [],
+   "eventsAfterCutoff": [],
+   "bestLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "observableInThisCorpus": "PARTIALLY: party citations are visible where the publisher reproduces them, at two speaker specifications"
+  },
+  "BENCH_JUDICIAL_RESEARCH": {
+   "description": "precedent and legislation retrieval, case similarity, judicial knowledge systems, decision support",
+   "statusAtBaselineCutoff": "DEPLOYED",
+   "statusNow": "DEPLOYED",
+   "eventsBeforeCutoff": [
+    "ADOPT-0002",
+    "ADOPT-0003"
+   ],
+   "eventsAfterCutoff": [
+    "ADOPT-0005",
+    "ADOPT-0007"
+   ],
+   "bestLinkability": "L1_EXTERNAL_OUTCOME",
+   "observableInThisCorpus": "YES IN PRINCIPLE for MoJ commercial courts, NO for the Board of Grievances, whose judgments are not in this corpus and where every verified judicial deployment is"
+  },
+  "COURT_ADMINISTRATION": {
+   "description": "case classification, triage, workflow, scheduling, document processing",
+   "statusAtBaselineCutoff": "NO_VERIFIED_EVENT",
+   "statusNow": "PARTNERSHIP",
+   "eventsBeforeCutoff": [],
+   "eventsAfterCutoff": [
+    "ADOPT-0006"
+   ],
+   "bestLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "observableInThisCorpus": "BARELY: publication timing and disposition mix are confounded with the publisher's own release policy"
+  },
+  "ENFORCEMENT": {
+   "description": "automated execution workflow, verification, classification, settlement support",
+   "statusAtBaselineCutoff": "NO_VERIFIED_EVENT",
+   "statusNow": "DEPLOYED",
+   "eventsBeforeCutoff": [],
+   "eventsAfterCutoff": [
+    "ADOPT-0004"
+   ],
+   "bestLinkability": "L2_INSTITUTION_MATCH",
+   "observableInThisCorpus": "NO: enforcement output is not in this corpus"
+  },
+  "GOVERNMENT_REGULATORY_LEGAL_WORK": {
+   "description": "government legal research, administrative adjudication, compliance, regulatory analysis",
+   "statusAtBaselineCutoff": "GOVERNANCE",
+   "statusNow": "GOVERNANCE",
+   "eventsBeforeCutoff": [
+    "ADOPT-0001"
+   ],
+   "eventsAfterCutoff": [],
+   "bestLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "observableInThisCorpus": "NO"
+  },
+  "LEGAL_KNOWLEDGE_INFRASTRUCTURE": {
+   "description": "search engines, retrieval systems, legal databases, doctrinal retrieval",
+   "statusAtBaselineCutoff": "NO_VERIFIED_EVENT",
+   "statusNow": "NO_VERIFIED_EVENT",
+   "eventsBeforeCutoff": [],
+   "eventsAfterCutoff": [],
+   "bestLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "observableInThisCorpus": "INDIRECTLY: only through what the bench and bar cite"
+  },
+  "PUBLIC_LEGAL_SERVICES": {
+   "description": "public-facing assistance and settlement tools",
+   "statusAtBaselineCutoff": "NO_VERIFIED_EVENT",
+   "statusNow": "NO_VERIFIED_EVENT",
+   "eventsBeforeCutoff": [],
+   "eventsAfterCutoff": [],
+   "bestLinkability": "L0_NO_OBSERVABLE_OUTCOME",
+   "observableInThisCorpus": "NO"
+  }
+ },
+ "eventCounts": {
+  "total": 7,
+  "byDeploymentStatus": {
+   "DEPLOYED": 2,
+   "DISCUSSION": 1,
+   "GOVERNANCE": 2,
+   "PARTNERSHIP": 2
+  },
+  "byCorpusLinkability": {
+   "L0_NO_OBSERVABLE_OUTCOME": 3,
+   "L1_EXTERNAL_OUTCOME": 3,
+   "L2_INSTITUTION_MATCH": 1
+  },
+  "beforeCutoff": 3
+ },
+ "eventsSupportingACausalEventStudy": [],
+ "causalPosition": "NONE. No event reaches L3_WORKFLOW_MATCH, so no before-and-after comparison in this repository can be given a causal reading, and none is attempted. The registry's value today is chronology, channel identification, and an anchor for measurement that becomes possible only if a deployment ever lands in the workflow this corpus observes.",
+ "aiAsSubjectOfLaw": {
+  "judgmentsScanned": 50666,
+  "L3_AI_LEGAL_ISSUE": 0,
+  "L2_AI_RELEVANT_TECHNOLOGY": 28,
+  "L1_EXPLICIT_AI_REFERENCE": 12,
+  "CONTEXT_only": 675,
+  "firstL3": null,
+  "frozenZero": "As of this cutoff, across 50,666 published judgments, this repository finds ZERO judgments in which an artificial intelligence or algorithmic feature is materially part of the legal question. That zero is the measurement: the first entry is only detectable against a recorded absence.",
+  "recallLimit": "bounded by the inventory. A dispute about an algorithmic system that never names one is invisible, so every count is a floor.",
+  "whatWouldCountAsAChange": [
+   "any L3 judgment at all, which is a FIRST_ENTRY event",
+   "L3 appearing in more than one year, which is persistence",
+   "L3 appearing under more than one code, which is domain spread",
+   "an L3 family recurring with its own statutory companions, which is the beginning of doctrine"
+  ]
+ },
+ "fourRolesOfAI": {
+  "ACTOR": "AI changes how legal work is done. Registry + channels above. Currently unobservable in this corpus.",
+  "SUBJECT": "AI generates disputes and doctrine. ai_radar.py. Currently zero.",
+  "FORECASTER": "AI systems predict legal patterns. FORECAST_LEDGER.json forecaster tournament. Currently unscored by construction.",
+  "FEEDBACK": "AI retrieval changes what humans cite, which changes future retrieval. THEORY_LOG.md H1. First link currently absent.",
+  "rule": "these four are never mixed. A finding about one is not evidence about another."
+ }
+}

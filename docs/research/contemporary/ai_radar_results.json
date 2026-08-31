@@ -1,0 +1,123 @@
+{
+ "what": "AI_LEGAL_ISSUE_RADAR: does artificial intelligence appear as a SUBJECT of Saudi commercial litigation in this corpus?",
+ "judgmentsScanned": 50666,
+ "judgmentsByYear": {
+  "1422": 2,
+  "1425": 1,
+  "1427": 2,
+  "1428": 2,
+  "1429": 1,
+  "1431": 1,
+  "1432": 2,
+  "1433": 3,
+  "1434": 5,
+  "1435": 15,
+  "1436": 40,
+  "1437": 98,
+  "1438": 694,
+  "1439": 1268,
+  "1440": 1446,
+  "1441": 2575,
+  "1442": 10774,
+  "1443": 5280,
+  "1444": 18812,
+  "1445": 6800,
+  "1446": 2478,
+  "1447": 90,
+  "1448": 277
+ },
+ "byLevel": {
+  "CONTEXT": 675,
+  "L1": 12,
+  "L2": 28
+ },
+ "L3_count": 0,
+ "L3_rate_per_10k": 0.0,
+ "byFamilyAndLevel": {
+  "ai.explicit|L1": 2,
+  "ai.explicit|L2": 1,
+  "algorithmic.evidence|CONTEXT": 71,
+  "algorithmic.evidence|L1": 1,
+  "algorithmic.system|L1": 1,
+  "algorithmic.system|L2": 27,
+  "data.privacy|CONTEXT": 3,
+  "data.privacy|L1": 3,
+  "ip.generative|CONTEXT": 809,
+  "ip.generative|L1": 5
+ },
+ "byYear": {
+  "1438": {
+   "CONTEXT": 3,
+   "L1": 1,
+   "L2": 1
+  },
+  "1439": {
+   "CONTEXT": 4
+  },
+  "1440": {
+   "CONTEXT": 2,
+   "L1": 1
+  },
+  "1441": {
+   "CONTEXT": 17,
+   "L2": 2
+  },
+  "1442": {
+   "CONTEXT": 57,
+   "L1": 2,
+   "L2": 10
+  },
+  "1443": {
+   "CONTEXT": 64,
+   "L1": 1
+  },
+  "1444": {
+   "CONTEXT": 403,
+   "L1": 5,
+   "L2": 8
+  },
+  "1445": {
+   "CONTEXT": 91,
+   "L1": 1,
+   "L2": 7
+  },
+  "1446": {
+   "CONTEXT": 30,
+   "L1": 1
+  },
+  "1447": {
+   "CONTEXT": 1
+  },
+  "1448": {
+   "CONTEXT": 3
+  }
+ },
+ "firstL3": null,
+ "method": {
+  "conceptFamilies": {
+   "ai.explicit": 11,
+   "algorithmic.evidence": 5,
+   "algorithmic.system": 9,
+   "automated.contracting": 4,
+   "automated.decision": 5,
+   "data.privacy": 3,
+   "generated.content": 7,
+   "ip.generative": 2,
+   "professional.use": 2
+  },
+  "weakFamiliesNeverL3ByThemselves": [
+   "data.privacy",
+   "ip.generative",
+   "algorithmic.evidence"
+  ],
+  "exclusions": [
+   "named institution whose title contains an AI term (SDAIA and the like)",
+   "party name context",
+   "party business description",
+   "AI as an advertised attribute of goods, which is L2 and never L3"
+  ],
+  "firstPassCorrection": "the first pass returned 2 L3 judgments. Both were read and both were false positives: one names the Saudi Data and AI Authority as proof that a trademark is well known, the other describes a device sold as AI-powered. Two exclusion rules were added and the pass re-run. No judgment was reclassified by hand.",
+  "noStylometry": "nothing here infers that a document was produced with AI. Only what a judgment DISCUSSES is measured.",
+  "recall": "bounded by the inventory. A dispute about an algorithmic system that never names one is invisible, so every count is a floor."
+ }
+}

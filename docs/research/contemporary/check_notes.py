@@ -37,6 +37,8 @@ def facts():
     cm = J("companion_analysis_results.json")
     fo, aib = J("foresight_results.json"), J("ai_baseline_results.json")
     fl = J("FORECAST_LEDGER.json")
+    reg, rad = J("adoption_registry.json"), J("ai_radar_results.json")
+    b2, amap = J("ai_baseline_v2_results.json"), J("ai_transition_map.json")
     dk = J("docket_test_results.json")
     lg, dm = J("locality_gold.json"), J("docket_model_results.json")
     S, C = ov["specs"]["strict"], ov["conditional"]["strict"]
@@ -599,6 +601,55 @@ def facts():
         ("forecast: retrieval coverage",
          f"{FC['retrieval_coverage_h1@1446Q2']['prediction']['pointEstimate']}", FL),
         ("ledger hash", fl["ledgerHash"], FL),
+        # --- the AI-transition layer
+    ]
+    AT = ["AI_TRANSITION.md"]
+    SA, MIS = fo["speakerAwareRetrieval"], fo["temporalMisalignment"]
+    CPP2 = fo["companionPersistence"]
+    out += [
+        ("registry events", f"{len(reg['events'])}", AT),
+        ("events before cutoff", f"{b2['eventCounts']['beforeCutoff']}", AT),
+        ("event studies permitted", f"{amap['eventStudiesPermittedToday']}", AT),
+        ("judgments scanned by the radar",
+         f"{rad['judgmentsScanned']:,}", AT),
+        ("radar L3", f"{rad['L3_count']}", AT),
+        ("radar L2", f"{rad['byLevel'].get('L2', 0)}", AT),
+        ("radar L1", f"{rad['byLevel'].get('L1', 0)}", AT),
+        ("radar CONTEXT", f"{rad['byLevel'].get('CONTEXT', 0)}", AT),
+        ("party-only universe growth", f"{SA['meanUniverseGrowthPct']}", AT),
+        ("party-only coverage added",
+         f"{SA['meanCoverageAddedByPartyOnly']}", AT),
+        ("party-only precision", f"{SA['meanPartyOnlyPrecision']}", AT),
+        ("coverage points per 10pct growth",
+         f"{SA['coveragePointsPer10pctUniverseGrowth']}", AT),
+        ("speaker-aware folds", f"{SA['folds']}", AT),
+        ("misalignment h1 never seen",
+         f"{MIS['h1']['meanCitationShareToNeverSeenArticles']}", AT),
+        ("misalignment h1 top50 displaced",
+         f"{MIS['h1']['meanTop50DisplacedPct']}", AT),
+        ("misalignment h4 never seen",
+         f"{MIS['h4']['meanCitationShareToNeverSeenArticles']}", AT),
+        ("misalignment h4 top50 displaced",
+         f"{MIS['h4']['meanTop50DisplacedPct']}", AT),
+        ("misalignment h4 rank displacement",
+         f"{MIS['h4']['meanRankDisplacementTop200']}", AT),
+        ("companions not in frozen set",
+         f"{MIS['companionsNotInFrozenSet']['meanShareOfNextPeriodMentions']}", AT),
+        ("backfill rows", f"{fo['companionBackfill']['backfillRows']:,}", AT),
+        ("ccl companion steps",
+         f"{CPP2['commercial_courts_law']['steps']}", AT),
+        ("ccir companion steps",
+         f"{CPP2['commercial_courts_implementing_regulation']['steps']}", AT),
+        ("ccl companion jaccard, backfilled",
+         f"{CPP2['commercial_courts_law']['meanTopKJaccard']}", AT),
+        ("court persistence r, in the AI note",
+         f"{fo['leadLag']['meanCourtPersistenceR']}", AT),
+        ("party partial r, in the AI note",
+         f"{fo['leadLag']['meanPartyPartialR']}", AT),
+        ("first seen in court voice, in the AI note",
+         f"{aib['G_uptakeVelocity']['shareFirstSeenInCourtVoice']}", AT),
+        ("articles with both first uses, in the AI note",
+         f"{aib['G_uptakeVelocity']['articlesWithBothFirstUsesObserved']}", AT),
     ]
     return out
 

@@ -28,6 +28,7 @@ backtest did not beat its baseline.
 import gzip
 import json
 import math
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -36,6 +37,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 MENTIONS = HERE / "authority_mentions.jsonl.gz"
 COMPANIONS = HERE / "companion_layer.jsonl.gz"
+BACKFILL = HERE / "companion_layer_backfill.jsonl.gz"
+INSTREG = HERE.parents[2] / "data" / "corpus_registry" / "corpus_registry.json"
 DATES = HERE / "judgment_dates.json.gz"
 OUT = HERE / "foresight_results.json"
 
@@ -567,12 +570,205 @@ def uptake(S, code="civil_transactions_law"):
                     "the day the code took effect."}
 
 
+def speaker_aware(S, min_train=MIN_TRAIN):
+    """High recall from the whole judgment, or precision from the bench?
+
+    `decay` showed the whole-judgment universe covering slightly more of the
+    next period than the court's own history. The speaker programme spent the
+    whole project separating those voices, so the honest question is not which
+    universe covers more -- it is what the extra coverage COSTS. So this
+    measures the party-only remainder on its own: how many articles it adds,
+    how much coverage they buy, and what share of them the court never cites.
+    """
+    out = []
+    for i in range(min_train, len(P) - 1):
+        train = [S[P[x]] for x in range(i + 1)]
+        test = S[P[i + 1]]
+        tn = sum(test["courtStat"].values())
+        if tn < 200:
+            continue
+        court, whole = set(), set()
+        for s in train:
+            court |= set(s["courtStat"])
+            whole |= set(s["courtStat"]) | set(s["wideStat"]) | set(s["partyStat"])
+        party_only = whole - court
+        cov = lambda U: sum(v for a, v in test["courtStat"].items()
+                            if a in U) / tn
+        hit = {a for a in party_only if a in test["courtStat"]}
+        out.append({
+            "period": LBL[i + 1],
+            "courtUniverse": len(court),
+            "partyOnlyAdded": len(party_only),
+            "universeGrowthPct": round(100 * len(party_only) / len(court), 1),
+            "coverageCourt": round(cov(court), 4),
+            "coverageWhole": round(cov(whole), 4),
+            "coverageAddedByPartyOnly": round(cov(whole) - cov(court), 4),
+            "partyOnlyPrecision": round(len(hit) / len(party_only), 4)
+                                  if party_only else None,
+        })
+    if len(out) < 3:
+        return {"verdict": "INSUFFICIENT_TEMPORAL_DEPTH"}
+    m = lambda k: sum(r[k] for r in out) / len(out)
+    return {
+        "folds": len(out), "byFold": out,
+        "meanUniverseGrowthPct": round(m("universeGrowthPct"), 1),
+        "meanCoverageAddedByPartyOnly": round(m("coverageAddedByPartyOnly"), 4),
+        "meanPartyOnlyPrecision": round(m("partyOnlyPrecision"), 4),
+        "coveragePointsPer10pctUniverseGrowth": round(
+            100 * m("coverageAddedByPartyOnly") / (m("universeGrowthPct") / 10), 3),
+        # the trade has to be priced, not just observed: two points of recall
+        # for a fifth more index is a different bargain from half a point for
+        # forty per cent more
+        "verdict": ("HIGH_RECALL_WORTH_ITS_COST"
+                    if m("coverageAddedByPartyOnly") >= 0.02
+                    and m("partyOnlyPrecision") >= 0.15
+                    else "HIGH_RECALL_COSTS_MORE_THAN_IT_BUYS"),
+        "note": "coverage is recall over the court's own later citations. "
+                "It is NOT a recommendation to retrieve whole judgments "
+                "without role separation: the speaker programme measured what "
+                "advocacy contributes to a whole-document count, and that "
+                "contamination is exactly what partyOnlyPrecision prices.",
+    }
+
+
+def misalignment(S, comp, min_train=MIN_TRAIN):
+    """How fast does a frozen legal-AI snapshot go stale, beyond recall?
+
+    Recall decay asks what a frozen universe still contains. Staleness asks
+    what it gets WRONG: articles it never heard of, a ranking that has moved,
+    a top-50 that is no longer the top 50, companions it does not carry.
+    """
+    out = {}
+    for h in (1, 2, 4):
+        rows = []
+        for i in range(min_train, len(P) - h):
+            train = [S[P[x]] for x in range(i + 1)]
+            test = S[P[i + h]]
+            tn = sum(test["courtStat"].values())
+            if tn < 200:
+                continue
+            uni = set()
+            for s in train:
+                uni |= set(s["courtStat"])
+            frozen = Counter()
+            for s in train:
+                frozen.update(s["courtStat"])
+            unseen = {a: v for a, v in test["courtStat"].items() if a not in uni}
+            ft, tt = top(frozen, 50), top(test["courtStat"], 50)
+            ranks_f = {a: r for r, a in enumerate(top(frozen, 200))}
+            ranks_t = {a: r for r, a in enumerate(top(test["courtStat"], 200))}
+            both = sorted(set(ranks_f) & set(ranks_t), key=str)
+            disp = (sum(abs(ranks_f[a] - ranks_t[a]) for a in both) / len(both)
+                    if both else None)
+            rows.append({
+                "period": LBL[i + h],
+                "articlesNeverSeen": len(unseen),
+                "citationShareToNeverSeenArticles": round(
+                    sum(unseen.values()) / tn, 4),
+                "top50Displaced": len(set(ft) - set(tt)),
+                "top50DisplacedPct": round(100 * len(set(ft) - set(tt)) / 50, 1),
+                "meanRankDisplacementTop200": round(disp, 2) if disp else None,
+                "top10Held": len(set(top(frozen, 10)) & set(top(test["courtStat"], 10))),
+            })
+        if len(rows) >= 3:
+            m = lambda k: round(sum(r[k] for r in rows if r[k] is not None)
+                                / max(1, sum(1 for r in rows if r[k] is not None)), 4)
+            out[f"h{h}"] = {
+                "folds": len(rows),
+                "meanCitationShareToNeverSeenArticles":
+                    m("citationShareToNeverSeenArticles"),
+                "meanTop50DisplacedPct": m("top50DisplacedPct"),
+                "meanRankDisplacementTop200": m("meanRankDisplacementTop200"),
+                "meanTop10Held": m("top10Held"),
+                "byFold": rows,
+            }
+    # companions the frozen snapshot would not carry
+    if comp:
+        cp = defaultdict(lambda: defaultdict(Counter))
+        for r in comp:
+            if r["voice"] == "court" and r["instW"]:
+                cp[r["instW"]][r["p"]][r["cid"]] += 1
+        miss = []
+        for code in sorted(cp):
+            ps = [p for p in P if sum(cp[code][p].values()) >= 60]
+            for a, b in zip(ps, ps[1:]):
+                seen = set(cp[code][a])
+                tot = sum(cp[code][b].values())
+                new = sum(v for s, v in cp[code][b].items() if s not in seen)
+                miss.append(new / tot)
+        out["companionsNotInFrozenSet"] = {
+            "steps": len(miss),
+            "meanShareOfNextPeriodMentions": round(sum(miss) / len(miss), 4)
+                                             if miss else None,
+            "note": "small because the identity universe has 28 members, not "
+                    "because doctrine is static",
+        }
+    out["articleVersionSupersession"] = {
+        "verdict": "NOT_AVAILABLE",
+        "why": "the corpus registry carries publication dates per INSTRUMENT, "
+               "not per article version. Whether the text of article 16 at "
+               "the time of a 1443 judgment differs from its text today "
+               "cannot be answered from the metadata we hold, and this "
+               "session does not reconstruct it.",
+    }
+    return out
+
+
+def instrument_validity(S, dates):
+    """The half of effective-law dating the registry can actually support."""
+    try:
+        reg = json.loads(INSTREG.read_text(encoding="utf-8"))
+    except Exception:
+        return {"verdict": "REGISTRY_UNREADABLE"}
+    pub = {}
+    for t in reg.get("tracks", []):
+        h = t.get("publication_date_hijri") or ""
+        m = re.match(r"^(\d{4})", str(h))
+        if m:
+            pub[t.get("track_id")] = int(m.group(1))
+    rows = []
+    for i, p in enumerate(P):
+        n = ahead = 0
+        for (inst, _a), v in S[p]["courtStat"].items():
+            n += v
+            y = pub.get(inst)
+            if y and y > p[0]:
+                ahead += v
+        if n >= 200:
+            rows.append({"period": LBL[i], "citations": n,
+                         "toInstrumentsPublishedLater": ahead,
+                         "pct": round(100 * ahead / n, 3)})
+    if len(pub) < 10:
+        return {"verdict": "INSUFFICIENT_REGISTRY_COVERAGE",
+                "instrumentsWithPublicationYear": len(pub),
+                "why": "only %d of the registry's tracks carry a parseable "
+                       "hijri publication year, so the check would be "
+                       "computed over almost nothing. Reported as unsupported "
+                       "rather than as a zero." % len(pub),
+                "limit": "instrument level only. Article-version history is "
+                         "not held."}
+    return {
+        "instrumentsWithPublicationYear": len(pub),
+        "byPeriod": rows,
+        "meanPctToInstrumentsPublishedLater": round(
+            sum(r["pct"] for r in rows) / len(rows), 3) if rows else None,
+        "use": "a retrieval snapshot frozen at time t cannot contain an "
+               "instrument published after t. This measures how much of a "
+               "later period's citation traffic goes to instruments that did "
+               "not yet exist, which is the part of temporal staleness the "
+               "registry can support.",
+        "limit": "instrument level only. Article-version history is not held.",
+    }
+
+
 def main():
     rows, dates, excluded = load()
     S = build(rows)
     comp = []
-    if COMPANIONS.exists():
-        with gzip.open(COMPANIONS, "rt", encoding="utf-8") as fh:
+    for src in (COMPANIONS, BACKFILL):
+        if not src.exists():
+            continue
+        with gzip.open(src, "rt", encoding="utf-8") as fh:
             for line in fh:
                 r = json.loads(line)
                 if "_schema" in r:
@@ -653,6 +849,17 @@ def main():
     res["retrievalDecay"] = decay(S, comp)
     res["companionPersistence"] = companion_backtest(comp, 3)
     res["newCodeUptake"] = uptake(S)
+    res["speakerAwareRetrieval"] = speaker_aware(S)
+    res["temporalMisalignment"] = misalignment(S, comp)
+    res["instrumentTemporalValidity"] = instrument_validity(S, dates)
+    res["companionBackfill"] = {
+        "what": "FORECAST_CALIBRATION_BACKFILL",
+        "purpose": "fold count for companion persistence backtesting only. "
+                   "No historical claim is made across it and DOCTRINE.md "
+                   "still reads 1444-1446 alone.",
+        "backfillRows": sum(1 for r in comp if r["y"] < 1444),
+        "mainRows": sum(1 for r in comp if r["y"] >= 1444),
+    }
 
     OUT.write_text(json.dumps(res, ensure_ascii=False, indent=1),
                    encoding="utf-8")
