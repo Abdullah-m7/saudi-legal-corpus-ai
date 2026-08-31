@@ -1,0 +1,1431 @@
+{
+ "window": [
+  1444,
+  1445,
+  1446
+ ],
+ "judgments": 23626,
+ "validity": {
+  "arbitrationPlea": {
+   "verdict": "VALID",
+   "constructLiftPts": 63.2
+  },
+  "default": {
+   "verdict": "VALID",
+   "constructLiftPts": 30.4
+  },
+  "expert": {
+   "verdict": "VALID",
+   "constructLiftPts": 15.1
+  },
+  "feesClaim": {
+   "verdict": "VALID",
+   "constructLiftPts": 9.5
+  },
+  "corporateClaim": {
+   "verdict": "VALID",
+   "constructLiftPts": 9.1
+  },
+  "settlement": {
+   "verdict": "VALID",
+   "constructLiftPts": 8.9
+  },
+  "damagesClaim": {
+   "verdict": "VALID",
+   "constructLiftPts": 8.6
+  },
+  "insolvencyClaim": {
+   "verdict": "VALID",
+   "constructLiftPts": 5.7
+  },
+  "appeared": {
+   "verdict": "VALID",
+   "constructLiftPts": -13.5
+  },
+  "priceClaim": {
+   "verdict": "COARSE_ONLY",
+   "constructLiftPts": 12.5
+  },
+  "proofDispute": {
+   "verdict": "COARSE_ONLY",
+   "constructLiftPts": 7.5
+  },
+  "admission": {
+   "verdict": "COARSE_ONLY",
+   "constructLiftPts": 6.0
+  },
+  "jurisdictionChallenge": {
+   "verdict": "UNUSABLE",
+   "constructLiftPts": 3.0
+  }
+ },
+ "usableVariables": [
+  "arbitrationPlea",
+  "default",
+  "expert",
+  "feesClaim",
+  "corporateClaim",
+  "settlement",
+  "damagesClaim",
+  "insolvencyClaim",
+  "appeared"
+ ],
+ "docketComposition": {
+  "ALL": {
+   "arbitrationPlea": 2.2,
+   "default": 42.1,
+   "expert": 10.4,
+   "feesClaim": 25.1,
+   "corporateClaim": 23.0,
+   "settlement": 30.5,
+   "damagesClaim": 36.4,
+   "insolvencyClaim": 5.6,
+   "appeared": 20.0,
+   "CONTESTED": 13.9,
+   "medianReasonChars": 1540.0,
+   "claimFamily": {
+    "CONTRACT_PRICE": 35.6,
+    "CORPORATE": 18.5,
+    "FEES": 17.9,
+    "DAMAGES": 16.2,
+    "OTHER": 6.2,
+    "INSOLVENCY": 5.6
+   }
+  },
+  "commercial_courts_law": {
+   "arbitrationPlea": 1.8,
+   "default": 49.2,
+   "expert": 9.5,
+   "feesClaim": 24.2,
+   "corporateClaim": 22.2,
+   "settlement": 29.0,
+   "damagesClaim": 35.4,
+   "insolvencyClaim": 4.9,
+   "appeared": 18.4,
+   "CONTESTED": 12.4,
+   "medianReasonChars": 1765.0,
+   "claimFamily": {
+    "CONTRACT_PRICE": 37.5,
+    "CORPORATE": 18.0,
+    "FEES": 17.1,
+    "DAMAGES": 16.4,
+    "OTHER": 6.0,
+    "INSOLVENCY": 4.9
+   },
+   "n": 13410,
+   "claimFamilyDistanceFromCorpus": 0.021
+  },
+  "evidence_law": {
+   "arbitrationPlea": 0.4,
+   "default": 56.9,
+   "expert": 9.4,
+   "feesClaim": 22.3,
+   "corporateClaim": 14.5,
+   "settlement": 23.7,
+   "damagesClaim": 31.9,
+   "insolvencyClaim": 2.2,
+   "appeared": 17.3,
+   "CONTESTED": 10.9,
+   "medianReasonChars": 1810.0,
+   "claimFamily": {
+    "CONTRACT_PRICE": 48.0,
+    "FEES": 17.6,
+    "DAMAGES": 16.5,
+    "CORPORATE": 13.0,
+    "OTHER": 2.6,
+    "INSOLVENCY": 2.2
+   },
+   "n": 7702,
+   "claimFamilyDistanceFromCorpus": 0.127
+  },
+  "sharia_procedure_law": {
+   "arbitrationPlea": 1.2,
+   "default": 34.1,
+   "expert": 10.3,
+   "feesClaim": 24.3,
+   "corporateClaim": 28.3,
+   "settlement": 32.2,
+   "damagesClaim": 34.6,
+   "insolvencyClaim": 7.3,
+   "appeared": 19.6,
+   "CONTESTED": 14.0,
+   "medianReasonChars": 1560,
+   "claimFamily": {
+    "CONTRACT_PRICE": 33.1,
+    "CORPORATE": 22.0,
+    "FEES": 16.1,
+    "DAMAGES": 15.8,
+    "INSOLVENCY": 7.3,
+    "OTHER": 5.8
+   },
+   "n": 3897,
+   "claimFamilyDistanceFromCorpus": 0.051
+  },
+  "commercial_courts_implementing_regulation": {
+   "arbitrationPlea": 0.7,
+   "default": 48.0,
+   "expert": 11.6,
+   "feesClaim": 36.7,
+   "corporateClaim": 18.4,
+   "settlement": 26.9,
+   "damagesClaim": 54.4,
+   "insolvencyClaim": 3.1,
+   "appeared": 16.9,
+   "CONTESTED": 11.2,
+   "medianReasonChars": 2194,
+   "claimFamily": {
+    "FEES": 29.0,
+    "DAMAGES": 25.9,
+    "CONTRACT_PRICE": 20.7,
+    "CORPORATE": 16.1,
+    "OTHER": 5.1,
+    "INSOLVENCY": 3.1
+   },
+   "n": 3911,
+   "claimFamilyDistanceFromCorpus": 0.209
+  },
+  "companies_law": {
+   "arbitrationPlea": 0.5,
+   "default": 40.4,
+   "expert": 11.3,
+   "feesClaim": 21.8,
+   "corporateClaim": 79.5,
+   "settlement": 26.8,
+   "damagesClaim": 42.8,
+   "insolvencyClaim": 47.0,
+   "appeared": 25.2,
+   "CONTESTED": 15.5,
+   "medianReasonChars": 2110.0,
+   "claimFamily": {
+    "INSOLVENCY": 47.0,
+    "CORPORATE": 35.3,
+    "OTHER": 6.9,
+    "CONTRACT_PRICE": 3.8,
+    "FEES": 3.6,
+    "DAMAGES": 3.4
+   },
+   "n": 638,
+   "claimFamilyDistanceFromCorpus": 0.589
+  },
+  "civil_transactions_law": {
+   "arbitrationPlea": 0.3,
+   "default": 44.2,
+   "expert": 9.7,
+   "feesClaim": 35.6,
+   "corporateClaim": 35.6,
+   "settlement": 45.3,
+   "damagesClaim": 57.2,
+   "insolvencyClaim": 6.4,
+   "appeared": 32.2,
+   "CONTESTED": 20.8,
+   "medianReasonChars": 2478.0,
+   "claimFamily": {
+    "CORPORATE": 30.6,
+    "DAMAGES": 21.9,
+    "FEES": 21.4,
+    "CONTRACT_PRICE": 18.1,
+    "INSOLVENCY": 6.4,
+    "OTHER": 1.7
+   },
+   "n": 360,
+   "claimFamilyDistanceFromCorpus": 0.221
+  },
+  "law_practice_law": {
+   "arbitrationPlea": 0.3,
+   "default": 53.5,
+   "expert": 12.4,
+   "feesClaim": 61.8,
+   "corporateClaim": 14.5,
+   "settlement": 23.1,
+   "damagesClaim": 51.7,
+   "insolvencyClaim": 3.2,
+   "appeared": 16.5,
+   "CONTESTED": 11.0,
+   "medianReasonChars": 2349.5,
+   "claimFamily": {
+    "FEES": 52.3,
+    "DAMAGES": 18.2,
+    "CORPORATE": 13.6,
+    "CONTRACT_PRICE": 10.7,
+    "INSOLVENCY": 3.2,
+    "OTHER": 2.0
+   },
+   "n": 346,
+   "claimFamilyDistanceFromCorpus": 0.364
+  },
+  "arbitration_law": {
+   "arbitrationPlea": 88.9,
+   "default": 24.9,
+   "expert": 11.7,
+   "feesClaim": 12.7,
+   "corporateClaim": 14.9,
+   "settlement": 11.9,
+   "damagesClaim": 20.3,
+   "insolvencyClaim": 1.9,
+   "appeared": 10.8,
+   "CONTESTED": 9.2,
+   "medianReasonChars": 1237,
+   "claimFamily": {
+    "OTHER": 53.7,
+    "CORPORATE": 14.1,
+    "CONTRACT_PRICE": 11.7,
+    "DAMAGES": 9.5,
+    "FEES": 9.2,
+    "INSOLVENCY": 1.9
+   },
+   "n": 369,
+   "claimFamilyDistanceFromCorpus": 0.475
+  },
+  "bankruptcy_law": {
+   "arbitrationPlea": 1.1,
+   "default": 25.0,
+   "expert": 10.2,
+   "feesClaim": 6.8,
+   "corporateClaim": 58.0,
+   "settlement": 15.9,
+   "damagesClaim": 26.1,
+   "insolvencyClaim": 88.6,
+   "appeared": 19.3,
+   "CONTESTED": 18.2,
+   "medianReasonChars": 1390.0,
+   "claimFamily": {
+    "INSOLVENCY": 88.6,
+    "CORPORATE": 9.1,
+    "CONTRACT_PRICE": 1.1,
+    "OTHER": 1.1
+   },
+   "n": 88,
+   "claimFamilyDistanceFromCorpus": 0.831
+  }
+ },
+ "standardised": {
+  "strata": "claim family x contestedness x reasons-length band",
+  "nStrata": 72,
+  "byInstrument": {
+   "commercial_courts_law": {
+    "n": 13410,
+    "rawPct": 37.2,
+    "standardisedPct": 34.6,
+    "deltaPts": -2.6,
+    "strataCoveragePct": 99.9
+   },
+   "evidence_law": {
+    "n": 7702,
+    "rawPct": 39.5,
+    "standardisedPct": 34.9,
+    "deltaPts": -4.6,
+    "strataCoveragePct": 98.5
+   },
+   "sharia_procedure_law": {
+    "n": 3897,
+    "rawPct": 28.1,
+    "standardisedPct": 28.2,
+    "deltaPts": 0.1,
+    "strataCoveragePct": 99.5
+   },
+   "commercial_courts_implementing_regulation": {
+    "n": 3911,
+    "rawPct": 48.6,
+    "standardisedPct": 32.8,
+    "deltaPts": -15.8,
+    "strataCoveragePct": 95.9
+   },
+   "companies_law": {
+    "n": 638,
+    "rawPct": 15.8,
+    "standardisedPct": 20.5,
+    "deltaPts": 4.7,
+    "strataCoveragePct": 40.6
+   },
+   "civil_transactions_law": {
+    "n": 360,
+    "rawPct": 24.7,
+    "standardisedPct": 26.3,
+    "deltaPts": 1.6,
+    "strataCoveragePct": 51.4
+   },
+   "law_practice_law": {
+    "n": 346,
+    "rawPct": 59.5,
+    "standardisedPct": 48.0,
+    "deltaPts": -11.5,
+    "strataCoveragePct": 45.8
+   },
+   "arbitration_law": {
+    "n": 369,
+    "rawPct": 4.3,
+    "standardisedPct": 5.2,
+    "deltaPts": 0.9,
+    "strataCoveragePct": 43.1
+   },
+   "bankruptcy_law": {
+    "n": 88,
+    "rawPct": 3.4,
+    "standardisedPct": 3.6,
+    "deltaPts": 0.2,
+    "strataCoveragePct": 4.4
+   }
+  }
+ },
+ "matchedDockets": {
+  "law_practice_law | arbitration_law": {
+   "cells": 10,
+   "nA": 74,
+   "nB": 56,
+   "rawA": 59.5,
+   "rawB": 4.3,
+   "matchedA": 48.4,
+   "matchedB": 4.0,
+   "rawGapPts": 55.2,
+   "matchedGapPts": 44.5
+  },
+  "commercial_courts_law | civil_transactions_law": {
+   "cells": 21,
+   "nA": 1463,
+   "nB": 93,
+   "rawA": 37.3,
+   "rawB": 15.5,
+   "matchedA": 43.4,
+   "matchedB": 9.1,
+   "rawGapPts": 21.8,
+   "matchedGapPts": 34.3
+  },
+  "commercial_courts_implementing_regulation | civil_transactions_law": {
+   "cells": 29,
+   "nA": 638,
+   "nB": 150,
+   "rawA": 49.2,
+   "rawB": 22.1,
+   "matchedA": 53.5,
+   "matchedB": 23.8,
+   "rawGapPts": 27.1,
+   "matchedGapPts": 29.7
+  },
+  "evidence_law | arbitration_law": {
+   "cells": 30,
+   "nA": 1916,
+   "nB": 286,
+   "rawA": 39.5,
+   "rawB": 3.8,
+   "matchedA": 34.4,
+   "matchedB": 5.0,
+   "rawGapPts": 35.7,
+   "matchedGapPts": 29.4
+  },
+  "companies_law | law_practice_law": {
+   "cells": 15,
+   "nA": 199,
+   "nB": 125,
+   "rawA": 15.8,
+   "rawB": 59.5,
+   "matchedA": 32.8,
+   "matchedB": 62.0,
+   "rawGapPts": -43.7,
+   "matchedGapPts": -29.1
+  },
+  "commercial_courts_implementing_regulation | companies_law": {
+   "cells": 39,
+   "nA": 1224,
+   "nB": 499,
+   "rawA": 48.6,
+   "rawB": 13.1,
+   "matchedA": 44.3,
+   "matchedB": 18.1,
+   "rawGapPts": 35.5,
+   "matchedGapPts": 26.2
+  },
+  "sharia_procedure_law | civil_transactions_law": {
+   "cells": 37,
+   "nA": 478,
+   "nB": 235,
+   "rawA": 28.1,
+   "rawB": 24.9,
+   "matchedA": 48.9,
+   "matchedB": 24.3,
+   "rawGapPts": 3.2,
+   "matchedGapPts": 24.6
+  },
+  "commercial_courts_implementing_regulation | arbitration_law": {
+   "cells": 29,
+   "nA": 1055,
+   "nB": 288,
+   "rawA": 48.6,
+   "rawB": 4.1,
+   "matchedA": 27.4,
+   "matchedB": 4.6,
+   "rawGapPts": 44.5,
+   "matchedGapPts": 22.8
+  },
+  "civil_transactions_law | law_practice_law": {
+   "cells": 15,
+   "nA": 82,
+   "nB": 92,
+   "rawA": 25.1,
+   "rawB": 60.4,
+   "matchedA": 38.4,
+   "matchedB": 61.2,
+   "rawGapPts": -35.3,
+   "matchedGapPts": -22.8
+  },
+  "companies_law | civil_transactions_law": {
+   "cells": 10,
+   "nA": 55,
+   "nB": 73,
+   "rawA": 16.1,
+   "rawB": 25.5,
+   "matchedA": 6.6,
+   "matchedB": 28.2,
+   "rawGapPts": -9.4,
+   "matchedGapPts": -21.6
+  },
+  "companies_law | arbitration_law": {
+   "cells": 12,
+   "nA": 171,
+   "nB": 95,
+   "rawA": 15.9,
+   "rawB": 4.3,
+   "matchedA": 23.1,
+   "matchedB": 2.4,
+   "rawGapPts": 11.5,
+   "matchedGapPts": 20.7
+  },
+  "evidence_law | companies_law": {
+   "cells": 45,
+   "nA": 2256,
+   "nB": 538,
+   "rawA": 39.6,
+   "rawB": 14.6,
+   "matchedA": 41.8,
+   "matchedB": 22.7,
+   "rawGapPts": 25.0,
+   "matchedGapPts": 19.1
+  },
+  "evidence_law | bankruptcy_law": {
+   "cells": 7,
+   "nA": 113,
+   "nB": 47,
+   "rawA": 39.6,
+   "rawB": 3.5,
+   "matchedA": 27.0,
+   "matchedB": 8.3,
+   "rawGapPts": 36.1,
+   "matchedGapPts": 18.7
+  },
+  "commercial_courts_law | arbitration_law": {
+   "cells": 16,
+   "nA": 2173,
+   "nB": 117,
+   "rawA": 37.8,
+   "rawB": 7.5,
+   "matchedA": 29.2,
+   "matchedB": 12.6,
+   "rawGapPts": 30.3,
+   "matchedGapPts": 16.6
+  },
+  "commercial_courts_law | bankruptcy_law": {
+   "cells": 6,
+   "nA": 235,
+   "nB": 35,
+   "rawA": 37.3,
+   "rawB": 1.7,
+   "matchedA": 16.6,
+   "matchedB": 0.0,
+   "rawGapPts": 35.6,
+   "matchedGapPts": 16.6
+  },
+  "commercial_courts_implementing_regulation | bankruptcy_law": {
+   "cells": 5,
+   "nA": 61,
+   "nB": 36,
+   "rawA": 48.6,
+   "rawB": 2.3,
+   "matchedA": 16.2,
+   "matchedB": 0.0,
+   "rawGapPts": 46.2,
+   "matchedGapPts": 16.2
+  },
+  "sharia_procedure_law | law_practice_law": {
+   "cells": 33,
+   "nA": 1395,
+   "nB": 183,
+   "rawA": 26.8,
+   "rawB": 52.3,
+   "matchedA": 34.1,
+   "matchedB": 49.9,
+   "rawGapPts": -25.5,
+   "matchedGapPts": -15.8
+  },
+  "sharia_procedure_law | arbitration_law": {
+   "cells": 30,
+   "nA": 1590,
+   "nB": 285,
+   "rawA": 28.2,
+   "rawB": 4.5,
+   "matchedA": 20.8,
+   "matchedB": 5.1,
+   "rawGapPts": 23.7,
+   "matchedGapPts": 15.7
+  },
+  "commercial_courts_law | companies_law": {
+   "cells": 29,
+   "nA": 3092,
+   "nB": 220,
+   "rawA": 37.7,
+   "rawB": 10.4,
+   "matchedA": 35.6,
+   "matchedB": 21.1,
+   "rawGapPts": 27.4,
+   "matchedGapPts": 14.5
+  },
+  "sharia_procedure_law | commercial_courts_implementing_regulation": {
+   "cells": 108,
+   "nA": 3006,
+   "nB": 3048,
+   "rawA": 24.4,
+   "rawB": 48.7,
+   "matchedA": 28.9,
+   "matchedB": 39.6,
+   "rawGapPts": -24.3,
+   "matchedGapPts": -10.7
+  },
+  "civil_transactions_law | arbitration_law": {
+   "cells": 5,
+   "nA": 35,
+   "nB": 18,
+   "rawA": 24.7,
+   "rawB": 4.3,
+   "matchedA": 15.2,
+   "matchedB": 5.2,
+   "rawGapPts": 20.4,
+   "matchedGapPts": 10.0
+  },
+  "sharia_procedure_law | bankruptcy_law": {
+   "cells": 8,
+   "nA": 247,
+   "nB": 50,
+   "rawA": 28.1,
+   "rawB": 3.6,
+   "matchedA": 14.0,
+   "matchedB": 5.2,
+   "rawGapPts": 24.5,
+   "matchedGapPts": 8.8
+  },
+  "evidence_law | law_practice_law": {
+   "cells": 27,
+   "nA": 2435,
+   "nB": 171,
+   "rawA": 39.3,
+   "rawB": 62.7,
+   "matchedA": 49.9,
+   "matchedB": 58.1,
+   "rawGapPts": -23.3,
+   "matchedGapPts": -8.3
+  },
+  "evidence_law | sharia_procedure_law": {
+   "cells": 124,
+   "nA": 6776,
+   "nB": 3409,
+   "rawA": 39.0,
+   "rawB": 25.7,
+   "matchedA": 38.2,
+   "matchedB": 30.4,
+   "rawGapPts": 13.3,
+   "matchedGapPts": 7.9
+  },
+  "companies_law | bankruptcy_law": {
+   "cells": 7,
+   "nA": 159,
+   "nB": 44,
+   "rawA": 16.1,
+   "rawB": 3.8,
+   "matchedA": 7.9,
+   "matchedB": 15.1,
+   "rawGapPts": 12.3,
+   "matchedGapPts": -7.2
+  },
+  "evidence_law | civil_transactions_law": {
+   "cells": 23,
+   "nA": 689,
+   "nB": 105,
+   "rawA": 40.0,
+   "rawB": 29.8,
+   "matchedA": 40.6,
+   "matchedB": 35.2,
+   "rawGapPts": 10.2,
+   "matchedGapPts": 5.4
+  },
+  "sharia_procedure_law | companies_law": {
+   "cells": 42,
+   "nA": 1339,
+   "nB": 466,
+   "rawA": 28.6,
+   "rawB": 17.1,
+   "matchedA": 29.5,
+   "matchedB": 25.0,
+   "rawGapPts": 11.5,
+   "matchedGapPts": 4.5
+  },
+  "commercial_courts_law | evidence_law": {
+   "cells": 121,
+   "nA": 7378,
+   "nB": 2285,
+   "rawA": 35.4,
+   "rawB": 38.6,
+   "matchedA": 36.7,
+   "matchedB": 41.1,
+   "rawGapPts": -3.2,
+   "matchedGapPts": -4.4
+  },
+  "commercial_courts_law | sharia_procedure_law": {
+   "cells": 118,
+   "nA": 10637,
+   "nB": 2203,
+   "rawA": 38.3,
+   "rawB": 27.0,
+   "matchedA": 37.6,
+   "matchedB": 33.4,
+   "rawGapPts": 11.3,
+   "matchedGapPts": 4.2
+  },
+  "commercial_courts_law | commercial_courts_implementing_regulation": {
+   "cells": 98,
+   "nA": 8974,
+   "nB": 1267,
+   "rawA": 33.6,
+   "rawB": 41.1,
+   "matchedA": 35.0,
+   "matchedB": 38.9,
+   "rawGapPts": -7.5,
+   "matchedGapPts": -3.9
+  },
+  "evidence_law | commercial_courts_implementing_regulation": {
+   "cells": 109,
+   "nA": 5634,
+   "nB": 2383,
+   "rawA": 35.3,
+   "rawB": 43.1,
+   "matchedA": 37.6,
+   "matchedB": 40.0,
+   "rawGapPts": -7.8,
+   "matchedGapPts": -2.5
+  },
+  "commercial_courts_implementing_regulation | law_practice_law": {
+   "cells": 30,
+   "nA": 1739,
+   "nB": 153,
+   "rawA": 47.9,
+   "rawB": 54.0,
+   "matchedA": 58.1,
+   "matchedB": 60.1,
+   "rawGapPts": -6.1,
+   "matchedGapPts": -1.9
+  },
+  "commercial_courts_law | law_practice_law": {
+   "cells": 24,
+   "nA": 3647,
+   "nB": 146,
+   "rawA": 37.1,
+   "rawB": 64.9,
+   "matchedA": 45.3,
+   "matchedB": 46.8,
+   "rawGapPts": -27.9,
+   "matchedGapPts": -1.6
+  }
+ },
+ "locality": {
+  "w500": {
+   "judgments": 3735,
+   "byCode": {
+    "commercial_courts_law": {
+     "mentions": 5159,
+     "localCoAuthorityPct": 33.8,
+     "ci": [
+      32.5,
+      35.1
+     ]
+    },
+    "evidence_law": {
+     "mentions": 3164,
+     "localCoAuthorityPct": 55.4,
+     "ci": [
+      53.7,
+      57.2
+     ]
+    },
+    "commercial_courts_implementing_regulation": {
+     "mentions": 1913,
+     "localCoAuthorityPct": 53.4,
+     "ci": [
+      51.1,
+      55.6
+     ]
+    },
+    "sharia_procedure_law": {
+     "mentions": 836,
+     "localCoAuthorityPct": 35.2,
+     "ci": [
+      32.0,
+      38.5
+     ]
+    },
+    "law_practice_law": {
+     "mentions": 186,
+     "localCoAuthorityPct": 23.7,
+     "ci": [
+      18.1,
+      30.3
+     ]
+    },
+    "companies_law": {
+     "mentions": 120,
+     "localCoAuthorityPct": 43.3,
+     "ci": [
+      34.8,
+      52.3
+     ]
+    },
+    "civil_transactions_law": {
+     "mentions": 111,
+     "localCoAuthorityPct": 50.5,
+     "ci": [
+      41.3,
+      59.6
+     ]
+    },
+    "arbitration_law": {
+     "mentions": 6,
+     "localCoAuthorityPct": 16.7,
+     "ci": [
+      3.0,
+      56.4
+     ]
+    },
+    "bankruptcy_law": {
+     "mentions": 3,
+     "localCoAuthorityPct": 0.0,
+     "ci": [
+      0.0,
+      56.2
+     ]
+    }
+   },
+   "pairwiseWithinJudgment": {
+    "commercial_courts_law | evidence_law": {
+     "judgments": 2137,
+     "firstHigher": 303,
+     "secondHigher": 906,
+     "firstHigherPctOfDecided": 25.1
+    },
+    "commercial_courts_implementing_regulation | commercial_courts_law": {
+     "judgments": 1354,
+     "firstHigher": 610,
+     "secondHigher": 214,
+     "firstHigherPctOfDecided": 74.0
+    },
+    "commercial_courts_implementing_regulation | evidence_law": {
+     "judgments": 830,
+     "firstHigher": 304,
+     "secondHigher": 223,
+     "firstHigherPctOfDecided": 57.7
+    },
+    "commercial_courts_law | sharia_procedure_law": {
+     "judgments": 482,
+     "firstHigher": 131,
+     "secondHigher": 93,
+     "firstHigherPctOfDecided": 58.5
+    },
+    "commercial_courts_implementing_regulation | sharia_procedure_law": {
+     "judgments": 294,
+     "firstHigher": 196,
+     "secondHigher": 36,
+     "firstHigherPctOfDecided": 84.5
+    },
+    "evidence_law | sharia_procedure_law": {
+     "judgments": 189,
+     "firstHigher": 92,
+     "secondHigher": 31,
+     "firstHigherPctOfDecided": 74.8
+    },
+    "commercial_courts_implementing_regulation | law_practice_law": {
+     "judgments": 90,
+     "firstHigher": 58,
+     "secondHigher": 13,
+     "firstHigherPctOfDecided": 81.7
+    },
+    "commercial_courts_law | law_practice_law": {
+     "judgments": 82,
+     "firstHigher": 26,
+     "secondHigher": 22,
+     "firstHigherPctOfDecided": 54.2
+    },
+    "commercial_courts_law | companies_law": {
+     "judgments": 73,
+     "firstHigher": 11,
+     "secondHigher": 19,
+     "firstHigherPctOfDecided": 36.7
+    },
+    "civil_transactions_law | commercial_courts_law": {
+     "judgments": 67,
+     "firstHigher": 32,
+     "secondHigher": 17,
+     "firstHigherPctOfDecided": 65.3
+    },
+    "evidence_law | law_practice_law": {
+     "judgments": 60,
+     "firstHigher": 41,
+     "secondHigher": 8,
+     "firstHigherPctOfDecided": 83.7
+    },
+    "civil_transactions_law | evidence_law": {
+     "judgments": 38,
+     "firstHigher": 9,
+     "secondHigher": 16,
+     "firstHigherPctOfDecided": 36.0
+    }
+   }
+  },
+  "w1000": {
+   "judgments": 3735,
+   "byCode": {
+    "commercial_courts_law": {
+     "mentions": 5159,
+     "localCoAuthorityPct": 65.8,
+     "ci": [
+      64.5,
+      67.1
+     ]
+    },
+    "evidence_law": {
+     "mentions": 3164,
+     "localCoAuthorityPct": 85.1,
+     "ci": [
+      83.9,
+      86.3
+     ]
+    },
+    "commercial_courts_implementing_regulation": {
+     "mentions": 1913,
+     "localCoAuthorityPct": 77.7,
+     "ci": [
+      75.8,
+      79.5
+     ]
+    },
+    "sharia_procedure_law": {
+     "mentions": 836,
+     "localCoAuthorityPct": 74.6,
+     "ci": [
+      71.6,
+      77.5
+     ]
+    },
+    "law_practice_law": {
+     "mentions": 186,
+     "localCoAuthorityPct": 46.2,
+     "ci": [
+      39.2,
+      53.4
+     ]
+    },
+    "companies_law": {
+     "mentions": 120,
+     "localCoAuthorityPct": 68.3,
+     "ci": [
+      59.6,
+      76.0
+     ]
+    },
+    "civil_transactions_law": {
+     "mentions": 111,
+     "localCoAuthorityPct": 78.4,
+     "ci": [
+      69.8,
+      85.0
+     ]
+    },
+    "arbitration_law": {
+     "mentions": 6,
+     "localCoAuthorityPct": 50.0,
+     "ci": [
+      18.8,
+      81.2
+     ]
+    },
+    "bankruptcy_law": {
+     "mentions": 3,
+     "localCoAuthorityPct": 0.0,
+     "ci": [
+      0.0,
+      56.2
+     ]
+    }
+   },
+   "pairwiseWithinJudgment": {
+    "commercial_courts_law | evidence_law": {
+     "judgments": 2137,
+     "firstHigher": 160,
+     "secondHigher": 758,
+     "firstHigherPctOfDecided": 17.4
+    },
+    "commercial_courts_implementing_regulation | commercial_courts_law": {
+     "judgments": 1354,
+     "firstHigher": 561,
+     "secondHigher": 160,
+     "firstHigherPctOfDecided": 77.8
+    },
+    "commercial_courts_implementing_regulation | evidence_law": {
+     "judgments": 830,
+     "firstHigher": 155,
+     "secondHigher": 162,
+     "firstHigherPctOfDecided": 48.9
+    },
+    "commercial_courts_law | sharia_procedure_law": {
+     "judgments": 482,
+     "firstHigher": 69,
+     "secondHigher": 93,
+     "firstHigherPctOfDecided": 42.6
+    },
+    "commercial_courts_implementing_regulation | sharia_procedure_law": {
+     "judgments": 294,
+     "firstHigher": 46,
+     "secondHigher": 36,
+     "firstHigherPctOfDecided": 56.1
+    },
+    "evidence_law | sharia_procedure_law": {
+     "judgments": 189,
+     "firstHigher": 47,
+     "secondHigher": 26,
+     "firstHigherPctOfDecided": 64.4
+    },
+    "commercial_courts_implementing_regulation | law_practice_law": {
+     "judgments": 90,
+     "firstHigher": 57,
+     "secondHigher": 8,
+     "firstHigherPctOfDecided": 87.7
+    },
+    "commercial_courts_law | law_practice_law": {
+     "judgments": 82,
+     "firstHigher": 26,
+     "secondHigher": 20,
+     "firstHigherPctOfDecided": 56.5
+    },
+    "law_practice_law | sharia_procedure_law": {
+     "judgments": 79,
+     "firstHigher": 4,
+     "secondHigher": 49,
+     "firstHigherPctOfDecided": 7.5
+    },
+    "commercial_courts_law | companies_law": {
+     "judgments": 73,
+     "firstHigher": 12,
+     "secondHigher": 21,
+     "firstHigherPctOfDecided": 36.4
+    },
+    "civil_transactions_law | commercial_courts_law": {
+     "judgments": 67,
+     "firstHigher": 32,
+     "secondHigher": 12,
+     "firstHigherPctOfDecided": 72.7
+    },
+    "evidence_law | law_practice_law": {
+     "judgments": 60,
+     "firstHigher": 36,
+     "secondHigher": 1,
+     "firstHigherPctOfDecided": 97.3
+    }
+   }
+  },
+  "block": {
+   "judgments": 3735,
+   "byCode": {
+    "commercial_courts_law": {
+     "mentions": 5159,
+     "localCoAuthorityPct": 27.8,
+     "ci": [
+      26.6,
+      29.0
+     ]
+    },
+    "evidence_law": {
+     "mentions": 3164,
+     "localCoAuthorityPct": 36.0,
+     "ci": [
+      34.4,
+      37.7
+     ]
+    },
+    "commercial_courts_implementing_regulation": {
+     "mentions": 1913,
+     "localCoAuthorityPct": 24.1,
+     "ci": [
+      22.2,
+      26.1
+     ]
+    },
+    "sharia_procedure_law": {
+     "mentions": 836,
+     "localCoAuthorityPct": 33.7,
+     "ci": [
+      30.6,
+      37.0
+     ]
+    },
+    "law_practice_law": {
+     "mentions": 186,
+     "localCoAuthorityPct": 23.1,
+     "ci": [
+      17.6,
+      29.7
+     ]
+    },
+    "companies_law": {
+     "mentions": 120,
+     "localCoAuthorityPct": 25.8,
+     "ci": [
+      18.8,
+      34.3
+     ]
+    },
+    "civil_transactions_law": {
+     "mentions": 111,
+     "localCoAuthorityPct": 35.1,
+     "ci": [
+      26.9,
+      44.4
+     ]
+    },
+    "arbitration_law": {
+     "mentions": 6,
+     "localCoAuthorityPct": 0.0,
+     "ci": [
+      0.0,
+      39.0
+     ]
+    },
+    "bankruptcy_law": {
+     "mentions": 3,
+     "localCoAuthorityPct": 0.0,
+     "ci": [
+      0.0,
+      56.2
+     ]
+    }
+   },
+   "pairwiseWithinJudgment": {
+    "commercial_courts_law | evidence_law": {
+     "judgments": 2137,
+     "firstHigher": 359,
+     "secondHigher": 556,
+     "firstHigherPctOfDecided": 39.2
+    },
+    "commercial_courts_implementing_regulation | commercial_courts_law": {
+     "judgments": 1354,
+     "firstHigher": 232,
+     "secondHigher": 228,
+     "firstHigherPctOfDecided": 50.4
+    },
+    "commercial_courts_implementing_regulation | evidence_law": {
+     "judgments": 830,
+     "firstHigher": 142,
+     "secondHigher": 234,
+     "firstHigherPctOfDecided": 37.8
+    },
+    "commercial_courts_law | sharia_procedure_law": {
+     "judgments": 482,
+     "firstHigher": 79,
+     "secondHigher": 73,
+     "firstHigherPctOfDecided": 52.0
+    },
+    "commercial_courts_implementing_regulation | sharia_procedure_law": {
+     "judgments": 294,
+     "firstHigher": 33,
+     "secondHigher": 79,
+     "firstHigherPctOfDecided": 29.5
+    },
+    "evidence_law | sharia_procedure_law": {
+     "judgments": 189,
+     "firstHigher": 54,
+     "secondHigher": 28,
+     "firstHigherPctOfDecided": 65.9
+    },
+    "commercial_courts_law | law_practice_law": {
+     "judgments": 82,
+     "firstHigher": 13,
+     "secondHigher": 18,
+     "firstHigherPctOfDecided": 41.9
+    },
+    "law_practice_law | sharia_procedure_law": {
+     "judgments": 79,
+     "firstHigher": 9,
+     "secondHigher": 22,
+     "firstHigherPctOfDecided": 29.0
+    },
+    "commercial_courts_law | companies_law": {
+     "judgments": 73,
+     "firstHigher": 15,
+     "secondHigher": 14,
+     "firstHigherPctOfDecided": 51.7
+    },
+    "civil_transactions_law | commercial_courts_law": {
+     "judgments": 67,
+     "firstHigher": 30,
+     "secondHigher": 15,
+     "firstHigherPctOfDecided": 66.7
+    },
+    "evidence_law | law_practice_law": {
+     "judgments": 60,
+     "firstHigher": 32,
+     "secondHigher": 6,
+     "firstHigherPctOfDecided": 84.2
+    }
+   }
+  }
+ },
+ "arbitrationStressTest": {
+  "raw": 4.3,
+  "standardised": 5.2,
+  "matchedAgainstCCL": {
+   "cells": 16,
+   "nA": 2173,
+   "nB": 117,
+   "rawA": 37.8,
+   "rawB": 7.5,
+   "matchedA": 29.2,
+   "matchedB": 12.6,
+   "rawGapPts": 30.3,
+   "matchedGapPts": 16.6
+  },
+  "localVsCCLInSameJudgment": {
+   "w500": null,
+   "w1000": null,
+   "block": null
+  },
+  "localRate": {
+   "w500": {
+    "mentions": 6,
+    "localCoAuthorityPct": 16.7,
+    "ci": [
+     3.0,
+     56.4
+    ]
+   },
+   "w1000": {
+    "mentions": 6,
+    "localCoAuthorityPct": 50.0,
+    "ci": [
+     18.8,
+     81.2
+    ]
+   },
+   "block": {
+    "mentions": 6,
+    "localCoAuthorityPct": 0.0,
+    "ci": [
+     0.0,
+     39.0
+    ]
+   }
+  }
+ },
+ "evidenceCodeOrProofDispute": {
+  "cites Evidence Law, proof dispute in recital": {
+   "n": 3089,
+   "hybridPct": 40.4,
+   "ci": [
+    38.7,
+    42.1
+   ]
+  },
+  "cites Evidence Law, no proof marker": {
+   "n": 4613,
+   "hybridPct": 39.0,
+   "ci": [
+    37.6,
+    40.4
+   ]
+  },
+  "proof dispute, does NOT cite Evidence Law": {
+   "n": 5358,
+   "hybridPct": 26.4,
+   "ci": [
+    25.3,
+    27.6
+   ]
+  },
+  "neither": {
+   "n": 10566,
+   "hybridPct": 21.9,
+   "ci": [
+    21.2,
+    22.7
+   ]
+  }
+ },
+ "feeArticleStressTest": {
+  "fee claim, cites law practice law": {
+   "n": 214,
+   "hybridPct": 66.4,
+   "ci": [
+    59.8,
+    72.3
+   ]
+  },
+  "fee claim, no law practice law": {
+   "n": 5725,
+   "hybridPct": 35.5,
+   "ci": [
+    34.2,
+    36.7
+   ]
+  },
+  "no fee claim, cites law practice law": {
+   "n": 132,
+   "hybridPct": 48.5,
+   "ci": [
+    40.1,
+    56.9
+   ]
+  },
+  "no fee claim, no law practice law": {
+   "n": 17555,
+   "hybridPct": 25.9,
+   "ci": [
+    25.2,
+    26.5
+   ]
+  }
+ },
+ "byReasonsLengthBand": {
+  "bands": "0: <900 chars, 1: 900-1599, 2: 1600-2599, 3: 2600+",
+  "byInstrument": {
+   "commercial_courts_law": {
+    "0": 21.5,
+    "1": 28.3,
+    "2": 39.9,
+    "3": 53.5
+   },
+   "evidence_law": {
+    "0": 17.1,
+    "1": 26.7,
+    "2": 42.5,
+    "3": 62.6
+   },
+   "sharia_procedure_law": {
+    "0": 15.7,
+    "1": 20.4,
+    "2": 30.9,
+    "3": 51.9
+   },
+   "commercial_courts_implementing_regulation": {
+    "0": 3.9,
+    "1": 18.1,
+    "2": 52.7,
+    "3": 69.7
+   },
+   "companies_law": {
+    "0": 0.0,
+    "1": 5.0,
+    "2": 15.7,
+    "3": 26.3
+   },
+   "civil_transactions_law": {
+    "1": 9.8,
+    "2": 26.9,
+    "3": 28.7
+   },
+   "law_practice_law": {
+    "1": 42.3,
+    "2": 52.1,
+    "3": 75.0
+   },
+   "arbitration_law": {
+    "0": 0.0,
+    "1": 6.3,
+    "2": 3.8,
+    "3": 9.1
+   },
+   "bankruptcy_law": {
+    "1": 0.0
+   }
+  },
+  "corpus": {
+   "0": 8.8,
+   "1": 21.9,
+   "2": 37.3,
+   "3": 50.3
+  }
+ },
+ "statutoryBreadth": {
+  "warning": "the number of distinct codes a judgment cites is downstream of how much the chamber reasons, so this is reported as a mediator-like sensitivity and never as a docket control",
+  "byBreadth": {
+   "0": {
+    "judgments": 4351,
+    "hybridPct": 0.6
+   },
+   "1": {
+    "judgments": 9449,
+    "hybridPct": 32.0
+   },
+   "2": {
+    "judgments": 7620,
+    "hybridPct": 35.2
+   },
+   "3": {
+    "judgments": 1962,
+    "hybridPct": 48.3
+   },
+   "4": {
+    "judgments": 244,
+    "hybridPct": 43.0
+   }
+  }
+ },
+ "judgmentLevelVariance": {
+  "note": "judgment-level, so an instrument cannot appear as a single grouping -- a judgment cites several. The set of codes is the nearest equivalent and is reported as such.",
+  "chanceNote": "a grouping with more cells explains more by chance; the excess is the share above what the same cell sizes reach on shuffled outcomes over 120 shuffles",
+  "byGrouping": {
+   "set of codes cited": {
+    "groups": 289,
+    "betweenSharePct": 16.05,
+    "chanceSharePct": 1.22,
+    "excessPts": 14.83
+   },
+   "docket stratum (all three)": {
+    "groups": 72,
+    "betweenSharePct": 12.5,
+    "chanceSharePct": 0.3,
+    "excessPts": 12.2
+   },
+   "reasons-length band": {
+    "groups": 4,
+    "betweenSharePct": 8.84,
+    "chanceSharePct": 0.01,
+    "excessPts": 8.83
+   },
+   "claim family": {
+    "groups": 6,
+    "betweenSharePct": 2.46,
+    "chanceSharePct": 0.02,
+    "excessPts": 2.44
+   },
+   "city": {
+    "groups": 22,
+    "betweenSharePct": 1.03,
+    "chanceSharePct": 0.09,
+    "excessPts": 0.94
+   },
+   "contestedness": {
+    "groups": 3,
+    "betweenSharePct": 0.71,
+    "chanceSharePct": 0.01,
+    "excessPts": 0.7
+   },
+   "year": {
+    "groups": 3,
+    "betweenSharePct": 0.16,
+    "chanceSharePct": 0.01,
+    "excessPts": 0.15
+   }
+  }
+ }
+}

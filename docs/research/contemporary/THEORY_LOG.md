@@ -97,3 +97,49 @@ other.
 IRREDUCIBLE_WITH_CURRENT_DATA. Every reduction available in this corpus —
 citation load, case mix, code text, article composition — has now been tested
 and none of them absorbs it.
+
+---
+
+## T4 · The code effect is the docket
+
+**HYPOTHESIS.** The codes are invoked in different kinds of dispute, and the
+apparent ecology of a statute book is the reasoning style of the cases in
+which it happens to appear. Arbitration disputes may be short, agreed-fact,
+single-issue matters with no seam to fill; fee disputes the opposite.
+
+**TEST.** Thirteen case features read from the RECITAL only — upstream of the
+reasoning that produces the outcome — each validated against a citation target
+it was never built from, with nine kept as VALID, three as COARSE_ONLY and one
+dropped as UNUSABLE. Then: direct standardisation to a common docket profile
+over 72 strata; matched-judgment comparisons on stratum and year; the
+ordering inside four reasons-length bands; and a within-judgment contrast of
+where each code's own citations sit relative to non-statutory authority.
+
+**PARTIAL FAILURE, AND THAT IS THE RESULT.** The docket explains a real part
+of the spread and in one case most of it: the commercial implementing
+regulation falls from 48.6 to 32.8 per cent standardised, and the four codes
+with near-complete strata coverage converge from a raw 28.1–48.6 range to
+28.2–34.9. Chance-corrected, the kind of dispute (+12.20) is nearly as strong
+a judgment-level grouping as the set of codes cited (+14.83).
+
+It does not explain the rest. No matched gap disappears and three grow; the
+ordering holds inside every reasons-length band, with arbitration at 9.1 per
+cent even in judgments whose reasons run past 2,600 characters against a
+corpus average of 50.3; and citing the Evidence Law adds about fourteen points
+whether or not the recital shows a proof dispute, while a proof dispute
+without the code adds four and a half.
+
+**WHAT SURVIVED, AND WHAT DIED.** Survived: the Evidence Law, on the strongest
+evidence in the programme — in 2,137 judgments citing both codes, its own
+citations sit nearer the fiqh than the Commercial Courts Law's in 74.9 per
+cent of them at ±500 characters and 60.8 at the sentence-block level. Died:
+the Law of Practice as a code ecology. Raw it is the most supplemented code in
+the corpus; locally its citations are the farthest from non-statutory
+authority of any code measured, 23.7 per cent against the Commercial Courts
+Law's 33.8. Its extreme is a property of fee judgments,
+not of its text. The phrase "nine separate settlements with fiqh" is withdrawn
+as over-claiming.
+
+**CONSEQUENCE.** Frame decision C — CODE_EFFECT_SURVIVES_DOCKET. The stronger
+D holds for the Evidence Law and cannot be established generally, because the
+negative case is never observed beside another code in the same paragraph.

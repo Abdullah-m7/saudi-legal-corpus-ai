@@ -82,19 +82,92 @@ reasoned judgment.
 
 ## Decision
 
-**WRITE, and not yet — but the case is materially stronger than when this
-file was opened.** The objection that would have sunk it, that the ecology is
-just the article mix, has been tested and rejected. The four conditions set
-for a second paper are met:
-the effect is strong, it is not trivial composition, the mixes genuinely
-differ, and the novelty survives a literature check that found the object
-(statute books compared against each other) absent from a literature that
-compares systems, courts and cases. What is missing before drafting is not
-more analysis of this corpus but a decision about the frame — whether the
-paper is about Saudi codification or about the statute book as a unit, since
-the second is the contribution and the first is the evidence.
+**WRITE.** The status WRITE_PENDING_DOCKET_TEST is discharged: the docket test
+is done, it took a real bite out of the claim, and what is left is narrower,
+better evidenced and correctly named.
+
+---
+
+# The claim, after the docket test
+
+## CENTRAL CLAIM
+
+Within one court system, one bench and one procedural law, **statute books
+stand in different relationships to non-statutory legal authority, and the
+difference is not reducible to the kind of dispute in which each book is
+invoked.** The permitted term is **code-specific authority ecology**. Not
+legal culture, not doctrinal settlement, not "separate settlements with the
+fiqh" — those are explanations larger than the measurement.
+
+The contribution is the object: the statute book as an empirical unit of legal
+reasoning, with a measurable relationship to supplementary authority that
+survives controls for the case. Saudi Arabia is the setting because it applies
+nine recent codes through the same commercial chambers inside five years.
+
+## STRONGEST EVIDENCE
+
+1. **Within-judgment.** In 2,137 judgments citing both, the Evidence Law's own
+   citations sit nearer non-statutory authority than the Commercial Courts
+   Law's in 74.9 per cent at ±500 characters and 60.8 at the sentence block.
+   Dispute, chamber, year, parties and document are fixed by construction.
+2. **The code, not the subject matter.** Citing the Evidence Law adds about
+   fourteen points of supplementation whether or not the recital shows a proof
+   dispute; a proof dispute without the code adds four and a half.
+3. **Matching does not dissolve it.** No matched-docket gap disappears, three
+   grow, and Sharia Procedure against Civil Transactions goes from +3.2 raw to
+   +24.6 matched.
+4. **Not length.** The ordering holds inside every reasons-length band;
+   arbitration is 9.1 per cent hybrid in judgments whose reasons exceed 2,600
+   characters, where the corpus averages 50.3.
+5. **Not article composition.** Function-matched, citation-matched article
+   pairs differ by a median 20.4 points across codes against 11.0 within one.
+
+## STRONGEST NEGATIVE EVIDENCE
+
+1. **The positive extreme reverses.** The Law of Practice is the most
+   supplemented code raw at 59.5 per cent and the *least* locally at 23.7. Its
+   ecology is a property of fee disputes, and the fiqh in those judgments sits
+   beside art. 164 of the implementing regulation, not beside its own article.
+2. **The negative case is untestable where it counts.** The Arbitration Law
+   appears in multi-code judgments with six citations in total, so the
+   cleanest test is silent on the case that carries most of the range.
+3. **One large code is mostly docket.** The implementing regulation loses 15.8
+   points to standardisation and its within-judgment lead over the Commercial
+   Courts Law is 74.0 per cent at ±500 and 50.4 — chance — at the block level.
+4. **The dispute is nearly as strong.** Chance-corrected, docket stratum
+   (+12.20) against set of codes cited (+14.83).
+5. **Ecologies move.** Evidence falls 46.0 → 30.9 per cent across four years;
+   Companies 49.3 → 9.8.
+
+## ALTERNATIVE EXPLANATIONS TESTED
+
+Citation exposure; enacted-text features (nine, leave-one-out MAE 15.3 against
+a null of 17.2); age; domain; procedural against substantive (eta² 0.005);
+statutory completeness; institutional-operation against dispute-decision;
+article composition; matched legal function; year (0.16 per cent of
+judgment-level variance); crude case mix; docket composition on nine validated
+recital features; reasons length; and statutory breadth as a mediator.
+
+## WHAT REMAINS UNEXPLAINED
+
+Why the Evidence Law pulls the fiqh to its own sentences and the Commercial
+Courts Law does not, in the same paragraph of the same judgment. Nothing
+measured — not the text, not the article mix, not the case — accounts for it.
+The next hypothesis worth naming is that some statute books arrive in practice
+with a settled interpretive tradition attached to them, and others do not;
+that is a claim about the doctrinal literature around a code rather than about
+the code, and this corpus cannot see it.
+
+## GENERALISATION BOUNDARY
+
+Published Saudi commercial judgments, 1444–1446. The measure is
+citation-visible authority in the court's own voice, not reasoning. Four of
+the nine codes have fewer than 700 citing judgments and two cannot be
+standardised at all. Nothing here identifies an effect; every control is
+observational, and the wording throughout is association.
 
 Working title, not fixed: *One Legal System, Several Authority Ecologies*.
 
-Companion results: `ECOLOGIES.md`, `instruments_results.json`,
-`instrument_effect_results.json`, `code_ecology.csv`.
+Companion results: `DOCKET.md`, `ECOLOGIES.md`, `docket_test_results.json`,
+`instruments_results.json`, `article_instrument_results.json`,
+`code_ecology.csv`, `docket_layer.jsonl.gz`.
