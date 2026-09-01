@@ -1301,16 +1301,66 @@ def formula_facts(f):
     ]
 
 
+def retrieval_facts():
+    """RETRIEVAL.md: the note for the legal retrieval experiment.
+
+    Kept in its own function because it reads one results file and because the
+    experiment is the first thing in this directory that builds a system
+    rather than measuring the corpus.
+    """
+    r = J("retrieval_experiment_results.json")
+    S, D, H, A = r["summary"], r["design"], r["headline"], r["ageing"]
+    RT = ["RETRIEVAL.md"]
+    out = [
+        ("retrieval folds", f"{D['folds']}", RT),
+        ("query cap", f"{D['queryCap']}", RT),
+        ("experiment seed", f"{D['seed']}", RT),
+        ("matched-random draws", f"{D['drawsMatchedRandom']}", RT),
+        ("raw minus dedup", f"{H['rawMinusDedup_mrr']}", RT),
+        ("raw minus matched random", f"{H['rawMinusMatchedRandom_mrr']}", RT),
+        ("mean draws beaten", f"{H['meanDrawsBeatenByDedup']}", RT),
+        ("verdict", H["verdict"], RT),
+    ]
+    for arm in ("RAW", "FORMULA_DEDUP", "MATCHED_RANDOM", "PLUS_PARTY",
+                "RAW_NO_FP_LEAK", "FROZEN_1Q", "FROZEN_1Q_VOLUME",
+                "FROZEN_2Q", "FROZEN_2Q_VOLUME", "FROZEN_4Q",
+                "FROZEN_4Q_VOLUME"):
+        a = S[arm]
+        out.append((f"{arm} row",
+                    f"| {a['recall@1']} | {a['recall@5']} | {a['recall@10']} "
+                    f"| **{a['mrr@10']}** | {a['goldInIndex']} | "
+                    f"{a['meanIndexContexts']} | {a['meanIndexArticles']} |"
+                    if arm in ("RAW", "FORMULA_DEDUP", "MATCHED_RANDOM") else
+                    f"| {a['recall@1']} | {a['recall@5']} | {a['recall@10']} "
+                    f"| {a['mrr@10']} | {a['goldInIndex']} | "
+                    f"{a['meanIndexContexts']} | {a['meanIndexArticles']} |",
+                    RT))
+    for k in (1, 2, 4):
+        a = A[f"FROZEN_{k}Q"]
+        age = round(a["mrrLossVersusRaw"] - a["mrrLossOfItsVolumeControl"], 4)
+        out.append((f"freeze {k}Q loss", f"{a['mrrLossVersusRaw']}", RT))
+        out.append((f"freeze {k}Q volume", f"{a['mrrLossOfItsVolumeControl']}",
+                    RT))
+        out.append((f"freeze {k}Q age", f"{age}", RT))
+    for f in r["byFold"]:
+        out.append((f"fold {f['quarter']}",
+                    f"| {f['quarter']} | {f['circulatingFormulas']} | "
+                    f"{f['contextsRemovedByDedup']} | "
+                    f"{f['dedupRemovedShare']} |", RT))
+    return out
+
+
 def main():
     bad = []
     cache = {}
-    for label, value, docs in facts():
+    for label, value, docs in list(facts()) + retrieval_facts():
         for doc in docs:
             text = cache.setdefault(
                 doc, (HERE / doc).read_text(encoding="utf-8"))
             if value not in text:
                 bad.append(f"  {label} = {value} is not in {doc}")
-    checked = sum(len(d) for _, _, d in facts())
+    checked = sum(len(d) for _, _, d in
+                  list(facts()) + retrieval_facts())
     if bad:
         print(f"{len(bad)} figure(s) in the contemporary notes no longer "
               f"match the results:")

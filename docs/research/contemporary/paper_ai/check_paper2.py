@@ -34,6 +34,7 @@ RAD = load("ai_radar_results.json")
 WIN = load("windows_results.json")
 MAP = load("ai_law_map.json")
 ADO = load("adoption_registry.json")
+RET = load("retrieval_experiment_results.json")
 
 checks = []
 
@@ -221,6 +222,83 @@ assert CO["stationaryFamilies"] == ["ECOLOGY"], "the stationary family changed"
 SEG = REG["phase15_withinRegimeForecastability"]
 want("series where segmentation wins", len(SEG["seriesWhereSegmentationWins"]))
 want("series tested for segmentation", SEG["seriesTested"])
+
+# ------------------------------------------------------------ sections 5-7
+S = RET["summary"]
+D = RET["design"]
+H = RET["headline"]
+A = RET["ageing"]
+LS = RET["layerSchema"]
+
+want("context window characters", LS["contextChars"])
+want("query cap", D["queryCap"])
+want("experiment seed", D["seed"])
+want("matched-random draws", D["drawsMatchedRandom"])
+want("frozen volume draws", D["drawsFrozenVolume"])
+want("experiment folds", D["folds"])
+assert D["queriesAreIdenticalAcrossArms"], "arms no longer share their queries"
+assert D["maturityRule"].startswith("horizon.py"), "the maturity rule moved"
+
+ARMS = {"RAW": "RAW", "FORMULA_DEDUP": "FORMULA_DEDUP",
+        "MATCHED_RANDOM": "MATCHED_RANDOM"}
+for key in ARMS:
+    a = S[key]
+    row = (f"| {a['recall@1']} | {a['recall@5']} | {a['recall@10']} | "
+           f"{a['mrr@10']} | {a['goldInIndex']} | {a['indexContexts'] if False else a['meanIndexContexts']} | "
+           f"{a['meanIndexArticles']} |")
+    checks.append((f"headline row: {key}", row, row in MSB))
+for key in ("PLUS_PARTY", "RAW_NO_FP_LEAK", "FROZEN_1Q", "FROZEN_2Q",
+            "FROZEN_4Q", "FROZEN_1Q_VOLUME", "FROZEN_2Q_VOLUME",
+            "FROZEN_4Q_VOLUME"):
+    want(f"{key} mrr", S[key]["mrr@10"])
+want("gold in index, raw", S["RAW"]["goldInIndex"])
+want("index contexts, raw", S["RAW"]["meanIndexContexts"])
+want("index contexts, deduplicated", S["FORMULA_DEDUP"]["meanIndexContexts"])
+want("articles kept by dedup", S["FORMULA_DEDUP"]["meanIndexArticles"])
+want("articles kept by random removal", S["MATCHED_RANDOM"]["meanIndexArticles"])
+want("index contexts, plus party", S["PLUS_PARTY"]["meanIndexContexts"])
+want("articles, plus party", S["PLUS_PARTY"]["meanIndexArticles"])
+want("gold in index, plus party", S["PLUS_PARTY"]["goldInIndex"])
+
+want("raw minus dedup", H["rawMinusDedup_mrr"])
+want("raw minus matched random", H["rawMinusMatchedRandom_mrr"])
+want("mean draws beaten by dedup", H["meanDrawsBeatenByDedup"])
+want("folds where dedup removed something",
+     H["foldsWhereDedupRemovedSomething"])
+assert H["verdict"] == "DEDUP_EFFECT_EXCEEDS_VOLUME_EFFECT", \
+    "the experiment's verdict changed and the manuscript argues the old one"
+# 2.7 times is a ratio the prose states; it must follow from the two figures
+ratio = H["rawMinusDedup_mrr"] / H["rawMinusMatchedRandom_mrr"]
+checks.append(("dedup-to-volume ratio", f"{ratio:.1f}", f"{ratio:.1f}" in MS))
+# and the removal share the prose states
+shrink = 1 - S["FORMULA_DEDUP"]["meanIndexContexts"] / S["RAW"]["meanIndexContexts"]
+want("index share removed by dedup", f"{100 * shrink:.1f}")
+# the party arm must still be a loss, or section 7.3 is wrong
+assert S["PLUS_PARTY"]["mrr@10"] < S["RAW"]["mrr@10"], \
+    "adding party contexts no longer costs MRR"
+growth = S["PLUS_PARTY"]["meanIndexContexts"] / S["RAW"]["meanIndexContexts"] - 1
+checks.append(("party index growth", f"{100 * growth:.0f}",
+               f"**{100 * growth:.0f}** per cent" in MS))
+# the verbatim-overlap control
+leak = S["RAW"]["mrr@10"] - S["RAW_NO_FP_LEAK"]["mrr@10"]
+want("verbatim overlap cost", f"{leak:.4f}")
+
+for k in (1, 2, 4):
+    a = A[f"FROZEN_{k}Q"]
+    want(f"freeze {k}Q total loss", a["mrrLossVersusRaw"])
+    want(f"freeze {k}Q volume loss", a["mrrLossOfItsVolumeControl"])
+    age = a["mrrLossVersusRaw"] - a["mrrLossOfItsVolumeControl"]
+    want(f"freeze {k}Q age loss", round(age, 4))
+    want(f"freeze {k}Q age share",
+         f"{round(100 * age / a['mrrLossVersusRaw'])} %")
+
+FOLD = {f["quarter"]: f for f in RET["byFold"]}
+for q, f in FOLD.items():
+    row = (f"| {q} | {f['circulatingFormulas']} | "
+           f"{f['contextsRemovedByDedup']} | {f['dedupRemovedShare']} |")
+    checks.append((f"fold row: {q}", row, row in MSB))
+assert all(f["postingsDroppedShare"] == 0.0 for f in RET["byFold"]), \
+    "the idf floor now fires, so the manuscript's 'no approximation' is false"
 
 # ---------------------------------------------------------------- section 8
 EXPLICIT = [a for a in MAP["anchors"] if a["class"] == "EXPLICIT_RULE"]
