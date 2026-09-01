@@ -17,13 +17,13 @@
 
 - [x] generate editable `.docx` from `MANUSCRIPT_ANONYMOUS.md`;
 - [x] scrub/check DOCX creator/last-modified-by/custom metadata; core properties are empty;
-- [ ] visually render and inspect every page;
-- [ ] inspect hyperlinks for author-linked destinations;
-- [ ] if a reproduction package is supplied, create an anonymous review snapshot rather than linking the author-owned public repository;
-- [ ] inspect filenames for author identity.
+- [x] visually rendered and inspected all 8 pages after the final table/list rebuild; no clipping, overlap, broken tables or missing glyphs observed;
+- [x] DOCX relationship scan found no external author-linked hyperlinks; visible DOI URLs are plain-text bibliography entries;
+- [x] no reproduction package is included in the initial reviewer package; if later requested, it must use a separate anonymous review snapshot rather than an author-owned public URL;
+- [x] reviewer-facing filenames contain no author identity.
 
 ## Non-anonymous information
 
 Author identity, affiliation/status, correspondence data, acknowledgements, funding and declarations belong in the submission interface / separate title-page channel required by SNAPP, not in the reviewer-facing manuscript.
 
-**Release gate:** `BLOCKED_ON_VISUAL_DOCX_QA_AND_HUMAN_METADATA_CONFIRMATION`.
+**Release gate:** `DOCX_QA_PASS__BLOCKED_ONLY_ON_HUMAN_METADATA_CONFIRMATION`.
