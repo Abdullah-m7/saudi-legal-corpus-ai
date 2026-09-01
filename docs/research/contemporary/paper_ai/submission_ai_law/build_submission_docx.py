@@ -227,11 +227,10 @@ def build():
                     break
                 parts.append(nxt.strip()); j += 1
             p = doc.add_paragraph()
-            set_run_font(p.add_run(m.group(1) + ".\t"), BODY_SIZE)
-            add_inline(p, " ".join(parts))
+            add_inline(p, f"{m.group(1)}. " + " ".join(parts))
             format_paragraph(p, after=2, line=1.04)
-            p.paragraph_format.left_indent = Inches(0.30)
-            p.paragraph_format.first_line_indent = Inches(-0.22)
+            p.paragraph_format.left_indent = Inches(0.25)
+            p.paragraph_format.first_line_indent = Inches(-0.15)
             i = j - 1
         elif s.startswith("> "):
             parts = [s[2:].strip()]

@@ -7,7 +7,7 @@
 ## Package
 
 - `MANUSCRIPT_ANONYMOUS.md` — reviewer-facing source; no author/affiliation/contact or repository URL.
-- `MANUSCRIPT_ANONYMOUS.docx` — editable reviewer-facing Word file; 8-page visual QA PASS and metadata/identity scan PASS.
+- `MANUSCRIPT_ANONYMOUS.docx` — editable reviewer-facing Word file; 8-page controller rerender QA PASS after table/list correction, with metadata/identity scan PASS.
 - `build_submission_docx.py` — deterministic Markdown→DOCX builder used to preserve tables, lists, Arabic passages and anonymity.
 - `TITLE_PAGE_TEMPLATE.md` — non-anonymous metadata/declarations; complete only from author-confirmed facts.
 - `PORTAL_METADATA.md` — values to paste into the submission interface after confirmation.
