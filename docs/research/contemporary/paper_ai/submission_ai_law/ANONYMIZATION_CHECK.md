@@ -15,8 +15,8 @@
 
 ## Reviewer materials
 
-- [ ] generate editable `.docx` from `MANUSCRIPT_ANONYMOUS.md`;
-- [ ] scrub DOCX creator/last-modified-by/custom metadata;
+- [x] generate editable `.docx` from `MANUSCRIPT_ANONYMOUS.md`;
+- [x] scrub/check DOCX creator/last-modified-by/custom metadata; core properties are empty;
 - [ ] visually render and inspect every page;
 - [ ] inspect hyperlinks for author-linked destinations;
 - [ ] if a reproduction package is supplied, create an anonymous review snapshot rather than linking the author-owned public repository;
@@ -26,4 +26,4 @@
 
 Author identity, affiliation/status, correspondence data, acknowledgements, funding and declarations belong in the submission interface / separate title-page channel required by SNAPP, not in the reviewer-facing manuscript.
 
-**Release gate:** `BLOCKED_ONLY_ON_DOCX_GENERATION_AND_HUMAN_METADATA_CONFIRMATION`.
+**Release gate:** `BLOCKED_ON_VISUAL_DOCX_QA_AND_HUMAN_METADATA_CONFIRMATION`.
