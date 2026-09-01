@@ -1,37 +1,29 @@
 # What Preprocessing Does to Legal Retrieval
 
-### A matched-volume control for corpus interventions, tested on 105575 statutory citations
+### Matched-volume controls for recurring legal text and index age
 
-*Evidence from 50666 Saudi commercial judgments*
+*Evidence from published Saudi commercial judgments*
 
-**Abstract.** Legal AI systems are built on corpora of published judgments
-that are cleaned first, and the cleaning is validated by whether it changes a
-downstream result. We show that this validation is not sound, and give the
-experiment that makes it sound. On a legal retrieval task built entirely from
-what Saudi commercial courts actually cited — given the court's reasoning
-before a statutory citation, retrieve the article it then cited, 105575
-resolved citations, 976 candidate articles, temporally fenced — we compare
-the same BM25 retriever across four treatments of the same corpus. Removing
-every recurring legal formula takes 31.4 per cent of the index and costs
-0.0241 MRR@10; removing the same number of contexts at random costs 0.0089.
-The targeted removal is 2.7 times the price of the volume it removes, it
-falls outside the spread of 20 size-matched random draws in five of nine
-folds, and in the last five folds it beats 0 of 20 draws every time — so in
-this corpus the recurring wording is above-average retrieval evidence, and
-deleting it as boilerplate deletes the better half of the index. The same
-control run on the corpus-level analysis that motivated the intervention
-gives the opposite answer, which is exactly why it has to be run: the same
-removal is special for one downstream task and not for another, and nothing
-short of the control tells a practitioner which case they are in. We apply
-the same logic to index staleness, where freezing an index makes it both
-older and smaller: of the MRR lost at one, two and four quarters of age,
-70, 64 and 62 per cent survives a matched-volume control and is age rather
-than size. We state the contribution as a domain-specific validity
-requirement rather than as a new ablation concept, which it is not: **when a
-preprocessing step removes substantial evidentiary volume from a legal
-corpus, its effect on legal-AI evaluation must be compared with a
-matched-volume random-removal control before the change is attributed to the
-class of text removed.**
+**Abstract.** Legal AI pipelines often remove recurring text and freeze
+historical indexes, but a downstream score change can confound the semantic
+intervention with the amount of evidentiary material removed. We test both
+confounds on published Saudi commercial judgments. The retrieval task is
+factual rather than synthetic: given the court's reasoning immediately before
+a statutory citation, retrieve the article the court then cited. Across
+105,575 resolved citations and 976 candidate articles, we run the same BM25
+retriever under temporally fenced corpus treatments. Removing recurring legal
+formulas reduces the index by 31.4% and lowers MRR@10 by 0.0241, whereas
+randomly removing the same number of contexts lowers it by 0.0089. The
+targeted loss is 2.7 times the mean volume-only loss and, in the five
+largest-removal folds, is worse than all 20 matched random draws. Yet the same
+targeted removal is volume-equivalent on a separate corpus-level
+authority-support analysis, showing that the effect of preprocessing is
+task-dependent. We apply the same matched-volume logic to index staleness. At
+one, two, and four quarters, 70%, 64%, and 62% of the observed MRR loss remains
+after controlling for index shrinkage. The result is a domain-specific
+evaluation recommendation, not a new ablation method: legal-AI preprocessing
+should be evaluated against a same-volume control before performance changes
+are attributed to the class of text removed.
 
 **Keywords.** legal information retrieval; corpus construction; deduplication;
 temporal generalisation; evaluation validity; Saudi law
@@ -46,20 +38,17 @@ inherited by everything downstream. The most common of them is the removal of
 recurring text. It is justified by a reasonable-sounding rule: the removed
 material is boilerplate, and boilerplate is noise.
 
-The usual evidence for that rule is that removing the text changes a
-downstream result. **That evidence is not sound, and the reason is arithmetic
-rather than legal.** Removing recurring passages removes a large volume of
-data. Removing a large volume of data changes downstream results on its own.
-Any experiment that reports the first without controlling for the second has
-measured the two together.
+A downstream score change alone is insufficient to attribute an effect to the
+semantic class removed. Removing recurring passages also removes a large
+volume of data, so an intervention evaluated without a quantity control leaves
+those two effects entangled.
 
 The control is one experiment: remove the same *number* of items at random and
 see whether the change survives. It is not our idea — matched-budget random
-subsets are standard in the data-selection literature (§2) — and we make no
-claim to it. What we claim is that in a legal corpus, where the removed
-material is evidence rather than web noise, the control has to be a
-requirement rather than an option, and that when you actually run it the
-answer is not the one either side of the argument expects.
+subsets are established in the data-selection literature (§2) — and we make no
+claim to it. We test what that control reveals when the removed material is
+legal evidence rather than generic web text, and use the result to motivate a
+domain-specific evaluation recommendation.
 
 **The question.** Does targeted removal of recurring legal wording change
 legal retrieval performance beyond what removing the same amount of corpus
@@ -71,96 +60,109 @@ did: given the court's own reasoning in the run-up to a statutory citation,
 retrieve the article it then cited (§5). 105575 resolved citations, 976
 candidate articles, one relevant article per query, temporally fenced, with
 every citation span inside a query masked. The task is deliberately standard
-and the retriever is deliberately dull — BM25 — because the independent
-variable is the corpus, and a change in the score must not be attributable to
-anything else.
+and the retriever is deliberately simple — BM25 — so that the corpus treatment
+remains the principal experimental contrast.
 
 **What we find.**
 
-- **De-boilerplating is not volume-equivalent here, and it is worse than
-  random.** Removing every circulating formula costs 2.7 times what removing
-  the same number of contexts at random costs, and lands outside the spread of
-  20 size-matched random draws in the five largest-removal folds (§6). The
-  recurring wording is above-average retrieval evidence.
-- **And on a different downstream task in the same corpus, the same removal
-  *is* volume-equivalent** (§6.4). Two tasks, one intervention, opposite
-  answers. This is the paper's central methodological point: the control is
-  not a formality that confirms what you expected, it is the only thing that
-  tells you which of the two worlds you are in.
-- **Two thirds of the cost of a stale index is age and one third is size**
-  (§7), a decomposition that requires the same control and that we did not
-  find reported in the temporal-retrieval literature.
+- **Targeted recurrence removal is not volume-equivalent on the retrieval
+  task.** Removing every circulating formula costs 2.7 times what removing the
+  same number of contexts at random costs, and lands outside the spread of 20
+  size-matched random draws in the five largest-removal folds (§6). The
+  removed contexts are disproportionately useful to this retrieval instrument.
+- **On a different downstream task in the same corpus, the same removal is
+  volume-equivalent** (§6.4). Two tasks therefore give different answers about
+  whether the targeted removal is special; the matched-volume arm distinguishes
+  those cases in this design.
+- **Roughly two thirds of the measured stale-index loss remains after a
+  same-volume control** (§7). Temporal decay and controlled decomposition are
+  prior art; the contribution here is the specific age-versus-shrinkage
+  estimand on this corpus.
 - **Adding the parties' own citations to the index grows it by 11 per cent,
   raises the recall ceiling, and lowers MRR** (§7.3).
 
 **What we contribute**, stated so a reviewer can check the boundary:
 
-1. A domain-specific validity requirement for legal-corpus preprocessing, with
-   the experiment that shows what it catches (§6.5).
-2. Two measured results on a real legal retrieval task, with their controls
-   (§6, §7).
+1. A controlled legal-retrieval result showing that removal of recurring legal
+   wording costs **more** than removal of the same evidentiary volume (§6).
+2. A decomposition of stale-index loss into the part explained by a smaller
+   frozen index and the residual age effect (§7).
 3. A measurement of what the removed material actually is — its unit, its
    volume, and what it does to authority support (§4) — which is what makes
    the intervention worth testing at all.
-4. Not the task, not the retriever, and not the concept of a matched-size
-   random ablation. All three are borrowed on purpose (§2).
+4. A domain-specific validity recommendation follows from those experiments,
+   but the control itself, downstream evaluation of cleaning, the retrieval
+   task, and temporal drift are all prior art (§2).
 
 Everything is computed from a public repository with a determinism check, a
 figure-tracing guard and frozen baselines; §11 gives the reproduction path.
 
 ## 2. Related work and positioning
 
-Four lines of work meet here.
+Five lines of work meet here.
 
 *Deduplication of training corpora.* Removing exact and near duplicates is
 standard practice, motivated by memorisation and by the distortion of
-frequency statistics [Lee et al., 2022]. The unit is usually the document or a
-long span, and the validation is usually intrinsic. The most important
-neighbour of this paper is the finding that removing **near** duplicates can
-hurt a language model at a cost quantified as equivalent to training on
-5-10 per cent less data [(Near) Duplicate Subwords, 2024] — the same
-suspicion this paper tests, in a different modality and without a retrieval
-task attached.
+frequency statistics (Lee et al. 2022). The closest methodological warning is
+Schäfer et al. (2024): merging naturally occurring near-duplicate subwords
+**hurt** language modelling, and the authors calibrated that loss against
+baselines trained on 95 and 90 per cent of the data, describing the cost as
+roughly equivalent to 5–10 per cent less training data. That makes the
+quantity-confound principle prior art. Our question is narrower: whether a
+legal-corpus intervention that removes evidentiary contexts has a downstream
+retrieval effect beyond a *random removal of the same contexts count*.
+
+*Boilerplate removal as a retrieval intervention.* Web2Text (Vogels et al. 2018) and later perplexity-based cleaning (Fernández-Pichel et al. 2024)
+already evaluate boilerplate removal through downstream information retrieval.
+Web2Text is especially relevant: low-recall cleaners reduce retrieval quality
+because relevant text is removed, whereas more accurate cleaning can improve
+it. Thus neither "cleaning affects retrieval" nor downstream IR validation is
+new here. What those experiments do not provide is a matched-volume random
+removal that asks whether the observed change is special to the removed class.
 
 *Data selection with matched-budget controls.* Comparing a curated subset
 against a randomly drawn subset **of the same size** is established
-methodology in data-selection work [DataComp-LM, 2024, and the
-quality-filtering literature it collects]. We state plainly that the control
-in §6 is imported from there and not invented here. What we contribute is the
-argument that it should be a **requirement** in a domain where the removed
-material is evidence, and the demonstration of what it catches when it is
-applied.
+methodology in data-selection work (Li et al. 2024). The control in §6 is imported, not
+invented. The legal-domain recommendation in §6.5 is therefore a synthesis
+supported by the experiment, not a standalone methodological-first claim.
 
 *Legal citation-context retrieval.* Retrieving a cited authority from the text
-around the citation is an established task [Huang et al., 2021, for case
-citations], with temporally-fenced variants that measure exactly the leakage
-we control for [Fenced Citation-Context Retrieval, 2026]. For this
-jurisdiction, ALARB [2025] already defines regulation identification over
-13K Saudi commercial cases. Our task is therefore an **instrument, not a
-contribution**: it is deliberately standard, because the independent variable
-is the corpus and the retriever must not be interesting.
+around the citation is an established task (Huang et al. 2021), with
+temporally fenced variants that measure the leakage controlled here (Liu et
+al. 2026). For this jurisdiction, Abu Shairah et al. (2025) already define
+regulation identification over 13K Saudi commercial cases in ALARB. Our task is
+therefore an **instrument, not a contribution**: it is deliberately standard
+because the retrieval architecture is not the object of study.
 
 *Temporal drift and index maintenance.* Persistence of retrieval systems over
-a moving corpus has its own evaluation infrastructure [CLEF LongEval] and its
-own recent benchmark work [Still Fresh?, 2026]. In law it appears as temporal
-validity: retrieving the provision in force at the material date rather than
-the one in force now [Temporal Misgrounding in Legal RAG, 2026]. Ageing is not
-a new axis. What we did not find is an ageing measurement that controls for
-the index also being **smaller** when it is frozen, which is what §7 adds.
+a moving corpus has venue-scale evaluation infrastructure. LongEval 2024
+compares NDCG/MAP over evolving collections; Ovcharov (2026) measures two
+decades of legal statute-retrieval decay and uses fixed-article and temporal
+train/test ablations to separate decay from composition/evaluation artefacts;
+and Liu et al. (2026) decompose a legal citation-context retrieval gain
+into future-evidence leakage, legitimate admission cost and an index effect.
+Thus neither ageing nor controlled temporal decomposition is new: the closest
+legal neighbours already separate temporal leakage, admission effects, index
+effects, and longitudinal decay under explicit time controls. Section 7 reports a different estimand for this
+corpus: when a BM25 index is frozen at an earlier quarter, how much of its MRR
+loss is reproduced by randomly removing the same number of contexts from the
+current index, and how much remains associated with age.
 
-Our position is that these four are one problem seen from four distances. All
-four treat the corpus as a sample of legal material. It is a sample of what a
-publisher released, containing wording that repeats for reasons unrelated to
-evidence, changing under a process that is not stationary. This paper measures
-those properties and then measures what they do to a retrieval system built on
-the same corpus.
+Our position is that these five lines constrain the claim rather than decorate
+it. The paper does **not** introduce deduplication, downstream evaluation of
+boilerplate removal, matched-budget controls, citation-context retrieval, or
+temporal persistence. It places those established ideas into one legal-corpus
+experiment in which the evidentiary material removed and the time at which it
+was available are themselves part of what the retrieval system is supposed to
+represent.
 
 > **Note on references.** Citations above are given by name and year rather
-> than as a formatted list. Every one of them is recorded in
-> `REFERENCES_TODO.md` with its reading status, and almost all are currently
-> `ABSTRACT` or `SNIPPET`. None may be cited in a submitted version before it
-> has been read in full, and if reading changes what is written here, this
-> section changes.
+> than as a formatted list. `REFERENCES_TODO.md` records the reading state and
+> claim consequence of each source. The two references load-bearing for the
+> quantity and temporal controls (Schäfer et al.; LongEval 2024) have now been
+> read in full, and the relevant retrieval sections of the closest boilerplate
+> work have been checked. Sources still marked abstract/snippet may not carry a
+> novelty claim in the submitted version.
 
 ## 3. Data and setting
 
@@ -173,9 +175,9 @@ citations with a usable preceding context — **47492** of them in the court's
 own reasoning, over **976** distinct (instrument, article) targets across
 **68** instruments. The last three figures are the retrieval task of §5.
 
-This corpus family is not unexplored. A published dataset of Saudi commercial
-rulings from the same Ministry gateway exists, and ALARB defines a
-regulation-identification task over 13K such cases (§2). We do not claim a new
+This corpus family is not unexplored. Alharbi et al. (2026) publish ArabiCCR,
+a dataset of Saudi commercial rulings from the same Ministry gateway, and Abu
+Shairah et al. (2025) define ALARB over 13K Saudi commercial cases (§2). We do not claim a new
 dataset; we claim controlled measurements on one.
 
 **Why this setting.** Saudi commercial judgments carry an unusually wide range
@@ -236,7 +238,7 @@ it is **not a representation of a judgment's language**: it is a fixed-width
 neighbourhood of an authority mention, and no claim in this paper is about
 judicial writing in general.
 
-We also built a near-duplicate layer — a banded minhash over token 3-shingles,
+We also built a near-duplicate layer — a banded minhash over token 3-shingles (Broder 1997),
 8 bands of 4 — and set it aside: of 130 pairs grouped at Jaccard 0.7, only
 **0.5462** survive at 0.8. The grouping does not survive a change of
 threshold at this corpus size, so every count below is exact-match and is
@@ -346,17 +348,17 @@ cannot be read back as a passage.
 
 The task is **not a contribution**. Retrieving a cited authority from its own
 local context is established (§2), and a regulation-identification task
-already exists for this jurisdiction. It is used here as an instrument,
-because a standard task is what makes four corpus treatments comparable.
+already exists for this jurisdiction. It is used here as an instrument so that
+controlled corpus treatments can be compared on the same task.
 
 ### 5.2 The retriever
 
-BM25, k1 = 1.2, b = 0.75, over one pseudo-document per article, pooled from
-the contexts in which earlier judgments cited that article. Deliberately dull.
-The independent variable is the corpus, so the retriever must be simple enough
-that a change in the score cannot have come from anywhere else. A dense
-retriever would answer a different question and is not run; nothing here is a
-claim about what a neural system would do.
+BM25 (Robertson and Zaragoza 2009), k1 = 1.2, b = 0.75, over one pseudo-document
+per article, pooled from the contexts in which earlier judgments cited that
+article. The retrieval architecture and query sample are held fixed across the
+corpus-treatment arms. A dense retriever would answer the additional question
+of architecture dependence and is not run; nothing here is a claim about what
+a neural retriever would do.
 
 One efficiency device exists — postings whose idf falls below a floor are
 dropped — and it is reported because it **never fired**: the dropped share is
@@ -482,8 +484,9 @@ moves from indistinguishable from random to worse than every draw.
 
 ### 6.3 What that means about the removed text
 
-**The recurring wording is above-average retrieval evidence.** Removing it is
-not cleaning; on this task it is deleting the better half of the index.
+**The recurring wording is disproportionately useful retrieval evidence on
+this task.** A recurrence-based cleaning rule therefore removes material whose
+retrieval value is higher than a same-volume random sample from the index.
 
 The shape of the disagreement is worth one sentence more, because it is the
 opposite of what a practitioner would guess. Deduplication keeps **498** of
@@ -524,39 +527,37 @@ evidence leaves, whatever leaves.
 So: one corpus, one intervention, two downstream tasks, opposite answers about
 whether the intervention is special.
 
-**This is the paper's central methodological point, and it is not a
-contradiction.** A control that always confirmed the intervention was special
-would be worthless, and so would one that never did. The pair shows that
-whether removal is volume-equivalent is a property of the *intervention and
-the task together*, not of the intervention alone — and therefore that it
-cannot be reasoned about in advance. It has to be measured, per task, with the
-matched-volume arm.
+The pair shows that whether removal is volume-equivalent is a property of the
+*intervention and the task together*, not of the intervention alone. In this
+design, the matched-volume arm is what separates a class-specific retrieval
+effect from a quantity effect.
 
-### 6.5 The requirement
+### 6.5 The evaluation recommendation
 
-We state the contribution at the level the literature leaves open. Matched-
-budget random subsets are established methodology in data selection (§2); we
-are importing the control, not inventing it. What is missing is the obligation
-to run it where the removed material is evidence:
+Matched-budget and quantity-calibrated controls are established methodology in
+data selection and deduplication (§2); we are importing that logic, not
+inventing it. The legal-retrieval result motivates the following domain-specific
+recommendation:
 
 > **When a preprocessing intervention removes substantial evidentiary volume
 > from a legal corpus, its effect on legal-AI evaluation should be compared
 > with a matched-volume random-removal control before the change is
 > attributed to the semantic class of text removed.**
 
-The cost is one extra arm and a seed. The benefit is the difference between
-§6.1 and §6.4 — between a finding and an artefact — and there is no way to
-know in advance which one you have.
+The cost is one extra arm and a seed. In this study, that arm changes the
+interpretation of the same preprocessing intervention across two downstream
+tasks; without it, the semantic and volume effects would remain conflated.
 
 ## 7. Result 2: what index age costs, once shrinkage is taken out
 
 ### 7.1 The confound
 
-Freezing an index makes it two things at once: older and smaller. Reported
-together they cannot be told apart, and every measurement of staleness we
-found reports them together. The fix is the same control as §6: remove the
-same number of contexts at random from the live index and see what is left of
-the loss.
+Freezing an index makes it two things at once: older and smaller. Prior work
+already decomposes temporal retrieval effects in several ways (§2), but the
+specific shrinkage confound remains in a simple frozen-index comparison. We
+therefore pair each frozen index with a live index from which the same number
+of contexts is removed at random, and report the residual loss associated with
+age.
 
 | index frozen by | MRR@10 loss vs RAW | of which volume | of which age | age share |
 |---|--:|--:|--:|--:|
@@ -564,9 +565,10 @@ the loss.
 | 2 quarters | 0.1261 | 0.0451 | 0.081 | **64 %** |
 | 4 quarters | 0.199 | 0.0763 | 0.1227 | **62 %** |
 
-Roughly two thirds of what a stale index costs is age; one third is the index
-being smaller. The two thirds are the part that no amount of index-building
-fixes and that only a refresh recovers.
+Under this matched-volume comparison, roughly two thirds of the measured loss
+remains associated with age rather than shrinkage. Section 8 keeps the
+publication-composition confound explicit, so this residual is not interpreted
+as a pure causal effect of elapsed time.
 
 The recall ceiling moves with it. `gold in index` falls 0.9248 → **0.8915** →
 **0.821** → **0.7232** as the index is frozen by one, two and four quarters,
@@ -711,13 +713,11 @@ against **28** judgments in which an AI-relevant technology appears without
 being shown to be at issue, and **12** carrying an explicit AI term anywhere
 in the document.
 
-The conjunction is the point. **Permission is present; consequence is
-untested.** A retrieval layer inside this court's own workflow is a permitted
-thing to build, and §5 to §7 measure what building it on this corpus costs:
-support inflated by up to 2.429 before anything is cleaned, a cleaning step
-that removes 2.7 times its own volume in retrieval performance, an index
-losing 0.0451 MRR@10 to age alone in a single quarter, and a train/test split
-that straddles a publication-composition break.
+The conjunction is the point. **Procedural AI use is legally contemplated;
+deployment consequences are untested.** These provisions do not authorize any
+particular retrieval architecture. They establish only that AI-assisted
+procedure is not a purely hypothetical policy context for the measurements in
+§5 to §7.
 
 We make no claim about whether any deployed system is affected. Seven verified
 AI adoption events in this jurisdiction were classified on a linkability
@@ -735,8 +735,9 @@ system would do.
 
 **One jurisdiction, one forum.** Published Ministry of Justice commercial
 adjudication. The dose-response shape in §6.2 is one corpus's, and the
-direction of the §6 result may not hold elsewhere; the *requirement* in §6.5
-is what we claim transfers, precisely because the direction does not.
+direction of the §6 result may not hold elsewhere. The transferable claim is
+therefore limited to the evaluation recommendation in §6.5, not the observed
+effect size or direction.
 
 **1000 queries per fold.** A compute budget, not a design choice. The sample
 is seeded and shared across arms so it cannot favour one, but a full-query run
@@ -773,7 +774,7 @@ Co-occurrence of wording is not copying.
 **The taxonomy is mechanical.** Formula classes come from keyword presence in
 a 180-character neighbourhood. No class is a reading of a passage.
 
-## 11. Reproducibility
+## 11. Reproducibility and AI-assisted research disclosure
 
 All results are computed by scripts in a public repository. Two scripts carry
 this paper's experiment: one corpus pass writes the retrieval layer, and one
@@ -798,26 +799,38 @@ horizon, and the query sample itself — is drawn from a seed recorded in the
 results file, and the whole experiment was re-run from scratch and verified to
 produce byte-identical output.
 
+Generative-AI systems were used as research-assistance tools for code drafting,
+literature-search assistance, manuscript drafting/editing, and adversarial
+critique under the author's supervision. They were not used as authors or as
+independent peer reviewers, and no model-generated prose or judgment defines a
+primary endpoint. Quantitative claims in the manuscript are traced to the
+version-controlled result artifacts described above; the author retains
+responsibility for the research question, claim boundaries, interpretation,
+and final submission.
+
 ## 12. Conclusion
 
-We set out to find whether a standard corpus-cleaning step does anything a
-random deletion of the same size would not do. On a legal retrieval task built
-from 105575 citations Saudi commercial courts actually made, it does: removing
-recurring legal wording costs 2.7 times what removing the same volume at
-random costs, and in the five folds with the largest removals it is worse than
-every one of 20 matched draws. The recurring wording is above-average
-retrieval evidence, and it is removed by the operation that calls it
-boilerplate.
+We tested whether a recurrence-based corpus-cleaning intervention changes a
+legal retrieval system beyond what would follow from removing the same amount
+of evidence at random. On 105575 resolved statutory citations, it does in this
+corpus: targeted removal costs 2.7 times the mean same-volume loss, and in the
+five folds with the largest removals it is worse than all 20 matched draws.
+The removed contexts are therefore disproportionately useful to this retrieval
+instrument despite their recurrence.
 
-On a different downstream task in the same corpus, the same removal is
-indistinguishable from random. That pair is the result we would most like a
-reader to take away. Whether an intervention is special is a property of the
-intervention *and the task*, it cannot be reasoned out in advance, and the
-only thing that settles it costs one extra arm and a seed.
+On a different downstream task in the same corpus, the same intervention is
+volume-equivalent. The paired result is the main evaluation lesson: the effect
+of preprocessing depends on both the intervention and the task, and a
+matched-volume arm can distinguish a class-specific effect from a quantity
+effect.
 
-The same control applied to index staleness separates age from shrinkage and
-leaves roughly two thirds of the loss as age at every horizon we tested.
+Applied to staleness, the same comparison leaves 70%, 64%, and 62% of the
+one-, two-, and four-quarter MRR loss associated with age after controlling for
+index shrinkage, subject to the publication-composition limitation in §8.
 
-We are not proposing a new ablation technique; matched-budget random subsets
-are established elsewhere and we say so. We are proposing that in a domain
-where the deleted text is evidence, running the control stops being optional.
+Matched-budget and temporal controls are established prior art. The paper's
+contribution is the controlled legal-retrieval evidence above and the
+age-versus-shrinkage estimand on this corpus. We recommend reporting a
+same-volume control when legal-AI preprocessing removes substantial
+evidentiary volume before attributing a downstream change to the class of text
+removed.

@@ -9,24 +9,13 @@ compete for the same venue.
 
 ## PRIMARY
 
-**1 · Artificial Intelligence and Law** — Springer. The target this draft was
-written for, and the case is now empirical rather than rhetorical: the paper
-runs a legal retrieval experiment and reports a controlled result on it, with
-the enacted-provisions material demoted to context that does not carry fit.
-The clause-by-clause map is in `SCOPE.md`. *Caveat: a second submission from
-the same author after a desk rejection needs the new paper to be visibly a
-different paper on its first page. The title, abstract and §1 are now about an
-experiment, which is the strongest form of that signal. Note also that the
-task's closest ancestor (Huang et al., 2021) is co-authored by the editor who
-rejected paper A — a reason to position against it accurately and carefully,
-and no reason to do anything else.*
+**1 · Artificial Intelligence and Law** — Springer. **PRIMARY / controller-confirmed 2026-09-01.** The live scope explicitly includes conceptual retrieval of cases and statutes, evaluation and auditing techniques for legal AI systems, and systemic problems in constructing/delivering legal AI. The paper now fits those clauses directly through a controlled legal-retrieval experiment rather than through an implications section. Recent 2026 journal articles on legal citation prediction, legal QA/RAG and legal-LLM robustness confirm that empirical legal-AI evaluation remains inside the journal's active editorial footprint. `SCOPE.md` records the clause-by-clause map and prior-art narrowing. A second submission after a scope desk rejection is justified only because this is a genuinely different technical/empirical paper on page one; do not mention or defend the rejected paper unless the submission system asks.
 
 **2 · JURIX (International Conference on Legal Knowledge and Information
-Systems)** — peer-reviewed proceedings, IOS Press. §6's result and the
-requirement it supports are exactly the kind of finding this community can act
-on, and the length limit forces the paper to lead with the experiment. Faster
-than a journal cycle. **This is the strongest fallback and, if the reference
-audit in `REFERENCES_TODO.md` §B weakens §7, it becomes the first choice.**
+Systems)** — strongest specialist fallback. The completed prior-art audit
+narrows the methodological claims but leaves the controlled empirical result
+intact. Use JURIX if AI & Law rejects on fit or editorial significance; do not
+create a conference-specific experiment before that event.
 
 **3 · ICAIL** — the field's main conference, biennial. Highest-visibility
 option for this material. Check the cycle: if the next call is far away, this
@@ -68,17 +57,16 @@ in §10 is live.
 - **length** — the draft is ~4,700 words plus tables: comfortable for 1 and 4,
   needs cutting for 2, 3 and 5
 
-## What would change the ranking
+## Ranking after the full-text novelty audit
 
-Two findings in the pending full-text reading would move this list:
-
-- If **P2** (*(Near) Duplicate Subwords*) already reports a matched-volume
-  comparison, §6's framing narrows to the legal-domain demonstration, and 2
-  rises above 1.
-- If **P6** (CLEF LongEval) already decomposes ageing into age and index size,
-  §7 loses its methodological claim and becomes a replication in a legal
-  corpus, which is still publishable but not at 1.
+P2 and P6 were read in full, along with the closest boilerplate-retrieval and
+legal temporal-decomposition neighbours. They **do** narrow the paper: the
+quantity-confound principle and controlled temporal decomposition are prior
+art. They do **not** eliminate the paper's two controlled empirical results.
+Because the live AI & Law scope names legal retrieval, evaluation/auditing and
+systemic construction problems explicitly, the primary ranking remains AI &
+Law rather than moving to JURIX.
 
 A reviewer asking for a dense retriever is a revision request, not a
-rejection: the retrieval layer supports one without a new corpus pass, and the
-paper's independent variable does not change.
+pre-submission rescue requirement: the retrieval layer supports one without a
+new corpus pass, and the paper's independent variable does not change.
