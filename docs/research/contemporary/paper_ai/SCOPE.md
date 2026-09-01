@@ -108,3 +108,13 @@ to transfer precisely because the *direction* of the result may not.
 
 **No journal is to be contacted and nothing is to be submitted without the
 author.**
+
+## Controller recheck — 2026-09-01
+
+The current live Aims & Scope strengthens, rather than weakens, the fit. It explicitly lists **intelligent processing of legal documents; conceptual retrieval of cases and statutes**, **evaluation and auditing techniques for legal AI systems**, and **systemic problems in the construction and delivery of legal AI systems**. This manuscript now directly measures all three at the retrieval/preprocessing layer.
+
+The 2026 journal record also contains empirical legal citation prediction, legal QA/RAG evaluation, and legal-LLM robustness/reliability studies. The correct question is no longer whether retrieval evaluation is in scope; it is whether this paper's controlled result is sufficiently original and consequential.
+
+Full reading of Schäfer et al., LongEval, Liu et al., Ovcharov, Web2Text and the other load-bearing neighbours narrows the novelty but does not remove it. The matched-volume control itself is prior art; temporal decomposition generally is prior art; the legal citation task is prior art. The surviving contribution is the **measured effect** of targeted recurring-text removal versus same-volume removal and the **specific age-versus-shrinkage decomposition** on this legal retrieval corpus.
+
+**Controller verdict: `AI_AND_LAW_READY_AFTER_FORMATTING`. No new experiment is required before submission.**

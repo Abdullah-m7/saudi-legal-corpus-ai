@@ -94,7 +94,7 @@ remains the principal experimental contrast.
    but the control itself, downstream evaluation of cleaning, the retrieval
    task, and temporal drift are all prior art (§2).
 
-Everything is computed from a public repository with a determinism check, a
+Everything is computed in a version-controlled research repository with a determinism check, a
 figure-tracing guard and frozen baselines; §11 gives the reproduction path.
 
 ## 2. Related work and positioning
@@ -776,7 +776,7 @@ a 180-character neighbourhood. No class is a reading of a passage.
 
 ## 11. Reproducibility and AI-assisted research disclosure
 
-All results are computed by scripts in a public repository. Two scripts carry
+All results are computed by version-controlled scripts. An anonymized reviewer reproduction package can be supplied during peer review. Two scripts carry
 this paper's experiment: one corpus pass writes the retrieval layer, and one
 analysis runs every arm. No judgment text is stored anywhere: the retrieval
 layer holds unordered bags of hashed tokens, which is what BM25 consumes and
